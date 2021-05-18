@@ -1,7 +1,7 @@
 
 //===========================================================================
 //
-//  This program use Eclipse JDT to parse java source files 
+//  This program use Eclipse JDT to parse java source files
 //  and dumps resulting AST in JSON representation.
 //
 //---------------------------------------------------------------------------
@@ -47,15 +47,15 @@ public class JSONStyleASTPrinter extends Indenter implements IASTPrinter {
 		this.printer = new PrintWriter(destination);
 	}
 
-	public void startElement(String name, boolean isList) {
+	public void startElement(String name,int lineNumber, boolean isList) {
 		if (hasItemsStack.peek() == true) {
 			printer.println(",");
 		} else {
 			hasItemsStack.pop();
 			hasItemsStack.push(true);
 		}
-
-		printer.println(getIndentString() +"\""+ name + "\"" + ": " + (isList ? "[" : "{"));
+		// printer.println(getIndentString() + "\"" + name + "_line\"" + ": " + lineNumber+",");
+		printer.println(getIndentString() + "\"" + name + "\"" + ": " + (isList ? "[" : "{"));
 		indent();
 		hasItemsStack.push(false);
 	}
@@ -66,7 +66,7 @@ public class JSONStyleASTPrinter extends Indenter implements IASTPrinter {
 		hasItemsStack.pop();
 	}
 
-	public void startType(String name, boolean parentIsList) {
+	public void startType(String name,int lineNumber,boolean parentIsList) {
 		if (hasItemsStack.peek() == true) {
 			printer.println(",");
 		} else {
@@ -78,8 +78,8 @@ public class JSONStyleASTPrinter extends Indenter implements IASTPrinter {
 			printer.println(getIndentString() + "{");
 			indent();
 		}
-
-		printer.print(getIndentString() + "\"node\": \"" + name + "\"");
+		printer.print(getIndentString() + "\"node\": \"" + name + "\",\n");
+		printer.print(getIndentString() + "\"node_line\": " + lineNumber + "");
 	}
 
 	public void endType(String name, boolean parentIsList) {
@@ -105,8 +105,9 @@ public class JSONStyleASTPrinter extends Indenter implements IASTPrinter {
 			hasItemsStack.push(true);
 		}
 
-		printer.print(getIndentString() +"\""+name + "\"" + ": " + (value == null || isJsonAllowedType(value.getClass()) ? value
-				: "\"" + StringEscapeUtils.escapeJson(value.toString()) + "\""));
+		printer.print(getIndentString() + "\"" + name + "\"" + ": "
+				+ (value == null || isJsonAllowedType(value.getClass()) ? value
+						: "\"" + StringEscapeUtils.escapeJson(value.toString()) + "\""));
 	}
 
 	public void startPrint() {
@@ -121,4 +122,5 @@ public class JSONStyleASTPrinter extends Indenter implements IASTPrinter {
 		printer.flush();
 		printer.close();
 	}
+	
 }

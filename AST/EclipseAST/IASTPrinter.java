@@ -1,3 +1,9 @@
+/*
+ * @Author: your name
+ * @Date: 2016-09-23 16:45:56
+ * @LastEditTime: 2021-05-18 14:42:24
+ * @Description: file content
+ */
 //===========================================================================
 //
 //  This program use Eclipse JDT to parse java source files 
@@ -36,7 +42,7 @@ public interface IASTPrinter {
 	 * @param isList
 	 *            indicates whether the element is a list container.
 	 */
-	public void startElement(String name, boolean isList);
+	public void startElement(String name,int lineNumber, boolean isList);
 
 	/**
 	 * Starts an AST element type.
@@ -46,7 +52,7 @@ public interface IASTPrinter {
 	 * @param parentIsList
 	 *            indicates whether the parent node is a list or not.
 	 */
-	public void startType(String name, boolean parentIsList);
+	public void startType(String name, int lineNumber, boolean parentIsList);
 
 	/**
 	 * Ends the element type.

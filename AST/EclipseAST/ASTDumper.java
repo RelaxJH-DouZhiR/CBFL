@@ -21,6 +21,7 @@ import java.util.List;
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.ChildListPropertyDescriptor;
 import org.eclipse.jdt.core.dom.ChildPropertyDescriptor;
+import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jdt.core.dom.SimplePropertyDescriptor;
 
 /**
@@ -79,9 +80,9 @@ public class ASTDumper {
 	 * @param rootNode
 	 *            the node to start at.
 	 */
-	public void dump(final ASTNode rootNode) {
+	public void dump(final ASTNode rootNode, CompilationUnit cu) {
 		printer.startPrint();
-		walk(rootNode);
+		walk(rootNode,cu);
 		printer.endPrint();
 	}
 
@@ -101,8 +102,8 @@ public class ASTDumper {
 	 *            the root node.
 	 */
 
-	private void walk(final ASTNode node) {
-		walk(node, false);
+	private void walk(final ASTNode node, CompilationUnit cu) {
+		walk(node, cu,false);
 	}
 
 	/**
@@ -114,16 +115,16 @@ public class ASTDumper {
 	 *            true if leading, false for trailing.
 	 */
 
-	private void dumpComments(final ICommentsExtractor.CommentItem[] comments, final boolean leading) {
+	private void dumpComments(final ICommentsExtractor.CommentItem[] comments,int lineNumber, final boolean leading) {
 		if (comments != null && comments.length > 0) {
 
 			final String id = leading ? "leadingComments" : "trailingComments";
-			printer.startElement(id, true);
+			printer.startElement(id,lineNumber, true);
 
 			for (ICommentsExtractor.CommentItem comment : comments) {
 				final String commentId = comment.node.isLineComment() ? "LineComment"
 						: comment.node.isDocComment() ? "DocComment" : "BlockComment";
-				printer.startType(commentId, true);
+				printer.startType(commentId, lineNumber, true);
 				printer.literal("value", comment.value);
 				printer.endType(commentId, true);
 			}
@@ -141,13 +142,14 @@ public class ASTDumper {
 	 * @param parentIsList
 	 *            indicates whether the parent node is a list or not.
 	 */
-	private void walk(final ASTNode node, final boolean parentIsList) {
-		printer.startType(node.getClass().getSimpleName(), parentIsList);
+	private void walk(final ASTNode node, CompilationUnit cu, final boolean parentIsList) {
+		int lineNumber =  cu.getLineNumber(node.getStartPosition());// *
+		printer.startType(node.getClass().getSimpleName(), lineNumber, parentIsList);
 		final List<?> properties = node.structuralPropertiesForType();
 
 		if (comments != null) {
-			dumpComments(comments.leadingComments(node), true);
-			dumpComments(comments.trailingComments(node), false);
+			dumpComments(comments.leadingComments(node), lineNumber, true);
+			dumpComments(comments.trailingComments(node), lineNumber, false);
 		}
 		for (Iterator<?> iterator = properties.iterator(); iterator.hasNext();) {
 			final Object desciptor = iterator.next();
@@ -160,8 +162,8 @@ public class ASTDumper {
 				ChildPropertyDescriptor child = (ChildPropertyDescriptor) desciptor;
 				ASTNode childNode = (ASTNode) node.getStructuralProperty(child);
 				if (childNode != null) {
-					printer.startElement(child.getId(), false);
-					walk(childNode);
+					printer.startElement(child.getId(), lineNumber, false);
+					walk(childNode,cu);
 					printer.endElement(child.getId(), false);
 				} else {
 					printer.literal(child.getId(), null);
@@ -170,8 +172,8 @@ public class ASTDumper {
 				ChildListPropertyDescriptor list = (ChildListPropertyDescriptor) desciptor;
 				List<?> value = new ArrayList<>((List<?>) node.getStructuralProperty(list));
 				if (value.size() > 0) {
-					printer.startElement(list.getId(), true);
-					walk(value);
+					printer.startElement(list.getId(), lineNumber, true);
+					walk(value,cu);
 					printer.endElement(list.getId(), true);
 				} else {
 					printer.literal(list.getId(), value);
@@ -189,10 +191,10 @@ public class ASTDumper {
 	 *            list.
 	 */
 
-	private void walk(final List<?> nodes) {
+	private void walk(final List<?> nodes, CompilationUnit cu) {
 		for (Iterator<?> iterator = nodes.iterator(); iterator.hasNext();) {
 			ASTNode node = (ASTNode) iterator.next();
-			walk(node, true);
+			walk(node,cu, true);
 		}
 	}
 }

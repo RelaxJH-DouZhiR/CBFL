@@ -49,13 +49,14 @@ public class App {
 
 	public static void main(final String[] args) throws Exception {
 		ByteArrayOutputStream baoStream = new ByteArrayOutputStream(1024);
-		PrintStream cacheStream = new PrintStream(baoStream);// 临时输出
-		PrintStream oldStream = System.out;// 缓存系统输出
+		PrintStream cacheStream = new PrintStream(baoStream);
+		PrintStream oldStream = System.out;
 		System.setOut(cacheStream);
-		ast("/Users/lvlaxjh/code/dataset/d4j/lang_1_buggy/src/main/java/org/apache/commons/lang3/StringUtils.java", "h");
+		ast("/Users/lvlaxjh/code/CBFL/AST/testjava/App.java", "c");
 		String message = baoStream.toString();
 		System.setOut(oldStream);
-		BufferedWriter out = new BufferedWriter(new FileWriter("result.json"));
+		System.out.println(message);//打印输出
+		BufferedWriter out = new BufferedWriter(new FileWriter("resultJson/result.json"));
 		out.write(message);
 		out.close();
 	}
@@ -110,7 +111,7 @@ public class App {
 		if (cmd.equals("c")) {
 			try (final UglyMathCommentsExtractor cex = new UglyMathCommentsExtractor(cu, src)) {
 				final ASTDumper dumper = new ASTDumper(cex);
-				dumper.dump(cu);
+				dumper.dump(cu,cu);
 				System.out.flush();
 			}
 		} else {
@@ -118,7 +119,7 @@ public class App {
 			for (final Object comment : cu.getCommentList()) {
 				((Comment) comment).delete();
 			}
-			dumper.dump(cu);
+			dumper.dump(cu,cu);
 		}
 	}
 }
