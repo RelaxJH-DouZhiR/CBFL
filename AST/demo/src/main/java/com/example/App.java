@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-05-14 11:45:42
- * @LastEditTime: 2021-05-14 15:19:55
+ * @LastEditTime: 2021-05-17 16:10:07
  * @Description: file content
  */
 package com.example;
@@ -12,7 +12,6 @@ package com.example;
 public final class App {
     private App() {
     }
-
     /**
      * Says hello to the world.
      * @param args The arguments of the program.
