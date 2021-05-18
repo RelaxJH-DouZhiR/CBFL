@@ -1,7 +1,7 @@
 
 //===========================================================================
 //
-//  This program use Eclipse JDT to parse java source files 
+//  This program use Eclipse JDT to parse java source files
 //  and dumps resulting AST in JSON representation.
 //
 //---------------------------------------------------------------------------
