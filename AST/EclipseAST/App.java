@@ -52,7 +52,7 @@ public class App {
 		PrintStream cacheStream = new PrintStream(baoStream);// 临时输出
 		PrintStream oldStream = System.out;// 缓存系统输出
 		System.setOut(cacheStream);
-		ast("/Users/lvlaxjh/code/CBFL/AST/demo/src/main/java/com/example/App.java", "h");
+		ast("/Users/lvlaxjh/code/dataset/d4j/lang_1_buggy/src/main/java/org/apache/commons/lang3/StringUtils.java", "h");
 		String message = baoStream.toString();
 		System.setOut(oldStream);
 		BufferedWriter out = new BufferedWriter(new FileWriter("result.json"));
