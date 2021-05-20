@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-05-14 11:45:42
- * @LastEditTime: 2021-05-18 11:25:43
+ * @LastEditTime: 2021-05-20 17:01:32
  * @Description: file content
  */
 package com.example;
@@ -19,8 +19,8 @@ public final class App {
      * @param args The arguments of the program.
      */
     public static void main(String[] args) {
-        String testNumber = "30";
-        if (testNumber == "30") {
+        String testNumber1 = "30";
+        if (testNumber1 == "30") {//test111
             System.out.println("helloworld");
 
         }

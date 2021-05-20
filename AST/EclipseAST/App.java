@@ -52,7 +52,7 @@ public class App {
 		PrintStream cacheStream = new PrintStream(baoStream);
 		PrintStream oldStream = System.out;
 		System.setOut(cacheStream);
-		ast("/Users/lvlaxjh/code/CBFL/AST/testjava/App.java", "c");
+		ast("/Users/lvlaxjh/code/CBFL/AST/testjava/App.java", "h");
 		String message = baoStream.toString();
 		System.setOut(oldStream);
 		System.out.println(message);//打印输出
