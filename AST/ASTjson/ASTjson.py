@@ -1,7 +1,7 @@
 '''
 Author: your name
 Date: 2021-05-20 14:47:36
-LastEditTime: 2021-05-21 15:09:01
+LastEditTime: 2021-05-22 10:43:23
 Description: file Statement
 '''
 import json
@@ -16,7 +16,6 @@ GLOBAL_VAR = {
     "CSV_PATH": "/Users/lvlaxjh/code/CBFL/AST/test.csv",
     "ASTDict": {},  # AST树-json转为字典
     "resultDict": [],  # 结果字典
-
 }
 
 
