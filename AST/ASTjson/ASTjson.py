@@ -1,7 +1,7 @@
 '''
 Author: your name
 Date: 2021-05-20 14:47:36
-LastEditTime: 2021-05-24 10:35:52
+LastEditTime: 2021-05-24 14:52:40
 Description: file Statement
 '''
 import json
@@ -9,16 +9,32 @@ import copy
 import re
 import csv
 import openpyxl
+import shutil
+import sys
+import openpyxl
+import os
 
 GLOBAL_VAR = {
+    # AST中关键字
+    # AST关键字
     "AST_KEYWORD_LIST": ["identifier", "value", "keyword", "escapedValue", "operator"],
-    "CODE_MAIN_PATH": "/Users/lvlaxjh/code/dataset/d4j/lang_1_buggy/src/main/java",
-    "EXCEL_PATH":"/Users/lvlaxjh/code/CBFL/Data/excels_lang/DStar/lang-1/lang1.xlsx",
-    "JAVA_PATH": "/Users/lvlaxjh/code/dataset/d4j/lang_1_buggy/src/main/java/org/apache/commons/lang3/StringUtils.java",
-    "JSON_PATH": "/Users/lvlaxjh/code/CBFL/AST/EclipseAST/resultJson/result.json",  # json文件路径
-    "CSV_PATH": "/Users/lvlaxjh/code/CBFL/AST/test.csv",
+    # 原java文件的路径 ***
+    "CODE_MAIN_PATH": "/Users/lvlaxjh/code/dataset/d4j/lang_4_buggy/src/main/java",
+    # 读取的excel文件路径 ***
+    "EXCEL_PATH": "/Users/lvlaxjh/code/CBFL/Data/excels_lang/DStar/lang-4/lang4.xlsx",
+    "P_NUMBER": "13",  # 想不编号 ***
+    "JAVA_PATH": "",
+    "JSON_PATH": "",  # AST树json文件路径
+    "CSV_PATH": "/Users/lvlaxjh/code/CBFL/AST/test.csv",  # 数据机csv路径
     "ASTDict": {},  # AST树-json转为字典
     "resultDict": [],  # 结果字典
+    #
+    'AST_TO_JSON_APP_JAVA': '/Users/lvlaxjh/code/CBFL/AST/EclipseAST/App.java',
+    'EclipseAST': '/Users/lvlaxjh/code/CBFL/AST/EclipseAST',
+    # 'JAVA_FILE_PATH' : '',
+    # 'JAVA_FILE' : '',
+
+
 }
 
 
@@ -45,7 +61,7 @@ def get_code_element(targetCodeLine, codeStatement):  # 目标代码行数，代
             for i in typeItem:
                 get_code_recursion(i, [], targetCodeLine, codeStatement)
         # 类-end
-    print(GLOBAL_VAR['resultDict'])
+    # print(GLOBAL_VAR['resultDict'])
 # AST包，库，类遍历-end
 
 
@@ -78,6 +94,7 @@ def get_code_recursion(recItem, nodeStack, targetCodeLine, codeStatement):  # �
 
 # 获取括号数量、嵌套层数-start
 def get_brackets_nesting(codeStatement):  # 代码内容（返回：括号嵌套层数，括号总数）
+    global GLOBAL_VAR
     bracketsStack = []  # 括号栈
     depth = 0  # 括号深度
     total = 0  # 括号数量
@@ -100,6 +117,7 @@ def get_brackets_nesting(codeStatement):  # 代码内容（返回：括号嵌套
 
 # 逻辑-start
 def get_logic_word(codeStatement):  # 代码内容（返回：bool是否包含逻辑）
+    global GLOBAL_VAR
     logicList = ['if', 'else if', 'else', 'switch', 'case', 'while', 'for']
     for n in logicList:
         pattern = re.compile(n)   # 模式
@@ -115,6 +133,7 @@ def get_logic_word(codeStatement):  # 代码内容（返回：bool是否包含�
 
 # 关键字-start
 def get_keyword(codeStatement):  # 代码内容（返回：关键字数量）
+    global GLOBAL_VAR
     keywordList = ['return']
     total = 0
     for n in keywordList:
@@ -129,10 +148,10 @@ def get_keyword(codeStatement):  # 代码内容（返回：关键字数量）
     return total
 # 关键字-end
 
+
 # csv存储结构-start
-
-
 def get_data_for_csv(resultDict, targetCodeLine, codeStatement):  # resultDict,目标代码行数，代码内容
+    global GLOBAL_VAR
     csvRes = {
         'varTotal': 0,  # 变量+
         'optTotal': 0,  # 运算符+
@@ -169,7 +188,7 @@ def get_data_for_csv(resultDict, targetCodeLine, codeStatement):  # resultDict,�
             canBreak_TEM = True
         flag_TEM += 1
         if canBreak_TEM:
-            csvRes['depth'] = flag_TEM-1#存储深度
+            csvRes['depth'] = flag_TEM-1  # 存储深度
             break
     # 深度计算-end
     if get_logic_word(codeStatement):  # 逻辑
@@ -198,35 +217,97 @@ def get_data_for_csv(resultDict, targetCodeLine, codeStatement):  # resultDict,�
     return csvRes
 # csv存储结构-end
 
-# def run_java_get_json():
 
+# 运行java生成json-start
+def run_java():
+    global GLOBAL_VAR
+    excel = openpyxl.load_workbook(GLOBAL_VAR['EXCEL_PATH'])  # excel文件
+    sheet = excel.worksheets[0]  # 表
+    line = 2  # sheet 行
+    javaFileList = []
+    javaFileNames = []
+    while True:
+        if sheet.cell(line, 1).value != None:
+            filePath = str(sheet.cell(line, 1).value).replace(".", "/")
+            if filePath not in javaFileList:
+                javaFileNames.append(filePath.split('/')[-1])
+                javaFileList.append(filePath)
+        else:
+            break
+        line += 1
 
+    for i in range(len(javaFileList)):
+        # print(javaFileList)
+        paths = ''
+        for j in javaFileList[i].split('/')[:-1]:
+            paths += j
+            paths += '/'
+        JAVA_FILE_PATH = GLOBAL_VAR['CODE_MAIN_PATH']+'/'+paths
+        JAVA_FILE = javaFileNames[i]
+        file = open(GLOBAL_VAR['AST_TO_JSON_APP_JAVA'], 'r+')
+        fileList = file.readlines()
+        fileList[51] = '		'+'String MAIN_PATH = \"'+JAVA_FILE_PATH+'\";\n'
+        fileList[52] = '		'+'String JAVA_FILE = \"'+JAVA_FILE+'\";\n'
+        file.close()
+        file = open(GLOBAL_VAR['AST_TO_JSON_APP_JAVA'], 'w+')
+        file.writelines(fileList)
+        file.close()
+        # os.popen("cd /Users/lvlaxjh/code/CBFL/AST/EclipseAST")
+        osres = os.popen(
+            'cd '+GLOBAL_VAR['EclipseAST']+' && javac -Xlint:deprecation -cp \'lib/*\' *.java && java -Xss4m -cp .:\'lib/*\' App "$@"')
+        print(osres.read())
+# 运行java生成json-end
 
 
 if __name__ == "__main__":
-    excel = openpyxl.load_workbook(GLOBAL_VAR["EXCEL_PATH"])#加载excel
-    sheet = excel.worksheets[0]#表
-    line = 2#行
-    codeLine = 171
-    codeStatement = "    private static final int PAD_LIMIT = 8192;"
-    suspicious = 0.707106781
-    accuracy = 1
-    # while True:
-    #     if sheet.cell(line,1).value !=None:
-    #         GLOBAL_VAR["JAVA_PATH"] = GLOBAL_VAR["CODE_MAIN_PATH"]+'/'+str(sheet.cell(line, 1).value).replace(".", "/")+'.java'
-    #         codeLine = sheet.cell(line, 2).value
-    #         codeStatement = sheet.cell(line, 3).value
-    #         suspicious = sheet.cell(line, 4).value
-    #         accuracy = sheet.cell(line, 5).value
-    #     else:
-    #         break
-    get_code_element(codeLine, codeStatement)
-    print('codeLine : ' + str(codeLine))
-    print('codeStatement : ' + codeStatement)
-    astResultDict = get_data_for_csv(
-        GLOBAL_VAR['resultDict'], codeLine, codeStatement)
-    csvFile = open(GLOBAL_VAR['CSV_PATH'], 'a', encoding="utf-8", newline="")
-    csvWriter = csv.writer(csvFile)
-    csvWriter.writerow(['defect4j', 'Lang', 'org.apache.commons.lang3.ClassUtils', '1', codeLine, codeStatement, astResultDict['varTotal'], astResultDict['optTotal'], astResultDict['array'], astResultDict['bracketDepth'],
-                       astResultDict['bracketTotal'], astResultDict['keywordTotal'], astResultDict['methodTotal'], astResultDict['typeTotal'], astResultDict['logic'], astResultDict['lengthEle'], astResultDict['lengthWord'], astResultDict['depth'], suspicious, accuracy])
-    csvFile.close()
+    #
+    run_java()
+    #
+    excel = openpyxl.load_workbook(GLOBAL_VAR["EXCEL_PATH"])  # 加载excel
+    sheet = excel.worksheets[0]  # 表
+    excelLine = 2  # excel行
+    #
+    codeLine = 0  # 代码行数
+    codeStatement = ""  # 代码
+    suspicious = 0  # 可疑度
+    accuracy = 0  # 是否为真实缺陷
+    #
+    shutil.copyfile(GLOBAL_VAR['CSV_PATH'],
+                    GLOBAL_VAR['CSV_PATH'][:-4]+'backups.csv')
+    # print(GLOBAL_VAR['CSV_PATH'][:-4]+'backups.json')
+    #
+    while True:
+        if sheet.cell(excelLine, 1).value != None:
+            GLOBAL_VAR["JAVA_PATH"] = GLOBAL_VAR["CODE_MAIN_PATH"]+'/' + \
+                str(sheet.cell(excelLine, 1).value).replace(".", "/")+'.java'
+            GLOBAL_VAR["JSON_PATH"] = GLOBAL_VAR["CODE_MAIN_PATH"]+'/' + \
+                str(sheet.cell(excelLine, 1).value).replace(".", "/")+'.json'
+            codeLine = sheet.cell(excelLine, 2).value
+            codeStatement = sheet.cell(excelLine, 3).value
+            suspicious = sheet.cell(excelLine, 4).value
+            accuracy = sheet.cell(excelLine, 5).value
+            #
+            get_code_element(codeLine, codeStatement)  # 解析
+            if GLOBAL_VAR['resultDict'] == []:
+                print('''\033[31m
+<------error------>
+java_path -> %s
+json_path -> %s
+codeLine -> %s
+codeStatement -> %s
+<------error------>
+\033[0m''' % (GLOBAL_VAR["JAVA_PATH"],GLOBAL_VAR["JSON_PATH"], str(codeLine), codeStatement))
+            else:
+                astResultDict = get_data_for_csv(
+                    GLOBAL_VAR['resultDict'], codeLine, codeStatement)
+                csvFile = open(GLOBAL_VAR['CSV_PATH'],
+                               'a', encoding="utf-8", newline="")
+                csvWriter = csv.writer(csvFile)
+                csvWriter.writerow(['defect4j', 'lang', str(sheet.cell(excelLine, 1).value).replace(".", "/"), GLOBAL_VAR['P_NUMBER'], codeLine, codeStatement, astResultDict['varTotal'], astResultDict['optTotal'], astResultDict['array'], astResultDict['bracketDepth'],
+                                    astResultDict['bracketTotal'], astResultDict['keywordTotal'], astResultDict['methodTotal'], astResultDict['typeTotal'], astResultDict['logic'], astResultDict['lengthEle'], astResultDict['lengthWord'], astResultDict['depth'], suspicious, accuracy])
+                csvFile.close()
+            #
+            excelLine += 1
+        else:
+            break
+    #
