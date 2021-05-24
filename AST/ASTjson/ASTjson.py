@@ -1,16 +1,19 @@
 '''
 Author: your name
 Date: 2021-05-20 14:47:36
-LastEditTime: 2021-05-22 10:43:23
+LastEditTime: 2021-05-24 10:35:52
 Description: file Statement
 '''
 import json
 import copy
 import re
 import csv
+import openpyxl
 
 GLOBAL_VAR = {
     "AST_KEYWORD_LIST": ["identifier", "value", "keyword", "escapedValue", "operator"],
+    "CODE_MAIN_PATH": "/Users/lvlaxjh/code/dataset/d4j/lang_1_buggy/src/main/java",
+    "EXCEL_PATH":"/Users/lvlaxjh/code/CBFL/Data/excels_lang/DStar/lang-1/lang1.xlsx",
     "JAVA_PATH": "/Users/lvlaxjh/code/dataset/d4j/lang_1_buggy/src/main/java/org/apache/commons/lang3/StringUtils.java",
     "JSON_PATH": "/Users/lvlaxjh/code/CBFL/AST/EclipseAST/resultJson/result.json",  # json文件路径
     "CSV_PATH": "/Users/lvlaxjh/code/CBFL/AST/test.csv",
@@ -195,12 +198,28 @@ def get_data_for_csv(resultDict, targetCodeLine, codeStatement):  # resultDict,�
     return csvRes
 # csv存储结构-end
 
+# def run_java_get_json():
+
+
+
 
 if __name__ == "__main__":
+    excel = openpyxl.load_workbook(GLOBAL_VAR["EXCEL_PATH"])#加载excel
+    sheet = excel.worksheets[0]#表
+    line = 2#行
     codeLine = 171
     codeStatement = "    private static final int PAD_LIMIT = 8192;"
     suspicious = 0.707106781
     accuracy = 1
+    # while True:
+    #     if sheet.cell(line,1).value !=None:
+    #         GLOBAL_VAR["JAVA_PATH"] = GLOBAL_VAR["CODE_MAIN_PATH"]+'/'+str(sheet.cell(line, 1).value).replace(".", "/")+'.java'
+    #         codeLine = sheet.cell(line, 2).value
+    #         codeStatement = sheet.cell(line, 3).value
+    #         suspicious = sheet.cell(line, 4).value
+    #         accuracy = sheet.cell(line, 5).value
+    #     else:
+    #         break
     get_code_element(codeLine, codeStatement)
     print('codeLine : ' + str(codeLine))
     print('codeStatement : ' + codeStatement)

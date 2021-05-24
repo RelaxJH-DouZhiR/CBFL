@@ -64,7 +64,6 @@ public class App {
 		BufferedWriter out = new BufferedWriter(new FileWriter(MAIN_PATH+ JAVA_FILE+".json"));
 		out.write(message);
 		out.close();
-		System.out.println(JAVA_FILE + " <---> finish");
 	}
 
 	private static void ast(final String file, final String cmd) throws IOException {
