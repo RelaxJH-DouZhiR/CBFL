@@ -49,8 +49,8 @@ public class App {
 
 	public static void main(final String[] args) throws Exception {
 		// String JAVA_PATH = ""
-		String MAIN_PATH = "/Users/lvlaxjh/code/dataset/d4j/lang_4_buggy/src/main/java/org/apache/commons/lang3/text/translate/";
-		String JAVA_FILE = "LookupTranslator";
+		String MAIN_PATH = "/Users/lvlaxjh/code/dataset/Data/excels_time/DStar/time-17/org/joda/time/tz/";
+		String JAVA_FILE = "DefaultNameProvider";
 		// STRING TARGET_FILE = "NumberUtils";
 		ByteArrayOutputStream baoStream = new ByteArrayOutputStream(1024);
 		PrintStream cacheStream = new PrintStream(baoStream);

@@ -1,7 +1,7 @@
 '''
 Author: your name
 Date: 2021-05-20 14:47:36
-LastEditTime: 2021-05-24 14:52:40
+LastEditTime: 2021-05-25 11:17:08
 Description: file Statement
 '''
 import json
@@ -13,19 +13,21 @@ import shutil
 import sys
 import openpyxl
 import os
-
+ids = "17"
+projects = "time"
 GLOBAL_VAR = {
     # AST中关键字
     # AST关键字
-    "AST_KEYWORD_LIST": ["identifier", "value", "keyword", "escapedValue", "operator"],
+    "AST_KEYWORD_LIST": ["identifier", "value", "keyword", "escapedValue", "operator", "booleanValue","expression"],
     # 原java文件的路径 ***
-    "CODE_MAIN_PATH": "/Users/lvlaxjh/code/dataset/d4j/lang_4_buggy/src/main/java",
+    "CODE_MAIN_PATH": "/Users/lvlaxjh/code/dataset/Data/excels_%s/DStar/%s-%s" % (projects,projects, ids),
     # 读取的excel文件路径 ***
-    "EXCEL_PATH": "/Users/lvlaxjh/code/CBFL/Data/excels_lang/DStar/lang-4/lang4.xlsx",
-    "P_NUMBER": "13",  # 想不编号 ***
+    "EXCEL_PATH": "/Users/lvlaxjh/code/CBFL/Data/excels_%s/DStar/%s-%s/%s%s.xlsx" % (projects, projects, ids, projects, ids),
+    "P_NUMBER": ids,  # 编号 ***
+    "project": projects,  # 项目 ***
     "JAVA_PATH": "",
     "JSON_PATH": "",  # AST树json文件路径
-    "CSV_PATH": "/Users/lvlaxjh/code/CBFL/AST/test.csv",  # 数据机csv路径
+    "CSV_PATH": "/Users/lvlaxjh/code/CBFL/AST/data.csv",  # 数据机csv路径
     "ASTDict": {},  # AST树-json转为字典
     "resultDict": [],  # 结果字典
     #
@@ -73,7 +75,7 @@ def get_code_recursion(recItem, nodeStack, targetCodeLine, codeStatement):  # �
             nodeStack.append(recItem['node'])  # 父节点入栈
         if 'node' in recItem.keys() and recItem['node_line'] == targetCodeLine:
             for i in GLOBAL_VAR['AST_KEYWORD_LIST']:
-                if i in recItem.keys() and recItem[i] in codeStatement:
+                if i in recItem.keys() and str(recItem[i]) in codeStatement:
                     nodeDice_TEM = {
                         "code": recItem[i],
                         "code_line": recItem['node_line'],
@@ -122,9 +124,9 @@ def get_logic_word(codeStatement):  # 代码内容（返回：bool是否包含�
     for n in logicList:
         pattern = re.compile(n)   # 模式
         for i in pattern.finditer(codeStatement):
-            if i.start() > 0 and (codeStatement[i.start()-1].isdigit() or codeStatement[i.start()-1].isalpha() or codeStatement[i.start()+len(n)].isdigit() or codeStatement[i.start()+len(n)].isalpha()):
+            if i.start() > 0 and (codeStatement[i.start()-1].isdigit() or codeStatement[i.start()-1].isalpha()):
                 return False
-            elif codeStatement[i.start()+len(n)].isdigit() or codeStatement[i.start()+len(n)].isalpha():
+            elif (i.start()+len(n)) > len(n) or ((i.start()+len(n)) < len(n) and codeStatement[i.start()+len(n)].isdigit() or codeStatement[i.start()+len(n)].isalpha()):
                 return False
             else:
                 return True
@@ -139,9 +141,9 @@ def get_keyword(codeStatement):  # 代码内容（返回：关键字数量）
     for n in keywordList:
         pattern = re.compile(n)   # 模式
         for i in pattern.finditer(codeStatement):
-            if i.start() > 0 and (codeStatement[i.start()-1].isdigit() or codeStatement[i.start()-1].isalpha() or codeStatement[i.start()+len(n)].isdigit() or codeStatement[i.start()+len(n)].isalpha()):
+            if i.start() > 0 and (codeStatement[i.start()-1].isdigit() or codeStatement[i.start()-1].isalpha()):
                 pass
-            elif codeStatement[i.start()+len(n)].isdigit() or codeStatement[i.start()+len(n)].isalpha():
+            elif (i.start()+len(n)) > len(n) or ((i.start()+len(n)) < len(n) and codeStatement[i.start()+len(n)].isdigit() or codeStatement[i.start()+len(n)].isalpha()):
                 pass
             else:
                 total += 1
@@ -212,7 +214,7 @@ def get_data_for_csv(resultDict, targetCodeLine, codeStatement):  # resultDict,�
         if i['father_node'][len(i['father_node'])-1] == 'SimpleName' and (i['father_node'][len(i['father_node'])-2] == 'ArrayCreation' or i['father_node'][len(i['father_node'])-2] == 'ArrayAccess'):  # 数组
             csvRes['array'] = 1
             continue
-        if i['father_node'][len(i['father_node'])-1] == 'SimpleName':  # 变量,优先级最低
+        if i['father_node'][len(i['father_node'])-1] == 'SimpleName' or i['father_node'][len(i['father_node'])-1] == 'booleanValue':  # 变量,优先级最低
             csvRes['varTotal'] += 1
     return csvRes
 # csv存储结构-end
@@ -272,10 +274,11 @@ if __name__ == "__main__":
     suspicious = 0  # 可疑度
     accuracy = 0  # 是否为真实缺陷
     #
+    
     shutil.copyfile(GLOBAL_VAR['CSV_PATH'],
                     GLOBAL_VAR['CSV_PATH'][:-4]+'backups.csv')
-    # print(GLOBAL_VAR['CSV_PATH'][:-4]+'backups.json')
     #
+    print(" --- csv start ---")
     while True:
         if sheet.cell(excelLine, 1).value != None:
             GLOBAL_VAR["JAVA_PATH"] = GLOBAL_VAR["CODE_MAIN_PATH"]+'/' + \
@@ -296,18 +299,21 @@ json_path -> %s
 codeLine -> %s
 codeStatement -> %s
 <------error------>
-\033[0m''' % (GLOBAL_VAR["JAVA_PATH"],GLOBAL_VAR["JSON_PATH"], str(codeLine), codeStatement))
+\033[0m''' % (GLOBAL_VAR["JAVA_PATH"], GLOBAL_VAR["JSON_PATH"], str(codeLine), codeStatement))
             else:
                 astResultDict = get_data_for_csv(
                     GLOBAL_VAR['resultDict'], codeLine, codeStatement)
                 csvFile = open(GLOBAL_VAR['CSV_PATH'],
                                'a', encoding="utf-8", newline="")
                 csvWriter = csv.writer(csvFile)
-                csvWriter.writerow(['defect4j', 'lang', str(sheet.cell(excelLine, 1).value).replace(".", "/"), GLOBAL_VAR['P_NUMBER'], codeLine, codeStatement, astResultDict['varTotal'], astResultDict['optTotal'], astResultDict['array'], astResultDict['bracketDepth'],
+                csvWriter.writerow(['defect4j', GLOBAL_VAR['project'], str(sheet.cell(excelLine, 1).value).replace(".", "/"), GLOBAL_VAR['P_NUMBER'], codeLine, codeStatement, astResultDict['varTotal'], astResultDict['optTotal'], astResultDict['array'], astResultDict['bracketDepth'],
                                     astResultDict['bracketTotal'], astResultDict['keywordTotal'], astResultDict['methodTotal'], astResultDict['typeTotal'], astResultDict['logic'], astResultDict['lengthEle'], astResultDict['lengthWord'], astResultDict['depth'], suspicious, accuracy])
                 csvFile.close()
+                GLOBAL_VAR['resultDict'] = []
             #
             excelLine += 1
+
         else:
+            print(" --- csv end ---")
             break
     #

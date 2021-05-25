@@ -106,8 +106,9 @@ public class JSONStyleASTPrinter extends Indenter implements IASTPrinter {
 		}
 
 		printer.print(getIndentString() + "\"" + name + "\"" + ": "
-				+ (value == null || isJsonAllowedType(value.getClass()) ? value
-						: "\"" + StringEscapeUtils.escapeJson(value.toString()) + "\""));
+				+ "\"" +(value == null || isJsonAllowedType(value.getClass()) ? value
+						: StringEscapeUtils.escapeJson(value.toString()))
+				+ "\"");
 	}
 
 	public void startPrint() {
