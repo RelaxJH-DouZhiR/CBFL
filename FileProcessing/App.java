@@ -49,8 +49,8 @@ public class App {
 
 	public static void main(final String[] args) throws Exception {
 		// String JAVA_PATH = ""
-		String MAIN_PATH = "/Users/lvlaxjh/code/dataset/Data/excels_time/DStar/time-17/org/joda/time/tz/";
-		String JAVA_FILE = "DefaultNameProvider";
+		String MAIN_PATH = "/Users/lvlaxjh/code/dataset/d4j/lang_1_buggy/src/main/java/org/apache/commons/lang3/";
+		String JAVA_FILE = "StringUtils";
 		// STRING TARGET_FILE = "NumberUtils";
 		ByteArrayOutputStream baoStream = new ByteArrayOutputStream(1024);
 		PrintStream cacheStream = new PrintStream(baoStream);
@@ -64,7 +64,6 @@ public class App {
 		BufferedWriter out = new BufferedWriter(new FileWriter(MAIN_PATH+ JAVA_FILE+".json"));
 		out.write(message);
 		out.close();
-		System.out.println(JAVA_FILE + " <---> finish");
 	}
 
 	private static void ast(final String file, final String cmd) throws IOException {
