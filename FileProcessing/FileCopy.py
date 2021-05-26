@@ -1,9 +1,9 @@
 import openpyxl
 import shutil
 import os
-CODE_FILE_PATH= r'D:\GithubDeskTop\CBFL\Data\lang-direct\lang-direct\lang-63\src\java'
-EXCEL_FILE_PATH = r'D:\GithubDeskTop\CBFL\Data\excels_lang\MUSE\lang63.xlsx'
-Target_FILE_PATH = r'D:\GithubDeskTop\CBFL\Data\excels_lang\MUSE\lang-63'
+CODE_FILE_PATH= r'D:\GithubDeskTop\CBFL\Data\lang-direct\lang-direct\lang-37\src\java'
+EXCEL_FILE_PATH = r'D:\GithubDeskTop\CBFL\Data\excels_lang\MUSE\lang37.xlsx'
+Target_FILE_PATH = r'D:\GithubDeskTop\CBFL\Data\excels_lang\MUSE\lang-37'
 
 # create the folders if not already exists
 os.makedirs(Target_FILE_PATH)
