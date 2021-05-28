@@ -1,7 +1,7 @@
 '''
 Author: your name
 Date: 2021-05-20 14:47:36
-LastEditTime: 2021-05-25 11:17:08
+LastEditTime: 2021-05-28 10:20:56
 Description: file Statement
 '''
 import json
@@ -14,20 +14,22 @@ import sys
 import openpyxl
 import os
 ids = "17"
-projects = "time"
+projects = "chart"
 GLOBAL_VAR = {
     # AST中关键字
     # AST关键字
-    "AST_KEYWORD_LIST": ["identifier", "value", "keyword", "escapedValue", "operator", "booleanValue","expression"],
+    "AST_KEYWORD_LIST": ["identifier", "value", "keyword", "escapedValue", "operator", "booleanValue", "expression"],
     # 原java文件的路径 ***
-    "CODE_MAIN_PATH": "/Users/lvlaxjh/code/dataset/Data/excels_%s/DStar/%s-%s" % (projects,projects, ids),
+    # "CODE_MAIN_PATH": "/Users/lvlaxjh/code/dataset/Data/excels_%s/DStar/%s-%s" % (projects, projects, ids),
+    "CODE_MAIN_PATH": "/Users/lvlaxjh/code/dataset/Data/excels_%s/DStar/" % (projects),
     # 读取的excel文件路径 ***
-    "EXCEL_PATH": "/Users/lvlaxjh/code/CBFL/Data/excels_%s/DStar/%s-%s/%s%s.xlsx" % (projects, projects, ids, projects, ids),
+    # "EXCEL_PATH": "/Users/lvlaxjh/code/CBFL/Data/excels_%s/DStar/%s-%s/%s%s.xlsx" % (projects, projects, ids, projects, ids),
+    "EXCEL_PATH": "/Users/lvlaxjh/code/CBFL/data/chart.xlsx",
     "P_NUMBER": ids,  # 编号 ***
     "project": projects,  # 项目 ***
     "JAVA_PATH": "",
     "JSON_PATH": "",  # AST树json文件路径
-    "CSV_PATH": "/Users/lvlaxjh/code/CBFL/AST/data.csv",  # 数据机csv路径
+    "CSV_PATH": "/Users/lvlaxjh/code/CBFL/data/chart_data.csv",  # 数据集csv路径
     "ASTDict": {},  # AST树-json转为字典
     "resultDict": [],  # 结果字典
     #
@@ -239,7 +241,6 @@ def run_java():
         line += 1
 
     for i in range(len(javaFileList)):
-        # print(javaFileList)
         paths = ''
         for j in javaFileList[i].split('/')[:-1]:
             paths += j
@@ -263,7 +264,7 @@ def run_java():
 
 if __name__ == "__main__":
     #
-    run_java()
+    # run_java()
     #
     excel = openpyxl.load_workbook(GLOBAL_VAR["EXCEL_PATH"])  # 加载excel
     sheet = excel.worksheets[0]  # 表
@@ -273,22 +274,28 @@ if __name__ == "__main__":
     codeStatement = ""  # 代码
     suspicious = 0  # 可疑度
     accuracy = 0  # 是否为真实缺陷
+    pid = 0  # 项目id
     #
-    
     shutil.copyfile(GLOBAL_VAR['CSV_PATH'],
-                    GLOBAL_VAR['CSV_PATH'][:-4]+'backups.csv')
+                    GLOBAL_VAR['CSV_PATH'][:-4]+'_backups.csv')  # 备份csv
     #
     print(" --- csv start ---")
+    csvFile = open(GLOBAL_VAR['CSV_PATH'], 'w', encoding="utf-8", newline="")
+    csvWriter = csv.writer(csvFile)
+    csvWriter.writerow(['dataset', 'project', 'pPath', 'pId', 'codeLine', 'statement', 'varTotal', 'optTotal', 'array', 'bracketDepth',
+                                   'bracketTotal', 'keywordTotal', 'methodTotal', 'typeTotal', 'logic', 'lengthEle', 'lengthWord', 'depth', 'suspicious', 'accuracy'])
+
     while True:
         if sheet.cell(excelLine, 1).value != None:
-            GLOBAL_VAR["JAVA_PATH"] = GLOBAL_VAR["CODE_MAIN_PATH"]+'/' + \
-                str(sheet.cell(excelLine, 1).value).replace(".", "/")+'.java'
-            GLOBAL_VAR["JSON_PATH"] = GLOBAL_VAR["CODE_MAIN_PATH"]+'/' + \
-                str(sheet.cell(excelLine, 1).value).replace(".", "/")+'.json'
             codeLine = sheet.cell(excelLine, 2).value
             codeStatement = sheet.cell(excelLine, 3).value
             suspicious = sheet.cell(excelLine, 4).value
             accuracy = sheet.cell(excelLine, 5).value
+            pid = sheet.cell(excelLine, 6).value
+            GLOBAL_VAR["JAVA_PATH"] = GLOBAL_VAR["CODE_MAIN_PATH"] + '%s-%s/' % (
+                projects, pid)+str(sheet.cell(excelLine, 1).value).replace(".", "/")+'.java'
+            GLOBAL_VAR["JSON_PATH"] = GLOBAL_VAR["CODE_MAIN_PATH"] + '%s-%s/' % (
+                projects, pid)+str(sheet.cell(excelLine, 1).value).replace(".", "/")+'.json'
             #
             get_code_element(codeLine, codeStatement)  # 解析
             if GLOBAL_VAR['resultDict'] == []:
@@ -303,12 +310,11 @@ codeStatement -> %s
             else:
                 astResultDict = get_data_for_csv(
                     GLOBAL_VAR['resultDict'], codeLine, codeStatement)
-                csvFile = open(GLOBAL_VAR['CSV_PATH'],
-                               'a', encoding="utf-8", newline="")
-                csvWriter = csv.writer(csvFile)
-                csvWriter.writerow(['defect4j', GLOBAL_VAR['project'], str(sheet.cell(excelLine, 1).value).replace(".", "/"), GLOBAL_VAR['P_NUMBER'], codeLine, codeStatement, astResultDict['varTotal'], astResultDict['optTotal'], astResultDict['array'], astResultDict['bracketDepth'],
+
+                # csvWriter = csv.writer(csvFile)
+
+                csvWriter.writerow(['defect4j', GLOBAL_VAR['project'], str(sheet.cell(excelLine, 1).value).replace(".", "/"), pid, codeLine, codeStatement, astResultDict['varTotal'], astResultDict['optTotal'], astResultDict['array'], astResultDict['bracketDepth'],
                                     astResultDict['bracketTotal'], astResultDict['keywordTotal'], astResultDict['methodTotal'], astResultDict['typeTotal'], astResultDict['logic'], astResultDict['lengthEle'], astResultDict['lengthWord'], astResultDict['depth'], suspicious, accuracy])
-                csvFile.close()
                 GLOBAL_VAR['resultDict'] = []
             #
             excelLine += 1
@@ -317,3 +323,4 @@ codeStatement -> %s
             print(" --- csv end ---")
             break
     #
+    csvFile.close()

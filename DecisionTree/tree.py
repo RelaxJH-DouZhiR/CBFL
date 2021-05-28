@@ -1,7 +1,7 @@
 '''
 Author: your name
 Date: 2021-05-25 18:47:20
-LastEditTime: 2021-05-26 14:28:19
+LastEditTime: 2021-05-28 10:38:22
 Description: 决策🌲
 '''
 # from numpy import result_type
@@ -13,42 +13,85 @@ import graphviz  # 绘图
 from sklearn.tree import DecisionTreeClassifier  # 决策树
 from joblib import dump, load
 
-CSV_PATH = "/Users/lvlaxjh/code/CBFL/AST/data.csv"  # csv路径
-data = pd.read_csv(CSV_PATH)  # 读取csv
-x = data.iloc[:, [4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]]  # 取训练数据
-y = data['accuracy']  # 取样本类标签
-x_train, x_test, y_train, y_test = train_test_split(
-    x, y, test_size=0.1)  # 数据集划分，生成训练集和测试集
+GLOBAL_VAR = {
+    'TRAIN_CSV_PATH': "/Users/lvlaxjh/code/CBFL/data/chart_data_train.csv",  # 训练集csv路径
+    'TEST_CSV_PATH': "/Users/lvlaxjh/code/CBFL/data/chart_data_test.csv",  # 测试集csv路径
+    'MODEL_SAVE_PATH': 'DecisionTree/res/',  # 模型保存路径
+    'TREE_PDF_SAVE_PATH': 'DecisionTree/res/',  # 绘图保存路径
+    'MODEL_PATH': '/Users/lvlaxjh/code/CBFL/DecisionTree/res/tree.joblib',  # 模型路径
+}
 
-scoreDict = {}
-decTreeClass = DecisionTreeClassifier()  # 实例化决策树
-bestNum = 0
-bestScore = 0
-# decTreeClass = load('DecisionTree/tree.joblib')
-for i in range(10):
-    kf = KFold(n_splits=10, shuffle=True)  # k折交叉验证
-    for train_index, test_index in kf.split(x):
-        x_train = x[x.index.isin(train_index)]
-        x_test = x[x.index.isin(test_index)]
-        y_train = y[y.index.isin(train_index)]
-        y_test = y[y.index.isin(test_index)]
-        #
-        decTreeClass = decTreeClass.fit(x_train, y_train)  # 输入训练集
-        # print(decTreeClass.predict(x_test))
-    result = decTreeClass.score(x_test, y_test)  # 测试集
-    print('%s score : %s' % (str(i), str(result)))
-    scoreDict[str(i)] = str(result)
-    dump(decTreeClass, "DecisionTree/m/tree%s.joblib"%(str(i)))
-    if result>bestScore:
-        bestScore = result
-        bestNum = i
-# 绘图-start
-# iris = load_iris()
+
+def draw_tree(treeModel, feature_names, class_names, savePath):
     dot_data = tree.export_graphviz(
-        decTreeClass, out_file=None, feature_names=["codeLine", 'varTotal', 'optTotal', 'array', 'bracketDepth', 'bracketTotal', 'keywordTotal', 'methodTotal', 'typeTotal', 'logic', 'lengthEle', 'lengthWord', 'depth'], class_names=['T', 'F'], filled=True, rounded=True, special_characters=True)
+        treeModel, out_file=None, feature_names=feature_names, class_names=class_names, filled=True, rounded=True, special_characters=True)
     graph = graphviz.Source(dot_data)
-    graph.render("DecisionTree/m/decTreeClass%s"%(str(i)))
-# 绘图-end
-# dump(decTreeClass, "tree.joblib")
-print('bestNumber : ' + str(bestNum))
-print('bestScore : ' + str(bestScore))
+    graph.render(savePath)
+
+
+def get_best_tree():  # 训练决策树
+    global GLOBAL_VAR
+    data = pd.read_csv(GLOBAL_VAR['TRAIN_CSV_PATH'])  # 读取csv
+    x = data.iloc[:, [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17]]  # 取训练数据
+    y = data['accuracy']  # 取样本类标签
+
+
+    scoreList = []
+    bestNum = 0
+    bestScore = 0
+    # decTreeClass = load('DecisionTree/tree.joblib')
+    for i in range(10):
+        # 实例化决策树
+        # decTreeClass = DecisionTreeClassifier(criterion='gini', splitter='best', max_depth=None)
+        decTreeClass = DecisionTreeClassifier()
+        # x_train , x_test, y_train, y_test = train_test_split(
+        #     x, y, test_size=0.2)  # 数据集划分，生成训练集和测试集
+        kf = KFold(n_splits=10, shuffle=True)  # k折交叉验证
+        for train_index, test_index in kf.split(x):
+            x_train = x[x.index.isin(train_index)]
+            x_test = x[x.index.isin(test_index)]
+            y_train = y[y.index.isin(train_index)]
+            y_test = y[y.index.isin(test_index)]
+            #
+            decTreeClass = decTreeClass.fit(x_train, y_train)  # 输入训练集
+        decTreeClass = decTreeClass.fit(x_train, y_train)  # 输入训练集
+        result = decTreeClass.score(x_test, y_test)  # 测试集
+        print('%s score : %s' % (str(i),str(result)))
+        scoreList.append({
+            'score': str(result),
+            'tree':decTreeClass,
+        })
+        if result > bestScore:
+            bestScore = result
+            bestNum = i
+    print(scoreList)
+    dump(scoreList[bestNum]['tree'],
+            GLOBAL_VAR['MODEL_SAVE_PATH']+"tree.joblib")
+    draw_tree(scoreList[bestNum]['tree'], ['varTotal', 'optTotal', 'array', 'bracketDepth', 'bracketTotal',
+            'keywordTotal', 'methodTotal', 'typeTotal', 'logic', 'lengthEle', 'depth'], ['1', '0'], GLOBAL_VAR['TREE_PDF_SAVE_PATH']+"tree")
+    print('bestNumber : ' + str(bestNum))
+    print('bestScore : ' + str(bestScore))
+    return result
+
+
+def predict_model():  # 预测
+    global GLOBAL_VAR
+    data = pd.read_csv(GLOBAL_VAR['TEST_CSV_PATH'])  # 读取csv
+    x = data.iloc[:, [6, 7, 8, 9, 10, 11, 12, 13, 14, 15,  17]]  # 测试数据
+    # print(x.head(10))
+    decTreeClass = load(GLOBAL_VAR['MODEL_PATH'])
+    predictRes = decTreeClass.predict(x)
+    predictResList = decTreeClass.predict_proba(x)
+    print(predictRes)
+    print(predictResList)
+    for i in range(len(predictRes)):
+        if predictRes[i] == 1:
+            print(i+1)
+            print(predictResList[i])
+    # print(predictResList)
+    return predictRes, predictResList
+
+
+if __name__ == "__main__":
+    # get_best_tree()
+    predict_model()
