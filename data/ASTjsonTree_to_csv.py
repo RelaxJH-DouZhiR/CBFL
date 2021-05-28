@@ -1,8 +1,8 @@
 '''
 Author: your name
 Date: 2021-05-20 14:47:36
-LastEditTime: 2021-05-28 10:20:56
-Description: file Statement
+LastEditTime: 2021-05-28 14:51:14
+Description: 根据excel生成复杂度数据集csv
 '''
 import json
 import copy
@@ -14,7 +14,7 @@ import sys
 import openpyxl
 import os
 ids = "17"
-projects = "chart"
+projects = "time"  # ***
 GLOBAL_VAR = {
     # AST中关键字
     # AST关键字
@@ -24,12 +24,13 @@ GLOBAL_VAR = {
     "CODE_MAIN_PATH": "/Users/lvlaxjh/code/dataset/Data/excels_%s/DStar/" % (projects),
     # 读取的excel文件路径 ***
     # "EXCEL_PATH": "/Users/lvlaxjh/code/CBFL/Data/excels_%s/DStar/%s-%s/%s%s.xlsx" % (projects, projects, ids, projects, ids),
-    "EXCEL_PATH": "/Users/lvlaxjh/code/CBFL/data/chart.xlsx",
+    "EXCEL_PATH": "/Users/lvlaxjh/code/CBFL/data/time/time.xlsx",
     "P_NUMBER": ids,  # 编号 ***
     "project": projects,  # 项目 ***
     "JAVA_PATH": "",
     "JSON_PATH": "",  # AST树json文件路径
-    "CSV_PATH": "/Users/lvlaxjh/code/CBFL/data/chart_data.csv",  # 数据集csv路径
+    # 数据集csv路径
+    "CSV_PATH": "/Users/lvlaxjh/code/CBFL/data/%s/%s_data.csv" % (projects, projects),
     "ASTDict": {},  # AST树-json转为字典
     "resultDict": [],  # 结果字典
     #
