@@ -1,7 +1,7 @@
 '''
 Author: your name
 Date: 2021-05-25 18:47:20
-LastEditTime: 2021-05-28 17:27:02
+LastEditTime: 2021-05-30 22:00:24
 Description: 决策🌲
 '''
 # from numpy import result_type
@@ -16,8 +16,8 @@ from imblearn.over_sampling import SMOTE
 from joblib import dump, load
 
 GLOBAL_VAR = {
-    'TRAIN_CSV_PATH': "/Users/lvlaxjh/code/CBFL/data/chart/chart_data_train.csv",  # 训练集csv路径
-    'TEST_CSV_PATH': "/Users/lvlaxjh/code/CBFL/data/chart/chart_data_test.csv",  # 测试集csv路径
+    'TRAIN_CSV_PATH': "/Users/lvlaxjh/code/CBFL/data/chart/chart_data_nodup_train.csv",  # 训练集csv路径
+    'TEST_CSV_PATH': "/Users/lvlaxjh/code/CBFL/data/chart/chart_data_nodup_test.csv",  # 测试集csv路径
     'MODEL_SAVE_PATH': 'DecisionTree/res/',  # 模型保存路径
     'TREE_PDF_SAVE_PATH': 'DecisionTree/res/',  # 绘图保存路径
     'MODEL_PATH': '/Users/lvlaxjh/code/CBFL/DecisionTree/res/tree.joblib',  # 模型路径
@@ -36,19 +36,19 @@ def get_best_tree():  # 训练决策树
     data = pd.read_csv(GLOBAL_VAR['TRAIN_CSV_PATH'])  # 读取csv
     x = data.iloc[:, [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17]]  # 取训练数据
     y = data['accuracy']  # 取样本类标签
-    #
-    print(Counter(y))
+    # SMOTE
     smo = SMOTE(random_state=5)
     x, y = smo.fit_resample(x, y)
+    print(Counter(y))
     #
     scoreList = []
     bestNum = 0
     bestScore = 0
-    # decTreeClass = load('DecisionTree/tree.joblib')
     for i in range(10):
         # 实例化决策树
-        # decTreeClass = DecisionTreeClassifier(criterion='gini', splitter='best', max_depth=None)
-        decTreeClass = DecisionTreeClassifier()
+        decTreeClass = DecisionTreeClassifier(
+            criterion='gini', splitter='best', max_depth=5)
+        # decTreeClass = DecisionTreeClassifier()
         # x_train , x_test, y_train, y_test = train_test_split(
         #     x, y, test_size=0.2)  # 数据集划分，生成训练集和测试集
         kf = KFold(n_splits=10, shuffle=True)  # k折交叉验证
@@ -61,19 +61,19 @@ def get_best_tree():  # 训练决策树
             decTreeClass = decTreeClass.fit(x_train, y_train)  # 输入训练集
         decTreeClass = decTreeClass.fit(x_train, y_train)  # 输入训练集
         result = decTreeClass.score(x_test, y_test)  # 测试集
-        print('%s score : %s' % (str(i),str(result)))
+        print('%s score : %s' % (str(i), str(result)))
         scoreList.append({
             'score': str(result),
-            'tree':decTreeClass,
+            'tree': decTreeClass,
         })
         if result > bestScore:
             bestScore = result
             bestNum = i
     # print(scoreList)
     dump(scoreList[bestNum]['tree'],
-            GLOBAL_VAR['MODEL_SAVE_PATH']+"tree.joblib")
+         GLOBAL_VAR['MODEL_SAVE_PATH']+"tree.joblib")
     draw_tree(scoreList[bestNum]['tree'], ['varTotal', 'optTotal', 'array', 'bracketDepth', 'bracketTotal',
-            'keywordTotal', 'methodTotal', 'typeTotal', 'logic', 'lengthEle', 'depth'], ['0', '1'], GLOBAL_VAR['TREE_PDF_SAVE_PATH']+"tree")
+                                           'keywordTotal', 'methodTotal', 'typeTotal', 'logic', 'lengthEle', 'depth'], ['0', '1'], GLOBAL_VAR['TREE_PDF_SAVE_PATH']+"tree")
     print('bestNumber : ' + str(bestNum))
     print('bestScore : ' + str(bestScore))
     return result
