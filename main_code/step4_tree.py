@@ -1,7 +1,7 @@
 '''
 Author: your name
 Date: 2021-05-25 18:47:20
-LastEditTime: 2021-05-30 22:00:24
+LastEditTime: 2021-05-31 09:32:16
 Description: 决策🌲
 '''
 # from numpy import result_type
@@ -16,8 +16,8 @@ from imblearn.over_sampling import SMOTE
 from joblib import dump, load
 
 GLOBAL_VAR = {
-    'TRAIN_CSV_PATH': "/Users/lvlaxjh/code/CBFL/data/chart/chart_data_nodup_train.csv",  # 训练集csv路径
-    'TEST_CSV_PATH': "/Users/lvlaxjh/code/CBFL/data/chart/chart_data_nodup_test.csv",  # 测试集csv路径
+    'TRAIN_CSV_PATH': "/Users/lvlaxjh/code/CBFL/data/lang/lang_data_train.csv",  # 训练集csv路径
+    'TEST_CSV_PATH': "/Users/lvlaxjh/code/CBFL/data/lang/lang_data_test.csv",  # 测试集csv路径
     'MODEL_SAVE_PATH': 'DecisionTree/res/',  # 模型保存路径
     'TREE_PDF_SAVE_PATH': 'DecisionTree/res/',  # 绘图保存路径
     'MODEL_PATH': '/Users/lvlaxjh/code/CBFL/DecisionTree/res/tree.joblib',  # 模型路径
@@ -35,11 +35,12 @@ def get_best_tree():  # 训练决策树
     global GLOBAL_VAR
     data = pd.read_csv(GLOBAL_VAR['TRAIN_CSV_PATH'])  # 读取csv
     x = data.iloc[:, [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17]]  # 取训练数据
+    # print(x.head(5))
     y = data['accuracy']  # 取样本类标签
     # SMOTE
     smo = SMOTE(random_state=5)
     x, y = smo.fit_resample(x, y)
-    print(Counter(y))
+    # print(Counter(y))
     #
     scoreList = []
     bestNum = 0

@@ -1,15 +1,15 @@
 '''
 Author: your name
 Date: 2021-05-28 08:43:20
-LastEditTime: 2021-05-30 21:27:24
+LastEditTime: 2021-05-31 09:38:17
 Description: 数据去重
 '''
 
 import openpyxl
 import csv
 
-EXCEL_PATH = '/Users/lvlaxjh/code/CBFL/data/chart/chart_datatest.xlsx'
-TARGET_CSV_PATH = '/Users/lvlaxjh/code/CBFL/data/chart/chart_datatest1.csv'
+EXCEL_PATH = '/Users/lvlaxjh/code/CBFL/data/lang/lang_data.xlsx'
+TARGET_CSV_PATH = '/Users/lvlaxjh/code/CBFL/data/lang/lang_data.csv'
 
 contentList = []
 
@@ -19,8 +19,9 @@ sheetLine = 2  # sheet 行
 while True:
     if sheet.cell(sheetLine, 1).value != None:
         comList = []
-        for i in range(7,19):
+        for i in range(7,17):
             comList.append(sheet.cell(sheetLine, i).value)
+        comList.append(sheet.cell(sheetLine, 18).value)
         #
         isIns = True
         for i in contentList:
