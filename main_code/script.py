@@ -1,12 +1,22 @@
 '''
 Author: your name
 Date: 2021-06-01 19:58:05
-LastEditTime: 2021-06-02 21:02:44
+LastEditTime: 2021-06-03 21:02:46
 Description: file content
+██████╗  █████╗ ████████╗ █████╗
+██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗
+██║  ██║███████║   ██║   ███████║
+██║  ██║██╔══██║   ██║   ██╔══██║
+██████╔╝██║  ██║   ██║   ██║  ██║
+╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝
 '''
 import openpyxl
 import linecache
 import os
+import csv
+import math
+
+
 import analytic_complexity
 
 
@@ -19,7 +29,7 @@ def get_project_sus(version, project):  # version为in,project为小写
         project.capitalize(), str(version), project.capitalize(), str(version))
     PROJECT_FILE_PATH = '/Volumes/Elements/D4j/%s/%s/gzoltars/%s/%s/Dstar_%s_%s.txt' % (
         project.capitalize(), str(version), project.capitalize(), str(version), project.capitalize(), str(version))  # 原文件
-    #java路径需要修改
+    # java路径需要修改
     CODE_FILE_PATH = '/Volumes/Elements/DSatr/%s-direct/%s-%s/source/' % (
         project, project, str(version))  # java文件父目录
     projectFile = open(PROJECT_FILE_PATH, 'r')  # 项目文件
@@ -35,13 +45,16 @@ def get_project_sus(version, project):  # version为in,project为小写
     excelLine = 2  # excel检索行
     for i in projectFileLineList:
         fileLineContentList = i.rstrip("\n").split('#')
-        #去除$-start
+        # 去除$-start
         if '$' in fileLineContentList[1]:
-            fileLineContentList[1] = fileLineContentList[1][:fileLineContentList[1].find('$')]
-            sheet.cell(excelLine, 1).value = fileLineContentList[1]  # project_path
+            fileLineContentList[1] = fileLineContentList[1][:fileLineContentList[1].find(
+                '$')]
+            # project_path
+            sheet.cell(excelLine, 1).value = fileLineContentList[1]
         else:
-            sheet.cell(excelLine, 1).value = fileLineContentList[1]  # project_path
-        #去除$-end
+            # project_path
+            sheet.cell(excelLine, 1).value = fileLineContentList[1]
+        # 去除$-end
         sheet.cell(excelLine, 2).value = version  # version
         sheet.cell(excelLine, 3).value = fileLineContentList[2]  # lines
         # 获取代码-start
@@ -67,7 +80,7 @@ def get_project_sus(version, project):  # version为in,project为小写
         # 判断该语句是否为真实缺陷-end
         excelLine += 1
     excel.save(TARGET_EXCEL_PATH+project+'-'+str(version)+'.xlsx')
-    print(project+'-'+str(version)+'.xlsx'+' -> ok')
+    # print('step1 get_project_sus '+project+'-'+str(version)+'.xlsx'+' -> ok')
 # 通过txt获取包含可疑度的excel-end
 
 
@@ -76,15 +89,15 @@ def run_java_get_ASTjson(version, project):
     EclipseAST = '/Users/lvlaxjh/code/CBFL/AST/EclipseAST'
     AST_TO_JSON_APP_JAVA = '/Users/lvlaxjh/code/CBFL/AST/EclipseAST/App.java'
     EXCEL_PATH = '/Users/lvlaxjh/code/CBFL/data/%s/%s-%s.xlsx' % (
-        project, project,str(version))#每个版本excel的路径
+        project, project, str(version))  # 每个版本excel的路径
     JAVA_FATHER_PATH = '/Volumes/Elements/DSatr/%s-direct/%s-%s/source/' % (
-        project, project, str(version))#java文件父路径
+        project, project, str(version))  # java文件父路径
     excel = openpyxl.load_workbook(EXCEL_PATH)  # excel文件
     sheet = excel.worksheets[0]  # 表
     line = 2  # sheet 行
     javaFileList = []
     javaFileNames = []
-    #代码文件路径-start
+    # 代码文件路径-start
     while True:
         if sheet.cell(line, 1).value != None:
             filePath = str(sheet.cell(line, 1).value).replace(".", "/")
@@ -94,7 +107,7 @@ def run_java_get_ASTjson(version, project):
         else:
             break
         line += 1
-    #代码文件路径-end
+    # 代码文件路径-end
     for i in range(len(javaFileList)):
         paths = ''
         for j in javaFileList[i].split('/')[:-1]:
@@ -118,18 +131,147 @@ def run_java_get_ASTjson(version, project):
 # 运行java文件生成json的AST树-end
 
 
+# 将可疑度大于1的设置为1-start
+def set_sus_one(version, project):
+    csvSaveFile = open('/Users/lvlaxjh/code/CBFL/data/chart/csv/sus1/%s%s.csv' % (project, str(version)),
+                       'w', encoding="utf-8", newline="")
+    csvWriter = csv.writer(csvSaveFile)
+    csvWriter.writerow(['dataset', 'project', 'path', 'version', 'codeLine', 'statement', 'varTotal', 'optTotal', 'array', 'bracketDepth',
+                                   'bracketTotal', 'keywordTotal', 'methodTotal', 'typeTotal', 'logic', 'lengthEle', 'lengthWord', 'depth', 'suspicious', 'accuracy'])
+
+    with open('/Users/lvlaxjh/code/CBFL/data/%s/csv/%s%s.csv' % (project, project, str(version))) as f:
+        csvFile = csv.reader(f)
+        csvLine = 1  # csv行
+        for row in csvFile:
+            if csvLine != 1:
+                saveLine = row
+                if float(row[18]) > 1:  # 大于1，归为1
+                    saveLine[18] = 1
+                csvWriter.writerow(saveLine)
+            csvLine += 1
+    csvSaveFile.close()
+    print('set_sus_one %s%s.csv -> ok' % (project, str(version)))
+# 将可疑度大于1的设置为1-end
+
+
+# 获取可疑度排名第一并存储-start
+def get_sus_top(version, project, topSusList):
+    with open('/Users/lvlaxjh/code/CBFL/data/%s/csv/sus1/%s%s.csv' % (project, project, str(version))) as f:
+        csvFile = csv.reader(f)
+        csvLine = 1  # csv行
+        sortRow = sorted(list(csvFile)[1:], key=lambda x: float(
+            x[18]), reverse=True)  # 排序行
+        topSus = float(sortRow[0][18])  # 取可疑度最大
+        # 取列表中最大可疑度-start
+        for i in sortRow:
+            if topSus == float(i[18]):
+                topSusList.append(i)
+        # 取列表中最大可疑度-end
+    print('get_sus_top %s%s.csv -> ok' % (project, str(version)))
+
+
+def save_top_sus(topSusList, project):
+    SAVE_CSV = '/Users/lvlaxjh/code/CBFL/data/%s/csv/top_sus_%s.csv' % (
+        project, project)
+    csvFile = open(SAVE_CSV, 'w', encoding="utf-8", newline="")
+    csvWriter = csv.writer(csvFile)
+    csvWriter.writerow(['dataset', 'project', 'path', 'version', 'codeLine', 'statement', 'varTotal', 'optTotal', 'array', 'bracketDepth',
+                                   'bracketTotal', 'keywordTotal', 'methodTotal', 'typeTotal', 'logic', 'lengthEle', 'lengthWord', 'depth', 'suspicious', 'accuracy'])
+    for i in topSusList:
+        csvWriter.writerow(i)
+    csvFile.close()
+# 获取可疑度排名第一并存储-end
+
+
+# 切割数据集用于交叉验证-start
+def cut_data_for_test_train(project):
+    CSV_PATH = '/Users/lvlaxjh/code/CBFL/data/%s/csv/top_sus_%s.csv' % (
+        project, project)
+    # 分了是否为真实i缺陷-start
+    isFaultList = []
+    noFaultList = []
+    csvLine = 1  # csv行
+    with open(CSV_PATH) as f:
+        csvFile = csv.reader(f)
+        for row in csvFile:
+            if csvLine != 1:
+                if str(row[19]) == str(1):
+                    isFaultList.append(row)
+                else:
+                    noFaultList.append(row)
+            csvLine += 1
+    # 分了是否为真实i缺陷-end
+
+    if len(isFaultList) >= 10:
+        k = 10  # 默认10次交叉验证或者更少
+    else:
+        k = len(isFaultList)
+    isFault_step = math.floor(len(isFaultList)/k)  # 交叉验证，真实缺陷个数（步长）
+    noFault_step = math.floor(len(noFaultList)/k)  # 交叉验证，非真实缺陷个数（步长）
+    # 文件保存父路径
+    SAVE_PATH = '/Users/lvlaxjh/code/CBFL/data/%s/csv/traintest/' % (project)
+    isF_flag_TEM = 0
+    noF_flag_TEM = 0
+    for i in range(k):
+        trainList_dataset = []
+        testList_dataset = []
+        # 根据步长和切割生成测试集-start
+        for j in isFaultList[isF_flag_TEM:isF_flag_TEM+isFault_step]:
+            testList_dataset.append(j)  # 真实缺陷
+        isF_flag_TEM = isF_flag_TEM+isFault_step
+        for j in noFaultList[noF_flag_TEM:noF_flag_TEM+noFault_step]:
+            testList_dataset.append(j)  # 非真实缺陷
+        noF_flag_TEM = noF_flag_TEM+noFault_step
+        # 根据步长和切割生成测试集-end
+        # 根据剩下数据生成训练集-start
+        for j in isFaultList:
+            if j not in testList_dataset:
+                trainList_dataset.append(j)
+        for j in noFaultList:
+            if j not in testList_dataset:
+                trainList_dataset.append(j)
+        # 根据剩下数据生成训练集-end
+        csvFiletest = open(SAVE_PATH+'%s-test-%s.csv' %
+                           (project, str(i)), 'w', encoding="utf-8", newline="")
+        csvWritertest = csv.writer(csvFiletest)
+        csvWritertest.writerow(['dataset', 'project', 'path', 'version', 'codeLine', 'statement', 'varTotal', 'optTotal', 'array', 'bracketDepth',
+                                'bracketTotal', 'keywordTotal', 'methodTotal', 'typeTotal', 'logic', 'lengthEle', 'lengthWord', 'depth', 'suspicious', 'accuracy','predict'])
+        for n in testList_dataset:
+            csvWritertest.writerow(n)
+        csvFiletest.close()
+        csvFiletrain = open(SAVE_PATH+'%s-train-%s.csv' %
+                            (project, str(i)), 'w', encoding="utf-8", newline="")
+        csvWritertrain = csv.writer(csvFiletrain)
+        csvWritertrain.writerow(['dataset', 'project', 'path', 'version', 'codeLine', 'statement', 'varTotal', 'optTotal', 'array', 'bracketDepth',
+                                 'bracketTotal', 'keywordTotal', 'methodTotal', 'typeTotal', 'logic', 'lengthEle', 'lengthWord', 'depth', 'suspicious', 'accuracy'])
+
+        for m in trainList_dataset:
+            csvWritertrain.writerow(m)
+        csvFiletrain.close()
+# 切割数据集用于交叉验证-end
 
 
 if __name__ == "__main__":
-    # 通过txt获取包含可疑度的excel-start
-    for i in range(24, 27):#(1，项目总数+1)
-    #     get_project_sus(i, 'chart')
-        run_java_get_ASTjson(i, 'chart')
-        # print('%s%s ---> ok'%('chart',str(i)))
-        analytic_complexity.save_as_csv('/Users/lvlaxjh/code/CBFL/data/chart/chart-%s.xlsx'%(str(i)),
-                        '/Users/lvlaxjh/code/CBFL/data/chart/csv/',
-                        '/Volumes/Elements/DSatr/chart-direct/chart-%s/source/'%(str(i)),
-                        i,'chart')
-    # 通过txt获取包含可疑度的excel-end
-    # ----------------------------------------------------------------
-
+    project = 'chart'
+    topSusList = []
+    # for i in range(1, 24):  # (1，项目总数+1)
+    #     get_project_sus(i, project)  # 找到真实缺陷语句并存储excel,in for
+    #     print(f'step1 get_project_sus {project} {str(i)} -> ok')
+    #     run_java_get_ASTjson(i, project)  # 生成对应文件AST树,in for
+    #     print(f'step2 run_java_get_ASTjson {project} {str(i)} -> ok')
+    #     analytic_complexity.save_as_csv('/Users/lvlaxjh/code/CBFL/data/%s/%s-%s.xlsx' % (project, project, str(i)),
+    #                                     '/Users/lvlaxjh/code/CBFL/data/%s/csv/' % (
+    #                                         project),
+    #                                     '/Volumes/Elements/DSatr/%s-direct/%s-%s/source/' % (
+    #                                         project, project, str(i)),
+    #                                     i, project)  # 计算特征值，并存储,in for
+    #     print(f'step3 ac.save_as_csv {project} {str(i)} -> ok')
+    #     set_sus_one(i, project)  # 将可疑度大与1的设置为1
+    #     print(f'step4 set_sus_one {project} {str(i)} -> ok')
+    #     # 获取可疑度并列排名第一的语句,in for,step1-dont cut
+    #     get_sus_top(i, project, topSusList)
+    #     print(f'step5 get_sus_top {project} {str(i)} -> ok')
+    # save_top_sus(topSusList, project)  # 保存全部定并列第一文件,in for,step2-dont cut
+    # print(f'step6 get_sus_top {project} -> ok')
+    cut_data_for_test_train(project)  # 切割数据集用于交叉验证
+    print(f'step7 cut_data_for_test_train {project} -> ok')

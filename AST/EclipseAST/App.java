@@ -49,8 +49,8 @@ public class App {
 
 	public static void main(final String[] args) throws Exception {
 		// String JAVA_PATH = ""
-		String MAIN_PATH = "/Volumes/Elements/DSatr/chart-direct/chart-24/source/org/jfree/chart/renderer/";
-		String JAVA_FILE = "GrayPaintScale";
+		String MAIN_PATH = "/Volumes/Elements/DSatr/chart-direct/chart-1/source/org/jfree/chart/util/";
+		String JAVA_FILE = "GradientPaintTransformType";
 		// STRING TARGET_FILE = "NumberUtils";
 		ByteArrayOutputStream baoStream = new ByteArrayOutputStream(1024);
 		PrintStream cacheStream = new PrintStream(baoStream);
