@@ -1,7 +1,7 @@
 '''
 Author: your name
 Date: 2021-05-28 08:43:20
-LastEditTime: 2021-05-31 09:38:17
+LastEditTime: 2021-06-01 14:54:38
 Description: 数据去重
 '''
 
@@ -68,22 +68,3 @@ for i in contentList:
             TEM_list.append(val)
     csvWriter.writerow(TEM_list)
 csvFile.close()
-
-# tarExcel = openpyxl.Workbook()
-# tarSheet = tarExcel.worksheets[0]  # 表
-# sheetHead = ['项目路径', '行数', 'statement', 'dstar', 'faulty', 'pid']
-# for i in range(len(sheetHead)):
-#     tarSheet.cell(1, i+1).value = sheetHead[i]
-# sheetLine = 2  # sheet 行
-# for i in contentList:
-#     tarSheet.cell(sheetLine, 1).value = i['path']
-#     tarSheet.cell(sheetLine, 2).value = i['line']
-#     tarSheet.cell(sheetLine, 3).value = i['statement']
-#     tarSheet.cell(sheetLine, 4).value = i['dstar']
-#     tarSheet.cell(sheetLine, 5).value = i['faulty']
-#     tarSheet.cell(sheetLine, 6).value = i['vid']
-#     sheetLine += 1
-# tarExcel.save(TARGET_EXCEL_PATH+EXCEL_NAME)
-# # print(contentList)
-# # for i in range(7,19):
-# #     print(i)

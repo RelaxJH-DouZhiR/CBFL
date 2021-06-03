@@ -1,20 +1,19 @@
 '''
 Author: your name
 Date: 2021-05-28 08:43:20
-LastEditTime: 2021-05-28 14:49:55
+LastEditTime: 2021-06-01 15:05:08
 Description: 将不同版本的数据集合为excel(不去重)
 '''
 
 import openpyxl
 PROJECT_NAME = 'time'
 FATHER_PATH = '/Users/lvlaxjh/code/dataset/Data/excels_time/DStar/'
-TARGET_EXCEL_PATH = '/Users/lvlaxjh/code/CBFL/data/'
+TARGET_EXCEL_PATH = '/Users/lvlaxjh/code/CBFL/data/time1/'
 EXCEL_NAME = PROJECT_NAME+'.xlsx'
 FILE_LIST_VID = [3,6,16,17]
 contentList = []
 
 for i in FILE_LIST_VID:
-    # vId = i
     excel = openpyxl.load_workbook(
         FATHER_PATH+'%s-%s/%s%s.xlsx' % (PROJECT_NAME, str(i), PROJECT_NAME, str(i)))  # 打开excel
     sheet = excel.worksheets[0]  # 表
