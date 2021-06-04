@@ -1,7 +1,7 @@
 '''
 Author: your name
 Date: 2021-05-25 18:47:20
-LastEditTime: 2021-06-04 15:49:47
+LastEditTime: 2021-06-04 15:58:06
 Description: 决策🌲
 ████████╗██████╗ ███████╗███████╗
 ╚══██╔══╝██╔══██╗██╔════╝██╔════╝
@@ -134,4 +134,3 @@ if __name__ == "__main__":
         trueRes = get_true_results(project, i)
         write_res_in_csv(project, i, predictRes)
         get_tp_tn_fp_fn(project, i, predictRes, trueRes)
-# tp tn fp fn
