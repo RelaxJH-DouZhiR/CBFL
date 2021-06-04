@@ -1,7 +1,7 @@
 '''
 Author: your name
 Date: 2021-05-25 18:47:20
-LastEditTime: 2021-06-03 21:12:46
+LastEditTime: 2021-06-04 15:49:47
 Description: 决策🌲
 ████████╗██████╗ ███████╗███████╗
 ╚══██╔══╝██╔══██╗██╔════╝██╔════╝
@@ -20,15 +20,8 @@ from sklearn.tree import DecisionTreeClassifier  # 决策树
 from collections import Counter
 from imblearn.over_sampling import SMOTE
 from joblib import dump, load
+import numpy as np
 import csv
-
-# GLOBAL_VAR = {
-#     'TRAIN_CSV_PATH': "/Users/lvlaxjh/code/CBFL/data/lang/lang_data_train.csv",  # 训练集csv路径
-#     'TEST_CSV_PATH': "/Users/lvlaxjh/code/CBFL/data/lang/lang_data_test.csv",  # 测试集csv路径
-#     'MODEL_SAVE_PATH': 'DecisionTree/res/',  # 模型保存路径
-#     'TREE_PDF_SAVE_PATH': 'DecisionTree/res/',  # 绘图保存路径
-#     'MODEL_PATH': '/Users/lvlaxjh/code/CBFL/DecisionTree/res/tree.joblib',  # 模型路径
-# }
 
 
 def draw_tree(treeModel, feature_names, class_names, savePath):
@@ -38,11 +31,13 @@ def draw_tree(treeModel, feature_names, class_names, savePath):
     graph.render(savePath)
 
 
-def tree(project, id):  # 训练决策树
+def tree(project, id, trainOrModel):  # 训练决策树
     TEST_PATH = '/Users/lvlaxjh/code/CBFL/data/%s/csv/traintest/%s-test-%s.csv' % (
         project, project, id)  # 测试集路径
     TRAIN_PATH = '/Users/lvlaxjh/code/CBFL/data/%s/csv/traintest/%s-train-%s.csv' % (
         project, project, id)  # 训练集路径
+    # 模型存储父路径
+    joblib_SAVE_PATH = f'/Users/lvlaxjh/code/CBFL/data/{project}/csv/traintest/model/'
     # 测试集-start
     test_data = pd.read_csv(TEST_PATH)
     test_x = test_data.iloc[:, [6, 7, 8, 9,
@@ -57,55 +52,86 @@ def tree(project, id):  # 训练决策树
     # 训练集-end
     smo = SMOTE(random_state=1)  # MOTE
     x, y = smo.fit_resample(train_x, train_y)  # 平衡训练数据集
-    decTreeClass = DecisionTreeClassifier(
-        criterion='gini', splitter='best', max_depth=3)  # 决策树模型初始化
+    if trainOrModel == 'train':
+        decTreeClass = DecisionTreeClassifier(
+            criterion='gini', splitter='best', max_depth=3)  # 决策树模型初始化
+    elif trainOrModel == 'model':
+        decTreeClass = load(joblib_SAVE_PATH+f'tree{str(id)}.tree')
     decTreeClass.fit(x, y)  # 拟合模型
-    res = decTreeClass.score(test_x, test_y)  # 预测评分
+    dump(decTreeClass, joblib_SAVE_PATH+f'tree{str(id)}.tree')
+    resScore = decTreeClass.score(test_x, test_y)  # 预测评分
     predictRes = decTreeClass.predict(test_x)  # 预测结果，返回列表
     # predictResList = decTreeClass.predict_proba(test_x)  # 预测结果，返回概率
     predictRes = list(predictRes)  # numpy.array 类型转 list
+    # print(predictRes)
     return predictRes  # list
 
 
-def write_res_in_csv(project, version, resList):  # 用于将预测结果写入数据集
-    CSV_PATH = f'/Users/lvlaxjh/code/CBFL/data/{project}/csv/traintest/{project}-test-{str(version)}.csv'
+# 将预测结果写入数据集 -start
+def write_res_in_csv(project, id, resList):
+    CSV_PATH = f'/Users/lvlaxjh/code/CBFL/data/{project}/csv/traintest/{project}-test-{str(id)}.csv'
     csvLine = 0  # csv行
-    csvHead = []#存储csv文件头
-    saveResList = []#存储所有文件
+    csvHead = []  # 存储csv文件头
+    saveResList = []  # 存储所有文件
     with open(CSV_PATH) as f:
         csvFile = csv.reader(f)
         for row in csvFile:
             if csvLine == 0:
                 csvHead = row
             else:
-                row.append(resList[csvLine-1])
+                row[20] = resList[csvLine-1]
                 saveResList.append(row)
-            csvLine+=1
+            csvLine += 1
     csvFile = open(CSV_PATH, 'w', encoding="utf-8", newline="")
     csvWriter = csv.writer(csvFile)
     csvWriter.writerow(csvHead)
     for i in saveResList:
         csvWriter.writerow(i)
     csvFile.close()
+# 将预测结果写入数据集 -end
+
+
+# 取得真实结果-start
+def get_true_results(project, version):
+    CSV_PATH = f'/Users/lvlaxjh/code/CBFL/data/{project}/csv/traintest/{project}-test-{str(version)}.csv'
+    csvLine = 0  # csv行
+    resList = []
+    with open(CSV_PATH) as f:
+        csvFile = csv.reader(f)
+        for row in csvFile:
+            if csvLine != 0:
+                resList.append(int(row[19]))
+            csvLine += 1
+    return resList
+# 取得真实结果-end
+
+
+def get_tp_tn_fp_fn(project, id, predictRes, trueRes):
+    # TP-start
+    TP = 0
+    TN = 0
+    FP = 0
+    FN = 0
+    for i in range(len(predictRes)):
+        if predictRes[i] == trueRes[i] == 1:
+            TP += 1
+        if predictRes[i] == trueRes[i] == 0:
+            TN += 1
+        if predictRes[i] == 1 and trueRes[i] == 0:
+            FP += 1
+        if predictRes[i] == 0 and trueRes[i] == 1:
+            FN += 1
+    precesion = TP/(TP+FP)
+    recall = TP/(TP+FN)
+    print(f'{project}{id} TP : {TP} TN : {TN} FP : {FP} FN : {FN} precesion : {precesion} recall : {recall}')
+    # TP-end
 
 
 if __name__ == "__main__":
-    project = 'chart'
-    for i in range(8):
-        res = tree(project, i)
-        write_res_in_csv(project, i, res)
-    # get_best_tree()
-    # predictRes, predictResList = predict_model()
-    # resList = []
-    # TEM_num = 1
-    # predictResList = list(predictResList)
-    # for i in predictResList:
-    #     resList.append({
-    #         'id': TEM_num,
-    #         '0': float(list(i)[0]),
-    #         '1': float(list(i)[1]),
-    #     })
-    #     TEM_num+=1
-    # resList.sort(key= lambda x:x['1'],reverse=True)
-    # for i in resList:
-    #     print(i)
+    project = 'lang'
+    for i in range(10):  # *
+        predictRes = tree(project, i, trainOrModel='model')
+        trueRes = get_true_results(project, i)
+        write_res_in_csv(project, i, predictRes)
+        get_tp_tn_fp_fn(project, i, predictRes, trueRes)
+# tp tn fp fn

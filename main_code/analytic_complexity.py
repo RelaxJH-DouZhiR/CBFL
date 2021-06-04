@@ -1,7 +1,7 @@
 '''
 Author: your name
 Date: 2021-06-02 16:15:11
-LastEditTime: 2021-06-02 18:31:32
+LastEditTime: 2021-06-04 10:58:50
 Description: 根据excel解析复杂度存储至csv
 '''
 import json
@@ -47,19 +47,20 @@ def get_code_element(targetCodeLine, codeStatement):  # 目标代码行数，代
 # 递归遍历AST树-start
 def get_code_recursion(recItem, nodeStack, targetCodeLine, codeStatement):  # 树，节点栈，目标代码行数，代码内容
     global resultList
-    AST_KEYWORD_LIST=["identifier", "value", "keyword", "escapedValue", "operator", "booleanValue", "expression"]
+    AST_KEYWORD_LIST = ["identifier", "value", "keyword",
+                        "escapedValue", "operator", "booleanValue", "expression", 'identifier']
     if type(recItem) is dict:  # 字典递归
         if 'node' in recItem.keys():
             nodeStack.append(recItem['node'])  # 父节点入栈
         if 'node' in recItem.keys() and str(recItem['node_line']) == targetCodeLine:
             for i in AST_KEYWORD_LIST:
-                if i in recItem.keys() and str(recItem[i]) in codeStatement:
-                    nodeDice_TEM = {
-                        "code": recItem[i],
-                        "code_line": recItem['node_line'],
-                        "father_node": copy.deepcopy(nodeStack),
-                    }
-                    resultList.append(nodeDice_TEM)
+                    if i in recItem.keys() and str(recItem[i]) in codeStatement:
+                        nodeDice_TEM = {
+                            "code": recItem[i],
+                            "code_line": recItem['node_line'],
+                            "father_node": copy.deepcopy(nodeStack),
+                        }
+                        resultList.append(nodeDice_TEM)
         for key, val in recItem.items():
             if type(val) is dict or type(val) is list:  # 深层递归
                 get_code_recursion(
@@ -196,7 +197,7 @@ def get_data_for_csv(resultList, targetCodeLine, codeStatement):  # resultList,�
 
 # 计算复杂度并存储csv-start-------------------------------------------------------------------
 def save_as_csv(EXCEL_PATH, CSV_FATHER_PATH, CODE_FATHER_PATH, version, project):
-    global resultList,JSON_PATH
+    global resultList, JSON_PATH
     '''
     EXCEL_PATH - excel路径
     CSV_FATHER_PATH - 存储文件csv的父路径
@@ -285,8 +286,8 @@ def save_as_csv(EXCEL_PATH, CSV_FATHER_PATH, CODE_FATHER_PATH, version, project)
                 resultList = []
             #
 
-            print('%s%s - %s -  %s -> ok'%(project,ver,str(sheet.cell(excelLine, 1).value).replace(
-                                        ".", "/"),str(codeLine)))
+            print('%s%s - %s -  %s -> ok' % (project, ver, str(sheet.cell(excelLine, 1).value).replace(
+                ".", "/"), str(codeLine)))
             excelLine += 1
         else:
             break
