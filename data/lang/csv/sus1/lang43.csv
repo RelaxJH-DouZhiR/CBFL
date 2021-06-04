@@ -1,0 +1,607 @@
+dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,logic,lengthEle,lengthWord,depth,suspicious,accuracy
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,112,"        this(pattern, Locale.getDefault(), registry);
+",4,0,0,2,4,0,4,0,0,8,45,4,0.50000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,148,"        ArrayList foundFormats = new ArrayList();
+",2,0,0,1,2,0,0,4,0,6,41,4,0.33333,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,149,"        ArrayList foundDescriptions = new ArrayList();
+",2,0,0,1,2,0,0,4,0,6,46,4,0.33333,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,150,"        StringBuffer stripCustom = new StringBuffer(pattern.length());
+",2,0,0,2,4,0,4,4,0,10,62,4,0.33333,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,152,"        ParsePosition pos = new ParsePosition(0);
+",2,0,0,1,2,0,0,4,0,6,41,4,0.33333,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,153,"        char[] c = pattern.toCharArray();
+",2,0,0,2,4,0,4,0,0,6,33,5,0.33333,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,154,"        int fmtCount = 0;
+",2,0,0,0,0,0,0,0,0,2,17,5,0.33333,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,155,"        while (pos.getIndex() < pattern.length()) {
+",0,1,0,3,7,0,8,0,0,9,43,4,0.33333,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,156,"            switch (c[pos.getIndex()]) {
+",0,0,1,3,7,0,4,0,0,6,28,7,0.33333,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,187,"                stripCustom.append(c[pos.getIndex()]);
+",0,0,1,3,6,0,8,0,0,10,38,8,0.33333,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,188,"                next(pos);
+",0,0,0,1,2,0,4,0,0,4,10,8,0.33333,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,403,"        pos.setIndex(pos.getIndex() + 1);
+",0,1,0,2,4,0,8,0,0,9,33,5,0.33333,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,404,"        return pos;
+",2,0,0,0,0,0,0,0,0,2,11,4,0.33333,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,124,"        super(DUMMY_PATTERN);
+",2,0,0,1,2,0,0,0,0,2,21,4,0.16667,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,125,"        setLocale(locale);
+",0,0,0,1,2,0,4,0,0,4,18,5,0.16667,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,126,"        this.registry = registry;
+",4,0,0,0,0,0,0,0,0,5,25,4,0.16667,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,127,"        applyPattern(pattern);
+",0,0,0,1,2,0,4,0,0,4,22,5,0.16667,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,143,"        if (registry == null) {
+",2,1,0,1,3,0,0,0,0,3,23,4,0.16667,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,144,"            super.applyPattern(pattern);
+",4,0,0,1,2,0,0,0,0,4,28,7,0.16667,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,145,"            toPattern = super.toPattern();
+",4,0,0,1,2,0,0,0,0,5,30,6,0.16667,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,146,"            return;
+",0,0,0,0,0,0,0,0,0,0,7,3,0.16667,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,349,"            super();
+",0,0,0,1,2,0,0,0,0,0,8,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,350,"            chars = str.toCharArray();
+",2,0,0,1,2,0,4,0,0,7,26,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,351,"        }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,363,"            int len = chars.length;
+",6,0,0,0,0,0,0,0,0,6,23,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,364,"            if (pos + len > bufferEnd) {
+",6,2,0,1,3,0,0,0,0,8,28,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,365,"                return 0;
+",0,0,0,0,0,0,0,0,0,0,9,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,367,"            for (int i = 0; i < chars.length; i++, pos++) {
+",12,1,0,1,3,0,0,0,0,15,47,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,368,"                if (chars[i] != buffer[pos]) {
+",0,1,1,3,7,0,0,0,0,9,30,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,369,"                    return 0;
+",0,0,0,0,0,0,0,0,0,0,9,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,372,"            return len;
+",2,0,0,0,0,0,0,0,0,2,11,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,216,"        super();
+",0,0,0,1,2,0,0,0,0,0,8,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,217,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,37,"    private static final StrMatcher COMMA_MATCHER = new CharMatcher(',');
+",2,0,0,1,2,3,0,4,0,10,69,2,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,41,"    private static final StrMatcher TAB_MATCHER = new CharMatcher('\t');
+",2,0,0,1,2,3,0,4,0,10,68,2,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,45,"    private static final StrMatcher SPACE_MATCHER = new CharMatcher(' ');
+",2,0,0,1,2,3,0,4,0,10,69,2,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,50,"    private static final StrMatcher SPLIT_MATCHER = new CharSetMatcher("" \t\n\r\f"".toCharArray());
+",2,0,0,2,4,3,2,4,0,12,94,2,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,54,"    private static final StrMatcher TRIM_MATCHER = new TrimMatcher();
+",2,0,0,1,2,3,0,4,0,9,65,2,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,58,"    private static final StrMatcher SINGLE_QUOTE_MATCHER = new CharMatcher('\'');
+",2,0,0,1,2,3,0,4,0,10,77,2,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,62,"    private static final StrMatcher DOUBLE_QUOTE_MATCHER = new CharMatcher('""');
+",2,0,0,1,2,3,0,4,0,10,76,2,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,66,"    private static final StrMatcher QUOTE_MATCHER = new CharSetMatcher(""'\"""".toCharArray());
+",2,0,0,2,4,3,2,4,0,12,88,2,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,70,"    private static final StrMatcher NONE_MATCHER = new NoMatcher();
+",2,0,0,1,2,3,0,4,0,9,63,2,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,80,"        return COMMA_MATCHER;
+",2,0,0,0,0,0,0,0,0,2,21,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,89,"        return TAB_MATCHER;
+",2,0,0,0,0,0,0,0,0,2,19,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,98,"        return SPACE_MATCHER;
+",2,0,0,0,0,0,0,0,0,2,21,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,108,"        return SPLIT_MATCHER;
+",2,0,0,0,0,0,0,0,0,2,21,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,117,"        return TRIM_MATCHER;
+",2,0,0,0,0,0,0,0,0,2,20,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,126,"        return SINGLE_QUOTE_MATCHER;
+",2,0,0,0,0,0,0,0,0,2,28,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,135,"        return DOUBLE_QUOTE_MATCHER;
+",2,0,0,0,0,0,0,0,0,2,28,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,144,"        return QUOTE_MATCHER;
+",2,0,0,0,0,0,0,0,0,2,21,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,153,"        return NONE_MATCHER;
+",2,0,0,0,0,0,0,0,0,2,20,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,163,"        return new CharMatcher(ch);
+",2,0,0,1,2,0,0,2,0,4,27,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,173,"        if (chars == null || chars.length == 0) {
+",6,3,0,1,3,0,0,0,0,9,41,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,174,"            return NONE_MATCHER;
+",2,0,0,0,0,0,0,0,0,2,20,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,176,"        if (chars.length == 1) {
+",4,1,0,1,3,0,0,0,0,5,24,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,177,"            return new CharMatcher(chars[0]);
+",0,0,1,2,4,0,0,2,0,4,33,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,179,"        return new CharSetMatcher(chars);
+",2,0,0,1,2,0,0,2,0,4,33,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,189,"        if (chars == null || chars.length() == 0) {
+",2,3,0,2,5,0,4,0,0,9,43,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,190,"            return NONE_MATCHER;
+",2,0,0,0,0,0,0,0,0,2,20,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,192,"        if (chars.length() == 1) {
+",0,1,0,2,5,0,4,0,0,5,26,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,193,"            return new CharMatcher(chars.charAt(0));
+",0,0,0,2,4,0,4,2,0,6,40,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,195,"        return new CharSetMatcher(chars.toCharArray());
+",0,0,0,2,4,0,4,2,0,6,47,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,205,"        if (str == null || str.length() == 0) {
+",2,3,0,2,5,0,4,0,0,9,39,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,206,"            return NONE_MATCHER;
+",2,0,0,0,0,0,0,0,0,2,20,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,208,"        return new StringMatcher(str);
+",2,0,0,1,2,0,0,2,0,4,30,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,267,"        return isMatch(buffer, pos, 0, buffer.length);
+",4,0,0,1,2,0,6,0,0,10,46,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,413,"            super();
+",0,0,0,1,2,0,0,0,0,0,8,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,414,"        }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,426,"            return buffer[pos] <= 32 ? 1 : 0;
+",0,1,1,1,2,0,0,0,0,5,33,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,386,"            super();
+",0,0,0,1,2,0,0,0,0,0,8,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,387,"        }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,399,"            return 0;
+",0,0,0,0,0,0,0,0,0,0,9,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,317,"            super();
+",0,0,0,1,2,0,0,0,0,0,8,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,318,"            this.ch = ch;
+",4,0,0,0,0,0,0,0,0,5,13,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,319,"        }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,331,"            return ch == buffer[pos] ? 1 : 0;
+",2,1,1,1,2,0,0,0,0,7,33,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,284,"            super();
+",0,0,0,1,2,0,0,0,0,0,8,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,285,"            this.chars = (char[]) chars.clone();
+",2,0,0,3,6,0,4,0,0,7,36,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,286,"            Arrays.sort(this.chars);
+",2,0,0,1,2,0,4,0,0,6,24,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,287,"        }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/StrMatcher,43,299,"            return Arrays.binarySearch(chars, buffer[pos]) >= 0 ? 1 : 0;
+",0,1,1,2,4,0,6,0,0,11,60,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,90,"        this(pattern, Locale.getDefault());
+",2,0,0,2,4,0,4,0,0,6,35,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,91,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,101,"        this(pattern, locale, null);
+",4,0,0,1,2,0,0,0,0,4,28,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,102,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,113,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,128,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,134,"        return toPattern;
+",2,0,0,0,0,0,0,0,0,2,17,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,158,"                appendQuotedString(pattern, pos, stripCustom, true);
+",0,0,0,1,2,0,8,0,0,9,52,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,159,"                break;
+",0,0,0,0,0,0,0,0,0,0,6,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,161,"                fmtCount++;
+",2,0,0,0,0,0,0,0,0,3,11,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,162,"                seekNonWs(pattern, pos);
+",0,0,0,1,2,0,6,0,0,6,24,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,163,"                int start = pos.getIndex();
+",2,0,0,1,2,0,4,0,0,6,27,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,164,"                int index = readArgumentIndex(pattern, next(pos));
+",2,0,0,2,4,0,8,0,0,10,50,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,165,"                stripCustom.append(START_FE).append(index);
+",0,0,0,2,4,0,10,0,0,10,43,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,166,"                seekNonWs(pattern, pos);
+",0,0,0,1,2,0,6,0,0,6,24,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,167,"                Format format = null;
+",2,0,0,0,0,0,0,2,0,4,21,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,168,"                String formatDescription = null;
+",2,0,0,0,0,0,0,2,0,4,32,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,169,"                if (c[pos.getIndex()] == START_FMT) {
+",2,1,1,3,7,0,4,0,0,9,37,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,170,"                    formatDescription = parseFormatDescription(pattern,
+",2,0,0,0,1,0,4,0,0,7,51,9,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,172,"                    format = getFormat(formatDescription);
+",2,0,0,1,2,0,4,0,0,7,38,9,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,173,"                    if (format == null) {
+",2,1,0,1,3,0,0,0,0,3,21,9,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,174,"                        stripCustom.append(START_FMT).append(formatDescription);
+",0,0,0,2,4,0,10,0,0,10,56,12,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,177,"                foundFormats.add(format);
+",0,0,0,1,2,0,6,0,0,6,25,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,178,"                foundDescriptions.add(format == null ? null : formatDescription);
+",4,1,0,1,2,0,4,0,0,9,65,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,179,"                Validate.isTrue(foundFormats.size() == fmtCount);
+",2,1,0,2,4,0,8,0,0,11,49,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,180,"                Validate.isTrue(foundDescriptions.size() == fmtCount);
+",2,1,0,2,4,0,8,0,0,11,54,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,181,"                if (c[pos.getIndex()] != END_FE) {
+",2,1,1,3,7,0,4,0,0,9,34,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,182,"                    throw new IllegalArgumentException(
+",0,0,0,0,1,0,0,2,0,2,35,11,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,191,"        super.applyPattern(stripCustom.toString());
+",2,0,0,2,4,0,4,0,0,6,43,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,192,"        toPattern = insertFormats(super.toPattern(), foundDescriptions);
+",4,0,0,2,4,0,4,0,0,9,64,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,193,"        if (containsElements(foundFormats)) {
+",0,0,0,2,5,0,4,0,0,4,37,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,194,"            Format[] origFormats = getFormats();
+",2,0,0,2,4,0,2,2,0,6,36,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,197,"            int i = 0;
+",2,0,0,0,0,0,0,0,0,2,10,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,198,"            for (Iterator it = foundFormats.iterator(); it.hasNext(); i++) {
+",4,0,0,3,7,0,8,2,0,15,64,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,199,"                Format f = (Format) it.next();
+",2,0,0,2,4,0,4,4,0,10,30,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,200,"                if (f != null) {
+",2,1,0,1,3,0,0,0,0,3,16,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,201,"                    origFormats[i] = f;
+",2,0,1,1,2,0,0,0,0,7,19,10,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,204,"            super.setFormats(origFormats);
+",4,0,0,1,2,0,0,0,0,4,30,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,206,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,213,"        throw new UnsupportedOperationException();
+",0,0,0,1,2,0,0,2,0,2,42,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,221,"        throw new UnsupportedOperationException();
+",0,0,0,1,2,0,0,2,0,2,42,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,229,"        throw new UnsupportedOperationException();
+",0,0,0,1,2,0,0,2,0,2,42,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,237,"        throw new UnsupportedOperationException();
+",0,0,0,1,2,0,0,2,0,2,42,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,247,"        if (registry != null) {
+",2,1,0,1,3,0,0,0,0,3,23,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,248,"            String name = desc;
+",4,0,0,0,0,0,0,2,0,6,19,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,249,"            String args = null;
+",2,0,0,0,0,0,0,2,0,4,19,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,250,"            int i = desc.indexOf(START_FMT);
+",2,0,0,1,2,0,6,0,0,8,32,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,251,"            if (i > 0) {
+",2,1,0,1,3,0,0,0,0,3,12,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,252,"                name = desc.substring(0, i).trim();
+",2,0,0,2,4,0,8,0,0,11,35,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,253,"                args = desc.substring(i + 1).trim();
+",4,1,0,2,4,0,6,0,0,12,36,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,255,"            FormatFactory factory = (FormatFactory) registry.get(name);
+",2,0,0,2,4,0,6,4,0,12,59,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,256,"            if (factory != null) {
+",2,1,0,1,3,0,0,0,0,3,22,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,257,"                return factory.getFormat(name, args, getLocale());
+",0,0,0,2,4,0,10,0,0,10,50,9,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,260,"        return null;
+",0,0,0,0,0,0,0,0,0,0,12,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,271,"        int start = pos.getIndex();
+",2,0,0,1,2,0,4,0,0,6,27,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,272,"        seekNonWs(pattern, pos);
+",0,0,0,1,2,0,6,0,0,6,24,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,273,"        StringBuffer result = new StringBuffer();
+",2,0,0,1,2,0,0,4,0,6,41,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,274,"        boolean error = false;
+",2,0,0,0,0,0,0,0,0,3,22,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,275,"        for (; !error && pos.getIndex() < pattern.length(); next(pos)) {
+",2,2,0,4,9,0,12,0,0,17,64,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,276,"            char c = pattern.charAt(pos.getIndex());
+",2,0,0,2,4,0,8,0,0,10,40,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,277,"            if (Character.isWhitespace(c)) {
+",0,0,0,2,5,0,6,0,0,6,32,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,278,"                seekNonWs(pattern, pos);
+",0,0,0,1,2,0,6,0,0,6,24,9,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,279,"                c = pattern.charAt(pos.getIndex());
+",2,0,0,2,4,0,8,0,0,11,35,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,280,"                if (c != START_FMT && c != END_FE) {
+",8,3,0,1,3,0,0,0,0,11,36,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,281,"                    error = true;
+",2,0,0,0,0,0,0,0,0,4,13,10,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,282,"                    continue;
+",0,0,0,0,0,0,0,0,0,0,9,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,285,"            if ((c == START_FMT || c == END_FE) && result.length() > 0) {
+",8,5,0,3,7,0,4,0,0,17,61,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,287,"                    return Integer.parseInt(result.toString());
+",0,0,0,2,4,0,8,0,0,8,43,11,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,288,"                } catch (NumberFormatException e) {
+",2,0,0,1,4,0,0,2,0,4,35,10,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,293,"            error = !Character.isDigit(c);
+",2,0,0,1,2,0,6,0,0,10,30,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,294,"            result.append(c);
+",0,0,0,1,2,0,6,0,0,6,17,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,296,"        if (error) {
+",2,0,0,1,3,0,0,0,0,2,12,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,297,"            throw new IllegalArgumentException(
+",0,0,0,0,1,0,0,2,0,2,35,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,301,"        throw new IllegalArgumentException(
+",0,0,0,0,1,0,0,2,0,2,35,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,313,"        int start = pos.getIndex();
+",2,0,0,1,2,0,4,0,0,6,27,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,314,"        seekNonWs(pattern, pos);
+",0,0,0,1,2,0,6,0,0,6,24,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,315,"        int text = pos.getIndex();
+",2,0,0,1,2,0,4,0,0,6,26,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,316,"        int depth = 1;
+",2,0,0,0,0,0,0,0,0,2,14,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,317,"        for (; pos.getIndex() < pattern.length(); next(pos)) {
+",0,1,0,4,9,0,12,0,0,13,54,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,318,"            switch (pattern.charAt(pos.getIndex())) {
+",0,0,0,3,7,0,8,0,0,8,41,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,320,"                depth++;
+",2,0,0,0,0,0,0,0,0,3,8,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,321,"                break;
+",0,0,0,0,0,0,0,0,0,0,6,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,323,"                depth--;
+",2,0,0,0,0,0,0,0,0,3,8,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,324,"                if (depth == 0) {
+",2,1,0,1,3,0,0,0,0,3,17,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,325,"                    return pattern.substring(text, pos.getIndex());
+",0,0,0,2,4,0,10,0,0,10,47,10,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,329,"                getQuotedString(pattern, pos, false);
+",0,0,0,1,2,0,6,0,0,7,37,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,333,"        throw new IllegalArgumentException(
+",0,0,0,0,1,0,0,2,0,2,35,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,345,"        if (!containsElements(customPatterns)) {
+",0,0,0,2,5,0,4,0,0,5,40,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,346,"            return pattern;
+",2,0,0,0,0,0,0,0,0,2,15,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,348,"        StringBuffer sb = new StringBuffer(pattern.length() * 2);
+",2,1,0,2,4,0,4,4,0,11,57,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,349,"        ParsePosition pos = new ParsePosition(0);
+",2,0,0,1,2,0,0,4,0,6,41,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,350,"        int fe = -1;
+",2,0,0,0,0,0,0,0,0,3,12,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,351,"        int depth = 0;
+",2,0,0,0,0,0,0,0,0,2,14,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,352,"        while (pos.getIndex() < pattern.length()) {
+",0,1,0,3,7,0,8,0,0,9,43,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,353,"            char c = pattern.charAt(pos.getIndex());
+",2,0,0,2,4,0,8,0,0,10,40,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,354,"            switch (c) {
+",2,0,0,1,3,0,0,0,0,2,12,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,356,"                appendQuotedString(pattern, pos, sb, false);
+",0,0,0,1,2,0,8,0,0,9,44,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,357,"                break;
+",0,0,0,0,0,0,0,0,0,0,6,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,359,"                depth++;
+",2,0,0,0,0,0,0,0,0,3,8,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,360,"                if (depth == 1) {
+",2,1,0,1,3,0,0,0,0,3,17,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,361,"                    fe++;
+",2,0,0,0,0,0,0,0,0,3,5,9,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,362,"                    sb.append(START_FE).append(
+",0,0,0,1,3,0,8,0,0,8,27,10,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,364,"                    String customPattern = (String) customPatterns.get(fe);
+",2,0,0,2,4,0,6,4,0,12,55,9,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,365,"                    if (customPattern != null) {
+",2,1,0,1,3,0,0,0,0,3,28,9,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,366,"                        sb.append(START_FMT).append(customPattern);
+",0,0,0,2,4,0,10,0,0,10,43,12,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,368,"                }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,371,"                depth--;
+",2,0,0,0,0,0,0,0,0,3,8,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,374,"                sb.append(c);
+",0,0,0,1,2,0,6,0,0,6,13,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,375,"                next(pos);
+",0,0,0,1,2,0,4,0,0,4,10,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,377,"        }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,378,"        return sb.toString();
+",0,0,0,1,2,0,4,0,0,4,21,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,388,"        int len = 0;
+",2,0,0,0,0,0,0,0,0,2,12,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,389,"        char[] buffer = pattern.toCharArray();
+",2,0,0,2,4,0,4,0,0,6,38,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,391,"            len = StrMatcher.splitMatcher().isMatch(buffer, pos.getIndex());
+",2,0,0,3,6,0,12,0,0,15,64,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,392,"            pos.setIndex(pos.getIndex() + len);
+",2,1,0,2,4,0,8,0,0,11,35,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,393,"        } while (len > 0 && pos.getIndex() < pattern.length());
+",2,3,0,3,7,0,8,0,0,13,55,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,394,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,419,"        int start = pos.getIndex();
+",2,0,0,1,2,0,4,0,0,6,27,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,420,"        char[] c = pattern.toCharArray();
+",2,0,0,2,4,0,4,0,0,6,33,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,421,"        if (escapingOn && c[start] == QUOTE) {
+",4,2,1,2,5,0,0,0,0,10,38,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,422,"            return appendTo == null ? null : appendTo.append(QUOTE);
+",2,1,0,1,2,0,6,0,0,9,56,7,0.00000,1
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,424,"        int lastHold = start;
+",4,0,0,0,0,0,0,0,0,4,21,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,425,"        for (int i = pos.getIndex(); i < pattern.length(); i++) {
+",6,1,0,3,7,0,8,0,0,16,57,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,426,"            if (escapingOn && pattern.substring(i).startsWith(ESCAPED_QUOTE)) {
+",2,1,0,3,7,0,10,0,0,13,67,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,427,"                appendTo.append(c, lastHold, pos.getIndex() - lastHold).append(
+",2,1,0,2,5,0,14,0,0,17,63,9,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,429,"                pos.setIndex(i + ESCAPED_QUOTE.length());
+",2,1,0,2,4,0,8,0,0,11,41,9,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,430,"                lastHold = pos.getIndex();
+",2,0,0,1,2,0,4,0,0,7,26,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,431,"                continue;
+",0,0,0,0,0,0,0,0,0,0,9,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,433,"            switch (c[pos.getIndex()]) {
+",0,0,1,3,7,0,4,0,0,6,28,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,435,"                next(pos);
+",0,0,0,1,2,0,4,0,0,4,10,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,436,"                return appendTo == null ? null : appendTo.append(c, lastHold,
+",2,1,0,0,1,0,8,0,0,11,61,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,439,"                next(pos);
+",0,0,0,1,2,0,4,0,0,4,10,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,442,"        throw new IllegalArgumentException(
+",0,0,0,0,1,0,0,2,0,2,35,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,455,"        appendQuotedString(pattern, pos, null, escapingOn);
+",0,0,0,1,2,0,8,0,0,9,51,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,456,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,464,"        if (coll == null || coll.size() == 0) {
+",2,3,0,2,5,0,4,0,0,9,39,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,465,"            return false;
+",0,0,0,0,0,0,0,0,0,1,13,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,467,"        for (Iterator iter = coll.iterator(); iter.hasNext();) {
+",2,0,0,3,7,0,8,2,0,12,56,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,468,"            if (iter.next() != null) {
+",0,1,0,2,5,0,4,0,0,5,26,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,469,"                return true;
+",0,0,0,0,0,0,0,0,0,1,12,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/text/ExtendedMessageFormat,43,472,"        return false;
+",0,0,0,0,0,0,0,0,0,1,13,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,48,"      super();
+",0,0,0,1,2,0,0,0,0,0,8,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,49,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,76,"        if (expression == false) {
+",2,1,0,1,3,0,0,0,0,4,26,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,77,"            throw new IllegalArgumentException(message + value);
+",4,1,0,1,2,0,0,2,0,7,52,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,79,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,102,"        if (expression == false) {
+",2,1,0,1,3,0,0,0,0,4,26,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,103,"            throw new IllegalArgumentException(message + value);
+",4,1,0,1,2,0,0,2,0,7,52,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,105,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,129,"        if (expression == false) {
+",2,1,0,1,3,0,0,0,0,4,26,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,130,"            throw new IllegalArgumentException(message + value);
+",4,1,0,1,2,0,0,2,0,7,52,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,132,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,156,"        if (expression == false) {
+",2,1,0,1,3,0,0,0,0,4,26,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,157,"            throw new IllegalArgumentException(message);
+",2,0,0,1,2,0,0,2,0,4,44,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,159,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,180,"        if (expression == false) {
+",2,1,0,1,3,0,0,0,0,4,26,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,181,"            throw new IllegalArgumentException(""The validated expression is false"");
+",0,0,0,1,2,0,0,2,0,3,72,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,183,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,202,"        if (object == null) {
+",2,1,0,1,3,0,0,0,0,3,21,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,203,"            throw new IllegalArgumentException(message);
+",2,0,0,1,2,0,0,2,0,4,44,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,205,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,221,"        if (object == null) {
+",2,1,0,1,3,0,0,0,0,3,21,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,222,"            throw new IllegalArgumentException(""The validated object is null"");
+",0,0,0,1,2,0,0,2,0,4,67,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,224,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,242,"        if (array == null || array.length == 0) {
+",6,3,0,1,3,0,0,0,0,9,41,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,243,"            throw new IllegalArgumentException(message);
+",2,0,0,1,2,0,0,2,0,4,44,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,245,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,261,"        if (array == null || array.length == 0) {
+",6,3,0,1,3,0,0,0,0,9,41,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,262,"            throw new IllegalArgumentException(""The validated array is empty"");
+",0,0,0,1,2,0,0,2,0,3,67,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,264,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,282,"        if (collection == null || collection.size() == 0) {
+",2,3,0,2,5,0,4,0,0,9,51,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,283,"            throw new IllegalArgumentException(message);
+",2,0,0,1,2,0,0,2,0,4,44,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,285,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,301,"        if (collection == null || collection.size() == 0) {
+",2,3,0,2,5,0,4,0,0,9,51,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,302,"            throw new IllegalArgumentException(""The validated collection is empty"");
+",0,0,0,1,2,0,0,2,0,3,72,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,304,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,322,"        if (map == null || map.size() == 0) {
+",2,3,0,2,5,0,4,0,0,9,37,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,323,"            throw new IllegalArgumentException(message);
+",2,0,0,1,2,0,0,2,0,4,44,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,325,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,341,"        if (map == null || map.size() == 0) {
+",2,3,0,2,5,0,4,0,0,9,37,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,342,"            throw new IllegalArgumentException(""The validated map is empty"");
+",0,0,0,1,2,0,0,2,0,3,65,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,344,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,362,"        if (string == null || string.length() == 0) {
+",2,3,0,2,5,0,4,0,0,9,45,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,363,"            throw new IllegalArgumentException(message);
+",2,0,0,1,2,0,0,2,0,4,44,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,365,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,381,"        if (string == null || string.length() == 0) {
+",2,3,0,2,5,0,4,0,0,9,45,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,382,"            throw new IllegalArgumentException(""The validated string is empty"");
+",0,0,0,1,2,0,0,2,0,3,68,7,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,384,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,407,"        Validate.notNull(array);
+",0,0,0,1,2,0,6,0,0,6,24,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,408,"        for (int i = 0; i < array.length; i++) {
+",10,1,0,1,3,0,0,0,0,12,40,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,409,"            if (array[i] == null) {
+",0,1,1,2,5,0,0,0,0,5,23,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,410,"                throw new IllegalArgumentException(message);
+",2,0,0,1,2,0,0,2,0,4,44,9,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,413,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,434,"        Validate.notNull(array);
+",0,0,0,1,2,0,6,0,0,6,24,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,435,"        for (int i = 0; i < array.length; i++) {
+",10,1,0,1,3,0,0,0,0,12,40,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,436,"            if (array[i] == null) {
+",0,1,1,2,5,0,0,0,0,5,23,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,437,"                throw new IllegalArgumentException(""The validated array contains null element at index: "" + i);
+",2,1,0,1,2,0,0,2,0,7,95,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,440,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,463,"        Validate.notNull(collection);
+",0,0,0,1,2,0,6,0,0,6,29,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,464,"        for (Iterator it = collection.iterator(); it.hasNext();) {
+",2,0,0,3,7,0,8,2,0,12,58,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,465,"            if (it.next() == null) {
+",0,1,0,2,5,0,4,0,0,5,24,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,466,"                throw new IllegalArgumentException(message);
+",2,0,0,1,2,0,0,2,0,4,44,9,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,469,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,489,"        Validate.notNull(collection);
+",0,0,0,1,2,0,6,0,0,6,29,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,490,"        int i = 0;
+",2,0,0,0,0,0,0,0,0,2,10,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,491,"        for (Iterator it = collection.iterator(); it.hasNext(); i++) {
+",4,0,0,3,7,0,8,2,0,15,62,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,492,"            if (it.next() == null) {
+",0,1,0,2,5,0,4,0,0,5,24,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,493,"                throw new IllegalArgumentException(""The validated collection contains null element at index: "" + i);
+",2,1,0,1,2,0,0,2,0,7,100,8,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,496,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,513,"        Validate.notNull(collection);
+",0,0,0,1,2,0,6,0,0,6,29,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,514,"        Validate.notNull(clazz);
+",0,0,0,1,2,0,6,0,0,6,24,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,515,"        for (Iterator it = collection.iterator(); it.hasNext(); ) {
+",2,0,0,3,7,0,8,2,0,12,59,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,516,"            if (clazz.isInstance(it.next()) == false) {
+",0,1,0,3,7,0,8,0,0,10,43,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,517,"                throw new IllegalArgumentException(message);
+",2,0,0,1,2,0,0,2,0,4,44,9,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,520,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,543,"        Validate.notNull(collection);
+",0,0,0,1,2,0,6,0,0,6,29,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,544,"        Validate.notNull(clazz);
+",0,0,0,1,2,0,6,0,0,6,24,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,545,"        int i = 0;
+",2,0,0,0,0,0,0,0,0,2,10,5,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,546,"        for (Iterator it = collection.iterator(); it.hasNext(); i++) {
+",4,0,0,3,7,0,8,2,0,15,62,4,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,547,"            if (clazz.isInstance(it.next()) == false) {
+",0,1,0,3,7,0,8,0,0,10,43,6,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,548,"                throw new IllegalArgumentException(""The validated collection contains an element not of type ""
+",0,0,0,0,1,0,0,2,0,3,94,9,0.00000,0
+defect4j,lang,org/apache/commons/lang/Validate,43,552,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
