@@ -1,7 +1,7 @@
 '''
 Author: your name
 Date: 2021-06-01 19:58:05
-LastEditTime: 2021-06-09 14:34:27
+LastEditTime: 2021-06-09 15:01:30
 Description: file content
 ██████╗  █████╗ ████████╗ █████╗
 ██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗
@@ -285,14 +285,14 @@ def cut_data_for_test_train(project, miniK):  # 当数据量小于10时，设置
 
 
 if __name__ == "__main__":
-    project = 'math'
+    project = 'closure'
     k = 10
     topSusList = []
-    for i in range(85, 107):  # (1，项目总数+1)
+    for i in range(1, 133):  # (1，项目总数+1)
         # if i != 2:
             # CODE_FILE_PATH = '/Volumes/Elements/DSatr/%s-direct/%s-%s/source/' % (
             #     project, project, str(i))  # java文件父目录
-        CODE_FILE_PATH = '/Volumes/Elements/DSatr/%s-direct/%s-%s/src/java/' % (
+        CODE_FILE_PATH = '/Volumes/Elements/DSatr/%s-direct/%s-%s/src/' % (
             project, project, str(i))  # java文件父目录
         # ----------------------------------------------------------------
         get_project_sus(i, project, CODE_FILE_PATH)# 找到真实缺陷语句并存储excel,in for
