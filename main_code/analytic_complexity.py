@@ -1,7 +1,7 @@
 '''
 Author: your name
 Date: 2021-06-02 16:15:11
-LastEditTime: 2021-06-04 10:58:50
+LastEditTime: 2021-06-07 15:16:05
 Description: 根据excel解析复杂度存储至csv
 '''
 import json
@@ -54,13 +54,13 @@ def get_code_recursion(recItem, nodeStack, targetCodeLine, codeStatement):  # �
             nodeStack.append(recItem['node'])  # 父节点入栈
         if 'node' in recItem.keys() and str(recItem['node_line']) == targetCodeLine:
             for i in AST_KEYWORD_LIST:
-                    if i in recItem.keys() and str(recItem[i]) in codeStatement:
-                        nodeDice_TEM = {
-                            "code": recItem[i],
-                            "code_line": recItem['node_line'],
-                            "father_node": copy.deepcopy(nodeStack),
-                        }
-                        resultList.append(nodeDice_TEM)
+                if i in recItem.keys() and str(recItem[i]) in codeStatement:
+                    nodeDice_TEM = {
+                        "code": recItem[i],
+                        "code_line": recItem['node_line'],
+                        "father_node": copy.deepcopy(nodeStack),
+                    }
+                    resultList.append(nodeDice_TEM)
         for key, val in recItem.items():
             if type(val) is dict or type(val) is list:  # 深层递归
                 get_code_recursion(
@@ -78,19 +78,20 @@ def get_brackets_nesting(codeStatement):  # 代码内容（返回：括号嵌套
     bracketsStack = []  # 括号栈
     depth = 0  # 括号深度
     total = 0  # 括号数量
-    for i in codeStatement:
-        if i == '(':
-            bracketsStack.append(')')
-        elif i == '[':
-            bracketsStack.append(']')
-        elif i == '{':
-            bracketsStack.append('}')
-        if len(bracketsStack) != 0 and (i == ')' or i == ']' or i == '}'):  # 栈不为空
-            bracketsStack.pop()
-            depth += 1
-        # 计算总数
-        if i == '(' or i == ')' or i == '[' or i == ']' or i == '{' or i == '}':
-            total += 1
+    if codeStatement != None:
+        for i in codeStatement:
+            if i == '(':
+                bracketsStack.append(')')
+            elif i == '[':
+                bracketsStack.append(']')
+            elif i == '{':
+                bracketsStack.append('}')
+            if len(bracketsStack) != 0 and (i == ')' or i == ']' or i == '}'):  # 栈不为空
+                bracketsStack.pop()
+                depth += 1
+            # 计算总数
+            if i == '(' or i == ')' or i == '[' or i == ']' or i == '{' or i == '}':
+                total += 1
     return depth, total
 # 获取括号数量、嵌套层数-end
 
@@ -100,13 +101,16 @@ def get_logic_word(codeStatement):  # 代码内容（返回：bool是否包含�
     logicList = ['if', 'else if', 'else', 'switch', 'case', 'while', 'for']
     for n in logicList:
         pattern = re.compile(n)   # 模式
-        for i in pattern.finditer(codeStatement):
-            if i.start() > 0 and (codeStatement[i.start()-1].isdigit() or codeStatement[i.start()-1].isalpha()):
-                return False
-            elif (i.start()+len(n)) > len(n) or ((i.start()+len(n)) < len(n) and codeStatement[i.start()+len(n)].isdigit() or codeStatement[i.start()+len(n)].isalpha()):
-                return False
-            else:
-                return True
+        if codeStatement != None:
+            for i in pattern.finditer(codeStatement):
+                if i.start() > 0 and (codeStatement[i.start()-1].isdigit() or codeStatement[i.start()-1].isalpha()):
+                    return False
+                elif (i.start()+len(n)) > len(n) or ((i.start()+len(n)) < len(n) and codeStatement[i.start()+len(n)].isdigit() or codeStatement[i.start()+len(n)].isalpha()):
+                    return False
+                else:
+                    return True
+        else:
+            return False
 # 逻辑-end
 
 
@@ -116,13 +120,14 @@ def get_keyword(codeStatement):  # 代码内容（返回：关键字数量）
     total = 0
     for n in keywordList:
         pattern = re.compile(n)   # 模式
-        for i in pattern.finditer(codeStatement):
-            if i.start() > 0 and (codeStatement[i.start()-1].isdigit() or codeStatement[i.start()-1].isalpha()):
-                pass
-            elif (i.start()+len(n)) > len(n) or ((i.start()+len(n)) < len(n) and codeStatement[i.start()+len(n)].isdigit() or codeStatement[i.start()+len(n)].isalpha()):
-                pass
-            else:
-                total += 1
+        if codeStatement != None:
+            for i in pattern.finditer(str(codeStatement)):
+                if i.start() > 0 and (codeStatement[i.start()-1].isdigit() or codeStatement[i.start()-1].isalpha()):
+                    pass
+                elif (i.start()+len(n)) > len(codeStatement) or ((i.start()+len(n)) < len(codeStatement) and codeStatement[i.start()+len(n)].isdigit() or codeStatement[i.start()+len(n)].isalpha()):
+                    pass
+                else:
+                    total += 1
     return total
 # 关键字-end
 
@@ -231,63 +236,64 @@ def save_as_csv(EXCEL_PATH, CSV_FATHER_PATH, CODE_FATHER_PATH, version, project)
             JSON_PATH = CODE_FATHER_PATH + \
                 str(sheet.cell(excelLine, 1).value).replace(".", "/")+'.json'
             # #
-            get_code_element(codeLine, codeStatement)  # 解析
-            #AST无法解析 - start
-            if resultList == []:
-                keywordTotal = get_keyword(codeStatement)  # 总数
-                if get_logic_word(codeStatement):
-                    logic = 1
+            if codeStatement != None:
+                get_code_element(codeLine, codeStatement)  # 解析
+                #AST无法解析 - start
+                if resultList == []:
+                    keywordTotal = get_keyword(codeStatement)  # 总数
+                    if get_logic_word(codeStatement):
+                        logic = 1
+                    else:
+                        logic = 0
+                    bracketDepth, bracketTotal = get_brackets_nesting(
+                        codeStatement)  # 括号深度，总数
+                    csvWriter.writerow(['defect4j',
+                                        project,
+                                        str(sheet.cell(excelLine, 1).value).replace(
+                                            ".", "/"),
+                                        ver,
+                                        codeLine,
+                                        codeStatement,
+                                        0,
+                                        0,
+                                        0,
+                                        bracketDepth,
+                                        bracketTotal,
+                                        keywordTotal,
+                                        0,
+                                        0,
+                                        logic,
+                                        0,
+                                        len(codeStatement.strip()),
+                                        3,
+                                        suspicious,
+                                        accuracy])
                 else:
-                    logic = 0
-                bracketDepth, bracketTotal = get_brackets_nesting(
-                    codeStatement)  # 括号深度，总数
-                csvWriter.writerow(['defect4j',
-                                    project,
-                                    str(sheet.cell(excelLine, 1).value).replace(
-                                        ".", "/"),
-                                    ver,
-                                    codeLine,
-                                    codeStatement,
-                                    0,
-                                    0,
-                                    0,
-                                    bracketDepth,
-                                    bracketTotal,
-                                    keywordTotal,
-                                    0,
-                                    0,
-                                    logic,
-                                    0,
-                                    len(codeStatement.strip()),
-                                    3,
-                                    suspicious,
-                                    accuracy])
-            else:
-                astresultList = get_data_for_csv(
-                    resultList, codeLine, codeStatement)
-                csvWriter.writerow(['defect4j', project, str(sheet.cell(excelLine, 1).value).replace(".", "/"),
-                                    ver,
-                                    codeLine,
-                                    codeStatement,
-                                    astresultList['varTotal'],
-                                    astresultList['optTotal'],
-                                    astresultList['array'],
-                                    astresultList['bracketDepth'],
-                                    astresultList['bracketTotal'],
-                                    astresultList['keywordTotal'],
-                                    astresultList['methodTotal'],
-                                    astresultList['typeTotal'],
-                                    astresultList['logic'],
-                                    astresultList['lengthEle'],
-                                    astresultList['lengthWord'],
-                                    astresultList['depth'],
-                                    suspicious,
-                                    accuracy])
-                resultList = []
-            #
+                    astresultList = get_data_for_csv(
+                        resultList, codeLine, codeStatement)
+                    csvWriter.writerow(['defect4j', project, str(sheet.cell(excelLine, 1).value).replace(".", "/"),
+                                        ver,
+                                        codeLine,
+                                        codeStatement,
+                                        astresultList['varTotal'],
+                                        astresultList['optTotal'],
+                                        astresultList['array'],
+                                        astresultList['bracketDepth'],
+                                        astresultList['bracketTotal'],
+                                        astresultList['keywordTotal'],
+                                        astresultList['methodTotal'],
+                                        astresultList['typeTotal'],
+                                        astresultList['logic'],
+                                        astresultList['lengthEle'],
+                                        astresultList['lengthWord'],
+                                        astresultList['depth'],
+                                        suspicious,
+                                        accuracy])
+                    resultList = []
+                #
 
-            print('%s%s - %s -  %s -> ok' % (project, ver, str(sheet.cell(excelLine, 1).value).replace(
-                ".", "/"), str(codeLine)))
+                print('%s%s - %s -  %s -> ok' % (project, ver, str(sheet.cell(excelLine, 1).value).replace(
+                    ".", "/"), str(codeLine)))
             excelLine += 1
         else:
             break

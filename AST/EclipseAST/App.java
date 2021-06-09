@@ -49,8 +49,8 @@ public class App {
 
 	public static void main(final String[] args) throws Exception {
 		// String JAVA_PATH = ""
-		String MAIN_PATH = "/Volumes/Elements/DSatr/lang-direct/lang-65/src/java/org/apache/commons/lang/time/";
-		String JAVA_FILE = "DateUtils";
+		String MAIN_PATH = "/Volumes/Elements/DSatr/math-direct/math-106/src/java/org/apache/commons/math/";
+		String JAVA_FILE = "ConvergenceException";
 		// STRING TARGET_FILE = "NumberUtils";
 		ByteArrayOutputStream baoStream = new ByteArrayOutputStream(1024);
 		PrintStream cacheStream = new PrintStream(baoStream);

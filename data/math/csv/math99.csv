@@ -1,0 +1,651 @@
+dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,logic,lengthEle,lengthWord,depth,suspicious,accuracy
+defect4j,math,org/apache/commons/math/util/MathUtils,99,710,"        if (a==0 || b==0){
+",4,3,0,1,3,0,0,0,0,7,18,4,1.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,711,"            return 0;
+",0,0,0,0,0,1,0,0,0,0,9,3,1.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,713,"        int lcm = Math.abs(mulAndCheck(a / gcd(a, b), b));
+",4,1,0,3,6,0,14,0,0,19,50,5,1.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,714,"        return lcm;
+",2,0,0,0,0,1,0,0,0,2,11,4,1.00000,1
+defect4j,math,org/apache/commons/math/util/MathUtils,99,560,"            u /= 2;
+",2,0,0,0,0,0,0,0,0,3,7,6,0.14815,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,561,"            v /= 2;
+",2,0,0,0,0,0,0,0,0,3,7,6,0.14815,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,562,"            k++; // cast out twos.
+",2,0,0,0,0,0,0,0,0,3,22,6,0.14815,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,578,"                t /= 2; // cast out twos
+",2,0,0,0,0,0,0,0,0,3,24,8,0.08889,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,540,"        int u = p;
+",4,0,0,0,0,0,0,0,0,4,10,5,0.06780,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,541,"        int v = q;
+",4,0,0,0,0,0,0,0,0,4,10,5,0.06780,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,542,"        if ((u == 0) || (v == 0)) {
+",4,3,0,3,7,0,0,0,0,7,27,4,0.06780,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,550,"        if (u > 0) {
+",2,1,0,1,3,0,0,0,0,3,12,4,0.06780,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,551,"            u = -u;
+",4,0,0,0,0,0,0,0,0,6,7,6,0.06780,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,553,"        if (v > 0) {
+",2,1,0,1,3,0,0,0,0,3,12,4,0.06780,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,554,"            v = -v;
+",4,0,0,0,0,0,0,0,0,6,7,6,0.06780,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,557,"        int k = 0;
+",2,0,0,0,0,0,0,0,0,2,10,5,0.06780,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,558,"        while ((u & 1) == 0 && (v & 1) == 0 && k < 31) { // while u and v are
+",6,7,0,3,7,0,0,0,0,13,69,4,0.06780,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,564,"        if (k == 31) {
+",2,1,0,1,3,0,0,0,0,3,14,4,0.06780,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,571,"        int t = ((u & 1) == 1) ? v : -(u / 2)/* B3 */;
+",8,3,0,3,6,0,0,0,0,12,46,5,0.06780,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,577,"            while ((t & 1) == 0) { // while t is even..
+",2,2,0,2,5,0,0,0,0,4,43,6,0.06780,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,581,"            if (t > 0) {
+",2,1,0,1,3,0,0,0,0,3,12,6,0.06780,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,582,"                u = -t;
+",4,0,0,0,0,0,0,0,0,6,7,8,0.06780,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,584,"                v = t;
+",4,0,0,0,0,0,0,0,0,5,6,8,0.06780,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,587,"            t = (v - u) / 2;
+",6,2,0,1,2,0,0,0,0,9,16,6,0.06780,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,590,"        } while (t != 0);
+",2,1,0,1,3,0,0,0,0,3,17,4,0.06780,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,591,"        return -u * (1 << k); // gcd is u*2^k
+",4,2,0,1,2,1,0,0,0,7,37,4,0.06780,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,748,"        long m = ((long)x) * ((long)y);
+",6,1,0,4,8,0,0,0,0,7,31,5,0.03448,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,749,"        if (m < Integer.MIN_VALUE || m > Integer.MAX_VALUE) {
+",12,3,0,1,3,0,0,0,0,15,53,4,0.03448,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,752,"        return (int)m;
+",2,0,0,1,2,1,0,0,0,2,14,5,0.03448,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,413,"    private static final long[] factorials = new long[] 
+",2,0,0,2,4,3,0,0,0,5,51,2,0.01869,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,543,"            return (Math.abs(u) + Math.abs(v));
+",0,1,0,3,6,1,12,0,0,13,35,7,0.01754,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,105,"      super(buildMessage(pattern, arguments, Locale.US));
+",4,0,0,2,4,0,6,0,0,10,51,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,106,"      this.pattern   = pattern;
+",4,0,0,0,0,0,0,0,0,5,25,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,107,"      this.arguments = (arguments == null) ? new Object[0] : arguments.clone();
+",4,1,0,3,6,0,4,2,0,12,73,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,108,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,118,"        super(rootCause);
+",2,0,0,1,2,0,0,0,0,2,17,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,119,"        this.pattern   = getMessage();
+",2,0,0,1,2,0,2,0,0,5,30,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,120,"        this.arguments = new Object[0];
+",2,0,0,1,2,0,0,2,0,5,31,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,121,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,134,"      super(buildMessage(pattern, arguments, Locale.US), rootCause);
+",6,0,0,2,4,0,6,0,0,12,62,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,135,"      this.pattern   = pattern;
+",4,0,0,0,0,0,0,0,0,5,25,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,136,"      this.arguments = (arguments == null) ? new Object[0] : arguments.clone();
+",4,1,0,3,6,0,4,2,0,12,73,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,137,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,43,"    private static ResourceBundle cachedResources = null;
+",2,0,0,0,0,2,0,2,0,6,53,2,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,64,"            if ((cachedResources == null) || (! cachedResources.getLocale().equals(locale))) {
+",2,2,0,5,11,0,8,0,0,13,82,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,66,"                cachedResources =
+",2,0,0,0,0,0,0,0,0,3,17,8,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,70,"            if (cachedResources.getLocale().getLanguage().equals(locale.getLanguage())) {
+",0,0,0,5,11,0,12,0,0,12,77,7,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,72,"                return cachedResources.getString(s);
+",0,0,0,1,2,1,6,0,0,6,36,9,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,77,"        }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,75,"        } catch (MissingResourceException mre) {
+",2,0,0,1,4,0,0,2,0,4,40,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,81,"        return s;
+",2,0,0,0,0,1,0,0,0,2,9,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,94,"        return (pattern == null) ? """" : new MessageFormat(translate(pattern, locale), locale).format(arguments);        
+",4,1,0,4,8,1,10,2,0,20,104,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,144,"        return pattern;
+",2,0,0,0,0,1,0,0,0,2,15,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,152,"        return arguments.clone();
+",0,0,0,1,2,1,4,0,0,4,25,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,162,"        return buildMessage(pattern, arguments, locale);
+",0,0,0,1,2,1,8,0,0,8,48,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,167,"        return getMessage(Locale.getDefault());
+",0,0,0,2,4,1,6,0,0,6,39,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,174,"        printStackTrace(System.err);
+",4,0,0,1,2,0,2,0,0,6,28,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,175,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,183,"        synchronized (out) {
+",2,0,0,1,3,0,0,0,0,2,20,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,184,"            PrintWriter pw = new PrintWriter(out, false);
+",4,0,0,1,2,0,0,4,0,9,45,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,185,"            printStackTrace(pw);
+",0,0,0,1,2,0,4,0,0,4,20,7,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,187,"            pw.flush();
+",0,0,0,1,2,0,4,0,0,4,11,7,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,188,"        }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,189,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,200,"        return new ArithmeticException(buildMessage(pattern, arguments, Locale.US)) {
+",4,0,0,2,5,1,6,2,0,12,77,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,222,"        return new ArrayIndexOutOfBoundsException(buildMessage(pattern, arguments, Locale.US)) {
+",4,0,0,2,5,1,6,2,0,12,88,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,244,"        return new EOFException(buildMessage(pattern, arguments, Locale.US)) {
+",4,0,0,2,5,1,6,2,0,12,70,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,269,"        IOException ioe = new IOException(rootCause.getLocalizedMessage());
+",2,0,0,2,4,0,4,4,0,10,67,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,270,"        ioe.initCause(rootCause);
+",0,0,0,1,2,0,6,0,0,6,25,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,271,"        return ioe;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,283,"        return new IllegalArgumentException(buildMessage(pattern, arguments, Locale.US)) {
+",4,0,0,2,5,1,6,2,0,12,82,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,305,"        return new IllegalStateException(buildMessage(pattern, arguments, Locale.US)) {
+",4,0,0,2,5,1,6,2,0,12,79,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,327,"        return new ConcurrentModificationException(buildMessage(pattern, arguments, Locale.US)) {
+",4,0,0,2,5,1,6,2,0,12,89,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,349,"        return new NoSuchElementException(buildMessage(pattern, arguments, Locale.US)) {
+",4,0,0,2,5,1,6,2,0,12,80,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,374,"        return new ParseException(buildMessage(pattern, arguments, Locale.US), offset) {
+",6,0,0,2,5,1,6,2,0,14,80,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,37,"public class MathRuntimeException extends RuntimeException {
+",2,0,0,0,1,1,0,2,0,5,60,1,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,327,"        return new ConcurrentModificationException(buildMessage(pattern, arguments, Locale.US)) {
+",4,0,0,2,5,1,6,2,0,12,89,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,334,"                return buildMessage(pattern, arguments, Locale.getDefault());
+",0,0,0,2,4,1,10,0,0,10,61,10,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,305,"        return new IllegalStateException(buildMessage(pattern, arguments, Locale.US)) {
+",4,0,0,2,5,1,6,2,0,12,79,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,312,"                return buildMessage(pattern, arguments, Locale.getDefault());
+",0,0,0,2,4,1,10,0,0,10,61,10,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,283,"        return new IllegalArgumentException(buildMessage(pattern, arguments, Locale.US)) {
+",4,0,0,2,5,1,6,2,0,12,82,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,290,"                return buildMessage(pattern, arguments, Locale.getDefault());
+",0,0,0,2,4,1,10,0,0,10,61,10,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,244,"        return new EOFException(buildMessage(pattern, arguments, Locale.US)) {
+",4,0,0,2,5,1,6,2,0,12,70,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,251,"                return buildMessage(pattern, arguments, Locale.getDefault());
+",0,0,0,2,4,1,10,0,0,10,61,10,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,222,"        return new ArrayIndexOutOfBoundsException(buildMessage(pattern, arguments, Locale.US)) {
+",4,0,0,2,5,1,6,2,0,12,88,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,229,"                return buildMessage(pattern, arguments, Locale.getDefault());
+",0,0,0,2,4,1,10,0,0,10,61,10,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,200,"        return new ArithmeticException(buildMessage(pattern, arguments, Locale.US)) {
+",4,0,0,2,5,1,6,2,0,12,77,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,207,"                return buildMessage(pattern, arguments, Locale.getDefault());
+",0,0,0,2,4,1,10,0,0,10,61,10,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,374,"        return new ParseException(buildMessage(pattern, arguments, Locale.US), offset) {
+",6,0,0,2,5,1,6,2,0,14,80,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,381,"                return buildMessage(pattern, arguments, Locale.getDefault());
+",0,0,0,2,4,1,10,0,0,10,61,10,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,349,"        return new NoSuchElementException(buildMessage(pattern, arguments, Locale.US)) {
+",4,0,0,2,5,1,6,2,0,12,80,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,99,356,"                return buildMessage(pattern, arguments, Locale.getDefault());
+",0,0,0,2,4,1,10,0,0,10,61,10,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,66,"        super();
+",0,0,0,1,2,0,0,0,0,0,8,3,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,67,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,80,"        long s = (long)x + (long)y;
+",6,1,0,2,4,0,0,0,0,7,27,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,81,"        if (s < Integer.MIN_VALUE || s > Integer.MAX_VALUE) {
+",12,3,0,1,3,0,0,0,0,15,53,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,82,"            throw new ArithmeticException(""overflow: add"");
+",0,0,0,1,2,0,0,2,0,3,47,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,84,"        return (int)s;
+",2,0,0,1,2,1,0,0,0,2,14,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,98,"        return addAndCheck(a, b, ""overflow: add"");
+",0,0,0,1,2,1,6,0,0,7,42,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,114,"        if (a > b) {
+",4,1,0,1,3,0,0,0,0,5,12,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,116,"            ret = addAndCheck(b, a, msg);
+",2,0,0,1,2,0,8,0,0,11,29,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,120,"            if (a < 0) {
+",2,1,0,1,3,0,0,0,0,3,12,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,121,"                if (b < 0) {
+",2,1,0,1,3,0,0,0,0,3,12,8,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,123,"                    if (Long.MIN_VALUE - b <= a) {
+",8,2,0,1,3,0,0,0,0,10,30,10,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,124,"                        ret = a + b;
+",6,1,0,0,0,0,0,0,0,8,12,12,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,126,"                        throw new ArithmeticException(msg);
+",2,0,0,1,2,0,0,2,0,4,35,13,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,130,"                    ret = a + b;
+",6,1,0,0,0,0,0,0,0,8,12,10,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,137,"                if (a <= Long.MAX_VALUE - b) {
+",8,2,0,1,3,0,0,0,0,10,30,8,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,138,"                    ret = a + b;
+",6,1,0,0,0,0,0,0,0,8,12,10,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,140,"                    throw new ArithmeticException(msg);
+",2,0,0,1,2,0,0,2,0,4,35,11,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,144,"        return ret;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,173,"        if (n < k) {
+",4,1,0,1,3,0,0,0,0,5,12,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,174,"            throw new IllegalArgumentException(
+",0,0,0,0,1,0,0,2,0,2,35,8,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,177,"        if (n < 0) {
+",2,1,0,1,3,0,0,0,0,3,12,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,178,"            throw new IllegalArgumentException(
+",0,0,0,0,1,0,0,2,0,2,35,8,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,181,"        if ((n == k) || (k == 0)) {
+",6,3,0,3,7,0,0,0,0,9,27,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,182,"            return 1;
+",0,0,0,0,0,1,0,0,0,0,9,3,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,184,"        if ((k == 1) || (k == n - 1)) {
+",6,4,0,3,7,0,0,0,0,10,31,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,185,"            return n;
+",2,0,0,0,0,1,0,0,0,2,9,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,188,"        if (k > n / 2)
+",4,2,0,1,2,0,0,0,0,6,14,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,189,"            return binomialCoefficient(n, n - k);
+",4,1,0,1,2,1,4,0,0,9,37,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,196,"        long result = 1;
+",2,0,0,0,0,0,0,0,0,2,16,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,197,"        if (n <= 61) {
+",2,1,0,1,3,0,0,0,0,3,14,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,199,"            for (int j = 1, i = n - k + 1; j <= k; i++, j++) {
+",16,3,0,1,3,0,0,0,0,21,50,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,200,"                result = result * i / j;
+",8,2,0,0,0,0,0,0,0,11,24,8,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,202,"        } else if (n <= 66) {
+",2,1,0,1,4,0,0,0,0,3,21,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,205,"            for (int j = 1, i = n - k + 1; j <= k; i++, j++) {
+",16,3,0,1,3,0,0,0,0,21,50,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,212,"                long d = gcd(i, j);
+",2,0,0,1,2,0,6,0,0,8,19,10,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,213,"                result = (result / (j / d)) * (i / d);
+",12,4,0,3,6,0,0,0,0,17,38,9,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,219,"            for (int j = 1, i = n - k + 1; j <= k; i++, j++) {
+",16,3,0,1,3,0,0,0,0,21,50,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,220,"                long d = gcd(i, j);
+",2,0,0,1,2,0,6,0,0,8,19,10,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,221,"                result = mulAndCheck((result / (j / d)), (i / d));
+",12,3,0,4,8,0,2,0,0,18,50,9,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,224,"        return result;
+",2,0,0,0,0,1,0,0,0,2,14,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,250,"        if (n < k) {
+",4,1,0,1,3,0,0,0,0,5,12,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,251,"            throw new IllegalArgumentException(
+",0,0,0,0,1,0,0,2,0,2,35,8,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,254,"        if (n < 0) {
+",2,1,0,1,3,0,0,0,0,3,12,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,255,"            throw new IllegalArgumentException(
+",0,0,0,0,1,0,0,2,0,2,35,8,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,258,"        if ((n == k) || (k == 0)) {
+",6,3,0,3,7,0,0,0,0,9,27,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,259,"            return 1d;
+",0,0,0,0,0,1,0,0,0,0,10,3,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,261,"        if ((k == 1) || (k == n - 1)) {
+",6,4,0,3,7,0,0,0,0,10,31,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,262,"            return n;
+",2,0,0,0,0,1,0,0,0,2,9,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,264,"        if (k > n/2) {
+",4,2,0,1,3,0,0,0,0,6,14,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,265,"            return binomialCoefficientDouble(n, n - k);
+",4,1,0,1,2,1,4,0,0,9,43,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,267,"        if (n < 67) {
+",2,1,0,1,3,0,0,0,0,3,13,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,268,"            return binomialCoefficient(n,k);
+",0,0,0,1,2,1,6,0,0,6,32,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,271,"        double result = 1d;
+",2,0,0,0,0,0,0,0,0,2,19,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,272,"        for (int i = 1; i <= k; i++) {
+",8,1,0,1,3,0,0,0,0,10,30,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,273,"             result *= (double)(n - k + i) / (double)i;
+",10,3,0,3,6,0,0,0,0,14,42,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,276,"        return Math.floor(result + 0.5);
+",2,1,0,1,2,1,4,0,0,7,32,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,298,"        if (n < k) {
+",4,1,0,1,3,0,0,0,0,5,12,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,299,"            throw new IllegalArgumentException(
+",0,0,0,0,1,0,0,2,0,2,35,8,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,302,"        if (n < 0) {
+",2,1,0,1,3,0,0,0,0,3,12,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,303,"            throw new IllegalArgumentException(
+",0,0,0,0,1,0,0,2,0,2,35,8,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,306,"        if ((n == k) || (k == 0)) {
+",6,3,0,3,7,0,0,0,0,9,27,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,307,"            return 0;
+",0,0,0,0,0,1,0,0,0,0,9,3,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,309,"        if ((k == 1) || (k == n - 1)) {
+",6,4,0,3,7,0,0,0,0,10,31,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,310,"            return Math.log((double) n);
+",2,0,0,2,4,1,4,0,0,6,28,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,317,"        if (n < 67) {  
+",2,1,0,1,3,0,0,0,0,3,13,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,318,"            return Math.log(binomialCoefficient(n,k));
+",0,0,0,2,4,1,10,0,0,10,42,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,325,"        if (n < 1030) { 
+",2,1,0,1,3,0,0,0,0,3,15,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,326,"            return Math.log(binomialCoefficientDouble(n, k));
+",0,0,0,2,4,1,10,0,0,10,49,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,329,"        if (k > n / 2) {
+",4,2,0,1,3,0,0,0,0,6,16,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,330,"            return binomialCoefficientLog(n, n - k);
+",4,1,0,1,2,1,4,0,0,9,40,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,336,"        double logSum = 0;
+",2,0,0,0,0,0,0,0,0,2,18,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,339,"        for (int i = n - k + 1; i <= n; i++) {
+",12,3,0,1,3,0,0,0,0,16,38,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,340,"            logSum += Math.log((double) i);
+",4,0,0,2,4,0,4,0,0,9,31,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,344,"        for (int i = 2; i <= k; i++) {
+",8,1,0,1,3,0,0,0,0,10,30,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,345,"            logSum -= Math.log((double) i);
+",4,0,0,2,4,0,4,0,0,9,31,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,348,"        return logSum;      
+",2,0,0,0,0,1,0,0,0,2,14,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,359,"        return (Math.exp(x) + Math.exp(-x)) / 2.0;
+",2,2,0,3,6,1,10,0,0,15,42,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,371,"        return ((Double.isNaN(x) && Double.isNaN(y)) || x == y);
+",4,3,0,4,8,1,12,0,0,19,56,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,384,"      return x == y || (x < y && (x + eps) >= y) || (x > y && x <= (y + eps));
+",24,11,0,4,8,1,0,0,0,35,72,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,398,"        if ((x == null) || (y == null)) {
+",4,3,0,3,7,0,0,0,0,7,33,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,399,"            return !((x == null) ^ (y == null));
+",4,3,0,3,6,1,0,0,0,8,36,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,401,"        if (x.length != y.length) {
+",8,1,0,1,3,0,0,0,0,9,27,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,402,"            return false;
+",0,0,0,0,0,1,0,0,0,1,13,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,404,"        for (int i = 0; i < x.length; ++i) {
+",10,1,0,1,3,0,0,0,0,12,36,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,405,"            if (!equals(x[i], y[i])) {
+",0,0,1,4,9,0,2,0,0,11,26,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,406,"                return false;
+",0,0,0,0,0,1,0,0,0,1,13,8,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,409,"        return true;
+",0,0,0,0,0,1,0,0,0,1,12,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,442,"        if (n < 0) {
+",2,1,0,1,3,0,0,0,0,3,12,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,443,"            throw new IllegalArgumentException(""must have n >= 0 for n!"");
+",0,0,0,1,2,0,0,2,0,3,62,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,445,"        if (n > 20) {
+",2,1,0,1,3,0,0,0,0,3,13,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,446,"            throw new ArithmeticException(
+",0,0,0,0,1,0,0,2,0,2,30,8,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,449,"        return factorials[n];
+",0,0,1,1,2,1,0,0,0,4,21,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,473,"        if (n < 0) {
+",2,1,0,1,3,0,0,0,0,3,12,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,474,"            throw new IllegalArgumentException(""must have n >= 0 for n!"");
+",0,0,0,1,2,0,0,2,0,3,62,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,476,"        if (n < 21) {
+",2,1,0,1,3,0,0,0,0,3,13,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,477,"            return factorial(n);
+",0,0,0,1,2,1,4,0,0,4,20,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,479,"        return Math.floor(Math.exp(factorialLog(n)) + 0.5);
+",0,1,0,3,6,1,12,0,0,13,51,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,496,"        if (n < 0) {
+",2,1,0,1,3,0,0,0,0,3,12,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,497,"            throw new IllegalArgumentException(""must have n > 0 for n!"");
+",0,0,0,1,2,0,0,2,0,3,61,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,499,"        if (n < 21) {
+",2,1,0,1,3,0,0,0,0,3,13,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,500,"            return Math.log(factorial(n));
+",0,0,0,2,4,1,8,0,0,8,30,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,502,"        double logSum = 0;
+",2,0,0,0,0,0,0,0,0,2,18,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,503,"        for (int i = 2; i <= n; i++) {
+",8,1,0,1,3,0,0,0,0,10,30,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,504,"            logSum += Math.log((double)i);
+",4,0,0,2,4,0,4,0,0,9,30,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,506,"        return logSum;
+",2,0,0,0,0,1,0,0,0,2,14,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,565,"            throw MathRuntimeException.createArithmeticException(
+",0,0,0,0,1,0,4,0,0,4,53,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,601,"        return new Double(value).hashCode();
+",2,0,0,2,4,1,2,2,0,6,36,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,612,"        return Arrays.hashCode(value);
+",0,0,0,1,2,1,6,0,0,6,30,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,623,"        return (x >= ZB) ? PB : NB;
+",8,1,0,1,2,1,0,0,0,9,27,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,635,"        if (Double.isNaN(x)) {
+",0,0,0,2,5,0,6,0,0,6,22,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,636,"            return Double.NaN;
+",4,0,0,0,0,1,0,0,0,4,18,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,638,"        return (x >= 0.0) ? 1.0 : -1.0;
+",2,1,0,1,2,1,0,0,0,4,31,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,649,"        if (Float.isNaN(x)) {
+",0,0,0,2,5,0,6,0,0,6,21,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,650,"            return Float.NaN;
+",4,0,0,0,0,1,0,0,0,4,17,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,652,"        return (x >= 0.0F) ? 1.0F : -1.0F;
+",2,1,0,1,2,1,0,0,0,4,34,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,662,"        return (x >= 0) ? 1 : -1;
+",2,1,0,1,2,1,0,0,0,4,25,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,672,"        return (x >= 0L) ? 1L : -1L;
+",2,1,0,1,2,1,0,0,0,4,28,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,683,"        return (x >= ZS) ? PS : NS;
+",8,1,0,1,2,1,0,0,0,9,27,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,734,"        return Math.log(x)/Math.log(base);
+",0,1,0,2,4,1,12,0,0,13,34,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,750,"            throw new ArithmeticException(""overflow: mul"");
+",0,0,0,1,2,0,0,2,0,3,47,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,767,"        String msg = ""overflow: multiply"";
+",2,0,0,0,0,0,0,2,0,5,34,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,768,"        if (a > b) {
+",4,1,0,1,3,0,0,0,0,5,12,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,770,"            ret = mulAndCheck(b, a);
+",2,0,0,1,2,0,6,0,0,9,24,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,772,"            if (a < 0) {
+",2,1,0,1,3,0,0,0,0,3,12,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,773,"                if (b < 0) {
+",2,1,0,1,3,0,0,0,0,3,12,8,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,775,"                    if (a >= Long.MAX_VALUE / b) {
+",8,2,0,1,3,0,0,0,0,10,30,10,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,776,"                        ret = a * b;
+",6,1,0,0,0,0,0,0,0,8,12,12,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,778,"                        throw new ArithmeticException(msg);
+",2,0,0,1,2,0,0,2,0,4,35,13,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,780,"                } else if (b > 0) {
+",2,1,0,1,4,0,0,0,0,3,19,9,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,782,"                    if (Long.MIN_VALUE / b <= a) {
+",8,2,0,1,3,0,0,0,0,10,30,11,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,783,"                        ret = a * b;
+",6,1,0,0,0,0,0,0,0,8,12,13,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,785,"                        throw new ArithmeticException(msg);
+",2,0,0,1,2,0,0,2,0,4,35,14,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,790,"                    ret = 0;
+",2,0,0,0,0,0,0,0,0,3,8,11,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,792,"            } else if (a > 0) {
+",2,1,0,1,4,0,0,0,0,3,19,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,797,"                if (a <= Long.MAX_VALUE / b) {
+",8,2,0,1,3,0,0,0,0,10,30,9,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,798,"                    ret = a * b;
+",6,1,0,0,0,0,0,0,0,8,12,11,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,800,"                    throw new ArithmeticException(msg);
+",2,0,0,1,2,0,0,2,0,4,35,12,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,804,"                ret = 0;
+",2,0,0,0,0,0,0,0,0,3,8,9,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,807,"        return ret;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,830,"        if (Double.isNaN(d) || Double.isInfinite(d)) {
+",0,1,0,3,7,0,12,0,0,13,46,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,831,"                return d;
+",2,0,0,0,0,1,0,0,0,2,9,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,832,"        } else if (d == 0) {
+",2,1,0,1,4,0,0,0,0,3,20,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,833,"                return (direction < 0) ? -Double.MIN_VALUE : Double.MIN_VALUE;
+",10,1,0,1,2,1,0,0,0,12,62,8,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,839,"        long bits     = Double.doubleToLongBits(d);
+",2,0,0,1,2,0,6,0,0,8,43,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,840,"        long sign     = bits & 0x8000000000000000L;
+",4,1,0,0,0,0,0,0,0,5,43,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,841,"        long exponent = bits & 0x7ff0000000000000L;
+",4,1,0,0,0,0,0,0,0,5,43,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,842,"        long mantissa = bits & 0x000fffffffffffffL;
+",4,1,0,0,0,0,0,0,0,5,43,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,844,"        if (d * (direction - d) >= 0) {
+",6,3,0,2,5,0,0,0,0,9,31,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,846,"                if (mantissa == 0x000fffffffffffffL) {
+",2,1,0,1,3,0,0,0,0,3,38,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,847,"                        return Double.longBitsToDouble(sign |
+",2,1,0,0,1,1,4,0,0,7,37,9,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,850,"                        return Double.longBitsToDouble(sign |
+",2,1,0,0,1,1,4,0,0,7,37,9,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,855,"                if (mantissa == 0L) {
+",2,1,0,1,3,0,0,0,0,3,21,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,856,"                        return Double.longBitsToDouble(sign |
+",2,1,0,0,1,1,4,0,0,7,37,9,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,860,"                        return Double.longBitsToDouble(sign |
+",2,1,0,0,1,1,4,0,0,7,37,9,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,879,"        if ((d == 0) || Double.isNaN(d) || Double.isInfinite(d)) {
+",2,2,0,4,9,0,12,0,0,16,58,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,880,"            return d;
+",2,0,0,0,0,1,0,0,0,2,9,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,884,"        final long bits     = Double.doubleToLongBits(d);
+",2,0,0,1,2,1,6,0,0,9,49,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,885,"        final long exponent = bits & 0x7ff0000000000000L;
+",4,1,0,0,0,1,0,0,0,6,49,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,886,"        final long rest     = bits & 0x800fffffffffffffL;
+",4,1,0,0,0,1,0,0,0,6,49,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,889,"        final long newBits = rest | (exponent + (((long) scaleFactor) << 52));
+",8,3,0,4,8,1,0,0,0,12,70,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,890,"        return Double.longBitsToDouble(newBits);
+",0,0,0,1,2,1,6,0,0,6,40,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,914,"         return a - TWO_PI * Math.floor((a + Math.PI - center) / TWO_PI);
+",14,5,0,2,4,1,4,0,0,23,64,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,927,"        return round(x, scale, BigDecimal.ROUND_HALF_UP);
+",4,0,0,1,2,1,6,0,0,10,49,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,944,"            return (new BigDecimal
+",0,0,0,0,1,1,0,2,0,2,22,11,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,948,"        } catch (NumberFormatException ex) {
+",2,0,0,1,4,0,0,2,0,4,36,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,949,"            if (Double.isInfinite(x)) {
+",0,0,0,2,5,0,6,0,0,6,27,8,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,950,"                return x;          
+",2,0,0,0,0,1,0,0,0,2,9,9,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,952,"                return Double.NaN;
+",4,0,0,0,0,1,0,0,0,4,18,10,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,967,"        return round(x, scale, BigDecimal.ROUND_HALF_UP);
+",4,0,0,1,2,1,6,0,0,10,49,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,983,"        float sign = indicator(x);
+",2,0,0,1,2,0,4,0,0,6,26,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,984,"        float factor = (float)Math.pow(10.0f, scale) * sign;
+",4,1,0,2,4,0,6,0,0,11,52,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,985,"        return (float)roundUnscaled(x * factor, sign, roundingMethod) / factor;
+",6,2,0,2,4,1,6,0,0,14,71,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1002,"        switch (roundingMethod) {
+",2,0,0,1,3,0,0,0,0,2,25,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1004,"            if (sign == -1) {
+",2,1,0,1,3,0,0,0,0,4,17,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1005,"                unscaled = Math.floor(nextAfter(unscaled, Double.NEGATIVE_INFINITY));
+",6,0,0,2,4,0,8,0,0,15,69,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1007,"                unscaled = Math.ceil(nextAfter(unscaled, Double.POSITIVE_INFINITY));
+",6,0,0,2,4,0,8,0,0,15,68,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1009,"            break;
+",0,0,0,0,0,0,0,0,0,0,6,3,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1011,"            unscaled = Math.floor(nextAfter(unscaled, Double.NEGATIVE_INFINITY));
+",6,0,0,2,4,0,8,0,0,15,69,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1012,"            break;
+",0,0,0,0,0,0,0,0,0,0,6,3,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1014,"            if (sign == -1) {
+",2,1,0,1,3,0,0,0,0,4,17,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1015,"                unscaled = Math.ceil(nextAfter(unscaled, Double.POSITIVE_INFINITY));
+",6,0,0,2,4,0,8,0,0,15,68,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1017,"                unscaled = Math.floor(nextAfter(unscaled, Double.NEGATIVE_INFINITY));
+",6,0,0,2,4,0,8,0,0,15,69,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1019,"            break;
+",0,0,0,0,0,0,0,0,0,0,6,3,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1021,"            unscaled = nextAfter(unscaled, Double.NEGATIVE_INFINITY);
+",6,0,0,1,2,0,4,0,0,11,57,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1022,"            double fraction = unscaled - Math.floor(unscaled);
+",4,1,0,1,2,0,6,0,0,11,50,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1023,"            if (fraction > 0.5) {
+",2,1,0,1,3,0,0,0,0,3,21,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1024,"                unscaled = Math.ceil(unscaled);
+",2,0,0,1,2,0,6,0,0,9,31,8,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1026,"                unscaled = Math.floor(unscaled);
+",2,0,0,1,2,0,6,0,0,9,32,8,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1028,"            break;
+",0,0,0,0,0,0,0,0,0,0,6,3,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1031,"            double fraction = unscaled - Math.floor(unscaled);
+",4,1,0,1,2,0,6,0,0,11,50,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1032,"            if (fraction > 0.5) {
+",2,1,0,1,3,0,0,0,0,3,21,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1033,"                unscaled = Math.ceil(unscaled);
+",2,0,0,1,2,0,6,0,0,9,31,8,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1034,"            } else if (fraction < 0.5) {
+",2,1,0,1,4,0,0,0,0,3,28,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1035,"                unscaled = Math.floor(unscaled);
+",2,0,0,1,2,0,6,0,0,9,32,9,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1038,"                if (Math.floor(unscaled) / 2.0 == Math.floor(Math
+",0,3,0,1,4,0,12,0,0,15,49,9,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1040,"                    unscaled = Math.floor(unscaled);
+",2,0,0,1,2,0,6,0,0,9,32,11,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1042,"                    unscaled = Math.ceil(unscaled);
+",2,0,0,1,2,0,6,0,0,9,31,11,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1045,"            break;
+",0,0,0,0,0,0,0,0,0,0,6,3,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1048,"            unscaled = nextAfter(unscaled, Double.POSITIVE_INFINITY);
+",6,0,0,1,2,0,4,0,0,11,57,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1049,"            double fraction = unscaled - Math.floor(unscaled);
+",4,1,0,1,2,0,6,0,0,11,50,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1050,"            if (fraction >= 0.5) {
+",2,1,0,1,3,0,0,0,0,3,22,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1051,"                unscaled = Math.ceil(unscaled);
+",2,0,0,1,2,0,6,0,0,9,31,8,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1053,"                unscaled = Math.floor(unscaled);
+",2,0,0,1,2,0,6,0,0,9,32,8,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1055,"            break;
+",0,0,0,0,0,0,0,0,0,0,6,3,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1058,"            if (unscaled != Math.floor(unscaled)) {
+",2,1,0,2,5,0,6,0,0,9,39,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1059,"                throw new ArithmeticException(""Inexact result from rounding"");
+",0,0,0,1,2,0,0,2,0,3,62,8,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1063,"            unscaled = Math.ceil(nextAfter(unscaled,  Double.POSITIVE_INFINITY));
+",6,0,0,2,4,0,8,0,0,15,69,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1064,"            break;
+",0,0,0,0,0,0,0,0,0,0,6,3,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1066,"            throw new IllegalArgumentException(""Invalid rounding method."");
+",0,0,0,1,2,0,0,2,0,3,63,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1068,"        return unscaled;
+",2,0,0,0,0,1,0,0,0,2,16,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1082,"        return (x == ZB) ? ZB : (x > ZB) ? PB : NB;
+",14,2,0,2,4,1,0,0,0,16,43,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1098,"        if (Double.isNaN(x)) {
+",0,0,0,2,5,0,6,0,0,6,22,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1099,"            return Double.NaN;
+",4,0,0,0,0,1,0,0,0,4,18,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1101,"        return (x == 0.0) ? 0.0 : (x > 0.0) ? 1.0 : -1.0;
+",4,2,0,2,4,1,0,0,0,7,49,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1116,"        if (Float.isNaN(x)) {
+",0,0,0,2,5,0,6,0,0,6,21,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1117,"            return Float.NaN;
+",4,0,0,0,0,1,0,0,0,4,17,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1119,"        return (x == 0.0F) ? 0.0F : (x > 0.0F) ? 1.0F : -1.0F;
+",4,2,0,2,4,1,0,0,0,7,54,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1133,"        return (x == 0) ? 0 : (x > 0) ? 1 : -1;
+",4,2,0,2,4,1,0,0,0,7,39,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1147,"        return (x == 0L) ? 0L : (x > 0L) ? 1L : -1L;
+",4,2,0,2,4,1,0,0,0,7,44,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1162,"        return (x == ZS) ? ZS : (x > ZS) ? PS : NS;
+",14,2,0,2,4,1,0,0,0,16,43,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1173,"        return (Math.exp(x) - Math.exp(-x)) / 2.0;
+",2,2,0,3,6,1,10,0,0,15,42,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1187,"        long s = (long)x - (long)y;
+",6,1,0,2,4,0,0,0,0,7,27,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1188,"        if (s < Integer.MIN_VALUE || s > Integer.MAX_VALUE) {
+",12,3,0,1,3,0,0,0,0,15,53,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1189,"            throw new ArithmeticException(""overflow: subtract"");
+",0,0,0,1,2,0,0,2,0,3,52,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1191,"        return (int)s;
+",2,0,0,1,2,1,0,0,0,2,14,5,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1206,"        String msg = ""overflow: subtract"";
+",2,0,0,0,0,0,0,2,0,5,34,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1207,"        if (b == Long.MIN_VALUE) {
+",6,1,0,1,3,0,0,0,0,7,26,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1208,"            if (a < 0) {
+",2,1,0,1,3,0,0,0,0,3,12,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1209,"                ret = a - b;
+",6,1,0,0,0,0,0,0,0,8,12,8,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1211,"                throw new ArithmeticException(msg);
+",2,0,0,1,2,0,0,2,0,4,35,9,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1215,"            ret = addAndCheck(a, -b, msg);
+",4,0,0,1,2,0,6,0,0,12,30,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/MathUtils,99,1217,"        return ret;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0

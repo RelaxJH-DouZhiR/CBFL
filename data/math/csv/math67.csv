@@ -1,0 +1,1365 @@
+dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,logic,lengthEle,lengthWord,depth,suspicious,accuracy
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,43,"        super(100, 1E-10);
+",0,0,0,1,2,0,0,0,0,0,18,3,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,44,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,37,"    private static final double GOLDEN_SECTION = 0.5 * (3 - Math.sqrt(5));
+",2,2,0,2,4,3,4,0,0,11,70,2,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,57,"        clearResult();
+",0,0,0,1,2,0,2,0,0,2,14,5,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,58,"        return localMin(f, goalType, min, max, relativeAccuracy, absoluteAccuracy);
+",0,0,0,1,2,1,14,0,0,14,75,5,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,88,"        double x = a + GOLDEN_SECTION * (b - a);
+",10,3,0,1,2,0,0,0,0,13,40,5,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,89,"        double v = x;
+",4,0,0,0,0,0,0,0,0,4,13,5,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,90,"        double w = x;
+",4,0,0,0,0,0,0,0,0,4,13,5,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,91,"        double e = 0;
+",2,0,0,0,0,0,0,0,0,2,13,5,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,92,"        double fx = computeObjectiveValue(f, x);
+",2,0,0,1,2,0,6,0,0,8,40,5,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,93,"        if (goalType == GoalType.MAXIMIZE) {
+",6,1,0,1,3,0,0,0,0,7,36,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,96,"        double fv = fx;
+",4,0,0,0,0,0,0,0,0,4,15,5,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,97,"        double fw = fx;
+",4,0,0,0,0,0,0,0,0,4,15,5,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,99,"        int count = 0;
+",2,0,0,0,0,0,0,0,0,2,14,5,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,100,"        while (count < maximalIterationCount) {
+",4,1,0,1,3,0,0,0,0,5,39,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,101,"            double m = 0.5 * (a + b);
+",6,2,0,1,2,0,0,0,0,8,25,7,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,102,"            double tol = eps * Math.abs(x) + t;
+",6,2,0,1,2,0,6,0,0,14,35,7,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,103,"            double t2 = 2 * tol;
+",4,1,0,0,0,0,0,0,0,5,20,7,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,106,"            if (Math.abs(x - m) > t2 - 0.5 * (b - a)) {
+",10,5,0,3,7,0,4,0,0,19,43,6,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,107,"                double p = 0;
+",2,0,0,0,0,0,0,0,0,2,13,9,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,108,"                double q = 0;
+",2,0,0,0,0,0,0,0,0,2,13,9,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,109,"                double r = 0;
+",2,0,0,0,0,0,0,0,0,2,13,9,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,110,"                double d = 0;
+",2,0,0,0,0,0,0,0,0,2,13,9,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,111,"                double u = 0;
+",2,0,0,0,0,0,0,0,0,2,13,9,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,113,"                if (Math.abs(e) > tol) { // Fit parabola.
+",2,1,0,2,5,0,6,0,0,9,41,8,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,114,"                    r = (x - w) * (fx - fv);
+",10,3,0,2,4,0,0,0,0,14,24,10,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,115,"                    q = (x - v) * (fx - fw);
+",10,3,0,2,4,0,0,0,0,14,24,10,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,116,"                    p = (x - v) * q - (x - w) * r;
+",14,5,0,2,4,0,0,0,0,20,30,10,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,117,"                    q = 2 * (q - r);
+",6,2,0,1,2,0,0,0,0,9,16,10,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,119,"                    if (q > 0) {
+",2,1,0,1,3,0,0,0,0,3,12,10,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,120,"                        p = -p;
+",4,0,0,0,0,0,0,0,0,6,7,12,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,122,"                        q = -q;
+",4,0,0,0,0,0,0,0,0,6,7,12,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,125,"                    r = e;
+",4,0,0,0,0,0,0,0,0,5,6,10,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,126,"                    e = d;
+",4,0,0,0,0,0,0,0,0,5,6,10,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,129,"                if (Math.abs(p) < Math.abs(0.5 * q * r) &&
+",4,4,0,2,5,0,10,0,0,18,42,8,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,139,"                    e = ((x < m) ? b : a) - x;
+",12,2,0,2,4,0,0,0,0,15,26,10,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,140,"                    d = GOLDEN_SECTION * e;
+",6,1,0,0,0,0,0,0,0,8,23,10,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,144,"                u = x + ((Math.abs(d) > tol) ? d : ((d > 0) ? tol : -tol));
+",14,3,0,5,10,0,6,0,0,25,59,8,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,145,"                double fu = computeObjectiveValue(f, u);
+",2,0,0,1,2,0,6,0,0,8,40,9,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,146,"                if (goalType == GoalType.MAXIMIZE) {
+",6,1,0,1,3,0,0,0,0,7,36,8,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,151,"                if (fu <= fx) {
+",4,1,0,1,3,0,0,0,0,5,15,8,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,152,"                    if (u < x) {
+",4,1,0,1,3,0,0,0,0,5,12,10,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,153,"                        b = x;
+",4,0,0,0,0,0,0,0,0,5,6,12,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,155,"                        a = x;
+",4,0,0,0,0,0,0,0,0,5,6,12,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,157,"                    v = w;
+",4,0,0,0,0,0,0,0,0,5,6,10,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,158,"                    fv = fw;
+",4,0,0,0,0,0,0,0,0,5,8,10,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,159,"                    w = x;
+",4,0,0,0,0,0,0,0,0,5,6,10,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,160,"                    fw = fx;
+",4,0,0,0,0,0,0,0,0,5,8,10,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,161,"                    x = u;
+",4,0,0,0,0,0,0,0,0,5,6,10,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,162,"                    fx = fu;
+",4,0,0,0,0,0,0,0,0,5,8,10,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,164,"                    if (u < x) {
+",4,1,0,1,3,0,0,0,0,5,12,10,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,165,"                        a = u;
+",4,0,0,0,0,0,0,0,0,5,6,12,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,167,"                        b = u;
+",4,0,0,0,0,0,0,0,0,5,6,12,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,169,"                    if ((fu <= fw) || (w == x)) {
+",8,3,0,3,7,0,0,0,0,11,29,10,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,170,"                        v = w;
+",4,0,0,0,0,0,0,0,0,5,6,12,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,171,"                        fv = fw;
+",4,0,0,0,0,0,0,0,0,5,8,12,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,172,"                        w = u;
+",4,0,0,0,0,0,0,0,0,5,6,12,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,173,"                        fw = fu;
+",4,0,0,0,0,0,0,0,0,5,8,12,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,174,"                    } else if ((fu <= fv) || (v == x) || (v == w)) {
+",12,4,0,4,10,0,0,0,0,16,48,11,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,175,"                        v = u;
+",4,0,0,0,0,0,0,0,0,5,6,13,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,176,"                        fv = fu;
+",4,0,0,0,0,0,0,0,0,5,8,13,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,179,"            } else { // termination
+",0,0,0,0,2,0,0,0,0,0,23,3,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,180,"                setResult(x, (goalType == GoalType.MAXIMIZE) ? -fx : fx, count);
+",10,1,0,2,4,0,6,0,0,18,64,9,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,181,"                return x;
+",2,0,0,0,0,1,0,0,0,2,9,8,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,184,"            ++count;
+",2,0,0,0,0,0,0,0,0,3,8,6,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,185,"        }
+",0,0,0,0,1,0,0,0,0,0,1,3,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,63,"        super(defaultMaximalIterationCount, defaultAbsoluteAccuracy);
+",4,0,0,1,2,0,0,0,0,4,61,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,64,"        resultComputed = false;
+",2,0,0,0,0,0,0,0,0,4,23,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,65,"        setMaxEvaluations(Integer.MAX_VALUE);
+",4,0,0,1,2,0,2,0,0,6,37,5,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,66,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,72,"        if (!resultComputed) {
+",2,0,0,1,3,0,0,0,0,3,22,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,75,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,85,"        checkResultComputed();
+",0,0,0,1,2,0,2,0,0,2,22,5,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,86,"        return functionValue;
+",2,0,0,0,0,1,0,0,0,2,21,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,98,"        this.result         = x;
+",4,0,0,0,0,0,0,0,0,5,24,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,99,"        this.functionValue  = fx;
+",4,0,0,0,0,0,0,0,0,5,25,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,100,"        this.iterationCount = iterationCount;
+",4,0,0,0,0,0,0,0,0,5,37,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,101,"        this.resultComputed = true;
+",2,0,0,0,0,0,0,0,0,4,27,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,102,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,108,"        this.resultComputed = false;
+",2,0,0,0,0,0,0,0,0,4,28,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,109,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,113,"        this.maxEvaluations = maxEvaluations;
+",4,0,0,0,0,0,0,0,0,5,37,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,114,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,123,"        return evaluations;
+",2,0,0,0,0,1,0,0,0,2,19,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,137,"        if (++evaluations > maxEvaluations) {
+",4,1,0,1,3,0,0,0,0,6,37,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,141,"        return f.value(point);
+",0,0,0,1,2,1,6,0,0,6,22,5,1.00000,0
+defect4j,math,org/apache/commons/math/ConvergingAlgorithmImpl,67,61,"                                      final double defaultAbsoluteAccuracy) {
+",2,0,0,0,2,1,0,0,0,3,39,3,1.00000,0
+defect4j,math,org/apache/commons/math/ConvergingAlgorithmImpl,67,62,"        this.defaultAbsoluteAccuracy = defaultAbsoluteAccuracy;
+",4,0,0,0,0,0,0,0,0,5,55,4,1.00000,0
+defect4j,math,org/apache/commons/math/ConvergingAlgorithmImpl,67,63,"        this.defaultRelativeAccuracy = 1.0e-14;
+",2,0,0,0,0,0,0,0,0,3,39,4,1.00000,0
+defect4j,math,org/apache/commons/math/ConvergingAlgorithmImpl,67,64,"        this.absoluteAccuracy = defaultAbsoluteAccuracy;
+",4,0,0,0,0,0,0,0,0,5,48,4,1.00000,0
+defect4j,math,org/apache/commons/math/ConvergingAlgorithmImpl,67,65,"        this.relativeAccuracy = defaultRelativeAccuracy;
+",4,0,0,0,0,0,0,0,0,5,48,4,1.00000,0
+defect4j,math,org/apache/commons/math/ConvergingAlgorithmImpl,67,66,"        this.defaultMaximalIterationCount = defaultMaximalIterationCount;
+",4,0,0,0,0,0,0,0,0,5,65,4,1.00000,0
+defect4j,math,org/apache/commons/math/ConvergingAlgorithmImpl,67,67,"        this.maximalIterationCount = defaultMaximalIterationCount;
+",4,0,0,0,0,0,0,0,0,5,58,4,1.00000,0
+defect4j,math,org/apache/commons/math/ConvergingAlgorithmImpl,67,68,"        this.iterationCount = 0;
+",2,0,0,0,0,0,0,0,0,3,24,4,1.00000,0
+defect4j,math,org/apache/commons/math/ConvergingAlgorithmImpl,67,69,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,1.00000,0
+defect4j,math,org/apache/commons/math/ConvergingAlgorithmImpl,67,73,"        return iterationCount;
+",2,0,0,0,0,1,0,0,0,2,22,4,1.00000,0
+defect4j,math,org/apache/commons/math/ConvergingAlgorithmImpl,67,93,"        maximalIterationCount = count;
+",4,0,0,0,0,0,0,0,0,5,30,4,1.00000,0
+defect4j,math,org/apache/commons/math/ConvergingAlgorithmImpl,67,94,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/GoalType,67,27,"public enum GoalType implements Serializable {
+",2,0,0,0,1,1,0,2,0,5,46,1,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/GoalType,67,30,"    MAXIMIZE,
+",2,0,0,0,0,0,0,0,0,2,9,2,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/GoalType,67,33,"    MINIMIZE
+",2,0,0,0,0,0,0,0,0,2,8,2,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,80,"                                             final RandomGenerator generator) {
+",2,0,0,0,2,1,0,2,0,5,34,3,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,81,"        this.optimizer        = optimizer;
+",4,0,0,0,0,0,0,0,0,5,34,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,82,"        this.totalIterations  = 0;
+",2,0,0,0,0,0,0,0,0,3,26,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,83,"        this.starts           = starts;
+",4,0,0,0,0,0,0,0,0,5,31,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,84,"        this.generator        = generator;
+",4,0,0,0,0,0,0,0,0,5,34,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,85,"        this.optima           = null;
+",2,0,0,0,0,0,0,0,0,3,29,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,86,"        setMaximalIterationCount(Integer.MAX_VALUE);
+",4,0,0,1,2,0,2,0,0,6,44,5,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,87,"        setMaxEvaluations(Integer.MAX_VALUE);
+",4,0,0,1,2,0,2,0,0,6,37,5,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,88,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,152,"        this.maxIterations = count;
+",4,0,0,0,0,0,0,0,0,5,27,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,153,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,157,"        this.maxEvaluations = maxEvaluations;
+",4,0,0,0,0,0,0,0,0,5,37,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,158,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,193,"        if (optima == null) {
+",2,1,0,1,3,0,0,0,0,3,21,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,219,"        if (optimaValues == null) {
+",2,1,0,1,3,0,0,0,0,3,27,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,231,"        optima           = new double[starts];
+",2,0,1,1,2,0,0,0,0,5,38,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,232,"        optimaValues     = new double[starts];
+",2,0,1,1,2,0,0,0,0,5,38,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,233,"        totalIterations  = 0;
+",2,0,0,0,0,0,0,0,0,3,21,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,234,"        totalEvaluations = 0;
+",2,0,0,0,0,0,0,0,0,3,21,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,237,"        for (int i = 0; i < starts; ++i) {
+",8,1,0,1,3,0,0,0,0,10,34,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,240,"                optimizer.setMaximalIterationCount(maxIterations - totalIterations);
+",4,1,0,1,2,0,4,0,0,9,68,9,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,241,"                optimizer.setMaxEvaluations(maxEvaluations - totalEvaluations);
+",4,1,0,1,2,0,4,0,0,9,63,9,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,242,"                final double bound1 = (i == 0) ? min : min + generator.nextDouble() * (max - min);
+",12,4,0,3,6,1,4,0,0,21,82,8,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,243,"                final double bound2 = (i == 0) ? max : min + generator.nextDouble() * (max - min);
+",12,4,0,3,6,1,4,0,0,21,82,8,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,244,"                optima[i]       = optimizer.optimize(f, goalType,
+",0,0,1,1,3,0,8,0,0,13,49,8,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,247,"                optimaValues[i] = optimizer.getFunctionValue();
+",0,0,1,2,4,0,4,0,0,9,47,8,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,254,"            }
+",0,0,0,0,1,0,0,0,0,0,1,3,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,256,"            totalIterations  += optimizer.getIterationCount();
+",2,0,0,1,2,0,4,0,0,7,50,6,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,257,"            totalEvaluations += optimizer.getEvaluations();
+",2,0,0,1,2,0,4,0,0,7,47,6,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,262,"        int lastNaN = optima.length;
+",6,0,0,0,0,0,0,0,0,6,28,5,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,263,"        for (int i = 0; i < lastNaN; ++i) {
+",8,1,0,1,3,0,0,0,0,10,35,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,264,"            if (Double.isNaN(optima[i])) {
+",0,0,1,3,7,0,4,0,0,8,30,7,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,272,"        double currX = optima[0];
+",2,0,1,1,2,0,0,0,0,4,25,5,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,273,"        double currY = optimaValues[0];
+",2,0,1,1,2,0,0,0,0,4,31,5,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,274,"        for (int j = 1; j < lastNaN; ++j) {
+",8,1,0,1,3,0,0,0,0,10,35,4,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,275,"            final double prevY = currY;
+",4,0,0,0,0,1,0,0,0,5,27,6,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,276,"            currX = optima[j];
+",2,0,1,1,2,0,0,0,0,7,18,6,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,277,"            currY = optimaValues[j];
+",2,0,1,1,2,0,0,0,0,7,24,6,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,278,"            if ((goalType == GoalType.MAXIMIZE) ^ (currY < prevY)) {
+",10,3,0,3,7,0,0,0,0,13,56,6,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,301,"        if (Double.isNaN(optima[0])) {
+",0,0,1,3,7,0,4,0,0,6,30,5,1.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,308,"        return optima[0];
+",0,0,1,1,2,1,0,0,0,2,17,5,1.00000,0
+defect4j,math,org/apache/commons/math/random/JDKRandomGenerator,67,28,"public class JDKRandomGenerator extends Random implements RandomGenerator {
+",2,0,0,0,1,1,0,4,0,7,75,1,1.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,626,"        return new ParseException(null, offset) {
+",2,0,0,1,3,1,0,2,0,5,41,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,634,"                return buildMessage(Locale.US, pattern, arguments);
+",4,0,0,1,2,1,6,0,0,10,51,10,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,640,"                return buildMessage(Locale.getDefault(), pattern, arguments);
+",0,0,0,2,4,1,10,0,0,10,61,10,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,64,"        this(new DummyLocalizable(pattern), arguments);
+",4,0,0,2,4,0,0,2,0,6,47,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,65,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,75,"    public MathRuntimeException(final Localizable pattern, final Object ... arguments) {
+",6,0,0,1,3,3,0,4,0,13,84,2,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,76,"        this.pattern   = pattern;
+",4,0,0,0,0,0,0,0,0,5,25,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,77,"        this.arguments = (arguments == null) ? new Object[0] : arguments.clone();
+",4,1,0,3,6,0,4,2,0,12,73,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,78,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,88,"        super(rootCause);
+",2,0,0,1,2,0,0,0,0,2,17,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,89,"        this.pattern   = LocalizedFormats.SIMPLE_MESSAGE;
+",6,0,0,0,0,0,0,0,0,7,49,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,90,"        this.arguments = new Object[] { (rootCause == null) ? """" : rootCause.getMessage() };
+",4,1,0,4,8,0,4,2,0,13,84,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,91,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,106,"        this(rootCause, new DummyLocalizable(pattern), arguments);
+",6,0,0,2,4,0,0,2,0,8,58,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,107,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,121,"        super(rootCause);
+",2,0,0,1,2,0,0,0,0,2,17,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,122,"        this.pattern   = pattern;
+",4,0,0,0,0,0,0,0,0,5,25,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,123,"        this.arguments = (arguments == null) ? new Object[0] : arguments.clone();
+",4,1,0,3,6,0,4,2,0,12,73,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,124,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,136,"        return new MessageFormat(pattern.getLocalizedString(locale), locale).format(arguments);
+",2,0,0,3,6,1,10,2,0,14,87,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,146,"        return pattern.getSourceString();
+",0,0,0,1,2,1,4,0,0,4,33,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,155,"        return pattern;
+",2,0,0,0,0,1,0,0,0,2,15,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,163,"        return arguments.clone();
+",0,0,0,1,2,1,4,0,0,4,25,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,173,"        if (pattern != null) {
+",2,1,0,1,3,0,0,0,0,3,22,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,174,"            return buildMessage(locale, pattern, arguments);
+",0,0,0,1,2,1,8,0,0,8,48,7,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,176,"        return """";
+",0,0,0,0,0,1,0,0,0,1,10,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,182,"        return getMessage(Locale.US);
+",4,0,0,1,2,1,2,0,0,6,29,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,188,"        return getMessage(Locale.getDefault());
+",0,0,0,2,4,1,6,0,0,6,39,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,196,"        printStackTrace(System.err);
+",4,0,0,1,2,0,2,0,0,6,28,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,197,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,206,"        synchronized (out) {
+",2,0,0,1,3,0,0,0,0,2,20,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,207,"            PrintWriter pw = new PrintWriter(out, false);
+",4,0,0,1,2,0,0,4,0,9,45,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,208,"            printStackTrace(pw);
+",0,0,0,1,2,0,4,0,0,4,20,7,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,210,"            pw.flush();
+",0,0,0,1,2,0,4,0,0,4,11,7,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,211,"        }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,212,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,225,"        return createArithmeticException(new DummyLocalizable(pattern), arguments);
+",2,0,0,2,4,1,4,2,0,8,75,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,238,"        return new ArithmeticException() {
+",0,0,0,1,3,1,0,2,0,2,34,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,269,"        return createArrayIndexOutOfBoundsException(new DummyLocalizable(pattern), arguments);
+",2,0,0,2,4,1,4,2,0,8,86,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,282,"        return new ArrayIndexOutOfBoundsException() {
+",0,0,0,1,3,1,0,2,0,2,45,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,313,"        return createEOFException(new DummyLocalizable(pattern), arguments);
+",2,0,0,2,4,1,4,2,0,8,68,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,326,"        return new EOFException() {
+",0,0,0,1,3,1,0,2,0,2,27,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,358,"        IOException ioe = new IOException(rootCause.getLocalizedMessage());
+",2,0,0,2,4,0,4,4,0,10,67,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,359,"        ioe.initCause(rootCause);
+",0,0,0,1,2,0,6,0,0,6,25,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,360,"        return ioe;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,374,"        return createIllegalArgumentException(new DummyLocalizable(pattern), arguments);
+",2,0,0,2,4,1,4,2,0,8,80,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,387,"        return new IllegalArgumentException() {
+",0,0,0,1,3,1,0,2,0,2,39,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,415,"        IllegalArgumentException iae = new IllegalArgumentException(rootCause.getLocalizedMessage());
+",2,0,0,2,4,0,4,4,0,10,93,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,416,"        iae.initCause(rootCause);
+",0,0,0,1,2,0,6,0,0,6,25,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,417,"        return iae;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,431,"        return createIllegalStateException(new DummyLocalizable(pattern), arguments);
+",2,0,0,2,4,1,4,2,0,8,77,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,444,"        return new IllegalStateException() {
+",0,0,0,1,3,1,0,2,0,2,36,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,475,"        return createConcurrentModificationException(new DummyLocalizable(pattern), arguments);
+",2,0,0,2,4,1,4,2,0,8,87,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,488,"        return new ConcurrentModificationException() {
+",0,0,0,1,3,1,0,2,0,2,46,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,519,"        return createNoSuchElementException(new DummyLocalizable(pattern), arguments);
+",2,0,0,2,4,1,4,2,0,8,78,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,532,"        return new NoSuchElementException() {
+",0,0,0,1,3,1,0,2,0,2,37,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,563,"        return createNullPointerException(new DummyLocalizable(pattern), arguments);
+",2,0,0,2,4,1,4,2,0,8,76,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,576,"        return new NullPointerException() {
+",0,0,0,1,3,1,0,2,0,2,35,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,610,"        return createParseException(offset, new DummyLocalizable(pattern), arguments);
+",2,0,0,2,4,1,6,2,0,10,78,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,626,"        return new ParseException(null, offset) {
+",2,0,0,1,3,1,0,2,0,5,41,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,652,"        final String argument = ""https://issues.apache.org/jira/browse/MATH"";
+",2,0,0,0,0,1,0,2,0,6,69,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,654,"        return new RuntimeException() {
+",0,0,0,1,3,1,0,2,0,2,31,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,39,"public class MathRuntimeException extends RuntimeException {
+",2,0,0,0,1,1,0,2,0,5,60,1,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,444,"        return new IllegalStateException() {
+",0,0,0,1,3,1,0,2,0,2,36,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,452,"                return buildMessage(Locale.US, pattern, arguments);
+",4,0,0,1,2,1,6,0,0,10,51,10,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,458,"                return buildMessage(Locale.getDefault(), pattern, arguments);
+",0,0,0,2,4,1,10,0,0,10,61,10,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,387,"        return new IllegalArgumentException() {
+",0,0,0,1,3,1,0,2,0,2,39,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,395,"                return buildMessage(Locale.US, pattern, arguments);
+",4,0,0,1,2,1,6,0,0,10,51,10,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,401,"                return buildMessage(Locale.getDefault(), pattern, arguments);
+",0,0,0,2,4,1,10,0,0,10,61,10,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,654,"        return new RuntimeException() {
+",0,0,0,1,3,1,0,2,0,2,31,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,662,"                return buildMessage(Locale.US, LocalizedFormats.INTERNAL_ERROR, argument);
+",8,0,0,1,2,1,4,0,0,12,74,10,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,668,"                return buildMessage(Locale.getDefault(), LocalizedFormats.INTERNAL_ERROR, argument);
+",4,0,0,2,4,1,8,0,0,12,84,10,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,576,"        return new NullPointerException() {
+",0,0,0,1,3,1,0,2,0,2,35,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,584,"                return buildMessage(Locale.US, pattern, arguments);
+",4,0,0,1,2,1,6,0,0,10,51,10,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,590,"                return buildMessage(Locale.getDefault(), pattern, arguments);
+",0,0,0,2,4,1,10,0,0,10,61,10,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,532,"        return new NoSuchElementException() {
+",0,0,0,1,3,1,0,2,0,2,37,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,540,"                return buildMessage(Locale.US, pattern, arguments);
+",4,0,0,1,2,1,6,0,0,10,51,10,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,546,"                return buildMessage(Locale.getDefault(), pattern, arguments);
+",0,0,0,2,4,1,10,0,0,10,61,10,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,488,"        return new ConcurrentModificationException() {
+",0,0,0,1,3,1,0,2,0,2,46,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,496,"                return buildMessage(Locale.US, pattern, arguments);
+",4,0,0,1,2,1,6,0,0,10,51,10,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,502,"                return buildMessage(Locale.getDefault(), pattern, arguments);
+",0,0,0,2,4,1,10,0,0,10,61,10,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,326,"        return new EOFException() {
+",0,0,0,1,3,1,0,2,0,2,27,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,334,"                return buildMessage(Locale.US, pattern, arguments);
+",4,0,0,1,2,1,6,0,0,10,51,10,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,340,"                return buildMessage(Locale.getDefault(), pattern, arguments);
+",0,0,0,2,4,1,10,0,0,10,61,10,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,282,"        return new ArrayIndexOutOfBoundsException() {
+",0,0,0,1,3,1,0,2,0,2,45,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,290,"                return buildMessage(Locale.US, pattern, arguments);
+",4,0,0,1,2,1,6,0,0,10,51,10,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,296,"                return buildMessage(Locale.getDefault(), pattern, arguments);
+",0,0,0,2,4,1,10,0,0,10,61,10,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,238,"        return new ArithmeticException() {
+",0,0,0,1,3,1,0,2,0,2,34,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,246,"                return buildMessage(Locale.US, pattern, arguments);
+",4,0,0,1,2,1,6,0,0,10,51,10,0.00000,0
+defect4j,math,org/apache/commons/math/MathRuntimeException,67,252,"                return buildMessage(Locale.getDefault(), pattern, arguments);
+",0,0,0,2,4,1,10,0,0,10,61,10,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,50,"        return optimize(f, goalType, min, max);
+",0,0,0,1,2,1,10,0,0,10,39,5,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,94,"            fx = -fx;
+",4,0,0,0,0,0,0,0,0,6,9,6,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,131,"                    d = p / q;
+",6,1,0,0,0,0,0,0,0,8,10,10,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,132,"                    u = x + d;
+",6,1,0,0,0,0,0,0,0,8,10,10,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,135,"                    if (((u - a) < t2) || ((b - u) < t2)) {
+",12,5,0,5,11,0,0,0,0,17,39,10,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,136,"                        d = (x < m) ? tol : -tol;
+",10,1,0,1,2,0,0,0,0,13,25,12,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,147,"                    fu = -fu;
+",4,0,0,0,0,0,0,0,0,6,9,10,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,187,"        throw new MaxIterationsExceededException(maximalIterationCount);
+",2,0,0,1,2,0,0,2,0,4,64,5,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,73,"            throw MathRuntimeException.createIllegalStateException(LocalizedFormats.NO_RESULT_AVAILABLE);
+",4,0,0,1,2,0,4,0,0,8,93,7,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,79,"        checkResultComputed();
+",0,0,0,1,2,0,2,0,0,2,22,5,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,80,"        return result;
+",2,0,0,0,0,1,0,0,0,2,14,4,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,118,"        return maxEvaluations;
+",2,0,0,0,0,1,0,0,0,2,22,4,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,138,"            throw new FunctionEvaluationException(new MaxEvaluationsExceededException(maxEvaluations),
+",2,0,0,1,3,0,0,4,0,6,90,7,0.00000,0
+defect4j,math,org/apache/commons/math/ConvergingAlgorithmImpl,67,78,"        absoluteAccuracy = accuracy;
+",4,0,0,0,0,0,0,0,0,5,28,4,0.00000,0
+defect4j,math,org/apache/commons/math/ConvergingAlgorithmImpl,67,79,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/ConvergingAlgorithmImpl,67,83,"        return absoluteAccuracy;
+",2,0,0,0,0,1,0,0,0,2,24,4,0.00000,0
+defect4j,math,org/apache/commons/math/ConvergingAlgorithmImpl,67,88,"        absoluteAccuracy = defaultAbsoluteAccuracy;
+",4,0,0,0,0,0,0,0,0,5,43,4,0.00000,0
+defect4j,math,org/apache/commons/math/ConvergingAlgorithmImpl,67,89,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/ConvergingAlgorithmImpl,67,98,"        return maximalIterationCount;
+",2,0,0,0,0,1,0,0,0,2,29,4,0.00000,0
+defect4j,math,org/apache/commons/math/ConvergingAlgorithmImpl,67,103,"        maximalIterationCount = defaultMaximalIterationCount;
+",4,0,0,0,0,0,0,0,0,5,53,4,0.00000,0
+defect4j,math,org/apache/commons/math/ConvergingAlgorithmImpl,67,104,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/ConvergingAlgorithmImpl,67,108,"        relativeAccuracy = accuracy;
+",4,0,0,0,0,0,0,0,0,5,28,4,0.00000,0
+defect4j,math,org/apache/commons/math/ConvergingAlgorithmImpl,67,109,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/ConvergingAlgorithmImpl,67,113,"        return relativeAccuracy;
+",2,0,0,0,0,1,0,0,0,2,24,4,0.00000,0
+defect4j,math,org/apache/commons/math/ConvergingAlgorithmImpl,67,118,"        relativeAccuracy = defaultRelativeAccuracy;
+",4,0,0,0,0,0,0,0,0,5,43,4,0.00000,0
+defect4j,math,org/apache/commons/math/ConvergingAlgorithmImpl,67,119,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MaxEvaluationsExceededException,67,45,"        super(LocalizedFormats.MAX_EVALUATIONS_EXCEEDED, maxEvaluations);
+",6,0,0,1,2,0,0,0,0,6,65,4,0.00000,0
+defect4j,math,org/apache/commons/math/MaxEvaluationsExceededException,67,46,"        this.maxEvaluations = maxEvaluations;
+",4,0,0,0,0,0,0,0,0,5,37,4,0.00000,0
+defect4j,math,org/apache/commons/math/MaxEvaluationsExceededException,67,47,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MaxEvaluationsExceededException,67,60,"        this(maxEvaluations, new DummyLocalizable(pattern), arguments);
+",6,0,0,2,4,0,0,2,0,8,63,4,0.00000,0
+defect4j,math,org/apache/commons/math/MaxEvaluationsExceededException,67,61,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MaxEvaluationsExceededException,67,73,"        super(pattern, arguments);
+",4,0,0,1,2,0,0,0,0,4,26,4,0.00000,0
+defect4j,math,org/apache/commons/math/MaxEvaluationsExceededException,67,74,"        this.maxEvaluations = maxEvaluations;
+",4,0,0,0,0,0,0,0,0,5,37,4,0.00000,0
+defect4j,math,org/apache/commons/math/MaxEvaluationsExceededException,67,75,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MaxEvaluationsExceededException,67,81,"        return maxEvaluations;
+",2,0,0,0,0,1,0,0,0,2,22,4,0.00000,0
+defect4j,math,org/apache/commons/math/ConvergenceException,67,38,"        super(LocalizedFormats.CONVERGENCE_FAILED);
+",4,0,0,1,2,0,0,0,0,4,43,5,0.00000,0
+defect4j,math,org/apache/commons/math/ConvergenceException,67,39,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/ConvergenceException,67,51,"        this(new DummyLocalizable(pattern), arguments);
+",4,0,0,2,4,0,0,2,0,6,47,4,0.00000,0
+defect4j,math,org/apache/commons/math/ConvergenceException,67,52,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/ConvergenceException,67,62,"        super(pattern, arguments);
+",4,0,0,1,2,0,0,0,0,4,26,4,0.00000,0
+defect4j,math,org/apache/commons/math/ConvergenceException,67,63,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/ConvergenceException,67,70,"        super(cause);
+",2,0,0,1,2,0,0,0,0,2,13,4,0.00000,0
+defect4j,math,org/apache/commons/math/ConvergenceException,67,71,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/ConvergenceException,67,84,"        this(cause, new DummyLocalizable(pattern), arguments);
+",6,0,0,2,4,0,0,2,0,8,54,4,0.00000,0
+defect4j,math,org/apache/commons/math/ConvergenceException,67,85,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/ConvergenceException,67,96,"        super(cause, pattern, arguments);
+",6,0,0,1,2,0,0,0,0,6,33,4,0.00000,0
+defect4j,math,org/apache/commons/math/ConvergenceException,67,97,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,57,"    public MathException() {
+",2,0,0,1,3,1,0,0,0,3,24,2,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,58,"        this.pattern   = LocalizedFormats.SIMPLE_MESSAGE;
+",6,0,0,0,0,0,0,0,0,7,49,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,59,"        this.arguments = new Object[] { """" };
+",2,0,0,2,4,0,0,2,0,6,37,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,60,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,72,"      this(new DummyLocalizable(pattern), arguments);
+",4,0,0,2,4,0,0,2,0,6,47,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,73,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,83,"    public MathException(Localizable pattern, Object ... arguments) {
+",6,0,0,1,3,1,0,4,0,11,65,2,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,84,"      this.pattern   = pattern;
+",4,0,0,0,0,0,0,0,0,5,25,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,85,"      this.arguments = (arguments == null) ? new Object[0] : arguments.clone();
+",4,1,0,3,6,0,4,2,0,12,73,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,86,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,96,"        super(rootCause);
+",2,0,0,1,2,0,0,0,0,2,17,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,97,"        this.pattern   = LocalizedFormats.SIMPLE_MESSAGE;
+",6,0,0,0,0,0,0,0,0,7,49,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,98,"        this.arguments = new Object[] { (rootCause == null) ? """" : rootCause.getMessage() };
+",4,1,0,4,8,0,4,2,0,13,84,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,99,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,114,"        this(rootCause, new DummyLocalizable(pattern), arguments);
+",6,0,0,2,4,0,0,2,0,8,58,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,115,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,128,"      super(rootCause);
+",2,0,0,1,2,0,0,0,0,2,17,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,129,"      this.pattern   = pattern;
+",4,0,0,0,0,0,0,0,0,5,25,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,130,"      this.arguments = (arguments == null) ? new Object[0] : arguments.clone();
+",4,1,0,3,6,0,4,2,0,12,73,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,131,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,141,"        return pattern.getSourceString();
+",0,0,0,1,2,1,4,0,0,4,33,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,150,"        return pattern;
+",2,0,0,0,0,1,0,0,0,2,15,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,159,"        return arguments.clone();
+",0,0,0,1,2,1,4,0,0,4,25,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,170,"        if (pattern != null) {
+",2,1,0,1,3,0,0,0,0,3,22,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,171,"            return new MessageFormat(pattern.getLocalizedString(locale), locale).format(arguments);
+",2,0,0,3,6,1,10,2,0,14,87,7,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,173,"        return """";
+",0,0,0,0,0,1,0,0,0,1,10,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,179,"        return getMessage(Locale.US);
+",4,0,0,1,2,1,2,0,0,6,29,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,185,"        return getMessage(Locale.getDefault());
+",0,0,0,2,4,1,6,0,0,6,39,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,193,"        printStackTrace(System.err);
+",4,0,0,1,2,0,2,0,0,6,28,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,194,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,203,"        synchronized (out) {
+",2,0,0,1,3,0,0,0,0,2,20,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,204,"            PrintWriter pw = new PrintWriter(out, false);
+",4,0,0,1,2,0,0,4,0,9,45,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,205,"            printStackTrace(pw);
+",0,0,0,1,2,0,4,0,0,4,20,7,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,207,"            pw.flush();
+",0,0,0,1,2,0,4,0,0,4,11,7,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,208,"        }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,67,209,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,47,"        super(LocalizedFormats.EVALUATION_FAILED, argument);
+",6,0,0,1,2,0,0,0,0,6,52,4,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,48,"        this.argument = new double[] { argument };
+",4,0,0,2,4,0,0,0,0,5,42,4,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,49,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,59,"        super(LocalizedFormats.EVALUATION_FAILED, new ArrayRealVector(argument));
+",6,0,0,2,4,0,0,2,0,8,73,4,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,60,"        this.argument = argument.clone();
+",2,0,0,1,2,0,4,0,0,7,33,4,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,61,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,73,"        this(argument, new DummyLocalizable(pattern), argument);
+",6,0,0,2,4,0,0,2,0,8,56,4,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,74,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,86,"        super(pattern, arguments);
+",4,0,0,1,2,0,0,0,0,4,26,4,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,87,"        this.argument = new double[] { argument };
+",4,0,0,2,4,0,0,0,0,5,42,4,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,88,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,100,"        this(argument, new DummyLocalizable(pattern), argument);
+",6,0,0,2,4,0,0,2,0,8,56,4,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,101,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,113,"        super(pattern, arguments);
+",4,0,0,1,2,0,0,0,0,4,26,4,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,114,"        this.argument = argument.clone();
+",2,0,0,1,2,0,4,0,0,7,33,4,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,115,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,125,"        super(cause);
+",2,0,0,1,2,0,0,0,0,2,13,4,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,126,"        this.argument = new double[] { argument };
+",4,0,0,2,4,0,0,0,0,5,42,4,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,127,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,137,"        super(cause);
+",2,0,0,1,2,0,0,0,0,2,13,4,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,138,"        this.argument = argument.clone();
+",2,0,0,1,2,0,4,0,0,7,33,4,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,139,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,153,"        this(cause, argument, new DummyLocalizable(pattern), argument);
+",8,0,0,2,4,0,0,2,0,10,63,4,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,154,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,168,"        super(cause, pattern, arguments);
+",6,0,0,1,2,0,0,0,0,6,33,4,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,169,"        this.argument = new double[] { argument };
+",4,0,0,2,4,0,0,0,0,5,42,4,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,170,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,184,"        this(cause, argument, new DummyLocalizable(pattern), argument);
+",8,0,0,2,4,0,0,2,0,10,63,4,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,185,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,199,"        super(cause, pattern, arguments);
+",6,0,0,1,2,0,0,0,0,6,33,4,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,200,"        this.argument = argument.clone();
+",2,0,0,1,2,0,4,0,0,7,33,4,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,201,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/FunctionEvaluationException,67,209,"        return argument.clone();
+",0,0,0,1,2,1,4,0,0,4,24,5,0.00000,0
+defect4j,math,org/apache/commons/math/MaxIterationsExceededException,67,45,"        super(LocalizedFormats.MAX_ITERATIONS_EXCEEDED, maxIterations);
+",6,0,0,1,2,0,0,0,0,6,63,4,0.00000,0
+defect4j,math,org/apache/commons/math/MaxIterationsExceededException,67,46,"        this.maxIterations = maxIterations;
+",4,0,0,0,0,0,0,0,0,5,35,4,0.00000,0
+defect4j,math,org/apache/commons/math/MaxIterationsExceededException,67,47,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MaxIterationsExceededException,67,60,"        this(maxIterations, new DummyLocalizable(pattern), arguments);
+",6,0,0,2,4,0,0,2,0,8,62,4,0.00000,0
+defect4j,math,org/apache/commons/math/MaxIterationsExceededException,67,61,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MaxIterationsExceededException,67,73,"        super(pattern, arguments);
+",4,0,0,1,2,0,0,0,0,4,26,4,0.00000,0
+defect4j,math,org/apache/commons/math/MaxIterationsExceededException,67,74,"        this.maxIterations = maxIterations;
+",4,0,0,0,0,0,0,0,0,5,35,4,0.00000,0
+defect4j,math,org/apache/commons/math/MaxIterationsExceededException,67,75,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MaxIterationsExceededException,67,81,"        return maxIterations;
+",2,0,0,0,0,1,0,0,0,2,21,4,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/OptimizationException,67,46,"        this(new DummyLocalizable(specifier), parts);
+",4,0,0,2,4,0,0,2,0,6,45,4,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/OptimizationException,67,47,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/OptimizationException,67,57,"        super(specifier, parts);
+",4,0,0,1,2,0,0,0,0,4,24,4,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/OptimizationException,67,58,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/OptimizationException,67,65,"        super(cause);
+",2,0,0,1,2,0,0,0,0,2,13,4,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/OptimizationException,67,66,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,92,"        return optimizer.getFunctionValue();
+",0,0,0,1,2,1,4,0,0,4,36,5,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,97,"        return optimizer.getResult();
+",0,0,0,1,2,1,4,0,0,4,29,5,0.00000,1
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,102,"        return optimizer.getAbsoluteAccuracy();
+",0,0,0,1,2,1,4,0,0,4,39,5,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,107,"        return totalIterations;
+",2,0,0,0,0,1,0,0,0,2,23,4,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,112,"        return maxIterations;
+",2,0,0,0,0,1,0,0,0,2,21,4,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,117,"        return maxEvaluations;
+",2,0,0,0,0,1,0,0,0,2,22,4,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,122,"        return totalEvaluations;
+",2,0,0,0,0,1,0,0,0,2,24,4,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,127,"        return optimizer.getRelativeAccuracy();
+",0,0,0,1,2,1,4,0,0,4,39,5,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,132,"        optimizer.resetAbsoluteAccuracy();
+",0,0,0,1,2,0,4,0,0,4,34,5,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,133,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,137,"        optimizer.resetMaximalIterationCount();
+",0,0,0,1,2,0,4,0,0,4,39,5,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,138,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,142,"        optimizer.resetRelativeAccuracy();
+",0,0,0,1,2,0,4,0,0,4,34,5,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,143,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,147,"        optimizer.setAbsoluteAccuracy(accuracy);
+",0,0,0,1,2,0,6,0,0,6,40,5,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,148,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,162,"        optimizer.setRelativeAccuracy(accuracy);
+",0,0,0,1,2,0,6,0,0,6,40,5,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,163,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,194,"            throw MathRuntimeException.createIllegalStateException(LocalizedFormats.NO_OPTIMUM_COMPUTED_YET);
+",4,0,0,1,2,0,4,0,0,8,97,7,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,196,"        return optima.clone();
+",0,0,0,1,2,1,4,0,0,4,22,5,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,220,"            throw MathRuntimeException.createIllegalStateException(LocalizedFormats.NO_OPTIMUM_COMPUTED_YET);
+",4,0,0,1,2,0,4,0,0,8,97,7,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,222,"        return optimaValues.clone();
+",0,0,0,1,2,1,4,0,0,4,28,5,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,248,"            } catch (FunctionEvaluationException fee) {
+",2,0,0,1,4,0,0,2,0,4,43,8,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,249,"                optima[i]       = Double.NaN;
+",4,0,1,1,2,0,0,0,0,9,29,9,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,250,"                optimaValues[i] = Double.NaN;
+",4,0,1,1,2,0,0,0,0,9,29,9,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,251,"            } catch (ConvergenceException ce) {
+",2,0,0,1,4,0,0,2,0,4,35,8,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,252,"                optima[i]       = Double.NaN;
+",4,0,1,1,2,0,0,0,0,9,29,9,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,253,"                optimaValues[i] = Double.NaN;
+",4,0,1,1,2,0,0,0,0,9,29,9,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,265,"                optima[i] = optima[--lastNaN];
+",2,0,1,2,4,0,0,0,0,10,30,8,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,266,"                optima[lastNaN + 1] = Double.NaN;
+",6,1,1,1,2,0,0,0,0,10,33,8,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,267,"                optimaValues[i] = optimaValues[--lastNaN];
+",2,0,1,2,4,0,0,0,0,10,42,8,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,268,"                optimaValues[lastNaN + 1] = Double.NaN;
+",6,1,1,1,2,0,0,0,0,10,39,8,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,280,"                int i = j - 1;
+",4,1,0,0,0,0,0,0,0,5,14,9,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,281,"                double mIX = optima[i];
+",2,0,1,1,2,0,0,0,0,6,23,9,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,282,"                double mIY = optimaValues[i];
+",2,0,1,1,2,0,0,0,0,6,29,9,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,283,"                while ((i >= 0) && ((goalType == GoalType.MAXIMIZE) ^ (currY < mIY))) {
+",12,5,0,5,11,0,0,0,0,17,71,8,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,284,"                    optima[i + 1]       = mIX;
+",4,1,1,1,2,0,0,0,0,8,26,10,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,285,"                    optimaValues[i + 1] = mIY;
+",4,1,1,1,2,0,0,0,0,8,26,10,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,286,"                    if (i-- != 0) {
+",2,1,0,1,3,0,0,0,0,4,15,10,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,287,"                        mIX = optima[i];
+",2,0,1,1,2,0,0,0,0,7,16,12,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,288,"                        mIY = optimaValues[i];
+",2,0,1,1,2,0,0,0,0,7,22,12,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,290,"                        mIX = Double.NaN;
+",6,0,0,0,0,0,0,0,0,7,17,12,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,291,"                        mIY = Double.NaN;
+",6,0,0,0,0,0,0,0,0,7,17,12,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,294,"                optima[i + 1]       = currX;
+",4,1,1,1,2,0,0,0,0,8,28,8,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,295,"                optimaValues[i + 1] = currY;
+",4,1,1,1,2,0,0,0,0,8,28,8,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,296,"                currX = optima[j];
+",2,0,1,1,2,0,0,0,0,7,18,8,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,297,"                currY = optimaValues[j];
+",2,0,1,1,2,0,0,0,0,7,24,8,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,302,"            throw new OptimizationException(
+",0,0,0,0,1,0,0,2,0,2,32,8,0.00000,0
+defect4j,math,org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,316,"        return optimize(f, goalType, min, max);
+",0,0,0,1,2,1,10,0,0,10,39,5,0.00000,0
+defect4j,math,org/apache/commons/math/random/JDKRandomGenerator,67,35,"        setSeed((long) seed);
+",2,0,0,2,4,0,2,0,0,4,21,5,0.00000,0
+defect4j,math,org/apache/commons/math/random/JDKRandomGenerator,67,36,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/random/JDKRandomGenerator,67,41,"        final long prime = 4294967291l;
+",2,0,0,0,0,1,0,0,0,3,31,4,0.00000,0
+defect4j,math,org/apache/commons/math/random/JDKRandomGenerator,67,43,"        long combined = 0l;
+",2,0,0,0,0,0,0,0,0,2,19,5,0.00000,0
+defect4j,math,org/apache/commons/math/random/JDKRandomGenerator,67,44,"        for (int s : seed) {
+",4,0,0,1,3,0,0,0,0,4,20,4,0.00000,0
+defect4j,math,org/apache/commons/math/random/JDKRandomGenerator,67,45,"            combined = combined * prime + s;
+",8,2,0,0,0,0,0,0,0,11,32,6,0.00000,0
+defect4j,math,org/apache/commons/math/random/JDKRandomGenerator,67,47,"        setSeed(combined);
+",0,0,0,1,2,0,4,0,0,4,18,5,0.00000,0
+defect4j,math,org/apache/commons/math/random/JDKRandomGenerator,67,48,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,305,"    private LocalizedFormats(final String sourceFormat) {
+",4,0,0,1,3,2,0,2,0,8,53,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,306,"        this.sourceFormat = sourceFormat;
+",4,0,0,0,0,0,0,0,0,5,33,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,307,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,44,"    ARGUMENT_OUTSIDE_DOMAIN(""Argument {0} outside domain [{1} ; {2}]""),
+",2,0,0,5,10,0,0,0,0,3,67,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,45,"    ARRAY_SIZES_SHOULD_HAVE_DIFFERENCE_1(""array sizes should have difference 1 ({0} != {1} + 1)""),
+",2,0,0,4,8,0,0,0,0,3,94,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,46,"    ARRAY_SUMS_TO_ZERO(""array sums to zero""),
+",2,0,0,1,2,0,0,0,0,3,41,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,47,"    ASSYMETRIC_EIGEN_NOT_SUPPORTED(""eigen decomposition of assymetric matrices not supported yet""),
+",2,0,0,1,2,0,0,0,0,3,95,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,48,"    AT_LEAST_ONE_COLUMN(""matrix must have at least one column""),
+",2,0,0,1,2,0,0,0,0,3,60,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,49,"    AT_LEAST_ONE_ROW(""matrix must have at least one row""),
+",2,0,0,1,2,0,0,0,0,3,54,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,50,"    BANDWIDTH_OUT_OF_INTERVAL(""bandwidth must be in the interval [0,1], but got {0}""),
+",2,0,0,3,6,0,0,0,0,3,82,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,51,"    BINOMIAL_INVALID_PARAMETERS_ORDER(""must have n >= k for binomial coefficient (n,k), got n = {0}, k = {1}""),
+",2,0,0,4,8,0,0,0,0,3,107,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,52,"    BINOMIAL_NEGATIVE_PARAMETER(""must have n >= 0 for binomial coefficient (n,k), got n = {0}""),
+",2,0,0,3,6,0,0,0,0,3,92,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,53,"    CANNOT_CLEAR_STATISTIC_CONSTRUCTED_FROM_EXTERNAL_MOMENTS(""statistics constructed from external moments cannot be cleared""),
+",2,0,0,1,2,0,0,0,0,3,123,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,54,"    CANNOT_COMPUTE_0TH_ROOT_OF_UNITY(""cannot compute 0-th root of unity, indefinite result""),
+",2,0,0,1,2,0,0,0,0,3,89,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,55,"    CANNOT_COMPUTE_BETA_DENSITY_AT_0_FOR_SOME_ALPHA(""cannot compute beta density at 0 when alpha = {0,number}""),
+",2,0,0,2,4,0,0,0,0,3,108,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,56,"    CANNOT_COMPUTE_BETA_DENSITY_AT_1_FOR_SOME_BETA(""cannot compute beta density at 1 when beta = %.3g""),
+",2,0,0,1,2,0,0,0,0,3,100,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,57,"    CANNOT_COMPUTE_NTH_ROOT_FOR_NEGATIVE_N(""cannot compute nth root for null or negative n: {0}""),
+",2,0,0,2,4,0,0,0,0,3,94,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,58,"    CANNOT_CONVERT_OBJECT_TO_FRACTION(""cannot convert given object to a fraction number: {0}""),
+",2,0,0,2,4,0,0,0,0,3,91,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,59,"    CANNOT_DISCARD_NEGATIVE_NUMBER_OF_ELEMENTS(""cannot discard a negative number of elements ({0})""),
+",2,0,0,3,6,0,0,0,0,3,97,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,60,"    CANNOT_FORMAT_INSTANCE_AS_3D_VECTOR(""cannot format a {0} instance as a 3D vector""),
+",2,0,0,2,4,0,0,0,0,3,83,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,61,"    CANNOT_FORMAT_INSTANCE_AS_COMPLEX(""cannot format a {0} instance as a complex number""),
+",2,0,0,2,4,0,0,0,0,3,86,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,62,"    CANNOT_FORMAT_INSTANCE_AS_REAL_VECTOR(""cannot format a {0} instance as a real vector""),
+",2,0,0,2,4,0,0,0,0,3,87,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,63,"    CANNOT_FORMAT_OBJECT_TO_FRACTION(""cannot format given object as a fraction number""),
+",2,0,0,1,2,0,0,0,0,3,84,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,64,"    CANNOT_INCREMENT_STATISTIC_CONSTRUCTED_FROM_EXTERNAL_MOMENTS(""statistics constructed from external moments cannot be incremented""),
+",2,0,0,1,2,0,0,0,0,3,131,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,65,"    CANNOT_NORMALIZE_A_ZERO_NORM_VECTOR(""cannot normalize a zero norm vector""),
+",2,0,0,1,2,0,0,0,0,3,75,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,66,"    CANNOT_RETRIEVE_AT_NEGATIVE_INDEX(""elements cannot be retrieved from a negative array index {0}""),
+",2,0,0,2,4,0,0,0,0,3,98,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,67,"    CANNOT_SET_AT_NEGATIVE_INDEX(""cannot set an element at a negative index {0}""),
+",2,0,0,2,4,0,0,0,0,3,78,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,68,"    CANNOT_SUBSTITUTE_ELEMENT_FROM_EMPTY_ARRAY(""cannot substitute an element from an empty array""),
+",2,0,0,1,2,0,0,0,0,3,95,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,69,"    CANNOT_TRANSFORM_TO_DOUBLE(""Conversion Exception in Transformation: {0}""),
+",2,0,0,2,4,0,0,0,0,3,74,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,70,"    CARDAN_ANGLES_SINGULARITY(""Cardan angles singularity""),
+",2,0,0,1,2,0,0,0,0,3,55,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,71,"    CLASS_DOESNT_IMPLEMENT_COMPARABLE(""class ({0}) does not implement Comparable""),
+",2,0,0,3,6,0,0,0,0,3,79,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,72,"    CLOSEST_ORTHOGONAL_MATRIX_HAS_NEGATIVE_DETERMINANT(""the closest orthogonal matrix has a negative determinant {0}""),
+",2,0,0,2,4,0,0,0,0,3,115,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,73,"    COLUMN_INDEX_OUT_OF_RANGE(""column index {0} out of allowed range [{1}, {2}]""),
+",2,0,0,5,10,0,0,0,0,3,78,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,74,"    CONTINUED_FRACTION_INFINITY_DIVERGENCE(""Continued fraction convergents diverged to +/- infinity for value {0}""),
+",2,0,0,2,4,0,0,0,0,3,112,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,75,"    CONTINUED_FRACTION_NAN_DIVERGENCE(""Continued fraction diverged to NaN for value {0}""),
+",2,0,0,2,4,0,0,0,0,3,86,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,76,"    CONTRACTION_CRITERIA_SMALLER_THAN_EXPANSION_FACTOR(""contraction criteria ({0}) smaller than the expansion factor ({1}).  This would lead to a never ending loop of expansion and contraction as a newly expanded internal storage array would immediately satisfy the criteria for contraction.""),
+",2,0,0,5,10,0,0,0,0,3,290,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,77,"    CONTRACTION_CRITERIA_SMALLER_THAN_ONE(""contraction criteria smaller than one ({0}).  This would lead to a never ending loop of expansion and contraction as an internal storage array length equal to the number of elements would satisfy the contraction criteria.""),
+",2,0,0,3,6,0,0,0,0,3,263,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,78,"    CONVERGENCE_FAILED(""convergence failed""),
+",2,0,0,1,2,0,0,0,0,3,41,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,79,"    CUMULATIVE_PROBABILITY_RETURNED_NAN(""Cumulative probability function returned NaN for argument {0} p = {1}""),
+",2,0,0,3,6,0,0,0,0,3,109,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,80,"    DIFFERENT_ROWS_LENGTHS(""some rows have length {0} while others have length {1}""),
+",2,0,0,3,6,0,0,0,0,3,81,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,81,"    DIGEST_NOT_INITIALIZED(""digest not initialized""),
+",2,0,0,1,2,0,0,0,0,3,49,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,82,"    DIMENSIONS_MISMATCH_2x2(""dimensions mismatch: got {0}x{1} but expected {2}x{3}""),
+",2,0,0,5,10,0,0,0,0,3,81,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,83,"    DIMENSIONS_MISMATCH_SIMPLE(""dimensions mismatch {0} != {1}""), /* keep */
+",2,0,0,3,6,0,0,0,0,3,72,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,84,"    DISCRETE_CUMULATIVE_PROBABILITY_RETURNED_NAN(""Discrete cumulative probability function returned NaN for argument {0}""),
+",2,0,0,2,4,0,0,0,0,3,119,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,85,"    DISTRIBUTION_NOT_LOADED(""distribution not loaded""),
+",2,0,0,1,2,0,0,0,0,3,51,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,86,"    DUPLICATED_ABSCISSA(""Abscissa {0} is duplicated at both indices {1} and {2}""),
+",2,0,0,4,8,0,0,0,0,3,78,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,87,"    EMPTY_POLYNOMIALS_COEFFICIENTS_ARRAY(""empty polynomials coefficients array""), /* keep */
+",2,0,0,1,2,0,0,0,0,3,88,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,88,"    EMPTY_SELECTED_COLUMN_INDEX_ARRAY(""empty selected column index array""),
+",2,0,0,1,2,0,0,0,0,3,71,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,89,"    EMPTY_SELECTED_ROW_INDEX_ARRAY(""empty selected row index array""),
+",2,0,0,1,2,0,0,0,0,3,65,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,90,"    EMPTY_STRING_FOR_IMAGINARY_CHARACTER(""empty string for imaginary character""),
+",2,0,0,1,2,0,0,0,0,3,77,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,91,"    ENDPOINTS_NOT_AN_INTERVAL(""endpoints do not specify an interval: [{0}, {1}]""),
+",2,0,0,4,8,0,0,0,0,3,78,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,92,"    EQUAL_VERTICES_IN_SIMPLEX(""equal vertices {0} and {1} in simplex configuration""),
+",2,0,0,3,6,0,0,0,0,3,81,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,93,"    EULER_ANGLES_SINGULARITY(""Euler angles singularity""),
+",2,0,0,1,2,0,0,0,0,3,53,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,94,"    EVALUATION_FAILED(""evaluation failed for argument = {0}""),
+",2,0,0,2,4,0,0,0,0,3,58,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,95,"    EXPANSION_FACTOR_SMALLER_THAN_ONE(""expansion factor smaller than one ({0})""),
+",2,0,0,3,6,0,0,0,0,3,77,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,96,"    FACTORIAL_NEGATIVE_PARAMETER(""must have n >= 0 for n!, got n = {0}""),
+",2,0,0,2,4,0,0,0,0,3,69,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,97,"    FAILED_BRACKETING(""number of iterations={0}, maximum iterations={1}, initial={2}, lower bound={3}, upper bound={4}, final a value={5}, final b value={6}, f(a)={7}, f(b)={8}""),
+",2,0,0,12,24,0,0,0,0,3,175,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,98,"    FAILED_FRACTION_CONVERSION(""Unable to convert {0} to fraction after {1} iterations""),
+",2,0,0,3,6,0,0,0,0,3,85,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,99,"    FIRST_COLUMNS_NOT_INITIALIZED_YET(""first {0} columns are not initialized yet""),
+",2,0,0,2,4,0,0,0,0,3,79,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,100,"    FIRST_ELEMENT_NOT_ZERO(""first element is not 0: {0}""),
+",2,0,0,2,4,0,0,0,0,3,54,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,101,"    FIRST_ROWS_NOT_INITIALIZED_YET(""first {0} rows are not initialized yet""),
+",2,0,0,2,4,0,0,0,0,3,73,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,102,"    FRACTION_CONVERSION_OVERFLOW(""Overflow trying to convert {0} to fraction ({1}/{2})""),
+",2,0,0,5,10,0,0,0,0,3,85,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,103,"    FUNCTION_NOT_DIFFERENTIABLE(""function is not differentiable""),
+",2,0,0,1,2,0,0,0,0,3,62,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,104,"    FUNCTION_NOT_POLYNOMIAL(""function is not polynomial""),
+",2,0,0,1,2,0,0,0,0,3,54,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,105,"    GCD_OVERFLOW_32_BITS(""overflow: gcd({0}, {1}) is 2^31""),
+",2,0,0,4,8,0,0,0,0,3,56,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,106,"    GCD_OVERFLOW_64_BITS(""overflow: gcd({0}, {1}) is 2^63""),
+",2,0,0,4,8,0,0,0,0,3,56,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,107,"    HOLE_BETWEEN_MODELS_TIME_RANGES(""{0} wide hole between models time ranges""),
+",2,0,0,2,4,0,0,0,0,3,76,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,108,"    IDENTICAL_ABSCISSAS_DIVISION_BY_ZERO(""identical abscissas x[{0}] == x[{1}] == {2} cause division by zero""),
+",2,0,0,6,12,0,0,0,0,3,107,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,109,"    INDEX_LARGER_THAN_MAX(""the index specified: {0} is larger than the current maximal index {1}""),
+",2,0,0,3,6,0,0,0,0,3,95,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,110,"    INDEX_NOT_POSITIVE(""index ({0}) is not positive""),
+",2,0,0,3,6,0,0,0,0,3,50,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,111,"    INDEX_OUT_OF_RANGE(""index {0} out of allowed range [{1}, {2}]""),
+",2,0,0,5,10,0,0,0,0,3,64,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,112,"    INFINITE_ARRAY_ELEMENT(""Array contains an infinite element, {0} at index {1}""),
+",2,0,0,3,6,0,0,0,0,3,79,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,113,"    INFINITE_VALUE_CONVERSION(""cannot convert infinite value""),
+",2,0,0,1,2,0,0,0,0,3,59,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,114,"    INITIAL_CAPACITY_NOT_POSITIVE(""initial capacity ({0}) is not positive""),
+",2,0,0,3,6,0,0,0,0,3,72,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,115,"    INITIAL_COLUMN_AFTER_FINAL_COLUMN(""initial column {0} after final column {1}""),
+",2,0,0,3,6,0,0,0,0,3,79,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,116,"    INITIAL_ROW_AFTER_FINAL_ROW(""initial row {0} after final row {1}""),
+",2,0,0,3,6,0,0,0,0,3,67,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,117,"    INPUT_DATA_FROM_UNSUPPORTED_DATASOURCE(""input data comes from unsupported datasource: {0}, supported sources: {1}, {2}""),
+",2,0,0,4,8,0,0,0,0,3,121,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,118,"    INSTANCES_NOT_COMPARABLE_TO_EXISTING_VALUES(""instance of class {0} not comparable to existing values""),
+",2,0,0,2,4,0,0,0,0,3,103,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,119,"    INSUFFICIENT_DATA_FOR_T_STATISTIC(""insufficient data for t statistic, needs at least 2, got {0}""),
+",2,0,0,2,4,0,0,0,0,3,98,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,120,"    INSUFFICIENT_DIMENSION(""insufficient dimension {0}, must be at least {1}""),
+",2,0,0,3,6,0,0,0,0,3,75,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,121,"    INSUFFICIENT_OBSERVED_POINTS_IN_SAMPLE(""sample contains {0} observed points, at least {1} are required""),
+",2,0,0,3,6,0,0,0,0,3,105,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,122,"    INSUFFICIENT_ROWS_AND_COLUMNS(""insufficient data: only {0} rows and {1} columns.""),
+",2,0,0,3,6,0,0,0,0,3,83,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,123,"    INTEGRATION_METHOD_NEEDS_AT_LEAST_ONE_PREVIOUS_POINT(""{0} method needs at least one previous point""),
+",2,0,0,2,4,0,0,0,0,3,101,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,124,"    INTERNAL_ERROR(""internal error, please fill a bug report at {0}""),
+",2,0,0,2,4,0,0,0,0,3,66,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,125,"    INVALID_BRACKETING_PARAMETERS(""invalid bracketing parameters:  lower bound={0},  initial={1}, upper bound={2}""),
+",2,0,0,4,8,0,0,0,0,3,112,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,126,"    INVALID_INTERVAL_INITIAL_VALUE_PARAMETERS(""invalid interval, initial value parameters:  lower={0}, initial={1}, upper={2}""),
+",2,0,0,4,8,0,0,0,0,3,124,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,127,"    INVALID_ITERATIONS_LIMITS(""invalid iteration limits: min={0}, max={1}""),
+",2,0,0,3,6,0,0,0,0,3,72,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,128,"    INVALID_MAX_ITERATIONS(""bad value for maximum iterations number: {0}""),
+",2,0,0,2,4,0,0,0,0,3,71,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,129,"    INVALID_ROUNDING_METHOD(""invalid rounding method {0}, valid methods: {1} ({2}), {3} ({4}), {5} ({6}), {7} ({8}), {9} ({10}), {11} ({12}), {13} ({14}), {15} ({16})""),
+",2,0,0,26,52,0,0,0,0,3,165,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,130,"    ITERATOR_EXHAUSTED(""iterator exhausted""),
+",2,0,0,1,2,0,0,0,0,3,41,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,131,"    LCM_OVERFLOW_32_BITS(""overflow: lcm({0}, {1}) is 2^31""),
+",2,0,0,4,8,0,0,0,0,3,56,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,132,"    LCM_OVERFLOW_64_BITS(""overflow: lcm({0}, {1}) is 2^63""),
+",2,0,0,4,8,0,0,0,0,3,56,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,133,"    LOESS_EXPECTS_AT_LEAST_ONE_POINT(""Loess expects at least 1 point""),
+",2,0,0,1,2,0,0,0,0,3,67,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,134,"    LOWER_BOUND_NOT_BELOW_UPPER_BOUND(""lower bound ({0}) must be strictly less than upper bound ({1})""), /* keep */
+",2,0,0,5,10,0,0,0,0,3,111,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,135,"    LOWER_ENDPOINT_ABOVE_UPPER_ENDPOINT(""lower endpoint ({0}) must be less than or equal to upper endpoint ({1})""),
+",2,0,0,5,10,0,0,0,0,3,111,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,136,"    MAP_MODIFIED_WHILE_ITERATING(""map has been modified while iterating""),
+",2,0,0,1,2,0,0,0,0,3,70,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,137,"    MAX_EVALUATIONS_EXCEEDED(""maximal number of evaluations ({0}) exceeded""),
+",2,0,0,3,6,0,0,0,0,3,73,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,138,"    MAX_ITERATIONS_EXCEEDED(""maximal number of iterations ({0}) exceeded""),
+",2,0,0,3,6,0,0,0,0,3,71,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,139,"    MINIMAL_STEPSIZE_REACHED_DURING_INTEGRATION(""minimal step size ({0,number,0.00E00}) reached, integration needs {1,number,0.00E00}""),
+",2,0,0,4,8,0,0,0,0,3,132,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,140,"    MISMATCHED_LOESS_ABSCISSA_ORDINATE_ARRAYS(""Loess expects the abscissa and ordinate arrays to be of the same size, but got {0} abscissae and {1} ordinatae""),
+",2,0,0,3,6,0,0,0,0,3,156,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,141,"    NAN_ELEMENT_AT_INDEX(""element {0} is NaN""),
+",2,0,0,2,4,0,0,0,0,3,43,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,142,"    NAN_VALUE_CONVERSION(""cannot convert NaN value""),
+",2,0,0,1,2,0,0,0,0,3,49,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,143,"    NEGATIVE_BRIGHTNESS_EXPONENT(""brightness exponent should be positive or null, but got {0}""),
+",2,0,0,2,4,0,0,0,0,3,92,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,144,"    NEGATIVE_COMPLEX_MODULE(""negative complex module {0}""),
+",2,0,0,2,4,0,0,0,0,3,55,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,145,"    NEGATIVE_ELEMENT_AT_2D_INDEX(""element ({0}, {1}) is negative: {2}""),
+",2,0,0,5,10,0,0,0,0,3,68,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,146,"    NEGATIVE_ELEMENT_AT_INDEX(""element {0} is negative: {1}""),
+",2,0,0,3,6,0,0,0,0,3,58,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,147,"    NEGATIVE_LENGTH(""length cannot be negative ({0})""),
+",2,0,0,3,6,0,0,0,0,3,51,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,148,"    NEGATIVE_NUMBER_OF_SUCCESSES(""number of successes must be non-negative ({0})""),
+",2,0,0,3,6,0,0,0,0,3,79,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,149,"    NEGATIVE_NUMBER_OF_TRIALS(""number of trials must be non-negative ({0})""),
+",2,0,0,3,6,0,0,0,0,3,73,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,150,"    NEGATIVE_ROBUSTNESS_ITERATIONS(""the number of robustness iterations must be non-negative, but got {0}""),
+",2,0,0,2,4,0,0,0,0,3,104,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,151,"    NEGATIVE_START_POSITION(""start position cannot be negative ({0})""),
+",2,0,0,3,6,0,0,0,0,3,67,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,152,"    NON_CONVERGENT_CONTINUED_FRACTION(""Continued fraction convergents failed to converge for value {0}""),
+",2,0,0,2,4,0,0,0,0,3,101,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,153,"    NON_POSITIVE_MICROSPHERE_ELEMENTS(""number of microsphere elements must be positive, but got {0}""),
+",2,0,0,2,4,0,0,0,0,3,98,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,154,"    NON_POSITIVE_POLYNOMIAL_DEGREE(""polynomial degree must be positive: degree={0}""),
+",2,0,0,2,4,0,0,0,0,3,81,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,155,"    NON_REAL_FINITE_ABSCISSA(""all abscissae must be finite real numbers, but {0}-th is {1}""),
+",2,0,0,3,6,0,0,0,0,3,89,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,156,"    NON_REAL_FINITE_ORDINATE(""all ordinatae must be finite real numbers, but {0}-th is {1}""),
+",2,0,0,3,6,0,0,0,0,3,89,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,157,"    NON_REAL_FINITE_WEIGHT(""all weights must be finite real numbers, but {0}-th is {1}""),
+",2,0,0,3,6,0,0,0,0,3,85,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,158,"    NON_SQUARE_MATRIX(""a {0}x{1} matrix was provided instead of a square matrix""),
+",2,0,0,3,6,0,0,0,0,3,78,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,159,"    NORMALIZE_INFINITE(""Cannot normalize to an infinite value""),
+",2,0,0,1,2,0,0,0,0,3,60,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,160,"    NORMALIZE_NAN(""Cannot normalize to NaN""),
+",2,0,0,1,2,0,0,0,0,3,41,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,161,"    NOT_ADDITION_COMPATIBLE_MATRICES(""{0}x{1} and {2}x{3} matrices are not addition compatible""),
+",2,0,0,5,10,0,0,0,0,3,93,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,162,"    NOT_DECREASING_NUMBER_OF_POINTS(""points {0} and {1} are not decreasing ({2} < {3})""),
+",2,0,0,6,12,0,0,0,0,3,85,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,163,"    NOT_DECREASING_SEQUENCE(""points {3} and {2} are not decreasing ({1} < {0})""), /* keep */
+",2,0,0,6,12,0,0,0,0,3,88,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,164,"    NOT_ENOUGH_DATA_FOR_NUMBER_OF_PREDICTORS(""not enough data ({0} rows) for this many predictors ({1} predictors)""),
+",2,0,0,5,10,0,0,0,0,3,113,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,165,"    NOT_ENOUGH_POINTS_IN_SPLINE_PARTITION(""spline partition must have at least {0} points, got {1}""),
+",2,0,0,3,6,0,0,0,0,3,97,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,166,"    NOT_INCREASING_NUMBER_OF_POINTS(""points {0} and {1} are not increasing ({2} > {3})""),
+",2,0,0,6,12,0,0,0,0,3,85,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,167,"    NOT_INCREASING_SEQUENCE(""points {3} and {2} are not increasing ({1} > {0})""), /* keep */
+",2,0,0,6,12,0,0,0,0,3,88,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,168,"    NOT_MULTIPLICATION_COMPATIBLE_MATRICES(""{0}x{1} and {2}x{3} matrices are not multiplication compatible""),
+",2,0,0,5,10,0,0,0,0,3,105,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,169,"    NOT_POSITIVE_ALPHA(""alpha must be positive ({0})""),
+",2,0,0,3,6,0,0,0,0,3,51,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,170,"    NOT_POSITIVE_BETA(""beta must be positive ({0})""),
+",2,0,0,3,6,0,0,0,0,3,49,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,171,"    NOT_POSITIVE_COLUMNDIMENSION(""invalid column dimension: {0} (must be positive)""),
+",2,0,0,3,6,0,0,0,0,3,81,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,172,"    NOT_POSITIVE_DEFINITE_MATRIX(""not positive definite matrix""),
+",2,0,0,1,2,0,0,0,0,3,61,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,173,"    NOT_POSITIVE_DEGREES_OF_FREEDOM(""degrees of freedom must be positive ({0})""),
+",2,0,0,3,6,0,0,0,0,3,77,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,174,"    NOT_POSITIVE_ELEMENT_AT_INDEX(""element {0} is not positive: {1}""),
+",2,0,0,3,6,0,0,0,0,3,66,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,175,"    NOT_POSITIVE_EXPONENT(""invalid exponent {0} (must be positive)""),
+",2,0,0,3,6,0,0,0,0,3,65,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,176,"    NOT_POSITIVE_LENGTH(""length must be positive ({0})""),
+",2,0,0,3,6,0,0,0,0,3,53,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,177,"    LENGTH(""length ({0})""), /* keep */
+",2,0,0,3,6,0,0,0,0,3,34,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,178,"    NOT_POSITIVE_MEAN(""mean must be positive ({0})""),
+",2,0,0,3,6,0,0,0,0,3,49,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,179,"    MEAN(""mean ({0})""), /* keep */
+",2,0,0,3,6,0,0,0,0,3,30,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,180,"    NOT_POSITIVE_NUMBER_OF_SAMPLES(""number of sample is not positive: {0}""),
+",2,0,0,2,4,0,0,0,0,3,72,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,181,"    NUMBER_OF_SAMPLES(""number of samples ({0})""), /* keep */
+",2,0,0,3,6,0,0,0,0,3,56,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,182,"    NOT_POSITIVE_PERMUTATION(""permutation k ({0}) must be positive""),
+",2,0,0,3,6,0,0,0,0,3,65,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,183,"    PERMUTATION_SIZE(""permutation size ({0}""), /* keep */
+",2,0,0,2,5,0,0,0,0,3,53,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,184,"    NOT_POSITIVE_POISSON_MEAN(""the Poisson mean must be positive ({0})""),
+",2,0,0,3,6,0,0,0,0,3,69,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,185,"    NOT_POSITIVE_POPULATION_SIZE(""population size must be positive ({0})""),
+",2,0,0,3,6,0,0,0,0,3,71,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,186,"    NOT_POSITIVE_ROW_DIMENSION(""invalid row dimension: {0} (must be positive)""),
+",2,0,0,3,6,0,0,0,0,3,76,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,187,"    NOT_POSITIVE_SAMPLE_SIZE(""sample size must be positive ({0})""),
+",2,0,0,3,6,0,0,0,0,3,63,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,188,"    NOT_POSITIVE_SCALE(""scale must be positive ({0})""),
+",2,0,0,3,6,0,0,0,0,3,51,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,189,"    NOT_POSITIVE_SHAPE(""shape must be positive ({0})""),
+",2,0,0,3,6,0,0,0,0,3,51,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,190,"    NOT_POSITIVE_STANDARD_DEVIATION(""standard deviation must be positive ({0})""),
+",2,0,0,3,6,0,0,0,0,3,77,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,191,"    STANDARD_DEVIATION(""standard deviation ({0})""), /* keep */
+",2,0,0,3,6,0,0,0,0,3,58,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,192,"    NOT_POSITIVE_UPPER_BOUND(""upper bound must be positive ({0})""),
+",2,0,0,3,6,0,0,0,0,3,63,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,193,"    NOT_POSITIVE_WINDOW_SIZE(""window size must be positive ({0})""),
+",2,0,0,3,6,0,0,0,0,3,63,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,194,"    NOT_POWER_OF_TWO(""{0} is not a power of 2""),
+",2,0,0,2,4,0,0,0,0,3,44,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,195,"    NOT_POWER_OF_TWO_CONSIDER_PADDING(""{0} is not a power of 2, consider padding for fix""),
+",2,0,0,2,4,0,0,0,0,3,87,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,196,"    NOT_POWER_OF_TWO_PLUS_ONE(""{0} is not a power of 2 plus one""),
+",2,0,0,2,4,0,0,0,0,3,62,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,197,"    NOT_STRICTLY_DECREASING_NUMBER_OF_POINTS(""points {0} and {1} are not strictly decreasing ({2} <= {3})""),
+",2,0,0,6,12,0,0,0,0,3,104,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,198,"    NOT_STRICTLY_DECREASING_SEQUENCE(""points {3} and {2} are not strictly decreasing ({1} <= {0})""), /* keep */
+",2,0,0,6,12,0,0,0,0,3,107,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,199,"    NOT_STRICTLY_INCREASING_KNOT_VALUES(""knot values must be strictly increasing""),
+",2,0,0,1,2,0,0,0,0,3,79,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,200,"    NOT_STRICTLY_INCREASING_NUMBER_OF_POINTS(""points {0} and {1} are not strictly increasing ({2} >= {3})""),
+",2,0,0,6,12,0,0,0,0,3,104,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,201,"    NOT_STRICTLY_INCREASING_SEQUENCE(""points {3} and {2} are not strictly increasing ({1} >= {0})""), /* keep */
+",2,0,0,6,12,0,0,0,0,3,107,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,202,"    NOT_SUBTRACTION_COMPATIBLE_MATRICES(""{0}x{1} and {2}x{3} matrices are not subtraction compatible""),
+",2,0,0,5,10,0,0,0,0,3,99,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,203,"    NOT_SYMMETRIC_MATRIX(""not symmetric matrix""),
+",2,0,0,1,2,0,0,0,0,3,45,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,204,"    NO_BIN_SELECTED(""no bin selected""),
+",2,0,0,1,2,0,0,0,0,3,35,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,205,"    NO_CONVERGENCE_WITH_ANY_START_POINT(""none of the {0} start points lead to convergence""),
+",2,0,0,2,4,0,0,0,0,3,88,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,206,"    NO_DATA(""no data""), /* keep */
+",2,0,0,1,2,0,0,0,0,3,30,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,207,"    NO_DEGREES_OF_FREEDOM(""no degrees of freedom ({0} measurements, {1} parameters)""),
+",2,0,0,4,8,0,0,0,0,3,82,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,208,"    NO_DENSITY_FOR_THIS_DISTRIBUTION(""This distribution does not have a density function implemented""),
+",2,0,0,1,2,0,0,0,0,3,99,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,209,"    NO_FEASIBLE_SOLUTION(""no feasible solution""),
+",2,0,0,1,2,0,0,0,0,3,45,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,210,"    NO_OPTIMUM_COMPUTED_YET(""no optimum computed yet""),
+",2,0,0,1,2,0,0,0,0,3,51,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,211,"    NO_RESULT_AVAILABLE(""no result available""),
+",2,0,0,1,2,0,0,0,0,3,43,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,212,"    NO_SUCH_MATRIX_ENTRY(""no entry at indices ({0}, {1}) in a {2}x{3} matrix""),
+",2,0,0,6,12,0,0,0,0,3,75,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,213,"    NULL_COVARIANCE_MATRIX(""covariance matrix is null""),
+",2,0,0,1,2,0,0,0,0,3,52,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,214,"    NULL_DENOMINATOR(""denominator is null""),
+",2,0,0,1,2,0,0,0,0,3,40,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,215,"    NULL_DENOMINATOR_FORMAT(""denominator format can not be null""),
+",2,0,0,1,2,0,0,0,0,3,62,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,216,"    NULL_FRACTION(""null fraction""),
+",2,0,0,1,2,0,0,0,0,3,31,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,217,"    NULL_FUNCTION(""function is null""),
+",2,0,0,1,2,0,0,0,0,3,34,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,218,"    NULL_IMAGINARY_FORMAT(""null imaginary format""),
+",2,0,0,1,2,0,0,0,0,3,47,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,219,"    NULL_INPUT_ARRAY(""input array is null""),
+",2,0,0,1,2,0,0,0,0,3,40,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,220,"    NULL_NUMERATOR(""numerator is null""),
+",2,0,0,1,2,0,0,0,0,3,36,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,221,"    NULL_NUMERATOR_FORMAT(""numerator format can not be null""),
+",2,0,0,1,2,0,0,0,0,3,58,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,222,"    NULL_OBJECT_TRANSFORMATION(""Conversion Exception in Transformation, Object is null""),
+",2,0,0,1,2,0,0,0,0,3,85,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,223,"    NULL_REAL_FORMAT(""null real format""),
+",2,0,0,1,2,0,0,0,0,3,37,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,224,"    NULL_WHOLE_FORMAT(""whole format can not be null""),
+",2,0,0,1,2,0,0,0,0,3,50,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,225,"    NUMBER_TOO_LARGE(""{0} is larger than the maximum ({1})""), /* keep */
+",2,0,0,4,8,0,0,0,0,3,68,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,226,"    NUMBER_TOO_SMALL(""{0} is smaller than the minimum ({1})""), /* keep */
+",2,0,0,4,8,0,0,0,0,3,69,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,227,"    NUMBER_TOO_LARGE_BOUND_EXCLUDED(""{0} is larger than, or equal to, the maximum ({1})""), /* keep */
+",2,0,0,4,8,0,0,0,0,3,97,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,228,"    NUMBER_TOO_SMALL_BOUND_EXCLUDED(""{0} is smaller than, or equal to, the minimum ({1})""), /* keep */
+",2,0,0,4,8,0,0,0,0,3,98,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,229,"    NUMBER_OF_SUCCESS_LARGER_THAN_POPULATION_SIZE(""number of successes ({0}) must be less than or equal to population size ({1})""),
+",2,0,0,5,10,0,0,0,0,3,127,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,230,"    NUMERATOR_OVERFLOW_AFTER_MULTIPLY(""overflow, numerator too large after multiply: {0}""),
+",2,0,0,2,4,0,0,0,0,3,87,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,231,"    N_POINTS_GAUSS_LEGENDRE_INTEGRATOR_NOT_SUPPORTED(""{0} points Legendre-Gauss integrator not supported, number of points must be in the {1}-{2} range""),
+",2,0,0,4,8,0,0,0,0,3,150,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,232,"    OBSERVED_COUNTS_ALL_ZERO(""observed counts are all 0 in observed array {0}""),
+",2,0,0,2,4,0,0,0,0,3,76,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,233,"    OBSERVED_COUNTS_BOTTH_ZERO_FOR_ENTRY(""observed counts are both zero for entry {0}""),
+",2,0,0,2,4,0,0,0,0,3,84,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,234,"    OUT_OF_BOUNDS_QUANTILE_VALUE(""out of bounds quantile value: {0}, must be in (0, 100]""),
+",2,0,0,3,6,0,0,0,0,3,87,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,235,"    OUT_OF_BOUND_SIGNIFICANCE_LEVEL(""out of bounds significance level {0}, must be between {1} and {2}""),
+",2,0,0,4,8,0,0,0,0,3,101,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,236,"    OUT_OF_ORDER_ABSCISSA_ARRAY(""the abscissae array must be sorted in a strictly increasing order, but the {0}-th element is {1} whereas {2}-th is {3}""),
+",2,0,0,5,10,0,0,0,0,3,150,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,237,"    OUT_OF_RANGE_ROOT_OF_UNITY_INDEX(""out of range root of unity index {0} (must be in [{1};{2}])""),
+",2,0,0,6,12,0,0,0,0,3,96,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,238,"    OUT_OF_RANGE_SIMPLE(""{0} out of [{1}, {2}] range""), /* keep */
+",2,0,0,5,10,0,0,0,0,3,62,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,239,"    OVERFLOW_IN_FRACTION(""overflow in fraction {0}/{1}, cannot negate""),
+",2,0,0,3,6,0,0,0,0,3,68,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,240,"    PERCENTILE_IMPLEMENTATION_CANNOT_ACCESS_METHOD(""cannot access {0} method in percentile implementation {1}""),
+",2,0,0,3,6,0,0,0,0,3,108,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,241,"    PERCENTILE_IMPLEMENTATION_UNSUPPORTED_METHOD(""percentile implementation {0} does not support {1}""),
+",2,0,0,3,6,0,0,0,0,3,99,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,242,"    PERMUTATION_EXCEEDS_N(""permutation size ({0}) exceeds permuation domain ({1})""), /* keep */
+",2,0,0,5,10,0,0,0,0,3,91,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,243,"    POLYNOMIAL_INTERPOLANTS_MISMATCH_SEGMENTS(""number of polynomial interpolants must match the number of segments ({0} != {1} - 1)""),
+",2,0,0,4,8,0,0,0,0,3,130,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,244,"    POSITION_SIZE_MISMATCH_INPUT_ARRAY(""position {0} and size {1} don't fit to the size of the input array {2}""),
+",2,0,0,4,8,0,0,0,0,3,109,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,245,"    POWER_NEGATIVE_PARAMETERS(""cannot raise an integral value to a negative power ({0}^{1})""),
+",2,0,0,4,8,0,0,0,0,3,90,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,246,"    PROPAGATION_DIRECTION_MISMATCH(""propagation direction mismatch""),
+",2,0,0,1,2,0,0,0,0,3,65,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,247,"    RANDOMKEY_MUTATION_WRONG_CLASS(""RandomKeyMutation works only with RandomKeys, not {0}""),
+",2,0,0,2,4,0,0,0,0,3,88,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,248,"    ROOTS_OF_UNITY_NOT_COMPUTED_YET(""roots of unity have not been computed yet""),
+",2,0,0,1,2,0,0,0,0,3,77,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,249,"    ROTATION_MATRIX_DIMENSIONS(""a {0}x{1} matrix cannot be a rotation matrix""),
+",2,0,0,3,6,0,0,0,0,3,75,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,250,"    ROW_INDEX_OUT_OF_RANGE(""row index {0} out of allowed range [{1}, {2}]""),
+",2,0,0,5,10,0,0,0,0,3,72,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,251,"    SAME_SIGN_AT_ENDPOINTS(""function values at endpoints do not have different signs, endpoints: [{0}, {1}], values: [{2}, {3}]""),
+",2,0,0,7,14,0,0,0,0,3,126,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,252,"    SAMPLE_SIZE_EXCEEDS_COLLECTION_SIZE(""sample size ({0}) exceeds collection size ({1})""), /* keep */
+",2,0,0,5,10,0,0,0,0,3,98,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,253,"    SAMPLE_SIZE_LARGER_THAN_POPULATION_SIZE(""sample size ({0}) must be less than or equal to population size ({1})""),
+",2,0,0,5,10,0,0,0,0,3,113,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,254,"    SIMPLEX_NEED_ONE_POINT(""simplex must contain at least one point""),
+",2,0,0,1,2,0,0,0,0,3,66,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,255,"    SIMPLE_MESSAGE(""{0}""),
+",2,0,0,2,4,0,0,0,0,3,22,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,256,"    SINGULAR_MATRIX(""matrix is singular""),
+",2,0,0,1,2,0,0,0,0,3,38,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,257,"    SUBARRAY_ENDS_AFTER_ARRAY_END(""subarray ends after array end""),
+",2,0,0,1,2,0,0,0,0,3,63,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,258,"    TOO_LARGE_CUTOFF_SINGULAR_VALUE(""cutoff singular value is {0}, should be at most {1}""),
+",2,0,0,3,6,0,0,0,0,3,87,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,259,"    TOO_MANY_ELEMENTS_TO_DISCARD_FROM_ARRAY(""cannot discard {0} elements from a {1} elements array""),
+",2,0,0,3,6,0,0,0,0,3,97,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,260,"    TOO_SMALL_BANDWIDTH(""the bandwidth must be large enough to accomodate at least 2 points. There are {0}  data points, and bandwidth must be at least {1}  but it is only {2}""),
+",2,0,0,4,8,0,0,0,0,3,174,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,261,"    TOO_SMALL_COST_RELATIVE_TOLERANCE(""cost relative tolerance is too small ({0}), no further reduction in the sum of squares is possible""),
+",2,0,0,3,6,0,0,0,0,3,136,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,262,"    TOO_SMALL_INTEGRATION_INTERVAL(""too small integration interval: length = {0}""),
+",2,0,0,2,4,0,0,0,0,3,79,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,263,"    TOO_SMALL_ORTHOGONALITY_TOLERANCE(""orthogonality tolerance is too small ({0}), solution is orthogonal to the jacobian""),
+",2,0,0,3,6,0,0,0,0,3,120,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,264,"    TOO_SMALL_PARAMETERS_RELATIVE_TOLERANCE(""parameters relative tolerance is too small ({0}), no further improvement in the approximate solution is possible""),
+",2,0,0,3,6,0,0,0,0,3,156,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,265,"    TWO_OR_MORE_CATEGORIES_REQUIRED(""two or more categories required, got {0}""),
+",2,0,0,2,4,0,0,0,0,3,76,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,266,"    TWO_OR_MORE_VALUES_IN_CATEGORY_REQUIRED(""two or more values required in each category, one has {0}""),
+",2,0,0,2,4,0,0,0,0,3,101,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,267,"    UNABLE_TO_BRACKET_OPTIMUM_IN_LINE_SEARCH(""unable to bracket optimum in line search""),
+",2,0,0,1,2,0,0,0,0,3,85,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,268,"    UNABLE_TO_COMPUTE_COVARIANCE_SINGULAR_PROBLEM(""unable to compute covariances: singular problem""),
+",2,0,0,1,2,0,0,0,0,3,97,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,269,"    UNABLE_TO_FIRST_GUESS_HARMONIC_COEFFICIENTS(""unable to first guess the harmonic coefficients""),
+",2,0,0,1,2,0,0,0,0,3,95,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,270,"    UNABLE_TO_ORTHOGONOLIZE_MATRIX(""unable to orthogonalize matrix in {0} iterations""),
+",2,0,0,2,4,0,0,0,0,3,83,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,271,"    UNABLE_TO_PERFORM_QR_DECOMPOSITION_ON_JACOBIAN(""unable to perform Q.R decomposition on the {0}x{1} jacobian matrix""),
+",2,0,0,3,6,0,0,0,0,3,117,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,272,"    UNABLE_TO_SOLVE_SINGULAR_PROBLEM(""unable to solve: singular problem""),
+",2,0,0,1,2,0,0,0,0,3,70,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,273,"    UNBOUNDED_SOLUTION(""unbounded solution""),
+",2,0,0,1,2,0,0,0,0,3,41,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,274,"    UNKNOWN_MODE(""unknown mode {0}, known modes: {1} ({2}), {3} ({4}), {5} ({6}), {7} ({8}), {9} ({10}) and {11} ({12})""),
+",2,0,0,20,40,0,0,0,0,3,118,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,275,"    UNPARSEABLE_3D_VECTOR(""unparseable 3D vector: \""{0}\""""),
+",2,0,0,2,4,0,0,0,0,3,56,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,276,"    UNPARSEABLE_COMPLEX_NUMBER(""unparseable complex number: \""{0}\""""),
+",2,0,0,2,4,0,0,0,0,3,66,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,277,"    UNPARSEABLE_FRACTION_NUMBER(""unparseable fraction number: \""{0}\""""),
+",2,0,0,2,4,0,0,0,0,3,68,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,278,"    UNPARSEABLE_REAL_VECTOR(""unparseable real vector: \""{0}\""""),
+",2,0,0,2,4,0,0,0,0,3,60,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,279,"    UNSUPPORTED_EXPANSION_MODE(""unsupported expansion mode {0}, supported modes are {1} ({2}) and {3} ({4})""),
+",2,0,0,8,16,0,0,0,0,3,106,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,280,"    URL_CONTAINS_NO_DATA(""URL {0} contains no data""),
+",2,0,0,2,4,0,0,0,0,3,49,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,281,"    VALUES_ADDED_BEFORE_CONFIGURING_STATISTIC(""{0} values have been added before statistic is configured""),
+",2,0,0,2,4,0,0,0,0,3,103,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,282,"    VECTOR_LENGTH_MISMATCH(""vector length mismatch: got {0} but expected {1}""),
+",2,0,0,3,6,0,0,0,0,3,75,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,283,"    VECTOR_MUST_HAVE_AT_LEAST_ONE_ELEMENT(""vector must have at least one element""),
+",2,0,0,1,2,0,0,0,0,3,79,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,284,"    WEIGHT_AT_LEAST_ONE_NON_ZERO(""weigth array must contain at least one non-zero value""),
+",2,0,0,1,2,0,0,0,0,3,86,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,285,"    WRONG_BLOCK_LENGTH(""wrong array shape (block length = {0}, expected {1})""),
+",2,0,0,4,8,0,0,0,0,3,75,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,286,"    WRONG_NUMBER_OF_POINTS(""{0} points are required, got only {1}""),
+",2,0,0,3,6,0,0,0,0,3,64,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,287,"    NUMBER_OF_POINTS(""number of points ({0})""), /* keep */
+",2,0,0,3,6,0,0,0,0,3,54,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,288,"    ZERO_DENOMINATOR(""denominator must be different from 0""),
+",2,0,0,1,2,0,0,0,0,3,57,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,289,"    ZERO_DENOMINATOR_IN_FRACTION(""zero denominator in fraction {0}/{1}""),
+",2,0,0,3,6,0,0,0,0,3,69,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,290,"    ZERO_FRACTION_TO_DIVIDE_BY(""the fraction to divide by must not be zero: {0}/{1}""),
+",2,0,0,3,6,0,0,0,0,3,82,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,291,"    ZERO_NORM(""zero norm""),
+",2,0,0,1,2,0,0,0,0,3,23,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,292,"    ZERO_NORM_FOR_ROTATION_AXIS(""zero norm for rotation axis""),
+",2,0,0,1,2,0,0,0,0,3,59,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,293,"    ZERO_NORM_FOR_ROTATION_DEFINING_VECTOR(""zero norm for rotation defining vector"");
+",2,0,0,1,2,0,0,0,0,3,81,2,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,40,"public enum LocalizedFormats implements Localizable {
+",2,0,0,0,1,1,0,2,0,5,53,1,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,311,"        return sourceFormat;
+",2,0,0,0,0,1,0,0,0,2,20,4,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,317,"            ResourceBundle bundle =
+",2,0,0,0,0,0,0,2,0,4,23,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,319,"            if (bundle.getLocale().getLanguage().equals(locale.getLanguage())) {
+",0,0,0,5,11,0,12,0,0,12,68,7,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,321,"                return bundle.getString(toString());
+",0,0,0,2,4,1,6,0,0,6,36,9,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,326,"        }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,324,"        } catch (MissingResourceException mre) {
+",2,0,0,1,4,0,0,2,0,4,40,6,0.00000,0
+defect4j,math,org/apache/commons/math/util/LocalizedFormats,67,330,"        return sourceFormat;
+",2,0,0,0,0,1,0,0,0,2,20,4,0.00000,0

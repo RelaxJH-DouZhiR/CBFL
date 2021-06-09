@@ -1,10 +1,8 @@
 dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,logic,lengthEle,lengthWord,depth,suspicious,accuracy
 defect4j,lang,org/apache/commons/lang3/math/NumberUtils,1,467,"            final int hexDigits = str.length() - pfxLen;
 ",4,1,0,1,2,1,4,0,0,10,44,6,0.33333,1
-defect4j,lang,org/apache/commons/lang3/time/FastDatePrinter,8,1134,"            if (zone.useDaylightTime()
-",0,0,0,1,3,0,4,0,0,4,26,7,1,1
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,675,"        if (cls.getTypeParameters().length > 0 || toClass.equals(cls)) {
-",2,2,0,3,7,0,10,0,0,14,64,4,1,1
+defect4j,lang,org/apache/commons/lang3/text/translate/LookupTranslator,4,77,"            final CharSequence result = lookupMap.get(subSeq);
+",2,0,0,1,2,1,6,2,0,11,50,6,0.04167,1
 defect4j,lang,org/apache/commons/lang3/math/NumberUtils,27,489,"                mant = str.substring(0, expPos);
 ",2,0,0,1,2,0,6,0,0,9,32,8,1.00000,1
 defect4j,lang,org/apache/commons/lang3/text/translate/NumericEntityUnescaper,28,64,"            return 2 + (end - start) + (isHex ? 1 : 0) + 1;
@@ -397,498 +395,252 @@ defect4j,lang,org/apache/commons/lang3/StringUtils,14,785,"        if (cs1 == nu
 ",4,3,0,1,3,0,0,0,0,7,33,4,0.06250,0
 defect4j,lang,org/apache/commons/lang3/StringUtils,14,788,"            return cs1.equals(cs2);
 ",0,0,0,1,2,0,6,0,0,6,23,5,0.06250,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,91,"        }
-",0,0,0,0,1,0,0,0,0,0,1,3,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,97,"    private static final Map<String, String> abbreviationMap = new HashMap<String, String>();
-",2,0,0,1,2,3,0,12,0,17,89,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,102,"    private static final Map<String, String> reverseAbbreviationMap = new HashMap<String, String>();
-",2,0,0,1,2,3,0,12,0,17,96,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,119,"        addAbbreviation(""int"", ""I"");
-",0,0,0,1,2,0,2,0,0,4,28,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,120,"        addAbbreviation(""boolean"", ""Z"");
-",0,0,0,1,2,0,2,0,0,4,32,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,121,"        addAbbreviation(""float"", ""F"");
-",0,0,0,1,2,0,2,0,0,4,30,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,122,"        addAbbreviation(""long"", ""J"");
-",0,0,0,1,2,0,2,0,0,4,29,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,123,"        addAbbreviation(""short"", ""S"");
-",0,0,0,1,2,0,2,0,0,4,30,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,124,"        addAbbreviation(""byte"", ""B"");
-",0,0,0,1,2,0,2,0,0,4,29,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,125,"        addAbbreviation(""double"", ""D"");
-",0,0,0,1,2,0,2,0,0,4,31,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,126,"        addAbbreviation(""char"", ""C"");
-",0,0,0,1,2,0,2,0,0,4,29,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,127,"    }
-",0,0,0,0,1,0,0,0,0,0,1,3,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,111,"        abbreviationMap.put(primitive, abbreviation);
-",0,0,0,1,2,0,8,0,0,8,45,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,112,"        reverseAbbreviationMap.put(abbreviation, primitive);
-",0,0,0,1,2,0,8,0,0,8,52,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,113,"    }
-",0,0,0,0,1,0,0,0,0,0,1,3,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,589,"        return isAssignable(cls, toClass, SystemUtils.isJavaVersionAtLeast(JavaVersion.JAVA_1_5));
-",4,0,0,2,4,0,10,0,0,14,90,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,620,"        if (toClass == null) {
+defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,676,"            return typeVarAssigns;
+",2,0,0,0,0,0,0,0,0,2,22,6,1,0
+defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,547,"        if (type instanceof Class<?>) {
+",2,0,0,1,3,0,0,2,0,4,31,5,1,0
+defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,548,"            return getTypeArguments((Class<?>) type, toClass, subtypeVarAssigns);
+",2,0,0,2,4,0,6,2,0,10,69,7,1,0
+defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,551,"        if (type instanceof ParameterizedType) {
+",2,0,0,1,3,0,0,2,0,4,40,5,1,0
+defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,552,"            return getTypeArguments((ParameterizedType) type, toClass, subtypeVarAssigns);
+",2,0,0,2,4,0,6,2,0,10,78,7,1,0
+defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,653,"        if (!isAssignable(cls, toClass)) {
+",0,0,0,2,5,0,6,0,0,7,34,4,1,0
+defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,658,"        if (cls.isPrimitive()) {
+",0,0,0,2,5,0,4,0,0,4,24,5,1,0
+defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,671,"        HashMap<TypeVariable<?>, Type> typeVarAssigns = subtypeVarAssigns == null ? new HashMap<TypeVariable<?>, Type>()
+",4,1,0,1,2,0,0,12,0,18,112,4,1,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,89,"    public static final String AWT_TOOLKIT = getSystemProperty(""awt.toolkit"");
+",2,0,0,1,2,3,2,2,0,10,74,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,111,"    public static final String FILE_ENCODING = getSystemProperty(""file.encoding"");
+",2,0,0,1,2,3,2,2,0,10,78,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,129,"    public static final String FILE_SEPARATOR = getSystemProperty(""file.separator"");
+",2,0,0,1,2,3,2,2,0,10,80,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,147,"    public static final String JAVA_AWT_FONTS = getSystemProperty(""java.awt.fonts"");
+",2,0,0,1,2,3,2,2,0,10,80,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,165,"    public static final String JAVA_AWT_GRAPHICSENV = getSystemProperty(""java.awt.graphicsenv"");
+",2,0,0,1,2,3,2,2,0,10,92,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,186,"    public static final String JAVA_AWT_HEADLESS = getSystemProperty(""java.awt.headless"");
+",2,0,0,1,2,3,2,2,0,10,86,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,204,"    public static final String JAVA_AWT_PRINTERJOB = getSystemProperty(""java.awt.printerjob"");
+",2,0,0,1,2,3,2,2,0,10,90,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,222,"    public static final String JAVA_CLASS_PATH = getSystemProperty(""java.class.path"");
+",2,0,0,1,2,3,2,2,0,10,82,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,240,"    public static final String JAVA_CLASS_VERSION = getSystemProperty(""java.class.version"");
+",2,0,0,1,2,3,2,2,0,10,88,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,259,"    public static final String JAVA_COMPILER = getSystemProperty(""java.compiler"");
+",2,0,0,1,2,3,2,2,0,10,78,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,277,"    public static final String JAVA_ENDORSED_DIRS = getSystemProperty(""java.endorsed.dirs"");
+",2,0,0,1,2,3,2,2,0,10,88,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,295,"    public static final String JAVA_EXT_DIRS = getSystemProperty(""java.ext.dirs"");
+",2,0,0,1,2,3,2,2,0,10,78,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,313,"    public static final String JAVA_HOME = getSystemProperty(JAVA_HOME_KEY);
+",2,0,0,1,2,3,4,2,0,11,72,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,331,"    public static final String JAVA_IO_TMPDIR = getSystemProperty(JAVA_IO_TMPDIR_KEY);
+",2,0,0,1,2,3,4,2,0,11,82,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,349,"    public static final String JAVA_LIBRARY_PATH = getSystemProperty(""java.library.path"");
+",2,0,0,1,2,3,2,2,0,10,86,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,368,"    public static final String JAVA_RUNTIME_NAME = getSystemProperty(""java.runtime.name"");
+",2,0,0,1,2,3,2,2,0,10,86,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,387,"    public static final String JAVA_RUNTIME_VERSION = getSystemProperty(""java.runtime.version"");
+",2,0,0,1,2,3,2,2,0,10,92,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,405,"    public static final String JAVA_SPECIFICATION_NAME = getSystemProperty(""java.specification.name"");
+",2,0,0,1,2,3,2,2,0,10,98,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,423,"    public static final String JAVA_SPECIFICATION_VENDOR = getSystemProperty(""java.specification.vendor"");
+",2,0,0,1,2,3,2,2,0,10,102,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,441,"    public static final String JAVA_SPECIFICATION_VERSION = getSystemProperty(""java.specification.version"");
+",2,0,0,1,2,3,2,2,0,10,104,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,442,"    private static final JavaVersion JAVA_SPECIFICATION_VERSION_AS_ENUM = JavaVersion.get(JAVA_SPECIFICATION_VERSION);
+",2,0,0,1,2,3,6,2,0,13,114,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,461,"    public static final String JAVA_UTIL_PREFS_PREFERENCES_FACTORY =
+",2,0,0,0,0,3,0,2,0,7,64,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,480,"    public static final String JAVA_VENDOR = getSystemProperty(""java.vendor"");
+",2,0,0,1,2,3,2,2,0,10,74,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,498,"    public static final String JAVA_VENDOR_URL = getSystemProperty(""java.vendor.url"");
+",2,0,0,1,2,3,2,2,0,10,82,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,516,"    public static final String JAVA_VERSION = getSystemProperty(""java.version"");
+",2,0,0,1,2,3,2,2,0,10,76,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,535,"    public static final String JAVA_VM_INFO = getSystemProperty(""java.vm.info"");
+",2,0,0,1,2,3,2,2,0,10,76,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,553,"    public static final String JAVA_VM_NAME = getSystemProperty(""java.vm.name"");
+",2,0,0,1,2,3,2,2,0,10,76,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,571,"    public static final String JAVA_VM_SPECIFICATION_NAME = getSystemProperty(""java.vm.specification.name"");
+",2,0,0,1,2,3,2,2,0,10,104,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,589,"    public static final String JAVA_VM_SPECIFICATION_VENDOR = getSystemProperty(""java.vm.specification.vendor"");
+",2,0,0,1,2,3,2,2,0,10,108,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,607,"    public static final String JAVA_VM_SPECIFICATION_VERSION = getSystemProperty(""java.vm.specification.version"");
+",2,0,0,1,2,3,2,2,0,10,110,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,625,"    public static final String JAVA_VM_VENDOR = getSystemProperty(""java.vm.vendor"");
+",2,0,0,1,2,3,2,2,0,10,80,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,643,"    public static final String JAVA_VM_VERSION = getSystemProperty(""java.vm.version"");
+",2,0,0,1,2,3,2,2,0,10,82,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,661,"    public static final String LINE_SEPARATOR = getSystemProperty(""line.separator"");
+",2,0,0,1,2,3,2,2,0,10,80,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,679,"    public static final String OS_ARCH = getSystemProperty(""os.arch"");
+",2,0,0,1,2,3,2,2,0,10,66,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,697,"    public static final String OS_NAME = getSystemProperty(""os.name"");
+",2,0,0,1,2,3,2,2,0,10,66,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,715,"    public static final String OS_VERSION = getSystemProperty(""os.version"");
+",2,0,0,1,2,3,2,2,0,10,72,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,733,"    public static final String PATH_SEPARATOR = getSystemProperty(""path.separator"");
+",2,0,0,1,2,3,2,2,0,10,80,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,753,"    public static final String USER_COUNTRY = getSystemProperty(""user.country"") == null ?
+",2,1,0,1,2,3,2,2,0,12,85,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,772,"    public static final String USER_DIR = getSystemProperty(USER_DIR_KEY);
+",2,0,0,1,2,3,4,2,0,11,70,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,790,"    public static final String USER_HOME = getSystemProperty(USER_HOME_KEY);
+",2,0,0,1,2,3,4,2,0,11,72,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,809,"    public static final String USER_LANGUAGE = getSystemProperty(""user.language"");
+",2,0,0,1,2,3,2,2,0,10,78,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,827,"    public static final String USER_NAME = getSystemProperty(""user.name"");
+",2,0,0,1,2,3,2,2,0,10,70,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,845,"    public static final String USER_TIMEZONE = getSystemProperty(""user.timezone"");
+",2,0,0,1,2,3,2,2,0,10,78,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,860,"    public static final boolean IS_JAVA_1_1 = getJavaVersionMatches(""1.1"");
+",2,0,0,1,2,3,2,0,0,8,71,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,870,"    public static final boolean IS_JAVA_1_2 = getJavaVersionMatches(""1.2"");
+",2,0,0,1,2,3,2,0,0,8,71,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,880,"    public static final boolean IS_JAVA_1_3 = getJavaVersionMatches(""1.3"");
+",2,0,0,1,2,3,2,0,0,8,71,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,890,"    public static final boolean IS_JAVA_1_4 = getJavaVersionMatches(""1.4"");
+",2,0,0,1,2,3,2,0,0,8,71,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,900,"    public static final boolean IS_JAVA_1_5 = getJavaVersionMatches(""1.5"");
+",2,0,0,1,2,3,2,0,0,8,71,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,910,"    public static final boolean IS_JAVA_1_6 = getJavaVersionMatches(""1.6"");
+",2,0,0,1,2,3,2,0,0,8,71,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,922,"    public static final boolean IS_JAVA_1_7 = getJavaVersionMatches(""1.7"");
+",2,0,0,1,2,3,2,0,0,8,71,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,942,"    public static final boolean IS_OS_AIX = getOSMatchesName(""AIX"");
+",2,0,0,1,2,3,2,0,0,8,64,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,954,"    public static final boolean IS_OS_HP_UX = getOSMatchesName(""HP-UX"");
+",2,0,0,1,2,3,2,0,0,8,68,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,966,"    public static final boolean IS_OS_IRIX = getOSMatchesName(""Irix"");
+",2,0,0,1,2,3,2,0,0,8,66,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,978,"    public static final boolean IS_OS_LINUX = getOSMatchesName(""Linux"") || getOSMatchesName(""LINUX"");
+",2,1,0,2,4,3,4,0,0,12,97,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,990,"    public static final boolean IS_OS_MAC = getOSMatchesName(""Mac"");
+",2,0,0,1,2,3,2,0,0,8,64,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1002,"    public static final boolean IS_OS_MAC_OSX = getOSMatchesName(""Mac OS X"");
+",2,0,0,1,2,3,2,0,0,8,73,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1014,"    public static final boolean IS_OS_FREE_BSD = getOSMatchesName(""FreeBSD"");
+",2,0,0,1,2,3,2,0,0,8,73,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1026,"    public static final boolean IS_OS_OPEN_BSD = getOSMatchesName(""OpenBSD"");
+",2,0,0,1,2,3,2,0,0,8,73,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1038,"    public static final boolean IS_OS_NET_BSD = getOSMatchesName(""NetBSD"");
+",2,0,0,1,2,3,2,0,0,8,71,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1050,"    public static final boolean IS_OS_OS2 = getOSMatchesName(""OS/2"");
+",2,0,0,1,2,3,2,0,0,8,65,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1062,"    public static final boolean IS_OS_SOLARIS = getOSMatchesName(""Solaris"");
+",2,0,0,1,2,3,2,0,0,8,72,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1074,"    public static final boolean IS_OS_SUN_OS = getOSMatchesName(""SunOS"");
+",2,0,0,1,2,3,2,0,0,8,69,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1086,"    public static final boolean IS_OS_UNIX = IS_OS_AIX || IS_OS_HP_UX || IS_OS_IRIX || IS_OS_LINUX || IS_OS_MAC_OSX
+",12,1,0,0,0,3,0,0,0,16,111,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1099,"    public static final boolean IS_OS_WINDOWS = getOSMatchesName(OS_NAME_WINDOWS_PREFIX);
+",2,0,0,1,2,3,4,0,0,9,85,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1111,"    public static final boolean IS_OS_WINDOWS_2000 = getOSMatches(OS_NAME_WINDOWS_PREFIX, ""5.0"");
+",2,0,0,1,2,3,4,0,0,10,93,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1123,"    public static final boolean IS_OS_WINDOWS_2003 = getOSMatches(OS_NAME_WINDOWS_PREFIX, ""5.2"");
+",2,0,0,1,2,3,4,0,0,10,93,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1135,"    public static final boolean IS_OS_WINDOWS_2008 = getOSMatches(OS_NAME_WINDOWS_PREFIX + "" Server 2008"", ""6.1"");
+",4,1,0,1,2,3,2,0,0,12,110,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1147,"    public static final boolean IS_OS_WINDOWS_95 = getOSMatches(OS_NAME_WINDOWS_PREFIX + "" 9"", ""4.0"");
+",4,1,0,1,2,3,2,0,0,12,98,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1160,"    public static final boolean IS_OS_WINDOWS_98 = getOSMatches(OS_NAME_WINDOWS_PREFIX + "" 9"", ""4.1"");
+",4,1,0,1,2,3,2,0,0,12,98,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1173,"    public static final boolean IS_OS_WINDOWS_ME = getOSMatches(OS_NAME_WINDOWS_PREFIX, ""4.9"");
+",2,0,0,1,2,3,4,0,0,10,91,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1186,"    public static final boolean IS_OS_WINDOWS_NT = getOSMatchesName(OS_NAME_WINDOWS_PREFIX + "" NT"");
+",4,1,0,1,2,3,2,0,0,11,96,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1199,"    public static final boolean IS_OS_WINDOWS_XP = getOSMatches(OS_NAME_WINDOWS_PREFIX, ""5.1"");
+",2,0,0,1,2,3,4,0,0,10,91,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1212,"    public static final boolean IS_OS_WINDOWS_VISTA = getOSMatches(OS_NAME_WINDOWS_PREFIX, ""6.0"");
+",2,0,0,1,2,3,4,0,0,10,94,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1224,"    public static final boolean IS_OS_WINDOWS_7 = getOSMatches(OS_NAME_WINDOWS_PREFIX, ""6.1"");
+",2,0,0,1,2,3,4,0,0,10,90,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1265,"        return isJavaVersionMatch(JAVA_SPECIFICATION_VERSION, versionPrefix);
+",0,0,0,1,2,0,6,0,0,6,69,5,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1276,"        return isOSMatch(OS_NAME, OS_VERSION, osNamePrefix, osVersionPrefix);
+",0,0,0,1,2,0,10,0,0,10,69,5,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1286,"        return isOSNameMatch(OS_NAME, osNamePrefix);
+",0,0,0,1,2,0,6,0,0,6,44,5,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1304,"            return System.getProperty(property);
+",0,0,0,1,2,0,6,0,0,6,36,7,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1371,"        return JAVA_SPECIFICATION_VERSION_AS_ENUM.atLeast(requiredVersion);
+",0,0,0,1,2,0,6,0,0,6,67,5,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1387,"        if (version == null) {
 ",2,1,0,1,3,0,0,0,0,3,22,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,624,"        if (cls == null) {
-",2,1,0,1,3,0,0,0,0,3,18,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,628,"        if (autoboxing) {
-",2,0,0,1,3,0,0,0,0,2,17,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,629,"            if (cls.isPrimitive() && !toClass.isPrimitive()) {
-",0,1,0,3,7,0,8,0,0,10,50,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,630,"                cls = primitiveToWrapper(cls);
-",2,0,0,1,2,0,4,0,0,7,30,8,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,631,"                if (cls == null) {
-",2,1,0,1,3,0,0,0,0,3,18,8,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,635,"            if (toClass.isPrimitive() && !cls.isPrimitive()) {
-",0,1,0,3,7,0,8,0,0,10,50,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,642,"        if (cls.equals(toClass)) {
-",0,0,0,2,5,0,6,0,0,6,26,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,645,"        if (cls.isPrimitive()) {
-",0,0,0,2,5,0,4,0,0,4,24,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,689,"        return toClass.isAssignableFrom(cls);
-",0,0,0,1,2,0,6,0,0,6,37,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,705,"        Class<?> convertedClass = cls;
-",4,0,0,0,0,0,0,2,0,6,30,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,706,"        if (cls != null && cls.isPrimitive()) {
-",2,2,0,2,5,0,4,0,0,8,39,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,707,"            convertedClass = primitiveWrapperMap.get(cls);
-",2,0,0,1,2,0,6,0,0,9,46,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ClassUtils,15,709,"        return convertedClass;
-",2,0,0,0,0,0,0,0,0,2,22,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ArrayUtils,15,49,"    public static final Object[] EMPTY_OBJECT_ARRAY = new Object[0];
-",2,0,0,2,4,3,0,4,0,9,64,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ArrayUtils,15,53,"    public static final Class<?>[] EMPTY_CLASS_ARRAY = new Class[0];
-",2,0,0,2,4,3,0,4,0,9,64,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ArrayUtils,15,57,"    public static final String[] EMPTY_STRING_ARRAY = new String[0];
-",2,0,0,2,4,3,0,4,0,9,64,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ArrayUtils,15,61,"    public static final long[] EMPTY_LONG_ARRAY = new long[0];
-",2,0,0,2,4,3,0,0,0,5,58,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ArrayUtils,15,65,"    public static final Long[] EMPTY_LONG_OBJECT_ARRAY = new Long[0];
-",2,0,0,2,4,3,0,4,0,9,65,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ArrayUtils,15,69,"    public static final int[] EMPTY_INT_ARRAY = new int[0];
-",2,0,0,2,4,3,0,0,0,5,55,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ArrayUtils,15,73,"    public static final Integer[] EMPTY_INTEGER_OBJECT_ARRAY = new Integer[0];
-",2,0,0,2,4,3,0,4,0,9,74,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ArrayUtils,15,77,"    public static final short[] EMPTY_SHORT_ARRAY = new short[0];
-",2,0,0,2,4,3,0,0,0,5,61,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ArrayUtils,15,81,"    public static final Short[] EMPTY_SHORT_OBJECT_ARRAY = new Short[0];
-",2,0,0,2,4,3,0,4,0,9,68,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ArrayUtils,15,85,"    public static final byte[] EMPTY_BYTE_ARRAY = new byte[0];
-",2,0,0,2,4,3,0,0,0,5,58,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ArrayUtils,15,89,"    public static final Byte[] EMPTY_BYTE_OBJECT_ARRAY = new Byte[0];
-",2,0,0,2,4,3,0,4,0,9,65,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ArrayUtils,15,93,"    public static final double[] EMPTY_DOUBLE_ARRAY = new double[0];
-",2,0,0,2,4,3,0,0,0,5,64,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ArrayUtils,15,97,"    public static final Double[] EMPTY_DOUBLE_OBJECT_ARRAY = new Double[0];
-",2,0,0,2,4,3,0,4,0,9,71,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ArrayUtils,15,101,"    public static final float[] EMPTY_FLOAT_ARRAY = new float[0];
-",2,0,0,2,4,3,0,0,0,5,61,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ArrayUtils,15,105,"    public static final Float[] EMPTY_FLOAT_OBJECT_ARRAY = new Float[0];
-",2,0,0,2,4,3,0,4,0,9,68,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ArrayUtils,15,109,"    public static final boolean[] EMPTY_BOOLEAN_ARRAY = new boolean[0];
-",2,0,0,2,4,3,0,0,0,5,67,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ArrayUtils,15,113,"    public static final Boolean[] EMPTY_BOOLEAN_OBJECT_ARRAY = new Boolean[0];
-",2,0,0,2,4,3,0,4,0,9,74,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ArrayUtils,15,117,"    public static final char[] EMPTY_CHAR_ARRAY = new char[0];
-",2,0,0,2,4,3,0,0,0,5,58,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ArrayUtils,15,121,"    public static final Character[] EMPTY_CHARACTER_OBJECT_ARRAY = new Character[0];
-",2,0,0,2,4,3,0,4,0,9,80,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ArrayUtils,15,320,"        if (array == null) {
-",2,1,0,1,3,0,0,0,0,3,20,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/ArrayUtils,15,323,"        return array.clone();
-",0,0,0,1,2,0,4,0,0,4,21,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,65,"        return isAssignable(type, toType, null);
-",0,0,0,1,2,0,6,0,0,7,40,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,79,"        if (toType == null || toType instanceof Class<?>) {
-",4,2,0,1,3,0,0,2,0,8,51,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,80,"            return isAssignable(type, (Class<?>) toType);
-",2,0,0,2,4,0,4,2,0,8,45,7,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,88,"            return isAssignable(type, (GenericArrayType) toType, typeVarAssigns);
-",2,0,0,2,4,0,6,2,0,10,69,7,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,113,"        if (type == null) {
-",2,1,0,1,3,0,0,0,0,3,19,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,115,"            return toClass == null || !toClass.isPrimitive();
-",2,2,0,1,2,0,4,0,0,9,49,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,120,"        if (toClass == null) {
-",2,1,0,1,3,0,0,0,0,3,22,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,121,"            return false;
-",0,0,0,0,0,0,0,0,0,1,13,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,125,"        if (toClass.equals(type)) {
-",0,0,0,2,5,0,6,0,0,6,27,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,126,"            return true;
-",0,0,0,0,0,0,0,0,0,1,12,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,129,"        if (type instanceof Class<?>) {
-",2,0,0,1,3,0,0,2,0,4,31,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,131,"            return ClassUtils.isAssignable((Class<?>) type, toClass);
-",2,0,0,2,4,0,6,2,0,10,57,7,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,134,"        if (type instanceof ParameterizedType) {
-",2,0,0,1,3,0,0,2,0,4,40,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,136,"            return isAssignable(getRawType((ParameterizedType) type), toClass);
-",2,0,0,3,6,0,6,2,0,10,67,7,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,140,"        if (type instanceof TypeVariable<?>) {
-",2,0,0,1,3,0,0,2,0,4,38,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,154,"        if (type instanceof GenericArrayType) {
-",2,0,0,1,3,0,0,2,0,4,39,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,155,"            return toClass.equals(Object.class)
-",0,0,0,1,2,0,4,2,0,6,35,8,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,193,"            return true;
-",0,0,0,0,0,0,0,0,0,1,12,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,211,"            return true;
-",0,0,0,0,0,0,0,0,0,1,12,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,262,"        if (type == null) {
-",2,1,0,1,3,0,0,0,0,3,19,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,268,"        if (toGenericArrayType == null) {
-",2,1,0,1,3,0,0,0,0,3,33,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,273,"        if (toGenericArrayType.equals(type)) {
-",0,0,0,2,5,0,6,0,0,6,38,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,274,"            return true;
-",0,0,0,0,0,0,0,0,0,1,12,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,277,"        Type toComponentType = toGenericArrayType.getGenericComponentType();
-",2,0,0,1,2,0,4,2,0,8,68,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,279,"        if (type instanceof Class<?>) {
-",2,0,0,1,3,0,0,2,0,4,31,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,280,"            Class<?> cls = (Class<?>) type;
-",4,0,0,1,2,0,0,4,0,8,31,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,283,"            return cls.isArray()
-",0,0,0,1,2,0,4,0,0,4,20,8,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,287,"        if (type instanceof GenericArrayType) {
-",2,0,0,1,3,0,0,2,0,4,39,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,289,"            return isAssignable(((GenericArrayType) type).getGenericComponentType(),
-",2,0,0,3,7,0,4,2,0,8,72,7,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,357,"            WildcardType wildcardType = (WildcardType) type;
-",4,0,0,1,2,0,0,4,0,8,48,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,358,"            Type[] upperBounds = getImplicitUpperBounds(wildcardType);
-",2,0,0,2,4,0,4,2,0,8,58,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,359,"            Type[] lowerBounds = getImplicitLowerBounds(wildcardType);
-",2,0,0,2,4,0,4,2,0,8,58,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,361,"            for (Type toBound : toUpperBounds) {
-",4,0,0,1,3,0,0,2,0,6,36,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,364,"                toBound = substituteTypeVariables(toBound, typeVarAssigns);
-",2,0,0,1,2,0,6,0,0,9,59,8,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,369,"                for (Type bound : upperBounds) {
-",4,0,0,1,3,0,0,2,0,6,32,8,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,370,"                    if (!isAssignable(bound, toBound, typeVarAssigns)) {
-",0,0,0,2,5,0,8,0,0,9,52,10,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,371,"                        return false;
-",0,0,0,0,0,0,0,0,0,1,13,12,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,376,"            for (Type toBound : toLowerBounds) {
-",4,0,0,1,3,0,0,2,0,6,36,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,379,"                toBound = substituteTypeVariables(toBound, typeVarAssigns);
-",2,0,0,1,2,0,6,0,0,9,59,8,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,384,"                for (Type bound : lowerBounds) {
-",4,0,0,1,3,0,0,2,0,6,32,8,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,385,"                    if (!isAssignable(toBound, bound, typeVarAssigns)) {
-",0,0,0,2,5,0,8,0,0,9,52,10,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,386,"                        return false;
-",0,0,0,0,0,0,0,0,0,1,13,12,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,391,"            return true;
-",0,0,0,0,0,0,0,0,0,1,12,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,399,"                return false;
-",0,0,0,0,0,0,0,0,0,1,13,8,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,408,"                return false;
-",0,0,0,0,0,0,0,0,0,1,13,8,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,600,"        Class<?> cls = getRawType(parameterizedType);
-",2,0,0,1,2,0,4,2,0,8,45,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,603,"        if (!isAssignable(cls, toClass)) {
-",0,0,0,2,5,0,6,0,0,7,34,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,607,"        Type ownerType = parameterizedType.getOwnerType();
-",2,0,0,1,2,0,4,2,0,8,50,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,610,"        if (ownerType instanceof ParameterizedType) {
-",2,0,0,1,3,0,0,2,0,4,45,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,617,"            typeVarAssigns = subtypeVarAssigns == null ? new HashMap<TypeVariable<?>, Type>()
-",4,1,0,1,2,0,0,6,0,13,81,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,622,"        Type[] typeArgs = parameterizedType.getActualTypeArguments();
-",2,0,0,2,4,0,4,2,0,8,61,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,624,"        TypeVariable<?>[] typeParams = cls.getTypeParameters();
-",2,0,0,2,4,0,4,2,0,8,55,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,627,"        for (int i = 0; i < typeParams.length; i++) {
-",10,1,0,1,3,0,0,0,0,12,45,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,628,"            Type typeArg = typeArgs[i];
-",2,0,1,1,2,0,0,2,0,8,27,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,629,"            typeVarAssigns.put(typeParams[i], typeVarAssigns.containsKey(typeArg) ? typeVarAssigns
-",0,0,1,2,5,0,12,0,0,16,86,7,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,633,"        if (toClass.equals(cls)) {
-",0,0,0,2,5,0,6,0,0,6,26,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,635,"            return typeVarAssigns;
-",2,0,0,0,0,0,0,0,0,2,22,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,660,"            if (toClass.isPrimitive()) {
-",0,0,0,2,5,0,4,0,0,4,28,7,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,667,"            cls = ClassUtils.primitiveToWrapper(cls);
-",2,0,0,1,2,0,6,0,0,9,41,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,799,"        if (superClass.isInterface()) {
-",0,0,0,2,5,0,4,0,0,4,31,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,801,"            Type[] interfaceTypes = cls.getGenericInterfaces();
-",2,0,0,2,4,0,4,2,0,8,51,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,803,"            Type genericInterface = null;
-",2,0,0,0,0,0,0,2,0,4,29,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,806,"            for (Type midType : interfaceTypes) {
-",4,0,0,1,3,0,0,2,0,6,37,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,807,"                Class<?> midClass = null;
-",2,0,0,0,0,0,0,2,0,4,25,8,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,809,"                if (midType instanceof ParameterizedType) {
-",2,0,0,1,3,0,0,2,0,4,43,9,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,810,"                    midClass = getRawType((ParameterizedType) midType);
-",4,0,0,2,4,0,2,2,0,9,51,10,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,820,"                if (isAssignable(midClass, superClass)
-",0,0,0,1,3,0,6,0,0,6,38,10,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,822,"                    genericInterface = midType;
-",4,0,0,0,0,0,0,0,0,5,27,10,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,827,"            if (genericInterface != null) {
-",2,1,0,1,3,0,0,0,0,3,31,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,828,"                return genericInterface;
-",2,0,0,0,0,0,0,0,0,2,24,8,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,986,"        Type rawType = parameterizedType.getRawType();
-",2,0,0,1,2,0,4,2,0,8,46,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,993,"        if (!(rawType instanceof Class<?>)) {
-",2,0,0,2,5,0,0,2,0,5,37,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/reflect/TypeUtils,15,997,"        return (Class<?>) rawType;
-",2,0,0,1,2,0,0,2,0,4,26,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/LookupTranslator,15,40,"    public LookupTranslator(CharSequence[]... lookup) {
-",4,0,0,2,5,1,0,2,0,7,51,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/LookupTranslator,15,41,"        lookupMap = new HashMap<CharSequence, CharSequence>();
-",2,0,0,1,2,0,0,6,0,9,54,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/LookupTranslator,15,42,"        int _shortest = Integer.MAX_VALUE;
-",6,0,0,0,0,0,0,0,0,6,34,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/LookupTranslator,15,43,"        int _longest = 0;
-",2,0,0,0,0,0,0,0,0,2,17,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/LookupTranslator,15,44,"        if (lookup != null) {
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1390,"        return version.startsWith(versionPrefix);
+",0,0,0,1,2,0,6,0,0,6,41,5,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1406,"        if (osName == null || osVersion == null) {
+",4,3,0,1,3,0,0,0,0,7,42,4,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1409,"        return osName.startsWith(osNamePrefix) && osVersion.startsWith(osVersionPrefix);
+",0,1,0,2,4,0,12,0,0,13,80,4,1.00000,0
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1423,"        if (osName == null) {
 ",2,1,0,1,3,0,0,0,0,3,21,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/LookupTranslator,15,45,"            for (CharSequence[] seq : lookup) {
-",4,0,0,2,5,0,0,2,0,6,35,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/LookupTranslator,15,46,"                this.lookupMap.put(seq[0], seq[1]);
-",2,0,1,3,6,0,2,0,0,8,35,9,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/LookupTranslator,15,47,"                int sz = seq[0].length();
-",2,0,1,2,4,0,2,0,0,6,25,9,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/LookupTranslator,15,48,"                if (sz < _shortest) {
-",4,1,0,1,3,0,0,0,0,5,21,8,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/LookupTranslator,15,49,"                    _shortest = sz;
-",4,0,0,0,0,0,0,0,0,5,15,10,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/LookupTranslator,15,51,"                if (sz > _longest) {
-",4,1,0,1,3,0,0,0,0,5,20,8,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/LookupTranslator,15,52,"                    _longest = sz;
-",4,0,0,0,0,0,0,0,0,5,14,10,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/LookupTranslator,15,56,"        shortest = _shortest;
-",4,0,0,0,0,0,0,0,0,5,21,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/LookupTranslator,15,57,"        longest = _longest;
+defect4j,lang,org/apache/commons/lang3/SystemUtils,15,1426,"        return osName.startsWith(osNamePrefix);
+",0,0,0,1,2,0,6,0,0,6,39,5,1.00000,0
+defect4j,lang,org/apache/commons/lang3/JavaVersion,15,89,"    JavaVersion(final float value, final String name) {
+",6,0,0,1,3,2,0,2,0,10,51,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/JavaVersion,15,90,"        this.value = value;
 ",4,0,0,0,0,0,0,0,0,5,19,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/LookupTranslator,15,58,"    }
+defect4j,lang,org/apache/commons/lang3/JavaVersion,15,91,"        this.name = name;
+",4,0,0,0,0,0,0,0,0,5,17,4,1.00000,0
+defect4j,lang,org/apache/commons/lang3/JavaVersion,15,92,"    }
 ",0,0,0,0,1,0,0,0,0,0,1,3,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/LookupTranslator,15,65,"        int max = longest;
-",4,0,0,0,0,0,0,0,0,4,18,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/LookupTranslator,15,66,"        if (index + longest > input.length()) {
-",4,2,0,2,5,0,4,0,0,10,39,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/LookupTranslator,15,70,"        for (int i = max; i >= shortest; i--) {
-",10,1,0,1,3,0,0,0,0,12,39,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/LookupTranslator,15,71,"            CharSequence subSeq = input.subSequence(index, index + i);
-",6,1,0,1,2,0,6,2,0,15,58,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/LookupTranslator,15,72,"            CharSequence result = lookupMap.get(subSeq);
-",2,0,0,1,2,0,6,2,0,10,44,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/LookupTranslator,15,73,"            if (result != null) {
-",2,1,0,1,3,0,0,0,0,3,21,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/LookupTranslator,15,74,"                out.write(result.toString());
-",0,0,0,2,4,0,8,0,0,8,29,9,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/LookupTranslator,15,75,"                return i;
-",2,0,0,0,0,0,0,0,0,2,9,8,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/LookupTranslator,15,78,"        return 0;
-",0,0,0,0,0,0,0,0,0,0,9,3,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/CodePointTranslator,15,29,"public abstract class CodePointTranslator extends CharSequenceTranslator {
-",2,0,0,0,1,2,0,2,0,6,74,1,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/NumericEntityUnescaper,15,56,"    public NumericEntityUnescaper(OPTION... options) {
-",4,0,0,1,3,1,0,2,0,7,50,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/NumericEntityUnescaper,15,57,"        if(options.length > 0) {
-",4,1,0,1,3,0,0,0,0,5,24,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/NumericEntityUnescaper,15,60,"            this.options = EnumSet.copyOf(Arrays.asList(new OPTION[] { OPTION.semiColonRequired }));
-",6,0,0,4,8,0,8,2,0,17,88,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/NumericEntityUnescaper,15,62,"    }
-",0,0,0,0,1,0,0,0,0,0,1,3,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/NumericEntityUnescaper,15,35,"    public static enum OPTION { semiColonRequired, semiColonOptional, errorIfNoSemiColon }
-",8,0,0,1,2,2,0,0,0,10,86,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/UnicodeEscaper,15,51,"    private UnicodeEscaper(int below, int above, boolean between) {
-",8,0,0,1,3,1,0,0,0,9,63,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/UnicodeEscaper,15,52,"        this.below = below;
-",4,0,0,0,0,0,0,0,0,5,19,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/UnicodeEscaper,15,53,"        this.above = above;
-",4,0,0,0,0,0,0,0,0,5,19,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/UnicodeEscaper,15,54,"        this.between = between;
-",4,0,0,0,0,0,0,0,0,5,23,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/UnicodeEscaper,15,55,"    }
-",0,0,0,0,1,0,0,0,0,0,1,3,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/UnicodeEscaper,15,85,"        return new UnicodeEscaper(codepointLow, codepointHigh, false);
-",4,0,0,1,2,0,0,2,0,7,62,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/OctalUnescaper,15,34,"public class OctalUnescaper extends CharSequenceTranslator {
-",2,0,0,0,1,1,0,2,0,5,60,1,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/OctalUnescaper,15,36,"    private static int OCTAL_MAX = 377;
-",2,0,0,0,0,2,0,0,0,4,35,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,15,35,"    private static final String[][] ISO8859_1_ESCAPE = {
-",2,0,0,2,5,3,0,2,0,7,52,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,15,139,"    private static final String[][] ISO8859_1_UNESCAPE = invert(ISO8859_1_ESCAPE);
-",2,0,0,3,6,3,4,2,0,11,78,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,15,148,"    private static final String[][] HTML40_EXTENDED_ESCAPE = {
-",2,0,0,2,5,3,0,2,0,7,58,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,15,350,"    private static final String[][] HTML40_EXTENDED_UNESCAPE = invert(HTML40_EXTENDED_ESCAPE);
-",2,0,0,3,6,3,4,2,0,11,90,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,15,359,"    private static final String[][] BASIC_ESCAPE = {
-",2,0,0,2,5,3,0,2,0,7,48,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,15,371,"    private static final String[][] BASIC_UNESCAPE = invert(BASIC_ESCAPE);
-",2,0,0,3,6,3,4,2,0,11,70,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,15,378,"    private static final String[][] APOS_ESCAPE = {
-",2,0,0,2,5,3,0,2,0,7,47,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,15,387,"    private static final String[][] APOS_UNESCAPE = invert(APOS_ESCAPE);
-",2,0,0,3,6,3,4,2,0,11,68,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,15,396,"    private static final String[][] JAVA_CTRL_CHARS_ESCAPE = {
-",2,0,0,2,5,3,0,2,0,7,58,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,15,409,"    private static final String[][] JAVA_CTRL_CHARS_UNESCAPE = invert(JAVA_CTRL_CHARS_ESCAPE);
-",2,0,0,3,6,3,4,2,0,11,90,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,15,34,"    public static String[][] ISO8859_1_ESCAPE() { return ISO8859_1_ESCAPE.clone(); }
-",2,0,0,5,10,2,4,2,0,10,80,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,15,138,"    public static String[][] ISO8859_1_UNESCAPE() { return ISO8859_1_UNESCAPE.clone(); }
-",2,0,0,5,10,2,4,2,0,10,84,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,15,147,"    public static String[][] HTML40_EXTENDED_ESCAPE() { return HTML40_EXTENDED_ESCAPE.clone(); }
-",2,0,0,5,10,2,4,2,0,10,92,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,15,349,"    public static String[][] HTML40_EXTENDED_UNESCAPE() { return HTML40_EXTENDED_UNESCAPE.clone(); }
-",2,0,0,5,10,2,4,2,0,10,96,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,15,358,"    public static String[][] BASIC_ESCAPE() { return BASIC_ESCAPE.clone(); }
-",2,0,0,5,10,2,4,2,0,10,72,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,15,370,"    public static String[][] BASIC_UNESCAPE() { return BASIC_UNESCAPE.clone(); }
-",2,0,0,5,10,2,4,2,0,10,76,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,15,377,"    public static String[][] APOS_ESCAPE() { return APOS_ESCAPE.clone(); }
-",2,0,0,5,10,2,4,2,0,10,70,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,15,386,"    public static String[][] APOS_UNESCAPE() { return APOS_UNESCAPE.clone(); }
-",2,0,0,5,10,2,4,2,0,10,74,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,15,395,"    public static String[][] JAVA_CTRL_CHARS_ESCAPE() { return JAVA_CTRL_CHARS_ESCAPE.clone(); }
-",2,0,0,5,10,2,4,2,0,10,92,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,15,408,"    public static String[][] JAVA_CTRL_CHARS_UNESCAPE() { return JAVA_CTRL_CHARS_UNESCAPE.clone(); }
-",2,0,0,5,10,2,4,2,0,10,96,2,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,15,417,"        String[][] newarray = new String[array.length][2];
-",6,0,0,4,8,0,0,4,0,10,50,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,15,418,"        for(int i = 0; i<array.length; i++) {
-",10,1,0,1,3,0,0,0,0,12,37,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,15,419,"            newarray[i][0] = array[i][1];
-",0,0,1,4,8,0,0,0,0,9,29,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,15,420,"            newarray[i][1] = array[i][0];
-",0,0,1,4,8,0,0,0,0,9,29,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,15,422,"        return newarray;
-",2,0,0,0,0,0,0,0,0,2,16,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/UnicodeUnescaper,15,30,"public class UnicodeUnescaper extends CharSequenceTranslator {
-",2,0,0,0,1,1,0,2,0,5,62,1,1.00000,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,16,459,"            return createInteger(str);
-",0,0,0,1,2,0,4,0,0,4,26,7,1.00000,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,16,470,"            if (expPos > -1) {
-",2,1,0,1,3,0,0,0,0,4,18,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,16,476,"                dec = str.substring(decPos + 1);
-",4,1,0,1,2,0,4,0,0,10,32,8,1.00000,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,16,478,"            mant = str.substring(0, decPos);
-",2,0,0,1,2,0,6,0,0,9,32,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,16,481,"                if (expPos > str.length()) {
-",2,1,0,2,5,0,4,0,0,7,28,8,1.00000,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,16,484,"                mant = str.substring(0, expPos);
-",2,0,0,1,2,0,6,0,0,9,32,8,1.00000,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,16,517,"                        Float f = NumberUtils.createFloat(numeric);
-",2,0,0,1,2,0,6,2,0,10,43,9,1.00000,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,16,518,"                        if (!(f.isInfinite() || (f.floatValue() == 0.0F && !allZeros))) {
-",2,3,0,5,11,0,8,0,0,15,65,9,1.00000,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,16,521,"                            return f;
-",2,0,0,0,0,0,0,0,0,2,9,11,1.00000,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,16,531,"                        Double d = NumberUtils.createDouble(numeric);
-",2,0,0,1,2,0,6,2,0,10,45,9,1.00000,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,16,532,"                        if (!(d.isInfinite() || (d.floatValue() == 0.0D && !allZeros))) {
-",2,3,0,5,11,0,8,0,0,15,65,9,1.00000,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,16,533,"                            return d;
-",2,0,0,0,0,0,0,0,0,2,9,11,1.00000,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,16,545,"                    throw new NumberFormatException(str + "" is not a valid number."");
-",2,1,0,1,2,0,0,2,0,6,65,8,1.00000,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,16,551,"            if (expPos > -1 && expPos < str.length() - 1) {
-",4,4,0,2,5,0,4,0,0,13,47,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,16,554,"                exp = null;
-",2,0,0,0,0,0,0,0,0,3,11,8,1.00000,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,16,556,"            if (dec == null && exp == null) {
-",4,3,0,1,3,0,0,0,0,7,33,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,16,559,"                    return createInteger(str);
-",0,0,0,1,2,0,4,0,0,4,26,11,1.00000,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,16,560,"                } catch (NumberFormatException nfe) { // NOPMD
-",2,0,0,1,4,0,0,2,0,4,46,10,1.00000,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,16,564,"                    return createLong(str);
-",0,0,0,1,2,0,4,0,0,4,23,11,1.00000,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,16,572,"                boolean allZeros = isAllZeros(mant) && isAllZeros(exp);
-",2,1,0,2,4,0,8,0,0,11,55,9,1.00000,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,16,574,"                    Float f = createFloat(str);
-",2,0,0,1,2,0,4,2,0,8,27,10,1.00000,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,16,575,"                    if (!(f.isInfinite() || (f.floatValue() == 0.0F && !allZeros))) {
-",2,3,0,5,11,0,8,0,0,15,65,10,1.00000,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,16,576,"                        return f;
-",2,0,0,0,0,0,0,0,0,2,9,12,1.00000,0
-defect4j,lang,org/apache/commons/lang3/StringEscapeUtils,17,506,"        return ESCAPE_XML.translate(input);
-",0,0,0,1,2,0,6,0,0,6,35,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,409,"        TimeZoneDisplayKey key = new TimeZoneDisplayKey(tz, daylight, style, locale);
-",10,0,0,1,2,0,0,4,0,14,77,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,410,"        String value = cTimeZoneDisplayCache.get(key);
-",2,0,0,1,2,0,6,2,0,10,46,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,411,"        if (value == null) {
-",2,1,0,1,3,0,0,0,0,3,20,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,413,"            value = tz.getDisplayName(daylight, style, locale);
-",2,0,0,1,2,0,10,0,0,13,51,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,414,"            String prior = cTimeZoneDisplayCache.putIfAbsent(key, value);
-",2,0,0,1,2,0,8,2,0,12,61,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,415,"            if (prior != null) {
-",2,1,0,1,3,0,0,0,0,3,20,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,419,"        return value;
-",2,0,0,0,0,0,0,0,0,2,13,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,555,"                if (tokenLen >= 4) {
-",2,1,0,1,3,0,0,0,0,3,20,7,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,558,"                    rule = new TimeZoneNameRule(mTimeZone, mLocale, TimeZone.SHORT);
-",10,0,0,1,2,0,0,2,0,13,64,9,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,560,"                break;
-",0,0,0,0,0,0,0,0,0,0,6,3,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1240,"            appendTo(buffer, calendar.get(Calendar.YEAR) % 100);
-",4,1,0,2,4,0,8,0,0,13,52,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1241,"        }
-",0,0,0,0,1,0,0,0,0,0,1,3,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1247,"            buffer.append((char)(value / 10 + '0'));
-",2,2,0,3,6,0,4,0,0,9,40,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1248,"            buffer.append((char)(value % 10 + '0'));
-",2,2,0,3,6,0,4,0,0,9,40,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1249,"        }
-",0,0,0,0,1,0,0,0,0,0,1,3,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1484,"                           boolean daylight, int style, Locale locale) {
-",6,0,0,0,2,0,0,2,0,8,45,4,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1485,"            mTimeZone = timeZone;
-",4,0,0,0,0,0,0,0,0,5,21,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1486,"            if (daylight) {
-",2,0,0,1,3,0,0,0,0,2,15,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1487,"                style |= 0x80000000;
-",2,0,0,0,0,0,0,0,0,3,20,7,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1489,"            mStyle = style;
-",4,0,0,0,0,0,0,0,0,5,15,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1490,"            mLocale = locale;
-",4,0,0,0,0,0,0,0,0,5,17,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1491,"        }
-",0,0,0,0,1,0,0,0,0,0,1,3,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1498,"            return (mStyle * 31 + mLocale.hashCode() ) * 31 + mTimeZone.hashCode();
-",2,4,0,3,6,0,8,0,0,14,71,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1387,"        TimeZoneNameRule(TimeZone timeZone, Locale locale, int style) {
-",8,0,0,1,3,0,0,4,0,12,63,3,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1388,"            mTimeZone = timeZone;
-",4,0,0,0,0,0,0,0,0,5,21,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1390,"            mStandard = getTimeZoneDisplay(timeZone, false, style, locale);
-",2,0,0,1,2,0,8,0,0,12,63,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1391,"            mDaylight = getTimeZoneDisplay(timeZone, true, style, locale);
-",2,0,0,1,2,0,8,0,0,12,62,5,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1392,"        }
-",0,0,0,0,1,0,0,0,0,0,1,3,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1398,"            return Math.max(mStandard.length(), mDaylight.length());
-",0,0,0,3,6,0,12,0,0,12,56,6,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/NumericEntityUnescaper,19,41,"            int start = index + 2;
-",4,1,0,0,0,0,0,0,0,5,22,7,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/NumericEntityUnescaper,19,42,"            boolean isHex = false;
-",2,0,0,0,0,0,0,0,0,3,22,7,1.00000,0
-defect4j,lang,org/apache/commons/lang3/text/translate/NumericEntityUnescaper,19,44,"            char firstChar = input.charAt(start);
-",2,0,0,1,2,0,6,0,0,8,37,7,1.00000,0
-defect4j,lang,org/apache/commons/lang3/StringUtils,20,3257,"            return null;
-",0,0,0,0,0,0,0,0,0,0,12,3,1.00000,0
-defect4j,lang,org/apache/commons/lang3/time/DateUtils,21,60,"    public static final TimeZone UTC_TIME_ZONE = TimeZone.getTimeZone(""GMT"");
-",2,0,0,1,2,3,4,2,0,12,73,2,0.00926,0
+defect4j,lang,org/apache/commons/lang3/JavaVersion,15,32,"    JAVA_0_9(1.5f, ""0.9""),
+",2,0,0,1,2,0,0,0,0,3,22,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/JavaVersion,15,37,"    JAVA_1_1(1.1f, ""1.1""),
+",2,0,0,1,2,0,0,0,0,3,22,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/JavaVersion,15,42,"    JAVA_1_2(1.2f, ""1.2""),
+",2,0,0,1,2,0,0,0,0,3,22,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/JavaVersion,15,47,"    JAVA_1_3(1.3f, ""1.3""),
+",2,0,0,1,2,0,0,0,0,3,22,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/JavaVersion,15,52,"    JAVA_1_4(1.4f, ""1.4""),
+",2,0,0,1,2,0,0,0,0,3,22,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/JavaVersion,15,57,"    JAVA_1_5(1.5f, ""1.5""),
+",2,0,0,1,2,0,0,0,0,3,22,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/JavaVersion,15,62,"    JAVA_1_6(1.6f, ""1.6""),
+",2,0,0,1,2,0,0,0,0,3,22,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/JavaVersion,15,67,"    JAVA_1_7(1.7f, ""1.7""),
+",2,0,0,1,2,0,0,0,0,3,22,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/JavaVersion,15,72,"    JAVA_1_8(1.8f, ""1.8"");
+",2,0,0,1,2,0,0,0,0,3,22,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/JavaVersion,15,27,"public enum JavaVersion {
+",2,0,0,0,1,1,0,0,0,3,25,1,1.00000,0
+defect4j,lang,org/apache/commons/lang3/JavaVersion,15,105,"        return this.value >= requiredVersion.value;
+",6,1,0,0,0,0,0,0,0,7,43,4,1.00000,0
+defect4j,lang,org/apache/commons/lang3/JavaVersion,15,132,"        if (""0.9"".equals(nom)) {
+",0,0,0,2,5,0,4,0,0,5,24,5,1.00000,0
+defect4j,lang,org/apache/commons/lang3/JavaVersion,15,134,"        } else if (""1.1"".equals(nom)) {
+",0,0,0,2,6,0,4,0,0,5,31,6,1.00000,0
+defect4j,lang,org/apache/commons/lang3/JavaVersion,15,136,"        } else if (""1.2"".equals(nom)) {
+",0,0,0,2,6,0,4,0,0,5,31,7,1.00000,0
+defect4j,lang,org/apache/commons/lang3/JavaVersion,15,138,"        } else if (""1.3"".equals(nom)) {
+",0,0,0,2,6,0,4,0,0,5,31,8,1.00000,0
+defect4j,lang,org/apache/commons/lang3/JavaVersion,15,140,"        } else if (""1.4"".equals(nom)) {
+",0,0,0,2,6,0,4,0,0,5,31,9,1.00000,0
+defect4j,lang,org/apache/commons/lang3/JavaVersion,15,142,"        } else if (""1.5"".equals(nom)) {
+",0,0,0,2,6,0,4,0,0,5,31,10,1.00000,0
+defect4j,lang,org/apache/commons/lang3/JavaVersion,15,144,"        } else if (""1.6"".equals(nom)) {
+",0,0,0,2,6,0,4,0,0,5,31,11,1.00000,0
+defect4j,lang,org/apache/commons/lang3/JavaVersion,15,146,"        } else if (""1.7"".equals(nom)) {
+",0,0,0,2,6,0,4,0,0,5,31,12,1.00000,0
+defect4j,lang,org/apache/commons/lang3/JavaVersion,15,147,"            return JAVA_1_7;
+",2,0,0,0,0,0,0,0,0,2,16,13,1.00000,0
+defect4j,lang,org/apache/commons/lang3/StringEscapeUtils,15,52,"    public static final CharSequenceTranslator ESCAPE_JAVA = 
+",2,0,0,0,0,3,0,2,0,7,56,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/StringEscapeUtils,15,72,"    public static final CharSequenceTranslator ESCAPE_ECMASCRIPT = 
+",2,0,0,0,0,3,0,2,0,7,62,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/StringEscapeUtils,15,94,"    public static final CharSequenceTranslator ESCAPE_XML = 
+",2,0,0,0,0,3,0,2,0,7,55,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/StringEscapeUtils,15,109,"    public static final CharSequenceTranslator ESCAPE_HTML3 = 
+",2,0,0,0,0,3,0,2,0,7,57,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/StringEscapeUtils,15,124,"    public static final CharSequenceTranslator ESCAPE_HTML4 = 
+",2,0,0,0,0,3,0,2,0,7,57,2,1.00000,0
+defect4j,lang,org/apache/commons/lang3/StringEscapeUtils,15,140,"    public static final CharSequenceTranslator ESCAPE_CSV = new CsvEscaper();
+",2,0,0,1,2,3,0,4,0,9,73,2,1.00000,0
 defect4j,lang,org/apache/commons/lang3/time/DateUtils,21,88,"    private static final int[][] fields = {
 ",2,0,0,2,5,3,0,0,0,5,39,2,0.00926,0
 defect4j,lang,org/apache/commons/lang3/math/Fraction,22,216,"            throw new ArithmeticException(""The denominator must not be zero"");

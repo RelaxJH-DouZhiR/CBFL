@@ -1,0 +1,1263 @@
+dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,logic,lengthEle,lengthWord,depth,suspicious,accuracy
+defect4j,math,org/apache/commons/math/estimation/SimpleEstimationProblem,100,58,"        return (EstimatedParameter[]) parameters.toArray(new EstimatedParameter[parameters.size()]);
+",0,0,0,5,10,1,8,4,0,12,92,5,1.00000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,162,"        updateJacobian();
+",0,0,0,1,2,0,2,0,0,2,17,5,0.50000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,165,"        final int rows = problem.getMeasurements().length;
+",4,0,0,1,2,1,4,0,0,9,50,4,0.50000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,166,"        final int cols = problem.getAllParameters().length;
+",4,0,0,1,2,1,4,0,0,9,51,4,0.50000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,167,"        final int max  = cols * rows;
+",6,1,0,0,0,1,0,0,0,8,29,4,0.50000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,168,"        double[][] jTj = new double[cols][cols];
+",2,0,1,4,8,0,0,0,0,6,40,5,0.50000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,169,"        for (int i = 0; i < cols; ++i) {
+",8,1,0,1,3,0,0,0,0,10,32,4,0.50000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,170,"            for (int j = i; j < cols; ++j) {
+",10,1,0,1,3,0,0,0,0,12,32,6,0.50000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,171,"                double sum = 0;
+",2,0,0,0,0,0,0,0,0,2,15,9,0.50000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,172,"                for (int k = 0; k < max; k += cols) {
+",10,1,0,1,3,0,0,0,0,12,37,8,0.50000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,173,"                    sum += jacobian[k + i] * jacobian[k + j];
+",10,3,1,2,4,0,0,0,0,18,41,10,0.50000,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,172,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.11111,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,735,"                for (int j = 0; j < nColB; j++) {
+",8,1,0,1,3,0,0,0,0,10,33,8,0.09091,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,736,"                    bp[i][j] -= bp[col][j] * lu[i][col];
+",0,1,1,6,12,0,0,0,0,20,36,10,0.09091,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,747,"                for (int j = 0; j < nColB; j++) {
+",8,1,0,1,3,0,0,0,0,10,33,8,0.09091,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,748,"                    bp[i][j] -= bp[col][j] * lu[i][col];
+",0,1,1,6,12,0,0,0,0,20,36,10,0.09091,0
+defect4j,math,org/apache/commons/math/estimation/WeightedMeasurement,100,80,"                             boolean ignored) {
+",2,0,0,0,2,0,0,0,0,2,18,3,0.09091,0
+defect4j,math,org/apache/commons/math/estimation/WeightedMeasurement,100,81,"    this.weight        = weight;
+",4,0,0,0,0,0,0,0,0,5,28,4,0.09091,0
+defect4j,math,org/apache/commons/math/estimation/WeightedMeasurement,100,82,"    this.measuredValue = measuredValue;
+",4,0,0,0,0,0,0,0,0,5,35,4,0.09091,0
+defect4j,math,org/apache/commons/math/estimation/WeightedMeasurement,100,83,"    this.ignored       = ignored;
+",4,0,0,0,0,0,0,0,0,5,29,4,0.09091,0
+defect4j,math,org/apache/commons/math/estimation/WeightedMeasurement,100,84,"  }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.09091,0
+defect4j,math,org/apache/commons/math/estimation/WeightedMeasurement,100,146,"    this.ignored = ignored;
+",4,0,0,0,0,0,0,0,0,5,23,4,0.09091,0
+defect4j,math,org/apache/commons/math/estimation/WeightedMeasurement,100,147,"  }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.09091,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,156,"                for (int i = 0; i < parameters.length; ++i) {
+",10,1,0,1,3,0,0,0,0,12,45,8,0.09091,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,157,"                    parameters[i].setEstimate(parameters[i].getEstimate() + dX.getEntry(i, 0));
+",0,1,1,5,10,0,10,0,0,19,75,11,0.09091,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,162,"            }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.09091,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,165,"            previous = cost;
+",4,0,0,0,0,0,0,0,0,5,16,6,0.09091,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,166,"            updateResidualsAndCost();
+",0,0,0,1,2,0,2,0,0,2,25,7,0.09091,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,168,"        } while ((getCostEvaluations() < 2) ||
+",0,2,0,2,6,0,2,0,0,4,38,4,0.09091,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,591,"                return false;
+",0,0,0,0,0,1,0,0,0,1,13,8,0.08333,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,720,"        int nCol = this.getColumnDimension();
+",2,0,0,1,2,0,2,0,0,4,37,5,0.08333,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,721,"        int nColB = b.getColumnDimension();
+",2,0,0,1,2,0,4,0,0,6,35,5,0.08333,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,722,"        int nRowB = b.getRowDimension();
+",2,0,0,1,2,0,4,0,0,6,32,5,0.08333,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,725,"        double[][] bp = new double[nRowB][nColB];
+",2,0,1,4,8,0,0,0,0,6,41,5,0.08333,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,726,"        for (int row = 0; row < nRowB; row++) {
+",8,1,0,1,3,0,0,0,0,10,39,4,0.08333,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,727,"            for (int col = 0; col < nColB; col++) {
+",8,1,0,1,3,0,0,0,0,10,39,6,0.08333,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,728,"                bp[row][col] = b.getEntry(permutation[row], col);
+",0,0,1,4,8,0,6,0,0,17,49,8,0.08333,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,733,"        for (int col = 0; col < nCol; col++) {
+",8,1,0,1,3,0,0,0,0,10,38,4,0.08333,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,734,"            for (int i = col + 1; i < nCol; i++) {
+",10,2,0,1,3,0,0,0,0,13,38,6,0.08333,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,742,"        for (int col = nCol - 1; col >= 0; col--) {
+",8,2,0,1,3,0,0,0,0,11,43,4,0.08333,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,743,"            for (int j = 0; j < nColB; j++) {
+",8,1,0,1,3,0,0,0,0,10,33,6,0.08333,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,744,"                bp[col][j] /= lu[col][col];
+",0,0,1,4,8,0,0,0,0,13,27,8,0.08333,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,746,"            for (int i = 0; i < col; i++) {
+",8,1,0,1,3,0,0,0,0,10,31,6,0.08333,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,753,"        RealMatrixImpl outMat = new RealMatrixImpl(bp);
+",4,0,0,1,2,0,0,4,0,8,47,4,0.08333,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,754,"        return outMat;
+",2,0,0,0,0,1,0,0,0,2,14,4,0.08333,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,847,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.08333,0
+defect4j,math,org/apache/commons/math/estimation/EstimatedParameter,100,107,"    return bound;
+",2,0,0,0,0,1,0,0,0,2,13,4,0.08333,0
+defect4j,math,org/apache/commons/math/estimation/SimpleEstimationProblem,100,48,"    public SimpleEstimationProblem() {
+",2,0,0,1,3,1,0,0,0,3,34,2,0.08333,0
+defect4j,math,org/apache/commons/math/estimation/SimpleEstimationProblem,100,49,"        parameters   = new ArrayList();
+",2,0,0,1,2,0,0,2,0,5,31,4,0.08333,0
+defect4j,math,org/apache/commons/math/estimation/SimpleEstimationProblem,100,50,"        measurements = new ArrayList();
+",2,0,0,1,2,0,0,2,0,5,31,4,0.08333,0
+defect4j,math,org/apache/commons/math/estimation/SimpleEstimationProblem,100,51,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.08333,0
+defect4j,math,org/apache/commons/math/estimation/SimpleEstimationProblem,100,68,"        List unbound = new ArrayList(parameters.size());
+",2,0,0,2,4,0,4,4,0,10,48,4,0.08333,0
+defect4j,math,org/apache/commons/math/estimation/SimpleEstimationProblem,100,69,"        for (Iterator iterator = parameters.iterator(); iterator.hasNext();) {
+",2,0,0,3,7,0,8,2,0,12,70,4,0.08333,0
+defect4j,math,org/apache/commons/math/estimation/SimpleEstimationProblem,100,70,"            EstimatedParameter p = (EstimatedParameter) iterator.next();
+",2,0,0,2,4,0,4,4,0,10,60,6,0.08333,0
+defect4j,math,org/apache/commons/math/estimation/SimpleEstimationProblem,100,71,"            if (! p.isBound()) {
+",0,0,0,2,5,0,4,0,0,5,20,6,0.08333,0
+defect4j,math,org/apache/commons/math/estimation/SimpleEstimationProblem,100,72,"                unbound.add(p);
+",0,0,0,1,2,0,6,0,0,6,15,9,0.08333,0
+defect4j,math,org/apache/commons/math/estimation/SimpleEstimationProblem,100,74,"        }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.08333,0
+defect4j,math,org/apache/commons/math/estimation/SimpleEstimationProblem,100,77,"        return (EstimatedParameter[]) unbound.toArray(new EstimatedParameter[unbound.size()]);
+",0,0,0,5,10,1,8,4,0,12,86,5,0.08333,0
+defect4j,math,org/apache/commons/math/estimation/SimpleEstimationProblem,100,86,"        return (WeightedMeasurement[]) measurements.toArray(new WeightedMeasurement[measurements.size()]);
+",0,0,0,5,10,1,8,4,0,12,98,5,0.08333,0
+defect4j,math,org/apache/commons/math/estimation/SimpleEstimationProblem,100,93,"        parameters.add(p);
+",0,0,0,1,2,0,6,0,0,6,18,5,0.08333,0
+defect4j,math,org/apache/commons/math/estimation/SimpleEstimationProblem,100,94,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.08333,0
+defect4j,math,org/apache/commons/math/estimation/SimpleEstimationProblem,100,101,"        measurements.add(m);
+",0,0,0,1,2,0,6,0,0,6,20,5,0.08333,0
+defect4j,math,org/apache/commons/math/estimation/SimpleEstimationProblem,100,102,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.08333,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,57,"        return costEvaluations;
+",2,0,0,0,0,1,0,0,0,2,23,4,0.07692,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,147,"        if (this.getColumnDimension() != m.getColumnDimension() ||
+",0,2,0,2,5,0,6,0,0,8,58,4,0.07143,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,151,"        int rowCount = this.getRowDimension();
+",2,0,0,1,2,0,2,0,0,4,38,5,0.07143,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,152,"        int columnCount = this.getColumnDimension();
+",2,0,0,1,2,0,2,0,0,4,44,5,0.07143,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,153,"        double[][] outData = new double[rowCount][columnCount];
+",2,0,1,4,8,0,0,0,0,6,55,5,0.07143,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,154,"        for (int row = 0; row < rowCount; row++) {
+",8,1,0,1,3,0,0,0,0,10,42,4,0.07143,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,155,"            for (int col = 0; col < columnCount; col++) {
+",8,1,0,1,3,0,0,0,0,10,45,6,0.07143,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,156,"                outData[row][col] = data[row][col] + m.getEntry(row, col);
+",0,1,1,5,10,0,8,0,0,22,58,8,0.07143,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,159,"        return new RealMatrixImpl(outData);
+",2,0,0,1,2,1,0,2,0,4,35,5,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/WeightedMeasurement,100,155,"    return ignored;
+",2,0,0,0,0,1,0,0,0,2,15,4,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,73,"            double steadyStateThreshold) {
+",2,0,0,0,2,0,0,0,0,2,30,3,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,74,"        setMaxCostEval(maxCostEval);
+",0,0,0,1,2,0,4,0,0,4,28,5,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,75,"        this.steadyStateThreshold = steadyStateThreshold;
+",4,0,0,0,0,0,0,0,0,5,49,4,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,76,"        this.convergence          = convergence;
+",4,0,0,0,0,0,0,0,0,5,40,4,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,77,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,105,"        initializeEstimate(problem);
+",0,0,0,1,2,0,4,0,0,4,28,5,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,108,"        double[] grad             = new double[parameters.length];
+",6,0,0,2,4,0,0,0,0,6,58,5,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,109,"        RealMatrixImpl bDecrement = new RealMatrixImpl(parameters.length, 1);
+",6,0,0,1,2,0,0,4,0,10,69,4,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,110,"        double[][] bDecrementData = bDecrement.getDataRef();
+",2,0,0,3,6,0,4,0,0,6,52,5,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,111,"        RealMatrixImpl wGradGradT = new RealMatrixImpl(parameters.length, parameters.length);
+",10,0,0,1,2,0,0,4,0,14,85,4,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,112,"        double[][] wggData        = wGradGradT.getDataRef();
+",2,0,0,3,6,0,4,0,0,6,52,5,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,115,"        double previous = Double.POSITIVE_INFINITY;
+",6,0,0,0,0,0,0,0,0,6,43,5,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,119,"            incrementJacobianEvaluationsCounter();
+",0,0,0,1,2,0,2,0,0,2,38,7,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,120,"            RealMatrix b = new RealMatrixImpl(parameters.length, 1);
+",6,0,0,1,2,0,0,4,0,10,56,6,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,121,"            RealMatrix a = new RealMatrixImpl(parameters.length, parameters.length);
+",10,0,0,1,2,0,0,4,0,14,72,6,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,122,"            for (int i = 0; i < measurements.length; ++i) {
+",10,1,0,1,3,0,0,0,0,12,47,6,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,123,"                if (! measurements [i].isIgnored()) {
+",0,0,1,3,7,0,2,0,0,7,37,8,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,125,"                    double weight   = measurements[i].getWeight();
+",2,0,1,2,4,0,2,0,0,8,46,11,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,126,"                    double residual = measurements[i].getResidual();
+",2,0,1,2,4,0,2,0,0,8,48,11,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,129,"                    for (int j = 0; j < parameters.length; ++j) {
+",10,1,0,1,3,0,0,0,0,12,45,10,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,130,"                        grad[j] = measurements[i].getPartial(parameters[j]);
+",0,0,1,4,8,0,2,0,0,15,52,12,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,131,"                        bDecrementData[j][0] = weight * residual * grad[j];
+",4,1,1,3,6,0,0,0,0,14,51,12,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,135,"                    for (int k = 0; k < parameters.length; ++k) {
+",10,1,0,1,3,0,0,0,0,12,45,10,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,136,"                        double[] wggRow = wggData[k];
+",2,0,1,2,4,0,0,0,0,6,29,13,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,137,"                        double gk = grad[k];
+",2,0,1,1,2,0,0,0,0,6,20,13,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,138,"                        for (int l = 0; l < parameters.length; ++l) {
+",10,1,0,1,3,0,0,0,0,12,45,12,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,139,"                            wggRow[l] =  weight * gk * grad[l];
+",4,1,1,2,4,0,0,0,0,14,35,14,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,144,"                    a = a.add(wGradGradT);
+",2,0,0,1,2,0,6,0,0,9,22,10,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,145,"                    b = b.add(bDecrement);
+",2,0,0,1,2,0,6,0,0,9,22,10,0.07143,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,153,"                RealMatrix dX = a.solve(b);
+",2,0,0,1,2,0,6,2,0,10,27,8,0.07143,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,405,"            if (subMatrix[r].length != nCols) {
+",4,1,1,2,5,0,0,0,0,9,35,6,0.06667,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,523,"        if (!isValidCoordinate(row,column)) {
+",0,0,0,2,5,0,6,0,0,7,37,4,0.06667,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,526,"        return data[row][column];
+",0,0,1,2,4,1,0,0,0,6,25,5,0.06667,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,798,"                sum = lu[row][col];
+",2,0,1,2,4,0,0,0,0,9,19,8,0.06667,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,799,"                for (int i = 0; i < row; i++) {
+",8,1,0,1,3,0,0,0,0,10,31,8,0.06667,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,802,"                lu[row][col] = sum;
+",2,0,1,2,4,0,0,0,0,9,19,8,0.06667,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,811,"                    sum -= lu[row][i] * lu[i][col];
+",2,1,1,4,8,0,0,0,0,16,31,10,0.06667,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,844,"                lu[row][col] /= lu[col][col];
+",0,0,1,4,8,0,0,0,0,13,29,8,0.06667,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,1031,"        int nRows = this.getRowDimension();
+",2,0,0,1,2,0,2,0,0,4,35,5,0.06667,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,1032,"        int nCols = this.getColumnDimension();
+",2,0,0,1,2,0,2,0,0,4,38,5,0.06667,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,1034,"        return !(row < 0 || row > nRows - 1 || col < 0 || col > nCols -1);
+",12,9,0,1,2,1,0,0,0,22,66,4,0.06667,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,58,"    private double data[][] = null;
+",2,0,0,2,4,1,0,0,0,3,31,2,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,63,"    private double lu[][] = null;
+",2,0,0,2,4,1,0,0,0,3,29,2,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,66,"    private int[] permutation = null;
+",2,0,0,1,2,1,0,0,0,3,33,2,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,69,"    private int parity = 1;
+",2,0,0,0,0,1,0,0,0,3,23,2,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,88,"    public RealMatrixImpl(int rowDimension, int columnDimension) {
+",6,0,0,1,3,1,0,0,0,7,62,2,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,89,"        if (rowDimension <= 0 || columnDimension <= 0) {
+",4,3,0,1,3,0,0,0,0,7,48,4,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,93,"        data = new double[rowDimension][columnDimension];
+",2,0,1,2,4,0,0,0,0,7,49,4,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,94,"        lu = null;
+",2,0,0,0,0,0,0,0,0,3,10,4,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,95,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,108,"    public RealMatrixImpl(double[][] d) {
+",4,0,0,3,7,1,0,0,0,5,37,2,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,109,"        this.copyIn(d);
+",0,0,0,1,2,0,4,0,0,4,15,5,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,110,"        lu = null;
+",2,0,0,0,0,0,0,0,0,3,10,4,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,111,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,72,"    protected static double TOO_SMALL = 10E-12;
+",2,0,0,0,0,2,0,0,0,4,43,2,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,267,"        return copyOut();
+",0,0,0,1,2,1,2,0,0,2,17,5,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,278,"        return data;
+",2,0,0,0,0,1,0,0,0,2,12,4,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,390,"        if ((row < 0) || (column < 0)){
+",4,3,0,3,7,0,0,0,0,7,31,4,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,394,"        int nRows = subMatrix.length;
+",6,0,0,0,0,0,0,0,0,6,29,5,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,395,"        if (nRows == 0) {
+",2,1,0,1,3,0,0,0,0,3,17,4,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,399,"        int nCols = subMatrix[0].length;
+",4,0,1,1,2,0,0,0,0,6,32,5,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,400,"        if (nCols == 0) {
+",2,1,0,1,3,0,0,0,0,3,17,4,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,404,"        for (int r = 1; r < nRows; r++) {
+",8,1,0,1,3,0,0,0,0,10,33,4,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,410,"        if (data == null) {
+",2,1,0,1,3,0,0,0,0,3,19,4,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,411,"            if ((row > 0)||(column > 0)) throw new MatrixIndexException
+",4,3,0,3,6,0,0,2,0,9,59,6,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,413,"            data = new double[nRows][nCols];
+",2,0,1,2,4,0,0,0,0,7,32,6,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,414,"            System.arraycopy(subMatrix, 0, data, 0, subMatrix.length);          
+",4,0,0,1,2,0,8,0,0,12,58,7,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,416,"        if (((nRows + row) > this.getRowDimension()) ||
+",4,3,0,3,7,0,2,0,0,9,47,4,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,420,"        for (int i = 0; i < nRows; i++) {
+",8,1,0,1,3,0,0,0,0,10,33,4,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,421,"            System.arraycopy(subMatrix[i], 0, data[row + i], column, nCols);
+",4,1,1,3,6,0,8,0,0,19,64,7,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,423,"        lu = null;
+",2,0,0,0,0,0,0,0,0,3,10,4,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,424,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,581,"        return (this.getColumnDimension() == this.getRowDimension());
+",0,1,0,3,6,1,4,0,0,5,61,5,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,588,"        if (lu == null) {
+",2,1,0,1,3,0,0,0,0,3,17,4,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,590,"                luDecompose();
+",0,0,0,1,2,0,2,0,0,2,14,9,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,604,"        return data.length;
+",4,0,0,0,0,1,0,0,0,4,19,5,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,611,"        return data[0].length;
+",2,0,1,1,2,1,0,0,0,4,22,5,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,710,"        if (b.getRowDimension() != this.getRowDimension()) {
+",0,1,0,3,7,0,6,0,0,7,52,4,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,713,"        if (!this.isSquare()) {
+",0,0,0,2,5,0,2,0,0,3,23,4,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,716,"        if (this.isSingular()) { // side effect: compute LU decomp
+",0,0,0,2,5,0,2,0,0,2,58,5,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,777,"        int nRows = this.getRowDimension();
+",2,0,0,1,2,0,2,0,0,4,35,5,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,778,"        int nCols = this.getColumnDimension();
+",2,0,0,1,2,0,2,0,0,4,38,5,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,779,"        if (nRows != nCols) {
+",4,1,0,1,3,0,0,0,0,5,21,4,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,782,"        lu = this.getData();
+",2,0,0,1,2,0,2,0,0,5,20,4,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,785,"        permutation = new int[nRows];
+",2,0,1,1,2,0,0,0,0,5,29,4,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,786,"        for (int row = 0; row < nRows; row++) {
+",8,1,0,1,3,0,0,0,0,10,39,4,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,787,"            permutation[row] = row;
+",2,0,1,1,2,0,0,0,0,7,23,6,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,789,"        parity = 1;
+",2,0,0,0,0,0,0,0,0,3,11,4,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,792,"        for (int col = 0; col < nCols; col++) {
+",8,1,0,1,3,0,0,0,0,10,39,4,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,794,"            double sum = 0;
+",2,0,0,0,0,0,0,0,0,2,15,7,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,797,"            for (int row = 0; row < col; row++) {
+",8,1,0,1,3,0,0,0,0,10,37,6,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,806,"            int max = col; // permutation row
+",4,0,0,0,0,0,0,0,0,4,33,7,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,807,"            double largest = 0d;
+",2,0,0,0,0,0,0,0,0,2,20,7,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,808,"            for (int row = col; row < nRows; row++) {
+",10,1,0,1,3,0,0,0,0,12,41,6,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,809,"                sum = lu[row][col];
+",2,0,1,2,4,0,0,0,0,9,19,8,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,810,"                for (int i = 0; i < col; i++) {
+",8,1,0,1,3,0,0,0,0,10,31,8,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,813,"                lu[row][col] = sum;
+",2,0,1,2,4,0,0,0,0,9,19,8,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,816,"                if (Math.abs(sum) > largest) {
+",2,1,0,2,5,0,6,0,0,9,30,8,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,817,"                    largest = Math.abs(sum);
+",2,0,0,1,2,0,6,0,0,9,24,10,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,818,"                    max = row;
+",4,0,0,0,0,0,0,0,0,5,10,10,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,823,"            if (Math.abs(lu[max][col]) < TOO_SMALL) {
+",2,1,1,4,9,0,4,0,0,13,41,6,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,829,"            if (max != col) {
+",4,1,0,1,3,0,0,0,0,5,17,6,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,843,"            for (int row = col + 1; row < nRows; row++) {
+",10,2,0,1,3,0,0,0,0,13,45,6,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,1000,"        int nRows = this.getRowDimension();
+",2,0,0,1,2,0,2,0,0,4,35,5,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,1001,"        double[][] out = new double[nRows][this.getColumnDimension()];
+",2,0,1,5,10,0,2,0,0,6,62,5,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,1003,"        for (int i = 0; i < nRows; i++) {
+",8,1,0,1,3,0,0,0,0,10,33,4,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,1004,"            System.arraycopy(data[i], 0, out[i], 0, data[i].length);
+",2,0,1,4,8,0,4,0,0,18,56,7,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,1006,"        return out;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,1020,"        setSubMatrix(in,0,0);
+",0,0,0,1,2,0,4,0,0,4,21,5,0.06250,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,1021,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.06250,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,73,"        incrementJacobianEvaluationsCounter();
+",0,0,0,1,2,0,2,0,0,2,38,5,0.03030,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,74,"        Arrays.fill(jacobian, 0);
+",0,0,0,1,2,0,6,0,0,6,25,5,0.03030,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,75,"        for (int i = 0, index = 0; i < rows; i++) {
+",10,1,0,1,3,0,0,0,0,12,43,4,0.03030,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,76,"            WeightedMeasurement wm = measurements[i];
+",2,0,1,1,2,0,0,2,0,8,41,6,0.03030,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,77,"            double factor = -Math.sqrt(wm.getWeight());
+",2,0,0,2,4,0,8,0,0,11,43,7,0.03030,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,78,"            for (int j = 0; j < cols; ++j) {
+",8,1,0,1,3,0,0,0,0,10,32,6,0.03030,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,79,"                jacobian[index++] = factor * wm.getPartial(parameters[j]);
+",4,1,1,3,6,0,4,0,0,17,58,8,0.03030,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,82,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.03030,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,127,"        WeightedMeasurement[] wm = problem.getMeasurements();
+",2,0,0,2,4,0,4,2,0,8,53,4,0.02500,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,128,"        double criterion = 0;
+",2,0,0,0,0,0,0,0,0,2,21,5,0.02500,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,129,"        for (int i = 0; i < wm.length; ++i) {
+",10,1,0,1,3,0,0,0,0,12,37,4,0.02500,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,130,"            double residual = wm[i].getResidual();
+",2,0,1,2,4,0,2,0,0,8,38,7,0.02500,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,131,"            criterion += wm[i].getWeight() * residual * residual;
+",6,1,1,2,4,0,2,0,0,14,53,6,0.02500,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,133,"        return Math.sqrt(criterion / wm.length);
+",6,1,0,1,2,1,4,0,0,11,40,5,0.02500,0
+defect4j,math,org/apache/commons/math/estimation/EstimatedParameter,100,79,"    this.estimate = estimate;
+",4,0,0,0,0,0,0,0,0,5,25,4,0.02326,0
+defect4j,math,org/apache/commons/math/estimation/EstimatedParameter,100,80,"  }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.02326,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,99,"        if (++costEvaluations > maxCostEval) {
+",4,1,0,1,3,0,0,0,0,6,38,4,0.02273,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,104,"        cost = 0;
+",2,0,0,0,0,0,0,0,0,3,9,4,0.02273,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,105,"        for (int i = 0, index = 0; i < rows; i++, index += cols) {
+",14,1,0,1,3,0,0,0,0,17,58,4,0.02273,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,106,"            WeightedMeasurement wm = measurements[i];
+",2,0,1,1,2,0,0,2,0,8,41,6,0.02273,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,107,"            double residual = wm.getResidual();
+",2,0,0,1,2,0,4,0,0,6,35,7,0.02273,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,108,"            residuals[i] = Math.sqrt(wm.getWeight()) * residual;
+",2,1,1,3,6,0,8,0,0,16,52,6,0.02273,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,109,"            cost += wm.getWeight() * residual * residual;
+",6,1,0,1,2,0,4,0,0,12,45,6,0.02273,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,111,"        cost = Math.sqrt(cost);
+",2,0,0,1,2,0,6,0,0,9,23,4,0.02273,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,113,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.02273,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,38,"    protected AbstractEstimator() {
+",2,0,0,1,3,1,0,0,0,3,31,2,0.02128,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,39,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.02128,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,48,"        this.maxCostEval = maxCostEval;
+",4,0,0,0,0,0,0,0,0,5,31,4,0.02128,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,49,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.02128,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,88,"      ++jacobianEvaluations;
+",2,0,0,0,0,0,0,0,0,3,22,4,0.02128,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,89,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.02128,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,226,"        costEvaluations     = 0;
+",2,0,0,0,0,0,0,0,0,3,24,4,0.02128,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,227,"        jacobianEvaluations = 0;
+",2,0,0,0,0,0,0,0,0,3,24,4,0.02128,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,230,"        measurements = problem.getMeasurements();
+",2,0,0,1,2,0,4,0,0,7,41,4,0.02128,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,231,"        parameters   = problem.getUnboundParameters();
+",2,0,0,1,2,0,4,0,0,7,46,4,0.02128,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,234,"        rows      = measurements.length;
+",6,0,0,0,0,0,0,0,0,7,32,4,0.02128,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,235,"        cols      = parameters.length;
+",6,0,0,0,0,0,0,0,0,7,30,4,0.02128,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,236,"        jacobian  = new double[rows * cols];
+",6,1,0,1,2,0,0,0,0,8,36,4,0.02128,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,237,"        residuals = new double[rows];
+",2,0,1,1,2,0,0,0,0,5,29,4,0.02128,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,239,"        cost = Double.POSITIVE_INFINITY;
+",6,0,0,0,0,0,0,0,0,7,32,4,0.02128,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,241,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.02128,0
+defect4j,math,org/apache/commons/math/estimation/EstimatedParameter,100,86,"    return estimate;
+",2,0,0,0,0,1,0,0,0,2,16,4,0.02128,0
+defect4j,math,org/apache/commons/math/estimation/WeightedMeasurement,100,92,"    return weight;
+",2,0,0,0,0,1,0,0,0,2,14,4,0.02128,0
+defect4j,math,org/apache/commons/math/estimation/WeightedMeasurement,100,111,"    return measuredValue - getTheoreticalValue();
+",2,1,0,1,2,1,2,0,0,5,45,4,0.02128,0
+defect4j,math,org/apache/commons/math/MathException,100,124,"        super();
+",0,0,0,1,2,0,0,0,0,0,8,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,125,"        this.pattern   = null;
+",2,0,0,0,0,0,0,0,0,3,22,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,126,"        this.arguments = new Object[0];
+",2,0,0,1,2,0,0,2,0,5,31,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,127,"        this.rootCause = null;
+",2,0,0,0,0,0,0,0,0,3,22,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,128,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,138,"        super(msg);
+",2,0,0,1,2,0,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,139,"        this.pattern   = msg;
+",4,0,0,0,0,0,0,0,0,5,21,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,140,"        this.arguments = new Object[0];
+",2,0,0,1,2,0,0,2,0,5,31,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,141,"        this.rootCause = null;
+",2,0,0,0,0,0,0,0,0,3,22,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,142,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,152,"      super(buildMessage(pattern, arguments, Locale.US));
+",4,0,0,2,4,0,6,0,0,10,51,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,153,"      this.pattern   = pattern;
+",4,0,0,0,0,0,0,0,0,5,25,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,154,"      this.arguments = (Object[]) arguments.clone();
+",2,0,0,3,6,0,4,2,0,9,46,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,155,"      this.rootCause = null;
+",2,0,0,0,0,0,0,0,0,3,22,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,156,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,166,"        super((rootCause == null ? null : rootCause.getMessage()));
+",2,1,0,3,6,0,4,0,0,8,59,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,167,"        this.pattern   = getMessage();
+",2,0,0,1,2,0,2,0,0,5,30,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,168,"        this.arguments = new Object[0];
+",2,0,0,1,2,0,0,2,0,5,31,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,169,"        this.rootCause = rootCause;
+",4,0,0,0,0,0,0,0,0,5,27,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,170,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,182,"        super(msg);
+",2,0,0,1,2,0,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,183,"        this.pattern   = msg;
+",4,0,0,0,0,0,0,0,0,5,21,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,184,"        this.arguments = new Object[0];
+",2,0,0,1,2,0,0,2,0,5,31,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,185,"        this.rootCause = rootCause;
+",4,0,0,0,0,0,0,0,0,5,27,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,186,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,199,"      super(buildMessage(pattern, arguments, Locale.US));
+",4,0,0,2,4,0,6,0,0,10,51,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,200,"      this.pattern   = pattern;
+",4,0,0,0,0,0,0,0,0,5,25,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,201,"      this.arguments = (Object[]) arguments.clone();
+",2,0,0,3,6,0,4,2,0,9,46,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,202,"      this.rootCause = rootCause;
+",4,0,0,0,0,0,0,0,0,5,27,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,203,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,47,"        boolean flag = false;
+",2,0,0,0,0,0,0,0,0,3,21,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,49,"            Throwable.class.getDeclaredMethod(""getCause"", new Class[0]);
+",0,0,0,2,4,0,2,4,0,7,60,7,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,50,"            flag = true;
+",2,0,0,0,0,0,0,0,0,4,12,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,53,"        }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,51,"        } catch (NoSuchMethodException ex) {
+",2,0,0,1,4,0,0,2,0,4,36,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,52,"            flag = false;
+",2,0,0,0,0,0,0,0,0,4,13,7,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,54,"        JDK_SUPPORTS_NESTED = flag;
+",4,0,0,0,0,0,0,0,0,5,27,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,58,"    private static ResourceBundle cachedResources = null;
+",2,0,0,0,0,2,0,2,0,6,53,2,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,84,"            if ((cachedResources == null) || (! cachedResources.getLocale().equals(locale))) {
+",2,2,0,5,11,0,8,0,0,13,82,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,86,"                cachedResources =
+",2,0,0,0,0,0,0,0,0,3,17,8,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,90,"            if (cachedResources.getLocale().getLanguage().equals(locale.getLanguage())) {
+",0,0,0,5,11,0,12,0,0,12,77,7,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,92,"                return cachedResources.getString(s);
+",0,0,0,1,2,1,6,0,0,6,36,9,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,97,"        }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,95,"        } catch (MissingResourceException mre) {
+",2,0,0,1,4,0,0,2,0,4,40,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,101,"        return s;
+",2,0,0,0,0,1,0,0,0,2,9,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,114,"        MessageFormat mf = new MessageFormat(translate(pattern, locale));
+",2,0,0,2,4,0,6,4,0,12,65,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,115,"        mf.setLocale(locale);
+",0,0,0,1,2,0,6,0,0,6,21,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,116,"        return mf.format(arguments);        
+",0,0,0,1,2,1,6,0,0,6,28,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,211,"        return pattern;
+",2,0,0,0,0,1,0,0,0,2,15,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,220,"        return (Object[]) arguments.clone();
+",0,0,0,3,6,1,4,2,0,6,36,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,231,"        return (pattern == null) ? null : buildMessage(pattern, arguments, locale);
+",2,1,0,2,4,1,8,0,0,12,75,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,240,"        return rootCause;
+",2,0,0,0,0,1,0,0,0,2,17,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,247,"        printStackTrace(System.err);
+",4,0,0,1,2,0,2,0,0,6,28,5,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,248,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,256,"        synchronized (out) {
+",2,0,0,1,3,0,0,0,0,2,20,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,257,"            PrintWriter pw = new PrintWriter(out, false);
+",4,0,0,1,2,0,0,4,0,9,45,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,258,"            printStackTrace(pw);
+",0,0,0,1,2,0,4,0,0,4,20,7,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,260,"            pw.flush();
+",0,0,0,1,2,0,4,0,0,4,11,7,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,261,"        }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,262,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,270,"        synchronized (out) {
+",2,0,0,1,3,0,0,0,0,2,20,4,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,271,"            super.printStackTrace(out);
+",4,0,0,1,2,0,0,0,0,4,27,7,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,272,"            if (rootCause != null && JDK_SUPPORTS_NESTED == false) {
+",4,3,0,1,3,0,0,0,0,8,56,6,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,273,"                out.print(""Caused by: "");
+",0,0,0,1,2,0,4,0,0,5,25,9,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,274,"                rootCause.printStackTrace(out);
+",0,0,0,1,2,0,6,0,0,6,31,9,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,276,"        }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/MathException,100,277,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,33,"        super();
+",0,0,0,1,2,0,0,0,0,0,8,3,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,34,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,47,"        return new RealMatrixImpl(data);
+",2,0,0,1,2,1,0,2,0,4,32,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,59,"        RealMatrixImpl out = new RealMatrixImpl(dimension, dimension);
+",6,0,0,1,2,0,0,4,0,10,62,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,60,"        double[][] d = out.getDataRef();
+",2,0,0,3,6,0,4,0,0,6,32,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,61,"        for (int row = 0; row < dimension; row++) {
+",8,1,0,1,3,0,0,0,0,10,43,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,62,"            for (int col = 0; col < dimension; col++) {
+",8,1,0,1,3,0,0,0,0,10,43,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,63,"                d[row][col] = row == col ? 1d : 0d;
+",4,1,1,2,4,0,0,0,0,12,35,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,66,"        return out;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,80,"        return new BigMatrixImpl(data);
+",2,0,0,1,2,1,0,2,0,4,31,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,94,"        return new BigMatrixImpl(data);
+",2,0,0,1,2,1,0,2,0,4,31,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,108,"        return new BigMatrixImpl(data);
+",2,0,0,1,2,1,0,2,0,4,31,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,121,"        int nCols = rowData.length;
+",6,0,0,0,0,0,0,0,0,6,27,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,122,"        double[][] data = new double[1][nCols];
+",2,0,1,4,8,0,0,0,0,4,39,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,123,"        System.arraycopy(rowData, 0, data[0], 0, nCols);
+",0,0,1,2,4,0,8,0,0,10,48,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,124,"        return new RealMatrixImpl(data);
+",2,0,0,1,2,1,0,2,0,4,32,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,137,"        int nCols = rowData.length;
+",6,0,0,0,0,0,0,0,0,6,27,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,138,"        double[][] data = new double[1][nCols];
+",2,0,1,4,8,0,0,0,0,4,39,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,139,"        System.arraycopy(rowData, 0, data[0], 0, nCols);
+",0,0,1,2,4,0,8,0,0,10,48,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,140,"        return new BigMatrixImpl(data);
+",2,0,0,1,2,1,0,2,0,4,31,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,153,"        int nCols = rowData.length;
+",6,0,0,0,0,0,0,0,0,6,27,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,154,"        BigDecimal[][] data = new BigDecimal[1][nCols];
+",2,0,1,4,8,0,0,4,0,8,47,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,155,"        System.arraycopy(rowData, 0, data[0], 0, nCols);
+",0,0,1,2,4,0,8,0,0,10,48,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,156,"        return new BigMatrixImpl(data);
+",2,0,0,1,2,1,0,2,0,4,31,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,169,"        int nCols = rowData.length;
+",6,0,0,0,0,0,0,0,0,6,27,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,170,"        String[][] data = new String[1][nCols];
+",2,0,1,4,8,0,0,4,0,8,39,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,171,"        System.arraycopy(rowData, 0, data[0], 0, nCols);
+",0,0,1,2,4,0,8,0,0,10,48,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,172,"        return new BigMatrixImpl(data);
+",2,0,0,1,2,1,0,2,0,4,31,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,185,"        int nRows = columnData.length;
+",6,0,0,0,0,0,0,0,0,6,30,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,186,"        double[][] data = new double[nRows][1];
+",2,0,1,4,8,0,0,0,0,4,39,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,187,"        for (int row = 0; row < nRows; row++) {
+",8,1,0,1,3,0,0,0,0,10,39,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,188,"            data[row][0] = columnData[row];
+",0,0,1,3,6,0,0,0,0,9,31,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,190,"        return new RealMatrixImpl(data);
+",2,0,0,1,2,1,0,2,0,4,32,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,203,"        int nRows = columnData.length;
+",6,0,0,0,0,0,0,0,0,6,30,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,204,"        double[][] data = new double[nRows][1];
+",2,0,1,4,8,0,0,0,0,4,39,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,205,"        for (int row = 0; row < nRows; row++) {
+",8,1,0,1,3,0,0,0,0,10,39,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,206,"            data[row][0] = columnData[row];
+",0,0,1,3,6,0,0,0,0,9,31,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,208,"        return new BigMatrixImpl(data);
+",2,0,0,1,2,1,0,2,0,4,31,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,221,"        int nRows = columnData.length;
+",6,0,0,0,0,0,0,0,0,6,30,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,222,"        BigDecimal[][] data = new BigDecimal[nRows][1];
+",2,0,1,4,8,0,0,4,0,8,47,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,223,"        for (int row = 0; row < nRows; row++) {
+",8,1,0,1,3,0,0,0,0,10,39,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,224,"            data[row][0] = columnData[row];
+",0,0,1,3,6,0,0,0,0,9,31,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,226,"        return new BigMatrixImpl(data);
+",2,0,0,1,2,1,0,2,0,4,31,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,239,"        int nRows = columnData.length;
+",6,0,0,0,0,0,0,0,0,6,30,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,240,"        String[][] data = new String[nRows][1];
+",2,0,1,4,8,0,0,4,0,8,39,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,241,"        for (int row = 0; row < nRows; row++) {
+",8,1,0,1,3,0,0,0,0,10,39,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,242,"            data[row][0] = columnData[row];
+",0,0,1,3,6,0,0,0,0,9,31,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,244,"        return new BigMatrixImpl(data);
+",2,0,0,1,2,1,0,2,0,4,31,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,256,"        BigMatrixImpl out = new BigMatrixImpl(dimension, dimension);
+",6,0,0,1,2,0,0,4,0,10,60,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,257,"        BigDecimal[][] d = out.getDataRef();
+",2,0,0,3,6,0,4,2,0,8,36,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,258,"        for (int row = 0; row < dimension; row++) {
+",8,1,0,1,3,0,0,0,0,10,43,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,259,"            for (int col = 0; col < dimension; col++) {
+",8,1,0,1,3,0,0,0,0,10,43,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,260,"                d[row][col] = row == col ? BigMatrixImpl.ONE : BigMatrixImpl.ZERO;
+",12,1,1,2,4,0,0,0,0,20,66,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,100,263,"        return out;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,77,"    public RealMatrixImpl() {
+",2,0,0,1,3,1,0,0,0,3,25,2,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,78,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,90,"            throw new IllegalArgumentException(
+",0,0,0,0,1,0,0,2,0,2,35,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,122,"    public RealMatrixImpl(double[] v) {
+",4,0,0,2,5,1,0,0,0,5,35,2,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,123,"        int nRows = v.length;
+",6,0,0,0,0,0,0,0,0,6,21,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,124,"        data = new double[nRows][1];
+",2,0,1,2,4,0,0,0,0,5,28,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,125,"        for (int row = 0; row < nRows; row++) {
+",8,1,0,1,3,0,0,0,0,10,39,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,126,"            data[row][0] = v[row];
+",0,0,1,3,6,0,0,0,0,9,22,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,128,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,136,"        return new RealMatrixImpl(this.copyOut());
+",0,0,0,2,4,1,2,2,0,4,42,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,149,"            throw new IllegalArgumentException(""matrix dimension mismatch"");
+",0,0,0,1,2,0,0,2,0,3,64,7,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,170,"        if (this.getColumnDimension() != m.getColumnDimension() ||
+",0,2,0,2,5,0,6,0,0,8,58,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,172,"            throw new IllegalArgumentException(""matrix dimension mismatch"");
+",0,0,0,1,2,0,0,2,0,3,64,7,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,174,"        int rowCount = this.getRowDimension();
+",2,0,0,1,2,0,2,0,0,4,38,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,175,"        int columnCount = this.getColumnDimension();
+",2,0,0,1,2,0,2,0,0,4,44,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,176,"        double[][] outData = new double[rowCount][columnCount];
+",2,0,1,4,8,0,0,0,0,6,55,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,177,"        for (int row = 0; row < rowCount; row++) {
+",8,1,0,1,3,0,0,0,0,10,42,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,178,"            for (int col = 0; col < columnCount; col++) {
+",8,1,0,1,3,0,0,0,0,10,45,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,179,"                outData[row][col] = data[row][col] - m.getEntry(row, col);
+",0,1,1,5,10,0,8,0,0,22,58,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,182,"        return new RealMatrixImpl(outData);
+",2,0,0,1,2,1,0,2,0,4,35,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,192,"        int rowCount = this.getRowDimension();
+",2,0,0,1,2,0,2,0,0,4,38,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,193,"        int columnCount = this.getColumnDimension();
+",2,0,0,1,2,0,2,0,0,4,44,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,194,"        double[][] outData = new double[rowCount][columnCount];
+",2,0,1,4,8,0,0,0,0,6,55,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,195,"        for (int row = 0; row < rowCount; row++) {
+",8,1,0,1,3,0,0,0,0,10,42,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,196,"            for (int col = 0; col < columnCount; col++) {
+",8,1,0,1,3,0,0,0,0,10,45,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,197,"                outData[row][col] = data[row][col] + d;
+",2,1,1,4,8,0,0,0,0,16,39,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,200,"        return new RealMatrixImpl(outData);
+",2,0,0,1,2,1,0,2,0,4,35,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,209,"        int rowCount = this.getRowDimension();
+",2,0,0,1,2,0,2,0,0,4,38,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,210,"        int columnCount = this.getColumnDimension();
+",2,0,0,1,2,0,2,0,0,4,44,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,211,"        double[][] outData = new double[rowCount][columnCount];
+",2,0,1,4,8,0,0,0,0,6,55,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,212,"        for (int row = 0; row < rowCount; row++) {
+",8,1,0,1,3,0,0,0,0,10,42,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,213,"            for (int col = 0; col < columnCount; col++) {
+",8,1,0,1,3,0,0,0,0,10,45,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,214,"                outData[row][col] = data[row][col] * d;
+",2,1,1,4,8,0,0,0,0,16,39,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,217,"        return new RealMatrixImpl(outData);
+",2,0,0,1,2,1,0,2,0,4,35,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,228,"        if (this.getColumnDimension() != m.getRowDimension()) {
+",0,1,0,3,7,0,6,0,0,7,55,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,229,"            throw new IllegalArgumentException(""Matrices are not multiplication compatible."");
+",0,0,0,1,2,0,0,2,0,3,82,7,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,231,"        int nRows = this.getRowDimension();
+",2,0,0,1,2,0,2,0,0,4,35,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,232,"        int nCols = m.getColumnDimension();
+",2,0,0,1,2,0,4,0,0,6,35,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,233,"        int nSum = this.getColumnDimension();
+",2,0,0,1,2,0,2,0,0,4,37,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,234,"        double[][] outData = new double[nRows][nCols];
+",2,0,1,4,8,0,0,0,0,6,46,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,235,"        double sum = 0;
+",2,0,0,0,0,0,0,0,0,2,15,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,236,"        for (int row = 0; row < nRows; row++) {
+",8,1,0,1,3,0,0,0,0,10,39,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,237,"            for (int col = 0; col < nCols; col++) {
+",8,1,0,1,3,0,0,0,0,10,39,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,238,"                sum = 0;
+",2,0,0,0,0,0,0,0,0,3,8,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,239,"                for (int i = 0; i < nSum; i++) {
+",8,1,0,1,3,0,0,0,0,10,32,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,240,"                    sum += data[row][i] * m.getEntry(i, col);
+",2,1,1,3,6,0,8,0,0,18,41,10,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,242,"                outData[row][col] = sum;
+",2,0,1,2,4,0,0,0,0,9,24,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,245,"        return new RealMatrixImpl(outData);
+",2,0,0,1,2,1,0,2,0,4,35,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,256,"        return m.multiply(this);
+",0,0,0,1,2,1,4,0,0,4,24,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,286,"        double maxColSum = 0;
+",2,0,0,0,0,0,0,0,0,2,21,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,287,"        for (int col = 0; col < this.getColumnDimension(); col++) {
+",6,1,0,2,5,0,2,0,0,10,59,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,288,"            double sum = 0;
+",2,0,0,0,0,0,0,0,0,2,15,7,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,289,"            for (int row = 0; row < this.getRowDimension(); row++) {
+",6,1,0,2,5,0,2,0,0,10,56,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,290,"                sum += Math.abs(data[row][col]);
+",2,0,1,3,6,0,4,0,0,13,32,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,292,"            maxColSum = Math.max(maxColSum, sum);
+",2,0,0,1,2,0,8,0,0,11,37,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,294,"        return maxColSum;
+",2,0,0,0,0,1,0,0,0,2,17,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,311,"        if (startRow < 0 || startRow > endRow || endRow > data.length ||
+",12,8,0,0,1,0,0,0,0,20,64,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,314,"            throw new MatrixIndexException(
+",0,0,0,0,1,0,0,2,0,2,31,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,317,"        RealMatrixImpl subMatrix = new RealMatrixImpl(endRow - startRow+1,
+",6,2,0,0,1,0,0,4,0,12,66,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,319,"        double[][] subMatrixData = subMatrix.getDataRef();
+",2,0,0,3,6,0,4,0,0,6,50,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,320,"        for (int i = startRow; i <= endRow; i++) {
+",10,1,0,1,3,0,0,0,0,12,42,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,321,"            for (int j = startColumn; j <= endColumn; j++) {
+",10,1,0,1,3,0,0,0,0,12,48,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,322,"                    subMatrixData[i - startRow][j - startColumn] = data[i][j];
+",8,2,1,4,8,0,0,0,0,19,58,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,325,"        return subMatrix;
+",2,0,0,0,0,1,0,0,0,2,17,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,341,"        if (selectedRows.length * selectedColumns.length == 0) {
+",8,2,0,1,3,0,0,0,0,10,56,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,342,"            throw new MatrixIndexException(
+",0,0,0,0,1,0,0,2,0,2,31,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,345,"        RealMatrixImpl subMatrix = new RealMatrixImpl(selectedRows.length,
+",6,0,0,0,1,0,0,4,0,10,66,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,347,"        double[][] subMatrixData = subMatrix.getDataRef();
+",2,0,0,3,6,0,4,0,0,6,50,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,349,"            for (int i = 0; i < selectedRows.length; i++) {
+",10,1,0,1,3,0,0,0,0,12,47,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,350,"                for (int j = 0; j < selectedColumns.length; j++) {
+",10,1,0,1,3,0,0,0,0,12,50,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,351,"                    subMatrixData[i][j] = data[selectedRows[i]][selectedColumns[j]];
+",0,0,1,6,12,0,0,0,0,17,64,10,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,357,"        }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,355,"        catch (ArrayIndexOutOfBoundsException e) {
+",2,0,0,1,3,0,0,2,0,4,42,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,356,"            throw new MatrixIndexException(""matrix dimension mismatch"");
+",0,0,0,1,2,0,0,2,0,3,60,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,358,"        return subMatrix;
+",2,0,0,0,0,1,0,0,0,2,17,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,391,"            throw new MatrixIndexException
+",0,0,0,0,0,0,0,2,0,2,30,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,396,"            throw new IllegalArgumentException(
+",0,0,0,0,1,0,0,2,0,2,35,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,401,"            throw new IllegalArgumentException(
+",0,0,0,0,1,0,0,2,0,2,35,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,406,"                throw new IllegalArgumentException(
+",0,0,0,0,1,0,0,2,0,2,35,10,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,418,"            throw new MatrixIndexException(
+",0,0,0,0,1,0,0,2,0,2,31,7,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,435,"        if ( !isValidCoordinate( row, 0)) {
+",0,0,0,2,5,0,4,0,0,5,35,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,436,"            throw new MatrixIndexException(""illegal row argument"");
+",0,0,0,1,2,0,0,2,0,3,55,7,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,438,"        int ncols = this.getColumnDimension();
+",2,0,0,1,2,0,2,0,0,4,38,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,439,"        double[][] out = new double[1][ncols]; 
+",2,0,1,4,8,0,0,0,0,4,38,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,440,"        System.arraycopy(data[row], 0, out[0], 0, ncols);
+",0,0,1,3,6,0,6,0,0,12,49,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,441,"        return new RealMatrixImpl(out);
+",2,0,0,1,2,1,0,2,0,4,31,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,453,"        if ( !isValidCoordinate( 0, column)) {
+",0,0,0,2,5,0,4,0,0,5,38,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,454,"            throw new MatrixIndexException(""illegal column argument"");
+",0,0,0,1,2,0,0,2,0,3,58,7,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,456,"        int nRows = this.getRowDimension();
+",2,0,0,1,2,0,2,0,0,4,35,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,457,"        double[][] out = new double[nRows][1]; 
+",2,0,1,4,8,0,0,0,0,4,38,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,458,"        for (int row = 0; row < nRows; row++) {
+",8,1,0,1,3,0,0,0,0,10,39,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,459,"            out[row][0] = data[row][column];
+",0,0,1,4,8,0,0,0,0,11,32,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,461,"        return new RealMatrixImpl(out);
+",2,0,0,1,2,1,0,2,0,4,31,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,475,"        if ( !isValidCoordinate( row, 0 ) ) {
+",0,0,0,2,5,0,4,0,0,5,37,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,476,"            throw new MatrixIndexException(""illegal row argument"");
+",0,0,0,1,2,0,0,2,0,3,55,7,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,478,"        int ncols = this.getColumnDimension();
+",2,0,0,1,2,0,2,0,0,4,38,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,479,"        double[] out = new double[ncols];
+",2,0,1,2,4,0,0,0,0,4,33,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,480,"        System.arraycopy(data[row], 0, out, 0, ncols);
+",0,0,1,2,4,0,8,0,0,12,46,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,481,"        return out;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,495,"        if ( !isValidCoordinate(0, col) ) {
+",0,0,0,2,5,0,4,0,0,5,35,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,496,"            throw new MatrixIndexException(""illegal column argument"");
+",0,0,0,1,2,0,0,2,0,3,58,7,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,498,"        int nRows = this.getRowDimension();
+",2,0,0,1,2,0,2,0,0,4,35,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,499,"        double[] out = new double[nRows];
+",2,0,1,2,4,0,0,0,0,4,33,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,500,"        for (int row = 0; row < nRows; row++) {
+",8,1,0,1,3,0,0,0,0,10,39,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,501,"            out[row] = data[row][col];
+",0,0,1,3,6,0,0,0,0,11,26,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,503,"        return out;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,524,"            throw new MatrixIndexException(""matrix entry does not exist"");
+",0,0,0,1,2,0,0,2,0,3,62,7,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,535,"        int nRows = this.getRowDimension();
+",2,0,0,1,2,0,2,0,0,4,35,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,536,"        int nCols = this.getColumnDimension();
+",2,0,0,1,2,0,2,0,0,4,38,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,537,"        RealMatrixImpl out = new RealMatrixImpl(nCols, nRows);
+",6,0,0,1,2,0,0,4,0,10,54,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,538,"        double[][] outData = out.getDataRef();
+",2,0,0,3,6,0,4,0,0,6,38,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,539,"        for (int row = 0; row < nRows; row++) {
+",8,1,0,1,3,0,0,0,0,10,39,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,540,"            for (int col = 0; col < nCols; col++) {
+",8,1,0,1,3,0,0,0,0,10,39,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,541,"                outData[col][row] = data[row][col];
+",0,0,1,4,8,0,0,0,0,13,35,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,544,"        return out;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,554,"        return solve(MatrixUtils.createRealIdentityMatrix
+",0,0,0,0,1,1,6,0,0,6,49,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,563,"        if (!isSquare()) {
+",0,0,0,2,5,0,2,0,0,3,18,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,564,"            throw new InvalidMatrixException(""matrix is not square"");
+",0,0,0,1,2,0,0,2,0,3,57,7,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,566,"        if (isSingular()) {   // note: this has side effect of attempting LU decomp if lu == null
+",0,0,0,2,5,0,2,0,0,3,89,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,567,"            return 0d;
+",0,0,0,0,0,1,0,0,0,0,10,3,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,569,"            double det = parity;
+",4,0,0,0,0,0,0,0,0,4,20,7,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,570,"            for (int i = 0; i < this.getRowDimension(); i++) {
+",6,1,0,2,5,0,2,0,0,10,50,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,571,"                det *= lu[i][i];
+",2,0,1,2,4,0,0,0,0,9,16,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,573,"            return det;
+",2,0,0,0,0,1,0,0,0,2,11,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,592,"            } catch (InvalidMatrixException ex) {
+",2,0,0,1,4,0,0,2,0,4,37,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,593,"                return true;
+",0,0,0,0,0,1,0,0,0,1,12,9,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,596,"            return false; // so the matrix is not singular
+",0,0,0,0,0,1,0,0,0,1,46,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,619,"        if (!isSquare()) {
+",0,0,0,2,5,0,2,0,0,3,18,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,620,"            throw new IllegalArgumentException(""matrix is not square"");
+",0,0,0,1,2,0,0,2,0,3,59,7,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,622,"        double trace = data[0][0];
+",2,0,1,2,4,0,0,0,0,4,26,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,623,"        for (int i = 1; i < this.getRowDimension(); i++) {
+",6,1,0,2,5,0,2,0,0,10,50,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,624,"            trace += data[i][i];
+",2,0,1,2,4,0,0,0,0,9,20,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,626,"        return trace;
+",2,0,0,0,0,1,0,0,0,2,13,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,635,"        if (v.length != this.getColumnDimension()) {
+",4,1,0,2,5,0,2,0,0,7,44,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,636,"            throw new IllegalArgumentException(""vector has wrong length"");
+",0,0,0,1,2,0,0,2,0,3,62,7,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,638,"        int nRows = this.getRowDimension();
+",2,0,0,1,2,0,2,0,0,4,35,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,639,"        int nCols = this.getColumnDimension();
+",2,0,0,1,2,0,2,0,0,4,38,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,640,"        double[] out = new double[v.length];
+",6,0,0,2,4,0,0,0,0,6,36,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,641,"        for (int row = 0; row < nRows; row++) {
+",8,1,0,1,3,0,0,0,0,10,39,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,642,"            double sum = 0;
+",2,0,0,0,0,0,0,0,0,2,15,7,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,643,"            for (int i = 0; i < nCols; i++) {
+",8,1,0,1,3,0,0,0,0,10,33,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,644,"                sum += data[row][i] * v[i];
+",2,1,1,3,6,0,0,0,0,14,27,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,646,"            out[row] = sum;
+",2,0,1,1,2,0,0,0,0,7,15,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,648,"        return out;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,657,"        int nRows = this.getRowDimension();
+",2,0,0,1,2,0,2,0,0,4,35,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,658,"        if (v.length != nRows) {
+",6,1,0,1,3,0,0,0,0,7,24,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,659,"            throw new IllegalArgumentException(""vector has wrong length"");
+",0,0,0,1,2,0,0,2,0,3,62,7,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,661,"        int nCols = this.getColumnDimension();
+",2,0,0,1,2,0,2,0,0,4,38,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,662,"        double[] out = new double[nCols];
+",2,0,1,2,4,0,0,0,0,4,33,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,663,"        for (int col = 0; col < nCols; col++) {
+",8,1,0,1,3,0,0,0,0,10,39,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,664,"            double sum = 0;
+",2,0,0,0,0,0,0,0,0,2,15,7,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,665,"            for (int i = 0; i < nRows; i++) {
+",8,1,0,1,3,0,0,0,0,10,33,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,666,"                sum += data[i][col] * v[i];
+",2,1,1,3,6,0,0,0,0,14,27,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,668,"            out[col] = sum;
+",2,0,1,1,2,0,0,0,0,7,15,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,670,"        return out;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,685,"        int nRows = this.getRowDimension();
+",2,0,0,1,2,0,2,0,0,4,35,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,686,"        if (b.length != nRows) {
+",6,1,0,1,3,0,0,0,0,7,24,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,687,"            throw new IllegalArgumentException(""constant vector has wrong length"");
+",0,0,0,1,2,0,0,2,0,3,71,7,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,689,"        RealMatrix bMatrix = new RealMatrixImpl(b);
+",4,0,0,1,2,0,0,4,0,8,43,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,690,"        double[][] solution = ((RealMatrixImpl) (solve(bMatrix))).getDataRef();
+",2,0,0,7,14,0,6,2,0,10,71,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,691,"        double[] out = new double[nRows];
+",2,0,1,2,4,0,0,0,0,4,33,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,692,"        for (int row = 0; row < nRows; row++) {
+",8,1,0,1,3,0,0,0,0,10,39,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,693,"            out[row] = solution[row][0];
+",0,0,1,3,6,0,0,0,0,9,28,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,695,"        return out;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,711,"            throw new IllegalArgumentException(""Incorrect row dimension"");
+",0,0,0,1,2,0,0,2,0,3,62,7,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,714,"            throw new InvalidMatrixException(""coefficient matrix is not square"");
+",0,0,0,1,2,0,0,2,0,3,69,7,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,717,"            throw new InvalidMatrixException(""Matrix is singular."");
+",0,0,0,1,2,0,0,2,0,3,56,7,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,780,"            throw new InvalidMatrixException(""LU decomposition requires that the matrix be square."");
+",0,0,0,1,2,0,0,2,0,3,89,7,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,800,"                    sum -= lu[row][i] * lu[i][col];
+",2,1,1,4,8,0,0,0,0,16,31,10,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,824,"                lu = null;
+",2,0,0,0,0,0,0,0,0,3,10,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,825,"                throw new InvalidMatrixException(""matrix is singular"");
+",0,0,0,1,2,0,0,2,0,3,55,9,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,830,"                double tmp = 0;
+",2,0,0,0,0,0,0,0,0,2,15,9,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,831,"                for (int i = 0; i < nCols; i++) {
+",8,1,0,1,3,0,0,0,0,10,33,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,832,"                    tmp = lu[max][i];
+",2,0,1,2,4,0,0,0,0,9,17,10,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,833,"                    lu[max][i] = lu[col][i];
+",0,0,1,4,8,0,0,0,0,13,24,10,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,834,"                    lu[col][i] = tmp;
+",2,0,1,2,4,0,0,0,0,9,17,10,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,836,"                int temp = permutation[max];
+",2,0,1,1,2,0,0,0,0,6,28,9,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,837,"                permutation[max] = permutation[col];
+",0,0,1,2,4,0,0,0,0,9,36,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,838,"                permutation[col] = temp;
+",2,0,1,1,2,0,0,0,0,7,24,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,839,"                parity = -parity;
+",4,0,0,0,0,0,0,0,0,6,17,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,854,"        StringBuffer res = new StringBuffer();
+",2,0,0,1,2,0,0,4,0,6,38,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,855,"        res.append(""RealMatrixImpl{"");
+",0,0,0,1,3,0,4,0,0,5,30,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,856,"        if (data != null) {
+",2,1,0,1,3,0,0,0,0,3,19,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,857,"            for (int i = 0; i < data.length; i++) {
+",10,1,0,1,3,0,0,0,0,12,39,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,858,"                if (i > 0)
+",2,1,0,1,2,0,0,0,0,3,10,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,859,"                    res.append("","");
+",0,0,0,1,2,0,4,0,0,5,16,10,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,860,"                res.append(""{"");
+",0,0,0,1,3,0,4,0,0,5,16,9,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,861,"                for (int j = 0; j < data[0].length; j++) {
+",8,1,1,2,5,0,0,0,0,12,42,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,862,"                    if (j > 0)
+",2,1,0,1,2,0,0,0,0,3,10,10,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,863,"                        res.append("","");
+",0,0,0,1,2,0,4,0,0,5,16,12,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,864,"                    res.append(data[i][j]);
+",0,0,1,3,6,0,4,0,0,10,23,11,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,866,"                res.append(""}"");
+",0,0,0,1,3,0,4,0,0,5,16,9,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,869,"        res.append(""}"");
+",0,0,0,1,3,0,4,0,0,5,16,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,870,"        return res.toString();
+",0,0,0,1,2,1,4,0,0,4,22,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,883,"        if (object == this ) {
+",2,1,0,1,3,0,0,0,0,3,22,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,884,"            return true;
+",0,0,0,0,0,1,0,0,0,1,12,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,886,"        if (object instanceof RealMatrixImpl == false) {
+",2,1,0,1,3,0,0,2,0,6,48,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,887,"            return false;
+",0,0,0,0,0,1,0,0,0,1,13,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,889,"        RealMatrix m = (RealMatrix) object;
+",4,0,0,1,2,0,0,4,0,8,35,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,890,"        int nRows = getRowDimension();
+",2,0,0,1,2,0,2,0,0,4,30,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,891,"        int nCols = getColumnDimension();
+",2,0,0,1,2,0,2,0,0,4,33,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,892,"        if (m.getColumnDimension() != nCols || m.getRowDimension() != nRows) {
+",4,3,0,3,7,0,8,0,0,15,70,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,893,"            return false;
+",0,0,0,0,0,1,0,0,0,1,13,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,895,"        for (int row = 0; row < nRows; row++) {
+",8,1,0,1,3,0,0,0,0,10,39,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,896,"            for (int col = 0; col < nCols; col++) {
+",8,1,0,1,3,0,0,0,0,10,39,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,897,"                if (Double.doubleToLongBits(data[row][col]) != 
+",0,1,1,3,7,0,4,0,0,11,46,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,899,"                    return false;
+",0,0,0,0,0,1,0,0,0,1,13,10,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,903,"        return true;
+",0,0,0,0,0,1,0,0,0,1,12,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,912,"        int ret = 7;
+",2,0,0,0,0,0,0,0,0,2,12,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,913,"        int nRows = getRowDimension();
+",2,0,0,1,2,0,2,0,0,4,30,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,914,"        int nCols = getColumnDimension();
+",2,0,0,1,2,0,2,0,0,4,33,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,915,"        ret = ret * 31 + nRows;
+",6,2,0,0,0,0,0,0,0,9,23,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,916,"        ret = ret * 31 + nCols;
+",6,2,0,0,0,0,0,0,0,9,23,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,917,"        for (int row = 0; row < nRows; row++) {
+",8,1,0,1,3,0,0,0,0,10,39,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,918,"           for (int col = 0; col < nCols; col++) {
+",8,1,0,1,3,0,0,0,0,10,39,6,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,919,"               ret = ret * 31 + (11 * (row+1) + 17 * (col+1)) * 
+",8,8,0,3,6,0,0,0,0,17,48,8,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,923,"        return ret;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,937,"        return MatrixUtils.createRealIdentityMatrix(dimension);
+",0,0,0,1,2,1,6,0,0,6,55,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,968,"        if (lu == null) {
+",2,1,0,1,3,0,0,0,0,3,17,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,969,"            luDecompose();
+",0,0,0,1,2,0,2,0,0,2,14,7,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,971,"        return new RealMatrixImpl(lu);
+",2,0,0,1,2,1,0,2,0,4,30,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,987,"        int[] out = new int[permutation.length];
+",6,0,0,2,4,0,0,0,0,6,40,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,988,"        System.arraycopy(permutation, 0, out, 0, permutation.length);
+",4,0,0,1,2,0,8,0,0,12,61,5,0.00000,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,100,989,"        return out;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixIndexException,100,35,"        this(null);
+",0,0,0,1,2,0,0,0,0,0,11,3,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixIndexException,100,36,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixIndexException,100,43,"        super(message);
+",2,0,0,1,2,0,0,0,0,2,15,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/MatrixIndexException,100,44,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/linear/InvalidMatrixException,100,35,"        this(null);
+",0,0,0,1,2,0,0,0,0,0,11,3,0.00000,0
+defect4j,math,org/apache/commons/math/linear/InvalidMatrixException,100,36,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/linear/InvalidMatrixException,100,43,"        super(message);
+",2,0,0,1,2,0,0,0,0,2,15,4,0.00000,0
+defect4j,math,org/apache/commons/math/linear/InvalidMatrixException,100,44,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,66,"        return jacobianEvaluations;
+",2,0,0,0,0,1,0,0,0,2,27,4,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,100,"            throw new EstimationException(""maximal number of evaluations exceeded ({0})"",
+",0,0,0,2,5,0,0,2,0,3,77,7,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,142,"        WeightedMeasurement[] wm = problem.getMeasurements();
+",2,0,0,2,4,0,4,2,0,8,53,4,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,143,"        double chiSquare = 0;
+",2,0,0,0,0,0,0,0,0,2,21,5,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,144,"        for (int i = 0; i < wm.length; ++i) {
+",10,1,0,1,3,0,0,0,0,12,37,4,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,145,"            double residual = wm[i].getResidual();
+",2,0,1,2,4,0,2,0,0,8,38,7,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,146,"            chiSquare += residual * residual / wm[i].getWeight();
+",6,2,1,2,4,0,2,0,0,15,53,6,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,148,"        return chiSquare;
+",2,0,0,0,0,1,0,0,0,2,17,4,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,175,"                jTj[i][j] = sum;
+",2,0,1,2,4,0,0,0,0,9,16,8,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,176,"                jTj[j][i] = sum;
+",2,0,1,2,4,0,0,0,0,9,16,8,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,182,"            return new RealMatrixImpl(jTj).inverse().getData();
+",2,0,0,3,6,1,4,2,0,8,51,7,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,183,"        } catch (InvalidMatrixException ime) {
+",2,0,0,1,4,0,0,2,0,4,38,6,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,184,"            throw new EstimationException(""unable to compute covariances: singular problem"",
+",0,0,0,0,1,0,0,2,0,3,80,8,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,201,"        int m = problem.getMeasurements().length;
+",4,0,0,1,2,0,4,0,0,8,41,5,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,202,"        int p = problem.getAllParameters().length;
+",4,0,0,1,2,0,4,0,0,8,42,5,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,203,"        if (m <= p) {
+",4,1,0,1,3,0,0,0,0,5,13,4,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,204,"            throw new EstimationException(""no degrees of freedom ({0} measurements, {1} parameters)"",
+",0,0,0,3,7,0,0,2,0,3,89,7,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,207,"        double[] errors = new double[problem.getAllParameters().length];
+",4,0,0,3,6,0,4,0,0,8,64,5,0.00000,1
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,208,"        final double c = Math.sqrt(getChiSquare(problem) / (m - p));
+",6,2,0,3,6,1,8,0,0,17,60,4,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,209,"        double[][] covar = getCovariances(problem);
+",2,0,0,3,6,0,4,0,0,6,43,5,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,210,"        for (int i = 0; i < errors.length; ++i) {
+",10,1,0,1,3,0,0,0,0,12,41,4,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,211,"            errors[i] = Math.sqrt(covar[i][i]) * c;
+",2,1,1,4,8,0,4,0,0,18,39,6,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/AbstractEstimator,100,213,"        return errors;
+",2,0,0,0,0,1,0,0,0,2,14,4,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/EstimatedParameter,100,44,"  public EstimatedParameter(String name, double firstEstimate) {
+",6,0,0,1,3,1,0,2,0,9,62,2,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/EstimatedParameter,100,45,"    this.name = name;
+",4,0,0,0,0,0,0,0,0,5,17,4,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/EstimatedParameter,100,46,"    estimate  = firstEstimate;
+",4,0,0,0,0,0,0,0,0,5,26,4,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/EstimatedParameter,100,47,"    bound     = false;
+",2,0,0,0,0,0,0,0,0,4,18,4,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/EstimatedParameter,100,48,"  }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/EstimatedParameter,100,59,"                            boolean bound) {
+",2,0,0,0,2,0,0,0,0,2,16,3,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/EstimatedParameter,100,60,"    this.name  = name;
+",4,0,0,0,0,0,0,0,0,5,18,4,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/EstimatedParameter,100,61,"    estimate   = firstEstimate;
+",4,0,0,0,0,0,0,0,0,5,27,4,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/EstimatedParameter,100,62,"    this.bound = bound;
+",4,0,0,0,0,0,0,0,0,5,19,4,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/EstimatedParameter,100,63,"  }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/EstimatedParameter,100,69,"  public EstimatedParameter(EstimatedParameter parameter) {
+",4,0,0,1,3,1,0,2,0,7,57,2,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/EstimatedParameter,100,70,"    name     = parameter.name;
+",6,0,0,0,0,0,0,0,0,7,26,4,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/EstimatedParameter,100,71,"    estimate = parameter.estimate;
+",6,0,0,0,0,0,0,0,0,7,30,4,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/EstimatedParameter,100,72,"    bound    = parameter.bound;
+",6,0,0,0,0,0,0,0,0,7,27,4,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/EstimatedParameter,100,73,"  }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/EstimatedParameter,100,93,"    return name;
+",2,0,0,0,0,1,0,0,0,2,12,4,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/EstimatedParameter,100,101,"    this.bound = bound;
+",4,0,0,0,0,0,0,0,0,5,19,4,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/EstimatedParameter,100,102,"  }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/EstimationException,100,43,"        super(specifier, parts);
+",4,0,0,1,2,0,0,0,0,4,24,4,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/EstimationException,100,44,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/WeightedMeasurement,100,65,"  public WeightedMeasurement(double weight, double measuredValue) {
+",6,0,0,1,3,1,0,0,0,7,65,2,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/WeightedMeasurement,100,66,"    this.weight        = weight;
+",4,0,0,0,0,0,0,0,0,5,28,4,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/WeightedMeasurement,100,67,"    this.measuredValue = measuredValue;
+",4,0,0,0,0,0,0,0,0,5,35,4,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/WeightedMeasurement,100,68,"    ignored            = false;
+",2,0,0,0,0,0,0,0,0,4,27,4,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/WeightedMeasurement,100,69,"  }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/WeightedMeasurement,100,101,"    return measuredValue;
+",2,0,0,0,0,1,0,0,0,2,21,4,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,160,"            } catch(InvalidMatrixException e) {
+",2,0,0,1,4,0,0,2,0,4,35,8,0.00000,0
+defect4j,math,org/apache/commons/math/estimation/GaussNewtonEstimator,100,161,"                throw new EstimationException(""unable to solve: singular problem"", new Object[0]);
+",0,0,0,2,4,0,0,4,0,5,82,10,0.00000,0
