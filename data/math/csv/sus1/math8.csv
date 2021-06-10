@@ -1,0 +1,1947 @@
+dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,logic,lengthEle,lengthWord,depth,suspicious,accuracy
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,157,"        final double randomValue = random.nextDouble();
+",2,0,0,1,2,1,4,0,0,7,47,4,0.50000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,158,"        double sum = 0;
+",2,0,0,0,0,0,0,0,0,2,15,5,0.50000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,160,"        for (int i = 0; i < probabilities.length; i++) {
+",10,1,0,1,3,0,0,0,0,12,48,4,0.50000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,161,"            sum += probabilities[i];
+",2,0,1,1,2,0,0,0,0,7,24,6,0.50000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,162,"            if (randomValue < sum) {
+",4,1,0,1,3,0,0,0,0,5,24,6,0.50000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,163,"                return singletons.get(i);
+",0,0,0,1,2,1,6,0,0,6,25,9,0.50000,0
+defect4j,math,org/apache/commons/math3/random/Well19937c,8,86,"        final int indexRm1 = iRm1[index];
+",2,0,1,1,2,1,0,0,0,7,33,4,0.50000,0
+defect4j,math,org/apache/commons/math3/random/Well19937c,8,87,"        final int indexRm2 = iRm2[index];
+",2,0,1,1,2,1,0,0,0,7,33,4,0.50000,0
+defect4j,math,org/apache/commons/math3/random/Well19937c,8,89,"        final int v0       = v[index];
+",2,0,1,1,2,1,0,0,0,7,30,4,0.50000,0
+defect4j,math,org/apache/commons/math3/random/Well19937c,8,90,"        final int vM1      = v[i1[index]];
+",2,0,1,2,4,1,0,0,0,9,34,4,0.50000,0
+defect4j,math,org/apache/commons/math3/random/Well19937c,8,91,"        final int vM2      = v[i2[index]];
+",2,0,1,2,4,1,0,0,0,9,34,4,0.50000,0
+defect4j,math,org/apache/commons/math3/random/Well19937c,8,92,"        final int vM3      = v[i3[index]];
+",2,0,1,2,4,1,0,0,0,9,34,4,0.50000,0
+defect4j,math,org/apache/commons/math3/random/Well19937c,8,94,"        final int z0 = (0x80000000 & v[indexRm1]) ^ (0x7FFFFFFF & v[indexRm2]);
+",2,3,1,4,8,1,0,0,0,14,71,4,0.50000,0
+defect4j,math,org/apache/commons/math3/random/Well19937c,8,95,"        final int z1 = (v0 ^ (v0 << 25))  ^ (vM1 ^ (vM1 >>> 27));
+",10,5,0,4,8,1,0,0,0,16,57,4,0.50000,0
+defect4j,math,org/apache/commons/math3/random/Well19937c,8,96,"        final int z2 = (vM2 >>> 9) ^ (vM3 ^ (vM3 >>> 1));
+",8,4,0,3,6,1,0,0,0,13,49,4,0.50000,0
+defect4j,math,org/apache/commons/math3/random/Well19937c,8,97,"        final int z3 = z1      ^ z2;
+",6,1,0,0,0,1,0,0,0,8,28,4,0.50000,0
+defect4j,math,org/apache/commons/math3/random/Well19937c,8,98,"        int z4 = z0 ^ (z1 ^ (z1 << 9)) ^ (z2 ^ (z2 << 21)) ^ (z3 ^ (z3 >>> 21));
+",16,7,0,6,12,0,0,0,0,23,72,5,0.50000,0
+defect4j,math,org/apache/commons/math3/random/Well19937c,8,100,"        v[index]     = z3;
+",2,0,1,1,2,0,0,0,0,7,18,4,0.50000,0
+defect4j,math,org/apache/commons/math3/random/Well19937c,8,101,"        v[indexRm1]  = z4;
+",2,0,1,1,2,0,0,0,0,7,18,4,0.50000,0
+defect4j,math,org/apache/commons/math3/random/Well19937c,8,102,"        v[indexRm2] &= 0x80000000;
+",0,0,1,1,2,0,0,0,0,5,26,4,0.50000,0
+defect4j,math,org/apache/commons/math3/random/Well19937c,8,103,"        index        = indexRm1;
+",4,0,0,0,0,0,0,0,0,5,24,4,0.50000,0
+defect4j,math,org/apache/commons/math3/random/Well19937c,8,108,"        z4 = z4 ^ ((z4 <<  7) & 0xe46e1700);
+",6,3,0,2,4,0,0,0,0,10,36,4,0.50000,0
+defect4j,math,org/apache/commons/math3/random/Well19937c,8,109,"        z4 = z4 ^ ((z4 << 15) & 0x9b868000);
+",6,3,0,2,4,0,0,0,0,10,36,4,0.50000,0
+defect4j,math,org/apache/commons/math3/random/Well19937c,8,111,"        return z4 >>> (32 - bits);
+",4,2,0,1,2,1,0,0,0,6,26,4,0.50000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,90,"        final long high = ((long) next(26)) << 26;
+",2,1,0,3,6,1,2,0,0,6,42,4,0.50000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,91,"        final int  low  = next(26);
+",2,0,0,1,2,1,2,0,0,5,27,4,0.50000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,92,"        return (high | low) * 0x1.0p-52d;
+",4,2,0,1,2,1,0,0,0,6,33,4,0.50000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,66,"        this(new Well19937c(), singletons, probabilities);
+",4,0,0,2,4,0,0,2,0,6,50,4,0.08333,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,67,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.08333,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,87,"        super(rng);
+",2,0,0,1,2,0,0,0,0,2,11,4,0.08333,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,88,"        if (singletons.length != probabilities.length) {
+",8,1,0,1,3,0,0,0,0,9,48,4,0.08333,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,92,"        List<Pair<Double, Double>> samples = new ArrayList<Pair<Double, Double>>(singletons.length);
+",6,0,0,1,2,0,0,16,0,22,92,4,0.08333,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,94,"        for (int i = 0; i < singletons.length; i++) {
+",10,1,0,1,3,0,0,0,0,12,45,4,0.08333,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,95,"            samples.add(new Pair<Double, Double>(singletons[i], probabilities[i]));
+",0,0,1,4,8,0,4,6,0,18,71,7,0.08333,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,98,"        innerDistribution = new DiscreteDistribution<Double>(rng, samples);
+",6,0,0,1,2,0,0,4,0,11,67,4,0.08333,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,99,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.08333,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,50,"    @Deprecated
+",2,0,0,0,0,0,0,0,0,2,11,3,0.08333,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,60,"    private double solverAbsoluteAccuracy = SOLVER_DEFAULT_ABSOLUTE_ACCURACY;
+",4,0,0,0,0,1,0,0,0,5,73,2,0.08333,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,76,"    protected AbstractRealDistribution(RandomGenerator rng) {
+",4,0,0,1,3,1,0,2,0,7,57,2,0.08333,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,77,"        random = rng;
+",4,0,0,0,0,0,0,0,0,5,13,4,0.08333,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,78,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.08333,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1249,"         if (Double.isInfinite(normalizedSum)) {
+",0,0,0,2,5,0,6,0,0,6,39,5,0.04762,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1252,"         if (Double.isNaN(normalizedSum)) {
+",0,0,0,2,5,0,6,0,0,6,34,5,0.04762,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1255,"         double sum = 0d;
+",2,0,0,0,0,0,0,0,0,2,16,5,0.04762,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1256,"         final int len = values.length;
+",6,0,0,0,0,1,0,0,0,7,30,4,0.04762,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1257,"         double[] out = new double[len];
+",2,0,1,2,4,0,0,0,0,4,31,5,0.04762,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1258,"         for (int i = 0; i < len; i++) {
+",8,1,0,1,3,0,0,0,0,10,31,4,0.04762,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1259,"             if (Double.isInfinite(values[i])) {
+",0,0,1,3,7,0,4,0,0,8,35,7,0.04762,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1262,"             if (!Double.isNaN(values[i])) {
+",0,0,1,3,7,0,4,0,0,9,31,6,0.04762,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1263,"                 sum += values[i];
+",2,0,1,1,2,0,0,0,0,7,17,8,0.04762,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1266,"         if (sum == 0) {
+",2,1,0,1,3,0,0,0,0,3,15,4,0.04762,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1269,"         for (int i = 0; i < len; i++) {
+",8,1,0,1,3,0,0,0,0,10,31,4,0.04762,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1270,"             if (Double.isNaN(values[i])) {
+",0,0,1,3,7,0,4,0,0,8,30,7,0.04762,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1273,"                 out[i] = values[i] * normalizedSum / sum;
+",4,2,1,2,4,0,0,0,0,15,41,8,0.04762,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1276,"         return out;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.04762,0
+defect4j,math,org/apache/commons/math3/util/Pair,8,45,"    public Pair(K k, V v) {
+",6,0,0,1,3,1,0,4,0,11,23,2,0.04762,0
+defect4j,math,org/apache/commons/math3/util/Pair,8,46,"        key = k;
+",4,0,0,0,0,0,0,0,0,5,8,4,0.04762,0
+defect4j,math,org/apache/commons/math3/util/Pair,8,47,"        value = v;
+",4,0,0,0,0,0,0,0,0,5,10,4,0.04762,0
+defect4j,math,org/apache/commons/math3/util/Pair,8,48,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.04762,0
+defect4j,math,org/apache/commons/math3/util/Pair,8,65,"        return key;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.04762,0
+defect4j,math,org/apache/commons/math3/util/Pair,8,74,"        return value;
+",2,0,0,0,0,1,0,0,0,2,13,4,0.04762,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,86,"        throws NotPositiveException, MathArithmeticException, MathIllegalArgumentException {
+",6,0,0,0,1,0,0,0,0,6,84,2,0.04762,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,87,"        random = rng;
+",4,0,0,0,0,0,0,0,0,5,13,4,0.04762,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,89,"        singletons = new ArrayList<T>(samples.size());
+",2,0,0,2,4,0,4,4,0,11,46,4,0.04762,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,90,"        final double[] probs = new double[samples.size()];
+",2,0,0,3,6,1,4,0,0,7,50,4,0.04762,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,92,"        for (int i = 0; i < samples.size(); i++) {
+",6,1,0,2,5,0,4,0,0,12,42,4,0.04762,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,93,"            final Pair<T, Double> sample = samples.get(i);
+",2,0,0,1,2,1,6,6,0,15,46,6,0.04762,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,94,"            singletons.add(sample.getKey());
+",0,0,0,2,4,0,8,0,0,8,32,7,0.04762,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,95,"            if (sample.getValue() < 0) {
+",0,1,0,2,5,0,4,0,0,5,28,6,0.04762,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,98,"            probs[i] = sample.getValue();
+",0,0,1,2,4,0,4,0,0,9,29,6,0.04762,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,101,"        probabilities = MathArrays.normalizeArray(probs, 1.0);
+",2,0,0,1,2,0,6,0,0,9,54,4,0.04762,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,102,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.04762,0
+defect4j,math,org/apache/commons/math3/random/Well19937c,8,57,"        super(K, M1, M2, M3);
+",8,0,0,1,2,0,0,0,0,8,21,4,0.04762,0
+defect4j,math,org/apache/commons/math3/random/Well19937c,8,58,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,72,"        this(k, m1, m2, m3, null);
+",8,0,0,1,2,0,0,0,0,8,26,4,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,73,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,94,"    protected AbstractWell(final int k, final int m1, final int m2, final int m3, final int[] seed) {
+",12,0,0,2,5,6,0,0,0,18,97,2,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,99,"        final int w = 32;
+",2,0,0,0,0,1,0,0,0,3,17,4,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,100,"        final int r = (k + w - 1) / w;
+",8,3,0,1,2,1,0,0,0,12,30,4,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,101,"        this.v      = new int[r];
+",2,0,1,1,2,0,0,0,0,5,25,4,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,102,"        this.index  = 0;
+",2,0,0,0,0,0,0,0,0,3,16,4,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,106,"        iRm1 = new int[r];
+",2,0,1,1,2,0,0,0,0,5,18,4,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,107,"        iRm2 = new int[r];
+",2,0,1,1,2,0,0,0,0,5,18,4,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,108,"        i1   = new int[r];
+",2,0,1,1,2,0,0,0,0,5,18,4,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,109,"        i2   = new int[r];
+",2,0,1,1,2,0,0,0,0,5,18,4,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,110,"        i3   = new int[r];
+",2,0,1,1,2,0,0,0,0,5,18,4,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,111,"        for (int j = 0; j < r; ++j) {
+",8,1,0,1,3,0,0,0,0,10,29,4,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,112,"            iRm1[j] = (j + r - 1) % r;
+",6,3,1,2,4,0,0,0,0,14,26,6,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,113,"            iRm2[j] = (j + r - 2) % r;
+",6,3,1,2,4,0,0,0,0,14,26,6,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,114,"            i1[j]   = (j + m1)    % r;
+",6,2,1,2,4,0,0,0,0,13,26,6,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,115,"            i2[j]   = (j + m2)    % r;
+",6,2,1,2,4,0,0,0,0,13,26,6,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,116,"            i3[j]   = (j + m3)    % r;
+",6,2,1,2,4,0,0,0,0,13,26,6,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,120,"        setSeed(seed);
+",0,0,0,1,2,0,4,0,0,4,14,5,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,122,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,154,"        if (seed == null) {
+",2,1,0,1,3,0,0,0,0,3,19,4,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,155,"            setSeed(System.currentTimeMillis() + System.identityHashCode(this));
+",0,1,0,3,6,0,10,0,0,11,68,7,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,156,"            return;
+",0,0,0,0,0,1,0,0,0,0,7,3,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,159,"        System.arraycopy(seed, 0, v, 0, Math.min(seed.length, v.length));
+",8,0,0,2,4,0,12,0,0,20,65,5,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,161,"        if (seed.length < v.length) {
+",8,1,0,1,3,0,0,0,0,9,29,4,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,162,"            for (int i = seed.length; i < v.length; ++i) {
+",14,1,0,1,3,0,0,0,0,16,46,6,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,163,"                final long l = v[i - seed.length];
+",8,1,1,1,2,1,0,0,0,12,34,8,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,164,"                v[i] = (int) ((1812433253l * (l ^ (l >> 30)) + i) & 0xffffffffL);
+",6,5,1,6,12,0,0,0,0,16,65,8,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,168,"        index = 0;
+",2,0,0,0,0,0,0,0,0,3,10,4,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,169,"        clear();  // Clear normal deviate cache
+",0,0,0,1,2,0,2,0,0,2,39,5,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,170,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,179,"        setSeed(new int[] { (int) (seed >>> 32), (int) (seed & 0xffffffffl) });
+",4,2,0,7,14,0,2,0,0,8,71,5,0.04762,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,180,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.04762,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,40,"    public BitsStreamGenerator() {
+",2,0,0,1,3,1,0,0,0,3,30,2,0.04762,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,41,"        nextGaussian = Double.NaN;
+",6,0,0,0,0,0,0,0,0,7,26,4,0.04762,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,42,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.04762,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,170,"        nextGaussian = Double.NaN;
+",6,0,0,0,0,0,0,0,0,7,26,4,0.04762,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,171,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.04762,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,131,"    public RandomDataGenerator() {
+",2,0,0,1,3,1,0,0,0,3,30,2,0.04762,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,118,"    private RandomGenerator rand = null;
+",2,0,0,0,0,1,0,2,0,5,36,2,0.04762,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,121,"    private SecureRandom secRand = null;
+",2,0,0,0,0,1,0,2,0,5,36,2,0.04762,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,132,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.04762,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,114,"    public RandomDataImpl() {
+",2,0,0,1,3,1,0,0,0,3,25,2,0.04762,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,115,"        delegate = new RandomDataGenerator();
+",2,0,0,1,2,0,0,2,0,5,37,4,0.04762,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,116,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.04762,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,674,"            = new Comparator<Pair<Double, double[]>>() {
+",0,0,0,2,5,0,0,6,0,6,44,7,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,678,"                switch (dir) {
+",2,0,0,1,3,0,0,0,0,2,14,10,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,680,"                    val = o1.getKey().compareTo(o2.getKey());
+",2,0,0,3,6,0,10,0,0,13,41,11,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,681,"                break;
+",0,0,0,0,0,0,0,0,0,0,6,3,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,683,"                    val = o2.getKey().compareTo(o1.getKey());
+",2,0,0,3,6,0,10,0,0,13,41,11,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,684,"                break;
+",0,0,0,0,0,0,0,0,0,0,6,3,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,687,"                    throw new MathInternalError();
+",0,0,0,1,2,0,0,2,0,2,30,13,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,689,"                return val;
+",2,0,0,0,0,1,0,0,0,2,11,10,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,51,"    private MathArrays() {}
+",2,0,0,2,4,1,0,0,0,3,23,2,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,88,"        if (a.length != b.length) {
+",8,1,0,1,3,0,0,0,0,9,27,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,89,"            throw new DimensionMismatchException(a.length, b.length);
+",8,0,0,1,2,0,0,2,0,10,57,7,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,92,"        final double[] result = a.clone();
+",2,0,0,2,4,1,4,0,0,7,34,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,93,"        for (int i = 0; i < a.length; i++) {
+",10,1,0,1,3,0,0,0,0,12,36,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,94,"            result[i] += b[i];
+",0,0,1,2,4,0,0,0,0,9,18,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,96,"        return result;
+",2,0,0,0,0,1,0,0,0,2,14,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,110,"        if (a.length != b.length) {
+",8,1,0,1,3,0,0,0,0,9,27,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,111,"            throw new DimensionMismatchException(a.length, b.length);
+",8,0,0,1,2,0,0,2,0,10,57,7,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,114,"        final double[] result = a.clone();
+",2,0,0,2,4,1,4,0,0,7,34,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,115,"        for (int i = 0; i < a.length; i++) {
+",10,1,0,1,3,0,0,0,0,12,36,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,116,"            result[i] -= b[i];
+",0,0,1,2,4,0,0,0,0,9,18,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,118,"        return result;
+",2,0,0,0,0,1,0,0,0,2,14,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,132,"        if (a.length != b.length) {
+",8,1,0,1,3,0,0,0,0,9,27,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,133,"            throw new DimensionMismatchException(a.length, b.length);
+",8,0,0,1,2,0,0,2,0,10,57,7,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,136,"        final double[] result = a.clone();
+",2,0,0,2,4,1,4,0,0,7,34,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,137,"        for (int i = 0; i < a.length; i++) {
+",10,1,0,1,3,0,0,0,0,12,36,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,138,"            result[i] *= b[i];
+",0,0,1,2,4,0,0,0,0,9,18,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,140,"        return result;
+",2,0,0,0,0,1,0,0,0,2,14,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,154,"        if (a.length != b.length) {
+",8,1,0,1,3,0,0,0,0,9,27,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,155,"            throw new DimensionMismatchException(a.length, b.length);
+",8,0,0,1,2,0,0,2,0,10,57,7,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,158,"        final double[] result = a.clone();
+",2,0,0,2,4,1,4,0,0,7,34,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,159,"        for (int i = 0; i < a.length; i++) {
+",10,1,0,1,3,0,0,0,0,12,36,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,160,"            result[i] /= b[i];
+",0,0,1,2,4,0,0,0,0,9,18,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,162,"        return result;
+",2,0,0,0,0,1,0,0,0,2,14,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,173,"        double sum = 0;
+",2,0,0,0,0,0,0,0,0,2,15,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,174,"        for (int i = 0; i < p1.length; i++) {
+",10,1,0,1,3,0,0,0,0,12,37,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,175,"            sum += FastMath.abs(p1[i] - p2[i]);
+",2,1,1,3,6,0,4,0,0,16,35,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,177,"        return sum;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,188,"      int sum = 0;
+",2,0,0,0,0,0,0,0,0,2,12,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,189,"      for (int i = 0; i < p1.length; i++) {
+",10,1,0,1,3,0,0,0,0,12,37,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,190,"          sum += FastMath.abs(p1[i] - p2[i]);
+",2,1,1,3,6,0,4,0,0,16,35,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,192,"      return sum;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,203,"        double sum = 0;
+",2,0,0,0,0,0,0,0,0,2,15,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,204,"        for (int i = 0; i < p1.length; i++) {
+",10,1,0,1,3,0,0,0,0,12,37,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,205,"            final double dp = p1[i] - p2[i];
+",2,1,1,2,4,1,0,0,0,12,32,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,206,"            sum += dp * dp;
+",6,1,0,0,0,0,0,0,0,8,15,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,208,"        return FastMath.sqrt(sum);
+",0,0,0,1,2,1,6,0,0,6,26,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,219,"      double sum = 0;
+",2,0,0,0,0,0,0,0,0,2,15,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,220,"      for (int i = 0; i < p1.length; i++) {
+",10,1,0,1,3,0,0,0,0,12,37,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,221,"          final double dp = p1[i] - p2[i];
+",2,1,1,2,4,1,0,0,0,12,32,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,222,"          sum += dp * dp;
+",6,1,0,0,0,0,0,0,0,8,15,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,224,"      return FastMath.sqrt(sum);
+",0,0,0,1,2,1,6,0,0,6,26,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,235,"        double max = 0;
+",2,0,0,0,0,0,0,0,0,2,15,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,236,"        for (int i = 0; i < p1.length; i++) {
+",10,1,0,1,3,0,0,0,0,12,37,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,237,"            max = FastMath.max(max, FastMath.abs(p1[i] - p2[i]));
+",2,1,1,4,8,0,10,0,0,22,53,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,239,"        return max;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,250,"        int max = 0;
+",2,0,0,0,0,0,0,0,0,2,12,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,251,"        for (int i = 0; i < p1.length; i++) {
+",10,1,0,1,3,0,0,0,0,12,37,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,252,"            max = FastMath.max(max, FastMath.abs(p1[i] - p2[i]));
+",2,1,1,4,8,0,10,0,0,22,53,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,254,"        return max;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,279,"        T previous = val[0];
+",2,0,1,1,2,0,0,2,0,6,20,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,280,"        final int max = val.length;
+",6,0,0,0,0,1,0,0,0,7,27,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,281,"        for (int i = 1; i < max; i++) {
+",8,1,0,1,3,0,0,0,0,10,31,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,283,"            switch (dir) {
+",2,0,0,1,3,0,0,0,0,2,14,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,285,"                comp = previous.compareTo(val[i]);
+",2,0,1,2,4,0,4,0,0,11,34,7,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,286,"                if (strict) {
+",2,0,0,1,3,0,0,0,0,2,13,7,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,287,"                    if (comp >= 0) {
+",2,1,0,1,3,0,0,0,0,3,16,9,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,288,"                        return false;
+",0,0,0,0,0,1,0,0,0,1,13,11,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,291,"                    if (comp > 0) {
+",2,1,0,1,3,0,0,0,0,3,15,9,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,292,"                        return false;
+",0,0,0,0,0,1,0,0,0,1,13,11,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,297,"                comp = val[i].compareTo(previous);
+",2,0,1,2,4,0,4,0,0,11,34,7,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,298,"                if (strict) {
+",2,0,0,1,3,0,0,0,0,2,13,7,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,299,"                    if (comp >= 0) {
+",2,1,0,1,3,0,0,0,0,3,16,9,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,300,"                        return false;
+",0,0,0,0,0,1,0,0,0,1,13,11,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,303,"                    if (comp > 0) {
+",2,1,0,1,3,0,0,0,0,3,15,9,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,304,"                       return false;
+",0,0,0,0,0,1,0,0,0,1,13,11,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,310,"                throw new MathInternalError();
+",0,0,0,1,2,0,0,2,0,2,30,9,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,313,"            previous = val[i];
+",2,0,1,1,2,0,0,0,0,7,18,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,315,"        return true;
+",0,0,0,0,0,1,0,0,0,1,12,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,329,"        return checkOrder(val, dir, strict, false);
+",0,0,0,1,2,1,8,0,0,9,43,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,346,"        double previous = val[0];
+",2,0,1,1,2,0,0,0,0,4,25,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,347,"        final int max = val.length;
+",6,0,0,0,0,1,0,0,0,7,27,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,351,"        for (index = 1; index < max; index++) {
+",8,1,0,1,3,0,0,0,0,11,39,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,352,"            switch (dir) {
+",2,0,0,1,3,0,0,0,0,2,14,7,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,354,"                if (strict) {
+",2,0,0,1,3,0,0,0,0,2,13,8,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,355,"                    if (val[index] <= previous) {
+",2,1,1,2,5,0,0,0,0,7,29,10,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,356,"                        break ITEM;
+",2,0,0,0,0,0,0,0,0,2,11,12,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,359,"                    if (val[index] < previous) {
+",2,1,1,2,5,0,0,0,0,7,28,10,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,360,"                        break ITEM;
+",2,0,0,0,0,0,0,0,0,2,11,12,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,365,"                if (strict) {
+",2,0,0,1,3,0,0,0,0,2,13,8,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,366,"                    if (val[index] >= previous) {
+",2,1,1,2,5,0,0,0,0,7,29,10,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,367,"                        break ITEM;
+",2,0,0,0,0,0,0,0,0,2,11,12,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,370,"                    if (val[index] > previous) {
+",2,1,1,2,5,0,0,0,0,7,28,10,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,371,"                        break ITEM;
+",2,0,0,0,0,0,0,0,0,2,11,12,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,377,"                throw new MathInternalError();
+",0,0,0,1,2,0,0,2,0,2,30,10,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,380,"            previous = val[index];
+",2,0,1,1,2,0,0,0,0,7,22,7,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,383,"        if (index == max) {
+",4,1,0,1,3,0,0,0,0,5,19,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,385,"            return true;
+",0,0,0,0,0,1,0,0,0,1,12,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,389,"        if (abort) {
+",2,0,0,1,3,0,0,0,0,2,12,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,390,"            throw new NonMonotonicSequenceException(val[index], previous, index, dir, strict);
+",8,0,1,2,4,0,0,2,0,14,82,7,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,392,"            return false;
+",0,0,0,0,0,1,0,0,0,1,13,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,407,"        checkOrder(val, dir, strict, true);
+",0,0,0,1,2,0,8,0,0,9,35,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,408,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,418,"        checkOrder(val, OrderDirection.INCREASING, true);
+",4,0,0,1,2,0,4,0,0,9,49,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,419,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,431,"        MathUtils.checkNotNull(in);
+",0,0,0,1,2,0,6,0,0,6,27,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,432,"        for (int i = 1; i < in.length; i++) {
+",10,1,0,1,3,0,0,0,0,12,37,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,433,"            if (in[i].length != in[0].length) {
+",4,1,1,3,7,0,0,0,0,11,35,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,434,"                throw new DimensionMismatchException(
+",0,0,0,0,1,0,0,2,0,2,37,10,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,439,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,451,"        for (int i = 0; i < in.length; i++) {
+",10,1,0,1,3,0,0,0,0,12,37,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,452,"            if (in[i] <= 0) {
+",0,1,1,2,5,0,0,0,0,5,17,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,453,"                throw new NotStrictlyPositiveException(in[i]);
+",0,0,1,2,4,0,0,2,0,6,46,9,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,456,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,467,"        for (int i = 0; i < in.length; i++) {
+",10,1,0,1,3,0,0,0,0,12,37,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,468,"            if (in[i] < 0) {
+",0,1,1,2,5,0,0,0,0,5,16,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,469,"                throw new NotPositiveException(in[i]);
+",0,0,1,2,4,0,0,2,0,6,38,9,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,472,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,483,"        for (int i = 0; i < in.length; i ++) {
+",10,1,0,1,3,0,0,0,0,12,38,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,484,"            for (int j = 0; j < in[i].length; j++) {
+",8,1,1,2,5,0,0,0,0,14,40,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,485,"                if (in[i][j] < 0) {
+",0,1,1,3,7,0,0,0,0,7,19,8,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,486,"                    throw new NotPositiveException(in[i][j]);
+",0,0,1,3,6,0,0,2,0,8,41,11,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,490,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,553,"        double rdwarf = 3.834e-20;
+",2,0,0,0,0,0,0,0,0,2,26,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,554,"        double rgiant = 1.304e+19;
+",2,0,0,0,0,0,0,0,0,2,26,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,555,"        double s1 = 0;
+",2,0,0,0,0,0,0,0,0,2,14,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,556,"        double s2 = 0;
+",2,0,0,0,0,0,0,0,0,2,14,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,557,"        double s3 = 0;
+",2,0,0,0,0,0,0,0,0,2,14,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,558,"        double x1max = 0;
+",2,0,0,0,0,0,0,0,0,2,17,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,559,"        double x3max = 0;
+",2,0,0,0,0,0,0,0,0,2,17,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,560,"        double floatn = v.length;
+",6,0,0,0,0,0,0,0,0,6,25,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,561,"        double agiant = rgiant / floatn;
+",6,1,0,0,0,0,0,0,0,7,32,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,562,"        for (int i = 0; i < v.length; i++) {
+",10,1,0,1,3,0,0,0,0,12,36,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,563,"            double xabs = Math.abs(v[i]);
+",2,0,1,2,4,0,4,0,0,10,29,7,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,564,"            if (xabs < rdwarf || xabs > agiant) {
+",8,3,0,1,3,0,0,0,0,11,37,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,565,"                if (xabs > rdwarf) {
+",4,1,0,1,3,0,0,0,0,5,20,8,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,566,"                    if (xabs > x1max) {
+",4,1,0,1,3,0,0,0,0,5,19,10,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,567,"                        double r = x1max / xabs;
+",6,1,0,0,0,0,0,0,0,7,24,13,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,568,"                        s1= 1 + s1 * r * r;
+",8,2,0,0,0,0,0,0,0,11,19,12,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,569,"                        x1max = xabs;
+",4,0,0,0,0,0,0,0,0,5,13,12,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,570,"                    } else {
+",0,0,0,0,2,0,0,0,0,0,8,3,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,571,"                        double r = xabs / x1max;
+",6,1,0,0,0,0,0,0,0,7,24,13,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,572,"                        s1 += r * r;
+",6,1,0,0,0,0,0,0,0,8,12,12,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,573,"                    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,575,"                    if (xabs > x3max) {
+",4,1,0,1,3,0,0,0,0,5,19,10,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,576,"                        double r = x3max / xabs;
+",6,1,0,0,0,0,0,0,0,7,24,13,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,577,"                        s3= 1 + s3 * r * r;
+",8,2,0,0,0,0,0,0,0,11,19,12,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,578,"                        x3max = xabs;
+",4,0,0,0,0,0,0,0,0,5,13,12,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,579,"                    } else {
+",0,0,0,0,2,0,0,0,0,0,8,3,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,580,"                        if (xabs != 0) {
+",2,1,0,1,3,0,0,0,0,3,16,12,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,581,"                            double r = xabs / x3max;
+",6,1,0,0,0,0,0,0,0,7,24,15,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,582,"                            s3 += r * r;
+",6,1,0,0,0,0,0,0,0,8,12,14,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,583,"                        }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,587,"                s2 += xabs * xabs;
+",6,1,0,0,0,0,0,0,0,8,18,8,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,591,"        if (s1 != 0) {
+",2,1,0,1,3,0,0,0,0,3,14,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,592,"            norm = x1max * Math.sqrt(s1 + (s2 / x1max) / x1max);
+",12,4,0,2,4,0,4,0,0,21,52,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,594,"            if (s2 == 0) {
+",2,1,0,1,3,0,0,0,0,3,14,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,595,"                norm = x3max * Math.sqrt(s3);
+",4,1,0,1,2,0,6,0,0,12,29,8,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,597,"                if (s2 >= x3max) {
+",4,1,0,1,3,0,0,0,0,5,18,8,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,598,"                    norm = Math.sqrt(s2 * (1 + (x3max / s2) * (x3max * s3)));
+",12,5,0,4,8,0,4,0,0,22,57,10,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,600,"                    norm = Math.sqrt(x3max * ((s2 / x3max) + (x3max * s3)));
+",12,4,0,4,8,0,4,0,0,21,56,10,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,604,"        return norm;
+",2,0,0,0,0,1,0,0,0,2,12,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,625,"        sortInPlace(x, OrderDirection.INCREASING, yList);
+",4,0,0,1,2,0,6,0,0,10,49,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,626,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,649,"        if (x == null) {
+",2,1,0,1,3,0,0,0,0,3,16,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,650,"            throw new NullArgumentException();
+",0,0,0,1,2,0,0,2,0,2,34,8,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,653,"        final int len = x.length;
+",6,0,0,0,0,1,0,0,0,7,25,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,654,"        final List<Pair<Double, double[]>> list
+",2,0,0,1,2,1,0,6,0,9,39,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,657,"        final int yListLen = yList.length;
+",6,0,0,0,0,1,0,0,0,7,34,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,658,"        for (int i = 0; i < len; i++) {
+",8,1,0,1,3,0,0,0,0,10,31,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,659,"            final double[] yValues = new double[yListLen];
+",2,0,1,2,4,1,0,0,0,5,46,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,660,"            for (int j = 0; j < yListLen; j++) {
+",8,1,0,1,3,0,0,0,0,10,36,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,661,"                double[] y = yList[j];
+",2,0,1,2,4,0,0,0,0,6,22,9,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,662,"                if (y == null) {
+",2,1,0,1,3,0,0,0,0,3,16,8,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,663,"                    throw new NullArgumentException();
+",0,0,0,1,2,0,0,2,0,2,34,12,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,665,"                if (y.length != len) {
+",6,1,0,1,3,0,0,0,0,7,22,8,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,666,"                    throw new DimensionMismatchException(y.length, len);
+",6,0,0,1,2,0,0,2,0,8,52,11,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,668,"                yValues[j] = y[i];
+",0,0,1,2,4,0,0,0,0,9,18,8,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,670,"            list.add(new Pair<Double, double[]>(x[i], yValues));
+",2,0,1,4,8,0,4,4,0,14,52,7,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,673,"        final Comparator<Pair<Double, double[]>> comp
+",2,0,0,1,2,1,0,6,0,9,45,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,693,"        Collections.sort(list, comp);
+",0,0,0,1,2,0,8,0,0,8,29,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,695,"        for (int i = 0; i < len; i++) {
+",8,1,0,1,3,0,0,0,0,10,31,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,696,"            final Pair<Double, double[]> e = list.get(i);
+",2,0,0,2,4,1,6,4,0,13,45,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,697,"            x[i] = e.getKey();
+",0,0,1,2,4,0,4,0,0,9,18,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,698,"            final double[] yValues = e.getValue();
+",2,0,0,2,4,1,4,0,0,7,38,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,699,"            for (int j = 0; j < yListLen; j++) {
+",8,1,0,1,3,0,0,0,0,10,36,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,700,"                yList[j][i] = yValues[j];
+",0,0,1,3,6,0,0,0,0,11,25,8,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,703,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,712,"         return copyOf(source, source.length);
+",4,0,0,1,2,1,4,0,0,8,37,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,722,"         return copyOf(source, source.length);
+",4,0,0,1,2,1,4,0,0,8,37,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,735,"         final int[] output = new int[len];
+",2,0,1,2,4,1,0,0,0,5,34,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,736,"         System.arraycopy(source, 0, output, 0, FastMath.min(len, source.length));
+",4,0,0,2,4,0,14,0,0,18,73,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,737,"         return output;
+",2,0,0,0,0,1,0,0,0,2,14,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,750,"         final double[] output = new double[len];
+",2,0,1,2,4,1,0,0,0,5,40,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,751,"         System.arraycopy(source, 0, output, 0, FastMath.min(len, source.length));
+",4,0,0,2,4,0,14,0,0,18,73,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,752,"         return output;
+",2,0,0,0,0,1,0,0,0,2,14,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,774,"        final int len = a.length;
+",6,0,0,0,0,1,0,0,0,7,25,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,775,"        if (len != b.length) {
+",6,1,0,1,3,0,0,0,0,7,22,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,776,"            throw new DimensionMismatchException(len, b.length);
+",6,0,0,1,2,0,0,2,0,8,52,7,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,779,"        final double[] prodHigh = new double[len];
+",2,0,1,2,4,1,0,0,0,5,42,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,780,"        double prodLowSum = 0;
+",2,0,0,0,0,0,0,0,0,2,22,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,782,"        for (int i = 0; i < len; i++) {
+",8,1,0,1,3,0,0,0,0,10,31,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,783,"            final double ai = a[i];
+",2,0,1,1,2,1,0,0,0,7,23,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,784,"            final double ca = SPLIT_FACTOR * ai;
+",6,1,0,0,0,1,0,0,0,8,36,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,785,"            final double aHigh = ca - (ca - ai);
+",8,2,0,1,2,1,0,0,0,11,36,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,786,"            final double aLow = ai - aHigh;
+",6,1,0,0,0,1,0,0,0,8,31,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,788,"            final double bi = b[i];
+",2,0,1,1,2,1,0,0,0,7,23,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,789,"            final double cb = SPLIT_FACTOR * bi;
+",6,1,0,0,0,1,0,0,0,8,36,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,790,"            final double bHigh = cb - (cb - bi);
+",8,2,0,1,2,1,0,0,0,11,36,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,791,"            final double bLow = bi - bHigh;
+",6,1,0,0,0,1,0,0,0,8,31,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,792,"            prodHigh[i] = ai * bi;
+",4,1,1,1,2,0,0,0,0,10,22,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,793,"            final double prodLow = aLow * bLow - (((prodHigh[i] -
+",6,5,1,1,5,1,0,0,0,16,53,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,797,"            prodLowSum += prodLow;
+",4,0,0,0,0,0,0,0,0,5,22,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,801,"        final double prodHighCur = prodHigh[0];
+",2,0,1,1,2,1,0,0,0,5,39,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,802,"        double prodHighNext = prodHigh[1];
+",2,0,1,1,2,0,0,0,0,4,34,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,803,"        double sHighPrev = prodHighCur + prodHighNext;
+",6,1,0,0,0,0,0,0,0,7,46,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,804,"        double sPrime = sHighPrev - prodHighNext;
+",6,1,0,0,0,0,0,0,0,7,41,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,805,"        double sLowSum = (prodHighNext - (sHighPrev - sPrime)) + (prodHighCur - sPrime);
+",12,4,0,3,6,0,0,0,0,16,80,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,807,"        final int lenMinusOne = len - 1;
+",4,1,0,0,0,1,0,0,0,6,32,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,808,"        for (int i = 1; i < lenMinusOne; i++) {
+",8,1,0,1,3,0,0,0,0,10,39,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,809,"            prodHighNext = prodHigh[i + 1];
+",4,1,1,1,2,0,0,0,0,8,31,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,810,"            final double sHighCur = sHighPrev + prodHighNext;
+",6,1,0,0,0,1,0,0,0,8,49,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,811,"            sPrime = sHighCur - prodHighNext;
+",6,1,0,0,0,0,0,0,0,8,33,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,812,"            sLowSum += (prodHighNext - (sHighCur - sPrime)) + (sHighPrev - sPrime);
+",12,4,0,3,6,0,0,0,0,17,71,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,813,"            sHighPrev = sHighCur;
+",4,0,0,0,0,0,0,0,0,5,21,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,816,"        double result = sHighPrev + (prodLowSum + sLowSum);
+",8,2,0,1,2,0,0,0,0,10,51,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,818,"        if (Double.isNaN(result)) {
+",0,0,0,2,5,0,6,0,0,6,27,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,821,"            result = 0;
+",2,0,0,0,0,0,0,0,0,3,11,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,822,"            for (int i = 0; i < len; ++i) {
+",8,1,0,1,3,0,0,0,0,10,31,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,823,"                result += a[i] * b[i];
+",2,1,1,2,4,0,0,0,0,12,22,8,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,827,"        return result;
+",2,0,0,0,0,1,0,0,0,2,14,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,866,"        final double ca1        = SPLIT_FACTOR * a1;
+",6,1,0,0,0,1,0,0,0,8,44,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,867,"        final double a1High     = ca1 - (ca1 - a1);
+",8,2,0,1,2,1,0,0,0,11,43,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,868,"        final double a1Low      = a1 - a1High;
+",6,1,0,0,0,1,0,0,0,8,38,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,869,"        final double cb1        = SPLIT_FACTOR * b1;
+",6,1,0,0,0,1,0,0,0,8,44,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,870,"        final double b1High     = cb1 - (cb1 - b1);
+",8,2,0,1,2,1,0,0,0,11,43,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,871,"        final double b1Low      = b1 - b1High;
+",6,1,0,0,0,1,0,0,0,8,38,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,874,"        final double prod1High  = a1 * b1;
+",6,1,0,0,0,1,0,0,0,8,34,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,875,"        final double prod1Low   = a1Low * b1Low - (((prod1High - a1High * b1High) - a1Low * b1High) - a1High * b1Low);
+",20,8,0,3,6,1,0,0,0,29,110,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,878,"        final double ca2        = SPLIT_FACTOR * a2;
+",6,1,0,0,0,1,0,0,0,8,44,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,879,"        final double a2High     = ca2 - (ca2 - a2);
+",8,2,0,1,2,1,0,0,0,11,43,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,880,"        final double a2Low      = a2 - a2High;
+",6,1,0,0,0,1,0,0,0,8,38,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,881,"        final double cb2        = SPLIT_FACTOR * b2;
+",6,1,0,0,0,1,0,0,0,8,44,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,882,"        final double b2High     = cb2 - (cb2 - b2);
+",8,2,0,1,2,1,0,0,0,11,43,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,883,"        final double b2Low      = b2 - b2High;
+",6,1,0,0,0,1,0,0,0,8,38,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,886,"        final double prod2High  = a2 * b2;
+",6,1,0,0,0,1,0,0,0,8,34,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,887,"        final double prod2Low   = a2Low * b2Low - (((prod2High - a2High * b2High) - a2Low * b2High) - a2High * b2Low);
+",20,8,0,3,6,1,0,0,0,29,110,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,890,"        final double s12High    = prod1High + prod2High;
+",6,1,0,0,0,1,0,0,0,8,48,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,891,"        final double s12Prime   = s12High - prod2High;
+",6,1,0,0,0,1,0,0,0,8,46,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,892,"        final double s12Low     = (prod2High - (s12High - s12Prime)) + (prod1High - s12Prime);
+",12,4,0,3,6,1,0,0,0,17,86,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,896,"        double result = s12High + (prod1Low + prod2Low + s12Low);
+",10,2,0,1,2,0,0,0,0,12,57,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,898,"        if (Double.isNaN(result)) {
+",0,0,0,2,5,0,6,0,0,6,27,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,901,"            result = a1 * b1 + a2 * b2;
+",10,3,0,0,0,0,0,0,0,14,27,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,904,"        return result;
+",2,0,0,0,0,1,0,0,0,2,14,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,946,"        final double ca1        = SPLIT_FACTOR * a1;
+",6,1,0,0,0,1,0,0,0,8,44,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,947,"        final double a1High     = ca1 - (ca1 - a1);
+",8,2,0,1,2,1,0,0,0,11,43,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,948,"        final double a1Low      = a1 - a1High;
+",6,1,0,0,0,1,0,0,0,8,38,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,949,"        final double cb1        = SPLIT_FACTOR * b1;
+",6,1,0,0,0,1,0,0,0,8,44,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,950,"        final double b1High     = cb1 - (cb1 - b1);
+",8,2,0,1,2,1,0,0,0,11,43,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,951,"        final double b1Low      = b1 - b1High;
+",6,1,0,0,0,1,0,0,0,8,38,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,954,"        final double prod1High  = a1 * b1;
+",6,1,0,0,0,1,0,0,0,8,34,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,955,"        final double prod1Low   = a1Low * b1Low - (((prod1High - a1High * b1High) - a1Low * b1High) - a1High * b1Low);
+",20,8,0,3,6,1,0,0,0,29,110,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,958,"        final double ca2        = SPLIT_FACTOR * a2;
+",6,1,0,0,0,1,0,0,0,8,44,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,959,"        final double a2High     = ca2 - (ca2 - a2);
+",8,2,0,1,2,1,0,0,0,11,43,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,960,"        final double a2Low      = a2 - a2High;
+",6,1,0,0,0,1,0,0,0,8,38,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,961,"        final double cb2        = SPLIT_FACTOR * b2;
+",6,1,0,0,0,1,0,0,0,8,44,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,962,"        final double b2High     = cb2 - (cb2 - b2);
+",8,2,0,1,2,1,0,0,0,11,43,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,963,"        final double b2Low      = b2 - b2High;
+",6,1,0,0,0,1,0,0,0,8,38,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,966,"        final double prod2High  = a2 * b2;
+",6,1,0,0,0,1,0,0,0,8,34,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,967,"        final double prod2Low   = a2Low * b2Low - (((prod2High - a2High * b2High) - a2Low * b2High) - a2High * b2Low);
+",20,8,0,3,6,1,0,0,0,29,110,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,970,"        final double ca3        = SPLIT_FACTOR * a3;
+",6,1,0,0,0,1,0,0,0,8,44,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,971,"        final double a3High     = ca3 - (ca3 - a3);
+",8,2,0,1,2,1,0,0,0,11,43,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,972,"        final double a3Low      = a3 - a3High;
+",6,1,0,0,0,1,0,0,0,8,38,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,973,"        final double cb3        = SPLIT_FACTOR * b3;
+",6,1,0,0,0,1,0,0,0,8,44,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,974,"        final double b3High     = cb3 - (cb3 - b3);
+",8,2,0,1,2,1,0,0,0,11,43,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,975,"        final double b3Low      = b3 - b3High;
+",6,1,0,0,0,1,0,0,0,8,38,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,978,"        final double prod3High  = a3 * b3;
+",6,1,0,0,0,1,0,0,0,8,34,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,979,"        final double prod3Low   = a3Low * b3Low - (((prod3High - a3High * b3High) - a3Low * b3High) - a3High * b3Low);
+",20,8,0,3,6,1,0,0,0,29,110,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,982,"        final double s12High    = prod1High + prod2High;
+",6,1,0,0,0,1,0,0,0,8,48,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,983,"        final double s12Prime   = s12High - prod2High;
+",6,1,0,0,0,1,0,0,0,8,46,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,984,"        final double s12Low     = (prod2High - (s12High - s12Prime)) + (prod1High - s12Prime);
+",12,4,0,3,6,1,0,0,0,17,86,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,987,"        final double s123High   = s12High + prod3High;
+",6,1,0,0,0,1,0,0,0,8,46,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,988,"        final double s123Prime  = s123High - prod3High;
+",6,1,0,0,0,1,0,0,0,8,47,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,989,"        final double s123Low    = (prod3High - (s123High - s123Prime)) + (s12High - s123Prime);
+",12,4,0,3,6,1,0,0,0,17,87,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,993,"        double result = s123High + (prod1Low + prod2Low + prod3Low + s12Low + s123Low);
+",14,2,0,1,2,0,0,0,0,16,79,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,995,"        if (Double.isNaN(result)) {
+",0,0,0,2,5,0,6,0,0,6,27,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,998,"            result = a1 * b1 + a2 * b2 + a3 * b3;
+",14,5,0,0,0,0,0,0,0,20,37,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1001,"        return result;
+",2,0,0,0,0,1,0,0,0,2,14,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1048,"        final double ca1        = SPLIT_FACTOR * a1;
+",6,1,0,0,0,1,0,0,0,8,44,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1049,"        final double a1High     = ca1 - (ca1 - a1);
+",8,2,0,1,2,1,0,0,0,11,43,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1050,"        final double a1Low      = a1 - a1High;
+",6,1,0,0,0,1,0,0,0,8,38,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1051,"        final double cb1        = SPLIT_FACTOR * b1;
+",6,1,0,0,0,1,0,0,0,8,44,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1052,"        final double b1High     = cb1 - (cb1 - b1);
+",8,2,0,1,2,1,0,0,0,11,43,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1053,"        final double b1Low      = b1 - b1High;
+",6,1,0,0,0,1,0,0,0,8,38,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1056,"        final double prod1High  = a1 * b1;
+",6,1,0,0,0,1,0,0,0,8,34,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1057,"        final double prod1Low   = a1Low * b1Low - (((prod1High - a1High * b1High) - a1Low * b1High) - a1High * b1Low);
+",20,8,0,3,6,1,0,0,0,29,110,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1060,"        final double ca2        = SPLIT_FACTOR * a2;
+",6,1,0,0,0,1,0,0,0,8,44,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1061,"        final double a2High     = ca2 - (ca2 - a2);
+",8,2,0,1,2,1,0,0,0,11,43,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1062,"        final double a2Low      = a2 - a2High;
+",6,1,0,0,0,1,0,0,0,8,38,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1063,"        final double cb2        = SPLIT_FACTOR * b2;
+",6,1,0,0,0,1,0,0,0,8,44,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1064,"        final double b2High     = cb2 - (cb2 - b2);
+",8,2,0,1,2,1,0,0,0,11,43,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1065,"        final double b2Low      = b2 - b2High;
+",6,1,0,0,0,1,0,0,0,8,38,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1068,"        final double prod2High  = a2 * b2;
+",6,1,0,0,0,1,0,0,0,8,34,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1069,"        final double prod2Low   = a2Low * b2Low - (((prod2High - a2High * b2High) - a2Low * b2High) - a2High * b2Low);
+",20,8,0,3,6,1,0,0,0,29,110,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1072,"        final double ca3        = SPLIT_FACTOR * a3;
+",6,1,0,0,0,1,0,0,0,8,44,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1073,"        final double a3High     = ca3 - (ca3 - a3);
+",8,2,0,1,2,1,0,0,0,11,43,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1074,"        final double a3Low      = a3 - a3High;
+",6,1,0,0,0,1,0,0,0,8,38,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1075,"        final double cb3        = SPLIT_FACTOR * b3;
+",6,1,0,0,0,1,0,0,0,8,44,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1076,"        final double b3High     = cb3 - (cb3 - b3);
+",8,2,0,1,2,1,0,0,0,11,43,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1077,"        final double b3Low      = b3 - b3High;
+",6,1,0,0,0,1,0,0,0,8,38,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1080,"        final double prod3High  = a3 * b3;
+",6,1,0,0,0,1,0,0,0,8,34,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1081,"        final double prod3Low   = a3Low * b3Low - (((prod3High - a3High * b3High) - a3Low * b3High) - a3High * b3Low);
+",20,8,0,3,6,1,0,0,0,29,110,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1084,"        final double ca4        = SPLIT_FACTOR * a4;
+",6,1,0,0,0,1,0,0,0,8,44,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1085,"        final double a4High     = ca4 - (ca4 - a4);
+",8,2,0,1,2,1,0,0,0,11,43,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1086,"        final double a4Low      = a4 - a4High;
+",6,1,0,0,0,1,0,0,0,8,38,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1087,"        final double cb4        = SPLIT_FACTOR * b4;
+",6,1,0,0,0,1,0,0,0,8,44,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1088,"        final double b4High     = cb4 - (cb4 - b4);
+",8,2,0,1,2,1,0,0,0,11,43,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1089,"        final double b4Low      = b4 - b4High;
+",6,1,0,0,0,1,0,0,0,8,38,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1092,"        final double prod4High  = a4 * b4;
+",6,1,0,0,0,1,0,0,0,8,34,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1093,"        final double prod4Low   = a4Low * b4Low - (((prod4High - a4High * b4High) - a4Low * b4High) - a4High * b4Low);
+",20,8,0,3,6,1,0,0,0,29,110,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1096,"        final double s12High    = prod1High + prod2High;
+",6,1,0,0,0,1,0,0,0,8,48,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1097,"        final double s12Prime   = s12High - prod2High;
+",6,1,0,0,0,1,0,0,0,8,46,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1098,"        final double s12Low     = (prod2High - (s12High - s12Prime)) + (prod1High - s12Prime);
+",12,4,0,3,6,1,0,0,0,17,86,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1101,"        final double s123High   = s12High + prod3High;
+",6,1,0,0,0,1,0,0,0,8,46,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1102,"        final double s123Prime  = s123High - prod3High;
+",6,1,0,0,0,1,0,0,0,8,47,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1103,"        final double s123Low    = (prod3High - (s123High - s123Prime)) + (s12High - s123Prime);
+",12,4,0,3,6,1,0,0,0,17,87,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1106,"        final double s1234High  = s123High + prod4High;
+",6,1,0,0,0,1,0,0,0,8,47,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1107,"        final double s1234Prime = s1234High - prod4High;
+",6,1,0,0,0,1,0,0,0,8,48,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1108,"        final double s1234Low   = (prod4High - (s1234High - s1234Prime)) + (s123High - s1234Prime);
+",12,4,0,3,6,1,0,0,0,17,91,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1112,"        double result = s1234High + (prod1Low + prod2Low + prod3Low + prod4Low + s12Low + s123Low + s1234Low);
+",18,2,0,1,2,0,0,0,0,20,102,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1114,"        if (Double.isNaN(result)) {
+",0,0,0,2,5,0,6,0,0,6,27,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1117,"            result = a1 * b1 + a2 * b2 + a3 * b3 + a4 * b4;
+",18,7,0,0,0,0,0,0,0,26,47,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1120,"        return result;
+",2,0,0,0,0,1,0,0,0,2,14,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1134,"        if ((x == null) || (y == null)) {
+",4,3,0,3,7,0,0,0,0,7,33,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1135,"            return !((x == null) ^ (y == null));
+",4,3,0,3,6,1,0,0,0,8,36,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1137,"        if (x.length != y.length) {
+",8,1,0,1,3,0,0,0,0,9,27,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1138,"            return false;
+",0,0,0,0,0,1,0,0,0,1,13,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1140,"        for (int i = 0; i < x.length; ++i) {
+",10,1,0,1,3,0,0,0,0,12,36,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1141,"            if (!Precision.equals(x[i], y[i])) {
+",0,0,1,4,9,0,4,0,0,13,36,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1142,"                return false;
+",0,0,0,0,0,1,0,0,0,1,13,8,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1145,"        return true;
+",0,0,0,0,0,1,0,0,0,1,12,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1160,"        if ((x == null) || (y == null)) {
+",4,3,0,3,7,0,0,0,0,7,33,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1161,"            return !((x == null) ^ (y == null));
+",4,3,0,3,6,1,0,0,0,8,36,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1163,"        if (x.length != y.length) {
+",8,1,0,1,3,0,0,0,0,9,27,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1164,"            return false;
+",0,0,0,0,0,1,0,0,0,1,13,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1166,"        for (int i = 0; i < x.length; ++i) {
+",10,1,0,1,3,0,0,0,0,12,36,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1167,"            if (!Precision.equalsIncludingNaN(x[i], y[i])) {
+",0,0,1,4,9,0,4,0,0,13,48,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1168,"                return false;
+",0,0,0,0,0,1,0,0,0,1,13,8,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1171,"        return true;
+",0,0,0,0,0,1,0,0,0,1,12,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1185,"        if ((x == null) || (y == null)) {
+",4,3,0,3,7,0,0,0,0,7,33,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1186,"            return !((x == null) ^ (y == null));
+",4,3,0,3,6,1,0,0,0,8,36,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1188,"        if (x.length != y.length) {
+",8,1,0,1,3,0,0,0,0,9,27,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1189,"            return false;
+",0,0,0,0,0,1,0,0,0,1,13,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1191,"        for (int i = 0; i < x.length; ++i) {
+",10,1,0,1,3,0,0,0,0,12,36,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1192,"            if (!Precision.equals(x[i], y[i])) {
+",0,0,1,4,9,0,4,0,0,13,36,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1193,"                return false;
+",0,0,0,0,0,1,0,0,0,1,13,8,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1196,"        return true;
+",0,0,0,0,0,1,0,0,0,1,12,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1211,"        if ((x == null) || (y == null)) {
+",4,3,0,3,7,0,0,0,0,7,33,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1212,"            return !((x == null) ^ (y == null));
+",4,3,0,3,6,1,0,0,0,8,36,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1214,"        if (x.length != y.length) {
+",8,1,0,1,3,0,0,0,0,9,27,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1215,"            return false;
+",0,0,0,0,0,1,0,0,0,1,13,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1217,"        for (int i = 0; i < x.length; ++i) {
+",10,1,0,1,3,0,0,0,0,12,36,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1218,"            if (!Precision.equalsIncludingNaN(x[i], y[i])) {
+",0,0,1,4,9,0,4,0,0,13,48,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1219,"                return false;
+",0,0,0,0,0,1,0,0,0,1,13,8,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1222,"        return true;
+",0,0,0,0,0,1,0,0,0,1,12,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1250,"             throw new MathIllegalArgumentException(LocalizedFormats.NORMALIZE_INFINITE);
+",4,0,0,1,2,0,0,2,0,6,76,7,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1253,"             throw new MathIllegalArgumentException(LocalizedFormats.NORMALIZE_NAN);
+",4,0,0,1,2,0,0,2,0,6,71,7,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1260,"                 throw new MathIllegalArgumentException(LocalizedFormats.INFINITE_ARRAY_ELEMENT, values[i], i);
+",6,0,1,2,4,0,0,2,0,12,94,9,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1267,"             throw new MathArithmeticException(LocalizedFormats.ARRAY_SUMS_TO_ZERO);
+",4,0,0,1,2,0,0,2,0,6,71,7,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1271,"                 out[i] = Double.NaN;
+",4,0,1,1,2,0,0,0,0,9,20,8,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1290,"         T[] array = (T[]) Array.newInstance(field.getRuntimeClass(), length);
+",2,0,0,5,10,0,10,4,0,16,69,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1291,"         Arrays.fill(array, field.getZero());
+",0,0,0,2,4,0,10,0,0,10,36,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1292,"         return array;
+",2,0,0,0,0,1,0,0,0,2,13,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1309,"         if (columns < 0) {
+",2,1,0,1,3,0,0,0,0,3,18,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1310,"             T[] dummyRow = buildArray(field, 0);
+",2,0,0,2,4,0,4,2,0,8,36,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1311,"             array = (T[][]) Array.newInstance(dummyRow.getClass(), rows);
+",2,0,0,5,10,0,10,2,0,15,61,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1312,"         } else {
+",0,0,0,0,2,0,0,0,0,0,8,3,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1313,"             array = (T[][]) Array.newInstance(field.getRuntimeClass(),
+",2,0,0,4,9,0,8,2,0,13,58,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1317,"             for (int i = 0; i < rows; ++i) {
+",8,1,0,1,3,0,0,0,0,10,32,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1318,"                 Arrays.fill(array[i], field.getZero());
+",0,0,1,3,6,0,8,0,0,12,39,9,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,1321,"         return array;
+",2,0,0,0,0,1,0,0,0,2,13,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathInternalError,8,37,"    public MathInternalError() {
+",2,0,0,1,3,1,0,0,0,3,28,2,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathInternalError,8,38,"        getContext().addMessage(LocalizedFormats.INTERNAL_ERROR, REPORT_URL);
+",4,0,0,2,4,0,6,0,0,10,69,5,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathInternalError,8,39,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathInternalError,8,46,"        super(cause, LocalizedFormats.INTERNAL_ERROR, REPORT_URL);
+",8,0,0,1,2,0,0,0,0,8,58,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathInternalError,8,47,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathInternalError,8,56,"        super(pattern, args);
+",4,0,0,1,2,0,0,0,0,4,21,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathInternalError,8,57,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathIllegalStateException,8,45,"                                     Object ... args) {
+",2,0,0,0,2,0,0,2,0,4,18,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathIllegalStateException,8,46,"        context = new ExceptionContext(this);
+",2,0,0,1,2,0,0,2,0,5,37,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathIllegalStateException,8,47,"        context.addMessage(pattern, args);
+",0,0,0,1,2,0,8,0,0,8,34,5,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathIllegalStateException,8,48,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathIllegalStateException,8,60,"        super(cause);
+",2,0,0,1,2,0,0,0,0,2,13,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathIllegalStateException,8,61,"        context = new ExceptionContext(this);
+",2,0,0,1,2,0,0,2,0,5,37,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathIllegalStateException,8,62,"        context.addMessage(pattern, args);
+",0,0,0,1,2,0,8,0,0,8,34,5,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathIllegalStateException,8,63,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathIllegalStateException,8,69,"        this(LocalizedFormats.ILLEGAL_STATE);
+",4,0,0,1,2,0,0,0,0,4,37,5,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathIllegalStateException,8,70,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathIllegalStateException,8,74,"        return context;
+",2,0,0,0,0,1,0,0,0,2,15,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathIllegalStateException,8,80,"        return context.getMessage();
+",0,0,0,1,2,1,4,0,0,4,28,5,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathIllegalStateException,8,86,"        return context.getLocalizedMessage();
+",0,0,0,1,2,1,4,0,0,4,37,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/Pair,8,56,"        this(entry.getKey(), entry.getValue());
+",0,0,0,3,6,0,8,0,0,8,39,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/Pair,8,57,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/util/Pair,8,84,"        return key;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/Pair,8,94,"        return value;
+",2,0,0,0,0,1,0,0,0,2,13,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/Pair,8,106,"        if (this == o) {
+",2,1,0,1,3,0,0,0,0,3,16,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/Pair,8,107,"            return true;
+",0,0,0,0,0,1,0,0,0,1,12,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/Pair,8,109,"        if (!(o instanceof Pair)) {
+",2,0,0,2,5,0,0,2,0,5,27,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/Pair,8,110,"            return false;
+",0,0,0,0,0,1,0,0,0,1,13,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/Pair,8,112,"            Pair<?, ?> oP = (Pair<?, ?>) o;
+",4,0,0,1,2,0,0,4,0,8,31,6,0.00000,0
+defect4j,math,org/apache/commons/math3/util/Pair,8,113,"            return (key == null ?
+",2,1,0,0,1,1,0,0,0,3,21,9,0.00000,0
+defect4j,math,org/apache/commons/math3/util/Pair,8,129,"        int result = key == null ? 0 : key.hashCode();
+",4,1,0,1,2,0,4,0,0,9,46,5,0.00000,0
+defect4j,math,org/apache/commons/math3/util/Pair,8,131,"        final int h = value == null ? 0 : value.hashCode();
+",4,1,0,1,2,1,4,0,0,10,51,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/Pair,8,132,"        result = 37 * result + h ^ (h >>> 16);
+",8,4,0,1,2,0,0,0,0,13,38,4,0.00000,0
+defect4j,math,org/apache/commons/math3/util/Pair,8,134,"        return result;
+",2,0,0,0,0,1,0,0,0,2,14,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/DimensionMismatchException,8,44,"        super(specific, wrong, expected);
+",6,0,0,1,2,0,0,0,0,6,33,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/DimensionMismatchException,8,45,"        dimension = expected;
+",4,0,0,0,0,0,0,0,0,5,21,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/DimensionMismatchException,8,46,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/DimensionMismatchException,8,56,"        this(LocalizedFormats.DIMENSIONS_MISMATCH_SIMPLE, wrong, expected);
+",8,0,0,1,2,0,0,0,0,8,67,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/DimensionMismatchException,8,57,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/DimensionMismatchException,8,63,"        return dimension;
+",2,0,0,0,0,1,0,0,0,2,17,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathIllegalNumberException,8,46,"        super(pattern, wrong, arguments);
+",6,0,0,1,2,0,0,0,0,6,33,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathIllegalNumberException,8,47,"        argument = wrong;
+",4,0,0,0,0,0,0,0,0,5,17,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathIllegalNumberException,8,48,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathIllegalNumberException,8,54,"        return argument;
+",2,0,0,0,0,1,0,0,0,2,16,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathIllegalArgumentException,8,44,"                                        Object ... args) {
+",2,0,0,0,2,0,0,2,0,4,18,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathIllegalArgumentException,8,45,"        context = new ExceptionContext(this);
+",2,0,0,1,2,0,0,2,0,5,37,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathIllegalArgumentException,8,46,"        context.addMessage(pattern, args);
+",0,0,0,1,2,0,8,0,0,8,34,5,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathIllegalArgumentException,8,47,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathIllegalArgumentException,8,51,"        return context;
+",2,0,0,0,0,1,0,0,0,2,15,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathIllegalArgumentException,8,57,"        return context.getMessage();
+",0,0,0,1,2,1,4,0,0,4,28,5,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathIllegalArgumentException,8,63,"        return context.getLocalizedMessage();
+",0,0,0,1,2,1,4,0,0,4,37,5,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathArithmeticException,8,43,"    public MathArithmeticException() {
+",2,0,0,1,3,1,0,0,0,3,34,2,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathArithmeticException,8,44,"        context = new ExceptionContext(this);
+",2,0,0,1,2,0,0,2,0,5,37,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathArithmeticException,8,45,"        context.addMessage(LocalizedFormats.ARITHMETIC_EXCEPTION);
+",4,0,0,1,2,0,4,0,0,8,58,5,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathArithmeticException,8,46,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathArithmeticException,8,56,"                                   Object ... args) {
+",2,0,0,0,2,0,0,2,0,4,18,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathArithmeticException,8,57,"        context = new ExceptionContext(this);
+",2,0,0,1,2,0,0,2,0,5,37,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathArithmeticException,8,58,"        context.addMessage(pattern, args);
+",0,0,0,1,2,0,8,0,0,8,34,5,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathArithmeticException,8,59,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathArithmeticException,8,63,"        return context;
+",2,0,0,0,0,1,0,0,0,2,15,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathArithmeticException,8,69,"        return context.getMessage();
+",0,0,0,1,2,1,4,0,0,4,28,5,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/MathArithmeticException,8,75,"        return context.getLocalizedMessage();
+",0,0,0,1,2,1,4,0,0,4,37,5,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NotPositiveException,8,37,"        super(value, 0, true);
+",2,0,0,1,2,0,0,0,0,3,22,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NotPositiveException,8,38,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NotPositiveException,8,47,"        super(specific, value, 0, true);
+",4,0,0,1,2,0,0,0,0,5,32,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NotPositiveException,8,48,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NumberIsTooSmallException,8,50,"        this(boundIsAllowed ?
+",2,0,0,0,1,0,0,0,0,2,21,5,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NumberIsTooSmallException,8,54,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NumberIsTooSmallException,8,68,"        super(specific, wrong, min);
+",6,0,0,1,2,0,0,0,0,6,28,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NumberIsTooSmallException,8,70,"        this.min = min;
+",4,0,0,0,0,0,0,0,0,5,15,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NumberIsTooSmallException,8,71,"        this.boundIsAllowed = boundIsAllowed;
+",4,0,0,0,0,0,0,0,0,5,37,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NumberIsTooSmallException,8,72,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NumberIsTooSmallException,8,78,"        return boundIsAllowed;
+",2,0,0,0,0,1,0,0,0,2,22,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NumberIsTooSmallException,8,85,"        return min;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NotStrictlyPositiveException,8,38,"        super(value, 0, false);
+",2,0,0,1,2,0,0,0,0,3,23,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NotStrictlyPositiveException,8,39,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NotStrictlyPositiveException,8,48,"        super(specific, value, 0, false);
+",4,0,0,1,2,0,0,0,0,5,33,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NotStrictlyPositiveException,8,49,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NonMonotonicSequenceException,8,61,"        this(wrong, previous, index, MathArrays.OrderDirection.INCREASING, true);
+",12,0,0,1,2,0,0,0,0,13,73,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NonMonotonicSequenceException,8,62,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NonMonotonicSequenceException,8,80,"        super(direction == MathArrays.OrderDirection.INCREASING ?
+",8,1,0,0,1,0,0,0,0,9,57,5,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NonMonotonicSequenceException,8,89,"        this.direction = direction;
+",4,0,0,0,0,0,0,0,0,5,27,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NonMonotonicSequenceException,8,90,"        this.strict = strict;
+",4,0,0,0,0,0,0,0,0,5,21,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NonMonotonicSequenceException,8,91,"        this.index = index;
+",4,0,0,0,0,0,0,0,0,5,19,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NonMonotonicSequenceException,8,92,"        this.previous = previous;
+",4,0,0,0,0,0,0,0,0,5,25,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NonMonotonicSequenceException,8,93,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NonMonotonicSequenceException,8,99,"        return direction;
+",2,0,0,0,0,1,0,0,0,2,17,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NonMonotonicSequenceException,8,105,"        return strict;
+",2,0,0,0,0,1,0,0,0,2,14,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NonMonotonicSequenceException,8,113,"        return index;
+",2,0,0,0,0,1,0,0,0,2,13,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NonMonotonicSequenceException,8,119,"        return previous;
+",2,0,0,0,0,1,0,0,0,2,16,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NullArgumentException,8,41,"        this(LocalizedFormats.NULL_NOT_ALLOWED);
+",4,0,0,1,2,0,0,0,0,4,40,5,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NullArgumentException,8,42,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NullArgumentException,8,50,"        super(pattern, arguments);
+",4,0,0,1,2,0,0,0,0,4,26,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NullArgumentException,8,51,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,260,"    public static enum OrderDirection {
+",2,0,0,0,1,2,0,0,0,4,35,2,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,262,"        INCREASING,
+",2,0,0,0,0,0,0,0,0,2,11,3,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,264,"        DECREASING
+",2,0,0,0,0,0,0,0,0,2,10,3,0.00000,0
+defect4j,math,org/apache/commons/math3/util/MathArrays,8,283,"            switch (dir) {
+",2,0,0,1,3,0,0,0,0,2,14,6,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,69,"        this(new Well19937c(), samples);
+",2,0,0,2,4,0,0,2,0,4,32,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,70,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,96,"                throw new NotPositiveException(sample.getValue());
+",0,0,0,2,4,0,4,2,0,6,50,9,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,110,"        random.setSeed(seed);
+",0,0,0,1,2,0,6,0,0,6,21,5,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,111,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,123,"        double probability = 0;
+",2,0,0,0,0,0,0,0,0,2,23,5,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,125,"        for (int i = 0; i < probabilities.length; i++) {
+",10,1,0,1,3,0,0,0,0,12,48,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,126,"            if ((x == null && singletons.get(i) == null) ||
+",2,4,0,2,5,0,6,0,0,12,47,6,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,128,"                probability += probabilities[i];
+",2,0,1,1,2,0,0,0,0,7,32,8,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,132,"        return probability;
+",2,0,0,0,0,1,0,0,0,2,19,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,142,"        final List<Pair<T, Double>> samples = new ArrayList<Pair<T, Double>>(probabilities.length);
+",6,0,0,1,2,1,0,16,0,23,91,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,144,"        for (int i = 0; i < probabilities.length; i++) {
+",10,1,0,1,3,0,0,0,0,12,48,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,145,"            samples.add(new Pair<T, Double>(singletons.get(i), probabilities[i]));
+",0,0,1,4,8,0,10,6,0,20,70,7,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,148,"        return samples;
+",2,0,0,0,0,1,0,0,0,2,15,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,170,"        return singletons.get(singletons.size() - 1);
+",0,1,0,2,4,1,8,0,0,9,45,5,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,182,"        if (sampleSize <= 0) {
+",2,1,0,1,3,0,0,0,0,3,22,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,183,"            throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES,
+",4,0,0,0,1,0,0,2,0,6,74,7,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,187,"        final T[]out = (T[]) java.lang.reflect.Array.newInstance(singletons.get(0).getClass(), sampleSize);
+",10,0,0,6,12,1,10,4,0,25,99,4,0.00000,1
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,189,"        for (int i = 0; i < sampleSize; i++) {
+",8,1,0,1,3,0,0,0,0,10,38,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,190,"            out[i] = sample();
+",0,0,1,2,4,0,2,0,0,7,18,6,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteDistribution,8,193,"        return out;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,89,"            throw new DimensionMismatchException(probabilities.length, singletons.length);
+",8,0,0,1,2,0,0,2,0,10,78,7,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,106,"        return innerDistribution.probability(x);
+",0,0,0,1,2,1,6,0,0,6,40,5,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,119,"        return probability(x);
+",0,0,0,1,2,1,4,0,0,4,22,5,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,126,"        double probability = 0;
+",2,0,0,0,0,0,0,0,0,2,23,5,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,128,"        for (final Pair<Double, Double> sample : innerDistribution.getSamples()) {
+",2,0,0,2,5,1,4,6,0,13,74,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,129,"            if (sample.getKey() <= x) {
+",2,1,0,2,5,0,4,0,0,7,27,6,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,130,"                probability += sample.getValue();
+",2,0,0,1,2,0,4,0,0,7,33,8,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,132,"        }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,134,"        return probability;
+",2,0,0,0,0,1,0,0,0,2,19,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,143,"        double mean = 0;
+",2,0,0,0,0,0,0,0,0,2,16,5,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,145,"        for (final Pair<Double, Double> sample : innerDistribution.getSamples()) {
+",2,0,0,2,5,1,4,6,0,13,74,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,146,"            mean += sample.getValue() * sample.getKey();
+",2,1,0,2,4,0,8,0,0,12,44,6,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,147,"        }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,149,"        return mean;
+",2,0,0,0,0,1,0,0,0,2,12,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,158,"        double mean = 0;
+",2,0,0,0,0,0,0,0,0,2,16,5,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,159,"        double meanOfSquares = 0;
+",2,0,0,0,0,0,0,0,0,2,25,5,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,161,"        for (final Pair<Double, Double> sample : innerDistribution.getSamples()) {
+",2,0,0,2,5,1,4,6,0,13,74,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,162,"            mean += sample.getValue() * sample.getKey();
+",2,1,0,2,4,0,8,0,0,12,44,6,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,163,"            meanOfSquares += sample.getValue() * sample.getKey() * sample.getKey();
+",2,1,0,3,6,0,12,0,0,16,71,6,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,164,"        }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,166,"        return meanOfSquares - mean * mean;
+",6,2,0,0,0,1,0,0,0,8,35,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,177,"        double min = Double.POSITIVE_INFINITY;
+",6,0,0,0,0,0,0,0,0,6,38,5,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,178,"        for (final Pair<Double, Double> sample : innerDistribution.getSamples()) {
+",2,0,0,2,5,1,4,6,0,13,74,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,179,"            if (sample.getKey() < min && sample.getValue() > 0) {
+",2,3,0,3,7,0,8,0,0,13,53,6,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,180,"                min = sample.getKey();
+",2,0,0,1,2,0,4,0,0,7,22,8,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,182,"        }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,184,"        return min;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,195,"        double max = Double.NEGATIVE_INFINITY;
+",6,0,0,0,0,0,0,0,0,6,38,5,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,196,"        for (final Pair<Double, Double> sample : innerDistribution.getSamples()) {
+",2,0,0,2,5,1,4,6,0,13,74,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,197,"            if (sample.getKey() > max && sample.getValue() > 0) {
+",2,3,0,3,7,0,8,0,0,13,53,6,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,198,"                max = sample.getKey();
+",2,0,0,1,2,0,4,0,0,7,22,8,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,200,"        }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,202,"        return max;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,213,"        return true;
+",0,0,0,0,0,1,0,0,0,1,12,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,224,"        return true;
+",0,0,0,0,0,1,0,0,0,1,12,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,235,"        return true;
+",0,0,0,0,0,1,0,0,0,1,12,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/DiscreteRealDistribution,8,243,"        return innerDistribution.sample();
+",0,0,0,1,2,1,4,0,0,4,34,5,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,67,"    protected AbstractRealDistribution() {
+",2,0,0,1,3,1,0,0,0,3,38,2,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,70,"        random = null;
+",2,0,0,0,0,0,0,0,0,3,14,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,71,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,91,"        return probability(x0, x1);
+",0,0,0,1,2,1,6,0,0,6,27,5,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,112,"        if (x0 > x1) {
+",4,1,0,1,3,0,0,0,0,5,14,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,113,"            throw new NumberIsTooLargeException(LocalizedFormats.LOWER_ENDPOINT_ABOVE_UPPER_ENDPOINT,
+",4,0,0,0,1,0,0,2,0,6,89,7,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,116,"        return cumulativeProbability(x1) - cumulativeProbability(x0);
+",0,1,0,2,4,1,8,0,0,9,61,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,157,"        if (p < 0.0 || p > 1.0) {
+",4,3,0,1,3,0,0,0,0,7,25,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,158,"            throw new OutOfRangeException(p, 0, 1);
+",2,0,0,1,2,0,0,2,0,4,39,7,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,161,"        double lowerBound = getSupportLowerBound();
+",2,0,0,1,2,0,2,0,0,4,43,5,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,162,"        if (p == 0.0) {
+",2,1,0,1,3,0,0,0,0,3,15,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,163,"            return lowerBound;
+",2,0,0,0,0,1,0,0,0,2,18,6,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,166,"        double upperBound = getSupportUpperBound();
+",2,0,0,1,2,0,2,0,0,4,43,5,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,167,"        if (p == 1.0) {
+",2,1,0,1,3,0,0,0,0,3,15,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,168,"            return upperBound;
+",2,0,0,0,0,1,0,0,0,2,18,6,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,171,"        final double mu = getNumericalMean();
+",2,0,0,1,2,1,2,0,0,5,37,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,172,"        final double sig = FastMath.sqrt(getNumericalVariance());
+",2,0,0,2,4,1,6,0,0,9,57,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,174,"        chebyshevApplies = !(Double.isInfinite(mu) || Double.isNaN(mu) ||
+",2,1,0,2,5,0,12,0,0,17,65,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,177,"        if (lowerBound == Double.NEGATIVE_INFINITY) {
+",6,1,0,1,3,0,0,0,0,7,45,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,178,"            if (chebyshevApplies) {
+",2,0,0,1,3,0,0,0,0,2,23,6,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,179,"                lowerBound = mu - sig * FastMath.sqrt((1. - p) / p);
+",10,4,0,2,4,0,4,0,0,19,52,8,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,181,"                lowerBound = -1.0;
+",2,0,0,0,0,0,0,0,0,4,18,8,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,182,"                while (cumulativeProbability(lowerBound) >= p) {
+",2,1,0,2,5,0,4,0,0,7,48,8,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,183,"                    lowerBound *= 2.0;
+",2,0,0,0,0,0,0,0,0,3,18,10,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,188,"        if (upperBound == Double.POSITIVE_INFINITY) {
+",6,1,0,1,3,0,0,0,0,7,45,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,189,"            if (chebyshevApplies) {
+",2,0,0,1,3,0,0,0,0,2,23,6,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,190,"                upperBound = mu + sig * FastMath.sqrt(p / (1. - p));
+",10,4,0,2,4,0,4,0,0,19,52,8,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,192,"                upperBound = 1.0;
+",2,0,0,0,0,0,0,0,0,3,17,8,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,193,"                while (cumulativeProbability(upperBound) < p) {
+",2,1,0,2,5,0,4,0,0,7,47,8,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,194,"                    upperBound *= 2.0;
+",2,0,0,0,0,0,0,0,0,3,18,10,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,199,"        final UnivariateFunction toSolve = new UnivariateFunction() {
+",2,0,0,1,3,1,0,4,0,7,61,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,206,"        double x = UnivariateSolverUtils.solve(toSolve,
+",2,0,0,0,1,0,6,0,0,8,47,5,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,211,"        if (!isSupportConnected()) {
+",0,0,0,2,5,0,2,0,0,3,28,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,213,"            final double dx = getSolverAbsoluteAccuracy();
+",2,0,0,1,2,1,2,0,0,5,46,6,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,214,"            if (x - dx >= getSupportLowerBound()) {
+",4,2,0,2,5,0,2,0,0,8,39,6,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,215,"                double px = cumulativeProbability(x);
+",2,0,0,1,2,0,4,0,0,6,37,9,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,216,"                if (cumulativeProbability(x - dx) == px) {
+",6,2,0,2,5,0,2,0,0,10,42,8,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,217,"                    upperBound = x;
+",4,0,0,0,0,0,0,0,0,5,15,10,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,218,"                    while (upperBound - lowerBound > dx) {
+",6,2,0,1,3,0,0,0,0,8,38,10,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,219,"                        final double midPoint = 0.5 * (lowerBound + upperBound);
+",6,2,0,1,2,1,0,0,0,9,56,12,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,220,"                        if (cumulativeProbability(midPoint) < px) {
+",2,1,0,2,5,0,4,0,0,7,43,12,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,221,"                            lowerBound = midPoint;
+",4,0,0,0,0,0,0,0,0,5,22,14,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,223,"                            upperBound = midPoint;
+",4,0,0,0,0,0,0,0,0,5,22,14,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,225,"                    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,226,"                    return upperBound;
+",2,0,0,0,0,1,0,0,0,2,18,10,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,230,"        return x;
+",2,0,0,0,0,1,0,0,0,2,9,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,241,"        return solverAbsoluteAccuracy;
+",2,0,0,0,0,1,0,0,0,2,30,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,246,"        random.setSeed(seed);
+",0,0,0,1,2,0,6,0,0,6,21,5,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,247,"        randomData.reSeed(seed);
+",0,0,0,1,2,0,6,0,0,6,24,5,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,248,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,259,"        return inverseCumulativeProbability(random.nextDouble());
+",0,0,0,2,4,1,6,0,0,6,57,5,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,269,"        if (sampleSize <= 0) {
+",2,1,0,1,3,0,0,0,0,3,22,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,270,"            throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES,
+",4,0,0,0,1,0,0,2,0,6,74,7,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,273,"        double[] out = new double[sampleSize];
+",2,0,1,2,4,0,0,0,0,4,38,5,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,274,"        for (int i = 0; i < sampleSize; i++) {
+",8,1,0,1,3,0,0,0,0,10,38,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,275,"            out[i] = sample();
+",0,0,1,2,4,0,2,0,0,7,18,6,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,277,"        return out;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,287,"        return 0d;
+",0,0,0,0,0,1,0,0,0,0,10,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NumberIsTooLargeException,8,50,"        this(boundIsAllowed ?
+",2,0,0,0,1,0,0,0,0,2,21,5,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NumberIsTooLargeException,8,54,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NumberIsTooLargeException,8,67,"        super(specific, wrong, max);
+",6,0,0,1,2,0,0,0,0,6,28,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NumberIsTooLargeException,8,69,"        this.max = max;
+",4,0,0,0,0,0,0,0,0,5,15,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NumberIsTooLargeException,8,70,"        this.boundIsAllowed = boundIsAllowed;
+",4,0,0,0,0,0,0,0,0,5,37,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NumberIsTooLargeException,8,71,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NumberIsTooLargeException,8,77,"        return boundIsAllowed;
+",2,0,0,0,0,1,0,0,0,2,22,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NumberIsTooLargeException,8,84,"        return max;
+",2,0,0,0,0,1,0,0,0,2,11,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/OutOfRangeException,8,46,"        this(LocalizedFormats.OUT_OF_RANGE_SIMPLE, wrong, lo, hi);
+",10,0,0,1,2,0,0,0,0,10,58,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/OutOfRangeException,8,47,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/OutOfRangeException,8,62,"        super(specific, wrong, lo, hi);
+",8,0,0,1,2,0,0,0,0,8,31,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/OutOfRangeException,8,63,"        this.lo = lo;
+",4,0,0,0,0,0,0,0,0,5,13,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/OutOfRangeException,8,64,"        this.hi = hi;
+",4,0,0,0,0,0,0,0,0,5,13,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/OutOfRangeException,8,65,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/OutOfRangeException,8,71,"        return lo;
+",2,0,0,0,0,1,0,0,0,2,10,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/OutOfRangeException,8,77,"        return hi;
+",2,0,0,0,0,1,0,0,0,2,10,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,199,"        final UnivariateFunction toSolve = new UnivariateFunction() {
+",2,0,0,1,3,1,0,4,0,7,61,4,0.00000,0
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,8,202,"                return cumulativeProbability(x) - p;
+",2,1,0,1,2,1,4,0,0,7,36,10,0.00000,0
+defect4j,math,org/apache/commons/math3/random/Well19937c,8,64,"        super(K, M1, M2, M3, seed);
+",10,0,0,1,2,0,0,0,0,10,27,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/Well19937c,8,65,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/random/Well19937c,8,72,"        super(K, M1, M2, M3, seed);
+",10,0,0,1,2,0,0,0,0,10,27,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/Well19937c,8,73,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/random/Well19937c,8,79,"        super(K, M1, M2, M3, seed);
+",10,0,0,1,2,0,0,0,0,10,27,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/Well19937c,8,80,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,83,"        this(k, m1, m2, m3, new int[] { seed });
+",10,0,0,3,6,0,0,0,0,10,40,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,84,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,132,"        this(k, m1, m2, m3, new int[] { (int) (seed >>> 32), (int) (seed & 0xffffffffl) });
+",12,2,0,7,14,0,0,0,0,14,83,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,133,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,142,"        setSeed(new int[] { seed });
+",2,0,0,3,6,0,2,0,0,4,28,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/AbstractWell,8,143,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,66,"        return next(1) != 0;
+",0,1,0,1,2,1,2,0,0,3,20,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,71,"        int i = 0;
+",2,0,0,0,0,0,0,0,0,2,10,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,72,"        final int iEnd = bytes.length - 3;
+",6,1,0,0,0,1,0,0,0,8,34,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,73,"        while (i < iEnd) {
+",4,1,0,1,3,0,0,0,0,5,18,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,74,"            final int random = next(32);
+",2,0,0,1,2,1,2,0,0,5,28,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,75,"            bytes[i]     = (byte) (random & 0xff);
+",2,1,1,3,6,0,0,0,0,8,38,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,76,"            bytes[i + 1] = (byte) ((random >>  8) & 0xff);
+",4,3,1,4,8,0,0,0,0,10,46,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,77,"            bytes[i + 2] = (byte) ((random >> 16) & 0xff);
+",4,3,1,4,8,0,0,0,0,10,46,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,78,"            bytes[i + 3] = (byte) ((random >> 24) & 0xff);
+",4,3,1,4,8,0,0,0,0,10,46,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,79,"            i += 4;
+",2,0,0,0,0,0,0,0,0,3,7,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,80,"        }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,81,"        int random = next(32);
+",2,0,0,1,2,0,2,0,0,4,22,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,82,"        while (i < bytes.length) {
+",6,1,0,1,3,0,0,0,0,7,26,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,83,"            bytes[i++] = (byte) (random & 0xff);
+",4,1,1,3,6,0,0,0,0,9,36,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,84,"            random     = random >> 8;
+",4,1,0,0,0,0,0,0,0,6,25,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,86,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,97,"        return next(23) * 0x1.0p-23f;
+",0,1,0,1,2,1,2,0,0,3,29,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,104,"        if (Double.isNaN(nextGaussian)) {
+",0,0,0,2,5,0,6,0,0,6,33,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,106,"            final double x = nextDouble();
+",2,0,0,1,2,1,2,0,0,5,30,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,107,"            final double y = nextDouble();
+",2,0,0,1,2,1,2,0,0,5,30,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,108,"            final double alpha = 2 * FastMath.PI * x;
+",8,1,0,0,0,1,0,0,0,10,41,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,109,"            final double r      = FastMath.sqrt(-2 * FastMath.log(y));
+",2,1,0,2,4,1,10,0,0,15,58,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,110,"            random       = r * FastMath.cos(alpha);
+",4,1,0,1,2,0,6,0,0,12,39,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,111,"            nextGaussian = r * FastMath.sin(alpha);
+",4,1,0,1,2,0,6,0,0,12,39,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,112,"        } else {
+",0,0,0,0,2,0,0,0,0,0,8,3,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,114,"            random = nextGaussian;
+",4,0,0,0,0,0,0,0,0,5,22,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,115,"            nextGaussian = Double.NaN;
+",6,0,0,0,0,0,0,0,0,7,26,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,118,"        return random;
+",2,0,0,0,0,1,0,0,0,2,14,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,124,"        return next(32);
+",0,0,0,1,2,1,2,0,0,2,16,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,143,"        if (n > 0) {
+",2,1,0,1,3,0,0,0,0,3,12,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,144,"            if ((n & -n) == n) {
+",6,2,0,2,5,0,0,0,0,9,20,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,145,"                return (int) ((n * (long) next(31)) >> 31);
+",2,2,0,5,10,1,2,0,0,6,43,10,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,150,"                bits = next(31);
+",2,0,0,1,2,0,2,0,0,5,16,8,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,151,"                val = bits % n;
+",6,1,0,0,0,0,0,0,0,8,15,8,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,152,"            } while (bits - val + (n - 1) < 0);
+",6,4,0,2,5,0,0,0,0,10,35,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,153,"            return val;
+",2,0,0,0,0,1,0,0,0,2,11,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,155,"        throw new NotStrictlyPositiveException(n);
+",2,0,0,1,2,0,0,2,0,4,42,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,160,"        final long high  = ((long) next(32)) << 32;
+",2,1,0,3,6,1,2,0,0,6,43,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,161,"        final long  low  = ((long) next(32)) & 0xffffffffL;
+",2,1,0,3,6,1,2,0,0,6,51,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/BitsStreamGenerator,8,162,"        return high | low;
+",4,1,0,0,0,1,0,0,0,5,18,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,141,"    public RandomDataGenerator(RandomGenerator rand) {
+",4,0,0,1,3,1,0,2,0,7,50,2,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,142,"        this.rand = rand;
+",4,0,0,0,0,0,0,0,0,5,17,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,143,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,162,"        if (len <= 0) {
+",2,1,0,1,3,0,0,0,0,3,15,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,163,"            throw new NotStrictlyPositiveException(LocalizedFormats.LENGTH, len);
+",6,0,0,1,2,0,0,2,0,8,69,7,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,167,"        RandomGenerator ran = getRan();
+",2,0,0,1,2,0,2,2,0,6,31,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,170,"        StringBuilder outBuffer = new StringBuilder();
+",2,0,0,1,2,0,0,4,0,6,46,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,173,"        byte[] randomBytes = new byte[(len / 2) + 1];
+",4,2,0,3,6,0,0,0,0,6,45,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,174,"        ran.nextBytes(randomBytes);
+",0,0,0,1,2,0,6,0,0,6,27,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,177,"        for (int i = 0; i < randomBytes.length; i++) {
+",10,1,0,1,3,0,0,0,0,12,46,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,178,"            Integer c = Integer.valueOf(randomBytes[i]);
+",2,0,1,2,4,0,4,2,0,12,44,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,185,"            String hex = Integer.toHexString(c.intValue() + 128);
+",2,1,0,2,4,0,8,2,0,13,53,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,188,"            if (hex.length() == 1) {
+",0,1,0,2,5,0,4,0,0,5,24,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,189,"                hex = ""0"" + hex;
+",4,1,0,0,0,0,0,0,0,7,16,8,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,191,"            outBuffer.append(hex);
+",0,0,0,1,2,0,6,0,0,6,22,7,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,193,"        return outBuffer.toString().substring(0, len);
+",0,0,0,2,4,1,8,0,0,8,46,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,198,"        if (lower >= upper) {
+",4,1,0,1,3,0,0,0,0,5,21,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,199,"            throw new NumberIsTooLargeException(LocalizedFormats.LOWER_BOUND_NOT_BELOW_UPPER_BOUND,
+",4,0,0,0,1,0,0,2,0,6,87,7,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,202,"        double r = getRan().nextDouble();
+",2,0,0,2,4,0,4,0,0,6,33,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,203,"        double scaled = r * upper + (1.0 - r) * lower + r;
+",12,5,0,1,2,0,0,0,0,17,50,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,204,"        return (int) FastMath.floor(scaled);
+",0,0,0,2,4,1,6,0,0,6,36,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,209,"        if (lower >= upper) {
+",4,1,0,1,3,0,0,0,0,5,21,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,210,"            throw new NumberIsTooLargeException(LocalizedFormats.LOWER_BOUND_NOT_BELOW_UPPER_BOUND,
+",4,0,0,0,1,0,0,2,0,6,87,7,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,213,"        double r = getRan().nextDouble();
+",2,0,0,2,4,0,4,0,0,6,33,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,214,"        double scaled = r * upper + (1.0 - r) * lower + r;
+",12,5,0,1,2,0,0,0,0,17,50,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,215,"        return (long)FastMath.floor(scaled);
+",0,0,0,2,4,1,6,0,0,6,36,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,236,"        if (len <= 0) {
+",2,1,0,1,3,0,0,0,0,3,15,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,237,"            throw new NotStrictlyPositiveException(LocalizedFormats.LENGTH, len);
+",6,0,0,1,2,0,0,2,0,8,69,7,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,241,"        SecureRandom secRan = getSecRan();
+",2,0,0,1,2,0,2,2,0,6,34,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,242,"        MessageDigest alg = null;
+",2,0,0,0,0,0,0,2,0,4,25,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,244,"            alg = MessageDigest.getInstance(""SHA-1"");
+",2,0,0,1,2,0,4,0,0,8,41,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,248,"        }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,245,"        } catch (NoSuchAlgorithmException ex) {
+",2,0,0,1,4,0,0,2,0,4,39,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,247,"            throw new MathInternalError(ex);
+",2,0,0,1,2,0,0,2,0,4,32,8,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,249,"        alg.reset();
+",0,0,0,1,2,0,4,0,0,4,12,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,252,"        int numIter = (len / 40) + 1;
+",4,2,0,1,2,0,0,0,0,6,29,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,254,"        StringBuilder outBuffer = new StringBuilder();
+",2,0,0,1,2,0,0,4,0,6,46,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,255,"        for (int iter = 1; iter < numIter + 1; iter++) {
+",8,2,0,1,3,0,0,0,0,11,48,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,256,"            byte[] randomBytes = new byte[40];
+",2,0,0,2,4,0,0,0,0,2,34,7,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,257,"            secRan.nextBytes(randomBytes);
+",0,0,0,1,2,0,6,0,0,6,30,7,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,258,"            alg.update(randomBytes);
+",0,0,0,1,2,0,6,0,0,6,24,7,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,261,"            byte[] hash = alg.digest();
+",2,0,0,2,4,0,4,0,0,6,27,7,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,264,"            for (int i = 0; i < hash.length; i++) {
+",10,1,0,1,3,0,0,0,0,12,39,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,265,"                Integer c = Integer.valueOf(hash[i]);
+",2,0,1,2,4,0,4,2,0,12,37,8,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,272,"                String hex = Integer.toHexString(c.intValue() + 128);
+",2,1,0,2,4,0,8,2,0,13,53,8,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,275,"                if (hex.length() == 1) {
+",0,1,0,2,5,0,4,0,0,5,24,8,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,276,"                    hex = ""0"" + hex;
+",4,1,0,0,0,0,0,0,0,7,16,10,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,278,"                outBuffer.append(hex);
+",0,0,0,1,2,0,6,0,0,6,22,9,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,281,"        return outBuffer.toString().substring(0, len);
+",0,0,0,2,4,1,8,0,0,8,46,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,286,"        if (lower >= upper) {
+",4,1,0,1,3,0,0,0,0,5,21,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,287,"            throw new NumberIsTooLargeException(LocalizedFormats.LOWER_BOUND_NOT_BELOW_UPPER_BOUND,
+",4,0,0,0,1,0,0,2,0,6,87,7,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,290,"        SecureRandom sec = getSecRan();
+",2,0,0,1,2,0,2,2,0,6,31,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,291,"        final double r = sec.nextDouble();
+",2,0,0,1,2,1,4,0,0,7,34,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,292,"        final double scaled = r * upper + (1.0 - r) * lower + r;
+",12,5,0,1,2,1,0,0,0,18,56,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,293,"        return (int)FastMath.floor(scaled);
+",0,0,0,2,4,1,6,0,0,6,35,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,298,"        if (lower >= upper) {
+",4,1,0,1,3,0,0,0,0,5,21,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,299,"            throw new NumberIsTooLargeException(LocalizedFormats.LOWER_BOUND_NOT_BELOW_UPPER_BOUND,
+",4,0,0,0,1,0,0,2,0,6,87,7,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,302,"        SecureRandom sec = getSecRan();
+",2,0,0,1,2,0,2,2,0,6,31,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,303,"        final double r = sec.nextDouble();
+",2,0,0,1,2,1,4,0,0,7,34,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,304,"        final double scaled = r * upper + (1.0 - r) * lower + r;
+",12,5,0,1,2,1,0,0,0,18,56,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,305,"        return (long)FastMath.floor(scaled);
+",0,0,0,2,4,1,6,0,0,6,36,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,323,"        return new PoissonDistribution(getRan(), mean,
+",2,0,0,1,3,1,2,2,0,6,46,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,330,"        if (sigma <= 0) {
+",2,1,0,1,3,0,0,0,0,3,17,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,331,"            throw new NotStrictlyPositiveException(LocalizedFormats.STANDARD_DEVIATION, sigma);
+",6,0,0,1,2,0,0,2,0,8,83,7,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,333,"        return sigma * getRan().nextGaussian() + mu;
+",4,2,0,2,4,1,4,0,0,10,44,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,348,"        return new ExponentialDistribution(getRan(), mean,
+",2,0,0,1,3,1,2,2,0,6,50,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,375,"        return new GammaDistribution(getRan(),shape, scale,
+",4,0,0,1,3,1,2,2,0,8,51,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,392,"        return new HypergeometricDistribution(getRan(),populationSize,
+",2,0,0,1,3,1,2,2,0,6,62,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,407,"        return new PascalDistribution(getRan(), r, p).sample();
+",4,0,0,3,6,1,4,2,0,10,55,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,418,"        return new TDistribution(getRan(), df,
+",2,0,0,1,3,1,2,2,0,6,38,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,432,"        return new WeibullDistribution(getRan(), shape, scale,
+",4,0,0,1,3,1,2,2,0,8,54,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,446,"        return new ZipfDistribution(getRan(), numberOfElements, exponent).sample();
+",4,0,0,3,6,1,4,2,0,10,75,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,457,"        return new BetaDistribution(getRan(), alpha, beta,
+",4,0,0,1,3,1,2,2,0,8,50,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,469,"        return new BinomialDistribution(getRan(), numberOfTrials, probabilityOfSuccess).sample();
+",4,0,0,3,6,1,4,2,0,10,89,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,480,"        return new CauchyDistribution(getRan(), median, scale,
+",4,0,0,1,3,1,2,2,0,8,54,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,491,"        return new ChiSquaredDistribution(getRan(), df,
+",2,0,0,1,3,1,2,2,0,6,47,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,505,"        return new FDistribution(getRan(), numeratorDf, denominatorDf,
+",4,0,0,1,3,1,2,2,0,8,62,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,524,"        return nextUniform(lower, upper, false);
+",0,0,0,1,2,1,6,0,0,7,40,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,545,"        if (lower >= upper) {
+",4,1,0,1,3,0,0,0,0,5,21,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,546,"            throw new NumberIsTooLargeException(LocalizedFormats.LOWER_BOUND_NOT_BELOW_UPPER_BOUND,
+",4,0,0,0,1,0,0,2,0,6,87,7,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,550,"        if (Double.isInfinite(lower)) {
+",0,0,0,2,5,0,6,0,0,6,31,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,551,"            throw new NotFiniteNumberException(LocalizedFormats.INFINITE_BOUND, lower);
+",6,0,0,1,2,0,0,2,0,8,75,7,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,553,"        if (Double.isInfinite(upper)) {
+",0,0,0,2,5,0,6,0,0,6,31,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,554,"            throw new NotFiniteNumberException(LocalizedFormats.INFINITE_BOUND, upper);
+",6,0,0,1,2,0,0,2,0,8,75,7,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,557,"        if (Double.isNaN(lower) || Double.isNaN(upper)) {
+",0,1,0,3,7,0,12,0,0,13,49,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,558,"            throw new NotANumberException();
+",0,0,0,1,2,0,0,2,0,2,32,8,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,561,"        final RandomGenerator generator = getRan();
+",2,0,0,1,2,1,2,2,0,7,43,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,564,"        double u = generator.nextDouble();
+",2,0,0,1,2,0,4,0,0,6,34,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,565,"        while (!lowerInclusive && u <= 0.0) {
+",4,2,0,1,3,0,0,0,0,7,37,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,566,"            u = generator.nextDouble();
+",2,0,0,1,2,0,4,0,0,7,27,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,569,"        return u * upper + (1.0 - u) * lower;
+",8,4,0,1,2,1,0,0,0,12,37,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,585,"        if (k > n) {
+",4,1,0,1,3,0,0,0,0,5,12,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,586,"            throw new NumberIsTooLargeException(LocalizedFormats.PERMUTATION_EXCEEDS_N,
+",4,0,0,0,1,0,0,2,0,6,75,7,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,589,"        if (k <= 0) {
+",2,1,0,1,3,0,0,0,0,3,13,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,590,"            throw new NotStrictlyPositiveException(LocalizedFormats.PERMUTATION_SIZE,
+",4,0,0,0,1,0,0,2,0,6,73,7,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,594,"        int[] index = getNatural(n);
+",2,0,0,2,4,0,4,0,0,6,28,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,595,"        shuffle(index, n - k);
+",4,1,0,1,2,0,4,0,0,9,22,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,596,"        int[] result = new int[k];
+",2,0,1,2,4,0,0,0,0,4,26,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,597,"        for (int i = 0; i < k; i++) {
+",8,1,0,1,3,0,0,0,0,10,29,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,598,"            result[i] = index[n - i - 1];
+",4,1,1,2,4,0,0,0,0,12,29,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,601,"        return result;
+",2,0,0,0,0,1,0,0,0,2,14,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,619,"        int len = c.size();
+",2,0,0,1,2,0,4,0,0,6,19,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,620,"        if (k > len) {
+",4,1,0,1,3,0,0,0,0,5,14,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,621,"            throw new NumberIsTooLargeException(LocalizedFormats.SAMPLE_SIZE_EXCEEDS_COLLECTION_SIZE,
+",4,0,0,0,1,0,0,2,0,6,89,7,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,624,"        if (k <= 0) {
+",2,1,0,1,3,0,0,0,0,3,13,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,625,"            throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES, k);
+",6,0,0,1,2,0,0,2,0,8,78,7,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,628,"        Object[] objects = c.toArray();
+",2,0,0,2,4,0,4,2,0,8,31,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,629,"        int[] index = nextPermutation(len, k);
+",2,0,0,2,4,0,6,0,0,8,38,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,630,"        Object[] result = new Object[k];
+",2,0,1,2,4,0,0,4,0,8,32,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,631,"        for (int i = 0; i < k; i++) {
+",8,1,0,1,3,0,0,0,0,10,29,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,632,"            result[i] = objects[index[i]];
+",0,0,1,3,6,0,0,0,0,11,30,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,634,"        return result;
+",2,0,0,0,0,1,0,0,0,2,14,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,648,"       getRan().setSeed(seed);
+",0,0,0,2,4,0,6,0,0,6,23,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,649,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,659,"        getSecRan().setSeed(System.currentTimeMillis());
+",0,0,0,3,6,0,8,0,0,8,48,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,660,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,671,"        getSecRan().setSeed(seed);
+",0,0,0,2,4,0,6,0,0,6,26,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,672,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,679,"        getRan().setSeed(System.currentTimeMillis() + System.identityHashCode(this));
+",0,1,0,4,8,0,12,0,0,13,77,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,680,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,700,"        secRand = SecureRandom.getInstance(algorithm, provider);
+",2,0,0,1,2,0,8,0,0,11,56,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,701,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,714,"        if (rand == null) {
+",2,1,0,1,3,0,0,0,0,3,19,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,715,"            initRan();
+",0,0,0,1,2,0,2,0,0,2,10,7,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,717,"        return rand;
+",2,0,0,0,0,1,0,0,0,2,12,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,725,"        rand = new Well19937c(System.currentTimeMillis() + System.identityHashCode(this));
+",2,1,0,3,6,0,8,2,0,14,82,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,726,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,738,"        if (secRand == null) {
+",2,1,0,1,3,0,0,0,0,3,22,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,739,"            secRand = new SecureRandom();
+",2,0,0,1,2,0,0,2,0,5,29,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,740,"            secRand.setSeed(System.currentTimeMillis() + System.identityHashCode(this));
+",0,1,0,3,6,0,12,0,0,13,76,7,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,742,"        return secRand;
+",2,0,0,0,0,1,0,0,0,2,15,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,753,"        int target = 0;
+",2,0,0,0,0,0,0,0,0,2,15,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,754,"        for (int i = list.length - 1; i >= end; i--) {
+",12,2,0,1,3,0,0,0,0,15,46,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,755,"            if (i == 0) {
+",2,1,0,1,3,0,0,0,0,3,13,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,756,"                target = 0;
+",2,0,0,0,0,0,0,0,0,3,11,8,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,759,"                target = nextInt(0, i);
+",2,0,0,1,2,0,4,0,0,7,23,8,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,761,"            int temp = list[target];
+",2,0,1,1,2,0,0,0,0,6,24,7,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,762,"            list[target] = list[i];
+",0,0,1,2,4,0,0,0,0,9,23,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,763,"            list[i] = temp;
+",2,0,1,1,2,0,0,0,0,7,15,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,765,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,774,"        int[] natural = new int[n];
+",2,0,1,2,4,0,0,0,0,4,27,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,775,"        for (int i = 0; i < n; i++) {
+",8,1,0,1,3,0,0,0,0,10,29,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,776,"            natural[i] = i;
+",2,0,1,1,2,0,0,0,0,7,15,6,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,8,778,"        return natural;
+",2,0,0,0,0,1,0,0,0,2,15,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NotFiniteNumberException,8,40,"        this(LocalizedFormats.NOT_FINITE_NUMBER, wrong, args);
+",8,0,0,1,2,0,0,0,0,8,54,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NotFiniteNumberException,8,41,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NotFiniteNumberException,8,53,"        super(specific, wrong, args);
+",6,0,0,1,2,0,0,0,0,6,29,4,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NotFiniteNumberException,8,54,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NotANumberException,8,35,"        super(LocalizedFormats.NAN_NOT_ALLOWED, Double.NaN);
+",8,0,0,1,2,0,0,0,0,8,52,5,0.00000,0
+defect4j,math,org/apache/commons/math3/exception/NotANumberException,8,36,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,126,"    public RandomDataImpl(RandomGenerator rand) {
+",4,0,0,1,3,1,0,2,0,7,45,2,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,127,"        delegate = new RandomDataGenerator(rand);
+",4,0,0,1,2,0,0,2,0,7,41,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,128,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,136,"        return delegate;
+",2,0,0,0,0,1,0,0,0,2,16,4,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,156,"        return delegate.nextHexString(len);
+",0,0,0,1,2,1,6,0,0,6,35,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,161,"       return delegate.nextInt(lower, upper);
+",0,0,0,1,2,1,8,0,0,8,38,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,166,"        return delegate.nextLong(lower, upper);
+",0,0,0,1,2,1,8,0,0,8,39,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,186,"        return delegate.nextSecureHexString(len);
+",0,0,0,1,2,1,6,0,0,6,41,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,191,"        return delegate.nextSecureInt(lower, upper);
+",0,0,0,1,2,1,8,0,0,8,44,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,196,"        return delegate.nextSecureLong(lower,upper);
+",0,0,0,1,2,1,8,0,0,8,44,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,213,"        return delegate.nextPoisson(mean);
+",0,0,0,1,2,1,6,0,0,6,34,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,218,"        return delegate.nextGaussian(mu,sigma);
+",0,0,0,1,2,1,8,0,0,8,39,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,233,"        return delegate.nextExponential(mean);
+",0,0,0,1,2,1,6,0,0,6,38,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,248,"        return delegate.nextUniform(lower, upper);
+",0,0,0,1,2,1,8,0,0,8,42,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,265,"        return delegate.nextUniform(lower, upper, lowerInclusive);
+",0,0,0,1,2,1,10,0,0,10,58,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,279,"        return delegate.nextBeta(alpha, beta);
+",0,0,0,1,2,1,8,0,0,8,38,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,293,"        return delegate.nextBinomial(numberOfTrials, probabilityOfSuccess);
+",0,0,0,1,2,1,8,0,0,8,67,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,307,"        return delegate.nextCauchy(median, scale);
+",0,0,0,1,2,1,8,0,0,8,42,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,320,"       return delegate.nextChiSquare(df);
+",0,0,0,1,2,1,6,0,0,6,34,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,336,"        return delegate.nextF(numeratorDf, denominatorDf);
+",0,0,0,1,2,1,8,0,0,8,50,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,363,"        return delegate.nextGamma(shape, scale);
+",0,0,0,1,2,1,8,0,0,8,40,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,383,"        return delegate.nextHypergeometric(populationSize, numberOfSuccesses, sampleSize);
+",0,0,0,1,2,1,10,0,0,10,82,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,401,"        return delegate.nextPascal(r, p);
+",0,0,0,1,2,1,8,0,0,8,33,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,415,"        return delegate.nextT(df);
+",0,0,0,1,2,1,6,0,0,6,26,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,431,"        return delegate.nextWeibull(shape, scale);
+",0,0,0,1,2,1,8,0,0,8,42,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,447,"        return delegate.nextZipf(numberOfElements, exponent);
+",0,0,0,1,2,1,8,0,0,8,53,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,461,"        delegate.reSeed(seed);
+",0,0,0,1,2,0,6,0,0,6,22,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,462,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,472,"        delegate.reSeedSecure();
+",0,0,0,1,2,0,4,0,0,4,24,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,473,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,485,"        delegate.reSeedSecure(seed);
+",0,0,0,1,2,0,6,0,0,6,28,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,486,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,493,"        delegate.reSeed();
+",0,0,0,1,2,0,4,0,0,4,18,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,494,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,518,"       delegate.setSecureAlgorithm(algorithm, provider);
+",0,0,0,1,2,0,8,0,0,8,49,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,519,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,532,"        return delegate.nextPermutation(n, k);
+",0,0,0,1,2,1,8,0,0,8,38,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,550,"        return delegate.nextSample(c, k);
+",0,0,0,1,2,1,8,0,0,8,33,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,565,"        return distribution.inverseCumulativeProbability(nextUniform(0, 1));
+",0,0,0,2,4,1,6,0,0,6,68,5,0.00000,0
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,8,581,"        return distribution.inverseCumulativeProbability(nextUniform(0, 1));
+",0,0,0,2,4,1,6,0,0,6,68,5,0.00000,0

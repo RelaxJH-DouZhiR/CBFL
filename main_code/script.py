@@ -1,7 +1,7 @@
 '''
 Author: your name
 Date: 2021-06-01 19:58:05
-LastEditTime: 2021-06-10 15:39:57
+LastEditTime: 2021-06-10 16:18:58
 Description: file content
 ██████╗  █████╗ ████████╗ █████╗
 ██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗
@@ -322,7 +322,7 @@ def cut_data_for_test_train(project, miniK, percentage):  # 当数据量小于10
 
 
 if __name__ == "__main__":
-    project = 'chart'
+    project = 'closure'  # *
     settingJson = open('/Users/lvlaxjh/code/CBFL/main_code/setting.json', 'r')
     settingContent = settingJson.read()
     setting = json.loads(settingContent)
@@ -355,9 +355,9 @@ if __name__ == "__main__":
         #                                 i, project)  # 计算特征值，并存储,in for
         # print(f'\033[1;36m OK -> ac.save_as_csv {project} {str(i)} \033[0m')
         # ----------------------------------------------------------------
-        # set_sus_one(i, project)  # 将可疑度大与1的设置为1
-        # print(
-        #     f'\033[1;36m OK -> set_sus_one {project} {str(i)} \033[0m')
+        set_sus_one(i, project)  # 将可疑度大与1的设置为1
+        print(
+            f'\033[1;36m OK -> set_sus_one {project} {str(i)} \033[0m')
         # ----------------------------------------------------------------
     for percentage in percentageList:
         # ----------------------------------------------------------------

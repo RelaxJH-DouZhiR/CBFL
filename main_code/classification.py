@@ -1,7 +1,7 @@
 '''
 Author: your name
 Date: 2021-05-25 18:47:20
-LastEditTime: 2021-06-10 15:24:01
+LastEditTime: 2021-06-10 16:22:19
 Description: classification
  ██████╗██╗      █████╗ ███████╗███████╗██╗███████╗██╗ ██████╗ █████╗ ████████╗██╗ ██████╗ ███╗   ██╗
 ██╔════╝██║     ██╔══██╗██╔════╝██╔════╝██║██╔════╝██║██╔════╝██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║
@@ -289,13 +289,12 @@ def get_tp_tn_fp_fn(project, id, predictRes, trueRes):
 
 
 if __name__ == "__main__":
-    project = 'chart'
+    project = 'closure' # *
     settingJson = open('/Users/lvlaxjh/code/CBFL/main_code/setting.json', 'r')
     settingContent = settingJson.read()
     setting = json.loads(settingContent)
     k = setting[project]['k']  # k折交叉
     percentageList = setting['percentageList']  # 前百分比数据列表
-    project = 'chart'
     useModel = 'train'  # train/model ***
     #
     totalTP = 0
@@ -323,13 +322,13 @@ if __name__ == "__main__":
                             filePercentage, project, i, trainOrModel=useModel, if_SMOTE=smote)  # 贝叶斯
                     if func == 'KNN':
                         predictRes = KNN(filePercentage, project, i,
-                                         trainOrModel=useModel, if_SMOTE=False)  # K近邻
+                                         trainOrModel=useModel, if_SMOTE=smote)  # K近邻
                     if func == 'rsandomForest':
                         predictRes = rsandomForest(filePercentage, project, i, trainOrModel=useModel,
-                                                   if_SMOTE=False)  # 随机森林
+                                                   if_SMOTE=smote)  # 随机森林
                     if func == 'SVc':
                         predictRes = SVc(filePercentage, project, i, trainOrModel=useModel,
-                                         if_SMOTE=False)  # 支持向量机
+                                         if_SMOTE=smote)  # 支持向量机
                     trueRes = get_true_results(
                         project, i, filePercentage)  # 真实数据
                     TP, TN, FP, FN, precesion, recall = get_tp_tn_fp_fn(

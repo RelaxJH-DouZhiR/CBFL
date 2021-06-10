@@ -1,0 +1,83 @@
+dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,logic,lengthEle,lengthWord,depth,suspicious,accuracy,predict
+defect4j,mockito,org/mockito/internal/invocation/InvocationMatcher,1,123,"            throw new UnsupportedOperationException();
+",0,0,0,1,2,0,0,2,0,2,42,8,0.00000,1,-1
+defect4j,mockito,org/mockito/exceptions/Reporter,4,677,"        return details.getCause().getMessage();
+",0,0,0,2,4,1,6,0,0,6,39,5,0.00000,1,-1
+defect4j,mockito,org/mockito/internal/invocation/ArgumentsProcessor,1,26,"        final int nonVarArgsCount = args.length - 1;
+",6,1,0,0,0,1,0,0,0,8,44,4,1,0,-1
+defect4j,mockito,org/mockito/internal/invocation/ArgumentsProcessor,1,28,"        if (args[nonVarArgsCount] == null) {
+",0,1,1,2,5,0,0,0,0,5,36,4,1,0,-1
+defect4j,mockito,org/mockito/internal/invocation/ArgumentsProcessor,1,34,"        final int varArgsCount = varArgs.length;
+",6,0,0,0,0,1,0,0,0,7,40,4,1,0,-1
+defect4j,mockito,org/mockito/internal/invocation/ArgumentsProcessor,1,35,"        Object[] newArgs = new Object[nonVarArgsCount + varArgsCount];
+",6,1,0,2,4,0,0,4,0,11,62,4,1,0,-1
+defect4j,mockito,org/mockito/internal/invocation/ArgumentsProcessor,1,36,"        System.arraycopy(args, 0, newArgs, 0, nonVarArgsCount);
+",0,0,0,1,2,0,10,0,0,10,55,5,1,0,-1
+defect4j,mockito,org/mockito/internal/invocation/ArgumentsProcessor,1,37,"        System.arraycopy(varArgs, 0, newArgs, nonVarArgsCount, varArgsCount);
+",0,0,0,1,2,0,12,0,0,12,69,5,1,0,-1
+defect4j,mockito,org/mockito/internal/invocation/ArgumentsProcessor,1,38,"        return newArgs;
+",2,0,0,0,0,1,0,0,0,2,15,4,1,0,-1
+defect4j,mockito,org/mockito/internal/util/collections/ArrayUtils,1,8,"public class ArrayUtils {
+",2,0,0,0,1,1,0,0,0,3,25,1,1,0,-1
+defect4j,mockito,org/mockito/internal/util/collections/ArrayUtils,1,11,"        return array == null || array.length == 0;
+",6,3,0,0,0,1,0,0,0,9,42,4,1,0,-1
+defect4j,mockito,org/mockito/internal/invocation/ArgumentsProcessor,1,32,"            varArgs = ArrayEquals.createObjectArray(args[nonVarArgsCount]);
+",2,0,1,2,4,0,4,0,0,11,63,6,1,0,-1
+defect4j,mockito,org/mockito/internal/matchers/ArrayEquals,1,67,"        if (array instanceof Object[]) {
+",2,0,0,2,5,0,0,2,0,4,32,5,1,0,-1
+defect4j,mockito,org/mockito/internal/matchers/ArrayEquals,1,68,"            return (Object[]) array;
+",2,0,0,2,4,1,0,2,0,4,24,7,1,0,-1
+defect4j,mockito,org/mockito/internal/invocation/ArgumentsProcessor,1,30,"            varArgs = new Object[] { null };
+",2,0,0,2,4,0,0,2,0,5,32,6,1,0,-1
+defect4j,mockito,org/mockito/internal/invocation/ArgumentsComparator,1,41,"        Object[] rawArgs = actual.getRawArguments();
+",2,0,0,2,4,0,4,2,0,8,44,4,1,0,-1
+defect4j,mockito,org/mockito/internal/util/Timer,2,7,"    private long startTime = -1;
+",2,0,0,0,0,1,0,0,0,4,28,2,0.75000,0,-1
+defect4j,mockito,org/mockito/internal/util/Timer,2,9,"    public Timer(long durationMillis) {
+",4,0,0,1,3,1,0,0,0,5,35,2,0.75000,0,-1
+defect4j,mockito,org/mockito/internal/util/Timer,2,10,"        this.durationMillis = durationMillis;
+",4,0,0,0,0,0,0,0,0,5,37,4,0.75000,0,-1
+defect4j,mockito,org/mockito/internal/util/Timer,2,11,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.75000,0,-1
+defect4j,mockito,org/mockito/internal/util/Timer,2,4,"public class Timer {
+",2,0,0,0,1,1,0,0,0,3,20,1,0.52941,0,-1
+defect4j,mockito,org/mockito/verification/VerificationWrapper,2,10,"    public VerificationWrapper(WrapperType wrappedVerification) {
+",4,0,0,1,3,1,0,2,0,7,61,2,0.44444,0,-1
+defect4j,mockito,org/mockito/verification/VerificationWrapper,2,11,"        this.wrappedVerification = wrappedVerification;
+",4,0,0,0,0,0,0,0,0,5,47,4,0.44444,0,-1
+defect4j,mockito,org/mockito/internal/invocation/InvocationMatcher,3,130,"                    ((CapturesArguments) m).captureFrom(invocation.getRawArguments()[position - indexOfVararg]);
+",6,1,0,5,10,0,6,2,0,15,92,11,1,0,-1
+defect4j,mockito,org/mockito/internal/invocation/InvocationMatcher,3,128,"                Matcher m = matchers.get(position);
+",2,0,0,1,2,0,6,2,0,10,35,8,1,0,-1
+defect4j,mockito,org/mockito/internal/invocation/InvocationMatcher,3,129,"                if (m instanceof CapturesArguments) {
+",2,0,0,1,3,0,0,2,0,4,37,9,1,0,-1
+defect4j,mockito,org/mockito/internal/invocation/InvocationMatcher,3,120,"            int indexOfVararg = invocation.getRawArguments().length - 1;
+",4,1,0,1,2,0,4,0,0,9,60,7,1,0,-1
+defect4j,mockito,org/mockito/internal/invocation/InvocationMatcher,3,121,"            for (int position = 0; position < indexOfVararg; position++) {
+",8,1,0,1,3,0,0,0,0,10,62,6,1,0,-1
+defect4j,mockito,org/mockito/internal/invocation/InvocationMatcher,3,127,"            for (int position = indexOfVararg; position < matchers.size(); position++) {
+",8,1,0,2,5,0,4,0,0,14,76,6,1,0,-1
+defect4j,mockito,org/mockito/internal/invocation/InvocationMatcher,3,124,"                    ((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Object.class));
+",2,0,0,4,8,0,8,4,0,14,86,11,1,0,-1
+defect4j,mockito,org/mockito/internal/invocation/ArgumentsProcessor,3,32,"            varArgs = ArrayEquals.createObjectArray(args[nonVarArgsCount]);
+",2,0,1,2,4,0,4,0,0,11,63,6,1,0,-1
+defect4j,mockito,org/mockito/internal/matchers/CapturingMatcher,3,25,"        return true;
+",0,0,0,0,0,1,0,0,0,1,12,4,1,0,-1
+defect4j,mockito,org/mockito/internal/matchers/LocalizedMatcher,3,63,"            ((CapturesArguments) actualMatcher).captureFrom(argument);
+",2,0,0,3,6,0,4,2,0,8,58,7,1,0,-1
+defect4j,mockito,org/mockito/internal/matchers/ArrayEquals,3,67,"        if (array instanceof Object[]) {
+",2,0,0,2,5,0,0,2,0,4,32,5,1,0,-1
+defect4j,mockito,org/mockito/internal/matchers/CapturingMatcher,3,16,"public class CapturingMatcher<T> extends ArgumentMatcher<T> implements CapturesArguments, VarargMatcher, Serializable {
+",4,0,0,0,1,1,0,10,0,15,119,1,1,0,-1
+defect4j,mockito,org/mockito/internal/matchers/CapturingMatcher,3,19,"    private final LinkedList<Object> arguments = new LinkedList<Object>();
+",2,0,0,1,2,2,0,8,0,12,70,2,1,0,-1
+defect4j,mockito,org/mockito/internal/matchers/CapturingMatcher,3,49,"        this.arguments.add(argument);
+",2,0,0,1,2,0,4,0,0,6,29,5,1,0,-1
+defect4j,mockito,org/mockito/internal/matchers/CapturingMatcher,3,50,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,1,0,-1
+defect4j,mockito,org/mockito/internal/invocation/InvocationMatcher,3,122,"                Matcher m = matchers.get(position);
+",2,0,0,1,2,0,6,2,0,10,35,8,1,0,-1
+defect4j,mockito,org/mockito/Mockito,4,1257,"        return mock(classToMock, withSettings().defaultAnswer(defaultAnswer));
+",0,0,0,3,6,1,10,0,0,10,70,5,0.25806,0,-1
+defect4j,mockito,org/mockito/exceptions/Reporter,4,418,"        ScenarioPrinter scenarioPrinter = new ScenarioPrinter();
+",2,0,0,1,2,0,0,4,0,6,56,4,0.14286,0,-1
