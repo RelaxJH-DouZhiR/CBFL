@@ -1,7 +1,7 @@
 '''
 Author: your name
 Date: 2021-06-01 19:58:05
-LastEditTime: 2021-06-09 15:01:30
+LastEditTime: 2021-06-10 15:39:57
 Description: file content
 ██████╗  █████╗ ████████╗ █████╗
 ██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗
@@ -10,12 +10,14 @@ Description: file content
 ██████╔╝██║  ██║   ██║   ██║  ██║
 ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝
 '''
+from platform import version
 import openpyxl
 import linecache
 import os
 import csv
 import math
 import copy
+import json
 
 
 import analytic_complexity
@@ -160,42 +162,78 @@ def set_sus_one(version, project):
 # 将可疑度大于1的设置为1-end
 
 
-# 获取可疑度排名第一并存储-start
-def get_sus_top(version, project, topSusList, includeAll):
+# # 获取可疑度排名第一并存储-start
+# def get_sus_top(version, project, topSusList, includeAll):
+#     # includeAll:是否将全部真实缺陷（无论排名）存储（非必须使用，只针对真实缺陷过少情况）
+#     with open('/Users/lvlaxjh/code/CBFL/data/%s/csv/sus1/%s%s.csv' % (project, project, str(version))) as f:
+#         csvFile = csv.reader(f)
+#         csvLine = 1  # csv行
+#         sortRow = sorted(list(csvFile)[1:], key=lambda x: float(
+#             x[18]), reverse=True)  # 排序行
+#         topSus = float(sortRow[0][18])  # 取可疑度最大
+#         # 取列表中最大可疑度-start
+#         for i in sortRow:
+#             if topSus == float(i[18]):
+#                 topSusList.append(i)
+#             if includeAll and str(i[19]) == '1' and i not in topSusList:
+#                 topSusList.append(i)
+#         # 取列表中最大可疑度-end
+#     print('get_sus_top %s%s.csv -> ok' % (project, str(version)))
+
+
+# def save_top_sus(topSusList, project):
+#     SAVE_CSV = '/Users/lvlaxjh/code/CBFL/data/%s/csv/top_sus_%s.csv' % (
+#         project, project)
+#     csvFile = open(SAVE_CSV, 'w', encoding="utf-8", newline="")
+#     csvWriter = csv.writer(csvFile)
+#     csvWriter.writerow(['dataset', 'project', 'path', 'version', 'codeLine', 'statement', 'varTotal', 'optTotal', 'array', 'bracketDepth',
+#                                    'bracketTotal', 'keywordTotal', 'methodTotal', 'typeTotal', 'logic', 'lengthEle', 'lengthWord', 'depth', 'suspicious', 'accuracy'])
+#     for i in topSusList:
+#         csvWriter.writerow(i)
+#     csvFile.close()
+# # 获取可疑度排名第一并存储-end
+
+
+# 获取前百分之，并存储-start
+def get_top_data(version, project, topPercentageList, percentage, includeAll):
     # includeAll:是否将全部真实缺陷（无论排名）存储（非必须使用，只针对真实缺陷过少情况）
     with open('/Users/lvlaxjh/code/CBFL/data/%s/csv/sus1/%s%s.csv' % (project, project, str(version))) as f:
         csvFile = csv.reader(f)
         csvLine = 1  # csv行
         sortRow = sorted(list(csvFile)[1:], key=lambda x: float(
             x[18]), reverse=True)  # 排序行
-        topSus = float(sortRow[0][18])  # 取可疑度最大
+        # print(f'{project}{str(version)}-{len(sortRow)}')
+        percentage = percentage/100
+        get_data_amount = math.floor(len(sortRow)*percentage)  # 取数据数量
+        for i in sortRow[:get_data_amount]:
+            topPercentageList.append(i)
+        # topPercentageList
+        # topSus = float(sortRow[0][18])  # 取可疑度最大
         # 取列表中最大可疑度-start
         for i in sortRow:
-            if topSus == float(i[18]):
-                topSusList.append(i)
-            if includeAll and str(i[19]) == '1' and i not in topSusList:
-                topSusList.append(i)
+            if includeAll and str(i[19]) == '1' and i not in topPercentageList:
+                topPercentageList.append(i)
         # 取列表中最大可疑度-end
-    print('get_sus_top %s%s.csv -> ok' % (project, str(version)))
+    # print('get_sus_top %s%s.csv -> ok' % (project, str(version)))
 
 
-def save_top_sus(topSusList, project):
-    SAVE_CSV = '/Users/lvlaxjh/code/CBFL/data/%s/csv/top_sus_%s.csv' % (
-        project, project)
+def save_top_data(topPercentageList, project, percentage):
+    SAVE_CSV = '/Users/lvlaxjh/code/CBFL/data/%s/csv/top_%s.csv' % (
+        project, str(percentage))
     csvFile = open(SAVE_CSV, 'w', encoding="utf-8", newline="")
     csvWriter = csv.writer(csvFile)
     csvWriter.writerow(['dataset', 'project', 'path', 'version', 'codeLine', 'statement', 'varTotal', 'optTotal', 'array', 'bracketDepth',
                                    'bracketTotal', 'keywordTotal', 'methodTotal', 'typeTotal', 'logic', 'lengthEle', 'lengthWord', 'depth', 'suspicious', 'accuracy'])
-    for i in topSusList:
+    for i in topPercentageList:
         csvWriter.writerow(i)
     csvFile.close()
-# 获取可疑度排名第一并存储-end
+# 获取前百分之，并存储-end
 
 
 # 切割数据集用于交叉验证-start
-def cut_data_for_test_train(project, miniK):  # 当数据量小于10时，设置的k折
-    CSV_PATH = '/Users/lvlaxjh/code/CBFL/data/%s/csv/top_sus_%s.csv' % (
-        project, project)
+def cut_data_for_test_train(project, miniK, percentage):  # 当数据量小于10时，设置的k折
+    CSV_PATH = '/Users/lvlaxjh/code/CBFL/data/%s/csv/top_%s.csv' % (
+        project, str(percentage))
     # 分了是否为真实i缺陷-start
     isFaultList = []
     noFaultList = []
@@ -247,8 +285,8 @@ def cut_data_for_test_train(project, miniK):  # 当数据量小于10时，设置
             if j not in testList_dataset:
                 trainList_dataset.append(j)
         # 根据剩下数据生成训练集-end
-        csvFiletest = open(SAVE_PATH+'%s-test-%s.csv' %
-                           (project, str(i)), 'w', encoding="utf-8", newline="")
+        csvFiletest = open(SAVE_PATH+'%s-%s-test-%s.csv' %
+                           (str(percentage), project, str(i)), 'w', encoding="utf-8", newline="")
         csvWritertest = csv.writer(csvFiletest)
         csvWritertest.writerow(['dataset', 'project', 'path', 'version', 'codeLine', 'statement', 'varTotal', 'optTotal', 'array', 'bracketDepth',
                                 'bracketTotal', 'keywordTotal', 'methodTotal', 'typeTotal', 'logic', 'lengthEle', 'lengthWord', 'depth', 'suspicious', 'accuracy', 'predict'])
@@ -257,12 +295,11 @@ def cut_data_for_test_train(project, miniK):  # 当数据量小于10时，设置
             TEM_n.append(-1)
             csvWritertest.writerow(TEM_n)
         csvFiletest.close()
-        csvFiletrain = open(SAVE_PATH+'%s-train-%s.csv' %
-                            (project, str(i)), 'w', encoding="utf-8", newline="")
+        csvFiletrain = open(SAVE_PATH+'%s-%s-train-%s.csv' %
+                            (str(percentage), project, str(i)), 'w', encoding="utf-8", newline="")
         csvWritertrain = csv.writer(csvFiletrain)
         csvWritertrain.writerow(['dataset', 'project', 'path', 'version', 'codeLine', 'statement', 'varTotal', 'optTotal', 'array', 'bracketDepth',
                                  'bracketTotal', 'keywordTotal', 'methodTotal', 'typeTotal', 'logic', 'lengthEle', 'lengthWord', 'depth', 'suspicious', 'accuracy'])
-
         for m in trainList_dataset:
             csvWritertrain.writerow(m)
         csvFiletrain.close()
@@ -285,38 +322,55 @@ def cut_data_for_test_train(project, miniK):  # 当数据量小于10时，设置
 
 
 if __name__ == "__main__":
-    project = 'closure'
-    k = 10
-    topSusList = []
-    for i in range(1, 133):  # (1，项目总数+1)
-        # if i != 2:
-            # CODE_FILE_PATH = '/Volumes/Elements/DSatr/%s-direct/%s-%s/source/' % (
-            #     project, project, str(i))  # java文件父目录
+    project = 'chart'
+    settingJson = open('/Users/lvlaxjh/code/CBFL/main_code/setting.json', 'r')
+    settingContent = settingJson.read()
+    setting = json.loads(settingContent)
+    k = setting[project]['k']
+    versionStart = setting[project]['versionStart']  # 开始版本
+    versionEnd = setting[project]['versionEnd']  # 最后版本
+    removeVersionList = setting[project]['removeVersionList']  # 不包含的版本
+    percentageList = setting['percentageList']  # 前百分比数据列表
+    topPercentageList = []  # 前百分比数据列表数据
+    # 计算版本列表-start
+    versionList = []  # 版本列表
+    for i in range(versionStart, versionEnd+1):
+        if i not in removeVersionList:
+            versionList.append(i)
+    # 计算版本列表-end
+    for i in versionList:
         CODE_FILE_PATH = '/Volumes/Elements/DSatr/%s-direct/%s-%s/src/' % (
             project, project, str(i))  # java文件父目录
         # ----------------------------------------------------------------
-        get_project_sus(i, project, CODE_FILE_PATH)# 找到真实缺陷语句并存储excel,in for
-        print(f'\033[0;36;40m\t step1 get_project_sus {project} {str(i)} -> ok \033[0m')
+        # get_project_sus(i, project, CODE_FILE_PATH)# 找到真实缺陷语句并存储excel,in for
+        # print(f'\033[1;36m OK -> get_project_sus {project} {str(i)} \033[0m')
+        # # ----------------------------------------------------------------
+        # run_java_get_ASTjson(i, project, CODE_FILE_PATH)# 生成对应文件AST树,in for
+        # print(
+        #     f'\033[1;36m OK -> run_java_get_ASTjson {project} {str(i)} \033[0m')
+        # analytic_complexity.save_as_csv('/Users/lvlaxjh/code/CBFL/data/%s/%s-%s.xlsx' % (project, project, str(i)),
+        #                                 '/Users/lvlaxjh/code/CBFL/data/%s/csv/' % (
+        #                                     project),
+        #                                 CODE_FILE_PATH,
+        #                                 i, project)  # 计算特征值，并存储,in for
+        # print(f'\033[1;36m OK -> ac.save_as_csv {project} {str(i)} \033[0m')
         # ----------------------------------------------------------------
-        run_java_get_ASTjson(i, project, CODE_FILE_PATH)# 生成对应文件AST树,in for
-        print(
-            f'\033[0;36;40m\t step2 run_java_get_ASTjson {project} {str(i)} -> ok \033[0m')
-        analytic_complexity.save_as_csv('/Users/lvlaxjh/code/CBFL/data/%s/%s-%s.xlsx' % (project, project, str(i)),
-                                        '/Users/lvlaxjh/code/CBFL/data/%s/csv/' % (
-                                            project),
-                                        CODE_FILE_PATH,
-                                        i, project)  # 计算特征值，并存储,in for
-        print(f'\033[0;36;40m\t step3 ac.save_as_csv {project} {str(i)} -> ok \033[0m')
-        #----------------------------------------------------------------
-            # set_sus_one(i, project)  # 将可疑度大与1的设置为1
-            # print(f'\033[0;36;40m\t step4 set_sus_one {project} {str(i)} -> ok \033[0m')
-            # ----------------------------------------------------------------
+        # set_sus_one(i, project)  # 将可疑度大与1的设置为1
+        # print(
+        #     f'\033[1;36m OK -> set_sus_one {project} {str(i)} \033[0m')
+        # ----------------------------------------------------------------
+    for percentage in percentageList:
+        # ----------------------------------------------------------------
+        print(f'\033[1;31m >{project}< percentage [{str(percentage)}] \033[0m')
+        for i in versionList:
             # 获取可疑度并列排名第一的语句,in for,-dont cut
-    #         get_sus_top(i, project, topSusList, True)
-    #         print(
-    #             f'\033[0;36;40m\t step5 get_sus_top {project} {str(i)} -> ok \033[0m')
-    # save_top_sus(topSusList, project)  # 保存全部定并列第一文件,-dont cut
-    # print(f'\033[0;36;40m\t step6 get_sus_top {project} -> ok \033[0m')
-    # ----------------------------------------------------------------
-    # cut_data_for_test_train(project, k)  # 切割数据集用于交叉验证,当数据量小于10时，设置的k折
-    # print(f'\033[0;36;40m\t step7 cut_data_for_test_train {project} -> ok \033[0m')
+            get_top_data(i, project, topPercentageList, percentage, True)
+        save_top_data(topPercentageList, project,
+                      percentage)  # 保存全部定并列第一文件,-dont cut
+        print(f'\033[1;36m OK -> >{project}< get & save top data  \033[0m')
+        # ----------------------------------------------------------------
+        # 切割数据集用于交叉验证,当数据量小于10时，设置的k折
+        cut_data_for_test_train(project, k, percentage)
+        print(
+            f'\033[1;37m OK -> >{project}< cut data for test & train  \033[0m')
+        topPercentageList = []  # 前百分比数据列表数据
