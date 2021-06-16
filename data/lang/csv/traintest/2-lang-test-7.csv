@@ -1,259 +1,251 @@
 dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,logic,lengthEle,lengthWord,depth,suspicious,accuracy,predict
-defect4j,lang,org/apache/commons/lang/text/StrBuilder,47,1230,"            int strLen = str.length();
-",2,0,0,1,2,0,4,0,0,6,26,7,0.25000,1,-1
-defect4j,lang,org/apache/commons/lang/builder/EqualsBuilder,48,382,"        } else if (lhs.getClass() != rhs.getClass()) {
-",0,1,0,3,8,0,8,0,0,9,46,5,0.00000,1,-1
-defect4j,lang,org/apache/commons/lang/math/Fraction,49,466,"        int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);
-",2,0,0,2,4,0,10,0,0,12,66,5,0.00000,1,-1
-defect4j,lang,org/apache/commons/lang/time/DateUtils,53,652,"        if (field == Calendar.MINUTE) {
-",6,1,0,1,3,0,0,0,0,7,31,6,0.00000,1,-1
-defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,414,"        char lastChar = str.charAt(str.length() - 1);
-",2,1,0,2,4,0,8,0,0,11,45,5,0.50000,0,-1
-defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,418,"        int decPos = str.indexOf('.');
-",2,0,0,1,2,0,4,0,0,7,30,5,0.50000,0,-1
-defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,419,"        int expPos = str.indexOf('e') + str.indexOf('E') + 1;
-",2,1,0,2,4,0,8,0,0,13,53,5,0.50000,0,-1
-defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,421,"        if (decPos > -1) {
-",2,1,0,1,3,0,0,0,0,4,18,4,0.50000,0,-1
-defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,433,"            if (expPos > -1) {
-",2,1,0,1,3,0,0,0,0,4,18,6,0.50000,0,-1
-defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,436,"                mant = str;
-",4,0,0,0,0,0,0,0,0,5,11,8,0.50000,0,-1
-defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,438,"            dec = null;
-",2,0,0,0,0,0,0,0,0,3,11,6,0.50000,0,-1
+defect4j,lang,org/apache/commons/lang/text/StrBuilder,59,884,"                str.getChars(0, strLen, buffer, size);
+",0,0,0,1,2,0,10,0,0,10,38,9,0.50000,1,0
+defect4j,lang,org/apache/commons/lang/text/StrBuilder,60,1730,"        for (int i = startIndex; i < thisBuf.length; i++) {
+",12,1,0,1,3,0,0,0,0,14,51,4,0.00000,1,0
+defect4j,lang,org/apache/commons/lang/text/StrBuilder,61,1776,"        int len = thisBuf.length - strLen;
+",8,1,0,0,0,0,0,0,0,9,34,5,0.57143,1,0
+defect4j,lang,org/apache/commons/lang/Entities,62,926,"                            }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,1,0
 defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,440,"        if (!Character.isDigit(lastChar)) {
-",0,0,0,2,5,0,6,0,0,7,35,4,0.50000,0,-1
+",0,0,0,2,5,0,6,0,0,7,35,4,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,441,"            if (expPos > -1 && expPos < str.length() - 1) {
-",4,4,0,2,5,0,4,0,0,13,47,6,0.50000,0,-1
+",4,4,0,2,5,0,4,0,0,13,47,6,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,444,"                exp = null;
-",2,0,0,0,0,0,0,0,0,3,11,8,0.50000,0,-1
+",2,0,0,0,0,0,0,0,0,3,11,8,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,447,"            String numeric = str.substring(0, str.length() - 1);
-",2,1,0,2,4,0,8,2,0,13,52,6,0.50000,0,-1
+",2,1,0,2,4,0,8,2,0,13,52,6,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,448,"            boolean allZeros = isAllZeros(mant) && isAllZeros(exp);
-",2,1,0,2,4,0,8,0,0,11,55,7,0.50000,0,-1
+",2,1,0,2,4,0,8,0,0,11,55,7,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,449,"            switch (lastChar) {
-",2,0,0,1,3,0,0,0,0,2,19,6,0.50000,0,-1
+",2,0,0,1,3,0,0,0,0,2,19,6,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,452,"                    if (dec == null
-",2,1,0,0,1,0,0,0,0,3,15,10,0.50000,0,-1
+",2,1,0,0,1,0,0,0,0,3,15,10,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,457,"                            return createLong(numeric);
-",0,0,0,1,2,1,4,0,0,4,27,12,0.50000,0,-1
+",0,0,0,1,2,1,4,0,0,4,27,12,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,556,"        if (str == null) {
-",2,1,0,1,3,0,0,0,0,3,18,4,0.50000,0,-1
+",2,1,0,1,3,0,0,0,0,3,18,4,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,559,"        for (int i = str.length() - 1; i >= 0; i--) {
-",6,2,0,2,5,0,4,0,0,13,45,4,0.50000,0,-1
+",6,2,0,2,5,0,4,0,0,13,45,4,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,560,"            if (str.charAt(i) != '0') {
-",0,1,0,2,5,0,6,0,0,8,27,6,0.50000,0,-1
+",0,1,0,2,5,0,6,0,0,8,27,6,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,561,"                return false;
-",0,0,0,0,0,1,0,0,0,1,13,8,0.50000,0,-1
+",0,0,0,0,0,1,0,0,0,1,13,8,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/StringUtils,58,185,"        return str == null || str.length() == 0;
-",2,3,0,1,2,1,4,0,0,9,40,4,0.33333,0,-1
+",2,3,0,1,2,1,4,0,0,9,40,4,0.33333,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,59,879,"        if (width > 0) {
-",2,1,0,1,3,0,0,0,0,3,16,4,0.50000,0,-1
+",2,1,0,1,3,0,0,0,0,3,16,4,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,59,880,"            ensureCapacity(size + width);
-",4,1,0,1,2,0,2,0,0,7,29,7,0.50000,0,-1
+",4,1,0,1,2,0,2,0,0,7,29,7,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,59,881,"            String str = (obj == null ? getNullText() : obj.toString());
-",4,1,0,3,6,0,6,2,0,14,60,6,0.50000,0,-1
+",4,1,0,3,6,0,6,2,0,14,60,6,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,59,882,"            int strLen = str.length();
-",2,0,0,1,2,0,4,0,0,6,26,7,0.50000,0,-1
+",2,0,0,1,2,0,4,0,0,6,26,7,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,59,883,"            if (strLen >= width) {
-",4,1,0,1,3,0,0,0,0,5,22,6,0.50000,0,-1
+",4,1,0,1,3,0,0,0,0,5,22,6,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,59,107,"        super();
-",0,0,0,1,2,0,0,0,0,0,8,3,0.00800,0,-1
+",0,0,0,1,2,0,0,0,0,0,8,3,0.00800,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,59,108,"        if (initialCapacity <= 0) {
-",2,1,0,1,3,0,0,0,0,3,27,4,0.00800,0,-1
+",2,1,0,1,3,0,0,0,0,3,27,4,0.00800,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,59,111,"        buffer = new char[initialCapacity];
-",2,0,1,1,2,0,0,0,0,5,35,4,0.00800,0,-1
+",2,0,1,1,2,0,0,0,0,5,35,4,0.00800,0,1
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,59,112,"    }
-",0,0,0,0,1,0,0,0,0,0,1,3,0.00800,0,-1
+",0,0,0,0,1,0,0,0,0,0,1,3,0.00800,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,59,228,"        if (capacity > buffer.length) {
-",6,1,0,1,3,0,0,0,0,7,31,4,0.00581,0,-1
+",6,1,0,1,3,0,0,0,0,7,31,4,0.00581,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,59,233,"        return this;
-",0,0,0,0,0,1,0,0,0,0,12,3,0.00581,0,-1
+",0,0,0,0,0,1,0,0,0,0,12,3,0.00581,0,0
 defect4j,lang,org/apache/commons/lang/text/StrTokenizer,59,241,"        super();
-",0,0,0,1,2,0,0,0,0,0,8,3,0.00000,0,-1
+",0,0,0,1,2,0,0,0,0,0,8,3,0.00000,0,0
 defect4j,lang,org/apache/commons/lang/text/StrTokenizer,59,118,"    private StrMatcher delimMatcher = StrMatcher.splitMatcher();
-",2,0,0,1,2,1,4,2,0,9,60,2,0.00000,0,-1
+",2,0,0,1,2,1,4,2,0,9,60,2,0.00000,0,0
 defect4j,lang,org/apache/commons/lang/text/StrTokenizer,59,120,"    private StrMatcher quoteMatcher = StrMatcher.noneMatcher();
-",2,0,0,1,2,1,4,2,0,9,59,2,0.00000,0,-1
+",2,0,0,1,2,1,4,2,0,9,59,2,0.00000,0,0
 defect4j,lang,org/apache/commons/lang/text/StrTokenizer,59,122,"    private StrMatcher ignoredMatcher = StrMatcher.noneMatcher();
-",2,0,0,1,2,1,4,2,0,9,61,2,0.00000,0,-1
+",2,0,0,1,2,1,4,2,0,9,61,2,0.00000,0,0
 defect4j,lang,org/apache/commons/lang/text/StrTokenizer,59,124,"    private StrMatcher trimmerMatcher = StrMatcher.noneMatcher();
-",2,0,0,1,2,1,4,2,0,9,61,2,0.00000,0,-1
+",2,0,0,1,2,1,4,2,0,9,61,2,0.00000,0,0
 defect4j,lang,org/apache/commons/lang/text/StrTokenizer,59,127,"    private boolean emptyAsNull = false;
-",2,0,0,0,0,1,0,0,0,4,36,2,0.00000,0,-1
+",2,0,0,0,0,1,0,0,0,4,36,2,0.00000,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,60,1672,"        char[] thisBuf = buffer;
-",4,0,0,1,2,0,0,0,0,4,24,5,1.00000,0,-1
+",4,0,0,1,2,0,0,0,0,4,24,5,1.00000,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,60,1673,"        for (int i = 0; i < thisBuf.length; i++) {
-",10,1,0,1,3,0,0,0,0,12,42,4,1.00000,0,-1
+",10,1,0,1,3,0,0,0,0,12,42,4,1.00000,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,60,1674,"            if (thisBuf[i] == ch) {
-",2,1,1,2,5,0,0,0,0,7,23,6,1.00000,0,-1
+",2,1,1,2,5,0,0,0,0,7,23,6,1.00000,0,1
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,60,1675,"                return true;
-",0,0,0,0,0,1,0,0,0,1,12,8,1.00000,0,-1
+",0,0,0,0,0,1,0,0,0,1,12,8,1.00000,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,60,1202,"        int len = (str == null ? 0 : str.length());
-",4,1,0,2,4,0,4,0,0,9,43,5,0.50000,0,-1
+",4,1,0,2,4,0,4,0,0,9,43,5,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,60,1203,"        if (len > 0) {
-",2,1,0,1,3,0,0,0,0,3,14,4,0.50000,0,-1
+",2,1,0,1,3,0,0,0,0,3,14,4,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,60,1204,"            int index = indexOf(str, 0);
-",2,0,0,1,2,0,4,0,0,6,28,7,0.50000,0,-1
+",2,0,0,1,2,0,4,0,0,6,28,7,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,60,1205,"            if (index >= 0) {
-",2,1,0,1,3,0,0,0,0,3,17,6,0.50000,0,-1
+",2,1,0,1,3,0,0,0,0,3,17,6,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,60,1206,"                deleteImpl(index, index + len, len);
-",4,1,0,1,2,0,6,0,0,11,36,9,0.50000,0,-1
+",4,1,0,1,2,0,6,0,0,11,36,9,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,60,1209,"        return this;
-",0,0,0,0,0,1,0,0,0,0,12,3,0.50000,0,-1
+",0,0,0,0,0,1,0,0,0,0,12,3,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,60,1761,"        startIndex = (startIndex < 0 ? 0 : startIndex);
-",6,1,0,1,2,0,0,0,0,8,47,4,0.11111,0,-1
+",6,1,0,1,2,0,0,0,0,8,47,4,0.11111,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,60,1762,"        if (str == null || startIndex >= size) {
-",6,3,0,1,3,0,0,0,0,9,40,4,0.11111,0,-1
+",6,3,0,1,3,0,0,0,0,9,40,4,0.11111,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,60,1765,"        int strLen = str.length();
-",2,0,0,1,2,0,4,0,0,6,26,5,0.11111,0,-1
+",2,0,0,1,2,0,4,0,0,6,26,5,0.11111,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,60,1766,"        if (strLen == 1) {
-",2,1,0,1,3,0,0,0,0,3,18,4,0.11111,0,-1
+",2,1,0,1,3,0,0,0,0,3,18,4,0.11111,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,60,1769,"        if (strLen == 0) {
-",2,1,0,1,3,0,0,0,0,3,18,4,0.11111,0,-1
+",2,1,0,1,3,0,0,0,0,3,18,4,0.11111,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,60,1772,"        if (strLen > size) {
-",4,1,0,1,3,0,0,0,0,5,20,4,0.11111,0,-1
+",4,1,0,1,3,0,0,0,0,5,20,4,0.11111,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,60,1775,"        char[] thisBuf = buffer;
-",4,0,0,1,2,0,0,0,0,4,24,5,0.11111,0,-1
+",4,0,0,1,2,0,0,0,0,4,24,5,0.11111,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,60,1776,"        int len = size - strLen + 1;
-",6,2,0,0,0,0,0,0,0,8,28,5,0.11111,0,-1
+",6,2,0,0,0,0,0,0,0,8,28,5,0.11111,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,60,1778,"        for (int i = startIndex; i < len; i++) {
-",10,1,0,1,3,0,0,0,0,12,40,5,0.11111,0,-1
+",10,1,0,1,3,0,0,0,0,12,40,5,0.11111,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,61,1761,"        startIndex = (startIndex < 0 ? 0 : startIndex);
-",6,1,0,1,2,0,0,0,0,8,47,4,0.57143,0,-1
+",6,1,0,1,2,0,0,0,0,8,47,4,0.57143,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,61,1762,"        if (str == null || startIndex >= size) {
-",6,3,0,1,3,0,0,0,0,9,40,4,0.57143,0,-1
+",6,3,0,1,3,0,0,0,0,9,40,4,0.57143,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,61,1765,"        int strLen = str.length();
-",2,0,0,1,2,0,4,0,0,6,26,5,0.57143,0,-1
+",2,0,0,1,2,0,4,0,0,6,26,5,0.57143,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,61,1766,"        if (strLen == 1) {
-",2,1,0,1,3,0,0,0,0,3,18,4,0.57143,0,-1
+",2,1,0,1,3,0,0,0,0,3,18,4,0.57143,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,61,1769,"        if (strLen == 0) {
-",2,1,0,1,3,0,0,0,0,3,18,4,0.57143,0,-1
+",2,1,0,1,3,0,0,0,0,3,18,4,0.57143,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,61,1772,"        if (strLen > size) {
-",4,1,0,1,3,0,0,0,0,5,20,4,0.57143,0,-1
+",4,1,0,1,3,0,0,0,0,5,20,4,0.57143,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,61,1775,"        char[] thisBuf = buffer;
-",4,0,0,1,2,0,0,0,0,4,24,5,0.57143,0,-1
+",4,0,0,1,2,0,0,0,0,4,24,5,0.57143,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,61,1778,"        for (int i = startIndex; i < len; i++) {
-",10,1,0,1,3,0,0,0,0,12,40,5,0.57143,0,-1
+",10,1,0,1,3,0,0,0,0,12,40,5,0.57143,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,61,1779,"            for (int j = 0; j < strLen; j++) {
-",8,1,0,1,3,0,0,0,0,10,34,7,0.57143,0,-1
+",8,1,0,1,3,0,0,0,0,10,34,7,0.57143,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,61,1780,"                if (str.charAt(j) != thisBuf[i + j]) {
-",4,2,1,3,7,0,6,0,0,14,38,9,0.57143,0,-1
+",4,2,1,3,7,0,6,0,0,14,38,9,0.57143,0,1
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,61,1781,"                    continue outer;
-",2,0,0,0,0,0,0,0,0,2,15,11,0.57143,0,-1
+",2,0,0,0,0,0,0,0,0,2,15,11,0.57143,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,61,1784,"            return i;
-",2,0,0,0,0,1,0,0,0,2,9,7,0.57143,0,-1
+",2,0,0,0,0,1,0,0,0,2,9,7,0.57143,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,61,1184,"        int len = (str == null ? 0 : str.length());
-",4,1,0,2,4,0,4,0,0,9,43,5,0.50000,0,-1
+",4,1,0,2,4,0,4,0,0,9,43,5,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,61,1185,"        if (len > 0) {
-",2,1,0,1,3,0,0,0,0,3,14,4,0.50000,0,-1
+",2,1,0,1,3,0,0,0,0,3,14,4,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,61,1186,"            int index = indexOf(str, 0);
-",2,0,0,1,2,0,4,0,0,6,28,7,0.50000,0,-1
+",2,0,0,1,2,0,4,0,0,6,28,7,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,61,1187,"            while (index >= 0) {
-",2,1,0,1,3,0,0,0,0,3,20,6,0.50000,0,-1
+",2,1,0,1,3,0,0,0,0,3,20,6,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,61,1188,"                deleteImpl(index, index + len, len);
-",4,1,0,1,2,0,6,0,0,11,36,9,0.50000,0,-1
+",4,1,0,1,2,0,6,0,0,11,36,9,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/text/StrBuilder,61,1189,"                index = indexOf(str, index);
-",2,0,0,1,2,0,6,0,0,9,28,8,0.50000,0,-1
+",2,0,0,1,2,0,6,0,0,9,28,8,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/Entities,62,840,"                    if (entityName.length() == 1) {
-",0,1,0,2,5,0,4,0,0,5,31,11,0.50000,0,-1
+",0,1,0,2,5,0,4,0,0,5,31,11,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/Entities,62,843,"                        char charAt1 = entityName.charAt(1);
-",2,0,0,1,2,0,4,0,0,6,36,14,0.50000,0,-1
+",2,0,0,1,2,0,4,0,0,6,36,14,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/Entities,62,845,"                            if (charAt1 == 'x' || charAt1=='X') {
-",4,3,0,1,3,0,0,0,0,9,37,15,0.50000,0,-1
+",4,3,0,1,3,0,0,0,0,9,37,15,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/Entities,62,848,"                                entityValue = Integer.parseInt(entityName.substring(1));
-",2,0,0,2,4,0,8,0,0,11,56,17,0.50000,0,-1
+",2,0,0,2,4,0,8,0,0,11,56,17,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/Entities,62,852,"                        }
-",0,0,0,0,1,0,0,0,0,0,1,3,0.50000,0,-1
+",0,0,0,0,1,0,0,0,0,0,1,3,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/Entities,62,853,"                    }
-",0,0,0,0,1,0,0,0,0,0,1,3,0.50000,0,-1
+",0,0,0,0,1,0,0,0,0,0,1,3,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/time/DurationFormatUtils,63,247,"        return formatPeriod(startMillis, endMillis, format, true, TimeZone.getDefault());
-",0,0,0,2,4,1,12,0,0,13,81,5,1.00000,0,-1
+",0,0,0,2,4,1,12,0,0,13,81,5,1.00000,0,1
 defect4j,lang,org/apache/commons/lang/time/DurationFormatUtils,63,330,"            if (Token.containsTokenWithValue(tokens, M)) {
-",0,0,0,2,5,0,8,0,0,8,46,7,1.00000,0,-1
+",0,0,0,2,5,0,8,0,0,8,46,7,1.00000,0,0
 defect4j,lang,org/apache/commons/lang/time/DurationFormatUtils,63,331,"                months += 12 * years;
-",4,1,0,0,0,0,0,0,0,6,21,8,1.00000,0,-1
+",4,1,0,0,0,0,0,0,0,6,21,8,1.00000,0,0
 defect4j,lang,org/apache/commons/lang/time/DurationFormatUtils,63,332,"                years = 0;
-",2,0,0,0,0,0,0,0,0,3,10,8,1.00000,0,-1
+",2,0,0,0,0,0,0,0,0,3,10,8,1.00000,0,0
 defect4j,lang,org/apache/commons/lang/time/DurationFormatUtils,63,344,"            hours += 24 * days;
-",4,1,0,0,0,0,0,0,0,6,19,6,1.00000,0,-1
+",4,1,0,0,0,0,0,0,0,6,19,6,1.00000,0,0
 defect4j,lang,org/apache/commons/lang/time/DurationFormatUtils,63,345,"            days = 0;
-",2,0,0,0,0,0,0,0,0,3,9,6,1.00000,0,-1
+",2,0,0,0,0,0,0,0,0,3,9,6,1.00000,0,0
 defect4j,lang,org/apache/commons/lang/time/DurationFormatUtils,63,348,"            minutes += 60 * hours;
-",4,1,0,0,0,0,0,0,0,6,22,6,1.00000,0,-1
+",4,1,0,0,0,0,0,0,0,6,22,6,1.00000,0,0
 defect4j,lang,org/apache/commons/lang/time/DurationFormatUtils,63,349,"            hours = 0;
-",2,0,0,0,0,0,0,0,0,3,10,6,1.00000,0,-1
+",2,0,0,0,0,0,0,0,0,3,10,6,1.00000,0,0
 defect4j,lang,org/apache/commons/lang/time/DurationFormatUtils,63,352,"            seconds += 60 * minutes;
-",4,1,0,0,0,0,0,0,0,6,24,6,1.00000,0,-1
+",4,1,0,0,0,0,0,0,0,6,24,6,1.00000,0,0
 defect4j,lang,org/apache/commons/lang/time/DurationFormatUtils,63,353,"            minutes = 0;
-",2,0,0,0,0,0,0,0,0,3,12,6,1.00000,0,-1
+",2,0,0,0,0,0,0,0,0,3,12,6,1.00000,0,0
 defect4j,lang,org/apache/commons/lang/time/DurationFormatUtils,63,356,"            milliseconds += 1000 * seconds;
-",4,1,0,0,0,0,0,0,0,6,31,6,1.00000,0,-1
+",4,1,0,0,0,0,0,0,0,6,31,6,1.00000,0,0
 defect4j,lang,org/apache/commons/lang/time/DurationFormatUtils,63,357,"            seconds = 0;
-",2,0,0,0,0,0,0,0,0,3,12,6,1.00000,0,-1
+",2,0,0,0,0,0,0,0,0,3,12,6,1.00000,0,0
 defect4j,lang,org/apache/commons/lang/time/DurationFormatUtils,63,265,"        long millis = endMillis - startMillis;
-",6,1,0,0,0,0,0,0,0,7,38,5,0.50000,0,-1
+",6,1,0,0,0,0,0,0,0,7,38,5,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/time/DurationFormatUtils,63,266,"        if (millis < 28 * DateUtils.MILLIS_PER_DAY) {
-",6,2,0,1,3,0,0,0,0,8,45,4,0.50000,0,-1
+",6,2,0,1,3,0,0,0,0,8,45,4,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/time/DurationFormatUtils,63,270,"        Token[] tokens = lexx(format);
-",2,0,0,2,4,0,4,2,0,8,30,4,0.50000,0,-1
+",2,0,0,2,4,0,4,2,0,8,30,4,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/time/DurationFormatUtils,63,274,"        Calendar start = Calendar.getInstance(timezone);
-",2,0,0,1,2,0,6,2,0,10,48,4,0.50000,0,-1
+",2,0,0,1,2,0,6,2,0,10,48,4,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/time/DurationFormatUtils,63,275,"        start.setTime(new Date(startMillis));
-",2,0,0,2,4,0,4,2,0,8,37,5,0.50000,0,-1
+",2,0,0,2,4,0,4,2,0,8,37,5,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/time/DurationFormatUtils,63,276,"        Calendar end = Calendar.getInstance(timezone);
-",2,0,0,1,2,0,6,2,0,10,46,4,0.50000,0,-1
+",2,0,0,1,2,0,6,2,0,10,46,4,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/time/DurationFormatUtils,63,277,"        end.setTime(new Date(endMillis));
-",2,0,0,2,4,0,4,2,0,8,33,5,0.50000,0,-1
+",2,0,0,2,4,0,4,2,0,8,33,5,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/time/DurationFormatUtils,63,280,"        int milliseconds = end.get(Calendar.MILLISECOND) - start.get(Calendar.MILLISECOND);
-",10,1,0,2,4,0,8,0,0,19,83,5,0.50000,0,-1
+",10,1,0,2,4,0,8,0,0,19,83,5,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/time/DurationFormatUtils,63,281,"        int seconds = end.get(Calendar.SECOND) - start.get(Calendar.SECOND);
-",10,1,0,2,4,0,8,0,0,19,68,5,0.50000,0,-1
+",10,1,0,2,4,0,8,0,0,19,68,5,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/time/DurationFormatUtils,63,282,"        int minutes = end.get(Calendar.MINUTE) - start.get(Calendar.MINUTE);
-",10,1,0,2,4,0,8,0,0,19,68,5,0.50000,0,-1
+",10,1,0,2,4,0,8,0,0,19,68,5,0.50000,0,0
 defect4j,lang,org/apache/commons/lang/enums/ValuedEnum,64,183,"        return iValue - ((ValuedEnum) other).iValue;
-",6,1,0,2,4,1,0,2,0,9,44,4,0.25000,0,-1
+",6,1,0,2,4,1,0,2,0,9,44,4,0.25000,0,0
 defect4j,lang,org/apache/commons/lang/enums/ValuedEnum,64,126,"        super(name);
-",2,0,0,1,2,0,0,0,0,2,12,4,0.05263,0,-1
+",2,0,0,1,2,0,0,0,0,2,12,4,0.05263,0,0
 defect4j,lang,org/apache/commons/lang/enums/ValuedEnum,64,127,"        iValue = value;
-",4,0,0,0,0,0,0,0,0,5,15,4,0.05263,0,-1
+",4,0,0,0,0,0,0,0,0,5,15,4,0.05263,0,0
 defect4j,lang,org/apache/commons/lang/enums/ValuedEnum,64,128,"    }
-",0,0,0,0,1,0,0,0,0,0,1,3,0.05263,0,-1
+",0,0,0,0,1,0,0,0,0,0,1,3,0.05263,0,0
 defect4j,lang,org/apache/commons/lang/enums/Enum,64,519,"        return getClass();
-",0,0,0,1,2,1,2,0,0,2,18,5,0.01754,0,-1
+",0,0,0,1,2,1,2,0,0,2,18,5,0.01754,0,0
 defect4j,lang,org/apache/commons/lang/enums/Enum,64,314,"        iName = name;
-",4,0,0,0,0,0,0,0,0,5,13,4,0.01587,0,-1
+",4,0,0,0,0,0,0,0,0,5,13,4,0.01587,0,0
 defect4j,lang,org/apache/commons/lang/enums/Enum,64,315,"        iHashCode = 7 + getEnumClass().hashCode() + 3 * name.hashCode();
-",2,2,0,3,6,0,8,0,0,13,64,4,0.01587,0,-1
+",2,2,0,3,6,0,8,0,0,13,64,4,0.01587,0,0
 defect4j,lang,org/apache/commons/lang/enums/Enum,64,317,"    }
-",0,0,0,0,1,0,0,0,0,0,1,3,0.01587,0,-1
+",0,0,0,0,1,0,0,0,0,0,1,3,0.01587,0,0
 defect4j,lang,org/apache/commons/lang/enums/Enum,64,339,"                ok = true;
-",2,0,0,0,0,0,0,0,0,4,10,8,0.01587,0,-1
+",2,0,0,0,0,0,0,0,0,4,10,8,0.01587,0,0
 defect4j,lang,org/apache/commons/lang/enums/Enum,64,340,"                break;
-",0,0,0,0,0,0,0,0,0,0,6,3,0.01587,0,-1
+",0,0,0,0,0,0,0,0,0,0,6,3,0.01587,0,0
 defect4j,lang,org/apache/commons/lang/enums/Enum,64,349,"        Entry entry = (Entry) cEnumClasses.get(enumClass);
-",2,0,0,2,4,0,6,4,0,12,50,4,0.01587,0,-1
+",2,0,0,2,4,0,6,4,0,12,50,4,0.01587,0,0
 defect4j,lang,org/apache/commons/lang/enums/Enum,64,350,"        if (entry == null) {
-",2,1,0,1,3,0,0,0,0,3,20,4,0.01587,0,-1
+",2,1,0,1,3,0,0,0,0,3,20,4,0.01587,0,0
 defect4j,lang,org/apache/commons/lang/enums/Enum,64,351,"            entry = createEntry(enumClass);
-",2,0,0,1,2,0,4,0,0,7,31,6,0.01587,0,-1
+",2,0,0,1,2,0,4,0,0,7,31,6,0.01587,0,0
 defect4j,lang,org/apache/commons/lang/enums/Enum,64,352,"            cEnumClasses.put(enumClass, entry);
-",0,0,0,1,2,0,8,0,0,8,35,7,0.01587,0,-1
+",0,0,0,1,2,0,8,0,0,8,35,7,0.01587,0,0
 defect4j,lang,org/apache/commons/lang/enums/Enum,64,354,"        if (entry.map.containsKey(name)) {
-",4,0,0,2,5,0,4,0,0,8,34,5,0.01587,0,-1
+",4,0,0,2,5,0,4,0,0,8,34,5,0.01587,0,0
 defect4j,lang,org/apache/commons/lang/enums/Enum,64,357,"        entry.map.put(name, this);
-",4,0,0,1,2,0,4,0,0,8,26,5,0.01587,0,-1
+",4,0,0,1,2,0,4,0,0,8,26,5,0.01587,0,0
 defect4j,lang,org/apache/commons/lang/enums/Enum,64,358,"        entry.list.add(this);
-",4,0,0,1,2,0,2,0,0,6,21,5,0.01587,0,-1
+",4,0,0,1,2,0,2,0,0,6,21,5,0.01587,0,0
 defect4j,lang,org/apache/commons/lang/enums/Enum,64,359,"    }
-",0,0,0,0,1,0,0,0,0,0,1,3,0.01587,0,-1
+",0,0,0,0,1,0,0,0,0,0,1,3,0.01587,0,0
 defect4j,lang,org/apache/commons/lang/enums/Enum,64,484,"        Entry entry = new Entry();
-",2,0,0,1,2,0,0,4,0,6,26,4,0.01587,0,-1
+",2,0,0,1,2,0,0,4,0,6,26,4,0.01587,0,0
 defect4j,lang,org/apache/commons/lang/enums/Enum,64,485,"        Class cls = enumClass.getSuperclass();
-",2,0,0,1,2,0,4,2,0,8,38,4,0.01587,0,-1
+",2,0,0,1,2,0,4,2,0,8,38,4,0.01587,0,0
 defect4j,lang,org/apache/commons/lang/enums/Enum,64,486,"        while (cls != null && cls != Enum.class && cls != ValuedEnum.class) {
-",6,5,0,1,3,0,0,4,0,15,69,4,0.01587,0,-1
+",6,5,0,1,3,0,0,4,0,15,69,4,0.01587,0,0
 defect4j,lang,org/apache/commons/lang/enums/Enum,64,495,"        return entry;
-",2,0,0,0,0,1,0,0,0,2,13,4,0.01587,0,-1
+",2,0,0,0,0,1,0,0,0,2,13,4,0.01587,0,0
 defect4j,lang,org/apache/commons/lang/enums/Enum,64,297,"          super();
-",0,0,0,1,2,0,0,0,0,0,8,3,0.01587,0,-1
+",0,0,0,1,2,0,0,0,0,0,8,3,0.01587,0,0
+defect4j,lang,org/apache/commons/lang/time/DateUtils,65,543,"        if (date == null) {
+",2,1,0,1,3,0,0,0,0,3,19,4,1.00000,0,0
+defect4j,lang,org/apache/commons/lang/time/DateUtils,65,546,"        Calendar gval = Calendar.getInstance();
+",2,0,0,1,2,0,4,2,0,8,39,4,1.00000,0,0
+defect4j,lang,org/apache/commons/lang/time/DateUtils,65,547,"        gval.setTime(date);
+",0,0,0,1,2,0,6,0,0,6,19,5,1.00000,0,0

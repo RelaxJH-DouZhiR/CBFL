@@ -23,6 +23,10 @@ defect4j,chart,org/jfree/chart/plot/PiePlot,15,2053,"        state.setLatestAngl
 ",0,0,0,2,4,0,8,0,0,8,43,5,0.00000,1
 defect4j,chart,org/jfree/data/category/DefaultIntervalCategoryDataset,16,338,"        if (categoryKeys.length != this.startData[0].length) {
 ",8,1,0,2,5,0,0,0,0,9,54,4,0.14286,1
+defect4j,chart,org/jfree/data/time/TimeSeries,17,857,"        Object clone = createCopy(0, getItemCount() - 1);
+",2,1,0,2,4,0,4,2,0,9,49,4,0.50000,1
+defect4j,chart,org/jfree/data/DefaultKeyedValues2D,18,459,"        }
+",0,0,0,0,1,0,0,0,0,0,1,3,1,1
 defect4j,chart,org/jfree/chart/plot/CategoryPlot,19,973,"        int result = this.rangeAxes.indexOf(axis);
 ",4,0,0,1,2,0,4,0,0,8,42,5,1.00000,1
 defect4j,chart,org/jfree/chart/plot/ValueMarker,20,95,"        super(paint, stroke, paint, stroke, alpha);
@@ -31,8 +35,6 @@ defect4j,chart,org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset,21,
 ",0,0,0,0,1,0,0,0,0,0,1,3,1.00000,1
 defect4j,chart,org/jfree/data/KeyedObjects2D,22,345,"        removeRow(index);
 ",0,0,0,1,2,0,4,0,0,4,17,5,0.20000,1
-defect4j,chart,org/jfree/chart/renderer/GrayPaintScale,24,126,"        int g = (int) ((value - this.lowerBound) / (this.upperBound 
-",8,3,0,2,6,0,0,0,0,11,59,5,0.00000,1
 defect4j,chart,org/jfree/chart/plot/CategoryPlot,1,1613,"        setRenderer(0, renderer, true);
 ",0,0,0,1,2,0,4,0,0,5,31,5,0.25000,0
 defect4j,chart,org/jfree/chart/plot/CategoryPlot,1,1614,"    }
@@ -909,20 +911,18 @@ defect4j,chart,org/jfree/data/Range,25,200,"            return range2;
 ",2,0,0,0,0,1,0,0,0,2,14,6,1,0
 defect4j,chart,org/jfree/data/Range,25,228,"        if (range == null) {
 ",2,1,0,1,3,0,0,0,0,3,20,4,1,0
-defect4j,chart,org/jfree/chart/plot/CategoryPlot,26,2410,"        if (space == null) {
+defect4j,chart,org/jfree/data/Range,25,231,"        if (value < range.getLowerBound()) {
+",2,1,0,2,5,0,4,0,0,7,36,4,1,0
+defect4j,chart,org/jfree/data/Range,25,234,"        else if (value > range.getUpperBound()) {
+",2,1,0,2,5,0,4,0,0,7,41,5,1,0
+defect4j,chart,org/jfree/data/Range,25,238,"            return range;
+",2,0,0,0,0,1,0,0,0,2,13,7,1,0
+defect4j,chart,org/jfree/chart/plot/Plot,26,1385,"            if (orientation == PlotOrientation.HORIZONTAL) {
+",6,1,0,1,3,0,0,0,0,7,48,7,1,0
+defect4j,chart,org/jfree/chart/axis/CategoryAxis,26,736,"        if (space == null) {
 ",2,1,0,1,3,0,0,0,0,3,20,4,1,0
-defect4j,chart,org/jfree/chart/plot/CategoryPlot,26,2415,"        if (this.fixedDomainAxisSpace != null) {
-",2,1,0,1,3,0,0,0,0,3,40,4,1,0
-defect4j,chart,org/jfree/chart/plot/CategoryPlot,26,2431,"            RectangleEdge domainEdge = Plot.resolveDomainAxisLocation(
-",2,0,0,0,1,0,4,2,0,8,58,6,1,0
-defect4j,chart,org/jfree/chart/plot/CategoryPlot,26,2433,"            if (this.drawSharedDomainAxis) {
-",2,0,0,1,3,0,0,0,0,2,32,7,1,0
-defect4j,chart,org/jfree/chart/plot/CategoryPlot,26,2439,"            for (int i = 0; i < this.domainAxes.size(); i++) {
-",8,1,0,2,5,0,2,0,0,12,50,6,1,0
-defect4j,chart,org/jfree/chart/plot/CategoryPlot,26,2440,"                Axis xAxis = (Axis) this.domainAxes.get(i);
-",4,0,0,2,4,0,4,4,0,12,43,8,1,0
-defect4j,chart,org/jfree/chart/plot/CategoryPlot,26,2441,"                if (xAxis != null) {
-",2,1,0,1,3,0,0,0,0,3,20,8,1,0
+defect4j,chart,org/jfree/chart/axis/CategoryAxis,26,741,"        if (!isVisible()) {
+",0,0,0,2,5,0,2,0,0,3,19,4,1,0
 defect4j,chart,org/jfree/chart/plot/CategoryPlot,26,2442,"                    RectangleEdge edge = getDomainAxisEdge(i);
 ",2,0,0,1,2,0,4,2,0,8,42,10,1,0
 defect4j,chart,org/jfree/chart/plot/CategoryPlot,26,2443,"                    space = xAxis.reserveSpace(g2, this, plotArea, edge, space);

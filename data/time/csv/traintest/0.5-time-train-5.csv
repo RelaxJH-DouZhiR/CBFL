@@ -19,18 +19,16 @@ defect4j,time,org/joda/time/DateTimeZone,9,283,"        return fixedOffsetZone(i
 ",0,0,0,1,2,1,6,0,0,6,41,5,0.01408,1
 defect4j,time,org/joda/time/tz/ZoneInfoCompiler,11,71,"    }
 ",0,0,0,0,1,0,0,0,0,0,1,3,0.33333,1
+defect4j,time,org/joda/time/LocalDateTime,12,237,"        return new LocalDateTime(
+",0,0,0,0,1,1,0,2,0,2,25,6,0.30769,1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1142,"                    buf.append('.');
+",0,0,0,1,2,0,4,0,0,5,16,10,0.06667,1
 defect4j,time,org/joda/time/chrono/BasicMonthOfYearDateTimeField,14,210,"        if (DateTimeUtils.isContiguous(partial)) {
 ",0,0,0,2,5,0,6,0,0,6,42,5,1,1
 defect4j,time,org/joda/time/field/FieldUtils,15,138,"                return -val1;
 ",2,0,0,0,0,1,0,0,0,3,13,5,0.08333,1
 defect4j,time,org/joda/time/chrono/GJChronology,18,367,"        if (instant < iCutoverMillis) {
 ",4,1,0,1,3,0,0,0,0,5,31,4,0.00000,1
-defect4j,time,org/joda/time/DateTimeZone,19,900,"        } else if (offsetLocal > 0) {
-",2,1,0,1,4,0,0,0,0,3,29,5,0.00139,1
-defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,20,2547,"            }
-",0,0,0,0,1,0,0,0,0,0,1,3,0.12500,1
-defect4j,time,org/joda/time/base/BasePeriod,22,224,"    }
-",0,0,0,0,1,0,0,0,0,0,1,3,0.08333,1
 defect4j,time,org/joda/time/DateTimeZone,23,564,"            map.put(""MIT"", ""Pacific/Apia"");
 ",0,0,0,1,2,0,4,0,0,6,31,7,0.14286,1
 defect4j,time,org/joda/time/format/DateTimeParserBucket,24,355,"        } catch (IllegalFieldValueException e) {
@@ -847,18 +845,16 @@ defect4j,time,org/joda/time/DateTimeZone,17,1167,"        long instantBefore = c
 ",8,2,0,1,2,0,2,0,0,12,88,5,0.50000,0
 defect4j,time,org/joda/time/DateTimeZone,17,1168,"        long instantAfter = convertUTCToLocal(instant + 3 * DateTimeConstants.MILLIS_PER_HOUR);
 ",8,2,0,1,2,0,2,0,0,12,87,5,0.50000,0
-defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,20,2508,"            }
-",0,0,0,0,1,0,0,0,0,0,1,3,0.11111,0
-defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,20,2509,"            MAX_LENGTH = max;
-",4,0,0,0,0,0,0,0,0,5,17,5,0.11111,0
-defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,20,2510,"        }
-",0,0,0,0,1,0,0,0,0,0,1,3,0.11111,0
-defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,20,2513,"            return MAX_LENGTH;
-",2,0,0,0,0,1,0,0,0,2,18,5,0.11111,0
-defect4j,time,org/joda/time/format/DateTimeParserBucket,20,159,"        iSavedState = null;
-",2,0,0,0,0,0,0,0,0,3,19,4,0.10000,0
-defect4j,time,org/joda/time/format/DateTimeParserBucket,20,160,"        iZone = zone;
-",4,0,0,0,0,0,0,0,0,5,13,4,0.10000,0
+defect4j,time,org/joda/time/DateTimeZone,17,1169,"        if (instantBefore == instantAfter) {
+",4,1,0,1,3,0,0,0,0,5,36,4,0.50000,0
+defect4j,time,org/joda/time/DateTimeZone,17,1174,"        long local = convertUTCToLocal(instant);
+",2,0,0,1,2,0,4,0,0,6,40,5,0.50000,0
+defect4j,time,org/joda/time/DateTimeZone,17,1175,"        return convertLocalToUTC(local, false, earlierOrLater ? instantAfter : instantBefore);
+",6,0,0,1,2,1,4,0,0,11,86,5,0.50000,0
+defect4j,time,org/joda/time/DateTime,17,665,"        long newMillis = getZone().adjustOffset(getMillis(), false);
+",2,0,0,3,6,0,6,0,0,9,60,5,0.50000,0
+defect4j,time,org/joda/time/DateTime,17,666,"        return withMillis(newMillis);
+",0,0,0,1,2,1,4,0,0,4,29,5,0.50000,0
 defect4j,time,org/joda/time/format/DateTimeParserBucket,20,161,"    }
 ",0,0,0,0,1,0,0,0,0,0,1,3,0.10000,0
 defect4j,time,org/joda/time/DateTimeZone,20,374,"        return cAvailableIDs;

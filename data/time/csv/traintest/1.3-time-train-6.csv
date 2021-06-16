@@ -23,6 +23,10 @@ defect4j,time,org/joda/time/LocalDateTime,12,237,"        return new LocalDateTi
 ",0,0,0,0,1,1,0,2,0,2,25,6,0.30769,1
 defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1142,"                    buf.append('.');
 ",0,0,0,1,2,0,4,0,0,5,16,10,0.06667,1
+defect4j,time,org/joda/time/chrono/BasicMonthOfYearDateTimeField,14,210,"        if (DateTimeUtils.isContiguous(partial)) {
+",0,0,0,2,5,0,6,0,0,6,42,5,1,1
+defect4j,time,org/joda/time/field/FieldUtils,15,138,"                return -val1;
+",2,0,0,0,0,1,0,0,0,3,13,5,0.08333,1
 defect4j,time,org/joda/time/chrono/GJChronology,18,367,"        if (instant < iCutoverMillis) {
 ",4,1,0,1,3,0,0,0,0,5,31,4,0.00000,1
 defect4j,time,org/joda/time/DateTimeZone,19,900,"        } else if (offsetLocal > 0) {
@@ -31,12 +35,6 @@ defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,20,2547,"           
 ",0,0,0,0,1,0,0,0,0,0,1,3,0.12500,1
 defect4j,time,org/joda/time/base/BasePeriod,22,224,"    }
 ",0,0,0,0,1,0,0,0,0,0,1,3,0.08333,1
-defect4j,time,org/joda/time/DateTimeZone,23,564,"            map.put(""MIT"", ""Pacific/Apia"");
-",0,0,0,1,2,0,4,0,0,6,31,7,0.14286,1
-defect4j,time,org/joda/time/format/DateTimeParserBucket,24,355,"        } catch (IllegalFieldValueException e) {
-",2,0,0,1,4,0,0,2,0,4,40,6,0.00000,1
-defect4j,time,org/joda/time/chrono/ZonedChronology,26,540,"                return iZone.convertLocalToUTC(localInstant, false);
-",0,0,0,1,2,1,6,0,0,7,52,8,0.00000,1
 defect4j,time,org/joda/time/field/UnsupportedDurationField,1,227,"        if (durationField.isSupported()) {
 ",0,0,0,2,5,0,4,0,0,4,34,5,0.16667,0
 defect4j,time,org/joda/time/field/UnsupportedDurationField,1,228,"            return 1;
@@ -2629,20 +2627,18 @@ defect4j,time,org/joda/time/format/DateTimeFormat,20,634,"            char c = t
 ",2,0,0,1,2,0,4,0,0,6,25,7,0.01136,0
 defect4j,time,org/joda/time/format/DateTimeFormat,20,635,"            switch (c) {
 ",2,0,0,1,3,0,0,0,0,2,12,6,0.01136,0
-defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,25,2091,"                buf.append('+');
-",0,0,0,1,2,0,4,0,0,5,16,8,0.04265,0
-defect4j,time,org/joda/time/DateTimeZone,25,893,"                long nextLocal = nextTransition(instantAdjusted);
-",2,0,0,1,2,0,4,0,0,6,49,9,0.04167,0
-defect4j,time,org/joda/time/DateTimeZone,25,894,"                long nextAdjusted = nextTransition(instantLocal - offsetAdjusted);
-",6,1,0,1,2,0,2,0,0,9,66,9,0.04167,0
-defect4j,time,org/joda/time/DateTimeZone,25,895,"                if (nextLocal != nextAdjusted) {
-",4,1,0,1,3,0,0,0,0,5,32,8,0.04167,0
-defect4j,time,org/joda/time/base/AbstractInstant,25,424,"        return ISODateTimeFormat.dateTime().print(this);
-",0,0,0,2,4,1,6,0,0,6,48,5,0.04167,0
-defect4j,time,org/joda/time/tz/CachedDateTimeZone,25,123,"        return iZone.nextTransition(instant);
-",0,0,0,1,2,1,6,0,0,6,37,5,0.04000,0
-defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,25,1895,"                if (buf != null) {
-",2,1,0,1,3,0,0,0,0,3,18,7,0.03930,0
+defect4j,time,org/joda/time/format/DateTimeFormat,20,470,"                        builder.appendYear(tokenLen, maxDigits);
+",0,0,0,1,2,0,8,0,0,8,40,11,0.01099,0
+defect4j,time,org/joda/time/format/DateTimeFormat,20,471,"                        break;
+",0,0,0,0,0,0,0,0,0,0,6,3,0.01099,0
+defect4j,time,org/joda/time/format/DateTimeFormat,20,453,"                    int maxDigits = 9;
+",2,0,0,0,0,0,0,0,0,2,18,10,0.01020,0
+defect4j,time,org/joda/time/format/DateTimeFormat,20,456,"                    if (i + 1 < length) {
+",4,2,0,1,3,0,0,0,0,6,21,9,0.01020,0
+defect4j,time,org/joda/time/format/DateTimeFormat,20,465,"                    switch (c) {
+",2,0,0,1,3,0,0,0,0,2,12,9,0.01020,0
+defect4j,time,org/joda/time/format/DateTimeFormat,20,477,"                break;
+",0,0,0,0,0,0,0,0,0,0,6,3,0.01020,0
 defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,25,1896,"                    while (--minDigits >= 0) {
 ",2,1,0,1,3,0,0,0,0,4,26,9,0.03930,0
 defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,25,1897,"                        buf.append('0');

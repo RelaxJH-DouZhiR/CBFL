@@ -1,7 +1,7 @@
 '''
 Author: jhc
 Date: 2021-06-01 19:58:05
-LastEditTime: 2021-06-10 16:18:58
+LastEditTime: 2021-06-15 14:44:35
 Description: file content
 ██████╗  █████╗ ████████╗ █████╗
 ██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗
@@ -256,8 +256,8 @@ def cut_data_for_test_train(project, miniK, percentage):  # 当数据量小于10
             k = len(isFaultList)
     else:
         k = miniK
-    isFault_step = math.floor(len(isFaultList)/k)  # 交叉验证，真实缺陷个数（步长）
-    noFault_step = math.floor(len(noFaultList)/k)  # 交叉验证，非真实缺陷个数（步长）
+    isFault_step = math.ceil(len(isFaultList)/k)  # 交叉验证，真实缺陷个数（步长）
+    noFault_step = math.ceil(len(noFaultList)/k)  # 交叉验证，非真实缺陷个数（步长）
     # 文件保存父路径
     SAVE_PATH = '/Users/lvlaxjh/code/CBFL/data/%s/csv/traintest/' % (project)
     isF_flag_TEM = 0
@@ -322,7 +322,7 @@ def cut_data_for_test_train(project, miniK, percentage):  # 当数据量小于10
 
 
 if __name__ == "__main__":
-    project = 'closure'  # *
+    project = 'mockito'  # *
     settingJson = open('/Users/lvlaxjh/code/CBFL/main_code/setting.json', 'r')
     settingContent = settingJson.read()
     setting = json.loads(settingContent)
@@ -355,19 +355,19 @@ if __name__ == "__main__":
         #                                 i, project)  # 计算特征值，并存储,in for
         # print(f'\033[1;36m OK -> ac.save_as_csv {project} {str(i)} \033[0m')
         # ----------------------------------------------------------------
-        set_sus_one(i, project)  # 将可疑度大与1的设置为1
-        print(
-            f'\033[1;36m OK -> set_sus_one {project} {str(i)} \033[0m')
+        # set_sus_one(i, project)  # 将可疑度大与1的设置为1
+        # print(
+        #     f'\033[1;36m OK -> set_sus_one {project} {str(i)} \033[0m')
         # ----------------------------------------------------------------
     for percentage in percentageList:
         # ----------------------------------------------------------------
-        print(f'\033[1;31m >{project}< percentage [{str(percentage)}] \033[0m')
-        for i in versionList:
-            # 获取可疑度并列排名第一的语句,in for,-dont cut
-            get_top_data(i, project, topPercentageList, percentage, True)
-        save_top_data(topPercentageList, project,
-                      percentage)  # 保存全部定并列第一文件,-dont cut
-        print(f'\033[1;36m OK -> >{project}< get & save top data  \033[0m')
+        # print(f'\033[1;31m >{project}< percentage [{str(percentage)}] \033[0m')
+        # for i in versionList:
+        #     # 获取可疑度并列排名第一的语句,in for,-dont cut
+        #     get_top_data(i, project, topPercentageList, percentage, True)
+        # save_top_data(topPercentageList, project,
+        #               percentage)  # 保存全部定并列第一文件,-dont cut
+        # print(f'\033[1;36m OK -> >{project}< get & save top data  \033[0m')
         # ----------------------------------------------------------------
         # 切割数据集用于交叉验证,当数据量小于10时，设置的k折
         cut_data_for_test_train(project, k, percentage)

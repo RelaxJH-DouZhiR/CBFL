@@ -23,6 +23,10 @@ defect4j,mockito,org/mockito/internal/matchers/Equality,22,13,"        if (o1 ==
 ",4,3,0,1,3,0,0,0,0,7,31,4,0.00377,1
 defect4j,mockito,org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues,24,76,"            return 1;
 ",0,0,0,0,0,1,0,0,0,0,9,3,1.00000,1
+defect4j,mockito,org/mockito/internal/util/Primitives,26,66,"        primitiveValues.put(double.class, 0);
+",0,0,0,1,2,0,4,0,0,4,37,5,0.02873,1
+defect4j,mockito,org/mockito/internal/util/MockUtil,27,65,"        MethodInterceptorFilter newFilter = new MethodInterceptorFilter(newMockHandler, (MockSettingsImpl) org.mockito.Mockito.withSettings().defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS));
+",18,0,0,4,8,0,4,6,0,28,187,4,0.04348,1
 defect4j,mockito,org/mockito/internal/configuration/DefaultInjectionEngine,28,93,"            mockCandidateFilter.filterCandidate(mocks, field, fieldInstance).thenInject();
 ",0,0,0,2,4,0,12,0,0,12,78,7,0.03846,1
 defect4j,mockito,org/mockito/internal/matchers/Same,29,29,"        description.appendText(wanted.toString());
@@ -31,10 +35,6 @@ defect4j,mockito,org/mockito/internal/invocation/InvocationMatcher,34,106,"     
 ",2,0,0,1,3,0,0,2,0,4,37,7,0.01709,1
 defect4j,mockito,org/mockito/Matchers,35,516,"        return reportMatcher(new Same(value)).<T>returnNull();
 ",2,0,0,3,6,1,4,4,0,10,54,5,0.20000,1
-defect4j,mockito,org/mockito/internal/invocation/Invocation,36,202,"        return realMethod.invoke(mock, rawArguments);
-",0,0,0,1,2,1,8,0,0,8,45,5,0.00000,1
-defect4j,mockito,org/mockito/internal/verification/argumentmatching/ArgumentMatchingTool,38,48,"        return StringDescription.toString(m).equals(arg.toString());
-",0,0,0,3,6,1,12,0,0,12,60,5,0.00000,1
 defect4j,mockito,org/mockito/internal/invocation/ArgumentsProcessor,1,26,"        final int nonVarArgsCount = args.length - 1;
 ",6,1,0,0,0,1,0,0,0,8,44,4,1,0
 defect4j,mockito,org/mockito/internal/invocation/ArgumentsProcessor,1,28,"        if (args[nonVarArgsCount] == null) {
@@ -707,20 +707,18 @@ defect4j,mockito,org/mockito/internal/util/reflection/FieldInitializer,26,242," 
 ",0,0,0,2,4,1,6,2,0,10,72,8,0.07692,0
 defect4j,mockito,org/mockito/internal/invocation/SerializableMethod,26,55,"            return declaringClass.getDeclaredMethod(methodName, parameterTypes);
 ",0,0,0,1,2,1,8,0,0,8,68,7,0.07143,0
-defect4j,mockito,org/mockito/exceptions/Reporter,33,254,"                 sb.append(""\n"");
-",0,0,0,1,2,0,4,0,0,5,16,9,0.09091,0
-defect4j,mockito,org/mockito/exceptions/Reporter,33,255,"            }
+defect4j,mockito,org/mockito/internal/util/reflection/FieldInitializer,26,235,"                constructor = biggestConstructor(field.getType());
+",2,0,0,2,4,0,6,0,0,9,50,7,0.06667,0
+defect4j,mockito,org/mockito/internal/util/reflection/FieldInitializer,26,236,"                changer.enableAccess(constructor);
+",0,0,0,1,2,0,6,0,0,6,34,8,0.06667,0
+defect4j,mockito,org/mockito/internal/util/reflection/FieldInitializer,26,238,"                final Object[] args = argResolver.resolveTypeInstances(constructor.getParameterTypes());
+",2,0,0,3,6,1,8,2,0,13,88,7,0.06667,0
+defect4j,mockito,org/mockito/exceptions/verification/WantedButNotInvoked,27,21,"        return new RemoveFirstLine().of(super.toString());
+",2,0,0,3,6,1,2,2,0,6,50,5,1.00000,0
+defect4j,mockito,org/mockito/internal/matchers/Any,27,26,"        description.appendText(""<any>"");
+",0,0,0,1,2,0,4,0,0,5,32,5,0.09091,0
+defect4j,mockito,org/mockito/internal/matchers/Any,27,27,"    }
 ",0,0,0,0,1,0,0,0,0,0,1,3,0.09091,0
-defect4j,mockito,org/mockito/exceptions/Reporter,33,256,"            allInvocations = sb.toString();
-",2,0,0,1,2,0,4,0,0,7,31,6,0.09091,0
-defect4j,mockito,org/mockito/internal/invocation/InvocationsFinder,33,68,"                continue;
-",0,0,0,0,0,0,0,0,0,0,9,3,0.04545,0
-defect4j,mockito,org/mockito/exceptions/Reporter,33,248,"        if (invocations.isEmpty()) {
-",0,0,0,2,5,0,4,0,0,4,28,5,0.04348,0
-defect4j,mockito,org/mockito/exceptions/Reporter,33,259,"        String message = createWantedButNotInvokedMessage(wanted);
-",2,0,0,1,2,0,4,2,0,8,58,4,0.04348,0
-defect4j,mockito,org/mockito/internal/matchers/AnyVararg,34,13,"public class AnyVararg extends ArgumentMatcher implements VarargMatcher, Serializable {
-",2,0,0,0,1,1,0,6,0,9,87,1,0.40000,0
 defect4j,mockito,org/mockito/internal/matchers/AnyVararg,34,16,"    public static final Matcher ANY_VARARG = new AnyVararg();
 ",2,0,0,1,2,3,0,4,0,9,57,2,0.40000,0
 defect4j,mockito,org/mockito/Matchers,34,221,"        return (T) reportMatcher(AnyVararg.ANY_VARARG).returnNull();

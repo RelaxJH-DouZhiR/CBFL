@@ -11,14 +11,12 @@ defect4j,time,org/joda/time/Period,5,1634,"                result = result.withM
 ",2,0,0,1,2,0,6,0,0,9,35,8,0.00000,1
 defect4j,time,org/joda/time/chrono/GJChronology,6,1001,"                        instant = gregorianToJulian(instant);
 ",2,0,0,1,2,0,4,0,0,7,37,11,0.00000,1
+defect4j,time,org/joda/time/format/DateTimeFormatter,7,708,"        long instantLocal = instantMillis + chrono.getZone().getOffset(instantMillis);
+",4,1,0,2,4,0,8,0,0,13,78,5,0.17391,1
+defect4j,time,org/joda/time/DateTimeZone,8,282,"        int offset = 0;
+",2,0,0,0,0,0,0,0,0,2,15,5,0.01639,1
 defect4j,time,org/joda/time/DateTimeZone,9,283,"        return fixedOffsetZone(id, millisOffset);
 ",0,0,0,1,2,1,6,0,0,6,41,5,0.01408,1
-defect4j,time,org/joda/time/tz/ZoneInfoCompiler,11,71,"    }
-",0,0,0,0,1,0,0,0,0,0,1,3,0.33333,1
-defect4j,time,org/joda/time/LocalDateTime,12,237,"        return new LocalDateTime(
-",0,0,0,0,1,1,0,2,0,2,25,6,0.30769,1
-defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1142,"                    buf.append('.');
-",0,0,0,1,2,0,4,0,0,5,16,10,0.06667,1
 defect4j,time,org/joda/time/chrono/BasicMonthOfYearDateTimeField,14,210,"        if (DateTimeUtils.isContiguous(partial)) {
 ",0,0,0,2,5,0,6,0,0,6,42,5,1,1
 defect4j,time,org/joda/time/field/FieldUtils,15,138,"                return -val1;
@@ -325,14 +323,12 @@ defect4j,time,org/joda/time/MonthDay,10,412,"            return chrono.dayOfMont
 ",0,0,0,1,2,1,4,0,0,4,27,6,1,0
 defect4j,time,org/joda/time/MonthDay,10,426,"        return FIELD_TYPES[index];
 ",0,0,1,1,2,1,0,0,0,4,26,5,1,0
-defect4j,time,org/joda/time/format/FormatUtils,13,81,"                digits = 3;
-",2,0,0,0,0,0,0,0,0,3,11,9,0.25000,0
-defect4j,time,org/joda/time/format/FormatUtils,13,251,"            int d = ((value + 1) * 13421772) >> 27;
-",4,3,0,2,4,0,0,0,0,7,39,8,0.25000,0
-defect4j,time,org/joda/time/format/FormatUtils,13,252,"            buf.append((char) (d + '0'));
-",2,1,0,3,6,0,4,0,0,8,29,8,0.25000,0
-defect4j,time,org/joda/time/format/FormatUtils,13,254,"            buf.append((char) (value - (d << 3) - (d << 1) + '0'));
-",6,4,0,5,10,0,4,0,0,15,55,8,0.25000,0
+defect4j,time,org/joda/time/chrono/BasicGJChronology,10,129,"        return MAX_DAYS_PER_MONTH_ARRAY[month - 1];
+",2,1,1,1,2,1,0,0,0,5,43,5,1,0
+defect4j,time,org/joda/time/chrono/BasicDayOfMonthDateTimeField,10,89,"                return iChronology.getDaysInMonthMax(month);
+",0,0,0,1,2,1,6,0,0,6,44,9,1,0
+defect4j,time,org/joda/time/format/DateTimeFormat,10,147,"    private static final Map<String, DateTimeFormatter> cPatternedCache = new HashMap<String, DateTimeFormatter>(7);
+",2,0,0,1,2,3,0,12,0,17,112,2,1,0
 defect4j,time,org/joda/time/format/FormatUtils,13,255,"        } else {
 ",0,0,0,0,2,0,0,0,0,0,8,3,0.25000,0
 defect4j,time,org/joda/time/format/FormatUtils,13,247,"        } else if (value < 100) {

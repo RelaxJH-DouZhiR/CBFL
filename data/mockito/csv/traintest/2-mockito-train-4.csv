@@ -15,16 +15,14 @@ defect4j,mockito,org/mockito/internal/configuration/injection/FinalMockCandidate
 ",2,0,0,1,4,0,0,2,0,4,23,13,0.00000,1
 defect4j,mockito,org/mockito/internal/MockitoCore,16,36,"        return mockUtil.createMock(classToMock, (MockSettingsImpl) mockSettings);
 ",2,0,0,2,4,1,6,2,0,10,73,5,0.00159,1
+defect4j,mockito,org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues,18,87,"        } else if (type == Collection.class) {
+",2,1,0,1,4,0,0,2,0,5,38,5,0.00210,1
+defect4j,mockito,org/mockito/internal/creation/bytebuddy/ByteBuddyMockMaker,20,32,"        T mockInstance = null;
+",2,0,0,0,0,0,0,2,0,4,22,4,0.06172,1
 defect4j,mockito,org/mockito/internal/matchers/Equality,22,13,"        if (o1 == null || o2 == null) {
 ",4,3,0,1,3,0,0,0,0,7,31,4,0.00377,1
 defect4j,mockito,org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues,24,76,"            return 1;
 ",0,0,0,0,0,1,0,0,0,0,9,3,1.00000,1
-defect4j,mockito,org/mockito/internal/util/Primitives,26,66,"        primitiveValues.put(double.class, 0);
-",0,0,0,1,2,0,4,0,0,4,37,5,0.02873,1
-defect4j,mockito,org/mockito/internal/util/MockUtil,27,65,"        MethodInterceptorFilter newFilter = new MethodInterceptorFilter(newMockHandler, (MockSettingsImpl) org.mockito.Mockito.withSettings().defaultAnswer(org.mockito.Mockito.RETURNS_DEFAULTS));
-",18,0,0,4,8,0,4,6,0,28,187,4,0.04348,1
-defect4j,mockito,org/mockito/internal/configuration/DefaultInjectionEngine,28,93,"            mockCandidateFilter.filterCandidate(mocks, field, fieldInstance).thenInject();
-",0,0,0,2,4,0,12,0,0,12,78,7,0.03846,1
 defect4j,mockito,org/mockito/internal/matchers/Same,29,29,"        description.appendText(wanted.toString());
 ",0,0,0,2,4,0,8,0,0,8,42,5,0.00000,1
 defect4j,mockito,org/mockito/internal/invocation/InvocationMatcher,34,106,"            if (m instanceof CapturesArguments) {
@@ -1363,16 +1361,14 @@ defect4j,mockito,org/mockito/internal/stubbing/defaultanswers/ReturnsEmptyValues
 ",0,0,0,2,5,0,4,0,0,4,23,7,0.05263,0
 defect4j,mockito,org/mockito/internal/util/MockUtil,19,44,"        InternalMockHandler oldHandler = (InternalMockHandler) getMockHandler(mock);
 ",2,0,0,2,4,0,4,4,0,10,76,4,0.04545,0
-defect4j,mockito,org/mockito/internal/handler/MockHandlerImpl,24,101,"            return ret;
-",2,0,0,0,0,1,0,0,0,2,11,6,0.00685,0
-defect4j,mockito,org/mockito/internal/creation/settings/CreationSettings,24,77,"        return defaultAnswer;
-",2,0,0,0,0,1,0,0,0,2,21,4,0.00680,0
-defect4j,mockito,org/mockito/internal/stubbing/InvocationContainerImpl,24,85,"        }
-",0,0,0,0,1,0,0,0,0,0,1,3,0.00680,0
-defect4j,mockito,org/mockito/internal/stubbing/InvocationContainerImpl,24,87,"        return null;
-",0,0,0,0,0,1,0,0,0,0,12,3,0.00680,0
-defect4j,mockito,org/mockito/internal/util/MockNameImpl,24,20,"            this.mockName = toInstanceName(classToMock);
-",2,0,0,1,2,0,4,0,0,7,44,6,0.00664,0
+defect4j,mockito,org/mockito/internal/util/MockUtil,19,45,"        MockCreationSettings settings = oldHandler.getMockSettings();
+",2,0,0,1,2,0,4,2,0,8,61,4,0.04545,0
+defect4j,mockito,org/mockito/internal/util/MockUtil,19,46,"        MockHandler newHandler = new MockHandlerFactory().create(settings);
+",2,0,0,2,4,0,4,4,0,10,67,4,0.04545,0
+defect4j,mockito,org/mockito/internal/util/MockUtil,19,48,"        mockMaker.resetMock(mock, newHandler, settings);
+",0,0,0,1,2,0,10,0,0,10,48,5,0.04545,0
+defect4j,mockito,org/mockito/internal/util/MockUtil,19,49,"    }
+",0,0,0,0,1,0,0,0,0,0,1,3,0.04545,0
 defect4j,mockito,org/mockito/internal/util/MockNameImpl,24,21,"            this.defaultName = true;
 ",2,0,0,0,0,0,0,0,0,4,24,6,0.00664,0
 defect4j,mockito,org/mockito/internal/util/MockNameImpl,24,32,"        String className = clazz.getSimpleName();

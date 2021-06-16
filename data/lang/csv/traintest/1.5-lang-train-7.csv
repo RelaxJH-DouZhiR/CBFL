@@ -55,20 +55,20 @@ defect4j,lang,org/apache/commons/lang/NumberUtils,44,145,"        if (val.starts
 ",0,0,0,2,5,0,4,0,0,5,27,5,0.50000,1
 defect4j,lang,org/apache/commons/lang/StringEscapeUtils,46,245,"                        out.write('/');
 ",0,0,0,1,2,0,4,0,0,5,15,13,1.00000,1
+defect4j,lang,org/apache/commons/lang/text/StrBuilder,47,1230,"            int strLen = str.length();
+",2,0,0,1,2,0,4,0,0,6,26,7,0.25000,1
+defect4j,lang,org/apache/commons/lang/builder/EqualsBuilder,48,382,"        } else if (lhs.getClass() != rhs.getClass()) {
+",0,1,0,3,8,0,8,0,0,9,46,5,0.00000,1
+defect4j,lang,org/apache/commons/lang/math/Fraction,49,466,"        int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);
+",2,0,0,2,4,0,10,0,0,12,66,5,0.00000,1
+defect4j,lang,org/apache/commons/lang/time/DateUtils,53,652,"        if (field == Calendar.MINUTE) {
+",6,1,0,1,3,0,0,0,0,7,31,6,0.00000,1
 defect4j,lang,org/apache/commons/lang/LocaleUtils,54,114,"            char ch4 = str.charAt(4);
 ",2,0,0,1,2,0,4,0,0,6,25,7,0.50000,1
 defect4j,lang,org/apache/commons/lang/time/StopWatch,55,119,"        this.runningState = STATE_STOPPED;
 ",4,0,0,0,0,0,0,0,0,5,34,4,0.25000,1
 defect4j,lang,org/apache/commons/lang/LocaleUtils,57,223,"        return cAvailableLocaleSet.contains(locale);
 ",0,0,0,1,2,1,6,0,0,6,44,5,0.00000,1
-defect4j,lang,org/apache/commons/lang/text/StrBuilder,59,884,"                str.getChars(0, strLen, buffer, size);
-",0,0,0,1,2,0,10,0,0,10,38,9,0.50000,1
-defect4j,lang,org/apache/commons/lang/text/StrBuilder,60,1730,"        for (int i = startIndex; i < thisBuf.length; i++) {
-",12,1,0,1,3,0,0,0,0,14,51,4,0.00000,1
-defect4j,lang,org/apache/commons/lang/text/StrBuilder,61,1776,"        int len = thisBuf.length - strLen;
-",8,1,0,0,0,0,0,0,0,9,34,5,0.57143,1
-defect4j,lang,org/apache/commons/lang/Entities,62,926,"                            }
-",0,0,0,0,1,0,0,0,0,0,1,3,0.00000,1
 defect4j,lang,org/apache/commons/lang3/math/NumberUtils,1,462,"                pfxLen += pfx.length();
 ",2,0,0,1,2,0,4,0,0,7,23,8,0.33333,0
 defect4j,lang,org/apache/commons/lang3/math/NumberUtils,1,463,"                break;
@@ -1357,5 +1357,17 @@ defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,411,"        if (str.s
 ",0,1,0,3,7,0,8,0,0,11,52,4,0.50000,0
 defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,414,"        char lastChar = str.charAt(str.length() - 1);
 ",2,1,0,2,4,0,8,0,0,11,45,5,0.50000,0
-defect4j,lang,org/apache/commons/lang/time/DateUtils,65,546,"        Calendar gval = Calendar.getInstance();
-",2,0,0,1,2,0,4,2,0,8,39,4,1.00000,0
+defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,418,"        int decPos = str.indexOf('.');
+",2,0,0,1,2,0,4,0,0,7,30,5,0.50000,0
+defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,419,"        int expPos = str.indexOf('e') + str.indexOf('E') + 1;
+",2,1,0,2,4,0,8,0,0,13,53,5,0.50000,0
+defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,421,"        if (decPos > -1) {
+",2,1,0,1,3,0,0,0,0,4,18,4,0.50000,0
+defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,433,"            if (expPos > -1) {
+",2,1,0,1,3,0,0,0,0,4,18,6,0.50000,0
+defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,436,"                mant = str;
+",4,0,0,0,0,0,0,0,0,5,11,8,0.50000,0
+defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,438,"            dec = null;
+",2,0,0,0,0,0,0,0,0,3,11,6,0.50000,0
+defect4j,lang,org/apache/commons/lang/math/NumberUtils,58,440,"        if (!Character.isDigit(lastChar)) {
+",0,0,0,2,5,0,6,0,0,7,35,4,0.50000,0

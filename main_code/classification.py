@@ -1,7 +1,7 @@
 '''
 Author: jhc
 Date: 2021-05-25 18:47:20
-LastEditTime: 2021-06-15 10:46:06
+LastEditTime: 2021-06-15 17:25:29
 Description: classification
  ██████╗██╗      █████╗ ███████╗███████╗██╗███████╗██╗ ██████╗ █████╗ ████████╗██╗ ██████╗ ███╗   ██╗
 ██╔════╝██║     ██╔══██╗██╔════╝██╔════╝██║██╔════╝██║██╔════╝██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║
@@ -12,6 +12,7 @@ Description: classification
 '''
 # from numpy import result_type
 import pandas as pd
+from scipy.sparse import data
 # from sklearn.model_selection import train_test_split  # 分割验证集和训练集
 # from sklearn import tree  # 树
 # from sklearn.model_selection import KFold  # k折交叉验证
@@ -299,6 +300,7 @@ def get_tp_tn_fp_fn(project, id, predictRes, trueRes):
 # 计算tp，tn，fp，fn-end
 
 
+# 保存结果-start
 def save_result_to_excel(project, resList):
     excel = openpyxl.Workbook()  # 目标存储excel文件
     sheet = excel.worksheets[0]  # 表
@@ -320,13 +322,41 @@ def save_result_to_excel(project, resList):
         sheet.cell(excelLine, 10).value = i['recall']
         sheet.cell(excelLine, 11).value = i['f1']
         #
-        excelLine+=1
+        excelLine += 1
     excel.save(f'{FATHER_PATH}CBFL/data/{project}'+'.xlsx')
+# 保存结果-end
+
+
+def save_predictRes(project, version, percentage, predictRes):
+    CSV_PATH = f'{FATHER_PATH}CBFL/data/{project}/csv/traintest/{percentage}-{project}-test-{str(version)}.csv'
+    csvLine = 0  # csv行
+    resList = []
+    #读原csv-start
+    with open(CSV_PATH) as f:
+        csvFile = csv.reader(f)
+        for row in csvFile:
+            resList.append(row)
+            # csvLine += 1
+    csvLine = 0  # csv行
+    #读原csv-end
+    csvFile = open(CSV_PATH, 'w', encoding="utf-8", newline="")
+    csvWriter = csv.writer(csvFile)
+    for i in resList:
+        if csvLine ==0:
+            csvWriter.writerow(i)
+        else:
+            data_TEM = deepcopy(i)
+            data_TEM[20] = predictRes[csvLine-1]
+            csvWriter.writerow(data_TEM)
+        csvLine+=1
+    csvFile.close()
+
 
 
 if __name__ == "__main__":
-    for project in ['chart','lang','time','math','closure','mockito']
-        #project = 'chart'  # *
+    # for project in ['chart', 'lang', 'time', 'math', 'closure', 'mockito']:
+    for project in ['mockito']:
+        # project = 'chart'  # *
         settingJson = open(f'{FATHER_PATH}CBFL/main_code/setting.json', 'r')
         settingContent = settingJson.read()
         setting = json.loads(settingContent)
@@ -357,8 +387,8 @@ if __name__ == "__main__":
         }
         #
         print(f'\033[1;35m----- >{project}< ----- \033[0m')
-        #for func in ['tree', 'bayes', 'KNN', 'rsandomForest', 'SVc']:
-        for func in ['tree', 'bayes','KNN','rsandomForest','SVc']:
+        # for func in ['tree', 'bayes', 'KNN', 'rsandomForest', 'SVc']:
+        for func in ['tree', 'bayes', 'KNN', 'rsandomForest', 'SVc']:
             # for func in ['bayes']:
             print(f'\033[1;34m----- >{func}< ----- \033[0m')
             resDict['classification'] = deepcopy(func)
@@ -376,6 +406,8 @@ if __name__ == "__main__":
                         if func == 'bayes':
                             predictRes = bayes(
                                 filePercentage, project, i, trainOrModel=useModel, if_SMOTE=smote)  # 贝叶斯
+                            save_predictRes(
+                                project, i, filePercentage, predictRes)
                         if func == 'KNN':
                             predictRes = KNN(filePercentage, project, i,
                                              trainOrModel=useModel, if_SMOTE=smote)  # K近邻
@@ -405,7 +437,8 @@ if __name__ == "__main__":
                         F1 = 0
                     else:
                         F1 = 2*totalTP/(2*totalTP+totalFP+totalFN)
-                    print(f'{project}total TP : {totalTP} TN : {totalTn} FP : {totalFP} FN : {totalFN} precesion : {totalprecesion} recall : {totalrecall} F1 : {F1}')
+                    print(
+                        f'{project}total TP : {totalTP} TN : {totalTn} FP : {totalFP} FN : {totalFN} precesion : {totalprecesion} recall : {totalrecall} F1 : {F1}')
                     resDict['TP'] = deepcopy(totalTP)
                     resDict['TN'] = deepcopy(totalTn)
                     resDict['FP'] = deepcopy(totalFP)
@@ -422,4 +455,4 @@ if __name__ == "__main__":
                     totalprecesion = 0
                     totalrecall = 0
                     #
-        save_result_to_excel(project,resList)
+        save_result_to_excel(project, resList)
