@@ -1,472 +1,472 @@
-project_path,version,lines,statement,suspicious,faulty,predict,miss_line
-org/apache/commons/math/util/FastMath,62,35,    private static final double EXP_INT_TABLE_A[] = new double[1500];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,40,    private static final double EXP_INT_TABLE_B[] = new double[1500];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,45,    private static final double EXP_FRAC_TABLE_A[] = new double[1025];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,50,    private static final double EXP_FRAC_TABLE_B[] = new double[1025];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,53,    private static final double FACT[] = new double[20];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,56,    private static final double LN_MANT[][] = new double[1024][];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,65,    private static final double LN_SPLIT_COEF[][] = {,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,85,    private static final double LN_QUICK_COEF[][] = {,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,98,    private static final double LN_HI_PREC_COEF[][] = {,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,108,    private static final double SINE_TABLE_A[] = new double[14];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,111,    private static final double SINE_TABLE_B[] = new double[14];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,114,    private static final double COSINE_TABLE_A[] = new double[14];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,117,    private static final double COSINE_TABLE_B[] = new double[14];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,120,    private static final double TANGENT_TABLE_A[] = new double[14];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,123,    private static final double TANGENT_TABLE_B[] = new double[14];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,126,    private static long RECIP_2PI[] = new long[] {,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,147,    private static long PI_O_4_BITS[] = new long[] {,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,155,"    private static final double EIGHTHES[] = {0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1.0, 1.125, 1.25, 1.375, 1.5, 1.625};",1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,158,"    private static final double CBRTTWO[] = { 0.6299605249474366,",1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,169,        FACT[0] = 1.0;,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,170,        for (i = 1; i < 20; i++) {,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,171,            FACT[i] = FACT[i-1] * i;,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,174,        double tmp[] = new double[2];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,175,        double recip[] = new double[2];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,178,        for (i = 0; i < 750; i++) {,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,179,"            expint(i, tmp);",1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,180,            EXP_INT_TABLE_A[i+750] = tmp[0];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,181,            EXP_INT_TABLE_B[i+750] = tmp[1];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,183,            if (i != 0) {,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,185,"                splitReciprocal(tmp, recip);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,186,                EXP_INT_TABLE_A[750-i] = recip[0];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,187,                EXP_INT_TABLE_B[750-i] = recip[1];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,192,        for (i = 0; i < 1025; i++) {,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,193,"            slowexp(i/1024.0, tmp);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,194,            EXP_FRAC_TABLE_A[i] = tmp[0];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,195,            EXP_FRAC_TABLE_B[i] = tmp[1];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,199,        for (i = 0; i < 1024; i++) {,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,200,            double d = Double.longBitsToDouble( (((long) i) << 42) | 0x3ff0000000000000L );,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,201,            LN_MANT[i] = slowLog(d);,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,205,        buildSinCosTables();,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,206,    },1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,219,        return Math.sqrt(a);,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,680,        final double xs[] = new double[2];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,681,        final double ys[] = new double[2];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,682,        final double facts[] = new double[2];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,683,        final double as[] = new double[2];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,684,"        split(x, xs);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,685,        ys[0] = ys[1] = 0.0;,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,687,        for (int i = 19; i >= 0; i--) {,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,688,"            splitMult(xs, ys, as);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,689,            ys[0] = as[0];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,690,            ys[1] = as[1];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,692,"            split(FACT[i], as);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,693,"            splitReciprocal(as, facts);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,695,"            splitAdd(ys, facts, as);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,696,            ys[0] = as[0];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,697,            ys[1] = as[1];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,700,        if (result != null) {,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,701,            result[0] = ys[0];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,702,            result[1] = ys[1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,705,        return ys[0] + ys[1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,714,        if (d < 8e298 && d > -8e298) {,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,715,            final double a = d * 1073741824.0;,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,716,            split[0] = (d + a) - a;,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,717,            split[1] = d - split[0];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,718,        } else {,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,723,    },1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,730,        final double c = a[0] + a[1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,731,        final double d = -(c - a[0] - a[1]);,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,733,        if (c < 8e298 && c > -8e298) {,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,734,            double z = c * 1073741824.0;,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,735,            a[0] = (c + z) - z;,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,736,            a[1] = c - a[0] + d;,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,737,        } else {,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,738,            double z = c * 9.31322574615478515625E-10;,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,739,            a[0] = (c + z - c) * 1073741824.0;,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,740,            a[1] = c - a[0] + d;,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,742,    },1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,750,        ans[0] = a[0] * b[0];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,751,        ans[1] = a[0] * b[1] + a[1] * b[0] + a[1] * b[1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,754,        resplit(ans);,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,755,    },1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,763,        ans[0] = a[0] + b[0];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,764,        ans[1] = a[1] + b[1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,766,        resplit(ans);,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,767,    },1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,788,        final double b = 1.0/4194304.0;,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,789,        final double a = 1.0 - b;,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,791,        if (in[0] == 0.0) {,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,796,        result[0] = a / in[0];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,797,        result[1] = (b*in[0]-a*in[1]) / (in[0]*in[0] + in[0]*in[1]);,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,799,        if (result[1] != result[1]) { // can happen if result[1] is NAN,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,800,            result[1] = 0.0;,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,804,        resplit(result);,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,806,        for (int i = 0; i < 2; i++) {,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,808,            double err = 1.0 - result[0] * in[0] - result[0] * in[1] -,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,811,            err = err * (result[0] + result[1]);,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,813,            result[1] += err;,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,815,    },1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,823,        final double xs[] = new double[2];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,824,        final double ys[] = new double[2];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,825,        final double zs[] = new double[2];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,828,"        split(a[0], xs);",1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,829,"        split(b[0], ys);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,830,"        splitMult(xs, ys, zs);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,832,        result[0] = zs[0];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,833,        result[1] = zs[1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,836,"        split(b[1], ys);",1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,837,"        splitMult(xs, ys, zs);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,839,        double tmp = result[0] + zs[0];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,840,        result[1] = result[1] - (tmp - result[0] - zs[0]);,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,841,        result[0] = tmp;,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,842,        tmp = result[0] + zs[1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,843,        result[1] = result[1] - (tmp - result[0] - zs[1]);,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,844,        result[0] = tmp;,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,847,"        split(a[1], xs);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,848,"        split(b[0], ys);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,849,"        splitMult(xs, ys, zs);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,851,        tmp = result[0] + zs[0];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,852,        result[1] = result[1] - (tmp - result[0] - zs[0]);,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,853,        result[0] = tmp;,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,854,        tmp = result[0] + zs[1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,855,        result[1] = result[1] - (tmp - result[0] - zs[1]);,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,856,        result[0] = tmp;,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,859,"        split(a[1], xs);",1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,860,"        split(b[1], ys);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,861,"        splitMult(xs, ys, zs);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,863,        tmp = result[0] + zs[0];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,864,        result[1] = result[1] - (tmp - result[0] - zs[0]);,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,865,        result[0] = tmp;,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,866,        tmp = result[0] + zs[1];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,867,        result[1] = result[1] - (tmp - result[0] - zs[1]);,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,868,        result[0] = tmp;,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,869,    },1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,878,        final double xs[] = new double[2];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,879,        final double as[] = new double[2];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,880,        final double ys[] = new double[2];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,889,        xs[0] = 2.718281828459045;,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,890,        xs[1] = 1.4456468917292502E-16;,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,892,"        split(1.0, ys);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,894,        while (p > 0) {,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,895,            if ((p & 1) != 0) {,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,896,"                quadMult(ys, xs, as);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,897,                ys[0] = as[0]; ys[1] = as[1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,900,"            quadMult(xs, xs, as);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,901,            xs[0] = as[0]; xs[1] = as[1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,903,            p >>= 1;,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,906,        if (result != null) {,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,907,            result[0] = ys[0];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,908,            result[1] = ys[1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,910,            resplit(result);,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,913,        return ys[0] + ys[1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1396,        double x[] = new double[2];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1397,        double x2[] = new double[2];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1398,        double y[] = new double[2];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1399,        double a[] = new double[2];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1401,"        split(xi, x);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1404,        x[0] += 1.0;,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1405,        resplit(x);,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1406,"        splitReciprocal(x, a);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1407,        x[0] -= 2.0;,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1408,        resplit(x);,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1409,"        splitMult(x, a, y);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1410,        x[0] = y[0];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1411,        x[1] = y[1];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1414,"        splitMult(x, x, x2);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1420,        y[0] = LN_SPLIT_COEF[LN_SPLIT_COEF.length-1][0];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1421,        y[1] = LN_SPLIT_COEF[LN_SPLIT_COEF.length-1][1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1423,        for (int i = LN_SPLIT_COEF.length-2; i >= 0; i--) {,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1424,"            splitMult(y, x2, a);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1425,            y[0] = a[0];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1426,            y[1] = a[1];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1427,"            splitAdd(y, LN_SPLIT_COEF[i], a);",1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1428,            y[0] = a[0];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1429,            y[1] = a[1];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1432,"        splitMult(y, x, a);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1433,        y[0] = a[0];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1434,        y[1] = a[1];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1436,        return y;,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1446,        final double xs[] = new double[2];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1447,        final double ys[] = new double[2];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1448,        final double facts[] = new double[2];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1449,        final double as[] = new double[2];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1450,"        split(x, xs);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1451,        ys[0] = ys[1] = 0.0;,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1453,        for (int i = 19; i >= 0; i--) {,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1454,"            splitMult(xs, ys, as);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1455,            ys[0] = as[0]; ys[1] = as[1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1457,            if ( (i & 1) == 0) {,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1458,                continue;,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1461,"            split(FACT[i], as);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1462,"            splitReciprocal(as, facts);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1464,            if ( (i & 2) != 0 ) {,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1465,                facts[0] = -facts[0];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1466,                facts[1] = -facts[1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1469,"            splitAdd(ys, facts, as);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1470,            ys[0] = as[0]; ys[1] = as[1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1473,        if (result != null) {,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1474,            result[0] = ys[0];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1475,            result[1] = ys[1];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1478,        return ys[0] + ys[1];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1489,        final double xs[] = new double[2];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1490,        final double ys[] = new double[2];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1491,        final double facts[] = new double[2];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1492,        final double as[] = new double[2];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1493,"        split(x, xs);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1494,        ys[0] = ys[1] = 0.0;,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1496,        for (int i = 19; i >= 0; i--) {,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1497,"            splitMult(xs, ys, as);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1498,            ys[0] = as[0]; ys[1] = as[1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1500,            if ( (i & 1) != 0) {,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1501,                continue;,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1504,"            split(FACT[i], as);",1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1505,"            splitReciprocal(as, facts);",1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1507,            if ( (i & 2) != 0 ) {,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1508,                facts[0] = -facts[0];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1509,                facts[1] = -facts[1];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1512,"            splitAdd(ys, facts, as);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1513,            ys[0] = as[0]; ys[1] = as[1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1516,        if (result != null) {,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1517,            result[0] = ys[0];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1518,            result[1] = ys[1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1521,        return ys[0] + ys[1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1527,        final double result[] = new double[2];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1530,        for (int i = 0; i < 7; i++) {,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1531,            double x = i / 8.0;,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1533,"            slowSin(x, result);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1534,            SINE_TABLE_A[i] = result[0];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1535,            SINE_TABLE_B[i] = result[1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1537,"            slowCos(x, result);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1538,            COSINE_TABLE_A[i] = result[0];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1539,            COSINE_TABLE_B[i] = result[1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1543,        for (int i = 7; i < 14; i++) {,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1544,            double xs[] = new double[2];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1545,            double ys[] = new double[2];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1546,            double as[] = new double[2];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1547,            double bs[] = new double[2];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1548,            double temps[] = new double[2];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1550,            if ( (i & 1) == 0) {,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1552,                xs[0] = SINE_TABLE_A[i/2];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1553,                xs[1] = SINE_TABLE_B[i/2];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1554,                ys[0] = COSINE_TABLE_A[i/2];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1555,                ys[1] = COSINE_TABLE_B[i/2];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1558,"                splitMult(xs, ys, result);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1559,                SINE_TABLE_A[i] = result[0] * 2.0;,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1560,                SINE_TABLE_B[i] = result[1] * 2.0;,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1563,"                splitMult(ys, ys, as);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1564,"                splitMult(xs, xs, temps);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1565,                temps[0] = -temps[0];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1566,                temps[1] = -temps[1];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1567,"                splitAdd(as, temps, result);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1568,                COSINE_TABLE_A[i] = result[0];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1569,                COSINE_TABLE_B[i] = result[1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1571,                xs[0] = SINE_TABLE_A[i/2];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1572,                xs[1] = SINE_TABLE_B[i/2];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1573,                ys[0] = COSINE_TABLE_A[i/2];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1574,                ys[1] = COSINE_TABLE_B[i/2];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1575,                as[0] = SINE_TABLE_A[i/2+1];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1576,                as[1] = SINE_TABLE_B[i/2+1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1577,                bs[0] = COSINE_TABLE_A[i/2+1];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1578,                bs[1] = COSINE_TABLE_B[i/2+1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1581,"                splitMult(xs, bs, temps);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1582,"                splitMult(ys, as, result);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1583,"                splitAdd(result, temps, result);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1584,                SINE_TABLE_A[i] = result[0];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1585,                SINE_TABLE_B[i] = result[1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1588,"                splitMult(ys, bs, result);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1589,"                splitMult(xs, as, temps);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1590,                temps[0] = -temps[0];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1591,                temps[1] = -temps[1];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1592,"                splitAdd(result, temps, result);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1593,                COSINE_TABLE_A[i] = result[0];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1594,                COSINE_TABLE_B[i] = result[1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1599,        for (int i = 0; i < 14; i++) {,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1600,            double xs[] = new double[2];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1601,            double ys[] = new double[2];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1602,            double as[] = new double[2];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1604,            as[0] = COSINE_TABLE_A[i];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1605,            as[1] = COSINE_TABLE_B[i];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1607,"            splitReciprocal(as, ys);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1609,            xs[0] = SINE_TABLE_A[i];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1610,            xs[1] = SINE_TABLE_B[i];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1612,"            splitMult(xs, ys, as);",1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1614,            TANGENT_TABLE_A[i] = as[0];,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,1615,            TANGENT_TABLE_B[i] = as[1];,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,1618,    },1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,3016,        return (x < 0l) ? -x : x;,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,3034,        return (x < 0.0) ? -x : x;,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,3044,        return abs(x - Double.longBitsToDouble(Double.doubleToLongBits(x) ^ 1));,1.0,0,1,0
-org/apache/commons/math/util/FastMath,62,3224,        return (a <= b) ? a : (Double.isNaN(a + b) ? Double.NaN : b);,1.0,0,0,0
-org/apache/commons/math/util/FastMath,62,3260,        return (a <= b) ? b : (Double.isNaN(a + b) ? Double.NaN : a);,1.0,0,0,0
-org/apache/commons/math/util/Incrementor,62,28,public class Incrementor {,1.0,0,0,0
-org/apache/commons/math/util/Incrementor,62,44,        maximalCount = max;,1.0,0,1,0
-org/apache/commons/math/util/Incrementor,62,45,    },1.0,0,1,0
-org/apache/commons/math/util/Incrementor,62,53,        return maximalCount;,1.0,0,1,0
-org/apache/commons/math/util/Incrementor,62,62,        return count;,1.0,0,1,0
-org/apache/commons/math/util/Incrementor,62,84,        if (++count > maximalCount) {,1.0,0,1,0
-org/apache/commons/math/util/Incrementor,62,87,    },1.0,0,1,0
-org/apache/commons/math/util/Incrementor,62,93,        count = 0;,1.0,0,1,0
-org/apache/commons/math/util/Incrementor,62,94,    },1.0,0,1,0
-org/apache/commons/math/util/MathUtils,62,33,public final class MathUtils {,1.0,0,0,0
-org/apache/commons/math/util/MathUtils,62,75,    private static final long[] FACTORIALS = new long[] {,1.0,0,0,0
-org/apache/commons/math/util/MathUtils,62,417,"        return equals(x, y, 1);",1.0,0,1,0
-org/apache/commons/math/util/MathUtils,62,479,        assert maxUlps > 0 && maxUlps < NAN_GAP;,1.0,0,1,0
-org/apache/commons/math/util/MathUtils,62,481,        long xInt = Double.doubleToLongBits(x);,1.0,0,1,0
-org/apache/commons/math/util/MathUtils,62,482,        long yInt = Double.doubleToLongBits(y);,1.0,0,1,0
-org/apache/commons/math/util/MathUtils,62,485,        if (xInt < 0) {,1.0,0,1,0
-org/apache/commons/math/util/MathUtils,62,486,            xInt = SGN_MASK - xInt;,1.0,0,1,0
-org/apache/commons/math/util/MathUtils,62,488,        if (yInt < 0) {,1.0,0,1,0
-org/apache/commons/math/util/MathUtils,62,489,            yInt = SGN_MASK - yInt;,1.0,0,1,0
-org/apache/commons/math/util/MathUtils,62,492,        final boolean isEqual = FastMath.abs(xInt - yInt) <= maxUlps;,1.0,0,1,0
-org/apache/commons/math/util/MathUtils,62,494,        return isEqual && !Double.isNaN(x) && !Double.isNaN(y);,1.0,0,1,0
-org/apache/commons/math/random/JDKRandomGenerator,62,28,public class JDKRandomGenerator extends Random implements RandomGenerator {,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,191,"        Arrays.sort(optima, new Comparator<UnivariateRealPointValuePair>() {",1.0,0,0,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,194,                    if (o1 == null) {,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,196,                    } else if (o2 == null) {,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,199,                    final double v1 = o1.getValue();,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,200,                    final double v2 = o2.getValue();,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,201,                    return (goal == GoalType.MINIMIZE) ?,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,72,                                             final RandomGenerator generator) {,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,73,        this.optimizer = optimizer;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,74,        this.starts = starts;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,75,        this.generator = generator;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,76,    },1.0,0,1,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,146,"        return optimize(f, goal, min, max, 0);",1.0,1,1,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,154,        optima = new UnivariateRealPointValuePair[starts];,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,155,        totalEvaluations = 0;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,158,        for (int i = 0; i < starts; ++i) {,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,160,                final double bound1 = (i == 0) ? min : min + generator.nextDouble() * (max - min);,1.0,1,0,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,161,                final double bound2 = (i == 0) ? max : min + generator.nextDouble() * (max - min);,1.0,1,0,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,162,"                optima[i] = optimizer.optimize(f, goal, FastMath.min(bound1, bound2), FastMath.max(bound1, bound2));",1.0,1,1,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,167,            },1.0,0,1,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,169,            final int usedEvaluations = optimizer.getEvaluations();,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,170,            optimizer.setMaxEvaluations(optimizer.getMaxEvaluations() - usedEvaluations);,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,171,            totalEvaluations += usedEvaluations;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,174,        sortPairs(goal);,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,176,        if (optima[0] == null) {,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,182,        return optima[0];,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,191,"        Arrays.sort(optima, new Comparator<UnivariateRealPointValuePair>() {",1.0,0,0,0
-org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,205,    },1.0,0,1,0
-org/apache/commons/math/optimization/univariate/UnivariateRealPointValuePair,62,45,                                        final double value) {,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/UnivariateRealPointValuePair,62,46,        this.point = point;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/UnivariateRealPointValuePair,62,47,        this.value = value;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/UnivariateRealPointValuePair,62,48,    },1.0,0,1,0
-org/apache/commons/math/optimization/univariate/UnivariateRealPointValuePair,62,56,        return point;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/UnivariateRealPointValuePair,62,65,        return value;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,36,public abstract class AbstractUnivariateRealOptimizer,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,41,    private final Incrementor evaluations = new Incrementor();,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,55,        evaluations.setMaximalCount(maxEvaluations);,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,56,    },1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,60,        return evaluations.getMaximalCount();,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,65,        return evaluations.getCount();,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,72,        return goal;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,78,        return searchMin;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,84,        return searchMax;,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,90,        return searchStart;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,106,            evaluations.incrementCount();,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,109,        },1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,110,        return function.value(point);,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,120,        if (f == null) {,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,123,        if (goalType == null) {,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,128,        searchMin = min;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,129,        searchMax = max;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,130,        searchStart = startValue;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,131,        goal = goalType;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,132,        function = f;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,133,        evaluations.resetCount();,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,136,        return doOptimize();,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,144,"        return optimize(f, goalType, min, max, min + 0.5 * (max - min));",1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,158,        return checker;,1.0,0,1,0
-org/apache/commons/math/optimization/GoalType,62,27,public enum GoalType implements Serializable {,1.0,0,0,0
-org/apache/commons/math/optimization/GoalType,62,30,"    MAXIMIZE,",1.0,0,1,0
-org/apache/commons/math/optimization/GoalType,62,33,    MINIMIZE,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,76,                          double abs) {,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,77,        if (rel < MIN_RELATIVE_TOLERANCE) {,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,80,        if (abs <= 0) {,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,83,        relativeThreshold = rel;,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,84,        absoluteThreshold = abs;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,85,    },1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,47,    private static final double GOLDEN_SECTION = 0.5 * (3 - FastMath.sqrt(5));,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,51,    private static final double MIN_RELATIVE_TOLERANCE = 2 * FastMath.ulp(1d);,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,90,        final boolean isMinim = getGoalType() == GoalType.MINIMIZE;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,91,        final double lo = getMin();,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,92,        final double mid = getStartValue();,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,93,        final double hi = getMax();,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,96,        final ConvergenceChecker<UnivariateRealPointValuePair> checker,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,101,        if (lo < hi) {,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,102,            a = lo;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,103,            b = hi;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,109,        double x = mid;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,110,        double v = x;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,111,        double w = x;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,112,        double d = 0;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,113,        double e = 0;,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,114,        double fx = computeObjectiveValue(x);,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,115,        if (!isMinim) {,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,118,        double fv = fx;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,119,        double fw = fx;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,121,        UnivariateRealPointValuePair previous = null;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,122,        UnivariateRealPointValuePair current,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,125,        int iter = 0;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,127,            final double m = 0.5 * (a + b);,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,128,            final double tol1 = relativeThreshold * FastMath.abs(x) + absoluteThreshold;,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,129,            final double tol2 = 2 * tol1;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,132,            final boolean stop = FastMath.abs(x - m) <= tol2 - 0.5 * (b - a);,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,133,            if (!stop) {,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,134,                double p = 0;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,135,                double q = 0;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,136,                double r = 0;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,137,                double u = 0;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,139,                if (FastMath.abs(e) > tol1) { // Fit parabola.,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,140,                    r = (x - w) * (fx - fv);,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,141,                    q = (x - v) * (fx - fw);,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,142,                    p = (x - v) * q - (x - w) * r;,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,143,                    q = 2 * (q - r);,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,145,                    if (q > 0) {,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,146,                        p = -p;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,148,                        q = -q;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,151,                    r = e;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,152,                    e = d;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,154,                    if (p > q * (a - x) &&,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,158,                        d = p / q;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,159,                        u = x + d;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,162,                        if (u - a < tol2 || b - u < tol2) {,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,163,                            if (x <= m) {,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,164,                                d = tol1;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,171,                        if (x < m) {,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,172,                            e = b - x;,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,174,                            e = a - x;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,176,                        d = GOLDEN_SECTION * e;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,180,                    if (x < m) {,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,183,                        e = a - x;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,185,                    d = GOLDEN_SECTION * e;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,189,                if (FastMath.abs(d) < tol1) {,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,190,                    if (d >= 0) {,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,191,                        u = x + tol1;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,193,                        u = x - tol1;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,196,                    u = x + d;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,199,                double fu = computeObjectiveValue(u);,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,200,                if (!isMinim) {,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,205,                if (fu <= fx) {,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,206,                    if (u < x) {,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,207,                        b = x;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,209,                        a = x;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,211,                    v = w;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,212,                    fv = fw;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,213,                    w = x;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,214,                    fw = fx;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,215,                    x = u;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,216,                    fx = fu;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,218,                    if (u < x) {,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,219,                        a = u;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,221,                        b = u;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,223,                    if (fu <= fw ||,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,225,                        v = w;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,226,                        fv = fw;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,227,                        w = u;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,228,                        fw = fu;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,229,                    } else if (fu <= fv ||,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,232,                        v = u;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,233,                        fv = fu;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,237,                previous = current;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,238,"                current = new UnivariateRealPointValuePair(x, isMinim ? fx : -fx);",1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,241,                if (checker != null) {,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,246,            } else { // Default termination (Brent's criterion).,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,247,                return current;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,249,            ++iter;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,62,250,        },1.0,0,1,0
+project_path,version,lines,statement,suspicious,faulty,predict,miss_line,predictions0,predictions1
+org/apache/commons/math/util/FastMath,62,35,    private static final double EXP_INT_TABLE_A[] = new double[1500];,1.0,0,,0,0.9874121540995842,0.012587845900414034
+org/apache/commons/math/util/FastMath,62,40,    private static final double EXP_INT_TABLE_B[] = new double[1500];,1.0,0,,0,0.9874121540995842,0.012587845900414034
+org/apache/commons/math/util/FastMath,62,45,    private static final double EXP_FRAC_TABLE_A[] = new double[1025];,1.0,0,,0,0.9876240427397219,0.012375957260275142
+org/apache/commons/math/util/FastMath,62,50,    private static final double EXP_FRAC_TABLE_B[] = new double[1025];,1.0,0,,0,0.9876240427397219,0.012375957260275142
+org/apache/commons/math/util/FastMath,62,53,    private static final double FACT[] = new double[20];,1.0,0,,0,0.9848098631766627,0.01519013682333759
+org/apache/commons/math/util/FastMath,62,56,    private static final double LN_MANT[][] = new double[1024][];,1.0,0,,0,0.9865762002741874,0.013423799725810122
+org/apache/commons/math/util/FastMath,62,65,    private static final double LN_SPLIT_COEF[][] = {,1.0,0,,0,0.8759765072720299,0.12402349272797115
+org/apache/commons/math/util/FastMath,62,85,    private static final double LN_QUICK_COEF[][] = {,1.0,0,,0,0.8759765072720299,0.12402349272797115
+org/apache/commons/math/util/FastMath,62,98,    private static final double LN_HI_PREC_COEF[][] = {,1.0,0,,0,0.8784713652300774,0.1215286347699235
+org/apache/commons/math/util/FastMath,62,108,    private static final double SINE_TABLE_A[] = new double[14];,1.0,0,,0,0.9863709606377657,0.01362903936223186
+org/apache/commons/math/util/FastMath,62,111,    private static final double SINE_TABLE_B[] = new double[14];,1.0,0,,0,0.9863709606377657,0.01362903936223186
+org/apache/commons/math/util/FastMath,62,114,    private static final double COSINE_TABLE_A[] = new double[14];,1.0,0,,0,0.9867831102868723,0.01321688971312633
+org/apache/commons/math/util/FastMath,62,117,    private static final double COSINE_TABLE_B[] = new double[14];,1.0,0,,0,0.9867831102868723,0.01321688971312633
+org/apache/commons/math/util/FastMath,62,120,    private static final double TANGENT_TABLE_A[] = new double[14];,1.0,0,,0,0.9869915193340968,0.013008480665901004
+org/apache/commons/math/util/FastMath,62,123,    private static final double TANGENT_TABLE_B[] = new double[14];,1.0,0,,0,0.9869915193340968,0.013008480665901004
+org/apache/commons/math/util/FastMath,62,126,    private static long RECIP_2PI[] = new long[] {,1.0,0,,0,0.8955001030616394,0.10449989693836048
+org/apache/commons/math/util/FastMath,62,147,    private static long PI_O_4_BITS[] = new long[] {,1.0,0,,0,0.8974484898272657,0.10255151017273606
+org/apache/commons/math/util/FastMath,62,155,"    private static final double EIGHTHES[] = {0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1.0, 1.125, 1.25, 1.375, 1.5, 1.625};",1.0,0,,0,0.9807483226973015,0.01925167730269903
+org/apache/commons/math/util/FastMath,62,158,"    private static final double CBRTTWO[] = { 0.6299605249474366,",1.0,0,,0,0.8924070994332203,0.10759290056678086
+org/apache/commons/math/util/FastMath,62,169,        FACT[0] = 1.0;,1.0,0,,0,0.6832592193164982,0.3167407806835028
+org/apache/commons/math/util/FastMath,62,170,        for (i = 1; i < 20; i++) {,1.0,0,,0,0.5409616952658487,0.45903830473415175
+org/apache/commons/math/util/FastMath,62,171,            FACT[i] = FACT[i-1] * i;,1.0,0,,0,0.8103417847592443,0.18965821524075696
+org/apache/commons/math/util/FastMath,62,174,        double tmp[] = new double[2];,1.0,0,,0,0.36511501935128976,0.6348849806487105
+org/apache/commons/math/util/FastMath,62,175,        double recip[] = new double[2];,1.0,0,,0,0.36713238620105837,0.6328676137989429
+org/apache/commons/math/util/FastMath,62,178,        for (i = 0; i < 750; i++) {,1.0,0,,0,0.5417264294758817,0.45827357052411916
+org/apache/commons/math/util/FastMath,62,179,"            expint(i, tmp);",1.0,0,,0,0.1828399465190121,0.8171600534809871
+org/apache/commons/math/util/FastMath,62,180,            EXP_INT_TABLE_A[i+750] = tmp[0];,1.0,0,,0,0.7652565385143529,0.23474346148564804
+org/apache/commons/math/util/FastMath,62,181,            EXP_INT_TABLE_B[i+750] = tmp[1];,1.0,0,,0,0.7652565385143529,0.23474346148564804
+org/apache/commons/math/util/FastMath,62,183,            if (i != 0) {,1.0,0,,0,0.32137302203742235,0.6786269779625775
+org/apache/commons/math/util/FastMath,62,185,"                splitReciprocal(tmp, recip);",1.0,0,,0,0.14301100848287418,0.856988991517127
+org/apache/commons/math/util/FastMath,62,186,                EXP_INT_TABLE_A[750-i] = recip[0];,1.0,0,,0,0.7073978804666909,0.2926021195333106
+org/apache/commons/math/util/FastMath,62,187,                EXP_INT_TABLE_B[750-i] = recip[1];,1.0,0,,0,0.7073978804666909,0.2926021195333106
+org/apache/commons/math/util/FastMath,62,192,        for (i = 0; i < 1025; i++) {,1.0,0,,0,0.5425807653940473,0.4574192346059514
+org/apache/commons/math/util/FastMath,62,193,"            slowexp(i/1024.0, tmp);",1.0,0,,0,0.3292778778852702,0.6707221221147298
+org/apache/commons/math/util/FastMath,62,194,            EXP_FRAC_TABLE_A[i] = tmp[0];,1.0,0,,0,0.6400534893030866,0.3599465106969146
+org/apache/commons/math/util/FastMath,62,195,            EXP_FRAC_TABLE_B[i] = tmp[1];,1.0,0,,0,0.6400534893030866,0.3599465106969146
+org/apache/commons/math/util/FastMath,62,199,        for (i = 0; i < 1024; i++) {,1.0,0,,0,0.5425807653940473,0.4574192346059514
+org/apache/commons/math/util/FastMath,62,200,            double d = Double.longBitsToDouble( (((long) i) << 42) | 0x3ff0000000000000L );,1.0,0,,0,0.7786536498662129,0.2213463501337885
+org/apache/commons/math/util/FastMath,62,201,            LN_MANT[i] = slowLog(d);,1.0,0,,0,0.7895780391670564,0.2104219608329435
+org/apache/commons/math/util/FastMath,62,205,        buildSinCosTables();,1.0,0,,0,0.33503015466863445,0.6649698453313646
+org/apache/commons/math/util/FastMath,62,206,    },1.0,0,,0,0.1763888130312835,0.8236111869687153
+org/apache/commons/math/util/FastMath,62,219,        return Math.sqrt(a);,1.0,0,,0,0.2105806939919648,0.7894193060080342
+org/apache/commons/math/util/FastMath,62,680,        final double xs[] = new double[2];,1.0,0,,0,0.6365299716556309,0.3634700283443685
+org/apache/commons/math/util/FastMath,62,681,        final double ys[] = new double[2];,1.0,0,,0,0.6365299716556309,0.3634700283443685
+org/apache/commons/math/util/FastMath,62,682,        final double facts[] = new double[2];,1.0,0,,0,0.6409163463975107,0.3590836536024885
+org/apache/commons/math/util/FastMath,62,683,        final double as[] = new double[2];,1.0,0,,0,0.6365299716556309,0.3634700283443685
+org/apache/commons/math/util/FastMath,62,684,"        split(x, xs);",1.0,0,,0,0.21719634485265515,0.7828036551473432
+org/apache/commons/math/util/FastMath,62,685,        ys[0] = ys[1] = 0.0;,1.0,0,,0,0.7667083348079073,0.23329166519209257
+org/apache/commons/math/util/FastMath,62,687,        for (int i = 19; i >= 0; i--) {,1.0,0,,0,0.47401282910964965,0.5259871708903503
+org/apache/commons/math/util/FastMath,62,688,"            splitMult(xs, ys, as);",1.0,0,,0,0.14441512286117475,0.8555848771388269
+org/apache/commons/math/util/FastMath,62,689,            ys[0] = as[0];,1.0,0,,0,0.6356497853354612,0.3643502146645383
+org/apache/commons/math/util/FastMath,62,690,            ys[1] = as[1];,1.0,0,,0,0.6356497853354612,0.3643502146645383
+org/apache/commons/math/util/FastMath,62,692,"            split(FACT[i], as);",1.0,0,,0,0.656597136923669,0.34340286307633
+org/apache/commons/math/util/FastMath,62,693,"            splitReciprocal(as, facts);",1.0,0,,0,0.18480239574720234,0.8151976042527989
+org/apache/commons/math/util/FastMath,62,695,"            splitAdd(ys, facts, as);",1.0,0,,0,0.14486388972133524,0.8551361102786645
+org/apache/commons/math/util/FastMath,62,696,            ys[0] = as[0];,1.0,0,,0,0.6356497853354612,0.3643502146645383
+org/apache/commons/math/util/FastMath,62,697,            ys[1] = as[1];,1.0,0,,0,0.6356497853354612,0.3643502146645383
+org/apache/commons/math/util/FastMath,62,700,        if (result != null) {,1.0,0,,0,0.36863703154031807,0.6313629684596819
+org/apache/commons/math/util/FastMath,62,701,            result[0] = ys[0];,1.0,0,,0,0.6349834242785334,0.3650165757214654
+org/apache/commons/math/util/FastMath,62,702,            result[1] = ys[1];,1.0,0,,0,0.6349834242785334,0.3650165757214654
+org/apache/commons/math/util/FastMath,62,705,        return ys[0] + ys[1];,1.0,0,,0,0.6802179253395781,0.31978207466042263
+org/apache/commons/math/util/FastMath,62,714,        if (d < 8e298 && d > -8e298) {,1.0,0,,0,0.5764542121650846,0.4235457878349159
+org/apache/commons/math/util/FastMath,62,715,            final double a = d * 1073741824.0;,1.0,0,,0,0.3560796595001364,0.643920340499863
+org/apache/commons/math/util/FastMath,62,716,            split[0] = (d + a) - a;,1.0,0,,0,0.8339233665109763,0.16607663348902435
+org/apache/commons/math/util/FastMath,62,717,            split[1] = d - split[0];,1.0,0,,0,0.760010330715056,0.23998966928494245
+org/apache/commons/math/util/FastMath,62,718,        } else {,1.0,0,,0,0.20101115421480553,0.7989888457851956
+org/apache/commons/math/util/FastMath,62,723,    },1.0,0,,0,0.1763888130312835,0.8236111869687153
+org/apache/commons/math/util/FastMath,62,730,        final double c = a[0] + a[1];,1.0,0,,0,0.8084335100143766,0.191566489985624
+org/apache/commons/math/util/FastMath,62,731,        final double d = -(c - a[0] - a[1]);,1.0,0,,0,0.8921933119962854,0.10780668800371375
+org/apache/commons/math/util/FastMath,62,733,        if (c < 8e298 && c > -8e298) {,1.0,0,,0,0.5764542121650846,0.4235457878349159
+org/apache/commons/math/util/FastMath,62,734,            double z = c * 1073741824.0;,1.0,0,,0,0.22919024546528194,0.7708097545347168
+org/apache/commons/math/util/FastMath,62,735,            a[0] = (c + z) - z;,1.0,0,,0,0.8333186295896114,0.16668137041038977
+org/apache/commons/math/util/FastMath,62,736,            a[1] = c - a[0] + d;,1.0,0,,0,0.8094476514979072,0.19055234850209282
+org/apache/commons/math/util/FastMath,62,737,        } else {,1.0,0,,0,0.20101115421480553,0.7989888457851956
+org/apache/commons/math/util/FastMath,62,738,            double z = c * 9.31322574615478515625E-10;,1.0,0,,0,0.244768094909763,0.7552319050902374
+org/apache/commons/math/util/FastMath,62,739,            a[0] = (c + z - c) * 1073741824.0;,1.0,0,,0,0.8808033837300476,0.11919661626995252
+org/apache/commons/math/util/FastMath,62,740,            a[1] = c - a[0] + d;,1.0,0,,0,0.8094476514979072,0.19055234850209282
+org/apache/commons/math/util/FastMath,62,742,    },1.0,0,,0,0.1763888130312835,0.8236111869687153
+org/apache/commons/math/util/FastMath,62,750,        ans[0] = a[0] * b[0];,1.0,0,,0,0.7328270323635037,0.26717296763649667
+org/apache/commons/math/util/FastMath,62,751,        ans[1] = a[0] * b[1] + a[1] * b[0] + a[1] * b[1];,1.0,0,,0,0.945775240821369,0.054224759178631336
+org/apache/commons/math/util/FastMath,62,754,        resplit(ans);,1.0,0,,0,0.3144953792700918,0.6855046207299068
+org/apache/commons/math/util/FastMath,62,755,    },1.0,0,,0,0.1763888130312835,0.8236111869687153
+org/apache/commons/math/util/FastMath,62,763,        ans[0] = a[0] + b[0];,1.0,0,,0,0.7328270323635037,0.26717296763649667
+org/apache/commons/math/util/FastMath,62,764,        ans[1] = a[1] + b[1];,1.0,0,,0,0.7328270323635037,0.26717296763649667
+org/apache/commons/math/util/FastMath,62,766,        resplit(ans);,1.0,0,,0,0.3144953792700918,0.6855046207299068
+org/apache/commons/math/util/FastMath,62,767,    },1.0,0,,0,0.1763888130312835,0.8236111869687153
+org/apache/commons/math/util/FastMath,62,788,        final double b = 1.0/4194304.0;,1.0,0,,0,0.37740475359576137,0.622595246404239
+org/apache/commons/math/util/FastMath,62,789,        final double a = 1.0 - b;,1.0,0,,0,0.397078968692864,0.6029210313071353
+org/apache/commons/math/util/FastMath,62,791,        if (in[0] == 0.0) {,1.0,0,,0,0.7306671654911143,0.26933283450888446
+org/apache/commons/math/util/FastMath,62,796,        result[0] = a / in[0];,1.0,0,,0,0.7959818161101816,0.2040181838898196
+org/apache/commons/math/util/FastMath,62,797,        result[1] = (b*in[0]-a*in[1]) / (in[0]*in[0] + in[0]*in[1]);,1.0,0,,0,0.9953842140607759,0.004615785939224618
+org/apache/commons/math/util/FastMath,62,799,        if (result[1] != result[1]) { // can happen if result[1] is NAN,1.0,0,,0,0.8176132552273327,0.18238674477266703
+org/apache/commons/math/util/FastMath,62,800,            result[1] = 0.0;,1.0,0,,0,0.6351489974588737,0.36485100254112635
+org/apache/commons/math/util/FastMath,62,804,        resplit(result);,1.0,0,,0,0.3136799037773574,0.6863200962226417
+org/apache/commons/math/util/FastMath,62,806,        for (int i = 0; i < 2; i++) {,1.0,0,,0,0.4718460343787393,0.528153965621261
+org/apache/commons/math/util/FastMath,62,808,            double err = 1.0 - result[0] * in[0] - result[0] * in[1] -,1.0,0,,0,0.9709709075223655,0.029029092477635923
+org/apache/commons/math/util/FastMath,62,811,            err = err * (result[0] + result[1]);,1.0,0,,0,0.8430607534554843,0.1569392465445161
+org/apache/commons/math/util/FastMath,62,813,            result[1] += err;,1.0,0,,0,0.7256805655770492,0.2743194344229523
+org/apache/commons/math/util/FastMath,62,815,    },1.0,0,,0,0.1763888130312835,0.8236111869687153
+org/apache/commons/math/util/FastMath,62,823,        final double xs[] = new double[2];,1.0,0,,0,0.6365299716556309,0.3634700283443685
+org/apache/commons/math/util/FastMath,62,824,        final double ys[] = new double[2];,1.0,0,,0,0.6365299716556309,0.3634700283443685
+org/apache/commons/math/util/FastMath,62,825,        final double zs[] = new double[2];,1.0,0,,0,0.6365299716556309,0.3634700283443685
+org/apache/commons/math/util/FastMath,62,828,"        split(a[0], xs);",1.0,0,,0,0.7028598624227007,0.2971401375772995
+org/apache/commons/math/util/FastMath,62,829,"        split(b[0], ys);",1.0,0,,0,0.7028598624227007,0.2971401375772995
+org/apache/commons/math/util/FastMath,62,830,"        splitMult(xs, ys, zs);",1.0,0,,0,0.17266805954050896,0.8273319404594915
+org/apache/commons/math/util/FastMath,62,832,        result[0] = zs[0];,1.0,0,,0,0.6826364579655497,0.31736354203444994
+org/apache/commons/math/util/FastMath,62,833,        result[1] = zs[1];,1.0,0,,0,0.6826364579655497,0.31736354203444994
+org/apache/commons/math/util/FastMath,62,836,"        split(b[1], ys);",1.0,0,,0,0.7028598624227007,0.2971401375772995
+org/apache/commons/math/util/FastMath,62,837,"        splitMult(xs, ys, zs);",1.0,0,,0,0.17266805954050896,0.8273319404594915
+org/apache/commons/math/util/FastMath,62,839,        double tmp = result[0] + zs[0];,1.0,0,,0,0.7390257403015582,0.260974259698442
+org/apache/commons/math/util/FastMath,62,840,        result[1] = result[1] - (tmp - result[0] - zs[0]);,1.0,0,,0,0.8716328100583588,0.12836718994164262
+org/apache/commons/math/util/FastMath,62,841,        result[0] = tmp;,1.0,0,,0,0.76595556646078,0.23404443353921994
+org/apache/commons/math/util/FastMath,62,842,        tmp = result[0] + zs[1];,1.0,0,,0,0.7965702402633512,0.20342975973664798
+org/apache/commons/math/util/FastMath,62,843,        result[1] = result[1] - (tmp - result[0] - zs[1]);,1.0,0,,0,0.8716328100583588,0.12836718994164262
+org/apache/commons/math/util/FastMath,62,844,        result[0] = tmp;,1.0,0,,0,0.76595556646078,0.23404443353921994
+org/apache/commons/math/util/FastMath,62,847,"        split(a[1], xs);",1.0,0,,0,0.7028598624227007,0.2971401375772995
+org/apache/commons/math/util/FastMath,62,848,"        split(b[0], ys);",1.0,0,,0,0.7028598624227007,0.2971401375772995
+org/apache/commons/math/util/FastMath,62,849,"        splitMult(xs, ys, zs);",1.0,0,,0,0.17266805954050896,0.8273319404594915
+org/apache/commons/math/util/FastMath,62,851,        tmp = result[0] + zs[0];,1.0,0,,0,0.7965702402633512,0.20342975973664798
+org/apache/commons/math/util/FastMath,62,852,        result[1] = result[1] - (tmp - result[0] - zs[0]);,1.0,0,,0,0.8716328100583588,0.12836718994164262
+org/apache/commons/math/util/FastMath,62,853,        result[0] = tmp;,1.0,0,,0,0.76595556646078,0.23404443353921994
+org/apache/commons/math/util/FastMath,62,854,        tmp = result[0] + zs[1];,1.0,0,,0,0.7965702402633512,0.20342975973664798
+org/apache/commons/math/util/FastMath,62,855,        result[1] = result[1] - (tmp - result[0] - zs[1]);,1.0,0,,0,0.8716328100583588,0.12836718994164262
+org/apache/commons/math/util/FastMath,62,856,        result[0] = tmp;,1.0,0,,0,0.76595556646078,0.23404443353921994
+org/apache/commons/math/util/FastMath,62,859,"        split(a[1], xs);",1.0,0,,0,0.7028598624227007,0.2971401375772995
+org/apache/commons/math/util/FastMath,62,860,"        split(b[1], ys);",1.0,0,,0,0.7028598624227007,0.2971401375772995
+org/apache/commons/math/util/FastMath,62,861,"        splitMult(xs, ys, zs);",1.0,0,,0,0.17266805954050896,0.8273319404594915
+org/apache/commons/math/util/FastMath,62,863,        tmp = result[0] + zs[0];,1.0,0,,0,0.7965702402633512,0.20342975973664798
+org/apache/commons/math/util/FastMath,62,864,        result[1] = result[1] - (tmp - result[0] - zs[0]);,1.0,0,,0,0.8716328100583588,0.12836718994164262
+org/apache/commons/math/util/FastMath,62,865,        result[0] = tmp;,1.0,0,,0,0.76595556646078,0.23404443353921994
+org/apache/commons/math/util/FastMath,62,866,        tmp = result[0] + zs[1];,1.0,0,,0,0.7965702402633512,0.20342975973664798
+org/apache/commons/math/util/FastMath,62,867,        result[1] = result[1] - (tmp - result[0] - zs[1]);,1.0,0,,0,0.8716328100583588,0.12836718994164262
+org/apache/commons/math/util/FastMath,62,868,        result[0] = tmp;,1.0,0,,0,0.76595556646078,0.23404443353921994
+org/apache/commons/math/util/FastMath,62,869,    },1.0,0,,0,0.1763888130312835,0.8236111869687153
+org/apache/commons/math/util/FastMath,62,878,        final double xs[] = new double[2];,1.0,0,,0,0.6365299716556309,0.3634700283443685
+org/apache/commons/math/util/FastMath,62,879,        final double as[] = new double[2];,1.0,0,,0,0.6365299716556309,0.3634700283443685
+org/apache/commons/math/util/FastMath,62,880,        final double ys[] = new double[2];,1.0,0,,0,0.6365299716556309,0.3634700283443685
+org/apache/commons/math/util/FastMath,62,889,        xs[0] = 2.718281828459045;,1.0,0,,0,0.685147370075512,0.31485262992448965
+org/apache/commons/math/util/FastMath,62,890,        xs[1] = 1.4456468917292502E-16;,1.0,0,,0,0.6892354445680047,0.3107645554319949
+org/apache/commons/math/util/FastMath,62,892,"        split(1.0, ys);",1.0,0,,0,0.25074072632371625,0.749259273676285
+org/apache/commons/math/util/FastMath,62,894,        while (p > 0) {,1.0,0,,0,0.3686306095615374,0.6313693904384626
+org/apache/commons/math/util/FastMath,62,895,            if ((p & 1) != 0) {,1.0,0,,0,0.42117514452707866,0.5788248554729225
+org/apache/commons/math/util/FastMath,62,896,"                quadMult(ys, xs, as);",1.0,0,,0,0.11005630067844846,0.8899436993215523
+org/apache/commons/math/util/FastMath,62,897,                ys[0] = as[0]; ys[1] = as[1];,1.0,0,,0,0.6657364548065492,0.3342635451934495
+org/apache/commons/math/util/FastMath,62,900,"            quadMult(xs, xs, as);",1.0,0,,0,0.144258157369334,0.8557418426306672
+org/apache/commons/math/util/FastMath,62,901,            xs[0] = as[0]; xs[1] = as[1];,1.0,0,,0,0.7308158885322762,0.2691841114677234
+org/apache/commons/math/util/FastMath,62,903,            p >>= 1;,1.0,0,,0,0.2261717653993995,0.7738282346005996
+org/apache/commons/math/util/FastMath,62,906,        if (result != null) {,1.0,0,,0,0.36863703154031807,0.6313629684596819
+org/apache/commons/math/util/FastMath,62,907,            result[0] = ys[0];,1.0,0,,0,0.6349834242785334,0.3650165757214654
+org/apache/commons/math/util/FastMath,62,908,            result[1] = ys[1];,1.0,0,,0,0.6349834242785334,0.3650165757214654
+org/apache/commons/math/util/FastMath,62,910,            resplit(result);,1.0,0,,0,0.2698803998750808,0.7301196001249197
+org/apache/commons/math/util/FastMath,62,913,        return ys[0] + ys[1];,1.0,0,,0,0.6802179253395781,0.31978207466042263
+org/apache/commons/math/util/FastMath,62,1396,        double x[] = new double[2];,1.0,0,,0,0.3634371326752982,0.6365628673247002
+org/apache/commons/math/util/FastMath,62,1397,        double x2[] = new double[2];,1.0,0,,0,0.3642337705882828,0.6357662294117167
+org/apache/commons/math/util/FastMath,62,1398,        double y[] = new double[2];,1.0,0,,0,0.3634371326752982,0.6365628673247002
+org/apache/commons/math/util/FastMath,62,1399,        double a[] = new double[2];,1.0,0,,0,0.3634371326752982,0.6365628673247002
+org/apache/commons/math/util/FastMath,62,1401,"        split(xi, x);",1.0,0,,0,0.21719634485265515,0.7828036551473432
+org/apache/commons/math/util/FastMath,62,1404,        x[0] += 1.0;,1.0,0,,0,0.6840397299300388,0.3159602700699605
+org/apache/commons/math/util/FastMath,62,1405,        resplit(x);,1.0,0,,0,0.3154301729614828,0.6845698270385177
+org/apache/commons/math/util/FastMath,62,1406,"        splitReciprocal(x, a);",1.0,0,,0,0.21692668118498876,0.7830733188150101
+org/apache/commons/math/util/FastMath,62,1407,        x[0] -= 2.0;,1.0,0,,0,0.6840397299300388,0.3159602700699605
+org/apache/commons/math/util/FastMath,62,1408,        resplit(x);,1.0,0,,0,0.3154301729614828,0.6845698270385177
+org/apache/commons/math/util/FastMath,62,1409,"        splitMult(x, a, y);",1.0,0,,0,0.172278790358103,0.8277212096418962
+org/apache/commons/math/util/FastMath,62,1410,        x[0] = y[0];,1.0,0,,0,0.6840397299300388,0.3159602700699605
+org/apache/commons/math/util/FastMath,62,1411,        x[1] = y[1];,1.0,0,,0,0.6840397299300388,0.3159602700699605
+org/apache/commons/math/util/FastMath,62,1414,"        splitMult(x, x, x2);",1.0,0,,0,0.17235685096630612,0.8276431490336926
+org/apache/commons/math/util/FastMath,62,1420,        y[0] = LN_SPLIT_COEF[LN_SPLIT_COEF.length-1][0];,1.0,0,,0,0.8356307052614065,0.16436929473859305
+org/apache/commons/math/util/FastMath,62,1421,        y[1] = LN_SPLIT_COEF[LN_SPLIT_COEF.length-1][1];,1.0,0,,0,0.8356307052614065,0.16436929473859305
+org/apache/commons/math/util/FastMath,62,1423,        for (int i = LN_SPLIT_COEF.length-2; i >= 0; i--) {,1.0,0,,0,0.4691983884007369,0.5308016115992619
+org/apache/commons/math/util/FastMath,62,1424,"            splitMult(y, x2, a);",1.0,0,,0,0.14414596392808532,0.8558540360719157
+org/apache/commons/math/util/FastMath,62,1425,            y[0] = a[0];,1.0,0,,0,0.6364851975890479,0.3635148024109525
+org/apache/commons/math/util/FastMath,62,1426,            y[1] = a[1];,1.0,0,,0,0.6364851975890479,0.3635148024109525
+org/apache/commons/math/util/FastMath,62,1427,"            splitAdd(y, LN_SPLIT_COEF[i], a);",1.0,0,,0,0.6220959065634367,0.3779040934365629
+org/apache/commons/math/util/FastMath,62,1428,            y[0] = a[0];,1.0,0,,0,0.6364851975890479,0.3635148024109525
+org/apache/commons/math/util/FastMath,62,1429,            y[1] = a[1];,1.0,0,,0,0.6364851975890479,0.3635148024109525
+org/apache/commons/math/util/FastMath,62,1432,"        splitMult(y, x, a);",1.0,0,,0,0.172278790358103,0.8277212096418962
+org/apache/commons/math/util/FastMath,62,1433,        y[0] = a[0];,1.0,0,,0,0.6840397299300388,0.3159602700699605
+org/apache/commons/math/util/FastMath,62,1434,        y[1] = a[1];,1.0,0,,0,0.6840397299300388,0.3159602700699605
+org/apache/commons/math/util/FastMath,62,1436,        return y;,1.0,0,,0,0.21832242166233382,0.7816775783376658
+org/apache/commons/math/util/FastMath,62,1446,        final double xs[] = new double[2];,1.0,0,,0,0.6365299716556309,0.3634700283443685
+org/apache/commons/math/util/FastMath,62,1447,        final double ys[] = new double[2];,1.0,0,,0,0.6365299716556309,0.3634700283443685
+org/apache/commons/math/util/FastMath,62,1448,        final double facts[] = new double[2];,1.0,0,,0,0.6409163463975107,0.3590836536024885
+org/apache/commons/math/util/FastMath,62,1449,        final double as[] = new double[2];,1.0,0,,0,0.6365299716556309,0.3634700283443685
+org/apache/commons/math/util/FastMath,62,1450,"        split(x, xs);",1.0,0,,0,0.21290710055374418,0.7870928994462556
+org/apache/commons/math/util/FastMath,62,1451,        ys[0] = ys[1] = 0.0;,1.0,0,,0,0.6507355501882429,0.349264449811757
+org/apache/commons/math/util/FastMath,62,1453,        for (int i = 19; i >= 0; i--) {,1.0,0,,0,0.5121258725083712,0.48787412749163056
+org/apache/commons/math/util/FastMath,62,1454,"            splitMult(xs, ys, as);",1.0,0,,0,0.13911918980803215,0.8608808101919667
+org/apache/commons/math/util/FastMath,62,1455,            ys[0] = as[0]; ys[1] = as[1];,1.0,0,,0,0.6006234473559993,0.39937655264400107
+org/apache/commons/math/util/FastMath,62,1457,            if ( (i & 1) == 0) {,1.0,0,,0,0.46215318401317623,0.537846815986823
+org/apache/commons/math/util/FastMath,62,1458,                continue;,1.0,0,,0,0.14856823607968736,0.8514317639203135
+org/apache/commons/math/util/FastMath,62,1461,"            split(FACT[i], as);",1.0,0,,0,0.5387733417259722,0.4612266582740268
+org/apache/commons/math/util/FastMath,62,1462,"            splitReciprocal(as, facts);",1.0,0,,0,0.18112277997291215,0.8188772200270863
+org/apache/commons/math/util/FastMath,62,1464,            if ( (i & 2) != 0 ) {,1.0,0,,0,0.4632498317539072,0.5367501682460932
+org/apache/commons/math/util/FastMath,62,1465,                facts[0] = -facts[0];,1.0,0,,0,0.48542513353019096,0.514574866469808
+org/apache/commons/math/util/FastMath,62,1466,                facts[1] = -facts[1];,1.0,0,,0,0.48542513353019096,0.514574866469808
+org/apache/commons/math/util/FastMath,62,1469,"            splitAdd(ys, facts, as);",1.0,0,,0,0.1403069377430066,0.8596930622569949
+org/apache/commons/math/util/FastMath,62,1470,            ys[0] = as[0]; ys[1] = as[1];,1.0,0,,0,0.6006234473559993,0.39937655264400107
+org/apache/commons/math/util/FastMath,62,1473,        if (result != null) {,1.0,0,,0,0.37890034229023,0.6210996577097702
+org/apache/commons/math/util/FastMath,62,1474,            result[0] = ys[0];,1.0,0,,0,0.5108675021176724,0.489132497882328
+org/apache/commons/math/util/FastMath,62,1475,            result[1] = ys[1];,1.0,0,,0,0.5108675021176724,0.489132497882328
+org/apache/commons/math/util/FastMath,62,1478,        return ys[0] + ys[1];,1.0,0,,0,0.5837020873551598,0.4162979126448388
+org/apache/commons/math/util/FastMath,62,1489,        final double xs[] = new double[2];,1.0,0,,0,0.3616702237356553,0.6383297762643461
+org/apache/commons/math/util/FastMath,62,1490,        final double ys[] = new double[2];,1.0,0,,0,0.3616702237356553,0.6383297762643461
+org/apache/commons/math/util/FastMath,62,1491,        final double facts[] = new double[2];,1.0,0,,0,0.3669436734274685,0.6330563265725317
+org/apache/commons/math/util/FastMath,62,1492,        final double as[] = new double[2];,1.0,0,,0,0.3616702237356553,0.6383297762643461
+org/apache/commons/math/util/FastMath,62,1493,"        split(x, xs);",1.0,0,,0,0.21290710055374418,0.7870928994462556
+org/apache/commons/math/util/FastMath,62,1494,        ys[0] = ys[1] = 0.0;,1.0,0,,0,0.6507355501882429,0.349264449811757
+org/apache/commons/math/util/FastMath,62,1496,        for (int i = 19; i >= 0; i--) {,1.0,0,,0,0.5121258725083712,0.48787412749163056
+org/apache/commons/math/util/FastMath,62,1497,"            splitMult(xs, ys, as);",1.0,0,,0,0.13911918980803215,0.8608808101919667
+org/apache/commons/math/util/FastMath,62,1498,            ys[0] = as[0]; ys[1] = as[1];,1.0,0,,0,0.6006234473559993,0.39937655264400107
+org/apache/commons/math/util/FastMath,62,1500,            if ( (i & 1) != 0) {,1.0,0,,0,0.46215318401317623,0.537846815986823
+org/apache/commons/math/util/FastMath,62,1501,                continue;,1.0,0,,0,0.14856823607968736,0.8514317639203135
+org/apache/commons/math/util/FastMath,62,1504,"            split(FACT[i], as);",1.0,0,,0,0.5387733417259722,0.4612266582740268
+org/apache/commons/math/util/FastMath,62,1505,"            splitReciprocal(as, facts);",1.0,0,,0,0.18112277997291215,0.8188772200270863
+org/apache/commons/math/util/FastMath,62,1507,            if ( (i & 2) != 0 ) {,1.0,0,,0,0.4632498317539072,0.5367501682460932
+org/apache/commons/math/util/FastMath,62,1508,                facts[0] = -facts[0];,1.0,0,,0,0.48542513353019096,0.514574866469808
+org/apache/commons/math/util/FastMath,62,1509,                facts[1] = -facts[1];,1.0,0,,0,0.48542513353019096,0.514574866469808
+org/apache/commons/math/util/FastMath,62,1512,"            splitAdd(ys, facts, as);",1.0,0,,0,0.1403069377430066,0.8596930622569949
+org/apache/commons/math/util/FastMath,62,1513,            ys[0] = as[0]; ys[1] = as[1];,1.0,0,,0,0.6006234473559993,0.39937655264400107
+org/apache/commons/math/util/FastMath,62,1516,        if (result != null) {,1.0,0,,0,0.37890034229023,0.6210996577097702
+org/apache/commons/math/util/FastMath,62,1517,            result[0] = ys[0];,1.0,0,,0,0.5108675021176724,0.489132497882328
+org/apache/commons/math/util/FastMath,62,1518,            result[1] = ys[1];,1.0,0,,0,0.5108675021176724,0.489132497882328
+org/apache/commons/math/util/FastMath,62,1521,        return ys[0] + ys[1];,1.0,0,,0,0.5837020873551598,0.4162979126448388
+org/apache/commons/math/util/FastMath,62,1527,        final double result[] = new double[2];,1.0,0,,0,0.36880733966101675,0.631192660338983
+org/apache/commons/math/util/FastMath,62,1530,        for (int i = 0; i < 7; i++) {,1.0,0,,0,0.5089149718195897,0.4910850281804113
+org/apache/commons/math/util/FastMath,62,1531,            double x = i / 8.0;,1.0,0,,0,0.20903198750836235,0.7909680124916375
+org/apache/commons/math/util/FastMath,62,1533,"            slowSin(x, result);",1.0,0,,0,0.17533379644944233,0.8246662035505591
+org/apache/commons/math/util/FastMath,62,1534,            SINE_TABLE_A[i] = result[0];,1.0,0,,0,0.5232050702640596,0.476794929735939
+org/apache/commons/math/util/FastMath,62,1535,            SINE_TABLE_B[i] = result[1];,1.0,0,,0,0.5232050702640596,0.476794929735939
+org/apache/commons/math/util/FastMath,62,1537,"            slowCos(x, result);",1.0,0,,0,0.17533379644944233,0.8246662035505591
+org/apache/commons/math/util/FastMath,62,1538,            COSINE_TABLE_A[i] = result[0];,1.0,0,,0,0.5263038048669482,0.4736961951330533
+org/apache/commons/math/util/FastMath,62,1539,            COSINE_TABLE_B[i] = result[1];,1.0,0,,0,0.5263038048669482,0.4736961951330533
+org/apache/commons/math/util/FastMath,62,1543,        for (int i = 7; i < 14; i++) {,1.0,0,,0,0.5104940485837329,0.48950595141626696
+org/apache/commons/math/util/FastMath,62,1544,            double xs[] = new double[2];,1.0,0,,0,0.18062253064028722,0.8193774693597119
+org/apache/commons/math/util/FastMath,62,1545,            double ys[] = new double[2];,1.0,0,,0,0.18062253064028722,0.8193774693597119
+org/apache/commons/math/util/FastMath,62,1546,            double as[] = new double[2];,1.0,0,,0,0.18062253064028722,0.8193774693597119
+org/apache/commons/math/util/FastMath,62,1547,            double bs[] = new double[2];,1.0,0,,0,0.18062253064028722,0.8193774693597119
+org/apache/commons/math/util/FastMath,62,1548,            double temps[] = new double[2];,1.0,0,,0,0.18344499595981814,0.8165550040401819
+org/apache/commons/math/util/FastMath,62,1550,            if ( (i & 1) == 0) {,1.0,0,,0,0.46215318401317623,0.537846815986823
+org/apache/commons/math/util/FastMath,62,1552,                xs[0] = SINE_TABLE_A[i/2];,1.0,0,,0,0.5743181273342207,0.4256818726657779
+org/apache/commons/math/util/FastMath,62,1553,                xs[1] = SINE_TABLE_B[i/2];,1.0,0,,0,0.5743181273342207,0.4256818726657779
+org/apache/commons/math/util/FastMath,62,1554,                ys[0] = COSINE_TABLE_A[i/2];,1.0,0,,0,0.5771461254340158,0.42285387456598295
+org/apache/commons/math/util/FastMath,62,1555,                ys[1] = COSINE_TABLE_B[i/2];,1.0,0,,0,0.5771461254340158,0.42285387456598295
+org/apache/commons/math/util/FastMath,62,1558,"                splitMult(xs, ys, result);",1.0,0,,0,0.09748618745215624,0.9025138125478432
+org/apache/commons/math/util/FastMath,62,1559,                SINE_TABLE_A[i] = result[0] * 2.0;,1.0,0,,0,0.5000457127086799,0.49995428729131947
+org/apache/commons/math/util/FastMath,62,1560,                SINE_TABLE_B[i] = result[1] * 2.0;,1.0,0,,0,0.5000457127086799,0.49995428729131947
+org/apache/commons/math/util/FastMath,62,1563,"                splitMult(ys, ys, as);",1.0,0,,0,0.09568768657987689,0.9043123134201232
+org/apache/commons/math/util/FastMath,62,1564,"                splitMult(xs, xs, temps);",1.0,0,,0,0.0970059028862669,0.9029940971137331
+org/apache/commons/math/util/FastMath,62,1565,                temps[0] = -temps[0];,1.0,0,,0,0.48542513353019096,0.514574866469808
+org/apache/commons/math/util/FastMath,62,1566,                temps[1] = -temps[1];,1.0,0,,0,0.48542513353019096,0.514574866469808
+org/apache/commons/math/util/FastMath,62,1567,"                splitAdd(as, temps, result);",1.0,0,,0,0.09850957582563302,0.9014904241743659
+org/apache/commons/math/util/FastMath,62,1568,                COSINE_TABLE_A[i] = result[0];,1.0,0,,0,0.4211272347230238,0.5788727652769774
+org/apache/commons/math/util/FastMath,62,1569,                COSINE_TABLE_B[i] = result[1];,1.0,0,,0,0.4211272347230238,0.5788727652769774
+org/apache/commons/math/util/FastMath,62,1571,                xs[0] = SINE_TABLE_A[i/2];,1.0,0,,0,0.5743181273342207,0.4256818726657779
+org/apache/commons/math/util/FastMath,62,1572,                xs[1] = SINE_TABLE_B[i/2];,1.0,0,,0,0.5743181273342207,0.4256818726657779
+org/apache/commons/math/util/FastMath,62,1573,                ys[0] = COSINE_TABLE_A[i/2];,1.0,0,,0,0.5771461254340158,0.42285387456598295
+org/apache/commons/math/util/FastMath,62,1574,                ys[1] = COSINE_TABLE_B[i/2];,1.0,0,,0,0.5771461254340158,0.42285387456598295
+org/apache/commons/math/util/FastMath,62,1575,                as[0] = SINE_TABLE_A[i/2+1];,1.0,0,,0,0.6503618368674818,0.3496381631325175
+org/apache/commons/math/util/FastMath,62,1576,                as[1] = SINE_TABLE_B[i/2+1];,1.0,0,,0,0.6503618368674818,0.3496381631325175
+org/apache/commons/math/util/FastMath,62,1577,                bs[0] = COSINE_TABLE_A[i/2+1];,1.0,0,,0,0.6531819677235976,0.34681803227640096
+org/apache/commons/math/util/FastMath,62,1578,                bs[1] = COSINE_TABLE_B[i/2+1];,1.0,0,,0,0.6531819677235976,0.34681803227640096
+org/apache/commons/math/util/FastMath,62,1581,"                splitMult(xs, bs, temps);",1.0,0,,0,0.0970059028862669,0.9029940971137331
+org/apache/commons/math/util/FastMath,62,1582,"                splitMult(ys, as, result);",1.0,0,,0,0.09748618745215624,0.9025138125478432
+org/apache/commons/math/util/FastMath,62,1583,"                splitAdd(result, temps, result);",1.0,0,,0,0.10081542190241652,0.899184578097584
+org/apache/commons/math/util/FastMath,62,1584,                SINE_TABLE_A[i] = result[0];,1.0,0,,0,0.41810117810004505,0.5818988218999566
+org/apache/commons/math/util/FastMath,62,1585,                SINE_TABLE_B[i] = result[1];,1.0,0,,0,0.41810117810004505,0.5818988218999566
+org/apache/commons/math/util/FastMath,62,1588,"                splitMult(ys, bs, result);",1.0,0,,0,0.09748618745215624,0.9025138125478432
+org/apache/commons/math/util/FastMath,62,1589,"                splitMult(xs, as, temps);",1.0,0,,0,0.0970059028862669,0.9029940971137331
+org/apache/commons/math/util/FastMath,62,1590,                temps[0] = -temps[0];,1.0,0,,0,0.48542513353019096,0.514574866469808
+org/apache/commons/math/util/FastMath,62,1591,                temps[1] = -temps[1];,1.0,0,,0,0.48542513353019096,0.514574866469808
+org/apache/commons/math/util/FastMath,62,1592,"                splitAdd(result, temps, result);",1.0,0,,0,0.10081542190241652,0.899184578097584
+org/apache/commons/math/util/FastMath,62,1593,                COSINE_TABLE_A[i] = result[0];,1.0,0,,0,0.4211272347230238,0.5788727652769774
+org/apache/commons/math/util/FastMath,62,1594,                COSINE_TABLE_B[i] = result[1];,1.0,0,,0,0.4211272347230238,0.5788727652769774
+org/apache/commons/math/util/FastMath,62,1599,        for (int i = 0; i < 14; i++) {,1.0,0,,0,0.5104940485837329,0.48950595141626696
+org/apache/commons/math/util/FastMath,62,1600,            double xs[] = new double[2];,1.0,0,,0,0.18062253064028722,0.8193774693597119
+org/apache/commons/math/util/FastMath,62,1601,            double ys[] = new double[2];,1.0,0,,0,0.18062253064028722,0.8193774693597119
+org/apache/commons/math/util/FastMath,62,1602,            double as[] = new double[2];,1.0,0,,0,0.18062253064028722,0.8193774693597119
+org/apache/commons/math/util/FastMath,62,1604,            as[0] = COSINE_TABLE_A[i];,1.0,0,,0,0.5203161522885064,0.4796838477114925
+org/apache/commons/math/util/FastMath,62,1605,            as[1] = COSINE_TABLE_B[i];,1.0,0,,0,0.5203161522885064,0.4796838477114925
+org/apache/commons/math/util/FastMath,62,1607,"            splitReciprocal(as, ys);",1.0,0,,0,0.17870122410088127,0.8212987758991188
+org/apache/commons/math/util/FastMath,62,1609,            xs[0] = SINE_TABLE_A[i];,1.0,0,,0,0.5176375647518658,0.4823624352481346
+org/apache/commons/math/util/FastMath,62,1610,            xs[1] = SINE_TABLE_B[i];,1.0,0,,0,0.5176375647518658,0.4823624352481346
+org/apache/commons/math/util/FastMath,62,1612,"            splitMult(xs, ys, as);",1.0,0,,0,0.13911918980803215,0.8608808101919667
+org/apache/commons/math/util/FastMath,62,1614,            TANGENT_TABLE_A[i] = as[0];,1.0,0,,0,0.5217343495611475,0.47826565043885244
+org/apache/commons/math/util/FastMath,62,1615,            TANGENT_TABLE_B[i] = as[1];,1.0,0,,0,0.5217343495611475,0.47826565043885244
+org/apache/commons/math/util/FastMath,62,1618,    },1.0,0,,0,0.15265041384771044,0.8473495861522908
+org/apache/commons/math/util/FastMath,62,3016,        return (x < 0l) ? -x : x;,1.0,0,,0,0.4811935100333706,0.518806489966629
+org/apache/commons/math/util/FastMath,62,3034,        return (x < 0.0) ? -x : x;,1.0,0,,0,0.4825594350051008,0.5174405649948983
+org/apache/commons/math/util/FastMath,62,3044,        return abs(x - Double.longBitsToDouble(Double.doubleToLongBits(x) ^ 1));,1.0,0,,0,0.5197238687977894,0.48027613120221113
+org/apache/commons/math/util/FastMath,62,3224,        return (a <= b) ? a : (Double.isNaN(a + b) ? Double.NaN : b);,1.0,0,,0,0.42405691239524895,0.5759430876047499
+org/apache/commons/math/util/FastMath,62,3260,        return (a <= b) ? b : (Double.isNaN(a + b) ? Double.NaN : a);,1.0,0,,0,0.42405691239524895,0.5759430876047499
+org/apache/commons/math/util/Incrementor,62,28,public class Incrementor {,1.0,0,,0,0.3682431492306441,0.6317568507693555
+org/apache/commons/math/util/Incrementor,62,44,        maximalCount = max;,1.0,0,,0,0.2803057422857397,0.7196942577142604
+org/apache/commons/math/util/Incrementor,62,45,    },1.0,0,,0,0.15265041384771044,0.8473495861522908
+org/apache/commons/math/util/Incrementor,62,53,        return maximalCount;,1.0,0,,0,0.20986146801934516,0.7901385319806544
+org/apache/commons/math/util/Incrementor,62,62,        return count;,1.0,0,,0,0.20575529752395277,0.794244702476048
+org/apache/commons/math/util/Incrementor,62,84,        if (++count > maximalCount) {,1.0,0,,0,0.5032736154816339,0.49672638451836687
+org/apache/commons/math/util/Incrementor,62,87,    },1.0,0,,0,0.15265041384771044,0.8473495861522908
+org/apache/commons/math/util/Incrementor,62,93,        count = 0;,1.0,0,,0,0.2520605452654631,0.7479394547345365
+org/apache/commons/math/util/Incrementor,62,94,    },1.0,0,,0,0.15265041384771044,0.8473495861522908
+org/apache/commons/math/util/MathUtils,62,33,public final class MathUtils {,1.0,0,,0,0.4473730419188232,0.5526269580811775
+org/apache/commons/math/util/MathUtils,62,75,    private static final long[] FACTORIALS = new long[] {,1.0,0,,0,0.6194204623749597,0.380579537625038
+org/apache/commons/math/util/MathUtils,62,417,"        return equals(x, y, 1);",1.0,0,,0,0.24943386553565247,0.7505661344643466
+org/apache/commons/math/util/MathUtils,62,479,        assert maxUlps > 0 && maxUlps < NAN_GAP;,1.0,0,,0,0.5364337647545159,0.463566235245485
+org/apache/commons/math/util/MathUtils,62,481,        long xInt = Double.doubleToLongBits(x);,1.0,0,,0,0.2963693644618047,0.7036306355381954
+org/apache/commons/math/util/MathUtils,62,482,        long yInt = Double.doubleToLongBits(y);,1.0,0,,0,0.2963693644618047,0.7036306355381954
+org/apache/commons/math/util/MathUtils,62,485,        if (xInt < 0) {,1.0,0,,0,0.3734356203466733,0.6265643796533266
+org/apache/commons/math/util/MathUtils,62,486,            xInt = SGN_MASK - xInt;,1.0,0,,0,0.30888871073191776,0.6911112892680825
+org/apache/commons/math/util/MathUtils,62,488,        if (yInt < 0) {,1.0,0,,0,0.3734356203466733,0.6265643796533266
+org/apache/commons/math/util/MathUtils,62,489,            yInt = SGN_MASK - yInt;,1.0,0,,0,0.30888871073191776,0.6911112892680825
+org/apache/commons/math/util/MathUtils,62,492,        final boolean isEqual = FastMath.abs(xInt - yInt) <= maxUlps;,1.0,0,,0,0.6457025959540619,0.3542974040459384
+org/apache/commons/math/util/MathUtils,62,494,        return isEqual && !Double.isNaN(x) && !Double.isNaN(y);,1.0,0,,0,0.28332925940771364,0.7166707405922866
+org/apache/commons/math/random/JDKRandomGenerator,62,28,public class JDKRandomGenerator extends Random implements RandomGenerator {,1.0,0,,0,0.9964101972513347,0.003589802748664914
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,191,"        Arrays.sort(optima, new Comparator<UnivariateRealPointValuePair>() {",1.0,0,,0,0.9938948804939232,0.006105119506075562
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,194,                    if (o1 == null) {,1.0,0,,0,0.14418320220310105,0.855816797796899
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,196,                    } else if (o2 == null) {,1.0,0,,0,0.10657021352247262,0.8934297864775277
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,199,                    final double v1 = o1.getValue();,1.0,0,,0,0.1736607402041397,0.8263392597958589
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,200,                    final double v2 = o2.getValue();,1.0,0,,0,0.1736607402041397,0.8263392597958589
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,201,                    return (goal == GoalType.MINIMIZE) ?,1.0,0,,0,0.09461757753798142,0.9053824224620174
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,72,                                             final RandomGenerator generator) {,1.0,0,,0,0.6998508390012009,0.3001491609987976
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,73,        this.optimizer = optimizer;,1.0,0,,0,0.333690262052459,0.6663097379475403
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,74,        this.starts = starts;,1.0,0,,0,0.3268516748510741,0.6731483251489243
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,75,        this.generator = generator;,1.0,0,,0,0.333690262052459,0.6663097379475403
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,76,    },1.0,0,,0,0.15265041384771044,0.8473495861522908
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,146,"        return optimize(f, goal, min, max, 0);",1.0,1,,0,0.1579127380663908,0.8420872619336076
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,154,        optima = new UnivariateRealPointValuePair[starts];,1.0,0,,0,0.9122567854867799,0.08774321451321843
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,155,        totalEvaluations = 0;,1.0,0,,0,0.25907391764615434,0.7409260823538469
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,158,        for (int i = 0; i < starts; ++i) {,1.0,0,,0,0.5108942391658512,0.48910576083414864
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,160,                final double bound1 = (i == 0) ? min : min + generator.nextDouble() * (max - min);,1.0,1,,0,0.7805317442714312,0.21946825572856982
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,161,                final double bound2 = (i == 0) ? max : min + generator.nextDouble() * (max - min);,1.0,1,,0,0.7805317442714312,0.21946825572856982
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,162,"                optima[i] = optimizer.optimize(f, goal, FastMath.min(bound1, bound2), FastMath.max(bound1, bound2));",1.0,1,,0,0.004308878180538559,0.9956911218194603
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,167,            },1.0,0,,0,0.15265041384771044,0.8473495861522908
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,169,            final int usedEvaluations = optimizer.getEvaluations();,1.0,0,,0,0.41642068077390865,0.5835793192260904
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,170,            optimizer.setMaxEvaluations(optimizer.getMaxEvaluations() - usedEvaluations);,1.0,0,,0,0.3538309162193882,0.646169083780612
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,171,            totalEvaluations += usedEvaluations;,1.0,0,,0,0.24893974048752454,0.7510602595124737
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,174,        sortPairs(goal);,1.0,0,,0,0.3149035730416953,0.6850964269583043
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,176,        if (optima[0] == null) {,1.0,0,,0,0.6538247666702001,0.3461752333297995
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,182,        return optima[0];,1.0,0,,0,0.48004807028975505,0.5199519297102451
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,191,"        Arrays.sort(optima, new Comparator<UnivariateRealPointValuePair>() {",1.0,0,,0,0.9938948804939232,0.006105119506075562
+org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer,62,205,    },1.0,0,,0,0.15265041384771044,0.8473495861522908
+org/apache/commons/math/optimization/univariate/UnivariateRealPointValuePair,62,45,                                        final double value) {,1.0,0,,0,0.3580912619554175,0.6419087380445841
+org/apache/commons/math/optimization/univariate/UnivariateRealPointValuePair,62,46,        this.point = point;,1.0,0,,0,0.3249600651174052,0.6750399348825958
+org/apache/commons/math/optimization/univariate/UnivariateRealPointValuePair,62,47,        this.value = value;,1.0,0,,0,0.3249600651174052,0.6750399348825958
+org/apache/commons/math/optimization/univariate/UnivariateRealPointValuePair,62,48,    },1.0,0,,0,0.15265041384771044,0.8473495861522908
+org/apache/commons/math/optimization/univariate/UnivariateRealPointValuePair,62,56,        return point;,1.0,0,,0,0.20575529752395277,0.794244702476048
+org/apache/commons/math/optimization/univariate/UnivariateRealPointValuePair,62,65,        return value;,1.0,0,,0,0.20575529752395277,0.794244702476048
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,36,public abstract class AbstractUnivariateRealOptimizer,1.0,0,,0,0.446350991168621,0.5536490088313805
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,41,    private final Incrementor evaluations = new Incrementor();,1.0,0,,0,0.998201160861083,0.001798839138915805
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,55,        evaluations.setMaximalCount(maxEvaluations);,1.0,0,,0,0.20782499424440892,0.7921750057555903
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,56,    },1.0,0,,0,0.15265041384771044,0.8473495861522908
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,60,        return evaluations.getMaximalCount();,1.0,0,,0,0.2613340934582341,0.7386659065417658
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,65,        return evaluations.getCount();,1.0,0,,0,0.25176677811111287,0.748233221888887
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,72,        return goal;,1.0,0,,0,0.20531187894769037,0.7946881210523102
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,78,        return searchMin;,1.0,0,,0,0.20788486409331794,0.7921151359066826
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,84,        return searchMax;,1.0,0,,0,0.20788486409331794,0.7921151359066826
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,90,        return searchStart;,1.0,0,,0,0.2091660083543075,0.7908339916456938
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,106,            evaluations.incrementCount();,1.0,0,,0,0.16727357001727727,0.832726429982723
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,109,        },1.0,0,,0,0.15265041384771044,0.8473495861522908
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,110,        return function.value(point);,1.0,0,,0,0.21617841037465665,0.7838215896253421
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,120,        if (f == null) {,1.0,0,,0,0.37422011495623486,0.6257798850437652
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,123,        if (goalType == null) {,1.0,0,,0,0.381128705818421,0.6188712941815793
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,128,        searchMin = min;,1.0,0,,0,0.2780266206058578,0.7219733793941424
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,129,        searchMax = max;,1.0,0,,0,0.2780266206058578,0.7219733793941424
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,130,        searchStart = startValue;,1.0,0,,0,0.28606535097606023,0.7139346490239394
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,131,        goal = goalType;,1.0,0,,0,0.2780266206058578,0.7219733793941424
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,132,        function = f;,1.0,0,,0,0.27614006136412683,0.7238599386358745
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,133,        evaluations.resetCount();,1.0,0,,0,0.21657655217450833,0.7834234478254931
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,136,        return doOptimize();,1.0,0,,0,0.367714662436605,0.6322853375633948
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,144,"        return optimize(f, goalType, min, max, min + 0.5 * (max - min));",1.0,0,,0,0.5895560667520443,0.410443933247956
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,62,158,        return checker;,1.0,0,,0,0.20674852466970248,0.7932514753302967
+org/apache/commons/math/optimization/GoalType,62,27,public enum GoalType implements Serializable {,1.0,0,,0,0.7191839067209524,0.28081609327904694
+org/apache/commons/math/optimization/GoalType,62,30,"    MAXIMIZE,",1.0,0,,0,0.1798475207138801,0.8201524792861187
+org/apache/commons/math/optimization/GoalType,62,33,    MINIMIZE,1.0,0,,0,0.17957219001222596,0.8204278099877748
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,76,                          double abs) {,1.0,0,,0,0.26349960787426613,0.7365003921257335
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,77,        if (rel < MIN_RELATIVE_TOLERANCE) {,1.0,0,,0,0.4270847459161111,0.572915254083888
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,80,        if (abs <= 0) {,1.0,0,,0,0.3734356203466733,0.6265643796533266
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,83,        relativeThreshold = rel;,1.0,0,,0,0.28499251662680625,0.7150074833731925
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,84,        absoluteThreshold = abs;,1.0,0,,0,0.28499251662680625,0.7150074833731925
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,85,    },1.0,0,,0,0.15265041384771044,0.8473495861522908
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,47,    private static final double GOLDEN_SECTION = 0.5 * (3 - FastMath.sqrt(5));,1.0,0,,0,0.8527248310257939,0.1472751689742049
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,51,    private static final double MIN_RELATIVE_TOLERANCE = 2 * FastMath.ulp(1d);,1.0,0,,0,0.7590797975516176,0.24092020244838266
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,90,        final boolean isMinim = getGoalType() == GoalType.MINIMIZE;,1.0,0,,0,0.6676244306414174,0.3323755693585827
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,91,        final double lo = getMin();,1.0,0,,0,0.5213564730237762,0.47864352697622553
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,92,        final double mid = getStartValue();,1.0,0,,0,0.5345873835991413,0.4654126164008594
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,93,        final double hi = getMax();,1.0,0,,0,0.5213564730237762,0.47864352697622553
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,96,        final ConvergenceChecker<UnivariateRealPointValuePair> checker,1.0,0,,0,0.9945050858188138,0.005494914181187856
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,101,        if (lo < hi) {,1.0,0,,0,0.4003053197934337,0.5996946802065652
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,102,            a = lo;,1.0,0,,0,0.22472425798831866,0.7752757420116805
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,103,            b = hi;,1.0,0,,0,0.22472425798831866,0.7752757420116805
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,109,        double x = mid;,1.0,0,,0,0.20772138521646766,0.7922786147835333
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,110,        double v = x;,1.0,0,,0,0.20672470238923818,0.7932752976107629
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,111,        double w = x;,1.0,0,,0,0.20672470238923818,0.7932752976107629
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,112,        double d = 0;,1.0,0,,0,0.18827856971485157,0.8117214302851489
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,113,        double e = 0;,1.0,0,,0,0.18827856971485157,0.8117214302851489
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,114,        double fx = computeObjectiveValue(x);,1.0,0,,0,0.4157125558676109,0.5842874441323889
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,115,        if (!isMinim) {,1.0,0,,0,0.4083389451888579,0.5916610548111427
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,118,        double fv = fx;,1.0,0,,0,0.20772138521646766,0.7922786147835333
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,119,        double fw = fx;,1.0,0,,0,0.20772138521646766,0.7922786147835333
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,121,        UnivariateRealPointValuePair previous = null;,1.0,0,,0,0.5141822728824554,0.48581772711754556
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,122,        UnivariateRealPointValuePair current,1.0,0,,0,0.49472344447080796,0.5052765555291914
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,125,        int iter = 0;,1.0,0,,0,0.18827856971485157,0.8117214302851489
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,127,            final double m = 0.5 * (a + b);,1.0,0,,0,0.5241146048325536,0.4758853951674472
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,128,            final double tol1 = relativeThreshold * FastMath.abs(x) + absoluteThreshold;,1.0,0,,0,0.5964459889542679,0.4035540110457318
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,129,            final double tol2 = 2 * tol1;,1.0,0,,0,0.33784660304185754,0.662153396958142
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,132,            final boolean stop = FastMath.abs(x - m) <= tol2 - 0.5 * (b - a);,1.0,0,,0,0.9180089430904229,0.08199105690957717
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,133,            if (!stop) {,1.0,0,,0,0.34498441985392314,0.6550155801460773
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,134,                double p = 0;,1.0,0,,0,0.09044982593935012,0.9095501740606508
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,135,                double q = 0;,1.0,0,,0,0.09044982593935012,0.9095501740606508
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,136,                double r = 0;,1.0,0,,0,0.09044982593935012,0.9095501740606508
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,137,                double u = 0;,1.0,0,,0,0.09044982593935012,0.9095501740606508
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,139,                if (FastMath.abs(e) > tol1) { // Fit parabola.,1.0,0,,0,0.2941328329495409,0.7058671670504605
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,140,                    r = (x - w) * (fx - fv);,1.0,0,,0,0.35554641338170084,0.6444535866182993
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,141,                    q = (x - v) * (fx - fw);,1.0,0,,0,0.35554641338170084,0.6444535866182993
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,142,                    p = (x - v) * q - (x - w) * r;,1.0,0,,0,0.6867246592078871,0.31327534079211244
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,143,                    q = 2 * (q - r);,1.0,0,,0,0.26064292150774937,0.7393570784922494
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,145,                    if (q > 0) {,1.0,0,,0,0.14225705484584836,0.857742945154152
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,146,                        p = -p;,1.0,0,,0,0.06383961557510211,0.9361603844248964
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,148,                        q = -q;,1.0,0,,0,0.06383961557510211,0.9361603844248964
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,151,                    r = e;,1.0,0,,0,0.0954678822995185,0.9045321177004811
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,152,                    e = d;,1.0,0,,0,0.0954678822995185,0.9045321177004811
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,154,                    if (p > q * (a - x) &&,1.0,0,,0,0.7258737520917848,0.2741262479082163
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,158,                        d = p / q;,1.0,0,,0,0.06863931211067206,0.931360687889329
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,159,                        u = x + d;,1.0,0,,0,0.06863931211067206,0.931360687889329
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,162,                        if (u - a < tol2 || b - u < tol2) {,1.0,0,,0,0.5102294204928226,0.4897705795071764
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,163,                            if (x <= m) {,1.0,0,,0,0.03442245756564225,0.9655775424343587
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,164,                                d = tol1;,1.0,0,,0,0.006886283253802871,0.9931137167461963
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,171,                        if (x < m) {,1.0,0,,0,0.08109845590099087,0.9189015440990074
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,172,                            e = b - x;,1.0,0,,0,0.028832411645127544,0.9711675883548709
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,174,                            e = a - x;,1.0,0,,0,0.028832411645127544,0.9711675883548709
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,176,                        d = GOLDEN_SECTION * e;,1.0,0,,0,0.07166050156775249,0.9283394984322478
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,180,                    if (x < m) {,1.0,0,,0,0.15706679645593238,0.8429332035440672
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,183,                        e = a - x;,1.0,0,,0,0.06863931211067206,0.931360687889329
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,185,                    d = GOLDEN_SECTION * e;,1.0,0,,0,0.14013619003726785,0.8598638099627334
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,189,                if (FastMath.abs(d) < tol1) {,1.0,0,,0,0.2666592935605406,0.7333407064394577
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,190,                    if (d >= 0) {,1.0,0,,0,0.14258872659525523,0.8574112734047443
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,191,                        u = x + tol1;,1.0,0,,0,0.06912101797731968,0.9308789820226802
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,193,                        u = x - tol1;,1.0,0,,0,0.06912101797731968,0.9308789820226802
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,196,                    u = x + d;,1.0,0,,0,0.1346468021071485,0.8653531978928503
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,199,                double fu = computeObjectiveValue(u);,1.0,0,,0,0.23373872122450712,0.7662612787754928
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,200,                if (!isMinim) {,1.0,0,,0,0.25810572766706236,0.7418942723329384
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,205,                if (fu <= fx) {,1.0,0,,0,0.25236192046574535,0.7476380795342544
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,206,                    if (u < x) {,1.0,0,,0,0.15706679645593238,0.8429332035440672
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,207,                        b = x;,1.0,0,,0,0.04761024237671293,0.9523897576232867
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,209,                        a = x;,1.0,0,,0,0.04761024237671293,0.9523897576232867
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,211,                    v = w;,1.0,0,,0,0.0954678822995185,0.9045321177004811
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,212,                    fv = fw;,1.0,0,,0,0.09573588194655369,0.9042641180534478
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,213,                    w = x;,1.0,0,,0,0.0954678822995185,0.9045321177004811
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,214,                    fw = fx;,1.0,0,,0,0.09573588194655369,0.9042641180534478
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,215,                    x = u;,1.0,0,,0,0.0954678822995185,0.9045321177004811
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,216,                    fx = fu;,1.0,0,,0,0.09573588194655369,0.9042641180534478
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,218,                    if (u < x) {,1.0,0,,0,0.15706679645593238,0.8429332035440672
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,219,                        a = u;,1.0,0,,0,0.04761024237671293,0.9523897576232867
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,221,                        b = u;,1.0,0,,0,0.04761024237671293,0.9523897576232867
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,223,                    if (fu <= fw ||,1.0,0,,0,0.16174892409357658,0.8382510759064237
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,225,                        v = w;,1.0,0,,0,0.04761024237671293,0.9523897576232867
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,226,                        fv = fw;,1.0,0,,0,0.047750987241614876,0.9522490127583855
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,227,                        w = u;,1.0,0,,0,0.04761024237671293,0.9523897576232867
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,228,                        fw = fu;,1.0,0,,0,0.047750987241614876,0.9522490127583855
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,229,                    } else if (fu <= fv ||,1.0,0,,0,0.1888680071066491,0.8111319928933498
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,232,                        v = u;,1.0,0,,0,0.031361957301006514,0.9686380426989946
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,233,                        fv = fu;,1.0,0,,0,0.03145625563819458,0.9685437443618057
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,237,                previous = current;,1.0,0,,0,0.16411184659808495,0.8358881534019141
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,238,"                current = new UnivariateRealPointValuePair(x, isMinim ? fx : -fx);",1.0,0,,0,0.763039038760237,0.23696096123976199
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,241,                if (checker != null) {,1.0,0,,0,0.23602518092080457,0.7639748190791953
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,246,            } else { // Default termination (Brent's criterion).,1.0,0,,0,0.311232015168642,0.6887679848313595
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,247,                return current;,1.0,0,,0,0.11612605376862344,0.8838739462313769
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,249,            ++iter;,1.0,0,,0,0.2050872480573384,0.7949127519426611
+org/apache/commons/math/optimization/univariate/BrentOptimizer,62,250,        },1.0,0,,0,0.15265041384771044,0.8473495861522908
 org/apache/commons/math/util/FastMath,62,211,    private FastMath() {,0.0,0,-1,0
 org/apache/commons/math/util/FastMath,62,212,    },0.0,0,-1,0
 org/apache/commons/math/util/FastMath,62,227,        return 0.5 * (FastMath.exp(a) + FastMath.exp(-a));,0.0,0,-1,0

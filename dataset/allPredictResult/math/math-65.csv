@@ -1,60 +1,60 @@
-project_path,version,lines,statement,suspicious,faulty,predict,miss_line
-org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,65,275,        updateJacobian();,1.0,0,1,0
-org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,65,278,        double[][] jTj = new double[cols][cols];,1.0,0,0,0
-org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,65,279,        for (int i = 0; i < cols; ++i) {,1.0,0,1,0
-org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,65,280,            for (int j = i; j < cols; ++j) {,1.0,0,1,0
-org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,65,281,                double sum = 0;,1.0,0,1,0
-org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,65,282,                for (int k = 0; k < rows; ++k) {,1.0,0,1,0
-org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,65,283,                    sum += jacobian[k][i] * jacobian[k][j];,1.0,0,0,0
-org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,65,285,                jTj[i][j] = sum;,1.0,0,0,0
-org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,65,286,                jTj[j][i] = sum;,1.0,0,1,0
-org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,65,292,            RealMatrix inverse =,1.0,0,1,0
-org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,65,312,        if (rows <= cols) {,1.0,0,1,0
-org/apache/commons/math/linear/AbstractRealMatrix,65,44,    protected AbstractRealMatrix() {,1.0,0,1,0
-org/apache/commons/math/linear/AbstractRealMatrix,65,45,        lu = null;,1.0,0,1,0
-org/apache/commons/math/linear/AbstractRealMatrix,65,46,    },1.0,0,1,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,77,"        super(rowDimension, columnDimension);",1.0,0,1,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,78,        data = new double[rowDimension][columnDimension];,1.0,0,0,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,79,    },1.0,0,1,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,95,"        throws IllegalArgumentException, NullPointerException {",1.0,0,1,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,96,        copyIn(d);,1.0,0,1,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,97,    },1.0,0,1,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,298,        return copyOut();,1.0,0,1,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,316,        if (data == null) {,1.0,0,1,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,317,            if (row > 0) {,1.0,0,1,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,321,            if (column > 0) {,1.0,0,1,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,325,            final int nRows = subMatrix.length;,1.0,0,1,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,326,            if (nRows == 0) {,1.0,0,1,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,331,            final int nCols = subMatrix[0].length;,1.0,0,0,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,332,            if (nCols == 0) {,1.0,0,1,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,336,            data = new double[subMatrix.length][nCols];,1.0,0,0,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,337,            for (int i = 0; i < data.length; ++i) {,1.0,0,1,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,338,                if (subMatrix[i].length != nCols) {,1.0,0,1,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,342,"                System.arraycopy(subMatrix[i], 0, data[i + row], column, nCols);",1.0,0,0,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,344,        } else {,1.0,0,1,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,348,    },1.0,0,1,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,367,            data[row][column] = value;,1.0,0,1,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,371,        },1.0,0,1,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,372,    },1.0,0,1,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,401,        return (data == null) ? 0 : data.length;,1.0,0,1,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,407,        return ((data == null) || (data[0] == null)) ? 0 : data[0].length;,1.0,0,0,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,597,        final int nRows = this.getRowDimension();,1.0,0,1,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,598,        final double[][] out = new double[nRows][this.getColumnDimension()];,1.0,0,0,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,600,        for (int i = 0; i < nRows; i++) {,1.0,0,1,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,601,"            System.arraycopy(data[i], 0, out[i], 0, data[i].length);",1.0,0,0,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,603,        return out;,1.0,0,0,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,617,"        setSubMatrix(in, 0, 0);",1.0,0,1,0
-org/apache/commons/math/linear/Array2DRowRealMatrix,65,618,    },1.0,0,1,0
-org/apache/commons/math/linear/LUDecompositionImpl,65,361,            final int m = pivot.length;,1.0,0,1,0
-org/apache/commons/math/linear/LUDecompositionImpl,65,362,            if (b.getRowDimension() != m) {,1.0,0,1,0
-org/apache/commons/math/linear/LUDecompositionImpl,65,367,            if (singular) {,1.0,0,1,0
-org/apache/commons/math/linear/LUDecompositionImpl,65,417,            return solve(MatrixUtils.createRealIdentityMatrix(pivot.length));,1.0,0,1,0
-org/apache/commons/math/linear/MatrixUtils,65,62,        return (rows * columns <= 4096) ?,1.0,0,1,0
-org/apache/commons/math/linear/MatrixUtils,65,107,        return (data.length * data[0].length <= 4096) ?,1.0,0,1,0
-org/apache/commons/math/linear/MatrixUtils,65,143,"        final RealMatrix m = createRealMatrix(dimension, dimension);",1.0,0,1,0
-org/apache/commons/math/linear/MatrixUtils,65,144,        for (int i = 0; i < dimension; ++i) {,1.0,0,1,0
-org/apache/commons/math/linear/MatrixUtils,65,145,"            m.setEntry(i, i, 1.0);",1.0,0,1,0
-org/apache/commons/math/linear/MatrixUtils,65,147,        return m;,1.0,0,1,0
+project_path,version,lines,statement,suspicious,faulty,predict,miss_line,predictions0,predictions1
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,65,275,        updateJacobian();,1.0,0,,0,0.33710843398760243,0.6628915660123962
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,65,278,        double[][] jTj = new double[cols][cols];,1.0,0,,0,0.6055823210862522,0.39441767891374857
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,65,279,        for (int i = 0; i < cols; ++i) {,1.0,0,,0,0.507365171423099,0.49263482857690044
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,65,280,            for (int j = i; j < cols; ++j) {,1.0,0,,0,0.4184855581336429,0.5815144418663576
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,65,281,                double sum = 0;,1.0,0,,0,0.0909501853640879,0.9090498146359118
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,65,282,                for (int k = 0; k < rows; ++k) {,1.0,0,,0,0.3216033234239461,0.6783966765760525
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,65,283,                    sum += jacobian[k][i] * jacobian[k][j];,1.0,0,,0,0.4530092064796019,0.5469907935203993
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,65,285,                jTj[i][j] = sum;,1.0,0,,0,0.49585587811523885,0.5041441218847605
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,65,286,                jTj[j][i] = sum;,1.0,0,,0,0.49585587811523885,0.5041441218847605
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,65,292,            RealMatrix inverse =,1.0,0,,0,0.4455574677531501,0.5544425322468508
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,65,312,        if (rows <= cols) {,1.0,0,,0,0.4074617089646503,0.5925382910353492
+org/apache/commons/math/linear/AbstractRealMatrix,65,44,    protected AbstractRealMatrix() {,1.0,0,,0,0.44200139039991293,0.5579986096000864
+org/apache/commons/math/linear/AbstractRealMatrix,65,45,        lu = null;,1.0,0,,0,0.25269524415643485,0.7473047558435666
+org/apache/commons/math/linear/AbstractRealMatrix,65,46,    },1.0,0,,0,0.1549795882941228,0.8450204117058774
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,77,"        super(rowDimension, columnDimension);",1.0,0,,0,0.3996075504118696,0.6003924495881308
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,78,        data = new double[rowDimension][columnDimension];,1.0,0,,0,0.6865207813168184,0.3134792186831828
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,79,    },1.0,0,,0,0.1549795882941228,0.8450204117058774
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,95,"        throws IllegalArgumentException, NullPointerException {",1.0,0,,0,0.35528967363941516,0.6447103263605856
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,96,        copyIn(d);,1.0,0,,0,0.31766108930470394,0.6823389106952951
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,97,    },1.0,0,,0,0.1549795882941228,0.8450204117058774
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,298,        return copyOut();,1.0,0,,0,0.35904701255952515,0.6409529874404748
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,316,        if (data == null) {,1.0,0,,0,0.38104744114027705,0.6189525588597229
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,317,            if (row > 0) {,1.0,0,,0,0.3309421665705007,0.6690578334294994
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,321,            if (column > 0) {,1.0,0,,0,0.3289398028803809,0.6710601971196198
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,325,            final int nRows = subMatrix.length;,1.0,0,,0,0.27261715898757327,0.7273828410124279
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,326,            if (nRows == 0) {,1.0,0,,0,0.3289398028803809,0.6710601971196198
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,331,            final int nCols = subMatrix[0].length;,1.0,0,,0,0.6332837170916583,0.3667162829083414
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,332,            if (nCols == 0) {,1.0,0,,0,0.3289398028803809,0.6710601971196198
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,336,            data = new double[subMatrix.length][nCols];,1.0,0,,0,0.6490205810056714,0.350979418994328
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,337,            for (int i = 0; i < data.length; ++i) {,1.0,0,,0,0.3782542642895379,0.6217457357104622
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,338,                if (subMatrix[i].length != nCols) {,1.0,0,,0,0.5755061181345087,0.4244938818654919
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,342,"                System.arraycopy(subMatrix[i], 0, data[i + row], column, nCols);",1.0,0,,0,0.4146378342427565,0.5853621657572446
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,344,        } else {,1.0,0,,0,0.19258881804678057,0.8074111819532206
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,348,    },1.0,0,,0,0.1549795882941228,0.8450204117058774
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,367,            data[row][column] = value;,1.0,0,,0,0.583158761321682,0.4168412386783187
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,371,        },1.0,0,,0,0.1549795882941228,0.8450204117058774
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,372,    },1.0,0,,0,0.1549795882941228,0.8450204117058774
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,401,        return (data == null) ? 0 : data.length;,1.0,0,,0,0.4079840245262118,0.5920159754737885
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,407,        return ((data == null) || (data[0] == null)) ? 0 : data[0].length;,1.0,0,,0,0.9043302954240866,0.09566970457591269
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,597,        final int nRows = this.getRowDimension();,1.0,0,,0,0.41985921459339115,0.5801407854066105
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,598,        final double[][] out = new double[nRows][this.getColumnDimension()];,1.0,0,,0,0.7629626428260435,0.23703735717395638
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,600,        for (int i = 0; i < nRows; i++) {,1.0,0,,0,0.4615943259652016,0.5384056740347971
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,601,"            System.arraycopy(data[i], 0, out[i], 0, data[i].length);",1.0,0,,0,0.5260978629803909,0.47390213701961054
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,603,        return out;,1.0,0,,0,0.2042900405422023,0.7957099594577991
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,617,"        setSubMatrix(in, 0, 0);",1.0,0,,0,0.24030083199795554,0.7596991680020437
+org/apache/commons/math/linear/Array2DRowRealMatrix,65,618,    },1.0,0,,0,0.1549795882941228,0.8450204117058774
+org/apache/commons/math/linear/LUDecompositionImpl,65,361,            final int m = pivot.length;,1.0,0,,0,0.2918696266391444,0.7081303733608545
+org/apache/commons/math/linear/LUDecompositionImpl,65,362,            if (b.getRowDimension() != m) {,1.0,0,,0,0.3742097196773513,0.6257902803226474
+org/apache/commons/math/linear/LUDecompositionImpl,65,367,            if (singular) {,1.0,0,,0,0.3059107611291312,0.6940892388708704
+org/apache/commons/math/linear/LUDecompositionImpl,65,417,            return solve(MatrixUtils.createRealIdentityMatrix(pivot.length));,1.0,0,,0,0.4836880389947867,0.516311961005214
+org/apache/commons/math/linear/MatrixUtils,65,62,        return (rows * columns <= 4096) ?,1.0,0,,0,0.4391923067064878,0.5608076932935117
+org/apache/commons/math/linear/MatrixUtils,65,107,        return (data.length * data[0].length <= 4096) ?,1.0,0,,0,0.7554146696944062,0.24458533030559396
+org/apache/commons/math/linear/MatrixUtils,65,143,"        final RealMatrix m = createRealMatrix(dimension, dimension);",1.0,0,,0,0.782634304778371,0.21736569522162902
+org/apache/commons/math/linear/MatrixUtils,65,144,        for (int i = 0; i < dimension; ++i) {,1.0,0,,0,0.4680358019906156,0.5319641980093833
+org/apache/commons/math/linear/MatrixUtils,65,145,"            m.setEntry(i, i, 1.0);",1.0,0,,0,0.06944990850052057,0.9305500914994798
+org/apache/commons/math/linear/MatrixUtils,65,147,        return m;,1.0,0,,0,0.20614827653143683,0.7938517234685647
 org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,65,149,        return objectiveEvaluations;,0.33333,0,-1,0
 org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,65,154,        return jacobianEvaluations;,0.33333,0,-1,0
 org/apache/commons/math/linear/LUDecompositionImpl,65,161,    },0.07143,0,-1,0

@@ -1,75 +1,75 @@
-project_path,version,lines,statement,suspicious,faulty,predict,miss_line
-org/joda/time/MonthDay,10,334,"        this(monthOfYear, dayOfMonth, null);",2.0,0,1,0
-org/joda/time/MonthDay,10,335,    },2.0,0,1,0
-org/joda/time/MonthDay,10,352,"        super(new int[] {monthOfYear, dayOfMonth}, chronology);",2.0,0,1,0
-org/joda/time/MonthDay,10,353,    },2.0,0,1,0
-org/joda/time/MonthDay,10,79,    private static final DateTimeFieldType[] FIELD_TYPES = new DateTimeFieldType[] {,2.0,0,0,0
-org/joda/time/MonthDay,10,84,    private static final DateTimeFormatter PARSER = new DateTimeFormatterBuilder(),2.0,0,1,0
-org/joda/time/MonthDay,10,395,        return 2;,2.0,0,0,0
-org/joda/time/MonthDay,10,408,        switch (index) {,2.0,0,1,0
-org/joda/time/MonthDay,10,410,            return chrono.monthOfYear();,2.0,0,0,0
-org/joda/time/MonthDay,10,412,            return chrono.dayOfMonth();,2.0,0,0,0
-org/joda/time/MonthDay,10,426,        return FIELD_TYPES[index];,2.0,0,0,0
-org/joda/time/chrono/BasicGJChronology,10,129,        return MAX_DAYS_PER_MONTH_ARRAY[month - 1];,2.0,0,0,0
-org/joda/time/chrono/BasicDayOfMonthDateTimeField,10,89,                return iChronology.getDaysInMonthMax(month);,2.0,0,0,0
-org/joda/time/format/DateTimeFormat,10,147,"    private static final Map<String, DateTimeFormatter> cPatternedCache = new HashMap<String, DateTimeFormatter>(7);",2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,149,    private static final DateTimeFormatter[] cStyleCache = new DateTimeFormatter[25];,2.0,0,0,0
-org/joda/time/format/DateTimeFormat,10,170,        return createFormatterForPattern(pattern);,2.0,0,0,0
-org/joda/time/format/DateTimeFormat,10,400,        int length = pattern.length();,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,401,        int[] indexRef = new int[1];,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,403,        for (int i=0; i<length; i++) {,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,404,            indexRef[0] = i;,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,405,"            String token = parseToken(pattern, indexRef);",2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,406,            i = indexRef[0];,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,408,            int tokenLen = token.length();,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,409,            if (tokenLen == 0) {,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,412,            char c = token.charAt(0);,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,414,            switch (c) {,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,479,                if (tokenLen >= 3) {,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,486,                    builder.appendMonthOfYear(tokenLen);,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,488,                break;,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,490,                builder.appendDayOfMonth(tokenLen);,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,491,                break;,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,549,                String sub = token.substring(1);,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,550,                if (sub.length() == 1) {,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,551,                    builder.appendLiteral(sub.charAt(0));,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,555,                    builder.appendLiteral(new String(sub));,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,557,                break;,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,563,    },2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,574,        StringBuilder buf = new StringBuilder();,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,576,        int i = indexRef[0];,2.0,0,0,0
-org/joda/time/format/DateTimeFormat,10,577,        int length = pattern.length();,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,579,        char c = pattern.charAt(i);,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,580,        if (c >= 'A' && c <= 'Z' || c >= 'a' && c <= 'z') {,2.0,0,0,0
-org/joda/time/format/DateTimeFormat,10,583,            buf.append(c);,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,585,            while (i + 1 < length) {,2.0,0,0,0
-org/joda/time/format/DateTimeFormat,10,586,                char peek = pattern.charAt(i + 1);,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,587,                if (peek == c) {,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,588,                    buf.append(c);,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,589,                    i++;,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,593,            },2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,596,            buf.append('\'');,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,598,            boolean inLiteral = false;,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,600,            for (; i < length; i++) {,2.0,0,0,0
-org/joda/time/format/DateTimeFormat,10,601,                c = pattern.charAt(i);,2.0,0,0,0
-org/joda/time/format/DateTimeFormat,10,603,                if (c == '\'') {,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,611,                } else if (!inLiteral &&,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,613,                    i--;,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,614,                    break;,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,616,                    buf.append(c);,2.0,0,0,0
-org/joda/time/format/DateTimeFormat,10,621,        indexRef[0] = i;,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,622,        return buf.toString();,2.0,0,0,0
-org/joda/time/format/DateTimeFormat,10,674,        if (pattern == null || pattern.length() == 0) {,2.0,0,0,0
-org/joda/time/format/DateTimeFormat,10,677,        DateTimeFormatter formatter = null;,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,678,        synchronized (cPatternedCache) {,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,679,            formatter = cPatternedCache.get(pattern);,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,680,            if (formatter == null) {,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,681,                DateTimeFormatterBuilder builder = new DateTimeFormatterBuilder();,2.0,0,0,0
-org/joda/time/format/DateTimeFormat,10,682,"                parsePatternTo(builder, pattern);",2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,683,                formatter = builder.toFormatter();,2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,685,"                cPatternedCache.put(pattern, formatter);",2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,687,        },2.0,0,1,0
-org/joda/time/format/DateTimeFormat,10,688,        return formatter;,2.0,0,0,0
+project_path,version,lines,statement,suspicious,faulty,predict,miss_line,predictions0,predictions1
+org/joda/time/MonthDay,10,334,"        this(monthOfYear, dayOfMonth, null);",2.0,0,,0,0.0028116408720889837,0.9971883591279115
+org/joda/time/MonthDay,10,335,    },2.0,0,,0,0.001794302858921467,0.9982056971410779
+org/joda/time/MonthDay,10,352,"        super(new int[] {monthOfYear, dayOfMonth}, chronology);",2.0,0,,0,0.008822689394640804,0.9911773106053577
+org/joda/time/MonthDay,10,353,    },2.0,0,,0,0.001794302858921467,0.9982056971410779
+org/joda/time/MonthDay,10,79,    private static final DateTimeFieldType[] FIELD_TYPES = new DateTimeFieldType[] {,2.0,0,,0,0.0164611099674566,0.9835388900325421
+org/joda/time/MonthDay,10,84,    private static final DateTimeFormatter PARSER = new DateTimeFormatterBuilder(),2.0,0,,0,0.023120072471811658,0.9768799275281914
+org/joda/time/MonthDay,10,395,        return 2;,2.0,0,,0,0.0019092848805213503,0.9980907151194783
+org/joda/time/MonthDay,10,408,        switch (index) {,2.0,0,,0,0.003225942036340568,0.9967740579636598
+org/joda/time/MonthDay,10,410,            return chrono.monthOfYear();,2.0,0,,0,0.0024392724994375774,0.9975607275005622
+org/joda/time/MonthDay,10,412,            return chrono.dayOfMonth();,2.0,0,,0,0.0024350817355465555,0.9975649182644544
+org/joda/time/MonthDay,10,426,        return FIELD_TYPES[index];,2.0,0,,0,1.0,0.0
+org/joda/time/chrono/BasicGJChronology,10,129,        return MAX_DAYS_PER_MONTH_ARRAY[month - 1];,2.0,0,,0,1.0,0.0
+org/joda/time/chrono/BasicDayOfMonthDateTimeField,10,89,                return iChronology.getDaysInMonthMax(month);,2.0,0,,0,0.0020197221560046973,0.9979802778439955
+org/joda/time/format/DateTimeFormat,10,147,"    private static final Map<String, DateTimeFormatter> cPatternedCache = new HashMap<String, DateTimeFormatter>(7);",2.0,0,,0,0.0008545611978969524,0.9991454388021073
+org/joda/time/format/DateTimeFormat,10,149,    private static final DateTimeFormatter[] cStyleCache = new DateTimeFormatter[25];,2.0,0,,0,0.015708234462878175,0.9842917655371235
+org/joda/time/format/DateTimeFormat,10,170,        return createFormatterForPattern(pattern);,2.0,0,,0,0.002191280768863243,0.9978087192311366
+org/joda/time/format/DateTimeFormat,10,400,        int length = pattern.length();,2.0,0,,0,0.003059206727977029,0.9969407932720222
+org/joda/time/format/DateTimeFormat,10,401,        int[] indexRef = new int[1];,2.0,0,,0,0.010068947214933826,0.9899310527850664
+org/joda/time/format/DateTimeFormat,10,403,        for (int i=0; i<length; i++) {,2.0,0,,0,0.007036119688860655,0.9929638803111399
+org/joda/time/format/DateTimeFormat,10,404,            indexRef[0] = i;,2.0,0,,0,1.0,0.0
+org/joda/time/format/DateTimeFormat,10,405,"            String token = parseToken(pattern, indexRef);",2.0,0,,0,0.002058557187399618,0.9979414428126007
+org/joda/time/format/DateTimeFormat,10,406,            i = indexRef[0];,2.0,0,,0,1.0,0.0
+org/joda/time/format/DateTimeFormat,10,408,            int tokenLen = token.length();,2.0,0,,0,0.002943114097256451,0.9970568859027428
+org/joda/time/format/DateTimeFormat,10,409,            if (tokenLen == 0) {,2.0,0,,0,0.0037352382273710748,0.9962647617726286
+org/joda/time/format/DateTimeFormat,10,412,            char c = token.charAt(0);,2.0,0,,0,0.002917931309560999,0.997082068690439
+org/joda/time/format/DateTimeFormat,10,414,            switch (c) {,2.0,0,,0,0.0028006150804667177,0.9971993849195326
+org/joda/time/format/DateTimeFormat,10,479,                if (tokenLen >= 3) {,2.0,0,,0,0.003705836330589619,0.9962941636694107
+org/joda/time/format/DateTimeFormat,10,486,                    builder.appendMonthOfYear(tokenLen);,2.0,0,,0,0.0009614999545397893,0.999038500045461
+org/joda/time/format/DateTimeFormat,10,488,                break;,2.0,0,,0,0.0006131489065688678,0.9993868510934308
+org/joda/time/format/DateTimeFormat,10,490,                builder.appendDayOfMonth(tokenLen);,2.0,0,,0,0.0010775182023491851,0.9989224817976499
+org/joda/time/format/DateTimeFormat,10,491,                break;,2.0,0,,0,0.0006131489065688678,0.9993868510934308
+org/joda/time/format/DateTimeFormat,10,549,                String sub = token.substring(1);,2.0,0,,0,0.002759604220086946,0.997240395779914
+org/joda/time/format/DateTimeFormat,10,550,                if (sub.length() == 1) {,2.0,0,,0,0.0011382049482865175,0.998861795051713
+org/joda/time/format/DateTimeFormat,10,551,                    builder.appendLiteral(sub.charAt(0));,2.0,0,,0,0.0005134341931606955,0.9994865658068393
+org/joda/time/format/DateTimeFormat,10,555,                    builder.appendLiteral(new String(sub));,2.0,0,,0,0.0018583371271882643,0.9981416628728117
+org/joda/time/format/DateTimeFormat,10,557,                break;,2.0,0,,0,0.0006131489065688678,0.9993868510934308
+org/joda/time/format/DateTimeFormat,10,563,    },2.0,0,,0,0.0006815439309513764,0.9993184560690489
+org/joda/time/format/DateTimeFormat,10,574,        StringBuilder buf = new StringBuilder();,2.0,0,,0,0.005109157504602294,0.9948908424953969
+org/joda/time/format/DateTimeFormat,10,576,        int i = indexRef[0];,2.0,0,,0,1.0,0.0
+org/joda/time/format/DateTimeFormat,10,577,        int length = pattern.length();,2.0,0,,0,0.0017919727746513192,0.9982080272253484
+org/joda/time/format/DateTimeFormat,10,579,        char c = pattern.charAt(i);,2.0,0,,0,0.0014392025409206259,0.9985607974590798
+org/joda/time/format/DateTimeFormat,10,580,        if (c >= 'A' && c <= 'Z' || c >= 'a' && c <= 'z') {,2.0,0,,0,0.9643617940547021,0.035638205945300636
+org/joda/time/format/DateTimeFormat,10,583,            buf.append(c);,2.0,0,,0,0.0009386411577935654,0.9990613588422069
+org/joda/time/format/DateTimeFormat,10,585,            while (i + 1 < length) {,2.0,0,,0,0.0046321247119920205,0.9953678752880079
+org/joda/time/format/DateTimeFormat,10,586,                char peek = pattern.charAt(i + 1);,2.0,0,,0,0.002636950013925041,0.9973630499860753
+org/joda/time/format/DateTimeFormat,10,587,                if (peek == c) {,2.0,0,,0,0.002524453346569978,0.9974755466534297
+org/joda/time/format/DateTimeFormat,10,588,                    buf.append(c);,2.0,0,,0,0.0007424967622885101,0.999257503237711
+org/joda/time/format/DateTimeFormat,10,589,                    i++;,2.0,0,,0,0.0009514310162380687,0.9990485689837614
+org/joda/time/format/DateTimeFormat,10,593,            },2.0,0,,0,0.0006815439309513764,0.9993184560690489
+org/joda/time/format/DateTimeFormat,10,596,            buf.append('\'');,2.0,0,,0,0.001509609608862586,0.9984903903911369
+org/joda/time/format/DateTimeFormat,10,598,            boolean inLiteral = false;,2.0,0,,0,0.0014755833705500615,0.9985244166294504
+org/joda/time/format/DateTimeFormat,10,600,            for (; i < length; i++) {,2.0,0,,0,0.0051829887304006336,0.9948170112695984
+org/joda/time/format/DateTimeFormat,10,601,                c = pattern.charAt(i);,2.0,0,,0,0.0016637333359017731,0.9983362666640982
+org/joda/time/format/DateTimeFormat,10,603,                if (c == '\'') {,2.0,0,,0,0.002362478929265433,0.9976375210707349
+org/joda/time/format/DateTimeFormat,10,611,                } else if (!inLiteral &&,2.0,0,,0,0.005951866734713242,0.9940481332652866
+org/joda/time/format/DateTimeFormat,10,613,                    i--;,2.0,0,,0,0.0008791179029437156,0.999120882097056
+org/joda/time/format/DateTimeFormat,10,614,                    break;,2.0,0,,0,0.0006131489065688678,0.9993868510934308
+org/joda/time/format/DateTimeFormat,10,616,                    buf.append(c);,2.0,0,,0,0.0006767612586725688,0.9993232387413273
+org/joda/time/format/DateTimeFormat,10,621,        indexRef[0] = i;,2.0,0,,0,1.0,0.0
+org/joda/time/format/DateTimeFormat,10,622,        return buf.toString();,2.0,0,,0,0.0012717038617188687,0.9987282961382811
+org/joda/time/format/DateTimeFormat,10,674,        if (pattern == null || pattern.length() == 0) {,2.0,0,,0,0.005837854071077121,0.9941621459289236
+org/joda/time/format/DateTimeFormat,10,677,        DateTimeFormatter formatter = null;,2.0,0,,0,0.0019474985143053546,0.9980525014856939
+org/joda/time/format/DateTimeFormat,10,678,        synchronized (cPatternedCache) {,2.0,0,,0,0.0018553097296484103,0.9981446902703524
+org/joda/time/format/DateTimeFormat,10,679,            formatter = cPatternedCache.get(pattern);,2.0,0,,0,0.0019523245634653688,0.9980476754365348
+org/joda/time/format/DateTimeFormat,10,680,            if (formatter == null) {,2.0,0,,0,0.0022651172479411013,0.9977348827520583
+org/joda/time/format/DateTimeFormat,10,681,                DateTimeFormatterBuilder builder = new DateTimeFormatterBuilder();,2.0,0,,0,0.00419532494016771,0.9958046750598318
+org/joda/time/format/DateTimeFormat,10,682,"                parsePatternTo(builder, pattern);",2.0,0,,0,0.0010851746764817519,0.9989148253235188
+org/joda/time/format/DateTimeFormat,10,683,                formatter = builder.toFormatter();,2.0,0,,0,0.0022026949403680693,0.9977973050596325
+org/joda/time/format/DateTimeFormat,10,685,"                cPatternedCache.put(pattern, formatter);",2.0,0,,0,0.0006143802727507137,0.9993856197272493
+org/joda/time/format/DateTimeFormat,10,687,        },2.0,0,,0,0.0006815439309513764,0.9993184560690489
+org/joda/time/format/DateTimeFormat,10,688,        return formatter;,2.0,0,,0,0.001074057023226809,0.9989259429767727
 org/joda/time/chrono/BasicMonthOfYearDateTimeField,10,93,            return instant; // the easy case,1.0,0,-1,0
 org/joda/time/chrono/BasicMonthOfYearDateTimeField,10,260,            int subtrahendDom = iChronology.getDayOfMonth,1.0,0,-1,0
 org/joda/time/chrono/BasicMonthOfYearDateTimeField,10,262,            if (subtrahendDom > minuendDom) {,1.0,0,-1,0

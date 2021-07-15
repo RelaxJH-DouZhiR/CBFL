@@ -1,77 +1,77 @@
-project_path,version,lines,statement,suspicious,faulty,predict,miss_line
-org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,161,        TDistribution tDistribution = new TDistributionImpl(nObs - 2);,0.8,0,0,0
-org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,162,        int nVars = correlationMatrix.getColumnDimension();,0.8,0,1,0
-org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,163,        double[][] out = new double[nVars][nVars];,0.8,0,0,0
-org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,164,        for (int i = 0; i < nVars; i++) {,0.8,0,1,0
-org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,165,            for (int j = 0; j < nVars; j++) {,0.8,0,1,0
-org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,166,                if (i == j) {,0.8,0,1,0
-org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,167,                    out[i][j] = 0d;,0.8,0,0,0
-org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,169,"                    double r = correlationMatrix.getEntry(i, j);",0.8,0,1,0
-org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,170,                    double t = Math.abs(r * Math.sqrt((nObs - 2)/(1 - r * r)));,0.8,0,0,0
-org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,171,                    out[i][j] = 2 * (1 - tDistribution.cumulativeProbability(t));,0.8,1,0,0
-org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,175,        return new BlockRealMatrix(out);,0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,46,        super();,0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,47,    },0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,128,        double p0 = 1.0;,0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,129,"        double p1 = getA(0, x);",0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,130,        double q0 = 0.0;,0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,131,        double q1 = 1.0;,0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,132,        double c = p1 / q1;,0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,133,        int n = 0;,0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,134,        double relativeError = Double.MAX_VALUE;,0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,135,        while (n < maxIterations && relativeError > epsilon) {,0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,136,            ++n;,0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,137,"            double a = getA(n, x);",0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,138,"            double b = getB(n, x);",0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,139,            double p2 = a * p1 + b * p0;,0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,140,            double q2 = a * q1 + b * q0;,0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,141,            boolean infinite = false;,0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,142,            if (Double.isInfinite(p2) || Double.isInfinite(q2)) {,0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,175,            if (infinite) {,0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,182,            double r = p2 / q2;,0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,184,            if (Double.isNaN(r)) {,0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,189,            relativeError = Math.abs(r / c - 1.0);,0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,192,            c = p2 / q2;,0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,193,            p0 = p1;,0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,194,            p1 = p2;,0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,195,            q0 = q1;,0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,196,            q1 = q2;,0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,197,        },0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,199,        if (n >= maxIterations) {,0.8,0,1,0
-org/apache/commons/math/util/ContinuedFraction,69,205,        return c;,0.8,0,1,0
-org/apache/commons/math/distribution/TDistributionImpl,69,128,        if (x == 0.0) {,0.8,0,1,0
-org/apache/commons/math/distribution/TDistributionImpl,69,131,            double t =,0.8,0,1,0
-org/apache/commons/math/distribution/TDistributionImpl,69,136,            if (x < 0.0) {,0.8,0,1,0
-org/apache/commons/math/distribution/TDistributionImpl,69,139,                ret = 1.0 - 0.5 * t;,0.8,0,1,0
-org/apache/commons/math/distribution/TDistributionImpl,69,143,        return ret;,0.8,0,1,0
-org/apache/commons/math/special/Gamma,69,41,    private static final double[] LANCZOS =,0.8,0,0,0
-org/apache/commons/math/special/Gamma,69,61,    private static final double HALF_LOG_2_PI = 0.5 * Math.log(2.0 * Math.PI);,0.8,0,0,0
-org/apache/commons/math/special/Gamma,69,97,        if (Double.isNaN(x) || (x <= 0.0)) {,0.8,0,0,0
-org/apache/commons/math/special/Gamma,69,100,            double g = 607.0 / 128.0;,0.8,0,1,0
-org/apache/commons/math/special/Gamma,69,102,            double sum = 0.0;,0.8,0,1,0
-org/apache/commons/math/special/Gamma,69,103,            for (int i = LANCZOS.length - 1; i > 0; --i) {,0.8,0,1,0
-org/apache/commons/math/special/Gamma,69,104,                sum = sum + (LANCZOS[i] / (x + i));,0.8,0,0,0
-org/apache/commons/math/special/Gamma,69,106,            sum = sum + LANCZOS[0];,0.8,0,0,0
-org/apache/commons/math/special/Gamma,69,108,            double tmp = x + g + .5;,0.8,0,1,0
-org/apache/commons/math/special/Gamma,69,109,            ret = ((x + .5) * Math.log(tmp)) - tmp +,0.8,0,0,0
-org/apache/commons/math/special/Gamma,69,113,        return ret;,0.8,0,1,0
-org/apache/commons/math/special/Beta,69,54,"        return regularizedBeta(x, a, b, DEFAULT_EPSILON, Integer.MAX_VALUE);",0.8,0,0,0
-org/apache/commons/math/special/Beta,69,121,        if (Double.isNaN(x) || Double.isNaN(a) || Double.isNaN(b) || (x < 0) ||,0.8,0,1,0
-org/apache/commons/math/special/Beta,69,125,        } else if (x > (a + 1.0) / (a + b + 2.0)) {,0.8,0,0,0
-org/apache/commons/math/special/Beta,69,128,            ContinuedFraction fraction = new ContinuedFraction() {,0.8,0,0,0
-org/apache/commons/math/special/Beta,69,151,            ret = Math.exp((a * Math.log(x)) + (b * Math.log(1.0 - x)) -,0.8,0,0,0
-org/apache/commons/math/special/Beta,69,156,        return ret;,0.8,0,1,0
-org/apache/commons/math/special/Beta,69,192,        if (Double.isNaN(a) || Double.isNaN(b) || (a <= 0.0) || (b <= 0.0)) {,0.8,0,0,0
-org/apache/commons/math/special/Beta,69,195,            ret = Gamma.logGamma(a) + Gamma.logGamma(b) -,0.8,0,1,0
-org/apache/commons/math/special/Beta,69,199,        return ret;,0.8,0,1,0
-org/apache/commons/math/special/Beta,69,128,            ContinuedFraction fraction = new ContinuedFraction() {,0.8,0,0,0
-org/apache/commons/math/special/Beta,69,134,                    if (n % 2 == 0) { // even,0.8,0,1,0
-org/apache/commons/math/special/Beta,69,135,                        m = n / 2.0;,0.8,0,1,0
-org/apache/commons/math/special/Beta,69,136,                        ret = (m * (b - m) * x) /,0.8,0,1,0
-org/apache/commons/math/special/Beta,69,139,                        m = (n - 1.0) / 2.0;,0.8,0,1,0
-org/apache/commons/math/special/Beta,69,140,                        ret = -((a + m) * (a + b + m) * x) /,0.8,0,0,0
-org/apache/commons/math/special/Beta,69,143,                    return ret;,0.8,0,0,0
-org/apache/commons/math/special/Beta,69,148,                    return 1.0;,0.8,0,0,0
+project_path,version,lines,statement,suspicious,faulty,predict,miss_line,predictions0,predictions1
+org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,161,        TDistribution tDistribution = new TDistributionImpl(nObs - 2);,0.8,0,,0,0.9985049248161497,0.0014950751838501359
+org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,162,        int nVars = correlationMatrix.getColumnDimension();,0.8,0,,0,0.3524897610674572,0.6475102389325428
+org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,163,        double[][] out = new double[nVars][nVars];,0.8,0,,0,0.547002437786219,0.45299756221378124
+org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,164,        for (int i = 0; i < nVars; i++) {,0.8,0,,0,0.4615943259652016,0.5384056740347971
+org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,165,            for (int j = 0; j < nVars; j++) {,0.8,0,,0,0.40482289288199685,0.5951771071180019
+org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,166,                if (i == j) {,0.8,0,,0,0.2798823370846556,0.7201176629153458
+org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,167,                    out[i][j] = 0d;,0.8,0,,0,0.2848850620888398,0.7151149379111608
+org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,169,"                    double r = correlationMatrix.getEntry(i, j);",0.8,0,,0,0.05942384411995349,0.9405761558800477
+org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,170,                    double t = Math.abs(r * Math.sqrt((nObs - 2)/(1 - r * r)));,0.8,0,,0,0.6923195852233804,0.3076804147766212
+org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,171,                    out[i][j] = 2 * (1 - tDistribution.cumulativeProbability(t));,0.8,1,,0,0.5517165717064307,0.4482834282935696
+org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,175,        return new BlockRealMatrix(out);,0.8,0,,0,0.735639809270956,0.2643601907290455
+org/apache/commons/math/util/ContinuedFraction,69,46,        super();,0.8,0,,0,0.35383515549592104,0.646164844504079
+org/apache/commons/math/util/ContinuedFraction,69,47,    },0.8,0,,0,0.1549795882941228,0.8450204117058774
+org/apache/commons/math/util/ContinuedFraction,69,128,        double p0 = 1.0;,0.8,0,,0,0.18544763848735613,0.8145523615126424
+org/apache/commons/math/util/ContinuedFraction,69,129,"        double p1 = getA(0, x);",0.8,0,,0,0.32509617540094593,0.6749038245990538
+org/apache/commons/math/util/ContinuedFraction,69,130,        double q0 = 0.0;,0.8,0,,0,0.18544763848735613,0.8145523615126424
+org/apache/commons/math/util/ContinuedFraction,69,131,        double q1 = 1.0;,0.8,0,,0,0.18544763848735613,0.8145523615126424
+org/apache/commons/math/util/ContinuedFraction,69,132,        double c = p1 / q1;,0.8,0,,0,0.2772866317567225,0.722713368243277
+org/apache/commons/math/util/ContinuedFraction,69,133,        int n = 0;,0.8,0,,0,0.18931770641309126,0.8106822935869079
+org/apache/commons/math/util/ContinuedFraction,69,134,        double relativeError = Double.MAX_VALUE;,0.8,0,,0,0.21874504924553045,0.7812549507544689
+org/apache/commons/math/util/ContinuedFraction,69,135,        while (n < maxIterations && relativeError > epsilon) {,0.8,0,,0,0.6771825769405898,0.32281742305940886
+org/apache/commons/math/util/ContinuedFraction,69,136,            ++n;,0.8,0,,0,0.2187730409074369,0.7812269590925617
+org/apache/commons/math/util/ContinuedFraction,69,137,"            double a = getA(n, x);",0.8,0,,0,0.2240467691142486,0.7759532308857511
+org/apache/commons/math/util/ContinuedFraction,69,138,"            double b = getB(n, x);",0.8,0,,0,0.2240467691142486,0.7759532308857511
+org/apache/commons/math/util/ContinuedFraction,69,139,            double p2 = a * p1 + b * p0;,0.8,0,,0,0.36436255153855146,0.6356374484614478
+org/apache/commons/math/util/ContinuedFraction,69,140,            double q2 = a * q1 + b * q0;,0.8,0,,0,0.36436255153855146,0.6356374484614478
+org/apache/commons/math/util/ContinuedFraction,69,141,            boolean infinite = false;,0.8,0,,0,0.2204255660656698,0.7795744339343297
+org/apache/commons/math/util/ContinuedFraction,69,142,            if (Double.isInfinite(p2) || Double.isInfinite(q2)) {,0.8,0,,0,0.10273475933554767,0.8972652406644507
+org/apache/commons/math/util/ContinuedFraction,69,175,            if (infinite) {,0.8,0,,0,0.27876782741932027,0.7212321725806807
+org/apache/commons/math/util/ContinuedFraction,69,182,            double r = p2 / q2;,0.8,0,,0,0.2224273831543491,0.77757261684565
+org/apache/commons/math/util/ContinuedFraction,69,184,            if (Double.isNaN(r)) {,0.8,0,,0,0.17293700893248876,0.8270629910675105
+org/apache/commons/math/util/ContinuedFraction,69,189,            relativeError = Math.abs(r / c - 1.0);,0.8,0,,0,0.5047846505233424,0.49521534947665663
+org/apache/commons/math/util/ContinuedFraction,69,192,            c = p2 / q2;,0.8,0,,0,0.3104213588282406,0.689578641171759
+org/apache/commons/math/util/ContinuedFraction,69,193,            p0 = p1;,0.8,0,,0,0.23276397494595222,0.7672360250540493
+org/apache/commons/math/util/ContinuedFraction,69,194,            p1 = p2;,0.8,0,,0,0.23276397494595222,0.7672360250540493
+org/apache/commons/math/util/ContinuedFraction,69,195,            q0 = q1;,0.8,0,,0,0.23276397494595222,0.7672360250540493
+org/apache/commons/math/util/ContinuedFraction,69,196,            q1 = q2;,0.8,0,,0,0.23276397494595222,0.7672360250540493
+org/apache/commons/math/util/ContinuedFraction,69,197,        },0.8,0,,0,0.1549795882941228,0.8450204117058774
+org/apache/commons/math/util/ContinuedFraction,69,199,        if (n >= maxIterations) {,0.8,0,,0,0.40767200824821337,0.5923279917517862
+org/apache/commons/math/util/ContinuedFraction,69,205,        return c;,0.8,0,,0,0.20614827653143683,0.7938517234685647
+org/apache/commons/math/distribution/TDistributionImpl,69,128,        if (x == 0.0) {,0.8,0,,0,0.38320909721729035,0.6167909027827088
+org/apache/commons/math/distribution/TDistributionImpl,69,131,            double t =,0.8,0,,0,0.14829141865452827,0.8517085813454712
+org/apache/commons/math/distribution/TDistributionImpl,69,136,            if (x < 0.0) {,0.8,0,,0,0.3309421665705007,0.6690578334294994
+org/apache/commons/math/distribution/TDistributionImpl,69,139,                ret = 1.0 - 0.5 * t;,0.8,0,,0,0.29597551675997724,0.7040244832400242
+org/apache/commons/math/distribution/TDistributionImpl,69,143,        return ret;,0.8,0,,0,0.2042900405422023,0.7957099594577991
+org/apache/commons/math/special/Gamma,69,41,    private static final double[] LANCZOS =,0.8,0,,0,0.5592634058580661,0.4407365941419346
+org/apache/commons/math/special/Gamma,69,61,    private static final double HALF_LOG_2_PI = 0.5 * Math.log(2.0 * Math.PI);,0.8,0,,0,0.8324762566187648,0.16752374338123366
+org/apache/commons/math/special/Gamma,69,97,        if (Double.isNaN(x) || (x <= 0.0)) {,0.8,0,,0,0.43270102979647707,0.5672989702035212
+org/apache/commons/math/special/Gamma,69,100,            double g = 607.0 / 128.0;,0.8,0,,0,0.20036845040681675,0.7996315495931816
+org/apache/commons/math/special/Gamma,69,102,            double sum = 0.0;,0.8,0,,0,0.14479604559980958,0.8552039544001891
+org/apache/commons/math/special/Gamma,69,103,            for (int i = LANCZOS.length - 1; i > 0; --i) {,0.8,0,,0,0.47654872375610546,0.5234512762438961
+org/apache/commons/math/special/Gamma,69,104,                sum = sum + (LANCZOS[i] / (x + i));,0.8,0,,0,0.825195080714212,0.1748049192857866
+org/apache/commons/math/special/Gamma,69,106,            sum = sum + LANCZOS[0];,0.8,0,,0,0.6649546199220153,0.33504538007798407
+org/apache/commons/math/special/Gamma,69,108,            double tmp = x + g + .5;,0.8,0,,0,0.22234243828678066,0.777657561713219
+org/apache/commons/math/special/Gamma,69,109,            ret = ((x + .5) * Math.log(tmp)) - tmp +,0.8,0,,0,0.9151273598792196,0.08487264012078041
+org/apache/commons/math/special/Gamma,69,113,        return ret;,0.8,0,,0,0.2042900405422023,0.7957099594577991
+org/apache/commons/math/special/Beta,69,54,"        return regularizedBeta(x, a, b, DEFAULT_EPSILON, Integer.MAX_VALUE);",0.8,0,,0,0.27928202337642305,0.7207179766235754
+org/apache/commons/math/special/Beta,69,121,        if (Double.isNaN(x) || Double.isNaN(a) || Double.isNaN(b) || (x < 0) ||,0.8,0,,0,0.03823576048050364,0.9617642395194949
+org/apache/commons/math/special/Beta,69,125,        } else if (x > (a + 1.0) / (a + b + 2.0)) {,0.8,0,,0,0.7977783945707664,0.20222160542923504
+org/apache/commons/math/special/Beta,69,128,            ContinuedFraction fraction = new ContinuedFraction() {,0.8,0,,0,0.9968797493384518,0.0031202506615492366
+org/apache/commons/math/special/Beta,69,151,            ret = Math.exp((a * Math.log(x)) + (b * Math.log(1.0 - x)) -,0.8,0,,0,0.9944300809322343,0.005569919067766241
+org/apache/commons/math/special/Beta,69,156,        return ret;,0.8,0,,0,0.2042900405422023,0.7957099594577991
+org/apache/commons/math/special/Beta,69,192,        if (Double.isNaN(a) || Double.isNaN(b) || (a <= 0.0) || (b <= 0.0)) {,0.8,0,,0,0.4163102597984633,0.5836897402015353
+org/apache/commons/math/special/Beta,69,195,            ret = Gamma.logGamma(a) + Gamma.logGamma(b) -,0.8,0,,0,0.18084767603445817,0.8191523239655409
+org/apache/commons/math/special/Beta,69,199,        return ret;,0.8,0,,0,0.2042900405422023,0.7957099594577991
+org/apache/commons/math/special/Beta,69,128,            ContinuedFraction fraction = new ContinuedFraction() {,0.8,0,,0,0.9968797493384518,0.0031202506615492366
+org/apache/commons/math/special/Beta,69,134,                    if (n % 2 == 0) { // even,0.8,0,,0,0.10226848120841835,0.8977315187915804
+org/apache/commons/math/special/Beta,69,135,                        m = n / 2.0;,0.8,0,,0,0.03228787299105097,0.9677121270089498
+org/apache/commons/math/special/Beta,69,136,                        ret = (m * (b - m) * x) /,0.8,0,,0,0.11004875715530069,0.8899512428446987
+org/apache/commons/math/special/Beta,69,139,                        m = (n - 1.0) / 2.0;,0.8,0,,0,0.07015602607226178,0.9298439739277374
+org/apache/commons/math/special/Beta,69,140,                        ret = -((a + m) * (a + b + m) * x) /,0.8,0,,0,0.19092095369202533,0.809079046307976
+org/apache/commons/math/special/Beta,69,143,                    return ret;,0.8,0,,0,0.03292805932795665,0.9670719406720438
+org/apache/commons/math/special/Beta,69,148,                    return 1.0;,0.8,0,,0,0.1381349475490587,0.8618650524509427
 org/apache/commons/math/linear/BlockRealMatrix,69,1238,            final int iBlock = row    / BLOCK_SIZE;,0.57143,0,-1,0
 org/apache/commons/math/linear/BlockRealMatrix,69,1239,            final int jBlock = column / BLOCK_SIZE;,0.57143,0,-1,0
 org/apache/commons/math/linear/BlockRealMatrix,69,1240,            final int k      = (row    - iBlock * BLOCK_SIZE) * blockWidth(jBlock) +,0.57143,0,-1,0

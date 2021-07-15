@@ -13,7 +13,7 @@ import os
 import threading
 
 
-FATHER_PATH = "C:/ssdcode/"  # CBFL文件的父路径
+FATHER_PATH = "/Users/lvlaxjh/code/"  # CBFL文件的父路径
 FATHER_PATH2 = "E:/"  # 存储d4j代码以及频谱文件的父路径
 
 
@@ -37,22 +37,26 @@ def save_predictions(project, version, allPredictionsResultList):
             if row[0] != "project_path":
                 newRow = deepcopy(row)
                 isPredicted = False
-                predictions = "-2"
+                predictions0 = "-1"
+                predictions1 = "-1"
                 for testRow in allPredictionsResultList:
                     if row[0] == testRow[2] and row[1] == testRow[3] and row[2] == testRow[4]:
                         isPredicted = True
-                        predictions = testRow[21]
+                        predictions0 = testRow[21]
+                        predictions1 = testRow[22]
                         break
                 if isPredicted:
-                    newRow[6] = predictions
+                    newRow.append(predictions0)
+                    newRow.append(predictions1)
                 else:
                     newRow[6] = "-1"
                 isPredicted = False
-                predictions = 0
+                predictions0 = "-1"
+                predictions1 = "-1"
                 resultList.append(deepcopy(newRow))
     targetSaveCSVFile = open(CSV_PATH, "w", encoding="utf-8", newline="")
     targetCSVWriter = csv.writer(targetSaveCSVFile)
-    targetCSVWriter.writerow(["project_path", "version", "lines", "statement", "suspicious", "faulty", "predict", "miss_line"])
+    targetCSVWriter.writerow(["project_path", "version", "lines", "statement", "suspicious", "faulty", "predict", "miss_line","predictions0","predictions1"])
     for row in resultList:
         targetCSVWriter.writerow(row)
     targetSaveCSVFile.close()
@@ -60,7 +64,7 @@ def save_predictions(project, version, allPredictionsResultList):
 
 
 if __name__ == "__main__":
-    project = "time"  # chart lang math time mockito closure 项目
+    project = "mockito"  # chart lang math time mockito closure 项目
     settingJson = open(f"{FATHER_PATH}CBFL/code/setting.json", "r", encoding="utf-8")
     settingContent = settingJson.read()
     setting = json.loads(settingContent)
@@ -85,6 +89,6 @@ if __name__ == "__main__":
         RESULT_PATH = f"{FATHER_PATH}CBFL/dataset/allPredictResult/result-{project}-{tiedK}-{k}-{k_Id}.csv"
         allPredictionsResultList += get_all_predictions(RESULT_PATH, project, tiedK, k, k_Id)
     for version in versionList:
-        threadMath = threading.Thread(target=save_predictions, args=(project, version, allPredictionsResultList))
-        threadMath.start()
-        # save_predictions(project, version, allPredictionsResultList)
+        # threadMath = threading.Thread(target=save_predictions, args=(project, version, allPredictionsResultList))
+        # threadMath.start()
+        save_predictions(project, version, allPredictionsResultList)

@@ -50,18 +50,18 @@ from sklearn.naive_bayes import GaussianNB  # 贝叶斯
 from sklearn.neighbors import KNeighborsClassifier  # k近邻
 from sklearn.svm import SVC  # 支持向量机
 from sklearn.tree import DecisionTreeClassifier  # 决策树
-FATHER_PATH = "C:/ssdcode/"
+FATHER_PATH = "/Users/lvlaxjh/code/"
 
 
 def use_classification(TEST_PATH, TRAIN_PATH, classificationFunc, k_Id, tiedK, sampling):
     # 测试集-start
     test_data = pd.read_csv(TEST_PATH)
-    test_x = test_data.iloc[:, [6, 7, 8, 9, 10, 11, 12, 13, 14, 17]]  # 取测试数据
+    test_x = test_data.iloc[:, [6, 7, 8, 9, 11, 12, 13, 14,15,16, 17]]  # 取测试数据
     # test_y = test_data["accuracy"]  # 取样本类标签
     # 测试集-end
     # 训练集-start
     train_data = pd.read_csv(TRAIN_PATH)
-    train_x = train_data.iloc[:, [6, 7, 8, 9, 10, 11, 12, 13, 14, 17]]  # 取训练数据
+    train_x = train_data.iloc[:, [6, 7, 8, 9, 11, 12, 13, 14,15,16, 17]]  # 取训练数据
     # train_y = train_data["accuracy"]  # 取样本类标签
     train_y = train_data.iloc[:, [19]]  # 取样本类标签
     # 训练集-end
@@ -259,8 +259,7 @@ if __name__ == "__main__":
             "f1": "",
         }
         #
-        # for classificationFunc in ["tree", "bayes", "KNN", "randomForest", "SVC"]:
-        for classificationFunc in ["bayes"]:
+        for classificationFunc in ["tree", "bayes", "KNN", "randomForest", "SVC"]:
             resDict["classification"] = deepcopy(classificationFunc)
             for sampling in ["none", "smote", "over", "under"]:
                 resDict["sam"] = deepcopy(sampling)

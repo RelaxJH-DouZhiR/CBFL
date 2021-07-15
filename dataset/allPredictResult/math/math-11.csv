@@ -1,134 +1,134 @@
-project_path,version,lines,statement,suspicious,faulty,predict,miss_line
-org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,178,        final int dim = getDimension();,0.5,0,0,0
-org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,179,        if (vals.length != dim) {,0.5,0,1,0
-org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,183,"        return FastMath.pow(2 * FastMath.PI, -dim / 2) *",0.5,1,1,0
-org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,229,        final double[] centered = new double[values.length];,0.5,0,0,0
-org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,230,        for (int i = 0; i < centered.length; i++) {,0.5,0,1,0
-org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,231,            centered[i] = values[i] - getMeans()[i];,0.5,0,0,0
-org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,233,        final double[] preMultiplied = covarianceMatrixInverse.preMultiply(centered);,0.5,0,1,0
-org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,234,        double sum = 0;,0.5,0,1,0
-org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,235,        for (int i = 0; i < preMultiplied.length; i++) {,0.5,0,1,0
-org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,236,            sum += preMultiplied[i] * centered[i];,0.5,0,0,0
-org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,238,        return FastMath.exp(-0.5 * sum);,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,831,"        return exp(x, 0.0, null);",0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,850,        if (x < 0.0) {,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,851,            intVal = (int) -x;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,853,            if (intVal > 746) {,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,861,            if (intVal > 709) {,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,871,            if (intVal == 709) {,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,881,            intVal++;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,883,            intPartA = ExpIntTable.EXP_INT_TABLE_A[EXP_INT_TABLE_MAX_INDEX-intVal];,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,884,            intPartB = ExpIntTable.EXP_INT_TABLE_B[EXP_INT_TABLE_MAX_INDEX-intVal];,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,886,            intVal = -intVal;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,888,            intVal = (int) x;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,890,            if (intVal > 709) {,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,898,            intPartA = ExpIntTable.EXP_INT_TABLE_A[EXP_INT_TABLE_MAX_INDEX+intVal];,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,899,            intPartB = ExpIntTable.EXP_INT_TABLE_B[EXP_INT_TABLE_MAX_INDEX+intVal];,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,906,        final int intFrac = (int) ((x - intVal) * 1024.0);,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,907,        final double fracPartA = ExpFracTable.EXP_FRAC_TABLE_A[intFrac];,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,908,        final double fracPartB = ExpFracTable.EXP_FRAC_TABLE_B[intFrac];,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,914,        final double epsilon = x - (intVal + intFrac / 1024.0);,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,923,        double z = 0.04168701738764507;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,924,        z = z * epsilon + 0.1666666505023083;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,925,        z = z * epsilon + 0.5000000000042687;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,926,        z = z * epsilon + 1.0;,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,927,        z = z * epsilon + -3.940510424527919E-20;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,934,        double tempA = intPartA * fracPartA;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,935,        double tempB = intPartA * fracPartB + intPartB * fracPartA + intPartB * fracPartB;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,941,        final double tempC = tempB + tempA;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,943,        if (extra != 0.0) {,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,946,            result = tempC*z + tempB + tempA;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,949,        if (hiPrec != null) {,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,955,        return result;,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,1179,            if (x < 1.01 && x > 0.99 && hiPrec == null) {,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,1246,            double tmp = epsilon * HEX_40000000;,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,1247,            double aa = epsilon + tmp - tmp;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1248,            double ab = epsilon - aa;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1249,            double xa = aa;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1250,            double xb = ab;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1253,            final double numer = bits & 0x3ffffffffffL;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1254,            final double denom = TWO_POWER_52 + (bits & 0x000ffc0000000000L);,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,1255,            aa = numer - xa*denom - xb * denom;,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,1256,            xb += aa / denom;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1259,            final double[] lnCoef_last = LN_HI_PREC_COEF[LN_HI_PREC_COEF.length-1];,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,1260,            double ya = lnCoef_last[0];,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,1261,            double yb = lnCoef_last[1];,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,1263,            for (int i = LN_HI_PREC_COEF.length - 2; i >= 0; i--) {,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1265,                aa = ya * xa;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1266,                ab = ya * xb + yb * xa + yb * xb;,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,1268,                tmp = aa * HEX_40000000;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1269,                ya = aa + tmp - tmp;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1270,                yb = aa - ya + ab;,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,1273,                final double[] lnCoef_i = LN_HI_PREC_COEF[i];,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1274,                aa = ya + lnCoef_i[0];,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,1275,                ab = yb + lnCoef_i[1];,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,1277,                tmp = aa * HEX_40000000;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1278,                ya = aa + tmp - tmp;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1279,                yb = aa - ya + ab;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1283,            aa = ya * xa;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1284,            ab = ya * xb + yb * xa + yb * xb;,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,1292,            lnza = aa + ab;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1293,            lnzb = -(lnza - aa - ab);,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1294,        } else {,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1348,            hiPrec[0] = a;,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,1349,            hiPrec[1] = b;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1443,        final double lns[] = new double[2];,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,1445,        if (y == 0.0) {,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1449,        if (x != x) { // X is NaN,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1454,        if (x == 0) {,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,1479,        if (x == Double.POSITIVE_INFINITY) {,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1490,        if (y == Double.POSITIVE_INFINITY) {,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1502,        if (x == Double.NEGATIVE_INFINITY) {,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1526,        if (y == Double.NEGATIVE_INFINITY) {,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1540,        if (x < 0) {,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1557,        if (y < 8e298 && y > -8e298) {,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1558,            double tmp1 = y * HEX_40000000;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1559,            ya = y + tmp1 - tmp1;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1560,            yb = y - ya;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1561,        } else {,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1569,"        final double lores = log(x, lns);",0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1570,        if (Double.isInfinite(lores)){ // don't allow this to be converted to NaN,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1574,        double lna = lns[0];,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,1575,        double lnb = lns[1];,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1578,        double tmp1 = lna * HEX_40000000;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1579,        double tmp2 = lna + tmp1 - tmp1;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1580,        lnb += lna - tmp2;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1581,        lna = tmp2;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1584,        final double aa = lna * ya;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1585,        final double ab = lna * yb + lnb * ya + lnb * yb;,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,1587,        lna = aa+ab;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1588,        lnb = -(lna - aa - ab);,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1590,        double z = 1.0 / 120.0;,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,1591,        z = z * lnb + (1.0 / 24.0);,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1592,        z = z * lnb + (1.0 / 6.0);,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1593,        z = z * lnb + 0.5;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1594,        z = z * lnb + 1.0;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1595,        z = z * lnb;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1597,"        final double result = exp(lna, z, null);",0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1599,        return result;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,1613,        if (e == 0) {,0.5,0,1,0
-org/apache/commons/math3/util/FastMathLiteralArrays,11,6142,        return EXP_INT_A.clone();,0.5,0,1,0
-org/apache/commons/math3/util/FastMathLiteralArrays,11,6150,        return EXP_INT_B.clone();,0.5,0,1,0
-org/apache/commons/math3/util/FastMathLiteralArrays,11,6158,        return EXP_FRAC_A.clone();,0.5,0,0,0
-org/apache/commons/math3/util/FastMathLiteralArrays,11,6166,        return EXP_FRAC_B.clone();,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,3744,    private static class ExpFracTable {,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,3770,                EXP_FRAC_TABLE_A = FastMathLiteralArrays.loadExpFracA();,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,3771,                EXP_FRAC_TABLE_B = FastMathLiteralArrays.loadExpFracB();,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,3773,        },0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,3705,    private static class ExpIntTable {,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,11,3737,                EXP_INT_TABLE_A = FastMathLiteralArrays.loadExpIntA();,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,3738,                EXP_INT_TABLE_B = FastMathLiteralArrays.loadExpIntB();,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,11,3740,        },0.5,0,1,0
-org/apache/commons/math3/linear/Array2DRowRealMatrix,11,373,        final int nRows = getRowDimension();,0.5,0,0,0
-org/apache/commons/math3/linear/Array2DRowRealMatrix,11,374,        final int nCols = getColumnDimension();,0.5,0,1,0
-org/apache/commons/math3/linear/Array2DRowRealMatrix,11,375,        if (v.length != nRows) {,0.5,0,1,0
-org/apache/commons/math3/linear/Array2DRowRealMatrix,11,379,        final double[] out = new double[nCols];,0.5,0,1,0
-org/apache/commons/math3/linear/Array2DRowRealMatrix,11,380,        for (int col = 0; col < nCols; ++col) {,0.5,0,1,0
-org/apache/commons/math3/linear/Array2DRowRealMatrix,11,381,            double sum = 0;,0.5,0,1,0
-org/apache/commons/math3/linear/Array2DRowRealMatrix,11,382,            for (int i = 0; i < nRows; ++i) {,0.5,0,0,0
-org/apache/commons/math3/linear/Array2DRowRealMatrix,11,383,                sum += data[i][col] * v[i];,0.5,0,0,0
-org/apache/commons/math3/linear/Array2DRowRealMatrix,11,385,            out[col] = sum;,0.5,0,1,0
-org/apache/commons/math3/linear/Array2DRowRealMatrix,11,388,        return out;,0.5,0,0,0
+project_path,version,lines,statement,suspicious,faulty,predict,miss_line,predictions0,predictions1
+org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,178,        final int dim = getDimension();,0.5,0,,0,0.6483003372092446,0.3516996627907536
+org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,179,        if (vals.length != dim) {,0.5,0,,0,0.45977403158565605,0.5402259684143452
+org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,183,"        return FastMath.pow(2 * FastMath.PI, -dim / 2) *",0.5,1,,0,0.5386033472860351,0.46139665271396596
+org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,229,        final double[] centered = new double[values.length];,0.5,0,,0,0.7347947149328944,0.26520528506710656
+org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,230,        for (int i = 0; i < centered.length; i++) {,0.5,0,,0,0.4537477141290475,0.5462522858709533
+org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,231,            centered[i] = values[i] - getMeans()[i];,0.5,0,,0,0.788335874740988,0.2116641252590111
+org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,233,        final double[] preMultiplied = covarianceMatrixInverse.preMultiply(centered);,0.5,0,,0,0.5910068876134781,0.4089931123865222
+org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,234,        double sum = 0;,0.5,0,,0,0.24687997466435374,0.7531200253356471
+org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,235,        for (int i = 0; i < preMultiplied.length; i++) {,0.5,0,,0,0.46301290274946494,0.5369870972505346
+org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,236,            sum += preMultiplied[i] * centered[i];,0.5,0,,0,0.7070887096464809,0.2929112903535197
+org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,238,        return FastMath.exp(-0.5 * sum);,0.5,0,,0,0.45006642483855114,0.549933575161448
+org/apache/commons/math3/util/FastMath,11,831,"        return exp(x, 0.0, null);",0.5,0,,0,0.3390991275020831,0.660900872497916
+org/apache/commons/math3/util/FastMath,11,850,        if (x < 0.0) {,0.5,0,,0,0.46021895350609515,0.539781046493904
+org/apache/commons/math3/util/FastMath,11,851,            intVal = (int) -x;,0.5,0,,0,0.5443772519470184,0.45562274805298153
+org/apache/commons/math3/util/FastMath,11,853,            if (intVal > 746) {,0.5,0,,0,0.38869364059124034,0.6113063594087602
+org/apache/commons/math3/util/FastMath,11,861,            if (intVal > 709) {,0.5,0,,0,0.38869364059124034,0.6113063594087602
+org/apache/commons/math3/util/FastMath,11,871,            if (intVal == 709) {,0.5,0,,0,0.3882153916171607,0.6117846083828401
+org/apache/commons/math3/util/FastMath,11,881,            intVal++;,0.5,0,,0,0.2592542396756935,0.7407457603243056
+org/apache/commons/math3/util/FastMath,11,883,            intPartA = ExpIntTable.EXP_INT_TABLE_A[EXP_INT_TABLE_MAX_INDEX-intVal];,0.5,0,,0,0.3495222979057328,0.6504777020942665
+org/apache/commons/math3/util/FastMath,11,884,            intPartB = ExpIntTable.EXP_INT_TABLE_B[EXP_INT_TABLE_MAX_INDEX-intVal];,0.5,0,,0,0.3495222979057328,0.6504777020942665
+org/apache/commons/math3/util/FastMath,11,886,            intVal = -intVal;,0.5,0,,0,0.36088821470761334,0.639111785292386
+org/apache/commons/math3/util/FastMath,11,888,            intVal = (int) x;,0.5,0,,0,0.4354432777273537,0.5645567222726464
+org/apache/commons/math3/util/FastMath,11,890,            if (intVal > 709) {,0.5,0,,0,0.38869364059124034,0.6113063594087602
+org/apache/commons/math3/util/FastMath,11,898,            intPartA = ExpIntTable.EXP_INT_TABLE_A[EXP_INT_TABLE_MAX_INDEX+intVal];,0.5,0,,0,0.3495222979057328,0.6504777020942665
+org/apache/commons/math3/util/FastMath,11,899,            intPartB = ExpIntTable.EXP_INT_TABLE_B[EXP_INT_TABLE_MAX_INDEX+intVal];,0.5,0,,0,0.3495222979057328,0.6504777020942665
+org/apache/commons/math3/util/FastMath,11,906,        final int intFrac = (int) ((x - intVal) * 1024.0);,0.5,0,,0,0.7730129992321582,0.22698700076784176
+org/apache/commons/math3/util/FastMath,11,907,        final double fracPartA = ExpFracTable.EXP_FRAC_TABLE_A[intFrac];,0.5,0,,0,0.8215711057340177,0.1784288942659808
+org/apache/commons/math3/util/FastMath,11,908,        final double fracPartB = ExpFracTable.EXP_FRAC_TABLE_B[intFrac];,0.5,0,,0,0.8215711057340177,0.1784288942659808
+org/apache/commons/math3/util/FastMath,11,914,        final double epsilon = x - (intVal + intFrac / 1024.0);,0.5,0,,0,0.6169339685330326,0.3830660314669658
+org/apache/commons/math3/util/FastMath,11,923,        double z = 0.04168701738764507;,0.5,0,,0,0.24469283981435927,0.7553071601856406
+org/apache/commons/math3/util/FastMath,11,924,        z = z * epsilon + 0.1666666505023083;,0.5,0,,0,0.41382210508604816,0.586177894913951
+org/apache/commons/math3/util/FastMath,11,925,        z = z * epsilon + 0.5000000000042687;,0.5,0,,0,0.41382210508604816,0.586177894913951
+org/apache/commons/math3/util/FastMath,11,926,        z = z * epsilon + 1.0;,0.5,0,,0,0.4078970108669422,0.5921029891330586
+org/apache/commons/math3/util/FastMath,11,927,        z = z * epsilon + -3.940510424527919E-20;,0.5,0,,0,0.5281172532847427,0.4718827467152566
+org/apache/commons/math3/util/FastMath,11,934,        double tempA = intPartA * fracPartA;,0.5,0,,0,0.31818348667260676,0.6818165133273936
+org/apache/commons/math3/util/FastMath,11,935,        double tempB = intPartA * fracPartB + intPartB * fracPartA + intPartB * fracPartB;,0.5,0,,0,0.28914506530163897,0.7108549346983594
+org/apache/commons/math3/util/FastMath,11,941,        final double tempC = tempB + tempA;,0.5,0,,0,0.4762120294843177,0.5237879705156822
+org/apache/commons/math3/util/FastMath,11,943,        if (extra != 0.0) {,0.5,0,,0,0.4563625914757053,0.543637408524295
+org/apache/commons/math3/util/FastMath,11,946,            result = tempC*z + tempB + tempA;,0.5,0,,0,0.27598324095520793,0.7240167590447917
+org/apache/commons/math3/util/FastMath,11,949,        if (hiPrec != null) {,0.5,0,,0,0.4554542424544417,0.5445457575455592
+org/apache/commons/math3/util/FastMath,11,955,        return result;,0.5,0,,0,0.2710889513347062,0.7289110486652939
+org/apache/commons/math3/util/FastMath,11,1179,            if (x < 1.01 && x > 0.99 && hiPrec == null) {,0.5,0,,0,0.5971565223911747,0.4028434776088243
+org/apache/commons/math3/util/FastMath,11,1246,            double tmp = epsilon * HEX_40000000;,0.5,0,,0,0.24860977684368482,0.7513902231563135
+org/apache/commons/math3/util/FastMath,11,1247,            double aa = epsilon + tmp - tmp;,0.5,0,,0,0.23103649926105993,0.7689635007389402
+org/apache/commons/math3/util/FastMath,11,1248,            double ab = epsilon - aa;,0.5,0,,0,0.24453014137447412,0.755469858625527
+org/apache/commons/math3/util/FastMath,11,1249,            double xa = aa;,0.5,0,,0,0.20001042561081994,0.7999895743891795
+org/apache/commons/math3/util/FastMath,11,1250,            double xb = ab;,0.5,0,,0,0.20001042561081994,0.7999895743891795
+org/apache/commons/math3/util/FastMath,11,1253,            final double numer = bits & 0x3ffffffffffL;,0.5,0,,0,0.43054445813433845,0.5694555418656614
+org/apache/commons/math3/util/FastMath,11,1254,            final double denom = TWO_POWER_52 + (bits & 0x000ffc0000000000L);,0.5,0,,0,0.5857008974862014,0.4142991025137995
+org/apache/commons/math3/util/FastMath,11,1255,            aa = numer - xa*denom - xb * denom;,0.5,0,,0,0.23760483156232495,0.7623951684376753
+org/apache/commons/math3/util/FastMath,11,1256,            xb += aa / denom;,0.5,0,,0,0.32401748773247135,0.6759825122675286
+org/apache/commons/math3/util/FastMath,11,1259,            final double[] lnCoef_last = LN_HI_PREC_COEF[LN_HI_PREC_COEF.length-1];,0.5,0,,0,0.8119677418652997,0.18803225813470045
+org/apache/commons/math3/util/FastMath,11,1260,            double ya = lnCoef_last[0];,0.5,0,,0,0.5721217326772174,0.42787826732278234
+org/apache/commons/math3/util/FastMath,11,1261,            double yb = lnCoef_last[1];,0.5,0,,0,0.5721217326772174,0.42787826732278234
+org/apache/commons/math3/util/FastMath,11,1263,            for (int i = LN_HI_PREC_COEF.length - 2; i >= 0; i--) {,0.5,0,,0,0.43449981380595476,0.5655001861940455
+org/apache/commons/math3/util/FastMath,11,1265,                aa = ya * xa;,0.5,0,,0,0.244020808529009,0.7559791914709916
+org/apache/commons/math3/util/FastMath,11,1266,                ab = ya * xb + yb * xa + yb * xb;,0.5,0,,0,0.13556497081808394,0.8644350291819167
+org/apache/commons/math3/util/FastMath,11,1268,                tmp = aa * HEX_40000000;,0.5,0,,0,0.23922828363049767,0.760771716369502
+org/apache/commons/math3/util/FastMath,11,1269,                ya = aa + tmp - tmp;,0.5,0,,0,0.22515992130735624,0.7748400786926424
+org/apache/commons/math3/util/FastMath,11,1270,                yb = aa - ya + ab;,0.5,0,,0,0.22592689394774243,0.7740731060522561
+org/apache/commons/math3/util/FastMath,11,1273,                final double[] lnCoef_i = LN_HI_PREC_COEF[i];,0.5,0,,0,0.649014205222196,0.3509857947778033
+org/apache/commons/math3/util/FastMath,11,1274,                aa = ya + lnCoef_i[0];,0.5,0,,0,0.6260378821138742,0.37396211788612543
+org/apache/commons/math3/util/FastMath,11,1275,                ab = yb + lnCoef_i[1];,0.5,0,,0,0.6260378821138742,0.37396211788612543
+org/apache/commons/math3/util/FastMath,11,1277,                tmp = aa * HEX_40000000;,0.5,0,,0,0.23922828363049767,0.760771716369502
+org/apache/commons/math3/util/FastMath,11,1278,                ya = aa + tmp - tmp;,0.5,0,,0,0.22515992130735624,0.7748400786926424
+org/apache/commons/math3/util/FastMath,11,1279,                yb = aa - ya + ab;,0.5,0,,0,0.22592689394774243,0.7740731060522561
+org/apache/commons/math3/util/FastMath,11,1283,            aa = ya * xa;,0.5,0,,0,0.3272265818278938,0.6727734181721078
+org/apache/commons/math3/util/FastMath,11,1284,            ab = ya * xb + yb * xa + yb * xb;,0.5,0,,0,0.1911398707084224,0.8088601292915792
+org/apache/commons/math3/util/FastMath,11,1292,            lnza = aa + ab;,0.5,0,,0,0.32545992364095316,0.6745400763590456
+org/apache/commons/math3/util/FastMath,11,1293,            lnzb = -(lnza - aa - ab);,0.5,0,,0,0.5038642512616022,0.4961357487383986
+org/apache/commons/math3/util/FastMath,11,1294,        } else {,0.5,0,,0,0.2666929641059156,0.7333070358940831
+org/apache/commons/math3/util/FastMath,11,1348,            hiPrec[0] = a;,0.5,0,,0,0.6665997547263481,0.33340024527365086
+org/apache/commons/math3/util/FastMath,11,1349,            hiPrec[1] = b;,0.5,0,,0,0.6665997547263481,0.33340024527365086
+org/apache/commons/math3/util/FastMath,11,1443,        final double lns[] = new double[2];,0.5,0,,0,0.7076994396388806,0.2923005603611187
+org/apache/commons/math3/util/FastMath,11,1445,        if (y == 0.0) {,0.5,0,,0,0.45926623385930787,0.540733766140693
+org/apache/commons/math3/util/FastMath,11,1449,        if (x != x) { // X is NaN,0.5,0,,0,0.47287541655879195,0.5271245834412077
+org/apache/commons/math3/util/FastMath,11,1454,        if (x == 0) {,0.5,0,,0,0.46126254337267486,0.5387374566273264
+org/apache/commons/math3/util/FastMath,11,1479,        if (x == Double.POSITIVE_INFINITY) {,0.5,0,,0,0.4652332722098234,0.5347667277901765
+org/apache/commons/math3/util/FastMath,11,1490,        if (y == Double.POSITIVE_INFINITY) {,0.5,0,,0,0.4652332722098234,0.5347667277901765
+org/apache/commons/math3/util/FastMath,11,1502,        if (x == Double.NEGATIVE_INFINITY) {,0.5,0,,0,0.4652332722098234,0.5347667277901765
+org/apache/commons/math3/util/FastMath,11,1526,        if (y == Double.NEGATIVE_INFINITY) {,0.5,0,,0,0.4652332722098234,0.5347667277901765
+org/apache/commons/math3/util/FastMath,11,1540,        if (x < 0) {,0.5,0,,0,0.46239708392588663,0.537602916074115
+org/apache/commons/math3/util/FastMath,11,1557,        if (y < 8e298 && y > -8e298) {,0.5,0,,0,0.591322871043305,0.4086771289566957
+org/apache/commons/math3/util/FastMath,11,1558,            double tmp1 = y * HEX_40000000;,0.5,0,,0,0.2457349326806078,0.7542650673193934
+org/apache/commons/math3/util/FastMath,11,1559,            ya = y + tmp1 - tmp1;,0.5,0,,0,0.3041760925983044,0.6958239074016945
+org/apache/commons/math3/util/FastMath,11,1560,            yb = y - ya;,0.5,0,,0,0.3282323037355581,0.6717676962644431
+org/apache/commons/math3/util/FastMath,11,1561,        } else {,0.5,0,,0,0.2666929641059156,0.7333070358940831
+org/apache/commons/math3/util/FastMath,11,1569,"        final double lores = log(x, lns);",0.5,0,,0,0.5311751976499701,0.4688248023500315
+org/apache/commons/math3/util/FastMath,11,1570,        if (Double.isInfinite(lores)){ // don't allow this to be converted to NaN,0.5,0,,0,0.49530520175867987,0.5046947982413202
+org/apache/commons/math3/util/FastMath,11,1574,        double lna = lns[0];,0.5,0,,0,0.6543707349012983,0.3456292650987028
+org/apache/commons/math3/util/FastMath,11,1575,        double lnb = lns[1];,0.5,0,,0,0.6543707349012983,0.3456292650987028
+org/apache/commons/math3/util/FastMath,11,1578,        double tmp1 = lna * HEX_40000000;,0.5,0,,0,0.31593946870271744,0.6840605312972821
+org/apache/commons/math3/util/FastMath,11,1579,        double tmp2 = lna + tmp1 - tmp1;,0.5,0,,0,0.29764038538253684,0.7023596146174639
+org/apache/commons/math3/util/FastMath,11,1580,        lnb += lna - tmp2;,0.5,0,,0,0.38691465471486813,0.6130853452851307
+org/apache/commons/math3/util/FastMath,11,1581,        lna = tmp2;,0.5,0,,0,0.32960170047765336,0.6703982995223472
+org/apache/commons/math3/util/FastMath,11,1584,        final double aa = lna * ya;,0.5,0,,0,0.4718664404376222,0.5281335595623781
+org/apache/commons/math3/util/FastMath,11,1585,        final double ab = lna * yb + lnb * ya + lnb * yb;,0.5,0,,0,0.32833963196467364,0.671660368035326
+org/apache/commons/math3/util/FastMath,11,1587,        lna = aa+ab;,0.5,0,,0,0.3921272714824857,0.6078727285175155
+org/apache/commons/math3/util/FastMath,11,1588,        lnb = -(lna - aa - ab);,0.5,0,,0,0.5729787901605463,0.42702120983945224
+org/apache/commons/math3/util/FastMath,11,1590,        double z = 1.0 / 120.0;,0.5,0,,0,0.3092343489791849,0.690765651020815
+org/apache/commons/math3/util/FastMath,11,1591,        z = z * lnb + (1.0 / 24.0);,0.5,0,,0,0.5708089799104894,0.42919102008951215
+org/apache/commons/math3/util/FastMath,11,1592,        z = z * lnb + (1.0 / 6.0);,0.5,0,,0,0.5706770784365011,0.42932292156350044
+org/apache/commons/math3/util/FastMath,11,1593,        z = z * lnb + 0.5;,0.5,0,,0,0.4096670062593433,0.5903329937406558
+org/apache/commons/math3/util/FastMath,11,1594,        z = z * lnb + 1.0;,0.5,0,,0,0.4096670062593433,0.5903329937406558
+org/apache/commons/math3/util/FastMath,11,1595,        z = z * lnb;,0.5,0,,0,0.3921272714824857,0.6078727285175155
+org/apache/commons/math3/util/FastMath,11,1597,"        final double result = exp(lna, z, null);",0.5,0,,0,0.5384606734297762,0.4615393265702236
+org/apache/commons/math3/util/FastMath,11,1599,        return result;,0.5,0,,0,0.2710889513347062,0.7289110486652939
+org/apache/commons/math3/util/FastMath,11,1613,        if (e == 0) {,0.5,0,,0,0.46126254337267486,0.5387374566273264
+org/apache/commons/math3/util/FastMathLiteralArrays,11,6142,        return EXP_INT_A.clone();,0.5,0,,0,0.30851463291635434,0.6914853670836443
+org/apache/commons/math3/util/FastMathLiteralArrays,11,6150,        return EXP_INT_B.clone();,0.5,0,,0,0.30851463291635434,0.6914853670836443
+org/apache/commons/math3/util/FastMathLiteralArrays,11,6158,        return EXP_FRAC_A.clone();,0.5,0,,0,0.3085517269928337,0.6914482730071659
+org/apache/commons/math3/util/FastMathLiteralArrays,11,6166,        return EXP_FRAC_B.clone();,0.5,0,,0,0.3085517269928337,0.6914482730071659
+org/apache/commons/math3/util/FastMath,11,3744,    private static class ExpFracTable {,0.5,0,,0,0.6989366626483592,0.30106333735164037
+org/apache/commons/math3/util/FastMath,11,3770,                EXP_FRAC_TABLE_A = FastMathLiteralArrays.loadExpFracA();,0.5,0,,0,0.39252015912948685,0.6074798408705122
+org/apache/commons/math3/util/FastMath,11,3771,                EXP_FRAC_TABLE_B = FastMathLiteralArrays.loadExpFracB();,0.5,0,,0,0.39252015912948685,0.6074798408705122
+org/apache/commons/math3/util/FastMath,11,3773,        },0.5,0,,0,0.21661238710481007,0.7833876128951885
+org/apache/commons/math3/util/FastMath,11,3705,    private static class ExpIntTable {,0.5,0,,0,0.6982092595144485,0.3017907404855528
+org/apache/commons/math3/util/FastMath,11,3737,                EXP_INT_TABLE_A = FastMathLiteralArrays.loadExpIntA();,0.5,0,,0,0.3873215611189274,0.6126784388810721
+org/apache/commons/math3/util/FastMath,11,3738,                EXP_INT_TABLE_B = FastMathLiteralArrays.loadExpIntB();,0.5,0,,0,0.3873215611189274,0.6126784388810721
+org/apache/commons/math3/util/FastMath,11,3740,        },0.5,0,,0,0.21661238710481007,0.7833876128951885
+org/apache/commons/math3/linear/Array2DRowRealMatrix,11,373,        final int nRows = getRowDimension();,0.5,0,,0,0.6518148759052279,0.34818512409477287
+org/apache/commons/math3/linear/Array2DRowRealMatrix,11,374,        final int nCols = getColumnDimension();,0.5,0,,0,0.6549049647831566,0.3450950352168449
+org/apache/commons/math3/linear/Array2DRowRealMatrix,11,375,        if (v.length != nRows) {,0.5,0,,0,0.45982138298851305,0.5401786170114884
+org/apache/commons/math3/linear/Array2DRowRealMatrix,11,379,        final double[] out = new double[nCols];,0.5,0,,0,0.9086127630558928,0.09138723694410729
+org/apache/commons/math3/linear/Array2DRowRealMatrix,11,380,        for (int col = 0; col < nCols; ++col) {,0.5,0,,0,0.5237596614093489,0.47624033859065007
+org/apache/commons/math3/linear/Array2DRowRealMatrix,11,381,            double sum = 0;,0.5,0,,0,0.18858503423131498,0.8114149657686844
+org/apache/commons/math3/linear/Array2DRowRealMatrix,11,382,            for (int i = 0; i < nRows; ++i) {,0.5,0,,0,0.4485059622974827,0.5514940377025173
+org/apache/commons/math3/linear/Array2DRowRealMatrix,11,383,                sum += data[i][col] * v[i];,0.5,0,,0,0.6085691829174178,0.3914308170825823
+org/apache/commons/math3/linear/Array2DRowRealMatrix,11,385,            out[col] = sum;,0.5,0,,0,0.6657467372370813,0.3342532627629203
+org/apache/commons/math3/linear/Array2DRowRealMatrix,11,388,        return out;,0.5,0,,0,0.27380340833907213,0.726196591660927
 org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,164,        return MathArrays.copyOf(means);,0.33333,0,-1,0
 org/apache/commons/math3/util/FastMath,11,1130,        if (x==0) { // Handle special case of +0/-0,0.25,0,-1,0
 org/apache/commons/math3/util/FastMath,11,1133,        long bits = Double.doubleToLongBits(x);,0.25,0,-1,0

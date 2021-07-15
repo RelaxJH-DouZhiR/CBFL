@@ -1,25 +1,25 @@
-project_path,version,lines,statement,suspicious,faulty,predict,miss_line
-org/apache/commons/math3/util/FastMath,10,2477,            final double denom = 1d / (1d + (xa + xb) * (TANGENT_TABLE_A[idx] + TANGENT_TABLE_B[idx]));,0.5,0,0,0
-org/apache/commons/math3/util/FastMath,10,2479,            ya = epsA * denom;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,10,2480,            yb = epsB * denom;,0.5,0,1,0
-org/apache/commons/math3/util/FastMath,10,2481,        } else {,0.5,0,1,0
-org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1387,        double[] tmp1 = new double[getSize()];,0.5,0,0,0
-org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1388,"        multiply(x, xOffset, x, xOffset, tmp1, 0);      // x^2",0.5,0,1,0
-org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1389,        double[] tmp2 = new double[getSize()];,0.5,0,0,0
-org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1390,"        multiply(y, yOffset, y, yOffset, tmp2, 0);      // y^2",0.5,0,1,0
-org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1391,"        add(tmp1, 0, tmp2, 0, tmp2, 0);                 // x^2 + y^2",0.5,0,1,0
-org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1392,"        rootN(tmp2, 0, 2, tmp1, 0);                     // r = sqrt(x^2 + y^2)",0.5,0,1,0
-org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1394,        if (x[xOffset] >= 0) {,0.5,0,0,0
-org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1397,"            add(tmp1, 0, x, xOffset, tmp2, 0);          // r + x",0.5,0,1,0
-org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1398,"            divide(y, yOffset, tmp2, 0, tmp1, 0);       // y /(r + x)",0.5,0,1,0
-org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1399,"            atan(tmp1, 0, tmp2, 0);                     // atan(y / (r + x))",0.5,0,1,0
-org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1400,            for (int i = 0; i < tmp2.length; ++i) {,0.5,0,1,0
-org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1401,                result[resultOffset + i] = 2 * tmp2[i]; // 2 * atan(y / (r + x)),0.5,0,0,0
-org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1420,    },0.5,1,1,1
-org/apache/commons/math3/analysis/differentiation/DerivativeStructure,10,756,        y.compiler.checkCompatibility(x.compiler);,0.5,0,1,0
-org/apache/commons/math3/analysis/differentiation/DerivativeStructure,10,757,        final DerivativeStructure result = new DerivativeStructure(y.compiler);,0.5,0,0,0
-org/apache/commons/math3/analysis/differentiation/DerivativeStructure,10,758,"        y.compiler.atan2(y.data, 0, x.data, 0, result.data, 0);",0.5,0,1,0
-org/apache/commons/math3/analysis/differentiation/DerivativeStructure,10,759,        return result;,0.5,0,0,0
+project_path,version,lines,statement,suspicious,faulty,predict,miss_line,predictions0,predictions1
+org/apache/commons/math3/util/FastMath,10,2477,            final double denom = 1d / (1d + (xa + xb) * (TANGENT_TABLE_A[idx] + TANGENT_TABLE_B[idx]));,0.5,0,,0,0.9583000930035558,0.04169990699644587
+org/apache/commons/math3/util/FastMath,10,2479,            ya = epsA * denom;,0.5,0,,0,0.3234171504192659,0.6765828495807327
+org/apache/commons/math3/util/FastMath,10,2480,            yb = epsB * denom;,0.5,0,,0,0.3234171504192659,0.6765828495807327
+org/apache/commons/math3/util/FastMath,10,2481,        } else {,0.5,0,,0,0.2666929641059156,0.7333070358940831
+org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1387,        double[] tmp1 = new double[getSize()];,0.5,0,,0,0.6168939117342416,0.3831060882657566
+org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1388,"        multiply(x, xOffset, x, xOffset, tmp1, 0);      // x^2",0.5,0,,0,0.12710772238619958,0.8728922776138017
+org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1389,        double[] tmp2 = new double[getSize()];,0.5,0,,0,0.6168939117342416,0.3831060882657566
+org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1390,"        multiply(y, yOffset, y, yOffset, tmp2, 0);      // y^2",0.5,0,,0,0.12710772238619958,0.8728922776138017
+org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1391,"        add(tmp1, 0, tmp2, 0, tmp2, 0);                 // x^2 + y^2",0.5,0,,0,0.2544964693933526,0.7455035306066473
+org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1392,"        rootN(tmp2, 0, 2, tmp1, 0);                     // r = sqrt(x^2 + y^2)",0.5,0,,0,0.42332566324954224,0.5766743367504585
+org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1394,        if (x[xOffset] >= 0) {,0.5,0,,0,0.7043776909516194,0.2956223090483805
+org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1397,"            add(tmp1, 0, x, xOffset, tmp2, 0);          // r + x",0.5,0,,0,0.14272301946786867,0.8572769805321319
+org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1398,"            divide(y, yOffset, tmp2, 0, tmp1, 0);       // y /(r + x)",0.5,0,,0,0.1998930076211521,0.8001069923788462
+org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1399,"            atan(tmp1, 0, tmp2, 0);                     // atan(y / (r + x))",0.5,0,,0,0.4247715062104156,0.5752284937895853
+org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1400,            for (int i = 0; i < tmp2.length; ++i) {,0.5,0,,0,0.3806838470546381,0.6193161529453606
+org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1401,                result[resultOffset + i] = 2 * tmp2[i]; // 2 * atan(y / (r + x)),0.5,0,,0,0.8121204698039809,0.18787953019601944
+org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1420,    },0.5,1,,1,0.21661238710481007,0.7833876128951885
+org/apache/commons/math3/analysis/differentiation/DerivativeStructure,10,756,        y.compiler.checkCompatibility(x.compiler);,0.5,0,,0,0.3624699985200267,0.6375300014799741
+org/apache/commons/math3/analysis/differentiation/DerivativeStructure,10,757,        final DerivativeStructure result = new DerivativeStructure(y.compiler);,0.5,0,,0,0.9973017365348794,0.0026982634651204276
+org/apache/commons/math3/analysis/differentiation/DerivativeStructure,10,758,"        y.compiler.atan2(y.data, 0, x.data, 0, result.data, 0);",0.5,0,,0,0.05867625164617402,0.9413237483538266
+org/apache/commons/math3/analysis/differentiation/DerivativeStructure,10,759,        return result;,0.5,0,,0,0.2710889513347062,0.7289110486652939
 org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1347,                double v = 0;,0.33333,0,-1,0
 org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1348,                q[n - 1] = -n * q[n - 2];,0.33333,0,-1,0
 org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1349,                for (int k = n - 1; k >= 0; k -= 2) {,0.33333,0,-1,0

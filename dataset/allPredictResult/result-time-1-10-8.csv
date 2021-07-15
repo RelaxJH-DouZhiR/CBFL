@@ -1,53 +1,53 @@
-dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,logic,lengthEle,lengthWord,depth,suspicious,accuracy,miss_line,predict
-defect4j,time,org/joda/time/chrono/BasicChronology,11,373,        return millis;,0,0,0,0,0,1,0,0,0,1,14,4,1.0,0,0,0
-defect4j,time,org/joda/time/chrono/BasicChronology,11,402,            i2 = i2 - unitMillis + 1;,10,3,1,0,0,0,0,0,0,17,25,3,1.0,0,0,0
-defect4j,time,org/joda/time/chrono/BasicChronology,11,410,            year--;,6,0,0,0,0,0,2,0,0,9,7,3,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicChronology,11,485,        long yearStart = getYearMillis(year);,0,0,0,1,2,0,0,0,0,3,37,4,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicChronology,11,486,        return (int) ((instant - yearStart) / DateTimeConstants.MILLIS_PER_DAY) + 1;,4,0,0,3,6,1,0,0,0,5,76,4,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicChronology,11,537,            daysSince19700101 = (instant - (DateTimeConstants.MILLIS_PER_DAY - 1)),8,2,0,2,4,0,0,0,0,11,70,6,1.0,0,0,0
-defect4j,time,org/joda/time/chrono/BasicChronology,11,539,            if (daysSince19700101 < -3) {,2,1,0,1,3,0,0,0,0,4,29,6,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicChronology,11,540,                return 7 + (int) ((daysSince19700101 + 4) % 7);,4,3,0,3,6,1,0,0,0,7,47,3,1.0,0,0,0
-defect4j,time,org/joda/time/chrono/BasicChronology,11,554,            return (DateTimeConstants.MILLIS_PER_DAY - 1),0,0,0,1,2,1,0,0,0,4,45,4,1.0,0,0,0
-defect4j,time,org/joda/time/chrono/BasicGJChronology,11,134,        return ((value > 28 || value < 1) ? getDaysInMonthMax(instant) : 28);,0,0,0,3,6,1,0,0,0,10,69,4,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicGJChronology,11,148,        int minuendYear = getYear(minuendInstant);,2,0,0,1,2,0,4,0,0,6,42,5,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicGJChronology,11,149,        int subtrahendYear = getYear(subtrahendInstant);,2,0,0,1,2,0,4,0,0,6,48,5,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicGJChronology,11,152,        long minuendRem = minuendInstant - getYearMillis(minuendYear);,0,0,0,1,2,0,0,0,0,3,62,4,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicGJChronology,11,153,        long subtrahendRem = subtrahendInstant - getYearMillis(subtrahendYear);,0,0,0,1,2,0,0,0,0,3,71,4,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicGJChronology,11,156,        if (subtrahendRem >= FEB_29) {,8,1,0,1,3,0,0,2,0,12,30,4,1.0,0,0,0
-defect4j,time,org/joda/time/chrono/BasicGJChronology,11,157,            if (isLeapYear(subtrahendYear)) {,0,0,0,2,5,0,8,0,0,8,33,3,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicGJChronology,11,161,            } else if (minuendRem >= FEB_29 && isLeapYear(minuendYear)) {,4,2,0,2,6,0,4,0,0,10,61,7,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicGJChronology,11,166,        int difference = minuendYear - subtrahendYear;,6,1,0,0,0,0,0,0,0,7,46,5,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicGJChronology,11,167,        if (minuendRem < subtrahendRem) {,4,1,0,1,3,0,0,0,0,5,33,4,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicGJChronology,11,168,            difference--;,2,0,0,0,0,0,0,0,0,3,13,6,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicGJChronology,11,170,        return difference;,2,0,0,0,0,1,0,0,0,2,18,4,1.0,0,0,0
-defect4j,time,org/joda/time/chrono/BasicGJChronology,11,175,        int thisYear = getYear(instant);,2,0,0,1,2,0,4,0,0,6,32,5,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicGJChronology,11,176,"        int dayOfYear = getDayOfYear(instant, thisYear);",0,0,0,1,2,0,0,0,0,3,48,4,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicGJChronology,11,177,        int millisOfDay = getMillisOfDay(instant);,2,0,0,1,2,0,4,0,0,6,42,5,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicGJChronology,11,179,        if (dayOfYear > (31 + 28)) { // after Feb 28,2,2,0,2,5,0,0,0,0,4,44,4,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicGJChronology,11,180,            if (isLeapYear(thisYear)) {,0,0,0,2,5,0,4,0,0,4,27,7,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicGJChronology,11,182,                if (!isLeapYear(year)) {,2,1,0,2,5,0,4,0,0,8,24,4,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicGJChronology,11,184,                    dayOfYear--;,8,1,0,0,0,0,0,0,0,10,12,3,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicGJChronology,11,188,                if (isLeapYear(year)) {,0,0,0,2,5,0,4,0,0,4,23,9,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicGJChronology,11,190,                    dayOfYear++;,2,0,0,0,0,0,0,0,0,3,12,10,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicGJChronology,11,195,"        instant = getYearMonthDayMillis(year, 1, dayOfYear);",2,0,0,1,2,0,6,0,0,9,52,4,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicGJChronology,11,196,        instant += millisOfDay;,4,0,0,0,0,0,0,0,0,5,23,4,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicGJChronology,11,198,        return instant;,2,0,0,0,0,1,0,0,0,2,15,4,1.0,0,0,0
-defect4j,time,org/joda/time/chrono/BasicYearDateTimeField,11,54,        return iChronology.getYear(instant);,0,0,0,1,2,1,6,0,0,6,36,5,1.0,0,0,0
-defect4j,time,org/joda/time/chrono/BasicYearDateTimeField,11,58,        if (years == 0) {,14,2,0,1,3,0,0,8,0,26,17,1,1.0,0,0,0
-defect4j,time,org/joda/time/chrono/BasicYearDateTimeField,11,59,            return instant;,2,0,0,0,0,1,0,0,0,2,15,6,1.0,0,0,0
-defect4j,time,org/joda/time/chrono/BasicYearDateTimeField,11,61,        int thisYear = get(instant);,2,0,0,1,2,0,4,0,0,6,28,5,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicYearDateTimeField,11,62,"        int newYear = FieldUtils.safeAdd(thisYear, years);",2,0,0,1,2,0,8,0,0,10,50,5,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicYearDateTimeField,11,63,"        return set(instant, newYear);",0,0,0,1,2,1,6,0,0,6,29,5,1.0,0,0,0
-defect4j,time,org/joda/time/chrono/BasicYearDateTimeField,11,82,        FieldUtils.verifyValueBounds,2,2,0,0,0,0,8,0,0,13,28,3,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicYearDateTimeField,11,84,"        return iChronology.setYear(instant, year);",6,1,0,1,2,1,12,0,0,20,42,3,1.0,0,0,0
-defect4j,time,org/joda/time/chrono/BasicYearDateTimeField,11,88,        if (minuendInstant < subtrahendInstant) {,4,1,0,1,3,0,0,0,0,5,41,4,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicYearDateTimeField,11,91,"        return iChronology.getYearDifference(minuendInstant, subtrahendInstant);",0,0,0,1,2,1,8,0,0,8,72,5,1.0,0,0,1
-defect4j,time,org/joda/time/chrono/BasicDayOfMonthDateTimeField,11,55,        return 1;,0,0,0,0,0,1,0,0,0,1,9,4,1.0,0,0,0
-defect4j,time,org/joda/time/chrono/BasicDayOfMonthDateTimeField,11,96,"        return iChronology.getDaysInMonthMaxForSet(instant, value);",0,0,0,1,2,1,0,0,0,4,59,4,1.0,0,0,0
-defect4j,time,org/joda/time/field/PreciseDateTimeField,11,79,        if (instant >= 0) {,6,1,0,1,3,0,0,0,0,8,19,4,1.0,0,0,1
-defect4j,time,org/joda/time/field/PreciseDateTimeField,11,82,            return iRange - 1 + (int) (((instant + 1) / getUnitMillis()) % iRange);,6,5,0,5,10,1,2,0,0,13,71,6,1.0,0,0,0
-defect4j,time,org/joda/time/field/PreciseDateTimeField,11,111,"        FieldUtils.verifyValueBounds(this, value, getMinimumValue(), getMaximumValue());",0,0,0,3,6,0,10,0,0,10,80,5,1.0,0,0,1
-defect4j,time,org/joda/time/field/PreciseDateTimeField,11,112,        return instant + (value - get(instant)) * iUnitMillis;,6,3,0,2,4,1,4,0,0,13,54,4,1.0,0,0,0
-defect4j,time,org/joda/time/field/PreciseDateTimeField,11,131,        return iRange - 1;,2,1,0,0,0,1,0,0,0,3,18,4,1.0,0,0,0
-defect4j,time,org/joda/time/chrono/GregorianChronology,11,209,            leapYears = ((year + 3) >> 2) - leapYears + ((leapYears + 3) >> 2) - 1;,0,0,0,4,8,0,0,0,0,12,71,4,1.0,0,0,1
-defect4j,time,org/joda/time/field/PreciseDurationField,11,114,"        long difference = FieldUtils.safeSubtract(minuendInstant, subtrahendInstant);",0,0,0,1,2,0,0,0,0,3,77,4,1.0,0,0,1
+dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,logic,lengthEle,lengthWord,depth,suspicious,accuracy,miss_line,predict0,predict1
+defect4j,time,org/joda/time/chrono/BasicChronology,11,373,        return millis;,1,0,0,0,0,1,0,0,0,2,14,4,1.0,0,0,0.0007018322746095743,0.9992981677253899
+defect4j,time,org/joda/time/chrono/BasicChronology,11,402,            i2 = i2 - unitMillis + 1;,3,2,0,0,0,0,0,0,1,3,25,6,1.0,0,0,0.002598769187027961,0.9974012308129725
+defect4j,time,org/joda/time/chrono/BasicChronology,11,410,            year--;,1,0,0,0,0,0,0,0,1,2,7,6,1.0,0,0,0.0008454482579856528,0.9991545517420145
+defect4j,time,org/joda/time/chrono/BasicChronology,11,485,        long yearStart = getYearMillis(year);,1,0,0,1,2,1,2,0,1,6,37,5,1.0,0,0,0.0017011122143611934,0.9982988877856386
+defect4j,time,org/joda/time/chrono/BasicChronology,11,486,        return (int) ((instant - yearStart) / DateTimeConstants.MILLIS_PER_DAY) + 1;,4,3,0,2,6,2,0,0,0,5,76,4,1.0,0,0,0.005489875542096771,0.9945101244579043
+defect4j,time,org/joda/time/chrono/BasicChronology,11,537,            daysSince19700101 = (instant - (DateTimeConstants.MILLIS_PER_DAY - 1)),4,3,0,2,4,0,0,0,1,5,70,6,1.0,0,0,0.0036949007951153807,0.9963050992048857
+defect4j,time,org/joda/time/chrono/BasicChronology,11,539,            if (daysSince19700101 < -3) {,1,1,0,1,3,1,0,0,1,6,29,6,1.0,0,0,0.001892695337699095,0.9981073046623006
+defect4j,time,org/joda/time/chrono/BasicChronology,11,540,                return 7 + (int) ((daysSince19700101 + 4) % 7);,1,3,0,2,6,2,0,0,0,5,47,8,1.0,0,0,0.008784198640774687,0.9912158013592248
+defect4j,time,org/joda/time/chrono/BasicChronology,11,554,            return (DateTimeConstants.MILLIS_PER_DAY - 1),2,2,0,1,2,1,0,0,0,5,45,6,1.0,0,0,0.002590406053905519,0.997409593946094
+defect4j,time,org/joda/time/chrono/BasicGJChronology,11,134,        return ((value > 28 || value < 1) ? getDaysInMonthMax(instant) : 28);,2,3,0,2,6,1,2,0,1,7,69,6,1.0,0,0,0.0027587972147937894,0.9972412027852067
+defect4j,time,org/joda/time/chrono/BasicGJChronology,11,148,        int minuendYear = getYear(minuendInstant);,1,0,0,1,2,1,2,0,1,6,42,5,1.0,0,0,0.0016815565552405472,0.9983184434447594
+defect4j,time,org/joda/time/chrono/BasicGJChronology,11,149,        int subtrahendYear = getYear(subtrahendInstant);,1,0,0,1,2,1,2,0,1,6,48,5,1.0,0,0,0.0016146287121887638,0.9983853712878119
+defect4j,time,org/joda/time/chrono/BasicGJChronology,11,152,        long minuendRem = minuendInstant - getYearMillis(minuendYear);,2,1,0,1,2,1,2,0,1,7,62,5,1.0,0,0,0.0014724534553713072,0.9985275465446286
+defect4j,time,org/joda/time/chrono/BasicGJChronology,11,153,        long subtrahendRem = subtrahendInstant - getYearMillis(subtrahendYear);,2,1,0,1,2,1,2,0,1,7,71,5,1.0,0,0,0.0011842941637841904,0.9988157058362155
+defect4j,time,org/joda/time/chrono/BasicGJChronology,11,156,        if (subtrahendRem >= FEB_29) {,2,1,0,1,3,1,0,0,0,5,30,4,1.0,0,0,0.001777693029533787,0.9982223069704665
+defect4j,time,org/joda/time/chrono/BasicGJChronology,11,157,            if (isLeapYear(subtrahendYear)) {,0,0,0,2,5,1,2,0,1,5,33,6,1.0,0,0,0.0009789516720107672,0.9990210483279891
+defect4j,time,org/joda/time/chrono/BasicGJChronology,11,161,            } else if (minuendRem >= FEB_29 && isLeapYear(minuendYear)) {,2,2,0,2,6,2,2,0,1,7,61,7,1.0,0,0,0.003846517946872153,0.9961534820531281
+defect4j,time,org/joda/time/chrono/BasicGJChronology,11,166,        int difference = minuendYear - subtrahendYear;,3,1,0,0,0,1,0,0,0,3,46,5,1.0,0,0,0.0012518427064281753,0.9987481572935717
+defect4j,time,org/joda/time/chrono/BasicGJChronology,11,167,        if (minuendRem < subtrahendRem) {,2,1,0,1,3,1,0,0,0,5,33,4,1.0,0,0,0.0018000668197230773,0.9981999331802762
+defect4j,time,org/joda/time/chrono/BasicGJChronology,11,168,            difference--;,1,0,0,0,0,0,0,0,1,2,13,6,1.0,0,0,0.0009624753682729918,0.9990375246317269
+defect4j,time,org/joda/time/chrono/BasicGJChronology,11,170,        return difference;,1,0,0,0,0,1,0,0,0,2,18,4,1.0,0,0,0.0007504497086962788,0.9992495502913029
+defect4j,time,org/joda/time/chrono/BasicGJChronology,11,175,        int thisYear = getYear(instant);,1,0,0,1,2,1,2,0,1,6,32,5,1.0,0,0,0.0016863871772787367,0.998313612822722
+defect4j,time,org/joda/time/chrono/BasicGJChronology,11,176,"        int dayOfYear = getDayOfYear(instant, thisYear);",1,0,0,0,2,1,3,0,1,5,48,5,1.0,0,0,0.0012449542089408314,0.9987550457910599
+defect4j,time,org/joda/time/chrono/BasicGJChronology,11,177,        int millisOfDay = getMillisOfDay(instant);,1,0,0,1,2,1,2,0,1,6,42,5,1.0,0,0,0.0016815565552405472,0.9983184434447594
+defect4j,time,org/joda/time/chrono/BasicGJChronology,11,179,        if (dayOfYear > (31 + 28)) { // after Feb 28,1,2,0,2,5,1,0,0,0,5,44,4,1.0,0,0,0.0017052452319851882,0.9982947547680148
+defect4j,time,org/joda/time/chrono/BasicGJChronology,11,180,            if (isLeapYear(thisYear)) {,0,0,0,2,5,1,2,0,1,5,27,6,1.0,0,0,0.0009478055868150951,0.999052194413185
+defect4j,time,org/joda/time/chrono/BasicGJChronology,11,182,                if (!isLeapYear(year)) {,0,0,0,2,5,1,2,0,2,5,24,8,1.0,0,0,0.0014210857403528004,0.9985789142596471
+defect4j,time,org/joda/time/chrono/BasicGJChronology,11,184,                    dayOfYear--;,1,0,0,0,0,0,0,0,1,2,12,10,1.0,0,0,0.0009955625946505425,0.9990044374053493
+defect4j,time,org/joda/time/chrono/BasicGJChronology,11,188,                if (isLeapYear(year)) {,0,0,0,2,5,1,2,0,1,5,23,8,1.0,0,0,0.0009238915617168468,0.9990761084382823
+defect4j,time,org/joda/time/chrono/BasicGJChronology,11,190,                    dayOfYear++;,1,0,0,0,0,0,0,0,1,2,12,10,1.0,0,0,0.0009955625946505425,0.9990044374053493
+defect4j,time,org/joda/time/chrono/BasicGJChronology,11,195,"        instant = getYearMonthDayMillis(year, 1, dayOfYear);",1,0,0,0,2,0,3,0,2,4,52,4,1.0,0,0,0.002083791534371685,0.9979162084656277
+defect4j,time,org/joda/time/chrono/BasicGJChronology,11,196,        instant += millisOfDay;,2,0,0,0,0,0,0,0,1,2,23,4,1.0,0,0,0.0012241853228917388,0.9987758146771089
+defect4j,time,org/joda/time/chrono/BasicGJChronology,11,198,        return instant;,1,0,0,0,0,1,0,0,0,2,15,4,1.0,0,0,0.0007145520652278787,0.999285447934773
+defect4j,time,org/joda/time/chrono/BasicYearDateTimeField,11,54,        return iChronology.getYear(instant);,0,0,0,1,2,1,3,0,0,4,36,5,1.0,0,0,0.000966856397891398,0.9990331436021082
+defect4j,time,org/joda/time/chrono/BasicYearDateTimeField,11,58,        if (years == 0) {,1,1,0,1,3,1,0,0,0,5,17,4,1.0,0,0,0.0014394224924306083,0.9985605775075703
+defect4j,time,org/joda/time/chrono/BasicYearDateTimeField,11,59,            return instant;,1,0,0,0,0,1,0,0,0,2,15,6,1.0,0,0,0.0007026979839982945,0.9992973020160015
+defect4j,time,org/joda/time/chrono/BasicYearDateTimeField,11,61,        int thisYear = get(instant);,1,0,0,1,2,1,2,0,1,6,28,5,1.0,0,0,0.0016504507620024882,0.9983495492379971
+defect4j,time,org/joda/time/chrono/BasicYearDateTimeField,11,62,"        int newYear = FieldUtils.safeAdd(thisYear, years);",1,0,0,0,2,1,4,0,0,4,50,5,1.0,0,0,0.000760371450673977,0.9992396285493262
+defect4j,time,org/joda/time/chrono/BasicYearDateTimeField,11,63,"        return set(instant, newYear);",0,0,0,0,2,1,3,0,1,4,29,4,1.0,0,0,0.0010196415423474386,0.9989803584576531
+defect4j,time,org/joda/time/chrono/BasicYearDateTimeField,11,82,        FieldUtils.verifyValueBounds,0,0,0,0,0,0,2,0,0,1,28,5,1.0,0,0,0.0006311251713536967,0.9993688748286468
+defect4j,time,org/joda/time/chrono/BasicYearDateTimeField,11,84,"        return iChronology.setYear(instant, year);",0,0,0,0,2,1,4,0,0,3,42,5,1.0,0,0,0.0005944192445831551,0.9994055807554164
+defect4j,time,org/joda/time/chrono/BasicYearDateTimeField,11,88,        if (minuendInstant < subtrahendInstant) {,2,1,0,1,3,1,0,0,0,5,41,4,1.0,0,0,0.0017959411034764441,0.9982040588965226
+defect4j,time,org/joda/time/chrono/BasicYearDateTimeField,11,91,"        return iChronology.getYearDifference(minuendInstant, subtrahendInstant);",0,0,0,0,2,1,4,0,0,3,72,5,1.0,0,0,0.0003622099285686222,0.9996377900714318
+defect4j,time,org/joda/time/chrono/BasicDayOfMonthDateTimeField,11,55,        return 1;,0,0,0,0,0,1,0,0,0,1,9,2,1.0,0,0,0.00042716690762731823,0.9995728330923731
+defect4j,time,org/joda/time/chrono/BasicDayOfMonthDateTimeField,11,96,"        return iChronology.getDaysInMonthMaxForSet(instant, value);",0,0,0,0,2,1,4,0,0,3,59,5,1.0,0,0,0.0004910452676436971,0.9995089547323566
+defect4j,time,org/joda/time/field/PreciseDateTimeField,11,79,        if (instant >= 0) {,1,1,0,1,3,1,0,0,0,5,19,4,1.0,0,0,0.001483589795424322,0.9985164102045758
+defect4j,time,org/joda/time/field/PreciseDateTimeField,11,82,            return iRange - 1 + (int) (((instant + 1) / getUnitMillis()) % iRange);,3,5,0,3,10,2,1,0,1,7,71,6,1.0,0,0,0.04389794088113106,0.9561020591188688
+defect4j,time,org/joda/time/field/PreciseDateTimeField,11,111,"        FieldUtils.verifyValueBounds(this, value, getMinimumValue(), getMaximumValue());",0,0,0,1,6,1,5,0,2,5,80,5,1.0,0,0,0.0004819792416375105,0.9995180207583622
+defect4j,time,org/joda/time/field/PreciseDateTimeField,11,112,        return instant + (value - get(instant)) * iUnitMillis;,3,3,0,2,4,1,2,0,1,7,54,4,1.0,0,0,0.0039300234621511745,0.996069976537848
+defect4j,time,org/joda/time/field/PreciseDateTimeField,11,131,        return iRange - 1;,1,1,0,0,0,1,0,0,0,3,18,4,1.0,0,0,0.0010231053382961162,0.9989768946617045
+defect4j,time,org/joda/time/chrono/GregorianChronology,11,209,            leapYears = ((year + 3) >> 2) - leapYears + ((leapYears + 3) >> 2) - 1;,4,7,0,2,8,0,0,0,1,5,71,6,1.0,0,0,0.732990883879186,0.2670091161208168
+defect4j,time,org/joda/time/field/PreciseDurationField,11,114,"        long difference = FieldUtils.safeSubtract(minuendInstant, subtrahendInstant);",1,0,0,0,2,1,4,0,0,4,77,5,1.0,0,0,0.000422281375598805,0.999577718624401

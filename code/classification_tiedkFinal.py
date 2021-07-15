@@ -50,18 +50,18 @@ from sklearn.naive_bayes import GaussianNB  # 贝叶斯
 from sklearn.neighbors import KNeighborsClassifier  # k近邻
 from sklearn.svm import SVC  # 支持向量机
 from sklearn.tree import DecisionTreeClassifier  # 决策树
-FATHER_PATH = "C:/ssdcode/"
+FATHER_PATH = "/Users/lvlaxjh/code/"
 
 
 def use_classification(TEST_PATH, TRAIN_PATH, classificationFunc, k_Id, tiedK, sampling):
     # 测试集-start
     test_data = pd.read_csv(TEST_PATH)
-    test_x = test_data.iloc[:, [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17]]  # 取测试数据
+    test_x = test_data.iloc[:, [6, 7, 8, 9, 11, 12, 13, 14,15,16, 17]]  # 取测试数据
     # test_y = test_data["accuracy"]  # 取样本类标签
     # 测试集-end
     # 训练集-start
     train_data = pd.read_csv(TRAIN_PATH)
-    train_x = train_data.iloc[:, [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17]]  # 取训练数据
+    train_x = train_data.iloc[:, [6, 7, 8, 9, 11, 12, 13, 14,15,16, 17]]  # 取训练数据
     # train_y = train_data["accuracy"]  # 取样本类标签
     train_y = train_data.iloc[:, [19]]  # 取样本类标签
     # 训练集-end
@@ -87,8 +87,9 @@ def use_classification(TEST_PATH, TRAIN_PATH, classificationFunc, k_Id, tiedK, s
     elif classificationFunc == "SVC":
         model = SVC()  # SVC模型初始化
     model.fit(train_x, train_y.values.ravel())  # 拟合模型
-    predictRes = model.predict(test_x)  # 预测结果，返回列表
+    predictRes = model.predict_proba(test_x)  # 预测结果，返回列表
     predictRes = list(predictRes)  # numpy.array 类型转 list
+    # print(predictRes)
     return predictRes
 
 
@@ -173,12 +174,13 @@ def save_predictRes(TEST_PATH, project, tiedK, kFold, k, resultList):
         for row in csvFile:
             if row[0] != "dataset":
                 newRow = deepcopy(row[0:21])
-                newRow.append(resultList[csvLine])
+                newRow.append(list(resultList[csvLine])[0])
+                newRow.append(list(resultList[csvLine])[1])
                 saveList.append(deepcopy(newRow))
                 csvLine += 1
     targetSaveCSVFile = open(CSV_PATH, "w", encoding="utf-8", newline="")
     targetCSVWriter = csv.writer(targetSaveCSVFile)
-    targetCSVWriter.writerow(["dataset", "project", "path", "version", "codeLine", "statement", "varTotal", "optTotal", "array", "bracketDepth", "bracketTotal", "keywordTotal", "methodTotal", "typeTotal", "logic", "lengthEle", "lengthWord", "depth", "suspicious", "accuracy", "miss_line", "predict"])
+    targetCSVWriter.writerow(["dataset", "project", "path", "version", "codeLine", "statement", "varTotal", "optTotal", "array", "bracketDepth", "bracketTotal", "keywordTotal", "methodTotal", "typeTotal", "logic", "lengthEle", "lengthWord", "depth", "suspicious", "accuracy", "miss_line", "predict0","predict1"])
     for row in saveList:
         targetCSVWriter.writerow(row)
     targetSaveCSVFile.close()
@@ -187,6 +189,7 @@ def save_predictRes(TEST_PATH, project, tiedK, kFold, k, resultList):
 if __name__ == "__main__":
     # for project in ['chart', 'lang', 'time', 'math','mockito', 'closure' ]:
     for project in ['chart', 'lang', 'time', 'math', 'mockito']:
+    # for project in ['chart']:
         settingJson = open(f"{FATHER_PATH}CBFL/code/setting.json", "r", encoding="utf-8")
         settingContent = settingJson.read()
         setting = json.loads(settingContent)

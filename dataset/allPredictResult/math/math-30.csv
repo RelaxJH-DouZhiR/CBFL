@@ -1,93 +1,93 @@
-project_path,version,lines,statement,suspicious,faulty,predict,miss_line
-org/apache/commons/math3/special/Gamma,30,45,    private static final double[] LANCZOS = {,1.0,0,1,0
-org/apache/commons/math3/special/Gamma,30,63,    private static final double HALF_LOG_2_PI = 0.5 * FastMath.log(2.0 * FastMath.PI);,1.0,0,1,0
-org/apache/commons/math3/special/Gamma,30,154,        if (Double.isNaN(a) || Double.isNaN(x) || (a <= 0.0) || (x < 0.0)) {,1.0,0,0,0
-org/apache/commons/math3/special/Gamma,30,186,        return ret;,1.0,0,1,0
-org/apache/commons/math3/special/Erf,30,67,        if (FastMath.abs(x) > 40) {,1.0,0,0,0
-org/apache/commons/math3/special/Erf,30,70,"        final double ret = Gamma.regularizedGammaP(0.5, x * x, 1.0e-15, 10000);",1.0,0,1,0
-org/apache/commons/math3/special/Erf,30,71,        return x < 0 ? -ret : ret;,1.0,0,1,0
-org/apache/commons/math3/util/FastMath,30,375,        return Math.sqrt(a);,1.0,0,1,0
-org/apache/commons/math3/util/FastMath,30,3020,        return (x < 0.0) ? -x : (x == 0.0) ? 0.0 : x; // -0.0 => +0.0,1.0,0,0,0
-org/apache/commons/math3/util/FastMath,30,3535,        if (a > b) {,1.0,0,1,0
-org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,82,    },1.0,0,1,0
-org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,90,        final double[] z = new double[x.length + y.length];,1.0,0,1,0
-org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,92,"        System.arraycopy(x, 0, z, 0, x.length);",1.0,0,1,0
-org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,93,"        System.arraycopy(y, 0, z, x.length, y.length);",1.0,0,1,0
-org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,95,        return z;,1.0,0,1,0
-org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,129,"        ensureDataConformance(x, y);",1.0,0,1,0
-org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,131,"        final double[] z = concatenateSamples(x, y);",1.0,0,1,0
-org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,132,        final double[] ranks = naturalRanking.rank(z);,1.0,0,1,0
-org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,134,        double sumRankX = 0;,1.0,0,1,0
-org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,140,        for (int i = 0; i < x.length; ++i) {,1.0,0,1,0
-org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,141,            sumRankX += ranks[i];,1.0,0,0,0
-org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,148,        final double U1 = sumRankX - (x.length * (x.length + 1)) / 2;,1.0,0,0,0
-org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,153,        final double U2 = x.length * y.length - U1;,1.0,0,0,0
-org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,155,"        return FastMath.max(U1, U2);",1.0,0,1,0
-org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,173,        final int n1n2prod = n1 * n2;,1.0,1,1,0
-org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,176,        final double EU = n1n2prod / 2.0;,1.0,0,1,0
-org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,177,        final double VarU = n1n2prod * (n1 + n2 + 1) / 12.0;,1.0,0,0,0
-org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,179,        final double z = (Umin - EU) / FastMath.sqrt(VarU);,1.0,0,1,0
-org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,181,"        final NormalDistribution standardNormal = new NormalDistribution(0, 1);",1.0,0,0,0
-org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,183,        return 2 * standardNormal.cumulativeProbability(z);,1.0,0,1,0
-org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,224,"        final double Umax = mannWhitneyU(x, y);",1.0,0,1,0
-org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,229,        final double Umin = x.length * y.length - Umax;,1.0,0,0,0
-org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,231,"        return calculateAsymptoticPValue(Umin, x.length, y.length);",1.0,0,1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,432,"        public IntDoublePair(double value, int position) {",1.0,0,1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,433,            this.value = value;,1.0,0,0,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,434,            this.position = position;,1.0,0,1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,435,        },1.0,0,1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,445,"            return Double.compare(value, other.value);",1.0,0,1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,453,            return value;,1.0,0,1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,461,            return position;,1.0,0,1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,419,    private static class IntDoublePair implements Comparable<IntDoublePair>  {,1.0,0,0,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,334,        switch (tiesStrategy) {,1.0,0,1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,200,        switch (nanStrategy) {,1.0,0,1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,193,        IntDoublePair[] ranks = new IntDoublePair[data.length];,1.0,0,0,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,194,        for (int i = 0; i < data.length; i++) {,1.0,0,1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,195,"            ranks[i] = new IntDoublePair(data[i], i);",1.0,0,0,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,199,        List<Integer> nanPositions = null;,1.0,0,0,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,200,        switch (nanStrategy) {,1.0,0,1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,211,                nanPositions = getNanPositions(ranks);,1.0,0,1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,212,                break;,1.0,0,1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,218,        Arrays.sort(ranks);,1.0,0,1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,222,        double[] out = new double[ranks.length];,1.0,0,1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,223,        int pos = 1;  // position in sorted array,1.0,0,1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,224,        out[ranks[0].getPosition()] = pos;,1.0,0,0,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,225,        List<Integer> tiesTrace = new ArrayList<Integer>();,1.0,0,1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,226,        tiesTrace.add(ranks[0].getPosition());,1.0,0,0,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,227,        for (int i = 1; i < ranks.length; i++) {,1.0,0,1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,228,"            if (Double.compare(ranks[i].getValue(), ranks[i - 1].getValue()) > 0) {",1.0,0,0,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,230,                pos = i + 1;,1.0,0,1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,231,"                if (tiesTrace.size() > 1) {  // if seq is nontrivial, resolve",1.0,0,1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,234,                tiesTrace = new ArrayList<Integer>();,1.0,0,0,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,235,                tiesTrace.add(ranks[i].getPosition());,1.0,0,0,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,240,            out[ranks[i].getPosition()] = pos;,1.0,0,0,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,242,        if (tiesTrace.size() > 1) {  // handle tie sequence at end,1.0,0,1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,245,        if (nanStrategy == NaNStrategy.FIXED) {,1.0,0,1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,246,"            restoreNaNs(out, nanPositions);",1.0,0,1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,248,        return out;,1.0,0,1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,387,        if (nanPositions.size() == 0) {,1.0,0,1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,388,            return;,1.0,0,0,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,404,        ArrayList<Integer> out = new ArrayList<Integer>();,1.0,0,0,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,405,        for (int i = 0; i < ranks.length; i++) {,1.0,0,1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,406,            if (Double.isNaN(ranks[i].getValue())) {,1.0,0,0,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,410,        return out;,1.0,0,0,0
-org/apache/commons/math3/distribution/AbstractRealDistribution,30,53,    protected AbstractRealDistribution() { },1.0,0,1,0
-org/apache/commons/math3/distribution/AbstractRealDistribution,30,47,    protected final RandomDataImpl randomData = new RandomDataImpl();,1.0,0,0,0
-org/apache/commons/math3/distribution/AbstractRealDistribution,30,50,    private double solverAbsoluteAccuracy = SOLVER_DEFAULT_ABSOLUTE_ACCURACY;,1.0,0,1,0
-org/apache/commons/math3/distribution/NormalDistribution,30,61,"        this(mean, sd, DEFAULT_INVERSE_ABSOLUTE_ACCURACY);",1.0,0,1,0
-org/apache/commons/math3/distribution/NormalDistribution,30,62,    },1.0,0,1,0
-org/apache/commons/math3/distribution/NormalDistribution,30,75,        throws NotStrictlyPositiveException {,1.0,0,1,0
-org/apache/commons/math3/distribution/NormalDistribution,30,76,        if (sd <= 0) {,1.0,0,1,0
-org/apache/commons/math3/distribution/NormalDistribution,30,80,        this.mean = mean;,1.0,0,1,0
-org/apache/commons/math3/distribution/NormalDistribution,30,81,        standardDeviation = sd;,1.0,0,1,0
-org/apache/commons/math3/distribution/NormalDistribution,30,82,        solverAbsoluteAccuracy = inverseCumAccuracy;,1.0,0,1,0
-org/apache/commons/math3/distribution/NormalDistribution,30,83,    },1.0,0,1,0
-org/apache/commons/math3/distribution/NormalDistribution,30,42,    private static final double SQRT2PI = FastMath.sqrt(2 * FastMath.PI);,1.0,0,0,0
-org/apache/commons/math3/distribution/NormalDistribution,30,44,    private static final double SQRT2 = FastMath.sqrt(2.0);,1.0,0,0,0
-org/apache/commons/math3/distribution/NormalDistribution,30,137,        final double dev = x - mean;,1.0,0,1,0
-org/apache/commons/math3/distribution/NormalDistribution,30,138,        if (FastMath.abs(dev) > 40 * standardDeviation) {,1.0,0,1,0
-org/apache/commons/math3/distribution/NormalDistribution,30,141,        return 0.5 * (1 + Erf.erf(dev / (standardDeviation * SQRT2)));,1.0,0,0,0
+project_path,version,lines,statement,suspicious,faulty,predict,miss_line,predictions0,predictions1
+org/apache/commons/math3/special/Gamma,30,45,    private static final double[] LANCZOS = {,1.0,0,,0,0.5665583882757439,0.4334416117242557
+org/apache/commons/math3/special/Gamma,30,63,    private static final double HALF_LOG_2_PI = 0.5 * FastMath.log(2.0 * FastMath.PI);,1.0,0,,0,0.8638592044694516,0.13614079553054723
+org/apache/commons/math3/special/Gamma,30,154,        if (Double.isNaN(a) || Double.isNaN(x) || (a <= 0.0) || (x < 0.0)) {,1.0,0,,0,0.45358110431443854,0.5464188956855619
+org/apache/commons/math3/special/Gamma,30,186,        return ret;,1.0,0,,0,0.2429799023513944,0.757020097648607
+org/apache/commons/math3/special/Erf,30,67,        if (FastMath.abs(x) > 40) {,1.0,0,,0,0.3460626561877827,0.6539373438122181
+org/apache/commons/math3/special/Erf,30,70,"        final double ret = Gamma.regularizedGammaP(0.5, x * x, 1.0e-15, 10000);",1.0,0,,0,0.5808607291130323,0.4191392708869665
+org/apache/commons/math3/special/Erf,30,71,        return x < 0 ? -ret : ret;,1.0,0,,0,0.38651588708016243,0.6134841129198373
+org/apache/commons/math3/util/FastMath,30,375,        return Math.sqrt(a);,1.0,0,,0,0.22641120302034973,0.773588796979652
+org/apache/commons/math3/util/FastMath,30,3020,        return (x < 0.0) ? -x : (x == 0.0) ? 0.0 : x; // -0.0 => +0.0,1.0,0,,0,0.5891970902521446,0.4108029097478556
+org/apache/commons/math3/util/FastMath,30,3535,        if (a > b) {,1.0,0,,0,0.4592839539299109,0.5407160460700886
+org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,82,    },1.0,0,,0,0.1784161547785075,0.821583845221494
+org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,90,        final double[] z = new double[x.length + y.length];,1.0,0,,0,0.39270464368829666,0.6072953563117036
+org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,92,"        System.arraycopy(x, 0, z, 0, x.length);",1.0,0,,0,0.2044890061536939,0.7955109938463061
+org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,93,"        System.arraycopy(y, 0, z, x.length, y.length);",1.0,0,,0,0.18396097253098828,0.8160390274690102
+org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,95,        return z;,1.0,0,,0,0.24549586167299153,0.7545041383270075
+org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,129,"        ensureDataConformance(x, y);",1.0,0,,0,0.21078257491261546,0.7892174250873847
+org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,131,"        final double[] z = concatenateSamples(x, y);",1.0,0,,0,0.4114853570748506,0.5885146429251501
+org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,132,        final double[] ranks = naturalRanking.rank(z);,1.0,0,,0,0.42173430539102746,0.5782656946089725
+org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,134,        double sumRankX = 0;,1.0,0,,0,0.22436795041633523,0.7756320495836637
+org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,140,        for (int i = 0; i < x.length; ++i) {,1.0,0,,0,0.4032601460051126,0.5967398539948874
+org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,141,            sumRankX += ranks[i];,1.0,0,,0,0.5529982824019122,0.4470017175980894
+org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,148,        final double U1 = sumRankX - (x.length * (x.length + 1)) / 2;,1.0,0,,0,0.6495157692204615,0.3504842307795371
+org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,153,        final double U2 = x.length * y.length - U1;,1.0,0,,0,0.25345548580910743,0.7465445141908911
+org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,155,"        return FastMath.max(U1, U2);",1.0,0,,0,0.13525127225465705,0.864748727745342
+org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,173,        final int n1n2prod = n1 * n2;,1.0,1,,0,0.40179136220056627,0.5982086377994347
+org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,176,        final double EU = n1n2prod / 2.0;,1.0,0,,0,0.41072658117755695,0.5892734188224433
+org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,177,        final double VarU = n1n2prod * (n1 + n2 + 1) / 12.0;,1.0,0,,0,0.640865791596804,0.35913420840319765
+org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,179,        final double z = (Umin - EU) / FastMath.sqrt(VarU);,1.0,0,,0,0.5576843006283126,0.4423156993716861
+org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,181,"        final NormalDistribution standardNormal = new NormalDistribution(0, 1);",1.0,0,,0,0.9994693127094633,0.0005306872905370387
+org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,183,        return 2 * standardNormal.cumulativeProbability(z);,1.0,0,,0,0.32530458719883376,0.6746954128011665
+org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,224,"        final double Umax = mannWhitneyU(x, y);",1.0,0,,0,0.40116948742394903,0.5988305125760511
+org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,229,        final double Umin = x.length * y.length - Umax;,1.0,0,,0,0.26129982302177357,0.7387001769782261
+org/apache/commons/math3/stat/inference/MannWhitneyUTest,30,231,"        return calculateAsymptoticPValue(Umin, x.length, y.length);",1.0,0,,0,0.4248686710395096,0.5751313289604887
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,432,"        public IntDoublePair(double value, int position) {",1.0,0,,0,0.4349235602625074,0.5650764397374912
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,433,            this.value = value;,1.0,0,,0,0.3265196807462954,0.6734803192537052
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,434,            this.position = position;,1.0,0,,0,0.3252535710503957,0.6747464289496045
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,435,        },1.0,0,,0,0.1784161547785075,0.821583845221494
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,445,"            return Double.compare(value, other.value);",1.0,0,,0,0.26650519418711843,0.7334948058128814
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,453,            return value;,1.0,0,,0,0.228838133175639,0.7711618668243593
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,461,            return position;,1.0,0,,0,0.22640159317015288,0.7735984068298468
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,419,    private static class IntDoublePair implements Comparable<IntDoublePair>  {,1.0,0,,0,0.999562823401161,0.0004371765988387472
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,334,        switch (tiesStrategy) {,1.0,0,,0,0.3588124511167879,0.641187548883212
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,200,        switch (nanStrategy) {,1.0,0,,0,0.35897733514906854,0.6410226648509317
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,193,        IntDoublePair[] ranks = new IntDoublePair[data.length];,1.0,0,,0,0.9988295583125579,0.0011704416874408446
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,194,        for (int i = 0; i < data.length; i++) {,1.0,0,,0,0.4080350642170775,0.5919649357829241
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,195,"            ranks[i] = new IntDoublePair(data[i], i);",1.0,0,,0,0.9157959658557216,0.08420403414427707
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,199,        List<Integer> nanPositions = null;,1.0,0,,0,0.9976244437848824,0.002375556215117667
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,200,        switch (nanStrategy) {,1.0,0,,0,0.35897733514906854,0.6410226648509317
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,211,                nanPositions = getNanPositions(ranks);,1.0,0,,0,0.47987566794343833,0.5201243320565614
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,212,                break;,1.0,0,,0,0.16442839466313236,0.8355716053368667
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,218,        Arrays.sort(ranks);,1.0,0,,0,0.2002453911764962,0.7997546088235042
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,222,        double[] out = new double[ranks.length];,1.0,0,,0,0.306515693030063,0.6934843069699385
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,223,        int pos = 1;  // position in sorted array,1.0,0,,0,0.23622749955690023,0.7637725004430991
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,224,        out[ranks[0].getPosition()] = pos;,1.0,0,,0,0.7012682813352713,0.29873171866472753
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,225,        List<Integer> tiesTrace = new ArrayList<Integer>();,1.0,0,,0,0.999999999999936,6.244952165236484e-14
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,226,        tiesTrace.add(ranks[0].getPosition());,1.0,0,,0,0.512153196538214,0.4878468034617845
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,227,        for (int i = 1; i < ranks.length; i++) {,1.0,0,,0,0.40986661310054245,0.5901333868994567
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,228,"            if (Double.compare(ranks[i].getValue(), ranks[i - 1].getValue()) > 0) {",1.0,0,,0,0.6948973813905397,0.30510261860945853
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,230,                pos = i + 1;,1.0,0,,0,0.26964502117112255,0.7303549788288783
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,231,"                if (tiesTrace.size() > 1) {  // if seq is nontrivial, resolve",1.0,0,,0,0.34849868858711075,0.6515013114128878
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,234,                tiesTrace = new ArrayList<Integer>();,1.0,0,,0,0.998934478909287,0.0010655210907139381
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,235,                tiesTrace.add(ranks[i].getPosition());,1.0,0,,0,0.35274354489011794,0.6472564551098836
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,240,            out[ranks[i].getPosition()] = pos;,1.0,0,,0,0.6639423726779746,0.3360576273220263
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,242,        if (tiesTrace.size() > 1) {  // handle tie sequence at end,1.0,0,,0,0.4577461052273411,0.542253894772658
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,245,        if (nanStrategy == NaNStrategy.FIXED) {,1.0,0,,0,0.4585012960831053,0.5414987039168947
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,246,"            restoreNaNs(out, nanPositions);",1.0,0,,0,0.18474102965179592,0.8152589703482042
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,248,        return out;,1.0,0,,0,0.2429799023513944,0.757020097648607
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,387,        if (nanPositions.size() == 0) {,1.0,0,,0,0.3917704729196426,0.6082295270803575
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,388,            return;,1.0,0,,0,0.21483538086011406,0.7851646191398859
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,404,        ArrayList<Integer> out = new ArrayList<Integer>();,1.0,0,,0,0.999999999999936,6.326313715028469e-14
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,405,        for (int i = 0; i < ranks.length; i++) {,1.0,0,,0,0.40986661310054245,0.5901333868994567
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,406,            if (Double.isNaN(ranks[i].getValue())) {,1.0,0,,0,0.5809446021037674,0.4190553978962317
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,410,        return out;,1.0,0,,0,0.2429799023513944,0.757020097648607
+org/apache/commons/math3/distribution/AbstractRealDistribution,30,53,    protected AbstractRealDistribution() { },1.0,0,,0,0.45610777091135846,0.5438922290886428
+org/apache/commons/math3/distribution/AbstractRealDistribution,30,47,    protected final RandomDataImpl randomData = new RandomDataImpl();,1.0,0,,0,0.999710286376111,0.0002897136238887142
+org/apache/commons/math3/distribution/AbstractRealDistribution,30,50,    private double solverAbsoluteAccuracy = SOLVER_DEFAULT_ABSOLUTE_ACCURACY;,1.0,0,,0,0.48308686552116326,0.5169131344788366
+org/apache/commons/math3/distribution/NormalDistribution,30,61,"        this(mean, sd, DEFAULT_INVERSE_ABSOLUTE_ACCURACY);",1.0,0,,0,0.3381186521806028,0.661881347819396
+org/apache/commons/math3/distribution/NormalDistribution,30,62,    },1.0,0,,0,0.1784161547785075,0.821583845221494
+org/apache/commons/math3/distribution/NormalDistribution,30,75,        throws NotStrictlyPositiveException {,1.0,0,,0,0.2932230994302269,0.7067769005697716
+org/apache/commons/math3/distribution/NormalDistribution,30,76,        if (sd <= 0) {,1.0,0,,0,0.42591989603829805,0.5740801039617011
+org/apache/commons/math3/distribution/NormalDistribution,30,80,        this.mean = mean;,1.0,0,,0,0.34268518435576667,0.657314815644234
+org/apache/commons/math3/distribution/NormalDistribution,30,81,        standardDeviation = sd;,1.0,0,,0,0.29868712054526464,0.7013128794547366
+org/apache/commons/math3/distribution/NormalDistribution,30,82,        solverAbsoluteAccuracy = inverseCumAccuracy;,1.0,0,,0,0.3195361318194498,0.6804638681805502
+org/apache/commons/math3/distribution/NormalDistribution,30,83,    },1.0,0,,0,0.1784161547785075,0.821583845221494
+org/apache/commons/math3/distribution/NormalDistribution,30,42,    private static final double SQRT2PI = FastMath.sqrt(2 * FastMath.PI);,1.0,0,,0,0.7904906441743942,0.20950935582560534
+org/apache/commons/math3/distribution/NormalDistribution,30,44,    private static final double SQRT2 = FastMath.sqrt(2.0);,1.0,0,,0,0.6842835744972963,0.3157164255027029
+org/apache/commons/math3/distribution/NormalDistribution,30,137,        final double dev = x - mean;,1.0,0,,0,0.40126012142484263,0.5987398785751573
+org/apache/commons/math3/distribution/NormalDistribution,30,138,        if (FastMath.abs(dev) > 40 * standardDeviation) {,1.0,0,,0,0.5304341119966098,0.46956588800338994
+org/apache/commons/math3/distribution/NormalDistribution,30,141,        return 0.5 * (1 + Erf.erf(dev / (standardDeviation * SQRT2)));,1.0,0,,0,0.84708910114579,0.15291089885421122
 org/apache/commons/math3/random/RandomDataImpl,30,168,    public RandomDataImpl() {,0.5,0,-1,0
 org/apache/commons/math3/random/RandomDataImpl,30,126,    private RandomGenerator rand = null;,0.5,0,-1,0
 org/apache/commons/math3/random/RandomDataImpl,30,129,    private SecureRandom secRand = null;,0.5,0,-1,0
@@ -2592,7 +2592,7 @@ org/apache/commons/math3/stat/ranking/NaturalRanking,30,306,                retu
 org/apache/commons/math3/stat/ranking/NaturalRanking,30,309,        return false;,0.0,0,-1,0
 org/apache/commons/math3/stat/ranking/NaturalRanking,30,329,        final double c = ranks[tiesTrace.get(0)];,0.0,0,-1,0
 org/apache/commons/math3/stat/ranking/NaturalRanking,30,332,        final int length = tiesTrace.size();,0.0,0,-1,0
-org/apache/commons/math3/stat/ranking/NaturalRanking,30,334,        switch (tiesStrategy) {,0.0,0,1,0
+org/apache/commons/math3/stat/ranking/NaturalRanking,30,334,        switch (tiesStrategy) {,0.0,0,,0,0.3588124511167879,0.641187548883212
 org/apache/commons/math3/stat/ranking/NaturalRanking,30,336,"                fill(ranks, tiesTrace, (2 * c + length - 1) / 2d);",0.0,0,-1,0
 org/apache/commons/math3/stat/ranking/NaturalRanking,30,337,                break;,0.0,0,-1,0
 org/apache/commons/math3/stat/ranking/NaturalRanking,30,339,"                fill(ranks, tiesTrace, c + length - 1);",0.0,0,-1,0

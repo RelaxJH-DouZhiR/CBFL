@@ -1,147 +1,147 @@
-project_path,version,lines,statement,suspicious,faulty,predict,miss_line
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,43,"        super(100, 1E-10);",1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,44,    },1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,37,    private static final double GOLDEN_SECTION = 0.5 * (3 - Math.sqrt(5));,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,57,        clearResult();,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,58,"        return localMin(f, goalType, min, max, relativeAccuracy, absoluteAccuracy);",1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,88,        double x = a + GOLDEN_SECTION * (b - a);,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,89,        double v = x;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,90,        double w = x;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,91,        double e = 0;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,92,"        double fx = computeObjectiveValue(f, x);",1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,93,        if (goalType == GoalType.MAXIMIZE) {,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,96,        double fv = fx;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,97,        double fw = fx;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,99,        int count = 0;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,100,        while (count < maximalIterationCount) {,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,101,            double m = 0.5 * (a + b);,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,102,            double tol = eps * Math.abs(x) + t;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,103,            double t2 = 2 * tol;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,106,            if (Math.abs(x - m) > t2 - 0.5 * (b - a)) {,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,107,                double p = 0;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,108,                double q = 0;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,109,                double r = 0;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,110,                double d = 0;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,111,                double u = 0;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,113,                if (Math.abs(e) > tol) { // Fit parabola.,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,114,                    r = (x - w) * (fx - fv);,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,115,                    q = (x - v) * (fx - fw);,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,116,                    p = (x - v) * q - (x - w) * r;,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,117,                    q = 2 * (q - r);,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,119,                    if (q > 0) {,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,120,                        p = -p;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,122,                        q = -q;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,125,                    r = e;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,126,                    e = d;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,129,                if (Math.abs(p) < Math.abs(0.5 * q * r) &&,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,139,                    e = ((x < m) ? b : a) - x;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,140,                    d = GOLDEN_SECTION * e;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,144,                u = x + ((Math.abs(d) > tol) ? d : ((d > 0) ? tol : -tol));,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,145,"                double fu = computeObjectiveValue(f, u);",1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,146,                if (goalType == GoalType.MAXIMIZE) {,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,151,                if (fu <= fx) {,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,152,                    if (u < x) {,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,153,                        b = x;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,155,                        a = x;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,157,                    v = w;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,158,                    fv = fw;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,159,                    w = x;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,160,                    fw = fx;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,161,                    x = u;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,162,                    fx = fu;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,164,                    if (u < x) {,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,165,                        a = u;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,167,                        b = u;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,169,                    if ((fu <= fw) || (w == x)) {,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,170,                        v = w;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,171,                        fv = fw;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,172,                        w = u;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,173,                        fw = fu;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,174,                    } else if ((fu <= fv) || (v == x) || (v == w)) {,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,175,                        v = u;,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,176,                        fv = fu;,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,179,            } else { // termination,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,180,"                setResult(x, (goalType == GoalType.MAXIMIZE) ? -fx : fx, count);",1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,181,                return x;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,184,            ++count;,1.0,0,0,0
-org/apache/commons/math/optimization/univariate/BrentOptimizer,67,185,        },1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,63,"        super(defaultMaximalIterationCount, defaultAbsoluteAccuracy);",1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,64,        resultComputed = false;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,65,        setMaxEvaluations(Integer.MAX_VALUE);,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,66,    },1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,72,        if (!resultComputed) {,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,75,    },1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,85,        checkResultComputed();,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,86,        return functionValue;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,98,        this.result         = x;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,99,        this.functionValue  = fx;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,100,        this.iterationCount = iterationCount;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,101,        this.resultComputed = true;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,102,    },1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,108,        this.resultComputed = false;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,109,    },1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,113,        this.maxEvaluations = maxEvaluations;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,114,    },1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,123,        return evaluations;,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,137,        if (++evaluations > maxEvaluations) {,1.0,0,1,0
-org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,141,        return f.value(point);,1.0,0,1,0
-org/apache/commons/math/ConvergingAlgorithmImpl,67,61,                                      final double defaultAbsoluteAccuracy) {,1.0,0,1,0
-org/apache/commons/math/ConvergingAlgorithmImpl,67,62,        this.defaultAbsoluteAccuracy = defaultAbsoluteAccuracy;,1.0,0,1,0
-org/apache/commons/math/ConvergingAlgorithmImpl,67,63,        this.defaultRelativeAccuracy = 1.0e-14;,1.0,0,1,0
-org/apache/commons/math/ConvergingAlgorithmImpl,67,64,        this.absoluteAccuracy = defaultAbsoluteAccuracy;,1.0,0,1,0
-org/apache/commons/math/ConvergingAlgorithmImpl,67,65,        this.relativeAccuracy = defaultRelativeAccuracy;,1.0,0,1,0
-org/apache/commons/math/ConvergingAlgorithmImpl,67,66,        this.defaultMaximalIterationCount = defaultMaximalIterationCount;,1.0,0,1,0
-org/apache/commons/math/ConvergingAlgorithmImpl,67,67,        this.maximalIterationCount = defaultMaximalIterationCount;,1.0,0,1,0
-org/apache/commons/math/ConvergingAlgorithmImpl,67,68,        this.iterationCount = 0;,1.0,0,1,0
-org/apache/commons/math/ConvergingAlgorithmImpl,67,69,    },1.0,0,1,0
-org/apache/commons/math/ConvergingAlgorithmImpl,67,73,        return iterationCount;,1.0,0,1,0
-org/apache/commons/math/ConvergingAlgorithmImpl,67,93,        maximalIterationCount = count;,1.0,0,1,0
-org/apache/commons/math/ConvergingAlgorithmImpl,67,94,    },1.0,0,1,0
-org/apache/commons/math/optimization/GoalType,67,27,public enum GoalType implements Serializable {,1.0,0,0,0
-org/apache/commons/math/optimization/GoalType,67,30,"    MAXIMIZE,",1.0,0,1,0
-org/apache/commons/math/optimization/GoalType,67,33,    MINIMIZE,1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,80,                                             final RandomGenerator generator) {,1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,81,        this.optimizer        = optimizer;,1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,82,        this.totalIterations  = 0;,1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,83,        this.starts           = starts;,1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,84,        this.generator        = generator;,1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,85,        this.optima           = null;,1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,86,        setMaximalIterationCount(Integer.MAX_VALUE);,1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,87,        setMaxEvaluations(Integer.MAX_VALUE);,1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,88,    },1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,152,        this.maxIterations = count;,1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,153,    },1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,157,        this.maxEvaluations = maxEvaluations;,1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,158,    },1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,193,        if (optima == null) {,1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,219,        if (optimaValues == null) {,1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,231,        optima           = new double[starts];,1.0,0,0,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,232,        optimaValues     = new double[starts];,1.0,0,0,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,233,        totalIterations  = 0;,1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,234,        totalEvaluations = 0;,1.0,0,0,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,237,        for (int i = 0; i < starts; ++i) {,1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,240,                optimizer.setMaximalIterationCount(maxIterations - totalIterations);,1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,241,                optimizer.setMaxEvaluations(maxEvaluations - totalEvaluations);,1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,242,                final double bound1 = (i == 0) ? min : min + generator.nextDouble() * (max - min);,1.0,0,0,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,243,                final double bound2 = (i == 0) ? max : min + generator.nextDouble() * (max - min);,1.0,0,0,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,244,"                optima[i]       = optimizer.optimize(f, goalType,",1.0,0,0,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,247,                optimaValues[i] = optimizer.getFunctionValue();,1.0,0,0,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,254,            },1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,256,            totalIterations  += optimizer.getIterationCount();,1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,257,            totalEvaluations += optimizer.getEvaluations();,1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,262,        int lastNaN = optima.length;,1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,263,        for (int i = 0; i < lastNaN; ++i) {,1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,264,            if (Double.isNaN(optima[i])) {,1.0,0,0,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,272,        double currX = optima[0];,1.0,0,0,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,273,        double currY = optimaValues[0];,1.0,0,0,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,274,        for (int j = 1; j < lastNaN; ++j) {,1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,275,            final double prevY = currY;,1.0,0,1,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,276,            currX = optima[j];,1.0,0,0,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,277,            currY = optimaValues[j];,1.0,0,0,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,278,            if ((goalType == GoalType.MAXIMIZE) ^ (currY < prevY)) {,1.0,0,0,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,301,        if (Double.isNaN(optima[0])) {,1.0,0,0,0
-org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,308,        return optima[0];,1.0,0,0,0
-org/apache/commons/math/random/JDKRandomGenerator,67,28,public class JDKRandomGenerator extends Random implements RandomGenerator {,1.0,0,0,0
+project_path,version,lines,statement,suspicious,faulty,predict,miss_line,predictions0,predictions1
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,43,"        super(100, 1E-10);",1.0,0,,0,0.2693044463530659,0.7306955536469326
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,44,    },1.0,0,,0,0.1549795882941228,0.8450204117058774
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,37,    private static final double GOLDEN_SECTION = 0.5 * (3 - Math.sqrt(5));,1.0,0,,0,0.8155533732878449,0.18444662671215434
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,57,        clearResult();,1.0,0,,0,0.33974121610014996,0.6602587838998499
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,58,"        return localMin(f, goalType, min, max, relativeAccuracy, absoluteAccuracy);",1.0,0,,0,0.08571489920225932,0.9142851007977394
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,88,        double x = a + GOLDEN_SECTION * (b - a);,1.0,0,,0,0.578084132038326,0.42191586796167535
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,89,        double v = x;,1.0,0,,0,0.20444966615455934,0.7955503338454407
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,90,        double w = x;,1.0,0,,0,0.20444966615455934,0.7955503338454407
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,91,        double e = 0;,1.0,0,,0,0.1870416568518534,0.8129583431481481
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,92,"        double fx = computeObjectiveValue(f, x);",1.0,0,,0,0.2958483524274719,0.7041516475725286
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,93,        if (goalType == GoalType.MAXIMIZE) {,1.0,0,,0,0.4246207388879967,0.5753792611120037
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,96,        double fv = fx;,1.0,0,,0,0.20323272845207915,0.7967672715479206
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,97,        double fw = fx;,1.0,0,,0,0.20323272845207915,0.7967672715479206
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,99,        int count = 0;,1.0,0,,0,0.1864352998973822,0.813564700102617
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,100,        while (count < maximalIterationCount) {,1.0,0,,0,0.4247234479412373,0.5752765520587624
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,101,            double m = 0.5 * (a + b);,1.0,0,,0,0.3983003105688759,0.601699689431123
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,102,            double tol = eps * Math.abs(x) + t;,1.0,0,,0,0.3424152792503888,0.6575847207496112
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,103,            double t2 = 2 * tol;,1.0,0,,0,0.21835137382483974,0.7816486261751588
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,106,            if (Math.abs(x - m) > t2 - 0.5 * (b - a)) {,1.0,0,,0,0.8943538663490517,0.10564613365094683
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,107,                double p = 0;,1.0,0,,0,0.1014840132341342,0.8985159867658654
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,108,                double q = 0;,1.0,0,,0,0.1014840132341342,0.8985159867658654
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,109,                double r = 0;,1.0,0,,0,0.1014840132341342,0.8985159867658654
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,110,                double d = 0;,1.0,0,,0,0.1014840132341342,0.8985159867658654
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,111,                double u = 0;,1.0,0,,0,0.1014840132341342,0.8985159867658654
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,113,                if (Math.abs(e) > tol) { // Fit parabola.,1.0,0,,0,0.2405985075262684,0.7594014924737301
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,114,                    r = (x - w) * (fx - fv);,1.0,0,,0,0.38642157251385356,0.6135784274861465
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,115,                    q = (x - v) * (fx - fw);,1.0,0,,0,0.38642157251385356,0.6135784274861465
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,116,                    p = (x - v) * q - (x - w) * r;,1.0,0,,0,0.7014291493925511,0.2985708506074498
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,117,                    q = 2 * (q - r);,1.0,0,,0,0.30773013033865826,0.6922698696613406
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,119,                    if (q > 0) {,1.0,0,,0,0.17781623494951987,0.8221837650504804
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,120,                        p = -p;,1.0,0,,0,0.09352851457187504,0.9064714854281263
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,122,                        q = -q;,1.0,0,,0,0.09352851457187504,0.9064714854281263
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,125,                    r = e;,1.0,0,,0,0.11771857162221125,0.8822814283777886
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,126,                    e = d;,1.0,0,,0,0.11771857162221125,0.8822814283777886
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,129,                if (Math.abs(p) < Math.abs(0.5 * q * r) &&,1.0,0,,0,0.46142855515065895,0.5385714448493422
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,139,                    e = ((x < m) ? b : a) - x;,1.0,0,,0,0.2387279638543778,0.7612720361456227
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,140,                    d = GOLDEN_SECTION * e;,1.0,0,,0,0.16024465845343236,0.8397553415465671
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,144,                u = x + ((Math.abs(d) > tol) ? d : ((d > 0) ? tol : -tol));,1.0,0,,0,0.5191250991919241,0.480874900808076
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,145,"                double fu = computeObjectiveValue(f, u);",1.0,0,,0,0.17098797256454507,0.8290120274354548
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,146,                if (goalType == GoalType.MAXIMIZE) {,1.0,0,,0,0.29089034012660087,0.7091096598733995
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,151,                if (fu <= fx) {,1.0,0,,0,0.2783735136843193,0.7216264863156798
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,152,                    if (u < x) {,1.0,0,,0,0.1945711299199147,0.8054288700800837
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,153,                        b = x;,1.0,0,,0,0.06795790956801935,0.9320420904319816
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,155,                        a = x;,1.0,0,,0,0.06795790956801935,0.9320420904319816
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,157,                    v = w;,1.0,0,,0,0.11771857162221125,0.8822814283777886
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,158,                    fv = fw;,1.0,0,,0,0.11624004025127503,0.8837599597487249
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,159,                    w = x;,1.0,0,,0,0.11771857162221125,0.8822814283777886
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,160,                    fw = fx;,1.0,0,,0,0.11624004025127503,0.8837599597487249
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,161,                    x = u;,1.0,0,,0,0.11771857162221125,0.8822814283777886
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,162,                    fx = fu;,1.0,0,,0,0.11624004025127503,0.8837599597487249
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,164,                    if (u < x) {,1.0,0,,0,0.1945711299199147,0.8054288700800837
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,165,                        a = u;,1.0,0,,0,0.06795790956801935,0.9320420904319816
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,167,                        b = u;,1.0,0,,0,0.06795790956801935,0.9320420904319816
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,169,                    if ((fu <= fw) || (w == x)) {,1.0,0,,0,0.3886767240586691,0.6113232759413325
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,170,                        v = w;,1.0,0,,0,0.06795790956801935,0.9320420904319816
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,171,                        fv = fw;,1.0,0,,0,0.06705686468783749,0.9329431353121616
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,172,                        w = u;,1.0,0,,0,0.06795790956801935,0.9320420904319816
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,173,                        fw = fu;,1.0,0,,0,0.06705686468783749,0.9329431353121616
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,174,                    } else if ((fu <= fv) || (v == x) || (v == w)) {,1.0,0,,0,0.445747888867784,0.5542521111322174
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,175,                        v = u;,1.0,0,,0,0.04892865002836224,0.9510713499716359
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,176,                        fv = fu;,1.0,0,,0,0.04826684559719345,0.9517331544028075
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,179,            } else { // termination,1.0,0,,0,0.18564476596766089,0.8143552340323409
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,180,"                setResult(x, (goalType == GoalType.MAXIMIZE) ? -fx : fx, count);",1.0,0,,0,0.40616552633012215,0.5938344736698786
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,181,                return x;,1.0,0,,0,0.12613955594055906,0.8738604440594416
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,184,            ++count;,1.0,0,,0,0.21359239604952682,0.7864076039504744
+org/apache/commons/math/optimization/univariate/BrentOptimizer,67,185,        },1.0,0,,0,0.1549795882941228,0.8450204117058774
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,63,"        super(defaultMaximalIterationCount, defaultAbsoluteAccuracy);",1.0,0,,0,0.47797247879466964,0.52202752120533
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,64,        resultComputed = false;,1.0,0,,0,0.31807948343937303,0.6819205165606261
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,65,        setMaxEvaluations(Integer.MAX_VALUE);,1.0,0,,0,0.46001086555843396,0.5399891344415656
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,66,    },1.0,0,,0,0.1549795882941228,0.8450204117058774
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,72,        if (!resultComputed) {,1.0,0,,0,0.40949465091785725,0.5905053490821429
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,75,    },1.0,0,,0,0.1549795882941228,0.8450204117058774
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,85,        checkResultComputed();,1.0,0,,0,0.33651486425153915,0.663485135748462
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,86,        return functionValue;,1.0,0,,0,0.19981505235260863,0.80018494764739
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,98,        this.result         = x;,1.0,0,,0,0.3186267433205034,0.6813732566794971
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,99,        this.functionValue  = fx;,1.0,0,,0,0.318922549151687,0.6810774508483121
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,100,        this.iterationCount = iterationCount;,1.0,0,,0,0.33083500218791956,0.6691649978120806
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,101,        this.resultComputed = true;,1.0,0,,0,0.37505694632073056,0.6249430536792702
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,102,    },1.0,0,,0,0.1549795882941228,0.8450204117058774
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,108,        this.resultComputed = false;,1.0,0,,0,0.3757187633835348,0.624281236616465
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,109,    },1.0,0,,0,0.1549795882941228,0.8450204117058774
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,113,        this.maxEvaluations = maxEvaluations;,1.0,0,,0,0.33083500218791956,0.6691649978120806
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,114,    },1.0,0,,0,0.1549795882941228,0.8450204117058774
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,123,        return evaluations;,1.0,0,,0,0.2000801039921465,0.7999198960078548
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,137,        if (++evaluations > maxEvaluations) {,1.0,0,,0,0.4922183829477795,0.5077816170522197
+org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer,67,141,        return f.value(point);,1.0,0,,0,0.20007998560615214,0.7999200143938467
+org/apache/commons/math/ConvergingAlgorithmImpl,67,61,                                      final double defaultAbsoluteAccuracy) {,1.0,0,,0,0.3644527522714408,0.6355472477285601
+org/apache/commons/math/ConvergingAlgorithmImpl,67,62,        this.defaultAbsoluteAccuracy = defaultAbsoluteAccuracy;,1.0,0,,0,0.3795406727820159,0.6204593272179858
+org/apache/commons/math/ConvergingAlgorithmImpl,67,63,        this.defaultRelativeAccuracy = 1.0e-14;,1.0,0,,0,0.3102011605848148,0.689798839415186
+org/apache/commons/math/ConvergingAlgorithmImpl,67,64,        this.absoluteAccuracy = defaultAbsoluteAccuracy;,1.0,0,,0,0.355937727711283,0.6440622722887179
+org/apache/commons/math/ConvergingAlgorithmImpl,67,65,        this.relativeAccuracy = defaultRelativeAccuracy;,1.0,0,,0,0.355937727711283,0.6440622722887179
+org/apache/commons/math/ConvergingAlgorithmImpl,67,66,        this.defaultMaximalIterationCount = defaultMaximalIterationCount;,1.0,0,,0,0.4243207921213848,0.5756792078786138
+org/apache/commons/math/ConvergingAlgorithmImpl,67,67,        this.maximalIterationCount = defaultMaximalIterationCount;,1.0,0,,0,0.391579308295564,0.6084206917044349
+org/apache/commons/math/ConvergingAlgorithmImpl,67,68,        this.iterationCount = 0;,1.0,0,,0,0.2951032316003794,0.7048967683996212
+org/apache/commons/math/ConvergingAlgorithmImpl,67,69,    },1.0,0,,0,0.1549795882941228,0.8450204117058774
+org/apache/commons/math/ConvergingAlgorithmImpl,67,73,        return iterationCount;,1.0,0,,0,0.1997993450026847,0.8002006549973135
+org/apache/commons/math/ConvergingAlgorithmImpl,67,93,        maximalIterationCount = count;,1.0,0,,0,0.2708682980739153,0.729131701926083
+org/apache/commons/math/ConvergingAlgorithmImpl,67,94,    },1.0,0,,0,0.1549795882941228,0.8450204117058774
+org/apache/commons/math/optimization/GoalType,67,27,public enum GoalType implements Serializable {,1.0,0,,0,0.7317474307648804,0.26825256923512053
+org/apache/commons/math/optimization/GoalType,67,30,"    MAXIMIZE,",1.0,0,,0,0.17328954389575024,0.8267104561042498
+org/apache/commons/math/optimization/GoalType,67,33,    MINIMIZE,1.0,0,,0,0.17421216958067295,0.8257878304193256
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,80,                                             final RandomGenerator generator) {,1.0,0,,0,0.7222854008706896,0.27771459912931123
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,81,        this.optimizer        = optimizer;,1.0,0,,0,0.32638919710413067,0.6736108028958692
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,82,        this.totalIterations  = 0;,1.0,0,,0,0.29577164568257536,0.7042283543174235
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,83,        this.starts           = starts;,1.0,0,,0,0.32293159014518885,0.6770684098548118
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,84,        this.generator        = generator;,1.0,0,,0,0.32638919710413067,0.6736108028958692
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,85,        this.optima           = null;,1.0,0,,0,0.2975384473635896,0.7024615526364116
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,86,        setMaximalIterationCount(Integer.MAX_VALUE);,1.0,0,,0,0.4759581668624231,0.5240418331375761
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,87,        setMaxEvaluations(Integer.MAX_VALUE);,1.0,0,,0,0.46001086555843396,0.5399891344415656
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,88,    },1.0,0,,0,0.1549795882941228,0.8450204117058774
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,152,        this.maxIterations = count;,1.0,0,,0,0.31983221289272395,0.6801677871072772
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,153,    },1.0,0,,0,0.1549795882941228,0.8450204117058774
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,157,        this.maxEvaluations = maxEvaluations;,1.0,0,,0,0.33083500218791956,0.6691649978120806
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,158,    },1.0,0,,0,0.1549795882941228,0.8450204117058774
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,193,        if (optima == null) {,1.0,0,,0,0.3806567382000275,0.6193432617999728
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,219,        if (optimaValues == null) {,1.0,0,,0,0.38224054983591543,0.6177594501640847
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,231,        optima           = new double[starts];,1.0,0,,0,0.6608708219675067,0.3391291780324927
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,232,        optimaValues     = new double[starts];,1.0,0,,0,0.6608708219675067,0.3391291780324927
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,233,        totalIterations  = 0;,1.0,0,,0,0.2464755499688545,0.7535244500311469
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,234,        totalEvaluations = 0;,1.0,0,,0,0.2464755499688545,0.7535244500311469
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,237,        for (int i = 0; i < starts; ++i) {,1.0,0,,0,0.46302201965816664,0.5369779803418346
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,240,                optimizer.setMaximalIterationCount(maxIterations - totalIterations);,1.0,0,,0,0.32147126123903463,0.6785287387609646
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,241,                optimizer.setMaxEvaluations(maxEvaluations - totalEvaluations);,1.0,0,,0,0.2986730778928401,0.7013269221071616
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,242,                final double bound1 = (i == 0) ? min : min + generator.nextDouble() * (max - min);,1.0,0,,0,0.7859490627745293,0.2140509372254708
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,243,                final double bound2 = (i == 0) ? max : min + generator.nextDouble() * (max - min);,1.0,0,,0,0.7859490627745293,0.2140509372254708
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,244,"                optima[i]       = optimizer.optimize(f, goalType,",1.0,0,,0,0.32843566797884266,0.671564332021157
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,247,                optimaValues[i] = optimizer.getFunctionValue();,1.0,0,,0,0.5178080445282022,0.48219195547179844
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,254,            },1.0,0,,0,0.1549795882941228,0.8450204117058774
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,256,            totalIterations  += optimizer.getIterationCount();,1.0,0,,0,0.38143665046787834,0.618563349532122
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,257,            totalEvaluations += optimizer.getEvaluations();,1.0,0,,0,0.37224650119379965,0.6277534988062003
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,262,        int lastNaN = optima.length;,1.0,0,,0,0.20671582682483122,0.7932841731751696
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,263,        for (int i = 0; i < lastNaN; ++i) {,1.0,0,,0,0.464571408010128,0.5354285919898706
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,264,            if (Double.isNaN(optima[i])) {,1.0,0,,0,0.4925397910299638,0.5074602089700377
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,272,        double currX = optima[0];,1.0,0,,0,0.5486525099083056,0.45134749009169534
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,273,        double currY = optimaValues[0];,1.0,0,,0,0.5532037485707909,0.446796251429208
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,274,        for (int j = 1; j < lastNaN; ++j) {,1.0,0,,0,0.464571408010128,0.5354285919898706
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,275,            final double prevY = currY;,1.0,0,,0,0.2611022899889427,0.7388977100110558
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,276,            currX = optima[j];,1.0,0,,0,0.5828764438825975,0.4171235561174018
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,277,            currY = optimaValues[j];,1.0,0,,0,0.5823779722316109,0.41762202776838997
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,278,            if ((goalType == GoalType.MAXIMIZE) ^ (currY < prevY)) {,1.0,0,,0,0.6231473313654896,0.3768526686345108
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,301,        if (Double.isNaN(optima[0])) {,1.0,0,,0,0.5655633927263418,0.434436607273657
+org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer,67,308,        return optima[0];,1.0,0,,0,0.44304144319170374,0.5569585568082968
+org/apache/commons/math/random/JDKRandomGenerator,67,28,public class JDKRandomGenerator extends Random implements RandomGenerator {,1.0,0,,0,0.9982737777417088,0.0017262222582905596
 org/apache/commons/math/MathRuntimeException,67,626,"        return new ParseException(null, offset) {",0.0,0,-1,0
 org/apache/commons/math/MathRuntimeException,67,634,"                return buildMessage(Locale.US, pattern, arguments);",0.0,0,-1,0
 org/apache/commons/math/MathRuntimeException,67,640,"                return buildMessage(Locale.getDefault(), pattern, arguments);",0.0,0,-1,0

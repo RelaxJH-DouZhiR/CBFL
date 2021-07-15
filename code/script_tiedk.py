@@ -24,7 +24,7 @@ import threading
 from copy import deepcopy
 import openpyxl
 from analytic_complexity import save_as_csv
-FATHER_PATH = "C:/ssdcode/"  # CBFL文件的父路径
+FATHER_PATH = "/Users/lvlaxjh/code/"  # CBFL文件的父路径
 FATHER_PATH2 = "E:/"  # 存储d4j代码以及频谱文件的父路径
 
 
@@ -299,19 +299,6 @@ def k_fold(project, kFold, tiedK):
         for row in allFaultList:
             trainDatasetList.append(deepcopy(row))
         # 将全部真实缺陷插入训练集-end---
-        # 测试集训练集去重-start---
-        resultTrainDatasetList_TEM = []
-        isIntest = False  # 是否存在
-        for row in trainDatasetList:
-            for testRow in testDatasetList:
-                if row[2] == testRow[2] and row[3] == testRow[3] and row[4] == testRow[4]:
-                    isIntest = True
-                    break
-            if not isIntest:
-                resultTrainDatasetList_TEM.append(row)
-            isIntest = False
-        trainDatasetList = deepcopy(resultTrainDatasetList_TEM)
-        # 测试集训练集去重-end---
         # 训练集去重-start***
         resultTrainDatasetList_TEM = []
         isDuplicate = False  # 是否重复
@@ -329,8 +316,9 @@ def k_fold(project, kFold, tiedK):
                     and row[14] == testRow[14]
                     and row[15] == testRow[15]
                     and row[17] == testRow[17]
-                    and row[19] == testRow[19]
                 ):
+                    if str(row[19]) == '1':
+                        testRow[19] = 1
                     isDuplicate = True
                     break
             if not isDuplicate:
@@ -338,12 +326,25 @@ def k_fold(project, kFold, tiedK):
             isDuplicate = False
         trainDatasetList = deepcopy(resultTrainDatasetList_TEM)
         # 训练集去重-end***
+        # 测试集训练集去重-start---
+        resultTrainDatasetList_TEM = []
+        isIntest = False  # 是否存在
+        for row in trainDatasetList:
+            for testRow in testDatasetList:
+                if row[2] == testRow[2] and row[3] == testRow[3] and row[4] == testRow[4]:
+                    isIntest = True
+                    break
+            if not isIntest:
+                resultTrainDatasetList_TEM.append(row)
+            isIntest = False
+        trainDatasetList = deepcopy(resultTrainDatasetList_TEM)
+        # 测试集训练集去重-end---
         # 训练集-end---
         # 保存测试集-start
         testDatasetCsvFile = open(f"{FATHER_PATH}CBFL/dataset/{project}/tiedK_traintest/test-{project}-{tiedK}-{kFold}-{k}.csv", "w", encoding="utf-8", newline="")
         testCsvWriter = csv.writer(testDatasetCsvFile)
         testCsvWriter.writerow(
-            ["dataset", "project", "path", "version", "codeLine", "statement", "varTotal", "optTotal", "array", "bracketDepth", "bracketTotal", "keywordTotal", "methodTotal", "typeTotal", "logic", "lengthEle", "lengthWord", "depth", "suspicious", "accuracy", "miss_line", "predict"]
+            ["dataset", "project", "path", "version", "codeLine", "statement", "varTotal", "optTotal", "array", "bracketDepth", "bracketTotal", "keywordTotal", "methodTotal", "typeTotal", "other", "lengthEle", "lengthWord", "depth", "suspicious", "accuracy", "miss_line", "predict"]
         )
         for row in testDatasetList:
             testCsvWriter.writerow(row)
@@ -353,7 +354,7 @@ def k_fold(project, kFold, tiedK):
         trainDatasetCsvFile = open(f"{FATHER_PATH}CBFL/dataset/{project}/tiedK_traintest/train-{project}-{tiedK}-{kFold}-{k}.csv", "w", encoding="utf-8", newline="")
         trainCsvWriter = csv.writer(trainDatasetCsvFile)
         trainCsvWriter.writerow(
-            ["dataset", "project", "path", "version", "codeLine", "statement", "varTotal", "optTotal", "array", "bracketDepth", "bracketTotal", "keywordTotal", "methodTotal", "typeTotal", "logic", "lengthEle", "lengthWord", "depth", "suspicious", "accuracy", "miss_line", "predict"]
+            ["dataset", "project", "path", "version", "codeLine", "statement", "varTotal", "optTotal", "array", "bracketDepth", "bracketTotal", "keywordTotal", "methodTotal", "typeTotal", "other", "lengthEle", "lengthWord", "depth", "suspicious", "accuracy", "miss_line", "predict"]
         )
         for row in trainDatasetList:
             trainCsvWriter.writerow(row)
@@ -383,7 +384,7 @@ def dataset_pretreatment(project, tiedK):
 
 
 if __name__ == "__main__":
-    project = "math"  # chart lang math time mockito closure 项目
+    project = "mockito"  # chart lang math time mockito closure 项目
     settingJson = open(f"{FATHER_PATH}CBFL/code/setting.json", "r", encoding="utf-8")
     settingContent = settingJson.read()
     setting = json.loads(settingContent)
@@ -405,7 +406,7 @@ if __name__ == "__main__":
         if (project == "lang" and version >= 36) or (project == "math" and version >= 85):
             javaCodeFilePath = f"DSatr/{project}-direct/{project}-{version}/" + setting[project]["javaCodeFilePath2"]
         # 训练集排除列表，用于排除文件中单一可疑度问题-start
-
+        # 暂不实现
         # 训练集排除列表，用于排除文件中单一可疑度问题-end
     # get_sus_spectrum(project, version, javaCodeFilePath)
     #
@@ -415,26 +416,25 @@ if __name__ == "__main__":
     #
     # ------------------------------------------------------------------------------
     # 存储项目中全部真实缺陷-start----------------------------------------------------------------
-    allFaultList = []
-    for version in versionList:
-        allFaultList += get_all_fault(project, version)
-    save_all_fault(allFaultList, project)
-    del allFaultList
+    # allFaultList = []
+    # for version in versionList:
+    #     allFaultList += get_all_fault(project, version)
+    # save_all_fault(allFaultList, project)
+    # del allFaultList
     # 存储项目中全部真实缺陷-end------------------------------------------------------------------
     # 取可疑度相同并生成k折交叉训练集-start--------------------------------------------------------
     tiedKContentSaveList = []
-    for tiedK in tiedKList:
+    # for tiedK in tiedKList:
         # for tiedK in [1]:
         # 取可疑度相同----------------------------------
-        for version in versionList:
-            tiedKContentSaveList += get_top_tied(tiedK, project, version)
-        save_top_tied(tiedKContentSaveList, tiedK, project)
-        tiedKContentSaveList = []
+        # for version in versionList:
+        #     tiedKContentSaveList += get_top_tied(tiedK, project, version)
+        # save_top_tied(tiedKContentSaveList, tiedK, project)
+        # tiedKContentSaveList = []
     #    # ----------------------------------
-    # for tiedK in tiedKList:
-    # for tiedK in [1]:
-    #     for k in KList:
-    #         k_fold(project, k, tiedK)
+    for tiedK in tiedKList:
+        for k in KList:
+            k_fold(project, k, tiedK)
     # 取可疑度相同并生成k折交叉训练集-end--------------------------------------------------------
     # for tiedK in [1]:
     #     dataset_pretreatment(project, tiedK)

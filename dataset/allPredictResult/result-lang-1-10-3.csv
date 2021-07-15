@@ -1,104 +1,104 @@
-dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,logic,lengthEle,lengthWord,depth,suspicious,accuracy,miss_line,predict
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,281,            if (i > 0) {,4,4,0,1,3,0,8,0,0,16,12,3,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,285,            FormatFactory factory = registry.get(name);,2,0,0,1,2,0,6,2,0,10,43,6,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,286,            if (factory != null) {,2,1,0,1,3,0,6,0,0,10,22,3,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,287,"                return factory.getFormat(name, args, getLocale());",0,0,0,2,4,1,10,0,0,10,50,9,0.25,0,0,0
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,301,        int start = pos.getIndex();,2,0,0,1,2,0,4,0,0,6,27,5,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,302,"        seekNonWs(pattern, pos);",0,0,0,1,2,0,6,0,0,6,24,5,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,303,        StringBuffer result = new StringBuffer();,2,0,0,1,2,0,0,4,0,6,41,4,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,304,        boolean error = false;,2,0,0,0,0,0,0,0,0,3,22,5,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,305,        for (; !error && pos.getIndex() < pattern.length(); next(pos)) {,2,2,0,4,9,0,12,0,0,17,64,4,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,306,            char c = pattern.charAt(pos.getIndex());,2,0,0,2,4,0,8,0,0,10,40,7,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,307,            if (Character.isWhitespace(c)) {,0,0,0,2,5,0,6,0,0,6,32,7,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,315,            if ((c == START_FMT || c == END_FE) && result.length() > 0) {,8,5,0,3,7,0,4,0,0,17,61,6,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,317,                    return Integer.parseInt(result.toString());,0,0,0,2,4,1,0,0,0,7,43,4,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,323,            error = !Character.isDigit(c);,0,0,0,1,2,0,0,0,0,3,30,4,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,324,            result.append(c);,0,0,0,1,2,0,6,0,0,6,17,7,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,343,        int start = pos.getIndex();,2,0,0,1,2,0,4,0,0,6,27,5,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,344,"        seekNonWs(pattern, pos);",0,0,0,1,2,0,6,0,0,6,24,5,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,345,        int text = pos.getIndex();,0,0,0,1,2,0,0,0,0,3,26,4,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,346,        int depth = 1;,8,0,0,0,0,3,0,4,0,15,14,1,0.25,0,0,0
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,347,        for (; pos.getIndex() < pattern.length(); next(pos)) {,0,1,0,4,9,0,12,0,0,13,54,4,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,348,            switch (pattern.charAt(pos.getIndex())) {,0,0,0,3,7,0,12,0,0,12,41,3,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,353,                depth--;,2,0,0,0,0,0,0,0,0,3,8,7,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,354,                if (depth == 0) {,2,1,0,1,3,0,0,0,0,3,17,7,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,355,"                    return pattern.substring(text, pos.getIndex());",0,0,0,2,4,1,10,0,0,10,47,10,0.25,0,0,0
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,375,        if (!containsElements(customPatterns)) {,0,0,0,2,5,0,4,0,0,5,40,4,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,378,        StringBuilder sb = new StringBuilder(pattern.length() * 2);,2,1,0,2,4,0,4,4,0,11,59,4,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,379,        ParsePosition pos = new ParsePosition(0);,2,0,0,1,2,0,0,4,0,6,41,4,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,380,        int fe = -1;,2,0,0,0,0,0,0,0,0,3,12,5,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,381,        int depth = 0;,2,0,0,0,0,0,0,0,0,2,14,5,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,382,        while (pos.getIndex() < pattern.length()) {,0,0,0,3,7,0,0,0,0,10,43,4,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,383,            char c = pattern.charAt(pos.getIndex());,2,0,0,2,4,0,8,0,0,10,40,7,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,384,            switch (c) {,2,0,0,1,3,0,0,0,0,2,12,6,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,389,                depth++;,4,0,0,0,0,0,4,2,0,13,8,3,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,390,                if (depth == 1) {,6,1,0,1,3,0,0,0,0,8,17,3,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,391,                    fe++;,2,0,0,0,0,0,0,0,0,3,5,9,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,392,                    sb.append(START_FE).append(,0,0,0,1,3,0,8,0,0,8,27,10,0.25,0,0,0
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,394,                    String customPattern = customPatterns.get(fe);,2,0,0,1,2,0,12,2,0,16,46,3,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,395,                    if (customPattern != null) {,2,1,0,1,3,0,0,0,0,3,28,9,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,396,                        sb.append(START_FMT).append(customPattern);,10,0,0,2,4,0,14,0,0,25,43,3,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,398,                },0,0,0,0,1,0,0,0,0,1,1,4,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,401,                depth--;,0,0,0,0,0,0,0,0,0,0,8,4,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,404,                sb.append(c);,0,0,0,1,2,0,0,0,0,3,13,4,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,405,                next(pos);,0,0,0,1,2,0,4,0,0,4,10,8,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,407,        },0,0,0,0,1,0,0,0,0,1,1,4,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,408,        return sb.toString();,0,0,0,1,2,1,4,0,0,4,21,5,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,418,        int len = 0;,2,0,0,0,0,0,0,0,0,2,12,5,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,419,        char[] buffer = pattern.toCharArray();,8,3,0,2,4,0,4,0,0,15,38,3,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,421,"            len = StrMatcher.splitMatcher().isMatch(buffer, pos.getIndex());",2,0,0,3,6,0,12,0,0,15,64,6,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,422,            pos.setIndex(pos.getIndex() + len);,2,1,0,2,4,0,8,0,0,11,35,7,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,423,        } while (len > 0 && pos.getIndex() < pattern.length());,4,3,0,3,7,3,8,0,0,18,55,1,0.25,0,0,0
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,424,    },0,0,0,0,1,0,0,0,0,1,1,4,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,433,        pos.setIndex(pos.getIndex() + 1);,0,1,0,2,4,0,8,0,0,9,33,5,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,434,        return pos;,8,0,0,0,0,1,0,2,0,10,11,3,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,495,        if (coll == null || coll.size() == 0) {,2,3,0,2,5,0,4,0,0,9,39,4,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,498,        for (Iterator<?> iter = coll.iterator(); iter.hasNext();) {,2,0,0,3,7,0,8,2,0,12,59,4,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,499,            if (iter.next() != null) {,0,1,0,2,5,0,4,0,0,5,26,6,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,500,                return true;,0,0,0,0,0,1,0,0,0,1,12,8,0.25,0,0,0
-defect4j,lang,org/apache/commons/lang3/Validate,23,176,        if (expression == false) {,2,1,0,1,3,0,0,0,0,4,26,4,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/Validate,23,179,    },0,0,0,0,1,0,0,0,0,1,1,4,0.25,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,454,            return null;,0,0,0,0,0,1,0,0,0,1,12,4,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,467,            return createInteger(str);,0,0,0,1,2,1,4,0,0,4,26,7,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,478,            if (expPos > -1) {,0,0,0,1,3,0,0,0,0,4,18,4,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,479,                if (expPos < decPos || expPos > str.length()) {,0,0,0,2,5,0,0,0,0,7,47,4,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,482,"                dec = str.substring(decPos + 1, expPos);",6,2,0,1,2,0,6,0,0,15,40,4,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,484,                dec = str.substring(decPos + 1);,0,0,0,1,2,0,0,0,0,3,32,4,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,486,"            mant = str.substring(0, decPos);",2,0,0,1,2,0,6,0,0,9,32,6,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,489,                if (expPos > str.length()) {,2,1,0,2,5,0,4,0,0,7,28,8,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,500,"                exp = str.substring(expPos + 1, str.length() - 1);",4,2,0,2,4,0,8,0,0,15,50,8,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,525,                        Float f = NumberUtils.createFloat(numeric);,0,0,0,1,2,0,0,0,0,3,43,4,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,526,                        if (!(f.isInfinite() || (f.floatValue() == 0.0F && !allZeros))) {,2,3,0,5,11,0,8,0,0,15,65,9,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,529,                            return f;,4,0,0,0,0,4,0,4,0,11,9,1,1.0,0,0,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,539,                        Double d = NumberUtils.createDouble(numeric);,2,0,0,1,2,0,6,2,0,10,45,9,1.0,0,0,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,540,                        if (!(d.isInfinite() || (d.floatValue() == 0.0D && !allZeros))) {,0,0,0,5,11,0,0,0,0,16,65,4,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,541,                            return d;,2,0,0,0,0,1,0,0,0,2,9,11,1.0,0,0,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,547,                        return createBigDecimal(numeric);,2,0,0,1,2,4,4,4,0,13,33,1,1.0,0,0,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,559,            if (expPos > -1 && expPos < str.length() - 1) {,4,4,0,2,5,0,4,0,0,13,47,6,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,560,"                exp = str.substring(expPos + 1, str.length());",4,1,0,2,4,0,8,0,0,14,46,8,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,562,                exp = null;,0,0,0,0,0,0,0,0,0,0,11,4,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,564,            if (dec == null && exp == null) {,4,3,0,1,3,0,0,0,0,7,33,6,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,567,                    return createInteger(str);,0,0,0,1,2,1,0,0,0,4,26,4,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,568,                } catch (NumberFormatException nfe) {,2,0,0,1,4,0,0,2,0,4,37,10,1.0,0,0,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,572,                    return createLong(str);,0,0,0,1,2,1,4,0,0,4,23,11,1.0,0,0,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,573,                } catch (NumberFormatException nfe) {,2,0,0,1,4,0,0,2,0,4,37,10,1.0,0,0,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,576,                return createBigInteger(str);,0,0,0,1,2,1,4,0,0,4,29,9,1.0,0,0,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,580,                boolean allZeros = isAllZeros(mant) && isAllZeros(exp);,2,1,0,2,4,0,8,0,0,11,55,9,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,582,                    Float f = createFloat(str);,6,1,0,1,2,0,4,2,0,13,27,3,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,583,                    if (!(f.isInfinite() || (f.floatValue() == 0.0F && !allZeros))) {,0,0,0,5,11,0,0,0,0,16,65,4,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,584,                        return f;,0,0,0,0,0,1,0,0,0,1,9,4,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,590,                    Double d = createDouble(str);,6,0,0,1,2,0,4,2,0,13,29,1,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/StringUtils,24,240,            return true;,0,0,0,0,0,1,0,0,0,1,12,4,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,25,30,    public static String[][] ISO8859_1_ESCAPE() { return ISO8859_1_ESCAPE.clone(); },4,0,0,5,10,4,10,4,0,21,80,2,0.05,0,0,0
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,26,1171,            buffer.append(mValues[calendar.get(mField)]);,0,0,0,3,6,0,0,0,0,9,45,4,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,26,1172,        },0,0,0,0,1,0,0,0,0,1,1,4,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,26,1130,            buffer.append(mValue);,0,0,0,1,2,0,0,0,0,3,22,4,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,26,1131,        },0,0,0,0,1,0,0,0,0,1,1,4,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,27,454,            return null;,0,0,1,0,0,1,10,0,0,12,12,6,1.0,0,0,0
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,27,467,            return createInteger(str);,0,0,0,1,2,1,4,0,0,4,26,7,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,27,478,            if (expPos > -1) {,2,1,0,1,3,0,0,0,0,4,18,6,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,27,479,                if (expPos < decPos) {,4,1,0,1,3,0,6,0,0,11,22,1,1.0,1,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,27,482,"                dec = str.substring(decPos + 1, expPos);",4,1,0,1,2,0,6,0,0,12,40,8,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,27,484,                dec = str.substring(decPos + 1);,8,1,0,1,2,0,4,0,0,14,32,1,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,27,486,"            mant = str.substring(0, decPos);",2,0,0,1,2,0,6,0,0,9,32,6,1.0,0,0,1
-defect4j,lang,org/apache/commons/lang3/math/NumberUtils,27,489,"                mant = str.substring(0, expPos);",2,0,0,1,2,0,6,0,0,9,32,8,1.0,1,1,1
+dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,logic,lengthEle,lengthWord,depth,suspicious,accuracy,miss_line,predict0,predict1
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,281,            if (i > 0) {,1,1,0,1,3,1,0,0,0,5,12,6,0.25,0,0,0.4257738375905086,0.5742261624094911
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,285,            FormatFactory factory = registry.get(name);,1,0,0,1,2,0,3,1,0,5,43,6,0.25,0,0,0.5247248456813606,0.47527515431864026
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,286,            if (factory != null) {,1,1,0,1,3,1,0,0,0,5,22,6,0.25,0,0,0.448906599466942,0.5510934005330573
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,287,"                return factory.getFormat(name, args, getLocale());",0,0,0,1,4,1,5,0,1,5,50,9,0.25,0,0,0.4685737285977468,0.5314262714022525
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,301,        int start = pos.getIndex();,1,0,0,1,2,1,2,0,0,5,27,5,0.25,0,0,0.4805710733990691,0.5194289266009318
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,302,"        seekNonWs(pattern, pos);",0,0,0,0,2,0,3,0,1,3,24,4,0.25,0,0,0.39052585668081086,0.6094741433191909
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,303,        StringBuffer result = new StringBuffer();,1,0,0,1,2,1,0,2,1,6,41,4,0.25,0,0,0.2927149885659902,0.7072850114340116
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,304,        boolean error = false;,1,0,0,0,0,1,0,0,1,3,22,5,0.25,0,0,0.3727512715973185,0.6272487284026828
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,305,        for (; !error && pos.getIndex() < pattern.length(); next(pos)) {,1,2,0,2,9,1,6,0,2,7,64,4,0.25,0,0,0.5910613987354594,0.4089386012645396
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,306,            char c = pattern.charAt(pos.getIndex());,1,0,0,2,4,1,4,0,0,5,40,7,0.25,0,0,0.5409059633534843,0.45909403664651577
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,307,            if (Character.isWhitespace(c)) {,0,0,0,2,5,1,3,0,0,4,32,7,0.25,0,0,0.487663313030376,0.512336686969625
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,315,            if ((c == START_FMT || c == END_FE) && result.length() > 0) {,4,5,0,2,7,1,2,0,0,6,61,6,0.25,0,0,0.4835241959483866,0.5164758040516122
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,317,                    return Integer.parseInt(result.toString());,0,0,0,2,4,1,4,0,0,4,43,11,0.25,0,0,0.5689944902988745,0.43100550970112467
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,323,            error = !Character.isDigit(c);,1,0,0,1,2,0,3,0,2,5,30,6,0.25,0,0,0.639687046574622,0.3603129534253781
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,324,            result.append(c);,0,0,0,1,2,0,3,0,0,3,17,7,0.25,0,0,0.43005451712416015,0.5699454828758392
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,343,        int start = pos.getIndex();,1,0,0,1,2,1,2,0,0,5,27,5,0.25,0,0,0.4805710733990691,0.5194289266009318
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,344,"        seekNonWs(pattern, pos);",0,0,0,0,2,0,3,0,1,3,24,4,0.25,0,0,0.39052585668081086,0.6094741433191909
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,345,        int text = pos.getIndex();,1,0,0,1,2,1,2,0,0,5,26,5,0.25,0,0,0.47865525099934836,0.5213447490006523
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,346,        int depth = 1;,1,0,0,0,0,1,0,0,0,2,14,5,0.25,0,0,0.3321998081167581,0.6678001918832415
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,347,        for (; pos.getIndex() < pattern.length(); next(pos)) {,0,1,0,2,9,1,6,0,1,6,54,4,0.25,0,0,0.42246824281884926,0.577531757181151
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,348,            switch (pattern.charAt(pos.getIndex())) {,0,0,0,3,7,1,4,0,0,4,41,7,0.25,0,0,0.545091146696701,0.45490885330329844
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,353,                depth--;,1,0,0,0,0,0,0,0,1,2,8,7,0.25,0,0,0.35054517768198873,0.6494548223180098
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,354,                if (depth == 0) {,1,1,0,1,3,1,0,0,0,5,17,7,0.25,0,0,0.4476341901203759,0.5523658098796241
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,355,"                    return pattern.substring(text, pos.getIndex());",0,0,0,1,4,1,5,0,0,4,47,10,0.25,0,0,0.49176780232298595,0.5082321976770129
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,375,        if (!containsElements(customPatterns)) {,0,0,0,2,5,1,2,0,2,5,40,4,0.25,0,0,0.6110933237279071,0.38890667627209263
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,378,        StringBuilder sb = new StringBuilder(pattern.length() * 2);,1,1,0,2,4,1,2,2,1,8,59,4,0.25,0,0,0.3054687276506385,0.6945312723493628
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,379,        ParsePosition pos = new ParsePosition(0);,1,0,0,1,2,1,0,2,1,6,41,4,0.25,0,0,0.2927149885659902,0.7072850114340116
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,380,        int fe = -1;,1,0,0,0,0,1,0,0,1,3,12,5,0.25,0,0,0.35104308635556114,0.6489569136444403
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,381,        int depth = 0;,1,0,0,0,0,1,0,0,0,2,14,5,0.25,0,0,0.3321998081167581,0.6678001918832415
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,382,        while (pos.getIndex() < pattern.length()) {,0,1,0,2,7,1,4,0,0,5,43,4,0.25,0,0,0.47953561532343075,0.5204643846765699
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,383,            char c = pattern.charAt(pos.getIndex());,1,0,0,2,4,1,4,0,0,5,40,7,0.25,0,0,0.5409059633534843,0.45909403664651577
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,384,            switch (c) {,1,0,0,1,3,1,0,0,0,4,12,6,0.25,0,0,0.4201374786716379,0.5798625213283626
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,389,                depth++;,1,0,0,0,0,0,0,0,1,2,8,7,0.25,0,0,0.35054517768198873,0.6494548223180098
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,390,                if (depth == 1) {,1,1,0,1,3,1,0,0,0,5,17,7,0.25,0,0,0.4476341901203759,0.5523658098796241
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,391,                    fe++;,1,0,0,0,0,0,0,0,1,2,5,9,0.25,0,0,0.3714181107187834,0.6285818892812164
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,392,                    sb.append(START_FE).append(,0,0,0,1,3,0,4,0,0,3,27,10,0.25,0,0,0.4920123087798695,0.5079876912201312
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,394,                    String customPattern = customPatterns.get(fe);,1,0,0,1,2,0,3,1,0,5,46,9,0.25,0,0,0.5686214824182493,0.43137851758174994
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,395,                    if (customPattern != null) {,1,1,0,1,3,1,0,0,0,5,28,9,0.25,0,0,0.5016592557903518,0.498340744209649
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,396,                        sb.append(START_FMT).append(customPattern);,0,0,0,1,4,0,5,0,0,3,43,12,0.25,0,0,0.5505110065336203,0.44948899346638005
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,398,                },0,0,0,0,1,0,0,0,0,1,1,2,0.25,0,0,0.25604600908022734,0.7439539909197727
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,401,                depth--;,1,0,0,0,0,0,0,0,1,2,8,7,0.25,0,0,0.35054517768198873,0.6494548223180098
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,404,                sb.append(c);,0,0,0,1,2,0,3,0,0,3,13,8,0.25,0,0,0.4338857475486494,0.5661142524513524
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,405,                next(pos);,0,0,0,1,2,0,2,0,1,4,10,7,0.25,0,0,0.4258773803589676,0.5741226196410341
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,407,        },0,0,0,0,1,0,0,0,0,1,1,2,0.25,0,0,0.25604600908022734,0.7439539909197727
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,408,        return sb.toString();,0,0,0,1,2,1,2,0,0,4,21,5,0.25,0,0,0.4165793916217181,0.5834206083782826
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,418,        int len = 0;,1,0,0,0,0,1,0,0,0,2,12,5,0.25,0,0,0.3277208671413144,0.6722791328586843
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,419,        char[] buffer = pattern.toCharArray();,1,0,0,1,4,1,2,0,0,5,38,5,0.25,0,0,0.4986718042901924,0.5013281957098074
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,421,"            len = StrMatcher.splitMatcher().isMatch(buffer, pos.getIndex());",1,0,0,1,6,0,6,0,1,5,64,6,0.25,0,0,0.484430182580126,0.5155698174198724
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,422,            pos.setIndex(pos.getIndex() + len);,1,1,0,2,4,0,4,0,0,5,35,7,0.25,0,0,0.5642149761852981,0.4357850238147022
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,423,        } while (len > 0 && pos.getIndex() < pattern.length());,1,3,0,2,7,1,4,0,0,6,55,4,0.25,0,0,0.5654701743996418,0.43452982560035686
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,424,    },0,0,0,0,1,0,0,0,0,1,1,2,0.25,0,0,0.25604600908022734,0.7439539909197727
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,433,        pos.setIndex(pos.getIndex() + 1);,0,1,0,2,4,0,4,0,0,4,33,5,0.25,0,0,0.49281430008394916,0.5071856999160513
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,434,        return pos;,1,0,0,0,0,1,0,0,0,2,11,4,0.25,0,0,0.3233658753667033,0.6766341246332974
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,495,        if (coll == null || coll.size() == 0) {,1,3,0,2,5,1,2,0,0,6,39,4,0.25,0,0,0.5635236476476035,0.4364763523523962
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,498,        for (Iterator<?> iter = coll.iterator(); iter.hasNext();) {,1,0,0,2,7,1,4,1,0,6,59,4,0.25,0,0,0.5151352580931725,0.4848647419068282
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,499,            if (iter.next() != null) {,0,1,0,2,5,1,2,0,0,5,26,6,0.25,0,0,0.47540903506588034,0.5245909649341184
+defect4j,lang,org/apache/commons/lang3/text/ExtendedMessageFormat,23,500,                return true;,0,0,0,0,0,1,0,0,1,2,12,8,0.25,0,0,0.3038253798537223,0.6961746201462792
+defect4j,lang,org/apache/commons/lang3/Validate,23,176,        if (expression == false) {,1,1,0,1,3,1,0,0,1,6,26,4,0.25,0,0,0.4286799975480703,0.5713200024519297
+defect4j,lang,org/apache/commons/lang3/Validate,23,179,    },0,0,0,0,1,0,0,0,0,1,1,2,0.25,0,0,0.25604600908022734,0.7439539909197727
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,454,            return null;,0,0,0,0,0,1,0,0,0,1,12,2,1.0,0,0,0.25037074549002575,0.7496292545099749
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,467,            return createInteger(str);,0,0,0,1,2,1,2,0,1,5,26,6,1.0,0,0,0.42792027641199526,0.5720797235880047
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,478,            if (expPos > -1) {,1,1,0,1,3,1,0,0,1,6,18,6,1.0,0,0,0.42037298769774717,0.579627012302252
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,479,                if (expPos < decPos || expPos > str.length()) {,3,3,0,2,5,1,2,0,0,6,47,8,1.0,0,0,0.5155522926900301,0.48444770730997044
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,482,"                dec = str.substring(decPos + 1, expPos);",2,1,0,0,2,0,3,0,1,5,40,8,1.0,0,0,0.5042777362735448,0.49572226372645567
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,484,                dec = str.substring(decPos + 1);,2,1,0,1,2,0,2,0,1,6,32,8,1.0,0,0,0.5127054314478277,0.4872945685521721
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,486,"            mant = str.substring(0, decPos);",1,0,0,0,2,0,3,0,1,4,32,6,1.0,0,0,0.4800004829580768,0.5199995170419237
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,489,                if (expPos > str.length()) {,1,1,0,2,5,1,2,0,0,6,28,8,1.0,0,0,0.5398411450847468,0.46015885491525216
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,500,"                exp = str.substring(expPos + 1, str.length() - 1);",2,2,0,1,4,0,4,0,1,6,50,8,1.0,0,0,0.5316771785757191,0.46832282142427956
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,525,                        Float f = NumberUtils.createFloat(numeric);,1,0,0,1,2,0,3,1,0,5,43,9,1.0,0,0,0.5653772094375463,0.4346227905624533
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,526,                        if (!(f.isInfinite() || (f.floatValue() == 0.0F && !allZeros))) {,1,3,0,4,11,1,4,0,2,7,65,9,1.0,0,0,0.8001044397354831,0.1998955602645154
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,529,                            return f;,1,0,0,0,0,1,0,0,0,2,9,11,1.0,0,0,0.4068630953740561,0.5931369046259423
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,539,                        Double d = NumberUtils.createDouble(numeric);,1,0,0,1,2,0,3,1,0,5,45,9,1.0,0,0,0.5675853025676356,0.4324146974323649
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,540,                        if (!(d.isInfinite() || (d.floatValue() == 0.0D && !allZeros))) {,1,3,0,4,11,1,4,0,2,7,65,9,1.0,0,0,0.8001044397354831,0.1998955602645154
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,541,                            return d;,1,0,0,0,0,1,0,0,0,2,9,11,1.0,0,0,0.4068630953740561,0.5931369046259423
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,547,                        return createBigDecimal(numeric);,0,0,0,1,2,1,2,0,1,5,33,9,1.0,0,0,0.48091153774647016,0.5190884622535302
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,559,            if (expPos > -1 && expPos < str.length() - 1) {,2,4,0,2,5,1,2,0,1,7,47,6,1.0,0,0,0.5749351145061775,0.4250648854938235
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,560,"                exp = str.substring(expPos + 1, str.length());",2,1,0,1,4,0,4,0,1,6,46,8,1.0,0,0,0.5177935041517504,0.4822064958482481
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,562,                exp = null;,1,0,0,0,0,0,0,0,1,2,11,8,1.0,0,0,0.37059414486658515,0.6294058551334146
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,564,            if (dec == null && exp == null) {,2,3,0,1,3,1,0,0,0,5,33,6,1.0,0,0,0.4907725485368728,0.5092274514631279
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,567,                    return createInteger(str);,0,0,0,1,2,1,2,0,1,5,26,10,1.0,0,0,0.4896351961076957,0.5103648038923051
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,568,                } catch (NumberFormatException nfe) {,1,0,0,1,4,1,0,1,0,5,37,10,1.0,0,0,0.5232169482829543,0.4767830517170471
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,572,                    return createLong(str);,0,0,0,1,2,1,2,0,1,5,23,10,1.0,0,0,0.4836099354925169,0.5163900645074834
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,573,                } catch (NumberFormatException nfe) {,1,0,0,1,4,1,0,1,0,5,37,10,1.0,0,0,0.5232169482829543,0.4767830517170471
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,576,                return createBigInteger(str);,0,0,0,1,2,1,2,0,1,5,29,8,1.0,0,0,0.45671265326664306,0.5432873467333565
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,580,                boolean allZeros = isAllZeros(mant) && isAllZeros(exp);,1,1,0,1,4,1,4,0,2,7,55,9,1.0,0,0,0.6344681960769298,0.3655318039230686
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,582,                    Float f = createFloat(str);,1,0,0,1,2,0,2,1,1,6,27,10,1.0,0,0,0.5448238739512193,0.4551761260487792
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,583,                    if (!(f.isInfinite() || (f.floatValue() == 0.0F && !allZeros))) {,1,3,0,4,11,1,4,0,2,7,65,10,1.0,0,0,0.8133291554137967,0.18667084458620176
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,584,                        return f;,1,0,0,0,0,1,0,0,0,2,9,12,1.0,0,0,0.43488611122787085,0.5651138887721296
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,24,590,                    Double d = createDouble(str);,1,0,0,1,2,0,2,1,1,6,29,10,1.0,0,0,0.5484933496343825,0.45150665036561627
+defect4j,lang,org/apache/commons/lang3/StringUtils,24,240,            return true;,0,0,0,0,0,1,0,0,1,2,12,6,1.0,0,0,0.28426116539730584,0.7157388346026937
+defect4j,lang,org/apache/commons/lang3/text/translate/EntityArrays,25,30,    public static String[][] ISO8859_1_ESCAPE() { return ISO8859_1_ESCAPE.clone(); },1,0,0,1,10,3,2,1,2,7,80,2,0.05,0,0,0.8854899454451531,0.11451005455484672
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,26,1171,            buffer.append(mValues[calendar.get(mField)]);,0,0,1,2,6,0,5,0,0,4,45,6,1.0,0,0,0.07666610912657813,0.9233338908734213
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,26,1172,        },0,0,0,0,1,0,0,0,0,1,1,2,1.0,0,0,0.25604600908022734,0.7439539909197727
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,26,1130,            buffer.append(mValue);,0,0,0,1,2,0,3,0,0,3,22,6,1.0,0,0,0.4313159755205482,0.5686840244794524
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,26,1131,        },0,0,0,0,1,0,0,0,0,1,1,2,1.0,0,0,0.25604600908022734,0.7439539909197727
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,27,454,            return null;,0,0,0,0,0,1,0,0,0,1,12,2,1.0,0,0,0.25037074549002575,0.7496292545099749
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,27,467,            return createInteger(str);,0,0,0,1,2,1,2,0,1,5,26,6,1.0,0,0,0.42792027641199526,0.5720797235880047
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,27,478,            if (expPos > -1) {,1,1,0,1,3,1,0,0,1,6,18,6,1.0,0,0,0.42037298769774717,0.579627012302252
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,27,479,                if (expPos < decPos) {,2,1,0,1,3,1,0,0,0,5,22,8,1.0,1,0,0.4554613967459576,0.5445386032540424
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,27,482,"                dec = str.substring(decPos + 1, expPos);",2,1,0,0,2,0,3,0,1,5,40,8,1.0,0,0,0.5042777362735448,0.49572226372645567
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,27,484,                dec = str.substring(decPos + 1);,2,1,0,1,2,0,2,0,1,6,32,8,1.0,0,0,0.5127054314478277,0.4872945685521721
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,27,486,"            mant = str.substring(0, decPos);",1,0,0,0,2,0,3,0,1,4,32,6,1.0,0,0,0.4800004829580768,0.5199995170419237
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,27,489,"                mant = str.substring(0, expPos);",1,0,0,0,2,0,3,0,1,4,32,8,1.0,1,1,0.5035583818194511,0.4964416181805497

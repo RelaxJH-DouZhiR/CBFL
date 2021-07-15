@@ -1,52 +1,52 @@
-project_path,version,lines,statement,suspicious,faulty,predict,miss_line
-org/apache/commons/lang3/StringUtils,39,3612,        if (text == null || text.length() == 0 || searchList == null || ,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3615,            return text;,1.0,0,0,0
-org/apache/commons/lang3/StringUtils,39,3619,        if (timeToLive < 0) {,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3623,        int searchLength = searchList.length;,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3624,        int replacementLength = replacementList.length;,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3627,        if (searchLength != replacementLength) {,1.0,0,0,0
-org/apache/commons/lang3/StringUtils,39,3635,        boolean[] noMoreMatchesForReplIndex = new boolean[searchLength];,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3638,        int textIndex = -1;,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3639,        int replaceIndex = -1;,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3640,        int tempIndex = -1;,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3644,        for (int i = 0; i < searchLength; i++) {,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3645,            if (noMoreMatchesForReplIndex[i] || searchList[i] == null || ,1.0,0,0,0
-org/apache/commons/lang3/StringUtils,39,3650,            tempIndex = text.indexOf(searchList[i]);,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3653,            if (tempIndex == -1) {,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3654,                noMoreMatchesForReplIndex[i] = true;,1.0,0,0,0
-org/apache/commons/lang3/StringUtils,39,3656,                if (textIndex == -1 || tempIndex < textIndex) {,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3657,                    textIndex = tempIndex;,1.0,0,0,0
-org/apache/commons/lang3/StringUtils,39,3658,                    replaceIndex = i;,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3665,        if (textIndex == -1) {,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3666,            return text;,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3669,        int start = 0;,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3672,        int increase = 0;,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3675,        for (int i = 0; i < searchList.length; i++) {,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3676,            int greater = replacementList[i].length() - searchList[i].length();,1.0,1,1,1
-org/apache/commons/lang3/StringUtils,39,3677,            if (greater > 0) {,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3682,"        increase = Math.min(increase, text.length() / 5);",1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3684,        StringBuilder buf = new StringBuilder(text.length() + increase);,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3686,        while (textIndex != -1) {,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3688,            for (int i = start; i < textIndex; i++) {,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3689,                buf.append(text.charAt(i));,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3691,            buf.append(replacementList[replaceIndex]);,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3693,            start = textIndex + searchList[replaceIndex].length();,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3695,            textIndex = -1;,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3696,            replaceIndex = -1;,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3697,            tempIndex = -1;,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3700,            for (int i = 0; i < searchLength; i++) {,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3701,                if (noMoreMatchesForReplIndex[i] || searchList[i] == null || ,1.0,0,0,0
-org/apache/commons/lang3/StringUtils,39,3706,"                tempIndex = text.indexOf(searchList[i], start);",1.0,0,0,0
-org/apache/commons/lang3/StringUtils,39,3709,                if (tempIndex == -1) {,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3710,                    noMoreMatchesForReplIndex[i] = true;,1.0,0,0,0
-org/apache/commons/lang3/StringUtils,39,3712,                    if (textIndex == -1 || tempIndex < textIndex) {,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3713,                        textIndex = tempIndex;,1.0,0,0,0
-org/apache/commons/lang3/StringUtils,39,3714,                        replaceIndex = i;,1.0,0,0,0
-org/apache/commons/lang3/StringUtils,39,3721,        int textLength = text.length();,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3722,        for (int i = start; i < textLength; i++) {,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3723,            buf.append(text.charAt(i));,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3725,        String result = buf.toString();,1.0,0,1,0
-org/apache/commons/lang3/StringUtils,39,3726,        if (!repeat) {,1.0,0,0,0
+project_path,version,lines,statement,suspicious,faulty,predict,miss_line,predictions0,predictions1
+org/apache/commons/lang3/StringUtils,39,3612,        if (text == null || text.length() == 0 || searchList == null || ,1.0,0,,0,0.06531143944228929,0.9346885605577112
+org/apache/commons/lang3/StringUtils,39,3615,            return text;,1.0,0,,0,0.35311458382401834,0.6468854161759809
+org/apache/commons/lang3/StringUtils,39,3619,        if (timeToLive < 0) {,1.0,0,,0,0.46308882556622083,0.5369111744337783
+org/apache/commons/lang3/StringUtils,39,3623,        int searchLength = searchList.length;,1.0,0,,0,0.2834359321156106,0.7165640678843905
+org/apache/commons/lang3/StringUtils,39,3624,        int replacementLength = replacementList.length;,1.0,0,,0,0.29781082827309274,0.7021891717269075
+org/apache/commons/lang3/StringUtils,39,3627,        if (searchLength != replacementLength) {,1.0,0,,0,0.4671216482448173,0.5328783517551835
+org/apache/commons/lang3/StringUtils,39,3635,        boolean[] noMoreMatchesForReplIndex = new boolean[searchLength];,1.0,0,,0,0.020444840117426026,0.9795551598825747
+org/apache/commons/lang3/StringUtils,39,3638,        int textIndex = -1;,1.0,0,,0,0.3963787449421331,0.6036212550578667
+org/apache/commons/lang3/StringUtils,39,3639,        int replaceIndex = -1;,1.0,0,,0,0.4017883408176828,0.5982116591823169
+org/apache/commons/lang3/StringUtils,39,3640,        int tempIndex = -1;,1.0,0,,0,0.3963787449421331,0.6036212550578667
+org/apache/commons/lang3/StringUtils,39,3644,        for (int i = 0; i < searchLength; i++) {,1.0,0,,0,0.36783238992848977,0.63216761007151
+org/apache/commons/lang3/StringUtils,39,3645,            if (noMoreMatchesForReplIndex[i] || searchList[i] == null || ,1.0,0,,0,0.0010286303223319925,0.998971369677669
+org/apache/commons/lang3/StringUtils,39,3650,            tempIndex = text.indexOf(searchList[i]);,1.0,0,,0,0.002959636334178142,0.9970403636658205
+org/apache/commons/lang3/StringUtils,39,3653,            if (tempIndex == -1) {,1.0,0,,0,0.44618392401002466,0.5538160759899758
+org/apache/commons/lang3/StringUtils,39,3654,                noMoreMatchesForReplIndex[i] = true;,1.0,0,,0,0.00350041587554867,0.9964995841244527
+org/apache/commons/lang3/StringUtils,39,3656,                if (textIndex == -1 || tempIndex < textIndex) {,1.0,0,,0,0.3224180307837037,0.6775819692162952
+org/apache/commons/lang3/StringUtils,39,3657,                    textIndex = tempIndex;,1.0,0,,0,0.4700234107218565,0.5299765892781452
+org/apache/commons/lang3/StringUtils,39,3658,                    replaceIndex = i;,1.0,0,,0,0.46063833834527657,0.5393616616547222
+org/apache/commons/lang3/StringUtils,39,3665,        if (textIndex == -1) {,1.0,0,,0,0.44294381103053515,0.557056188969465
+org/apache/commons/lang3/StringUtils,39,3666,            return text;,1.0,0,,0,0.35311458382401834,0.6468854161759809
+org/apache/commons/lang3/StringUtils,39,3669,        int start = 0;,1.0,0,,0,0.3520879297590348,0.6479120702409643
+org/apache/commons/lang3/StringUtils,39,3672,        int increase = 0;,1.0,0,,0,0.35733820207810746,0.6426617979218922
+org/apache/commons/lang3/StringUtils,39,3675,        for (int i = 0; i < searchList.length; i++) {,1.0,0,,0,0.20416773440669878,0.7958322655933013
+org/apache/commons/lang3/StringUtils,39,3676,            int greater = replacementList[i].length() - searchList[i].length();,1.0,1,,1,0.0026804416701995265,0.997319558329799
+org/apache/commons/lang3/StringUtils,39,3677,            if (greater > 0) {,1.0,0,,0,0.4607246659529813,0.5392753340470197
+org/apache/commons/lang3/StringUtils,39,3682,"        increase = Math.min(increase, text.length() / 5);",1.0,0,,0,0.6802575032783972,0.31974249672160315
+org/apache/commons/lang3/StringUtils,39,3684,        StringBuilder buf = new StringBuilder(text.length() + increase);,1.0,0,,0,0.14317361490953578,0.8568263850904634
+org/apache/commons/lang3/StringUtils,39,3686,        while (textIndex != -1) {,1.0,0,,0,0.44846022472635383,0.5515397752736466
+org/apache/commons/lang3/StringUtils,39,3688,            for (int i = start; i < textIndex; i++) {,1.0,0,,0,0.20179419072856547,0.7982058092714357
+org/apache/commons/lang3/StringUtils,39,3689,                buf.append(text.charAt(i));,1.0,0,,0,0.7340592323707354,0.26594076762926433
+org/apache/commons/lang3/StringUtils,39,3691,            buf.append(replacementList[replaceIndex]);,1.0,0,,0,0.0028983086073082055,0.9971016913926902
+org/apache/commons/lang3/StringUtils,39,3693,            start = textIndex + searchList[replaceIndex].length();,1.0,0,,0,0.002297398061575963,0.9977026019384234
+org/apache/commons/lang3/StringUtils,39,3695,            textIndex = -1;,1.0,0,,0,0.5351578558586649,0.46484214414133374
+org/apache/commons/lang3/StringUtils,39,3696,            replaceIndex = -1;,1.0,0,,0,0.5408402828014802,0.4591597171985182
+org/apache/commons/lang3/StringUtils,39,3697,            tempIndex = -1;,1.0,0,,0,0.5351578558586649,0.46484214414133374
+org/apache/commons/lang3/StringUtils,39,3700,            for (int i = 0; i < searchLength; i++) {,1.0,0,,0,0.37088888209437365,0.629111117905626
+org/apache/commons/lang3/StringUtils,39,3701,                if (noMoreMatchesForReplIndex[i] || searchList[i] == null || ,1.0,0,,0,0.0011595857841319183,0.9988404142158666
+org/apache/commons/lang3/StringUtils,39,3706,"                tempIndex = text.indexOf(searchList[i], start);",1.0,0,,0,0.003845460319269838,0.9961545396807284
+org/apache/commons/lang3/StringUtils,39,3709,                if (tempIndex == -1) {,1.0,0,,0,0.4759846026800747,0.5240153973199252
+org/apache/commons/lang3/StringUtils,39,3710,                    noMoreMatchesForReplIndex[i] = true;,1.0,0,,0,0.004387681043709341,0.995612318956289
+org/apache/commons/lang3/StringUtils,39,3712,                    if (textIndex == -1 || tempIndex < textIndex) {,1.0,0,,0,0.37381806209276425,0.6261819379072365
+org/apache/commons/lang3/StringUtils,39,3713,                        textIndex = tempIndex;,1.0,0,,0,0.5531987656215931,0.44680123437840835
+org/apache/commons/lang3/StringUtils,39,3714,                        replaceIndex = i;,1.0,0,,0,0.5438571907552288,0.4561428092447707
+org/apache/commons/lang3/StringUtils,39,3721,        int textLength = text.length();,1.0,0,,0,0.5242583346515138,0.4757416653484861
+org/apache/commons/lang3/StringUtils,39,3722,        for (int i = start; i < textLength; i++) {,1.0,0,,0,0.2008077499003531,0.7991922500996463
+org/apache/commons/lang3/StringUtils,39,3723,            buf.append(text.charAt(i));,1.0,0,,0,0.6988711789532179,0.3011288210467812
+org/apache/commons/lang3/StringUtils,39,3725,        String result = buf.toString();,1.0,0,,0,0.5017166892039018,0.4982833107960975
+org/apache/commons/lang3/StringUtils,39,3726,        if (!repeat) {,1.0,0,,0,0.44329929518578925,0.5567007048142099
 org/apache/commons/lang3/StringUtils,39,167,        super();,0.0,0,-1,0
 org/apache/commons/lang3/StringUtils,39,168,    },0.0,0,-1,0
 org/apache/commons/lang3/StringUtils,39,191,        return str == null || str.length() == 0;,0.0,0,-1,0

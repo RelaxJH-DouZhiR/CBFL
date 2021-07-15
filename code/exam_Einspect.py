@@ -12,7 +12,7 @@ import math
 import os
 import threading
 
-FATHER_PATH = 'C:/ssdcode/'  # CBFL文件的父路径
+FATHER_PATH = '/Users/lvlaxjh/code/'  # CBFL文件的父路径
 FATHER_PATH2 = "E:/"  # 存储d4j代码以及频谱文件的父路径
 
 

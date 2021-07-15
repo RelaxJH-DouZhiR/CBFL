@@ -1,599 +1,599 @@
-project_path,version,lines,statement,suspicious,faulty,predict,miss_line
-org/apache/commons/math/dfp/DfpField,59,174,"        this(decimalDigits, true);",0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,175,    },0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,188,"    private DfpField(final int decimalDigits, final boolean computeConstants) {",0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,190,        this.radixDigits = (decimalDigits < 13) ? 4 : (decimalDigits + 3) / 4;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,191,        this.rMode       = RoundingMode.ROUND_HALF_EVEN;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,192,        this.ieeeFlags   = 0;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,193,"        this.zero        = new Dfp(this, 0);",0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,194,"        this.one         = new Dfp(this, 1);",0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,195,"        this.two         = new Dfp(this, 2);",0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,197,        if (computeConstants) {,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,199,            synchronized (DfpField.class) {,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,205,                computeStringConstants((decimalDigits < 67) ? 200 : (3 * decimalDigits));,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,208,"                sqr2           = new Dfp(this, sqr2String);",0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,209,                sqr2Split      = split(sqr2String);,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,210,"                sqr2Reciprocal = new Dfp(this, sqr2ReciprocalString);",0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,211,"                sqr3           = new Dfp(this, sqr3String);",0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,212,"                sqr3Reciprocal = new Dfp(this, sqr3ReciprocalString);",0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,213,"                pi             = new Dfp(this, piString);",0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,214,                piSplit        = split(piString);,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,215,"                e              = new Dfp(this, eString);",0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,216,                eSplit         = split(eString);,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,217,"                ln2            = new Dfp(this, ln2String);",0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,218,                ln2Split       = split(ln2String);,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,219,"                ln5            = new Dfp(this, ln5String);",0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,220,                ln5Split       = split(ln5String);,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,221,"                ln10           = new Dfp(this, ln10String);",0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,223,            },0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,226,            sqr2           = null;,0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,227,            sqr2Split      = null;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,228,            sqr2Reciprocal = null;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,229,            sqr3           = null;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,230,            sqr3Reciprocal = null;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,231,            pi             = null;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,232,            piSplit        = null;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,233,            e              = null;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,234,            eSplit         = null;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,235,            ln2            = null;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,236,            ln2Split       = null;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,237,            ln5            = null;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,238,            ln5Split       = null;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,239,            ln10           = null;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,242,    },0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,248,        return radixDigits;,0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,266,        return rMode;,0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,328,        ieeeFlags |= bits & (FLAG_INVALID | FLAG_DIV_ZERO | FLAG_OVERFLOW | FLAG_UNDERFLOW | FLAG_INEXACT);,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,329,    },0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,400,        return zero;,0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,522,      Dfp result[] = new Dfp[2];,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,523,      boolean leading = true;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,524,      int sp = 0;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,525,      int sig = 0;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,527,      char[] buf = new char[a.length()];,0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,529,      for (int i = 0; i < buf.length; i++) {,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,530,        buf[i] = a.charAt(i);,0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,532,        if (buf[i] >= '1' && buf[i] <= '9') {,0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,533,            leading = false;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,536,        if (buf[i] == '.') {,0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,537,          sig += (400 - sig) % 4;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,538,          leading = false;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,541,        if (sig == (radixDigits / 2) * 4) {,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,542,          sp = i;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,543,          break;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,546,        if (buf[i] >= '0' && buf[i] <= '9' && !leading) {,0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,547,            sig ++;,0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,551,"      result[0] = new Dfp(this, new String(buf, 0, sp));",0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,553,      for (int i = 0; i < buf.length; i++) {,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,554,        buf[i] = a.charAt(i);,0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,555,        if (buf[i] >= '0' && buf[i] <= '9' && i < sp) {,0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,556,            buf[i] = '0';,0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,560,"      result[1] = new Dfp(this, new String(buf));",0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,562,      return result;,0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,570,        if (sqr2String == null || sqr2String.length() < highPrecisionDecimalDigits - 3) {,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,573,"            final DfpField highPrecisionField = new DfpField(highPrecisionDecimalDigits, false);",0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,574,"            final Dfp highPrecisionOne        = new Dfp(highPrecisionField, 1);",0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,575,"            final Dfp highPrecisionTwo        = new Dfp(highPrecisionField, 2);",0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,576,"            final Dfp highPrecisionThree      = new Dfp(highPrecisionField, 3);",0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,578,            final Dfp highPrecisionSqr2 = highPrecisionTwo.sqrt();,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,579,            sqr2String           = highPrecisionSqr2.toString();,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,580,            sqr2ReciprocalString = highPrecisionOne.divide(highPrecisionSqr2).toString();,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,582,            final Dfp highPrecisionSqr3 = highPrecisionThree.sqrt();,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,583,            sqr3String           = highPrecisionSqr3.toString();,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,584,            sqr3ReciprocalString = highPrecisionOne.divide(highPrecisionSqr3).toString();,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,586,"            piString   = computePi(highPrecisionOne, highPrecisionTwo, highPrecisionThree).toString();",0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,587,"            eString    = computeExp(highPrecisionOne, highPrecisionOne).toString();",0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,588,"            ln2String  = computeLn(highPrecisionTwo, highPrecisionOne, highPrecisionTwo).toString();",0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,589,"            ln5String  = computeLn(new Dfp(highPrecisionField, 5),  highPrecisionOne, highPrecisionTwo).toString();",0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,590,"            ln10String = computeLn(new Dfp(highPrecisionField, 10), highPrecisionOne, highPrecisionTwo).toString();",0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,593,    },0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,603,        Dfp sqrt2   = two.sqrt();,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,604,        Dfp yk      = sqrt2.subtract(one);,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,605,        Dfp four    = two.add(two);,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,606,        Dfp two2kp3 = two;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,607,        Dfp ak      = two.multiply(three.subtract(two.multiply(sqrt2)));,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,615,        for (int i = 1; i < 20; i++) {,0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,616,            final Dfp ykM1 = yk;,0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,618,            final Dfp y2         = yk.multiply(yk);,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,619,            final Dfp oneMinusY4 = one.subtract(y2.multiply(y2));,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,620,            final Dfp s          = oneMinusY4.sqrt().sqrt();,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,621,            yk = one.subtract(s).divide(one.add(s));,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,623,            two2kp3 = two2kp3.multiply(four);,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,625,            final Dfp p = one.add(yk);,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,626,            final Dfp p2 = p.multiply(p);,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,627,            ak = ak.multiply(p2.multiply(p2)).subtract(two2kp3.multiply(yk).multiply(one.add(yk).add(yk.multiply(yk))));,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,629,            if (yk.equals(ykM1)) {,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,630,                break;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,634,        return one.divide(ak);,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,645,        Dfp y  = new Dfp(one);,0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,646,        Dfp py = new Dfp(one);,0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,647,        Dfp f  = new Dfp(one);,0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,648,        Dfp fi = new Dfp(one);,0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,649,        Dfp x  = new Dfp(one);,0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,651,        for (int i = 0; i < 10000; i++) {,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,652,            x = x.multiply(a);,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,653,            y = y.add(x.divide(f));,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,654,            fi = fi.add(one);,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,655,            f = f.multiply(fi);,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,656,            if (y.equals(py)) {,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,657,                break;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,659,            py = new Dfp(y);,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,662,        return y;,0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,728,        int den = 1;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,729,"        Dfp x = a.add(new Dfp(a.getField(), -1)).divide(a.add(one));",0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,731,        Dfp y = new Dfp(x);,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,732,        Dfp num = new Dfp(x);,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,733,        Dfp py = new Dfp(y);,0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,734,        for (int i = 0; i < 10000; i++) {,0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,735,            num = num.multiply(x);,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,736,            num = num.multiply(x);,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,737,            den = den + 2;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,738,            Dfp t = num.divide(den);,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,739,            y = y.add(t);,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,740,            if (y.equals(py)) {,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,741,                break;,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,743,            py = new Dfp(y);,0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,746,        return y.multiply(two);,0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,29,    public enum RoundingMode {,0.03571,0,0,0
-org/apache/commons/math/dfp/DfpField,59,32,"        ROUND_DOWN,",0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,35,"        ROUND_UP,",0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,38,"        ROUND_HALF_UP,",0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,41,"        ROUND_HALF_DOWN,",0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,46,"        ROUND_HALF_EVEN,",0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,49,"        ROUND_HALF_ODD,",0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,52,"        ROUND_CEIL,",0.03571,0,1,0
-org/apache/commons/math/dfp/DfpField,59,55,        ROUND_FLOOR;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,202,"        this(field, (long) x);",0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,203,    },0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,209,"    protected Dfp(final DfpField field, long x) {",0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,212,        mant = new int[field.getRadixDigits()];,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,213,        nans = FINITE;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,214,        this.field = field;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,216,        boolean isLongMin = false;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,217,        if (x == Long.MIN_VALUE) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,225,        if (x < 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,226,            sign = -1;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,227,            x = -x;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,229,            sign = 1;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,232,        exp = 0;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,233,        while (x != 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,234,"            System.arraycopy(mant, mant.length - exp, mant, mant.length - 1 - exp, exp);",0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,235,            mant[mant.length - 1] = (int) (x % RADIX);,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,236,            x /= RADIX;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,237,            exp++;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,240,        if (isLongMin) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,250,    },0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,318,    public Dfp(final Dfp d) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,319,        mant  = d.mant.clone();,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,320,        sign  = d.sign;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,321,        exp   = d.exp;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,322,        nans  = d.nans;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,323,        field = d.field;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,324,    },0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,330,"    protected Dfp(final DfpField field, final String s) {",0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,333,        mant = new int[field.getRadixDigits()];,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,334,        sign = 1;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,335,        exp = 0;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,336,        nans = FINITE;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,337,        this.field = field;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,339,        boolean decimalFound = false;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,340,        final int rsize = 4;   // size of radix in decimal digits,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,341,        final int offset = 4;  // Starting offset into Striped,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,342,        final char[] striped = new char[getRadixDigits() * rsize + offset * 2];,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,345,        if (s.equals(POS_INFINITY_STRING)) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,351,        if (s.equals(NEG_INFINITY_STRING)) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,357,        if (s.equals(NAN_STRING)) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,364,"        int p = s.indexOf(""e"");",0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,365,        if (p == -1) { // try upper case?,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,366,"            p = s.indexOf(""E"");",0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,370,        int sciexp = 0;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,371,        if (p != -1) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,393,            fpdecimal = s;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,397,"        if (fpdecimal.indexOf(""-"") !=  -1) {",0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,402,        p = 0;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,405,        int decimalPos = 0;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,407,            if (fpdecimal.charAt(p) >= '1' && fpdecimal.charAt(p) <= '9') {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,408,                break;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,411,            if (decimalFound && fpdecimal.charAt(p) == '0') {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,412,                decimalPos--;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,415,            if (fpdecimal.charAt(p) == '.') {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,416,                decimalFound = true;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,419,            p++;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,421,            if (p == fpdecimal.length()) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,427,        int q = offset;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,428,        striped[0] = '0';,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,429,        striped[1] = '0';,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,430,        striped[2] = '0';,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,431,        striped[3] = '0';,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,432,        int significantDigits=0;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,434,            if (p == (fpdecimal.length())) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,435,                break;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,439,            if (q == mant.length*rsize+offset+1) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,440,                break;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,443,            if (fpdecimal.charAt(p) == '.') {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,444,                decimalFound = true;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,445,                decimalPos = significantDigits;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,446,                p++;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,447,                continue;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,450,            if (fpdecimal.charAt(p) < '0' || fpdecimal.charAt(p) > '9') {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,455,            striped[q] = fpdecimal.charAt(p);,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,456,            q++;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,457,            p++;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,458,            significantDigits++;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,463,        if (decimalFound && q != offset) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,465,                q--;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,466,                if (q == offset) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,469,                if (striped[q] == '0') {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,470,                    significantDigits--;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,478,        if (decimalFound && significantDigits == 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,483,        if (!decimalFound) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,488,        q = offset;  // set q to point to first sig digit,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,489,        p = significantDigits-1+offset;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,491,        int trailingZeros = 0;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,492,        while (p > q) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,493,            if (striped[p] != '0') {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,494,                break;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,501,        int i = ((rsize * 100) - decimalPos - sciexp % rsize) % rsize;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,502,        q -= i;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,503,        decimalPos += i;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,506,        while ((p - q) < (mant.length * rsize)) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,507,            for (i = 0; i < rsize; i++) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,508,                striped[++p] = '0';,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,514,        for (i = mant.length - 1; i >= 0; i--) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,515,            mant[i] = (striped[q]   - '0') * 1000 +,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,519,            q += 4;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,523,        exp = (decimalPos+sciexp) / rsize;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,525,        if (q < striped.length) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,527,            round((striped[q] - '0')*1000);,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,530,    },0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,594,        if (field.getRadixDigits() != d.field.getRadixDigits()) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,601,        return new Dfp(d);,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,632,        return field;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,639,        return field.getRadixDigits();,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,646,        return field.getZero();,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,666,        for (int i = mant.length - 1; i > 0; i--) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,667,            mant[i] = mant[i-1];,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,669,        mant[0] = 0;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,670,        exp--;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,671,    },0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,678,        for (int i = 0; i < mant.length - 1; i++) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,679,            mant[i] = mant[i+1];,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,681,        mant[mant.length - 1] = 0;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,682,        exp++;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,683,    },0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,694,        int lostdigit = 0;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,695,        boolean inexact = false;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,697,        int diff = exp - e;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,699,        int adiff = diff;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,700,        if (adiff < 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,701,            adiff = -adiff;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,704,        if (diff == 0) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,705,            return 0;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,708,        if (adiff > (mant.length + 1)) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,710,"            Arrays.fill(mant, 0);",0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,711,            exp = e;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,713,            field.setIEEEFlagsBits(DfpField.FLAG_INEXACT);,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,714,"            dotrap(DfpField.FLAG_INEXACT, ALIGN_TRAP, this, this);",0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,716,            return 0;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,719,        for (int i = 0; i < adiff; i++) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,720,            if (diff < 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,725,                if (lostdigit != 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,726,                    inexact = true;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,729,                lostdigit = mant[0];,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,731,                shiftRight();,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,737,        if (inexact) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,738,            field.setIEEEFlagsBits(DfpField.FLAG_INEXACT);,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,739,"            dotrap(DfpField.FLAG_INEXACT, ALIGN_TRAP, this, this);",0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,742,        return lostdigit;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,753,        if (field.getRadixDigits() != x.field.getRadixDigits()) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,762,        if (isNaN() || x.isNaN()) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,768,"        return compare(this, x) < 0;",0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,778,        if (field.getRadixDigits() != x.field.getRadixDigits()) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,787,        if (isNaN() || x.isNaN()) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,793,"        return compare(this, x) > 0;",0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,807,        return (nans == QNAN) || (nans == SNAN);,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,817,        if (other instanceof Dfp) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,818,            final Dfp x = (Dfp) other;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,819,            if (isNaN() || x.isNaN() || field.getRadixDigits() != x.field.getRadixDigits()) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,823,"            return compare(this, x) == 0;",0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,844,        if (isNaN() || x.isNaN() || field.getRadixDigits() != x.field.getRadixDigits()) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,848,        return greaterThan(x) || lessThan(x);,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,859,        if (a.mant[a.mant.length - 1] == 0 && b.mant[b.mant.length - 1] == 0 &&,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,861,            return 0;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,864,        if (a.sign != b.sign) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,873,        if (a.nans == INFINITE && b.nans == FINITE) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,877,        if (a.nans == FINITE && b.nans == INFINITE) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,881,        if (a.nans == INFINITE && b.nans == INFINITE) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,886,        if (b.mant[b.mant.length-1] != 0 && a.mant[b.mant.length-1] != 0) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,887,            if (a.exp < b.exp) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,888,                return -a.sign;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,891,            if (a.exp > b.exp) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,892,                return a.sign;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,897,        for (int i = a.mant.length - 1; i >= 0; i--) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,898,            if (a.mant[i] > b.mant[i]) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,899,                return a.sign;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,902,            if (a.mant[i] < b.mant[i]) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,903,                return -a.sign;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,907,        return 0;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1144,        extra = RADIX-extra;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1145,        for (int i = 0; i < mant.length; i++) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1146,            mant[i] = RADIX-mant[i]-1;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1149,        int rh = extra / RADIX;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1150,        extra = extra - rh * RADIX;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1151,        for (int i = 0; i < mant.length; i++) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1152,            final int r = mant[i] + rh;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1153,            rh = r / RADIX;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1154,            mant[i] = r - rh * RADIX;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1157,        return extra;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1167,        if (field.getRadixDigits() != x.field.getRadixDigits()) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1175,        if (nans != FINITE || x.nans != FINITE) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1206,        Dfp a = newInstance(this);,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1207,        Dfp b = newInstance(x);,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1210,        Dfp result = newInstance(getZero());,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1213,        final byte asign = a.sign;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1214,        final byte bsign = b.sign;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1216,        a.sign = 1;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1217,        b.sign = 1;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1220,        byte rsign = bsign;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1221,"        if (compare(a, b) > 0) {",0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1222,            rsign = asign;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1228,        if (b.mant[mant.length-1] == 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1229,            b.exp = a.exp;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1232,        if (a.mant[mant.length-1] == 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1237,        int aextradigit = 0;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1238,        int bextradigit = 0;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1239,        if (a.exp < b.exp) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1240,            aextradigit = a.align(b.exp);,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1242,            bextradigit = b.align(a.exp);,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1246,        if (asign != bsign) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1247,            if (asign == rsign) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1248,                bextradigit = b.complement(bextradigit);,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1250,                aextradigit = a.complement(aextradigit);,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1255,        int rh = 0; /* acts as a carry */,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1256,        for (int i = 0; i < mant.length; i++) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1257,            final int r = a.mant[i]+b.mant[i]+rh;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1258,            rh = r / RADIX;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1259,            result.mant[i] = r - rh * RADIX;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1261,        result.exp = a.exp;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1262,        result.sign = rsign;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1267,        if (rh != 0 && (asign == bsign)) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1268,            final int lostdigit = result.mant[0];,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1269,            result.shiftRight();,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1270,            result.mant[mant.length-1] = rh;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1271,            final int excp = result.round(lostdigit);,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1272,            if (excp != 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1273,"                result = dotrap(excp, ADD_TRAP, x, result);",0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1278,        for (int i = 0; i < mant.length; i++) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1279,            if (result.mant[mant.length-1] != 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1280,                break;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1282,            result.shiftLeft();,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1283,            if (i == 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1284,                result.mant[0] = aextradigit+bextradigit;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1285,                aextradigit = 0;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1286,                bextradigit = 0;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1291,        if (result.mant[mant.length-1] == 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1292,            result.exp = 0;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1294,            if (asign != bsign) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1296,                result.sign = 1;  // Per IEEE 854-1987 Section 6.3,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1301,        final int excp = result.round(aextradigit + bextradigit);,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1302,        if (excp != 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1303,"            result = dotrap(excp, ADD_TRAP, x, result);",0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1306,        return result;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1313,        Dfp result = newInstance(this);,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1314,        result.sign = (byte) - result.sign;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1315,        return result;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1323,        return add(x.negate());,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1331,        boolean inc = false;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1332,        switch (field.getRoundingMode()) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1350,                inc = n > 5000 || (n == 5000 && (mant[0] & 1) == 1);  // round half-even,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1351,                break;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1367,        if (inc) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1369,            int rh = 1;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1370,            for (int i = 0; i < mant.length; i++) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1371,                final int r = mant[i] + rh;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1372,                rh = r / RADIX;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1373,                mant[i] = r - rh * RADIX;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1376,            if (rh != 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1383,        if (exp < MIN_EXP) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1389,        if (exp > MAX_EXP) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1395,        if (n != 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1397,            field.setIEEEFlagsBits(DfpField.FLAG_INEXACT);,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1398,            return DfpField.FLAG_INEXACT;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1401,        return 0;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1412,        if (field.getRadixDigits() != x.field.getRadixDigits()) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1419,        Dfp result = newInstance(getZero());,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1422,        if (nans != FINITE || x.nans != FINITE) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1459,        int[] product = new int[mant.length*2];  // Big enough to hold even the largest result,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1461,        for (int i = 0; i < mant.length; i++) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1462,            int rh = 0;  // acts as a carry,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1463,            for (int j=0; j<mant.length; j++) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1464,                int r = mant[i] * x.mant[j];    // multiply the 2 digits,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1465,                r = r + product[i+j] + rh;  // add to the product digit with carry in,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1467,                rh = r / RADIX;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1468,                product[i+j] = r - rh * RADIX;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1470,            product[i+mant.length] = rh;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1474,"        int md = mant.length * 2 - 1;  // default, in case result is zero",0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1475,        for (int i = mant.length * 2 - 1; i >= 0; i--) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1476,            if (product[i] != 0) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1477,                md = i;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1478,                break;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1483,        for (int i = 0; i < mant.length; i++) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1484,            result.mant[mant.length - i - 1] = product[md - i];,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1488,        result.exp = exp + x.exp + md - 2 * mant.length + 1;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1489,        result.sign = (byte)((sign == x.sign)?1:-1);,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1491,        if (result.mant[mant.length-1] == 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1493,            result.exp = 0;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1497,        if (md > (mant.length-1)) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1498,            excp = result.round(product[md-mant.length]);,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1503,        if (excp != 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1504,"            result = dotrap(excp, MULTIPLY_TRAP, x, result);",0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1507,        return result;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1584,        int trial=0;    // trial quotient digit,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1587,        int md=0;       // most sig digit in result,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1591,        if (field.getRadixDigits() != divisor.field.getRadixDigits()) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1598,        Dfp result = newInstance(getZero());,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1601,        if (nans != FINITE || divisor.nans != FINITE) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1632,        if (divisor.mant[mant.length-1] == 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1641,        dividend = new int[mant.length+1];  // one extra digit needed,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1642,"        quotient = new int[mant.length+2];  // two extra digits needed 1 for overflow, 1 for rounding",0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1643,        remainder = new int[mant.length+1]; // one extra digit needed,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1647,        dividend[mant.length] = 0;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1648,        quotient[mant.length] = 0;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1649,        quotient[mant.length+1] = 0;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1650,        remainder[mant.length] = 0;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1655,        for (int i = 0; i < mant.length; i++) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1656,            dividend[i] = mant[i];,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1657,            quotient[i] = 0;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1658,            remainder[i] = 0;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1662,        nsqd = 0;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1663,        for (qd = mant.length+1; qd >= 0; qd--) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1667,            final int divMsb = dividend[mant.length]*RADIX+dividend[mant.length-1];,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1668,            int min = divMsb       / (divisor.mant[mant.length-1]+1);,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1669,            int max = (divMsb + 1) / divisor.mant[mant.length-1];,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1671,            trialgood = false;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1672,            while (!trialgood) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1674,                trial = (min+max)/2;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1677,                int rh = 0;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1678,                for (int i = 0; i < mant.length + 1; i++) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1679,                    int dm = (i<mant.length)?divisor.mant[i]:0;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1680,                    final int r = (dm * trial) + rh;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1681,                    rh = r / RADIX;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1682,                    remainder[i] = r - rh * RADIX;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1686,                rh = 1;  // carry in to aid the subtraction,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1687,                for (int i = 0; i < mant.length + 1; i++) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1688,                    final int r = ((RADIX-1) - remainder[i]) + dividend[i] + rh;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1689,                    rh = r / RADIX;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1690,                    remainder[i] = r - rh * RADIX;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1694,                if (rh == 0) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1696,                    max = trial-1;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1697,                    continue;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1701,                minadj = (remainder[mant.length] * RADIX)+remainder[mant.length-1];,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1702,                minadj = minadj / (divisor.mant[mant.length-1]+1);,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1704,                if (minadj >= 2) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1705,                    min = trial+minadj;  // update the minimum,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1706,                    continue;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1711,                trialgood = false;  // assume false,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1712,                for (int i = mant.length - 1; i >= 0; i--) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1713,                    if (divisor.mant[i] > remainder[i]) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1714,                        trialgood = true;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1716,                    if (divisor.mant[i] < remainder[i]) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1717,                        break;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1721,                if (remainder[mant.length] != 0) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1722,                    trialgood = false;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1725,                if (trialgood == false) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1726,                    min = trial+1;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1728,            },0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1731,            quotient[qd] = trial;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1732,            if (trial != 0 || nsqd != 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1733,                nsqd++;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1736,            if (field.getRoundingMode() == DfpField.RoundingMode.ROUND_DOWN && nsqd == mant.length) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1741,            if (nsqd > mant.length) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1743,                break;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1747,            dividend[0] = 0;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1748,            for (int i = 0; i < mant.length; i++) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1749,                dividend[i + 1] = remainder[i];,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1754,        md = mant.length;  // default,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1755,        for (int i = mant.length + 1; i >= 0; i--) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1756,            if (quotient[i] != 0) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1757,                md = i;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1758,                break;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1763,        for (int i=0; i<mant.length; i++) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1764,            result.mant[mant.length-i-1] = quotient[md-i];,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1768,        result.exp = exp - divisor.exp + md - mant.length;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1769,        result.sign = (byte) ((sign == divisor.sign) ? 1 : -1);,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1771,"        if (result.mant[mant.length-1] == 0) { // if result is zero, set exp to zero",0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1772,            result.exp = 0;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1775,        if (md > (mant.length-1)) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1776,            excp = result.round(quotient[md-mant.length]);,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1781,        if (excp != 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1782,"            result = dotrap(excp, DIVIDE_TRAP, divisor, result);",0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1785,        return result;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1796,        if (nans != FINITE) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1807,        if (divisor == 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1817,        if (divisor < 0 || divisor >= RADIX) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1825,        Dfp result = newInstance(this);,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1827,        int rl = 0;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1828,        for (int i = mant.length-1; i >= 0; i--) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1829,            final int r = rl*RADIX + result.mant[i];,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1830,            final int rh = r / divisor;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1831,            rl = r - rh * divisor;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1832,            result.mant[i] = rh;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1835,        if (result.mant[mant.length-1] == 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1837,            result.shiftLeft();,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1838,            final int r = rl * RADIX;        // compute the next digit and put it in,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1839,            final int rh = r / divisor;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1840,            rl = r - rh * divisor;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1841,            result.mant[0] = rh;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1844,        final int excp = result.round(rl * RADIX / divisor);  // do the rounding,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1845,        if (excp != 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1846,"            result = dotrap(excp, DIVIDE_TRAP, result, result);",0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1849,        return result;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1859,        if (nans == FINITE && mant[mant.length-1] == 0) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1864,        if (nans != FINITE) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1884,        if (sign == -1) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1895,        Dfp x = newInstance(this);,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1898,        if (x.exp < -1 || x.exp > 1) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1903,        switch (x.mant[mant.length-1] / 2000) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1905,                x.mant[mant.length-1] = x.mant[mant.length-1]/2+1;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1906,                break;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1914,                x.mant[mant.length-1] = 3000;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1917,        Dfp dx = newInstance(x);,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1922,        Dfp px  = getZero();,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1923,        Dfp ppx = getZero();,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1924,        while (x.unequal(px)) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1925,            dx = newInstance(x);,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1926,            dx.sign = -1;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1927,            dx = dx.add(this.divide(x));,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1928,            dx = dx.divide(2);,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1929,            ppx = px;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1930,            px = x;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1931,            x = x.add(dx);,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1933,            if (x.equals(ppx)) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1940,            if (dx.mant[mant.length-1] == 0) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1941,                break;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1945,        return x;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1954,        if (nans != FINITE) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1963,        if (exp > mant.length || exp < -1) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,1967,        return dfp2string();,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,2056,        char buffer[] = new char[mant.length*4 + 20];,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,2057,        int p = 1;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,2059,        int e = exp;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,2060,        boolean pointInserted = false;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,2062,        buffer[0] = ' ';,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,2064,        if (e <= 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,2065,            buffer[p++] = '0';,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,2066,            buffer[p++] = '.';,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,2067,            pointInserted = true;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,2070,        while (e < 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,2078,        for (int i = mant.length - 1; i >= 0; i--) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,2079,            buffer[p++] = (char) ((mant[i] / 1000) + '0');,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,2080,            buffer[p++] = (char) (((mant[i] / 100) % 10) + '0');,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,2081,            buffer[p++] = (char) (((mant[i] / 10) % 10) + '0');,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,2082,            buffer[p++] = (char) (((mant[i]) % 10) + '0');,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,2083,            if (--e == 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,2084,                buffer[p++] = '.';,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,2085,                pointInserted = true;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,2089,        while (e > 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,2097,        if (!pointInserted) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,2103,        q = 1;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,2104,        while (buffer[q] == '0') {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,2105,            q++;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,2107,        if (buffer[q] == '.') {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,2108,            q--;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,2112,        while (buffer[p-1] == '0') {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,2113,            p--;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,2117,        if (sign < 0) {,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,2121,"        return new String(buffer, q, p - q);",0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,2133,        Dfp def = result;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,2135,        switch (type) {,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,2184,            default: def = result; break;,0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,2187,"        return trap(type, what, oper, def, result);",0.03571,0,1,0
-org/apache/commons/math/dfp/Dfp,59,2203,        return def;,0.03571,0,0,0
-org/apache/commons/math/dfp/Dfp,59,1000,            switch (rmode) {,0.03571,0,1,0
-org/apache/commons/math/random/MersenneTwister,59,131,    public MersenneTwister(long seed) {,0.03571,0,0,0
-org/apache/commons/math/random/MersenneTwister,59,132,        mt = new int[N];,0.03571,0,0,0
-org/apache/commons/math/random/MersenneTwister,59,133,        setSeed(seed);,0.03571,0,1,0
-org/apache/commons/math/random/MersenneTwister,59,134,    },0.03571,0,0,0
+project_path,version,lines,statement,suspicious,faulty,predict,miss_line,predictions0,predictions1
+org/apache/commons/math/dfp/DfpField,59,174,"        this(decimalDigits, true);",0.03571,0,,0,0.280389673447599,0.7196103265524003
+org/apache/commons/math/dfp/DfpField,59,175,    },0.03571,0,,0,0.14336364830926523,0.8566363516907342
+org/apache/commons/math/dfp/DfpField,59,188,"    private DfpField(final int decimalDigits, final boolean computeConstants) {",0.03571,0,,0,0.8813372888392711,0.11866271116072934
+org/apache/commons/math/dfp/DfpField,59,190,        this.radixDigits = (decimalDigits < 13) ? 4 : (decimalDigits + 3) / 4;,0.03571,0,,0,0.8778958433351912,0.1221041566648078
+org/apache/commons/math/dfp/DfpField,59,191,        this.rMode       = RoundingMode.ROUND_HALF_EVEN;,0.03571,0,,0,0.37792156130274257,0.6220784386972563
+org/apache/commons/math/dfp/DfpField,59,192,        this.ieeeFlags   = 0;,0.03571,0,,0,0.2340286365738418,0.7659713634261581
+org/apache/commons/math/dfp/DfpField,59,193,"        this.zero        = new Dfp(this, 0);",0.03571,0,,0,0.6564823695813807,0.3435176304186205
+org/apache/commons/math/dfp/DfpField,59,194,"        this.one         = new Dfp(this, 1);",0.03571,0,,0,0.6564823695813807,0.3435176304186205
+org/apache/commons/math/dfp/DfpField,59,195,"        this.two         = new Dfp(this, 2);",0.03571,0,,0,0.6564823695813807,0.3435176304186205
+org/apache/commons/math/dfp/DfpField,59,197,        if (computeConstants) {,0.03571,0,,0,0.24842901283928434,0.7515709871607165
+org/apache/commons/math/dfp/DfpField,59,199,            synchronized (DfpField.class) {,0.03571,0,,0,0.3393740843172378,0.6606259156827607
+org/apache/commons/math/dfp/DfpField,59,205,                computeStringConstants((decimalDigits < 67) ? 200 : (3 * decimalDigits));,0.03571,0,,0,0.6412182535513083,0.35878174644869043
+org/apache/commons/math/dfp/DfpField,59,208,"                sqr2           = new Dfp(this, sqr2String);",0.03571,0,,0,0.49513077756667684,0.5048692224333217
+org/apache/commons/math/dfp/DfpField,59,209,                sqr2Split      = split(sqr2String);,0.03571,0,,0,0.22421869845381442,0.7757813015461847
+org/apache/commons/math/dfp/DfpField,59,210,"                sqr2Reciprocal = new Dfp(this, sqr2ReciprocalString);",0.03571,0,,0,0.5355899230753273,0.46441007692467123
+org/apache/commons/math/dfp/DfpField,59,211,"                sqr3           = new Dfp(this, sqr3String);",0.03571,0,,0,0.49513077756667684,0.5048692224333217
+org/apache/commons/math/dfp/DfpField,59,212,"                sqr3Reciprocal = new Dfp(this, sqr3ReciprocalString);",0.03571,0,,0,0.5355899230753273,0.46441007692467123
+org/apache/commons/math/dfp/DfpField,59,213,"                pi             = new Dfp(this, piString);",0.03571,0,,0,0.48871301592212474,0.5112869840778749
+org/apache/commons/math/dfp/DfpField,59,214,                piSplit        = split(piString);,0.03571,0,,0,0.22132812398004073,0.778671876019958
+org/apache/commons/math/dfp/DfpField,59,215,"                e              = new Dfp(this, eString);",0.03571,0,,0,0.48571577235325203,0.5142842276467494
+org/apache/commons/math/dfp/DfpField,59,216,                eSplit         = split(eString);,0.03571,0,,0,0.22003737851195404,0.779962621488046
+org/apache/commons/math/dfp/DfpField,59,217,"                ln2            = new Dfp(this, ln2String);",0.03571,0,,0,0.49185139939332695,0.5081486006066738
+org/apache/commons/math/dfp/DfpField,59,218,                ln2Split       = split(ln2String);,0.03571,0,,0,0.22272146348599142,0.77727853651401
+org/apache/commons/math/dfp/DfpField,59,219,"                ln5            = new Dfp(this, ln5String);",0.03571,0,,0,0.49185139939332695,0.5081486006066738
+org/apache/commons/math/dfp/DfpField,59,220,                ln5Split       = split(ln5String);,0.03571,0,,0,0.22272146348599142,0.77727853651401
+org/apache/commons/math/dfp/DfpField,59,221,"                ln10           = new Dfp(this, ln10String);",0.03571,0,,0,0.49513077756667684,0.5048692224333217
+org/apache/commons/math/dfp/DfpField,59,223,            },0.03571,0,,0,0.14336364830926523,0.8566363516907342
+org/apache/commons/math/dfp/DfpField,59,226,            sqr2           = null;,0.03571,0,,0,0.1564982778325619,0.8435017221674389
+org/apache/commons/math/dfp/DfpField,59,227,            sqr2Split      = null;,0.03571,0,,0,0.1564982778325619,0.8435017221674389
+org/apache/commons/math/dfp/DfpField,59,228,            sqr2Reciprocal = null;,0.03571,0,,0,0.1564982778325619,0.8435017221674389
+org/apache/commons/math/dfp/DfpField,59,229,            sqr3           = null;,0.03571,0,,0,0.1564982778325619,0.8435017221674389
+org/apache/commons/math/dfp/DfpField,59,230,            sqr3Reciprocal = null;,0.03571,0,,0,0.1564982778325619,0.8435017221674389
+org/apache/commons/math/dfp/DfpField,59,231,            pi             = null;,0.03571,0,,0,0.1564982778325619,0.8435017221674389
+org/apache/commons/math/dfp/DfpField,59,232,            piSplit        = null;,0.03571,0,,0,0.1564982778325619,0.8435017221674389
+org/apache/commons/math/dfp/DfpField,59,233,            e              = null;,0.03571,0,,0,0.1564982778325619,0.8435017221674389
+org/apache/commons/math/dfp/DfpField,59,234,            eSplit         = null;,0.03571,0,,0,0.1564982778325619,0.8435017221674389
+org/apache/commons/math/dfp/DfpField,59,235,            ln2            = null;,0.03571,0,,0,0.1564982778325619,0.8435017221674389
+org/apache/commons/math/dfp/DfpField,59,236,            ln2Split       = null;,0.03571,0,,0,0.1564982778325619,0.8435017221674389
+org/apache/commons/math/dfp/DfpField,59,237,            ln5            = null;,0.03571,0,,0,0.1564982778325619,0.8435017221674389
+org/apache/commons/math/dfp/DfpField,59,238,            ln5Split       = null;,0.03571,0,,0,0.1564982778325619,0.8435017221674389
+org/apache/commons/math/dfp/DfpField,59,239,            ln10           = null;,0.03571,0,,0,0.1564982778325619,0.8435017221674389
+org/apache/commons/math/dfp/DfpField,59,242,    },0.03571,0,,0,0.14336364830926523,0.8566363516907342
+org/apache/commons/math/dfp/DfpField,59,248,        return radixDigits;,0.03571,0,,0,0.14818080545895249,0.8518191945410472
+org/apache/commons/math/dfp/DfpField,59,266,        return rMode;,0.03571,0,,0,0.149517930024929,0.8504820699750705
+org/apache/commons/math/dfp/DfpField,59,328,        ieeeFlags |= bits & (FLAG_INVALID | FLAG_DIV_ZERO | FLAG_OVERFLOW | FLAG_UNDERFLOW | FLAG_INEXACT);,0.03571,0,,0,0.992525153322986,0.007474846677014406
+org/apache/commons/math/dfp/DfpField,59,329,    },0.03571,0,,0,0.14336364830926523,0.8566363516907342
+org/apache/commons/math/dfp/DfpField,59,400,        return zero;,0.03571,0,,0,0.1499921186834083,0.8500078813165928
+org/apache/commons/math/dfp/DfpField,59,522,      Dfp result[] = new Dfp[2];,0.03571,0,,0,0.9637815474871929,0.03621845251280697
+org/apache/commons/math/dfp/DfpField,59,523,      boolean leading = true;,0.03571,0,,0,0.2134332424060055,0.7865667575939951
+org/apache/commons/math/dfp/DfpField,59,524,      int sp = 0;,0.03571,0,,0,0.13560905445620988,0.8643909455437901
+org/apache/commons/math/dfp/DfpField,59,525,      int sig = 0;,0.03571,0,,0,0.13510748324710753,0.8648925167528941
+org/apache/commons/math/dfp/DfpField,59,527,      char[] buf = new char[a.length()];,0.03571,0,,0,0.3205201082757791,0.679479891724222
+org/apache/commons/math/dfp/DfpField,59,529,      for (int i = 0; i < buf.length; i++) {,0.03571,0,,0,0.7663851165811588,0.23361488341883968
+org/apache/commons/math/dfp/DfpField,59,530,        buf[i] = a.charAt(i);,0.03571,0,,0,0.48001409712643067,0.5199859028735695
+org/apache/commons/math/dfp/DfpField,59,532,        if (buf[i] >= '1' && buf[i] <= '9') {,0.03571,0,,0,0.8676596958885928,0.13234030411140577
+org/apache/commons/math/dfp/DfpField,59,533,            leading = false;,0.03571,0,,0,0.12261936099968332,0.8773806390003152
+org/apache/commons/math/dfp/DfpField,59,536,        if (buf[i] == '.') {,0.03571,0,,0,0.600132432228342,0.39986756777165783
+org/apache/commons/math/dfp/DfpField,59,537,          sig += (400 - sig) % 4;,0.03571,0,,0,0.37231483404382854,0.6276851659561714
+org/apache/commons/math/dfp/DfpField,59,538,          leading = false;,0.03571,0,,0,0.12261936099968332,0.8773806390003152
+org/apache/commons/math/dfp/DfpField,59,541,        if (sig == (radixDigits / 2) * 4) {,0.03571,0,,0,0.6533309105575638,0.3466690894424362
+org/apache/commons/math/dfp/DfpField,59,542,          sp = i;,0.03571,0,,0,0.1371490988627313,0.8628509011372677
+org/apache/commons/math/dfp/DfpField,59,543,          break;,0.03571,0,,0,0.1298562518016348,0.8701437481983654
+org/apache/commons/math/dfp/DfpField,59,546,        if (buf[i] >= '0' && buf[i] <= '9' && !leading) {,0.03571,0,,0,0.9588185919513855,0.04118140804861349
+org/apache/commons/math/dfp/DfpField,59,547,            sig ++;,0.03571,0,,0,0.12012934305788482,0.8798706569421149
+org/apache/commons/math/dfp/DfpField,59,551,"      result[0] = new Dfp(this, new String(buf, 0, sp));",0.03571,0,,0,0.9966958442257194,0.003304155774280748
+org/apache/commons/math/dfp/DfpField,59,553,      for (int i = 0; i < buf.length; i++) {,0.03571,0,,0,0.7663851165811588,0.23361488341883968
+org/apache/commons/math/dfp/DfpField,59,554,        buf[i] = a.charAt(i);,0.03571,0,,0,0.48001409712643067,0.5199859028735695
+org/apache/commons/math/dfp/DfpField,59,555,        if (buf[i] >= '0' && buf[i] <= '9' && i < sp) {,0.03571,0,,0,0.9933928118368783,0.006607188163120736
+org/apache/commons/math/dfp/DfpField,59,556,            buf[i] = '0';,0.03571,0,,0,0.38883406933817544,0.6111659306618237
+org/apache/commons/math/dfp/DfpField,59,560,"      result[1] = new Dfp(this, new String(buf));",0.03571,0,,0,0.99614013307964,0.0038598669203616016
+org/apache/commons/math/dfp/DfpField,59,562,      return result;,0.03571,0,,0,0.14911620246174928,0.8508837975382489
+org/apache/commons/math/dfp/DfpField,59,570,        if (sqr2String == null || sqr2String.length() < highPrecisionDecimalDigits - 3) {,0.03571,0,,0,0.9560514757325315,0.04394852426746864
+org/apache/commons/math/dfp/DfpField,59,573,"            final DfpField highPrecisionField = new DfpField(highPrecisionDecimalDigits, false);",0.03571,0,,0,0.9917347170501003,0.008265282949899722
+org/apache/commons/math/dfp/DfpField,59,574,"            final Dfp highPrecisionOne        = new Dfp(highPrecisionField, 1);",0.03571,0,,0,0.9876427282766782,0.012357271723320346
+org/apache/commons/math/dfp/DfpField,59,575,"            final Dfp highPrecisionTwo        = new Dfp(highPrecisionField, 2);",0.03571,0,,0,0.9876427282766782,0.012357271723320346
+org/apache/commons/math/dfp/DfpField,59,576,"            final Dfp highPrecisionThree      = new Dfp(highPrecisionField, 3);",0.03571,0,,0,0.9876427282766782,0.012357271723320346
+org/apache/commons/math/dfp/DfpField,59,578,            final Dfp highPrecisionSqr2 = highPrecisionTwo.sqrt();,0.03571,0,,0,0.5579974359359746,0.44200256406402416
+org/apache/commons/math/dfp/DfpField,59,579,            sqr2String           = highPrecisionSqr2.toString();,0.03571,0,,0,0.3263191154232889,0.6736808845767109
+org/apache/commons/math/dfp/DfpField,59,580,            sqr2ReciprocalString = highPrecisionOne.divide(highPrecisionSqr2).toString();,0.03571,0,,0,0.3272762435297123,0.6727237564702874
+org/apache/commons/math/dfp/DfpField,59,582,            final Dfp highPrecisionSqr3 = highPrecisionThree.sqrt();,0.03571,0,,0,0.5679065148211814,0.4320934851788201
+org/apache/commons/math/dfp/DfpField,59,583,            sqr3String           = highPrecisionSqr3.toString();,0.03571,0,,0,0.3263191154232889,0.6736808845767109
+org/apache/commons/math/dfp/DfpField,59,584,            sqr3ReciprocalString = highPrecisionOne.divide(highPrecisionSqr3).toString();,0.03571,0,,0,0.3272762435297123,0.6727237564702874
+org/apache/commons/math/dfp/DfpField,59,586,"            piString   = computePi(highPrecisionOne, highPrecisionTwo, highPrecisionThree).toString();",0.03571,0,,0,0.3336156643114512,0.6663843356885476
+org/apache/commons/math/dfp/DfpField,59,587,"            eString    = computeExp(highPrecisionOne, highPrecisionOne).toString();",0.03571,0,,0,0.30080966954692523,0.6991903304530754
+org/apache/commons/math/dfp/DfpField,59,588,"            ln2String  = computeLn(highPrecisionTwo, highPrecisionOne, highPrecisionTwo).toString();",0.03571,0,,0,0.3164071436459708,0.6835928563540276
+org/apache/commons/math/dfp/DfpField,59,589,"            ln5String  = computeLn(new Dfp(highPrecisionField, 5),  highPrecisionOne, highPrecisionTwo).toString();",0.03571,0,,0,0.7885374723046522,0.21146252769534807
+org/apache/commons/math/dfp/DfpField,59,590,"            ln10String = computeLn(new Dfp(highPrecisionField, 10), highPrecisionOne, highPrecisionTwo).toString();",0.03571,0,,0,0.7885374723046522,0.21146252769534807
+org/apache/commons/math/dfp/DfpField,59,593,    },0.03571,0,,0,0.14336364830926523,0.8566363516907342
+org/apache/commons/math/dfp/DfpField,59,603,        Dfp sqrt2   = two.sqrt();,0.03571,0,,0,0.4745101707786077,0.525489829221391
+org/apache/commons/math/dfp/DfpField,59,604,        Dfp yk      = sqrt2.subtract(one);,0.03571,0,,0,0.4246779161358744,0.5753220838641246
+org/apache/commons/math/dfp/DfpField,59,605,        Dfp four    = two.add(two);,0.03571,0,,0,0.4138009153013149,0.5861990846986855
+org/apache/commons/math/dfp/DfpField,59,606,        Dfp two2kp3 = two;,0.03571,0,,0,0.3502358466664998,0.6497641533334986
+org/apache/commons/math/dfp/DfpField,59,607,        Dfp ak      = two.multiply(three.subtract(two.multiply(sqrt2)));,0.03571,0,,0,0.18124778234202252,0.8187522176579762
+org/apache/commons/math/dfp/DfpField,59,615,        for (int i = 1; i < 20; i++) {,0.03571,0,,0,0.5164125619046893,0.48358743809530974
+org/apache/commons/math/dfp/DfpField,59,616,            final Dfp ykM1 = yk;,0.03571,0,,0,0.4601286577994826,0.5398713422005176
+org/apache/commons/math/dfp/DfpField,59,618,            final Dfp y2         = yk.multiply(yk);,0.03571,0,,0,0.4374829120010753,0.5625170879989246
+org/apache/commons/math/dfp/DfpField,59,619,            final Dfp oneMinusY4 = one.subtract(y2.multiply(y2));,0.03571,0,,0,0.3309864820668131,0.6690135179331862
+org/apache/commons/math/dfp/DfpField,59,620,            final Dfp s          = oneMinusY4.sqrt().sqrt();,0.03571,0,,0,0.46798071749623504,0.5320192825037662
+org/apache/commons/math/dfp/DfpField,59,621,            yk = one.subtract(s).divide(one.add(s));,0.03571,0,,0,0.03904328173357321,0.9609567182664268
+org/apache/commons/math/dfp/DfpField,59,623,            two2kp3 = two2kp3.multiply(four);,0.03571,0,,0,0.22651509182889176,0.7734849081711076
+org/apache/commons/math/dfp/DfpField,59,625,            final Dfp p = one.add(yk);,0.03571,0,,0,0.4136368937082431,0.5863631062917586
+org/apache/commons/math/dfp/DfpField,59,626,            final Dfp p2 = p.multiply(p);,0.03571,0,,0,0.4170592514469867,0.5829407485530116
+org/apache/commons/math/dfp/DfpField,59,627,            ak = ak.multiply(p2.multiply(p2)).subtract(two2kp3.multiply(yk).multiply(one.add(yk).add(yk.multiply(yk))));,0.03571,0,,0,4.161181680081946e-07,0.9999995838818321
+org/apache/commons/math/dfp/DfpField,59,629,            if (yk.equals(ykM1)) {,0.03571,0,,0,0.15349399272683426,0.8465060072731657
+org/apache/commons/math/dfp/DfpField,59,630,                break;,0.03571,0,,0,0.1298562518016348,0.8701437481983654
+org/apache/commons/math/dfp/DfpField,59,634,        return one.divide(ak);,0.03571,0,,0,0.16512233226050102,0.8348776677395003
+org/apache/commons/math/dfp/DfpField,59,645,        Dfp y  = new Dfp(one);,0.03571,0,,0,0.9822321216769188,0.01776787832307993
+org/apache/commons/math/dfp/DfpField,59,646,        Dfp py = new Dfp(one);,0.03571,0,,0,0.9822321216769188,0.01776787832307993
+org/apache/commons/math/dfp/DfpField,59,647,        Dfp f  = new Dfp(one);,0.03571,0,,0,0.9822321216769188,0.01776787832307993
+org/apache/commons/math/dfp/DfpField,59,648,        Dfp fi = new Dfp(one);,0.03571,0,,0,0.9822321216769188,0.01776787832307993
+org/apache/commons/math/dfp/DfpField,59,649,        Dfp x  = new Dfp(one);,0.03571,0,,0,0.9822321216769188,0.01776787832307993
+org/apache/commons/math/dfp/DfpField,59,651,        for (int i = 0; i < 10000; i++) {,0.03571,0,,0,0.5216127431388541,0.4783872568611453
+org/apache/commons/math/dfp/DfpField,59,652,            x = x.multiply(a);,0.03571,0,,0,0.2172579263149613,0.7827420736850385
+org/apache/commons/math/dfp/DfpField,59,653,            y = y.add(x.divide(f));,0.03571,0,,0,0.1254928493773003,0.8745071506227015
+org/apache/commons/math/dfp/DfpField,59,654,            fi = fi.add(one);,0.03571,0,,0,0.21741387822508357,0.7825861217749159
+org/apache/commons/math/dfp/DfpField,59,655,            f = f.multiply(fi);,0.03571,0,,0,0.2171975017477923,0.7828024982522072
+org/apache/commons/math/dfp/DfpField,59,656,            if (y.equals(py)) {,0.03571,0,,0,0.15319503092588346,0.8468049690741157
+org/apache/commons/math/dfp/DfpField,59,657,                break;,0.03571,0,,0,0.1298562518016348,0.8701437481983654
+org/apache/commons/math/dfp/DfpField,59,659,            py = new Dfp(y);,0.03571,0,,0,0.5595003786080932,0.4404996213919051
+org/apache/commons/math/dfp/DfpField,59,662,        return y;,0.03571,0,,0,0.1518554929165327,0.8481445070834654
+org/apache/commons/math/dfp/DfpField,59,728,        int den = 1;,0.03571,0,,0,0.13510748324710753,0.8648925167528941
+org/apache/commons/math/dfp/DfpField,59,729,"        Dfp x = a.add(new Dfp(a.getField(), -1)).divide(a.add(one));",0.03571,0,,0,0.7472559309644883,0.2527440690355124
+org/apache/commons/math/dfp/DfpField,59,731,        Dfp y = new Dfp(x);,0.03571,0,,0,0.9821918895592331,0.017808110440768615
+org/apache/commons/math/dfp/DfpField,59,732,        Dfp num = new Dfp(x);,0.03571,0,,0,0.9822089122122832,0.017791087787717312
+org/apache/commons/math/dfp/DfpField,59,733,        Dfp py = new Dfp(y);,0.03571,0,,0,0.9821954942450972,0.017804505754903176
+org/apache/commons/math/dfp/DfpField,59,734,        for (int i = 0; i < 10000; i++) {,0.03571,0,,0,0.5216127431388541,0.4783872568611453
+org/apache/commons/math/dfp/DfpField,59,735,            num = num.multiply(x);,0.03571,0,,0,0.21758927122821686,0.782410728771783
+org/apache/commons/math/dfp/DfpField,59,736,            num = num.multiply(x);,0.03571,0,,0,0.21758927122821686,0.782410728771783
+org/apache/commons/math/dfp/DfpField,59,737,            den = den + 2;,0.03571,0,,0,0.24405583547751228,0.7559441645224881
+org/apache/commons/math/dfp/DfpField,59,738,            Dfp t = num.divide(den);,0.03571,0,,0,0.3490686957568256,0.6509313042431755
+org/apache/commons/math/dfp/DfpField,59,739,            y = y.add(t);,0.03571,0,,0,0.21899729292846512,0.7810027070715342
+org/apache/commons/math/dfp/DfpField,59,740,            if (y.equals(py)) {,0.03571,0,,0,0.15319503092588346,0.8468049690741157
+org/apache/commons/math/dfp/DfpField,59,741,                break;,0.03571,0,,0,0.1298562518016348,0.8701437481983654
+org/apache/commons/math/dfp/DfpField,59,743,            py = new Dfp(y);,0.03571,0,,0,0.5595003786080932,0.4404996213919051
+org/apache/commons/math/dfp/DfpField,59,746,        return y.multiply(two);,0.03571,0,,0,0.16538311598477848,0.8346168840152223
+org/apache/commons/math/dfp/DfpField,59,29,    public enum RoundingMode {,0.03571,0,,0,0.3428463189197546,0.6571536810802437
+org/apache/commons/math/dfp/DfpField,59,32,"        ROUND_DOWN,",0.03571,0,,0,0.12556900727482148,0.8744309927251788
+org/apache/commons/math/dfp/DfpField,59,35,"        ROUND_UP,",0.03571,0,,0,0.12669941777395194,0.8733005822260469
+org/apache/commons/math/dfp/DfpField,59,38,"        ROUND_HALF_UP,",0.03571,0,,0,0.1243473827002948,0.8756526172997041
+org/apache/commons/math/dfp/DfpField,59,41,"        ROUND_HALF_DOWN,",0.03571,0,,0,0.12384293167494087,0.8761570683250587
+org/apache/commons/math/dfp/DfpField,59,46,"        ROUND_HALF_EVEN,",0.03571,0,,0,0.12384293167494087,0.8761570683250587
+org/apache/commons/math/dfp/DfpField,59,49,"        ROUND_HALF_ODD,",0.03571,0,,0,0.1240644261184004,0.8759355738816003
+org/apache/commons/math/dfp/DfpField,59,52,"        ROUND_CEIL,",0.03571,0,,0,0.12556900727482148,0.8744309927251788
+org/apache/commons/math/dfp/DfpField,59,55,        ROUND_FLOOR;,0.03571,0,,0,0.12509919641833925,0.8749008035816612
+org/apache/commons/math/dfp/Dfp,59,202,"        this(field, (long) x);",0.03571,0,,0,0.2999496259268008,0.7000503740731986
+org/apache/commons/math/dfp/Dfp,59,203,    },0.03571,0,,0,0.14336364830926523,0.8566363516907342
+org/apache/commons/math/dfp/Dfp,59,209,"    protected Dfp(final DfpField field, long x) {",0.03571,0,,0,0.8010003383823401,0.1989996616176582
+org/apache/commons/math/dfp/Dfp,59,212,        mant = new int[field.getRadixDigits()];,0.03571,0,,0,0.36928270424339255,0.6307172957566066
+org/apache/commons/math/dfp/Dfp,59,213,        nans = FINITE;,0.03571,0,,0,0.2204133149254121,0.7795866850745868
+org/apache/commons/math/dfp/Dfp,59,214,        this.field = field;,0.03571,0,,0,0.26218507896217697,0.7378149210378244
+org/apache/commons/math/dfp/Dfp,59,216,        boolean isLongMin = false;,0.03571,0,,0,0.21495485292354563,0.7850451470764537
+org/apache/commons/math/dfp/Dfp,59,217,        if (x == Long.MIN_VALUE) {,0.03571,0,,0,0.40169643302160696,0.5983035669783929
+org/apache/commons/math/dfp/Dfp,59,225,        if (x < 0) {,0.03571,0,,0,0.2990720161209588,0.700927983879041
+org/apache/commons/math/dfp/Dfp,59,226,            sign = -1;,0.03571,0,,0,0.16777369181426127,0.8322263081857384
+org/apache/commons/math/dfp/Dfp,59,227,            x = -x;,0.03571,0,,0,0.19285794692070166,0.8071420530792989
+org/apache/commons/math/dfp/Dfp,59,229,            sign = 1;,0.03571,0,,0,0.16003062653019698,0.8399693734698022
+org/apache/commons/math/dfp/Dfp,59,232,        exp = 0;,0.03571,0,,0,0.19974417785535842,0.8002558221446406
+org/apache/commons/math/dfp/Dfp,59,233,        while (x != 0) {,0.03571,0,,0,0.2966610832995441,0.7033389167004556
+org/apache/commons/math/dfp/Dfp,59,234,"            System.arraycopy(mant, mant.length - exp, mant, mant.length - 1 - exp, exp);",0.03571,0,,0,0.7099376978495509,0.29006230215044787
+org/apache/commons/math/dfp/Dfp,59,235,            mant[mant.length - 1] = (int) (x % RADIX);,0.03571,0,,0,0.8738974784728945,0.1261025215271065
+org/apache/commons/math/dfp/Dfp,59,236,            x /= RADIX;,0.03571,0,,0,0.18001834803805766,0.8199816519619424
+org/apache/commons/math/dfp/Dfp,59,237,            exp++;,0.03571,0,,0,0.1626820973662662,0.8373179026337337
+org/apache/commons/math/dfp/Dfp,59,240,        if (isLongMin) {,0.03571,0,,0,0.2481597297478827,0.7518402702521164
+org/apache/commons/math/dfp/Dfp,59,250,    },0.03571,0,,0,0.14336364830926523,0.8566363516907342
+org/apache/commons/math/dfp/Dfp,59,318,    public Dfp(final Dfp d) {,0.03571,0,,0,0.6904177192218913,0.3095822807781082
+org/apache/commons/math/dfp/Dfp,59,319,        mant  = d.mant.clone();,0.03571,0,,0,0.456094006776243,0.5439059932237564
+org/apache/commons/math/dfp/Dfp,59,320,        sign  = d.sign;,0.03571,0,,0,0.2761721124455068,0.723827887554494
+org/apache/commons/math/dfp/Dfp,59,321,        exp   = d.exp;,0.03571,0,,0,0.2766924001104275,0.723307599889572
+org/apache/commons/math/dfp/Dfp,59,322,        nans  = d.nans;,0.03571,0,,0,0.2761721124455068,0.723827887554494
+org/apache/commons/math/dfp/Dfp,59,323,        field = d.field;,0.03571,0,,0,0.2757645509041201,0.7242354490958799
+org/apache/commons/math/dfp/Dfp,59,324,    },0.03571,0,,0,0.14336364830926523,0.8566363516907342
+org/apache/commons/math/dfp/Dfp,59,330,"    protected Dfp(final DfpField field, final String s) {",0.03571,0,,0,0.9930810138765739,0.0069189861234269755
+org/apache/commons/math/dfp/Dfp,59,333,        mant = new int[field.getRadixDigits()];,0.03571,0,,0,0.36928270424339255,0.6307172957566066
+org/apache/commons/math/dfp/Dfp,59,334,        sign = 1;,0.03571,0,,0,0.19879160551867525,0.8012083944813263
+org/apache/commons/math/dfp/Dfp,59,335,        exp = 0;,0.03571,0,,0,0.19974417785535842,0.8002558221446406
+org/apache/commons/math/dfp/Dfp,59,336,        nans = FINITE;,0.03571,0,,0,0.2204133149254121,0.7795866850745868
+org/apache/commons/math/dfp/Dfp,59,337,        this.field = field;,0.03571,0,,0,0.26218507896217697,0.7378149210378244
+org/apache/commons/math/dfp/Dfp,59,339,        boolean decimalFound = false;,0.03571,0,,0,0.21734266769595748,0.7826573323040418
+org/apache/commons/math/dfp/Dfp,59,340,        final int rsize = 4;   // size of radix in decimal digits,0.03571,0,,0,0.3773043752354708,0.6226956247645307
+org/apache/commons/math/dfp/Dfp,59,341,        final int offset = 4;  // Starting offset into Striped,0.03571,0,,0,0.3658719739437151,0.6341280260562864
+org/apache/commons/math/dfp/Dfp,59,342,        final char[] striped = new char[getRadixDigits() * rsize + offset * 2];,0.03571,0,,0,0.8733259927577899,0.12667400724220979
+org/apache/commons/math/dfp/Dfp,59,345,        if (s.equals(POS_INFINITY_STRING)) {,0.03571,0,,0,0.26144410704090776,0.7385558929590937
+org/apache/commons/math/dfp/Dfp,59,351,        if (s.equals(NEG_INFINITY_STRING)) {,0.03571,0,,0,0.26144410704090776,0.7385558929590937
+org/apache/commons/math/dfp/Dfp,59,357,        if (s.equals(NAN_STRING)) {,0.03571,0,,0,0.25530777610975935,0.7446922238902389
+org/apache/commons/math/dfp/Dfp,59,364,"        int p = s.indexOf(""e"");",0.03571,0,,0,0.3589164527278414,0.6410835472721583
+org/apache/commons/math/dfp/Dfp,59,365,        if (p == -1) { // try upper case?,0.03571,0,,0,0.45374001048292567,0.546259989517076
+org/apache/commons/math/dfp/Dfp,59,366,"            p = s.indexOf(""E"");",0.03571,0,,0,0.4258602434121319,0.5741397565878681
+org/apache/commons/math/dfp/Dfp,59,370,        int sciexp = 0;,0.03571,0,,0,0.21237685984643573,0.787623140153566
+org/apache/commons/math/dfp/Dfp,59,371,        if (p != -1) {,0.03571,0,,0,0.43039376943709673,0.5696062305629034
+org/apache/commons/math/dfp/Dfp,59,393,            fpdecimal = s;,0.03571,0,,0,0.2543788393859791,0.7456211606140206
+org/apache/commons/math/dfp/Dfp,59,397,"        if (fpdecimal.indexOf(""-"") !=  -1) {",0.03571,0,,0,0.48296145630214343,0.517038543697857
+org/apache/commons/math/dfp/Dfp,59,402,        p = 0;,0.03571,0,,0,0.29834194799668423,0.7016580520033171
+org/apache/commons/math/dfp/Dfp,59,405,        int decimalPos = 0;,0.03571,0,,0,0.20961192566992495,0.790388074330076
+org/apache/commons/math/dfp/Dfp,59,407,            if (fpdecimal.charAt(p) >= '1' && fpdecimal.charAt(p) <= '9') {,0.03571,0,,0,0.5325023033246558,0.4674976966753441
+org/apache/commons/math/dfp/Dfp,59,408,                break;,0.03571,0,,0,0.17976608771913488,0.8202339122808646
+org/apache/commons/math/dfp/Dfp,59,411,            if (decimalFound && fpdecimal.charAt(p) == '0') {,0.03571,0,,0,0.4537496587707941,0.546250341229206
+org/apache/commons/math/dfp/Dfp,59,412,                decimalPos--;,0.03571,0,,0,0.18117954001938727,0.8188204599806125
+org/apache/commons/math/dfp/Dfp,59,415,            if (fpdecimal.charAt(p) == '.') {,0.03571,0,,0,0.3064604785086342,0.693539521491367
+org/apache/commons/math/dfp/Dfp,59,416,                decimalFound = true;,0.03571,0,,0,0.23253684827548238,0.7674631517245173
+org/apache/commons/math/dfp/Dfp,59,419,            p++;,0.03571,0,,0,0.2536217694349678,0.7463782305650307
+org/apache/commons/math/dfp/Dfp,59,421,            if (p == fpdecimal.length()) {,0.03571,0,,0,0.3356010090095615,0.664398990990438
+org/apache/commons/math/dfp/Dfp,59,427,        int q = offset;,0.03571,0,,0,0.22747939315320315,0.7725206068467986
+org/apache/commons/math/dfp/Dfp,59,428,        striped[0] = '0';,0.03571,0,,0,0.6249388835324348,0.3750611164675656
+org/apache/commons/math/dfp/Dfp,59,429,        striped[1] = '0';,0.03571,0,,0,0.6249388835324348,0.3750611164675656
+org/apache/commons/math/dfp/Dfp,59,430,        striped[2] = '0';,0.03571,0,,0,0.6249388835324348,0.3750611164675656
+org/apache/commons/math/dfp/Dfp,59,431,        striped[3] = '0';,0.03571,0,,0,0.6249388835324348,0.3750611164675656
+org/apache/commons/math/dfp/Dfp,59,432,        int significantDigits=0;,0.03571,0,,0,0.2081583061319644,0.7918416938680357
+org/apache/commons/math/dfp/Dfp,59,434,            if (p == (fpdecimal.length())) {,0.03571,0,,0,0.3880309436070378,0.6119690563929624
+org/apache/commons/math/dfp/Dfp,59,435,                break;,0.03571,0,,0,0.17976608771913488,0.8202339122808646
+org/apache/commons/math/dfp/Dfp,59,439,            if (q == mant.length*rsize+offset+1) {,0.03571,0,,0,0.7344183466096074,0.26558165339039286
+org/apache/commons/math/dfp/Dfp,59,440,                break;,0.03571,0,,0,0.17976608771913488,0.8202339122808646
+org/apache/commons/math/dfp/Dfp,59,443,            if (fpdecimal.charAt(p) == '.') {,0.03571,0,,0,0.3064604785086342,0.693539521491367
+org/apache/commons/math/dfp/Dfp,59,444,                decimalFound = true;,0.03571,0,,0,0.23253684827548238,0.7674631517245173
+org/apache/commons/math/dfp/Dfp,59,445,                decimalPos = significantDigits;,0.03571,0,,0,0.19043298480050125,0.8095670151995005
+org/apache/commons/math/dfp/Dfp,59,446,                p++;,0.03571,0,,0,0.1930477693947051,0.8069522306052934
+org/apache/commons/math/dfp/Dfp,59,447,                continue;,0.03571,0,,0,0.1757306591375606,0.8242693408624386
+org/apache/commons/math/dfp/Dfp,59,450,            if (fpdecimal.charAt(p) < '0' || fpdecimal.charAt(p) > '9') {,0.03571,0,,0,0.5226441797650412,0.47735582023495954
+org/apache/commons/math/dfp/Dfp,59,455,            striped[q] = fpdecimal.charAt(p);,0.03571,0,,0,0.5146961209556843,0.485303879044315
+org/apache/commons/math/dfp/Dfp,59,456,            q++;,0.03571,0,,0,0.2536217694349678,0.7463782305650307
+org/apache/commons/math/dfp/Dfp,59,457,            p++;,0.03571,0,,0,0.2536217694349678,0.7463782305650307
+org/apache/commons/math/dfp/Dfp,59,458,            significantDigits++;,0.03571,0,,0,0.23355155598871055,0.7664484440112889
+org/apache/commons/math/dfp/Dfp,59,463,        if (decimalFound && q != offset) {,0.03571,0,,0,0.48275327347323876,0.5172467265267596
+org/apache/commons/math/dfp/Dfp,59,465,                q--;,0.03571,0,,0,0.1930477693947051,0.8069522306052934
+org/apache/commons/math/dfp/Dfp,59,466,                if (q == offset) {,0.03571,0,,0,0.2648545395713264,0.7351454604286737
+org/apache/commons/math/dfp/Dfp,59,469,                if (striped[q] == '0') {,0.03571,0,,0,0.48230779276148894,0.5176922072385098
+org/apache/commons/math/dfp/Dfp,59,470,                    significantDigits--;,0.03571,0,,0,0.11963085506526192,0.8803691449347391
+org/apache/commons/math/dfp/Dfp,59,478,        if (decimalFound && significantDigits == 0) {,0.03571,0,,0,0.5066064989581968,0.49339350104180335
+org/apache/commons/math/dfp/Dfp,59,483,        if (!decimalFound) {,0.03571,0,,0,0.4044004149799383,0.5955995850200616
+org/apache/commons/math/dfp/Dfp,59,488,        q = offset;  // set q to point to first sig digit,0.03571,0,,0,0.3305713117644476,0.6694286882355535
+org/apache/commons/math/dfp/Dfp,59,489,        p = significantDigits-1+offset;,0.03571,0,,0,0.4522342833164898,0.5477657166835112
+org/apache/commons/math/dfp/Dfp,59,491,        int trailingZeros = 0;,0.03571,0,,0,0.20847549497691228,0.7915245050230869
+org/apache/commons/math/dfp/Dfp,59,492,        while (p > q) {,0.03571,0,,0,0.39856550673912944,0.6014344932608714
+org/apache/commons/math/dfp/Dfp,59,493,            if (striped[p] != '0') {,0.03571,0,,0,0.5695805453012993,0.4304194546987022
+org/apache/commons/math/dfp/Dfp,59,494,                break;,0.03571,0,,0,0.17976608771913488,0.8202339122808646
+org/apache/commons/math/dfp/Dfp,59,501,        int i = ((rsize * 100) - decimalPos - sciexp % rsize) % rsize;,0.03571,0,,0,0.7909597146385033,0.20904028536149652
+org/apache/commons/math/dfp/Dfp,59,502,        q -= i;,0.03571,0,,0,0.3149920140802711,0.6850079859197276
+org/apache/commons/math/dfp/Dfp,59,503,        decimalPos += i;,0.03571,0,,0,0.3014136485751901,0.6985863514248096
+org/apache/commons/math/dfp/Dfp,59,506,        while ((p - q) < (mant.length * rsize)) {,0.03571,0,,0,0.61847295370594,0.3815270462940599
+org/apache/commons/math/dfp/Dfp,59,507,            for (i = 0; i < rsize; i++) {,0.03571,0,,0,0.4414849394695446,0.5585150605304569
+org/apache/commons/math/dfp/Dfp,59,508,                striped[++p] = '0';,0.03571,0,,0,0.6865608571726549,0.31343914282734403
+org/apache/commons/math/dfp/Dfp,59,514,        for (i = mant.length - 1; i >= 0; i--) {,0.03571,0,,0,0.5540928519110456,0.445907148088954
+org/apache/commons/math/dfp/Dfp,59,515,            mant[i] = (striped[q]   - '0') * 1000 +,0.03571,0,,0,0.9816785417911732,0.01832145820882773
+org/apache/commons/math/dfp/Dfp,59,519,            q += 4;,0.03571,0,,0,0.24783532058968344,0.752164679410315
+org/apache/commons/math/dfp/Dfp,59,523,        exp = (decimalPos+sciexp) / rsize;,0.03571,0,,0,0.5253475233188327,0.4746524766811691
+org/apache/commons/math/dfp/Dfp,59,525,        if (q < striped.length) {,0.03571,0,,0,0.39018843675020837,0.6098115632497925
+org/apache/commons/math/dfp/Dfp,59,527,            round((striped[q] - '0')*1000);,0.03571,0,,0,0.7717225932255486,0.228277406774452
+org/apache/commons/math/dfp/Dfp,59,530,    },0.03571,0,,0,0.20302842957945394,0.7969715704205477
+org/apache/commons/math/dfp/Dfp,59,594,        if (field.getRadixDigits() != d.field.getRadixDigits()) {,0.03571,0,,0,0.44426892771460885,0.5557310722853899
+org/apache/commons/math/dfp/Dfp,59,601,        return new Dfp(d);,0.03571,0,,0,0.657749670024582,0.3422503299754176
+org/apache/commons/math/dfp/Dfp,59,632,        return field;,0.03571,0,,0,0.23330383939076244,0.7666961606092381
+org/apache/commons/math/dfp/Dfp,59,639,        return field.getRadixDigits();,0.03571,0,,0,0.2534177456034998,0.7465822543965001
+org/apache/commons/math/dfp/Dfp,59,646,        return field.getZero();,0.03571,0,,0,0.2522282838324132,0.7477717161675882
+org/apache/commons/math/dfp/Dfp,59,666,        for (int i = mant.length - 1; i > 0; i--) {,0.03571,0,,0,0.4758398957510662,0.524160104248935
+org/apache/commons/math/dfp/Dfp,59,667,            mant[i] = mant[i-1];,0.03571,0,,0,0.6081285228631842,0.3918714771368145
+org/apache/commons/math/dfp/Dfp,59,669,        mant[0] = 0;,0.03571,0,,0,0.5480293766874584,0.45197062331254234
+org/apache/commons/math/dfp/Dfp,59,670,        exp--;,0.03571,0,,0,0.29834194799668423,0.7016580520033171
+org/apache/commons/math/dfp/Dfp,59,671,    },0.03571,0,,0,0.20302842957945394,0.7969715704205477
+org/apache/commons/math/dfp/Dfp,59,678,        for (int i = 0; i < mant.length - 1; i++) {,0.03571,0,,0,0.4758398957510662,0.524160104248935
+org/apache/commons/math/dfp/Dfp,59,679,            mant[i] = mant[i+1];,0.03571,0,,0,0.6081285228631842,0.3918714771368145
+org/apache/commons/math/dfp/Dfp,59,681,        mant[mant.length - 1] = 0;,0.03571,0,,0,0.682869426642706,0.31713057335729344
+org/apache/commons/math/dfp/Dfp,59,682,        exp++;,0.03571,0,,0,0.29834194799668423,0.7016580520033171
+org/apache/commons/math/dfp/Dfp,59,683,    },0.03571,0,,0,0.20302842957945394,0.7969715704205477
+org/apache/commons/math/dfp/Dfp,59,694,        int lostdigit = 0;,0.03571,0,,0,0.21016823360292738,0.7898317663970716
+org/apache/commons/math/dfp/Dfp,59,695,        boolean inexact = false;,0.03571,0,,0,0.2910122093079712,0.7089877906920303
+org/apache/commons/math/dfp/Dfp,59,697,        int diff = exp - e;,0.03571,0,,0,0.28193243932673523,0.7180675606732644
+org/apache/commons/math/dfp/Dfp,59,699,        int adiff = diff;,0.03571,0,,0,0.22583734690074445,0.7741626530992565
+org/apache/commons/math/dfp/Dfp,59,700,        if (adiff < 0) {,0.03571,0,,0,0.3764945433067428,0.6235054566932573
+org/apache/commons/math/dfp/Dfp,59,701,            adiff = -adiff;,0.03571,0,,0,0.32396411565716515,0.6760358843428343
+org/apache/commons/math/dfp/Dfp,59,704,        if (diff == 0) {,0.03571,0,,0,0.3764945433067428,0.6235054566932573
+org/apache/commons/math/dfp/Dfp,59,705,            return 0;,0.03571,0,,0,0.1757306591375606,0.8242693408624386
+org/apache/commons/math/dfp/Dfp,59,708,        if (adiff > (mant.length + 1)) {,0.03571,0,,0,0.5201630036868242,0.4798369963131753
+org/apache/commons/math/dfp/Dfp,59,710,"            Arrays.fill(mant, 0);",0.03571,0,,0,0.12205665924711777,0.877943340752881
+org/apache/commons/math/dfp/Dfp,59,711,            exp = e;,0.03571,0,,0,0.2628251035635719,0.7371748964364278
+org/apache/commons/math/dfp/Dfp,59,713,            field.setIEEEFlagsBits(DfpField.FLAG_INEXACT);,0.03571,0,,0,0.28928926519321374,0.7107107348067861
+org/apache/commons/math/dfp/Dfp,59,714,"            dotrap(DfpField.FLAG_INEXACT, ALIGN_TRAP, this, this);",0.03571,0,,0,0.37202495847158734,0.627975041528412
+org/apache/commons/math/dfp/Dfp,59,716,            return 0;,0.03571,0,,0,0.1757306591375606,0.8242693408624386
+org/apache/commons/math/dfp/Dfp,59,719,        for (int i = 0; i < adiff; i++) {,0.03571,0,,0,0.4213378619054582,0.5786621380945433
+org/apache/commons/math/dfp/Dfp,59,720,            if (diff < 0) {,0.03571,0,,0,0.3219655951957589,0.6780344048042404
+org/apache/commons/math/dfp/Dfp,59,725,                if (lostdigit != 0) {,0.03571,0,,0,0.24649120345918718,0.7535087965408129
+org/apache/commons/math/dfp/Dfp,59,726,                    inexact = true;,0.03571,0,,0,0.1636608811475625,0.8363391188524385
+org/apache/commons/math/dfp/Dfp,59,729,                lostdigit = mant[0];,0.03571,0,,0,0.4823169411319287,0.517683058868072
+org/apache/commons/math/dfp/Dfp,59,731,                shiftRight();,0.03571,0,,0,0.23574142012678,0.7642585798732218
+org/apache/commons/math/dfp/Dfp,59,737,        if (inexact) {,0.03571,0,,0,0.342246681224171,0.6577533187758279
+org/apache/commons/math/dfp/Dfp,59,738,            field.setIEEEFlagsBits(DfpField.FLAG_INEXACT);,0.03571,0,,0,0.28928926519321374,0.7107107348067861
+org/apache/commons/math/dfp/Dfp,59,739,"            dotrap(DfpField.FLAG_INEXACT, ALIGN_TRAP, this, this);",0.03571,0,,0,0.37202495847158734,0.627975041528412
+org/apache/commons/math/dfp/Dfp,59,742,        return lostdigit;,0.03571,0,,0,0.2295928080551133,0.7704071919448852
+org/apache/commons/math/dfp/Dfp,59,753,        if (field.getRadixDigits() != x.field.getRadixDigits()) {,0.03571,0,,0,0.44426892771460885,0.5557310722853899
+org/apache/commons/math/dfp/Dfp,59,762,        if (isNaN() || x.isNaN()) {,0.03571,0,,0,0.35708599735456137,0.6429140026454374
+org/apache/commons/math/dfp/Dfp,59,768,"        return compare(this, x) < 0;",0.03571,0,,0,0.3265458067642263,0.6734541932357748
+org/apache/commons/math/dfp/Dfp,59,778,        if (field.getRadixDigits() != x.field.getRadixDigits()) {,0.03571,0,,0,0.44426892771460885,0.5557310722853899
+org/apache/commons/math/dfp/Dfp,59,787,        if (isNaN() || x.isNaN()) {,0.03571,0,,0,0.35708599735456137,0.6429140026454374
+org/apache/commons/math/dfp/Dfp,59,793,"        return compare(this, x) > 0;",0.03571,0,,0,0.3265458067642263,0.6734541932357748
+org/apache/commons/math/dfp/Dfp,59,807,        return (nans == QNAN) || (nans == SNAN);,0.03571,0,,0,0.6273670611544928,0.3726329388455062
+org/apache/commons/math/dfp/Dfp,59,817,        if (other instanceof Dfp) {,0.03571,0,,0,0.5790910318142288,0.4209089681857724
+org/apache/commons/math/dfp/Dfp,59,818,            final Dfp x = (Dfp) other;,0.03571,0,,0,0.9858970209034643,0.014102979096534364
+org/apache/commons/math/dfp/Dfp,59,819,            if (isNaN() || x.isNaN() || field.getRadixDigits() != x.field.getRadixDigits()) {,0.03571,0,,0,0.4513902253093459,0.5486097746906553
+org/apache/commons/math/dfp/Dfp,59,823,"            return compare(this, x) == 0;",0.03571,0,,0,0.2754517417999361,0.7245482582000631
+org/apache/commons/math/dfp/Dfp,59,844,        if (isNaN() || x.isNaN() || field.getRadixDigits() != x.field.getRadixDigits()) {,0.03571,0,,0,0.5125458751767021,0.48745412482329964
+org/apache/commons/math/dfp/Dfp,59,848,        return greaterThan(x) || lessThan(x);,0.03571,0,,0,0.36251007913131195,0.6374899208686895
+org/apache/commons/math/dfp/Dfp,59,859,        if (a.mant[a.mant.length - 1] == 0 && b.mant[b.mant.length - 1] == 0 &&,0.03571,0,,0,0.9780214340780565,0.02197856592194312
+org/apache/commons/math/dfp/Dfp,59,861,            return 0;,0.03571,0,,0,0.1757306591375606,0.8242693408624386
+org/apache/commons/math/dfp/Dfp,59,864,        if (a.sign != b.sign) {,0.03571,0,,0,0.3652314318792689,0.6347685681207318
+org/apache/commons/math/dfp/Dfp,59,873,        if (a.nans == INFINITE && b.nans == FINITE) {,0.03571,0,,0,0.5152822517734541,0.4847177482265456
+org/apache/commons/math/dfp/Dfp,59,877,        if (a.nans == FINITE && b.nans == INFINITE) {,0.03571,0,,0,0.5152822517734541,0.4847177482265456
+org/apache/commons/math/dfp/Dfp,59,881,        if (a.nans == INFINITE && b.nans == INFINITE) {,0.03571,0,,0,0.5209092439388381,0.47909075606116286
+org/apache/commons/math/dfp/Dfp,59,886,        if (b.mant[b.mant.length-1] != 0 && a.mant[b.mant.length-1] != 0) {,0.03571,0,,0,0.61469416332665,0.3853058366733509
+org/apache/commons/math/dfp/Dfp,59,887,            if (a.exp < b.exp) {,0.03571,0,,0,0.31158908381989336,0.6884109161801056
+org/apache/commons/math/dfp/Dfp,59,888,                return -a.sign;,0.03571,0,,0,0.22032324777289422,0.7796767522271063
+org/apache/commons/math/dfp/Dfp,59,891,            if (a.exp > b.exp) {,0.03571,0,,0,0.31158908381989336,0.6884109161801056
+org/apache/commons/math/dfp/Dfp,59,892,                return a.sign;,0.03571,0,,0,0.12797376969530133,0.8720262303046985
+org/apache/commons/math/dfp/Dfp,59,897,        for (int i = a.mant.length - 1; i >= 0; i--) {,0.03571,0,,0,0.4091457177771327,0.5908542822228662
+org/apache/commons/math/dfp/Dfp,59,898,            if (a.mant[i] > b.mant[i]) {,0.03571,0,,0,0.5636591045915526,0.43634089540844584
+org/apache/commons/math/dfp/Dfp,59,899,                return a.sign;,0.03571,0,,0,0.12797376969530133,0.8720262303046985
+org/apache/commons/math/dfp/Dfp,59,902,            if (a.mant[i] < b.mant[i]) {,0.03571,0,,0,0.5636591045915526,0.43634089540844584
+org/apache/commons/math/dfp/Dfp,59,903,                return -a.sign;,0.03571,0,,0,0.22032324777289422,0.7796767522271063
+org/apache/commons/math/dfp/Dfp,59,907,        return 0;,0.03571,0,,0,0.1757306591375606,0.8242693408624386
+org/apache/commons/math/dfp/Dfp,59,1144,        extra = RADIX-extra;,0.03571,0,,0,0.36569149992081906,0.6343085000791805
+org/apache/commons/math/dfp/Dfp,59,1145,        for (int i = 0; i < mant.length; i++) {,0.03571,0,,0,0.38078712520637853,0.6192128747936209
+org/apache/commons/math/dfp/Dfp,59,1146,            mant[i] = RADIX-mant[i]-1;,0.03571,0,,0,0.606752669327427,0.39324733067257256
+org/apache/commons/math/dfp/Dfp,59,1149,        int rh = extra / RADIX;,0.03571,0,,0,0.2802953926928322,0.7197046073071667
+org/apache/commons/math/dfp/Dfp,59,1150,        extra = extra - rh * RADIX;,0.03571,0,,0,0.42369288952706324,0.5763071104729363
+org/apache/commons/math/dfp/Dfp,59,1151,        for (int i = 0; i < mant.length; i++) {,0.03571,0,,0,0.38078712520637853,0.6192128747936209
+org/apache/commons/math/dfp/Dfp,59,1152,            final int r = mant[i] + rh;,0.03571,0,,0,0.6138569550592852,0.3861430449407149
+org/apache/commons/math/dfp/Dfp,59,1153,            rh = r / RADIX;,0.03571,0,,0,0.31506112200057995,0.6849388779994187
+org/apache/commons/math/dfp/Dfp,59,1154,            mant[i] = r - rh * RADIX;,0.03571,0,,0,0.7041045165072374,0.29589548349276124
+org/apache/commons/math/dfp/Dfp,59,1157,        return extra;,0.03571,0,,0,0.23330383939076244,0.7666961606092381
+org/apache/commons/math/dfp/Dfp,59,1167,        if (field.getRadixDigits() != x.field.getRadixDigits()) {,0.03571,0,,0,0.44426892771460885,0.5557310722853899
+org/apache/commons/math/dfp/Dfp,59,1175,        if (nans != FINITE || x.nans != FINITE) {,0.03571,0,,0,0.5804570036021778,0.41954299639782106
+org/apache/commons/math/dfp/Dfp,59,1206,        Dfp a = newInstance(this);,0.03571,0,,0,0.6375518920153933,0.3624481079846079
+org/apache/commons/math/dfp/Dfp,59,1207,        Dfp b = newInstance(x);,0.03571,0,,0,0.6508317726261967,0.34916822737380454
+org/apache/commons/math/dfp/Dfp,59,1210,        Dfp result = newInstance(getZero());,0.03571,0,,0,0.7611169752119589,0.2388830247880408
+org/apache/commons/math/dfp/Dfp,59,1213,        final byte asign = a.sign;,0.03571,0,,0,0.33234308759125464,0.6676569124087446
+org/apache/commons/math/dfp/Dfp,59,1214,        final byte bsign = b.sign;,0.03571,0,,0,0.33234308759125464,0.6676569124087446
+org/apache/commons/math/dfp/Dfp,59,1216,        a.sign = 1;,0.03571,0,,0,0.3077821729818032,0.6922178270181952
+org/apache/commons/math/dfp/Dfp,59,1217,        b.sign = 1;,0.03571,0,,0,0.3077821729818032,0.6922178270181952
+org/apache/commons/math/dfp/Dfp,59,1220,        byte rsign = bsign;,0.03571,0,,0,0.22457390105967273,0.7754260989403269
+org/apache/commons/math/dfp/Dfp,59,1221,"        if (compare(a, b) > 0) {",0.03571,0,,0,0.29449579172143353,0.7055042082785665
+org/apache/commons/math/dfp/Dfp,59,1222,            rsign = asign;,0.03571,0,,0,0.2543788393859791,0.7456211606140206
+org/apache/commons/math/dfp/Dfp,59,1228,        if (b.mant[mant.length-1] == 0) {,0.03571,0,,0,0.45494629538457965,0.5450537046154215
+org/apache/commons/math/dfp/Dfp,59,1229,            b.exp = a.exp;,0.03571,0,,0,0.23290731796182848,0.7670926820381715
+org/apache/commons/math/dfp/Dfp,59,1232,        if (a.mant[mant.length-1] == 0) {,0.03571,0,,0,0.45494629538457965,0.5450537046154215
+org/apache/commons/math/dfp/Dfp,59,1237,        int aextradigit = 0;,0.03571,0,,0,0.20914464185628356,0.7908553581437173
+org/apache/commons/math/dfp/Dfp,59,1238,        int bextradigit = 0;,0.03571,0,,0,0.20914464185628356,0.7908553581437173
+org/apache/commons/math/dfp/Dfp,59,1239,        if (a.exp < b.exp) {,0.03571,0,,0,0.36645590126664357,0.6335440987333563
+org/apache/commons/math/dfp/Dfp,59,1240,            aextradigit = a.align(b.exp);,0.03571,0,,0,0.36129025192197256,0.6387097480780268
+org/apache/commons/math/dfp/Dfp,59,1242,            bextradigit = b.align(a.exp);,0.03571,0,,0,0.36129025192197256,0.6387097480780268
+org/apache/commons/math/dfp/Dfp,59,1246,        if (asign != bsign) {,0.03571,0,,0,0.3933699963580048,0.6066300036419958
+org/apache/commons/math/dfp/Dfp,59,1247,            if (asign == rsign) {,0.03571,0,,0,0.33661455977266885,0.6633854402273313
+org/apache/commons/math/dfp/Dfp,59,1248,                bextradigit = b.complement(bextradigit);,0.03571,0,,0,0.25253496119564767,0.747465038804352
+org/apache/commons/math/dfp/Dfp,59,1250,                aextradigit = a.complement(aextradigit);,0.03571,0,,0,0.25253496119564767,0.747465038804352
+org/apache/commons/math/dfp/Dfp,59,1255,        int rh = 0; /* acts as a carry */,0.03571,0,,0,0.21108541517622456,0.788914584823777
+org/apache/commons/math/dfp/Dfp,59,1256,        for (int i = 0; i < mant.length; i++) {,0.03571,0,,0,0.38078712520637853,0.6192128747936209
+org/apache/commons/math/dfp/Dfp,59,1257,            final int r = a.mant[i]+b.mant[i]+rh;,0.03571,0,,0,0.4696358395206182,0.5303641604793815
+org/apache/commons/math/dfp/Dfp,59,1258,            rh = r / RADIX;,0.03571,0,,0,0.31506112200057995,0.6849388779994187
+org/apache/commons/math/dfp/Dfp,59,1259,            result.mant[i] = r - rh * RADIX;,0.03571,0,,0,0.6385233096707352,0.3614766903292641
+org/apache/commons/math/dfp/Dfp,59,1261,        result.exp = a.exp;,0.03571,0,,0,0.2751181090842817,0.7248818909157188
+org/apache/commons/math/dfp/Dfp,59,1262,        result.sign = rsign;,0.03571,0,,0,0.29638704742537947,0.7036129525746194
+org/apache/commons/math/dfp/Dfp,59,1267,        if (rh != 0 && (asign == bsign)) {,0.03571,0,,0,0.6786404052133863,0.3213595947866132
+org/apache/commons/math/dfp/Dfp,59,1268,            final int lostdigit = result.mant[0];,0.03571,0,,0,0.3275801261869943,0.6724198738130049
+org/apache/commons/math/dfp/Dfp,59,1269,            result.shiftRight();,0.03571,0,,0,0.18689126265297015,0.8131087373470306
+org/apache/commons/math/dfp/Dfp,59,1270,            result.mant[mant.length-1] = rh;,0.03571,0,,0,0.28586994529549814,0.7141300547045003
+org/apache/commons/math/dfp/Dfp,59,1271,            final int excp = result.round(lostdigit);,0.03571,0,,0,0.313255835948418,0.6867441640515819
+org/apache/commons/math/dfp/Dfp,59,1272,            if (excp != 0) {,0.03571,0,,0,0.3208859787200423,0.679114021279957
+org/apache/commons/math/dfp/Dfp,59,1273,"                result = dotrap(excp, ADD_TRAP, x, result);",0.03571,0,,0,0.20122756151268353,0.7987724384873182
+org/apache/commons/math/dfp/Dfp,59,1278,        for (int i = 0; i < mant.length; i++) {,0.03571,0,,0,0.38078712520637853,0.6192128747936209
+org/apache/commons/math/dfp/Dfp,59,1279,            if (result.mant[mant.length-1] != 0) {,0.03571,0,,0,0.4019065760936441,0.5980934239063554
+org/apache/commons/math/dfp/Dfp,59,1280,                break;,0.03571,0,,0,0.17976608771913488,0.8202339122808646
+org/apache/commons/math/dfp/Dfp,59,1282,            result.shiftLeft();,0.03571,0,,0,0.18732060315903207,0.8126793968409667
+org/apache/commons/math/dfp/Dfp,59,1283,            if (i == 0) {,0.03571,0,,0,0.32448010990222587,0.6755198900977748
+org/apache/commons/math/dfp/Dfp,59,1284,                result.mant[0] = aextradigit+bextradigit;,0.03571,0,,0,0.2677869355437332,0.732213064456267
+org/apache/commons/math/dfp/Dfp,59,1285,                aextradigit = 0;,0.03571,0,,0,0.1787526713814411,0.8212473286185575
+org/apache/commons/math/dfp/Dfp,59,1286,                bextradigit = 0;,0.03571,0,,0,0.1787526713814411,0.8212473286185575
+org/apache/commons/math/dfp/Dfp,59,1291,        if (result.mant[mant.length-1] == 0) {,0.03571,0,,0,0.46200387405591153,0.5379961259440885
+org/apache/commons/math/dfp/Dfp,59,1292,            result.exp = 0;,0.03571,0,,0,0.25334054208212037,0.7466594579178794
+org/apache/commons/math/dfp/Dfp,59,1294,            if (asign != bsign) {,0.03571,0,,0,0.33661455977266885,0.6633854402273313
+org/apache/commons/math/dfp/Dfp,59,1296,                result.sign = 1;  // Per IEEE 854-1987 Section 6.3,0.03571,0,,0,0.21607973729015903,0.7839202627098396
+org/apache/commons/math/dfp/Dfp,59,1301,        final int excp = result.round(aextradigit + bextradigit);,0.03571,0,,0,0.47302352036474776,0.5269764796352537
+org/apache/commons/math/dfp/Dfp,59,1302,        if (excp != 0) {,0.03571,0,,0,0.3764945433067428,0.6235054566932573
+org/apache/commons/math/dfp/Dfp,59,1303,"            result = dotrap(excp, ADD_TRAP, x, result);",0.03571,0,,0,0.26352999757411644,0.7364700024258825
+org/apache/commons/math/dfp/Dfp,59,1306,        return result;,0.03571,0,,0,0.23222993465402345,0.767770065345978
+org/apache/commons/math/dfp/Dfp,59,1313,        Dfp result = newInstance(this);,0.03571,0,,0,0.6398169145842131,0.3601830854157878
+org/apache/commons/math/dfp/Dfp,59,1314,        result.sign = (byte) - result.sign;,0.03571,0,,0,0.48776537053976,0.51223462946024
+org/apache/commons/math/dfp/Dfp,59,1315,        return result;,0.03571,0,,0,0.23222993465402345,0.767770065345978
+org/apache/commons/math/dfp/Dfp,59,1323,        return add(x.negate());,0.03571,0,,0,0.3383967672098083,0.6616032327901918
+org/apache/commons/math/dfp/Dfp,59,1331,        boolean inc = false;,0.03571,0,,0,0.2922462439445164,0.7077537560554846
+org/apache/commons/math/dfp/Dfp,59,1332,        switch (field.getRoundingMode()) {,0.03571,0,,0,0.28766582770445137,0.7123341722955483
+org/apache/commons/math/dfp/Dfp,59,1350,                inc = n > 5000 || (n == 5000 && (mant[0] & 1) == 1);  // round half-even,0.03571,0,,0,0.9982216666512749,0.0017783333487251698
+org/apache/commons/math/dfp/Dfp,59,1351,                break;,0.03571,0,,0,0.17976608771913488,0.8202339122808646
+org/apache/commons/math/dfp/Dfp,59,1367,        if (inc) {,0.03571,0,,0,0.34840578306704534,0.651594216932956
+org/apache/commons/math/dfp/Dfp,59,1369,            int rh = 1;,0.03571,0,,0,0.17028140697168057,0.8297185930283192
+org/apache/commons/math/dfp/Dfp,59,1370,            for (int i = 0; i < mant.length; i++) {,0.03571,0,,0,0.32487489503059785,0.6751251049694021
+org/apache/commons/math/dfp/Dfp,59,1371,                final int r = mant[i] + rh;,0.03571,0,,0,0.5281241988407888,0.47187580115921157
+org/apache/commons/math/dfp/Dfp,59,1372,                rh = r / RADIX;,0.03571,0,,0,0.24462251652735847,0.7553774834726427
+org/apache/commons/math/dfp/Dfp,59,1373,                mant[i] = r - rh * RADIX;,0.03571,0,,0,0.6262077746336432,0.3737922253663565
+org/apache/commons/math/dfp/Dfp,59,1376,            if (rh != 0) {,0.03571,0,,0,0.32316341667513737,0.6768365833248622
+org/apache/commons/math/dfp/Dfp,59,1383,        if (exp < MIN_EXP) {,0.03571,0,,0,0.3939168410605178,0.6060831589394822
+org/apache/commons/math/dfp/Dfp,59,1389,        if (exp > MAX_EXP) {,0.03571,0,,0,0.3939168410605178,0.6060831589394822
+org/apache/commons/math/dfp/Dfp,59,1395,        if (n != 0) {,0.03571,0,,0,0.3803626754219593,0.6196373245780407
+org/apache/commons/math/dfp/Dfp,59,1397,            field.setIEEEFlagsBits(DfpField.FLAG_INEXACT);,0.03571,0,,0,0.28928926519321374,0.7107107348067861
+org/apache/commons/math/dfp/Dfp,59,1398,            return DfpField.FLAG_INEXACT;,0.03571,0,,0,0.17630273943765104,0.8236972605623483
+org/apache/commons/math/dfp/Dfp,59,1401,        return 0;,0.03571,0,,0,0.1757306591375606,0.8242693408624386
+org/apache/commons/math/dfp/Dfp,59,1412,        if (field.getRadixDigits() != x.field.getRadixDigits()) {,0.03571,0,,0,0.44426892771460885,0.5557310722853899
+org/apache/commons/math/dfp/Dfp,59,1419,        Dfp result = newInstance(getZero());,0.03571,0,,0,0.7611169752119589,0.2388830247880408
+org/apache/commons/math/dfp/Dfp,59,1422,        if (nans != FINITE || x.nans != FINITE) {,0.03571,0,,0,0.5804570036021778,0.41954299639782106
+org/apache/commons/math/dfp/Dfp,59,1459,        int[] product = new int[mant.length*2];  // Big enough to hold even the largest result,0.03571,0,,0,0.5851999693596338,0.41480003064036614
+org/apache/commons/math/dfp/Dfp,59,1461,        for (int i = 0; i < mant.length; i++) {,0.03571,0,,0,0.38078712520637853,0.6192128747936209
+org/apache/commons/math/dfp/Dfp,59,1462,            int rh = 0;  // acts as a carry,0.03571,0,,0,0.1646350599567193,0.8353649400432825
+org/apache/commons/math/dfp/Dfp,59,1463,            for (int j=0; j<mant.length; j++) {,0.03571,0,,0,0.3192132141853843,0.6807867858146173
+org/apache/commons/math/dfp/Dfp,59,1464,                int r = mant[i] * x.mant[j];    // multiply the 2 digits,0.03571,0,,0,0.4817421727329106,0.5182578272670879
+org/apache/commons/math/dfp/Dfp,59,1465,                r = r + product[i+j] + rh;  // add to the product digit with carry in,0.03571,0,,0,0.6733791269638656,0.3266208730361337
+org/apache/commons/math/dfp/Dfp,59,1467,                rh = r / RADIX;,0.03571,0,,0,0.24462251652735847,0.7553774834726427
+org/apache/commons/math/dfp/Dfp,59,1468,                product[i+j] = r - rh * RADIX;,0.03571,0,,0,0.7046541948988333,0.2953458051011676
+org/apache/commons/math/dfp/Dfp,59,1470,            product[i+mant.length] = rh;,0.03571,0,,0,0.6004877037251363,0.3995122962748631
+org/apache/commons/math/dfp/Dfp,59,1474,"        int md = mant.length * 2 - 1;  // default, in case result is zero",0.03571,0,,0,0.4871462562213932,0.5128537437786064
+org/apache/commons/math/dfp/Dfp,59,1475,        for (int i = mant.length * 2 - 1; i >= 0; i--) {,0.03571,0,,0,0.6494043806733594,0.35059561932663985
+org/apache/commons/math/dfp/Dfp,59,1476,            if (product[i] != 0) {,0.03571,0,,0,0.5170647522497066,0.4829352477502937
+org/apache/commons/math/dfp/Dfp,59,1477,                md = i;,0.03571,0,,0,0.2021241632198966,0.7978758367801043
+org/apache/commons/math/dfp/Dfp,59,1478,                break;,0.03571,0,,0,0.17976608771913488,0.8202339122808646
+org/apache/commons/math/dfp/Dfp,59,1483,        for (int i = 0; i < mant.length; i++) {,0.03571,0,,0,0.38078712520637853,0.6192128747936209
+org/apache/commons/math/dfp/Dfp,59,1484,            result.mant[mant.length - i - 1] = product[md - i];,0.03571,0,,0,0.5089110349783114,0.4910889650216897
+org/apache/commons/math/dfp/Dfp,59,1488,        result.exp = exp + x.exp + md - 2 * mant.length + 1;,0.03571,0,,0,0.5257481246833896,0.47425187531661067
+org/apache/commons/math/dfp/Dfp,59,1489,        result.sign = (byte)((sign == x.sign)?1:-1);,0.03571,0,,0,0.5142856527194648,0.48571434728053414
+org/apache/commons/math/dfp/Dfp,59,1491,        if (result.mant[mant.length-1] == 0) {,0.03571,0,,0,0.46200387405591153,0.5379961259440885
+org/apache/commons/math/dfp/Dfp,59,1493,            result.exp = 0;,0.03571,0,,0,0.25334054208212037,0.7466594579178794
+org/apache/commons/math/dfp/Dfp,59,1497,        if (md > (mant.length-1)) {,0.03571,0,,0,0.5170488227272807,0.4829511772727178
+org/apache/commons/math/dfp/Dfp,59,1498,            excp = result.round(product[md-mant.length]);,0.03571,0,,0,0.6186426547324408,0.3813573452675591
+org/apache/commons/math/dfp/Dfp,59,1503,        if (excp != 0) {,0.03571,0,,0,0.3764945433067428,0.6235054566932573
+org/apache/commons/math/dfp/Dfp,59,1504,"            result = dotrap(excp, MULTIPLY_TRAP, x, result);",0.03571,0,,0,0.2743453730838694,0.7256546269161294
+org/apache/commons/math/dfp/Dfp,59,1507,        return result;,0.03571,0,,0,0.23222993465402345,0.767770065345978
+org/apache/commons/math/dfp/Dfp,59,1584,        int trial=0;    // trial quotient digit,0.03571,0,,0,0.21709306992776817,0.7829069300722322
+org/apache/commons/math/dfp/Dfp,59,1587,        int md=0;       // most sig digit in result,0.03571,0,,0,0.2230036638079703,0.7769963361920308
+org/apache/commons/math/dfp/Dfp,59,1591,        if (field.getRadixDigits() != divisor.field.getRadixDigits()) {,0.03571,0,,0,0.4721355719240494,0.5278644280759496
+org/apache/commons/math/dfp/Dfp,59,1598,        Dfp result = newInstance(getZero());,0.03571,0,,0,0.7611169752119589,0.2388830247880408
+org/apache/commons/math/dfp/Dfp,59,1601,        if (nans != FINITE || divisor.nans != FINITE) {,0.03571,0,,0,0.5952909269616403,0.4047090730383607
+org/apache/commons/math/dfp/Dfp,59,1632,        if (divisor.mant[mant.length-1] == 0) {,0.03571,0,,0,0.46381401982864856,0.53618598017135
+org/apache/commons/math/dfp/Dfp,59,1641,        dividend = new int[mant.length+1];  // one extra digit needed,0.03571,0,,0,0.4985285470769602,0.5014714529230413
+org/apache/commons/math/dfp/Dfp,59,1642,"        quotient = new int[mant.length+2];  // two extra digits needed 1 for overflow, 1 for rounding",0.03571,0,,0,0.7662257337992191,0.23377426620078107
+org/apache/commons/math/dfp/Dfp,59,1643,        remainder = new int[mant.length+1]; // one extra digit needed,0.03571,0,,0,0.4985285470769602,0.5014714529230413
+org/apache/commons/math/dfp/Dfp,59,1647,        dividend[mant.length] = 0;,0.03571,0,,0,0.6474192457920648,0.352580754207936
+org/apache/commons/math/dfp/Dfp,59,1648,        quotient[mant.length] = 0;,0.03571,0,,0,0.6474192457920648,0.352580754207936
+org/apache/commons/math/dfp/Dfp,59,1649,        quotient[mant.length+1] = 0;,0.03571,0,,0,0.6833739687001082,0.3166260312998924
+org/apache/commons/math/dfp/Dfp,59,1650,        remainder[mant.length] = 0;,0.03571,0,,0,0.6476245508128537,0.35237544918714514
+org/apache/commons/math/dfp/Dfp,59,1655,        for (int i = 0; i < mant.length; i++) {,0.03571,0,,0,0.38078712520637853,0.6192128747936209
+org/apache/commons/math/dfp/Dfp,59,1656,            dividend[i] = mant[i];,0.03571,0,,0,0.476502429937335,0.5234975700626636
+org/apache/commons/math/dfp/Dfp,59,1657,            quotient[i] = 0;,0.03571,0,,0,0.4811271038522233,0.5188728961477768
+org/apache/commons/math/dfp/Dfp,59,1658,            remainder[i] = 0;,0.03571,0,,0,0.48002424986044595,0.5199757501395529
+org/apache/commons/math/dfp/Dfp,59,1662,        nsqd = 0;,0.03571,0,,0,0.2925942270729402,0.7074057729270589
+org/apache/commons/math/dfp/Dfp,59,1663,        for (qd = mant.length+1; qd >= 0; qd--) {,0.03571,0,,0,0.5561535391145496,0.44384646088544927
+org/apache/commons/math/dfp/Dfp,59,1667,            final int divMsb = dividend[mant.length]*RADIX+dividend[mant.length-1];,0.03571,0,,0,0.8052364479152272,0.19476355208477145
+org/apache/commons/math/dfp/Dfp,59,1668,            int min = divMsb       / (divisor.mant[mant.length-1]+1);,0.03571,0,,0,0.4553127614121789,0.5446872385878228
+org/apache/commons/math/dfp/Dfp,59,1669,            int max = (divMsb + 1) / divisor.mant[mant.length-1];,0.03571,0,,0,0.4394373043797483,0.5605626956202509
+org/apache/commons/math/dfp/Dfp,59,1671,            trialgood = false;,0.03571,0,,0,0.30218259447729295,0.6978174055227069
+org/apache/commons/math/dfp/Dfp,59,1672,            while (!trialgood) {,0.03571,0,,0,0.3469637545358401,0.65303624546416
+org/apache/commons/math/dfp/Dfp,59,1674,                trial = (min+max)/2;,0.03571,0,,0,0.4003619101880016,0.599638089811999
+org/apache/commons/math/dfp/Dfp,59,1677,                int rh = 0;,0.03571,0,,0,0.12053038286601342,0.879469617133986
+org/apache/commons/math/dfp/Dfp,59,1678,                for (int i = 0; i < mant.length + 1; i++) {,0.03571,0,,0,0.33338752228347496,0.6666124777165253
+org/apache/commons/math/dfp/Dfp,59,1679,                    int dm = (i<mant.length)?divisor.mant[i]:0;,0.03571,0,,0,0.22425586708020728,0.7757441329197925
+org/apache/commons/math/dfp/Dfp,59,1680,                    final int r = (dm * trial) + rh;,0.03571,0,,0,0.2651956665675559,0.7348043334324452
+org/apache/commons/math/dfp/Dfp,59,1681,                    rh = r / RADIX;,0.03571,0,,0,0.17021152785279026,0.8297884721472091
+org/apache/commons/math/dfp/Dfp,59,1682,                    remainder[i] = r - rh * RADIX;,0.03571,0,,0,0.5166216265932404,0.4833783734067582
+org/apache/commons/math/dfp/Dfp,59,1686,                rh = 1;  // carry in to aid the subtraction,0.03571,0,,0,0.18885590631894056,0.8111440936810586
+org/apache/commons/math/dfp/Dfp,59,1687,                for (int i = 0; i < mant.length + 1; i++) {,0.03571,0,,0,0.33338752228347496,0.6666124777165253
+org/apache/commons/math/dfp/Dfp,59,1688,                    final int r = ((RADIX-1) - remainder[i]) + dividend[i] + rh;,0.03571,0,,0,0.7676163743570479,0.23238362564295234
+org/apache/commons/math/dfp/Dfp,59,1689,                    rh = r / RADIX;,0.03571,0,,0,0.17021152785279026,0.8297884721472091
+org/apache/commons/math/dfp/Dfp,59,1690,                    remainder[i] = r - rh * RADIX;,0.03571,0,,0,0.5166216265932404,0.4833783734067582
+org/apache/commons/math/dfp/Dfp,59,1694,                if (rh == 0) {,0.03571,0,,0,0.2515787148339752,0.7484212851660231
+org/apache/commons/math/dfp/Dfp,59,1696,                    max = trial-1;,0.03571,0,,0,0.17233873562907484,0.8276612643709261
+org/apache/commons/math/dfp/Dfp,59,1697,                    continue;,0.03571,0,,0,0.1757306591375606,0.8242693408624386
+org/apache/commons/math/dfp/Dfp,59,1701,                minadj = (remainder[mant.length] * RADIX)+remainder[mant.length-1];,0.03571,0,,0,0.7612579471882401,0.23874205281175914
+org/apache/commons/math/dfp/Dfp,59,1702,                minadj = minadj / (divisor.mant[mant.length-1]+1);,0.03571,0,,0,0.4508723071640512,0.5491276928359504
+org/apache/commons/math/dfp/Dfp,59,1704,                if (minadj >= 2) {,0.03571,0,,0,0.2480674431757347,0.7519325568242656
+org/apache/commons/math/dfp/Dfp,59,1705,                    min = trial+minadj;  // update the minimum,0.03571,0,,0,0.19920245510161239,0.800797544898386
+org/apache/commons/math/dfp/Dfp,59,1706,                    continue;,0.03571,0,,0,0.13326194694387547,0.8667380530561254
+org/apache/commons/math/dfp/Dfp,59,1711,                trialgood = false;  // assume false,0.03571,0,,0,0.25127579654784293,0.748724203452158
+org/apache/commons/math/dfp/Dfp,59,1712,                for (int i = mant.length - 1; i >= 0; i--) {,0.03571,0,,0,0.34166139609024504,0.658338603909754
+org/apache/commons/math/dfp/Dfp,59,1713,                    if (divisor.mant[i] > remainder[i]) {,0.03571,0,,0,0.5856150626762462,0.41438493732375253
+org/apache/commons/math/dfp/Dfp,59,1714,                        trialgood = true;,0.03571,0,,0,0.12434469753330714,0.8756553024666919
+org/apache/commons/math/dfp/Dfp,59,1716,                    if (divisor.mant[i] < remainder[i]) {,0.03571,0,,0,0.5856150626762462,0.41438493732375253
+org/apache/commons/math/dfp/Dfp,59,1717,                        break;,0.03571,0,,0,0.13525930526111157,0.8647406947388896
+org/apache/commons/math/dfp/Dfp,59,1721,                if (remainder[mant.length] != 0) {,0.03571,0,,0,0.6652203817382444,0.33477961826175423
+org/apache/commons/math/dfp/Dfp,59,1722,                    trialgood = false;,0.03571,0,,0,0.18133648597220836,0.8186635140277925
+org/apache/commons/math/dfp/Dfp,59,1725,                if (trialgood == false) {,0.03571,0,,0,0.3177863405138191,0.6822136594861802
+org/apache/commons/math/dfp/Dfp,59,1726,                    min = trial+1;,0.03571,0,,0,0.1853758591885168,0.8146241408114818
+org/apache/commons/math/dfp/Dfp,59,1728,            },0.03571,0,,0,0.14758055900883973,0.8524194409911597
+org/apache/commons/math/dfp/Dfp,59,1731,            quotient[qd] = trial;,0.03571,0,,0,0.6627699378508386,0.3372300621491611
+org/apache/commons/math/dfp/Dfp,59,1732,            if (trial != 0 || nsqd != 0) {,0.03571,0,,0,0.5531019754184597,0.4468980245815412
+org/apache/commons/math/dfp/Dfp,59,1733,                nsqd++;,0.03571,0,,0,0.17041722567002524,0.8295827743299756
+org/apache/commons/math/dfp/Dfp,59,1736,            if (field.getRoundingMode() == DfpField.RoundingMode.ROUND_DOWN && nsqd == mant.length) {,0.03571,0,,0,0.6369365246261758,0.36306347537382594
+org/apache/commons/math/dfp/Dfp,59,1741,            if (nsqd > mant.length) {,0.03571,0,,0,0.34451854974211943,0.6554814502578796
+org/apache/commons/math/dfp/Dfp,59,1743,                break;,0.03571,0,,0,0.13525930526111157,0.8647406947388896
+org/apache/commons/math/dfp/Dfp,59,1747,            dividend[0] = 0;,0.03571,0,,0,0.5578791897207164,0.4421208102792832
+org/apache/commons/math/dfp/Dfp,59,1748,            for (int i = 0; i < mant.length; i++) {,0.03571,0,,0,0.3251394439490138,0.674860556050985
+org/apache/commons/math/dfp/Dfp,59,1749,                dividend[i + 1] = remainder[i];,0.03571,0,,0,0.656952664499578,0.3430473355004211
+org/apache/commons/math/dfp/Dfp,59,1754,        md = mant.length;  // default,0.03571,0,,0,0.26172318599809163,0.7382768140019099
+org/apache/commons/math/dfp/Dfp,59,1755,        for (int i = mant.length + 1; i >= 0; i--) {,0.03571,0,,0,0.45521525861704043,0.5447847413829586
+org/apache/commons/math/dfp/Dfp,59,1756,            if (quotient[i] != 0) {,0.03571,0,,0,0.6306817667211576,0.3693182332788415
+org/apache/commons/math/dfp/Dfp,59,1757,                md = i;,0.03571,0,,0,0.18584826562834744,0.8141517343716524
+org/apache/commons/math/dfp/Dfp,59,1758,                break;,0.03571,0,,0,0.13525930526111157,0.8647406947388896
+org/apache/commons/math/dfp/Dfp,59,1763,        for (int i=0; i<mant.length; i++) {,0.03571,0,,0,0.36225622452461814,0.6377437754753827
+org/apache/commons/math/dfp/Dfp,59,1764,            result.mant[mant.length-i-1] = quotient[md-i];,0.03571,0,,0,0.5378226765930011,0.4621773234069971
+org/apache/commons/math/dfp/Dfp,59,1768,        result.exp = exp - divisor.exp + md - mant.length;,0.03571,0,,0,0.17280562845967998,0.8271943715403216
+org/apache/commons/math/dfp/Dfp,59,1769,        result.sign = (byte) ((sign == divisor.sign) ? 1 : -1);,0.03571,0,,0,0.5737903490884186,0.4262096509115799
+org/apache/commons/math/dfp/Dfp,59,1771,"        if (result.mant[mant.length-1] == 0) { // if result is zero, set exp to zero",0.03571,0,,0,0.6070605115624055,0.39293948843759485
+org/apache/commons/math/dfp/Dfp,59,1772,            result.exp = 0;,0.03571,0,,0,0.22611625225236814,0.7738837477476301
+org/apache/commons/math/dfp/Dfp,59,1775,        if (md > (mant.length-1)) {,0.03571,0,,0,0.5016684687189347,0.4983315312810661
+org/apache/commons/math/dfp/Dfp,59,1776,            excp = result.round(quotient[md-mant.length]);,0.03571,0,,0,0.7349719174194029,0.26502808258059884
+org/apache/commons/math/dfp/Dfp,59,1781,        if (excp != 0) {,0.03571,0,,0,0.368792746957679,0.6312072530423212
+org/apache/commons/math/dfp/Dfp,59,1782,"            result = dotrap(excp, DIVIDE_TRAP, divisor, result);",0.03571,0,,0,0.238846418980086,0.7611535810199144
+org/apache/commons/math/dfp/Dfp,59,1785,        return result;,0.03571,0,,0,0.19871914671672533,0.8012808532832733
+org/apache/commons/math/dfp/Dfp,59,1796,        if (nans != FINITE) {,0.03571,0,,0,0.3929320455968662,0.6070679544031344
+org/apache/commons/math/dfp/Dfp,59,1807,        if (divisor == 0) {,0.03571,0,,0,0.3680406678059533,0.6319593321940472
+org/apache/commons/math/dfp/Dfp,59,1817,        if (divisor < 0 || divisor >= RADIX) {,0.03571,0,,0,0.609475187715978,0.3905248122840221
+org/apache/commons/math/dfp/Dfp,59,1825,        Dfp result = newInstance(this);,0.03571,0,,0,0.7341624381892126,0.2658375618107884
+org/apache/commons/math/dfp/Dfp,59,1827,        int rl = 0;,0.03571,0,,0,0.18663115312576561,0.8133688468742339
+org/apache/commons/math/dfp/Dfp,59,1828,        for (int i = mant.length-1; i >= 0; i--) {,0.03571,0,,0,0.44987299149265786,0.550127008507342
+org/apache/commons/math/dfp/Dfp,59,1829,            final int r = rl*RADIX + result.mant[i];,0.03571,0,,0,0.7236445233931835,0.2763554766068178
+org/apache/commons/math/dfp/Dfp,59,1830,            final int rh = r / divisor;,0.03571,0,,0,0.3303596276231982,0.6696403723768012
+org/apache/commons/math/dfp/Dfp,59,1831,            rl = r - rh * divisor;,0.03571,0,,0,0.3319907834282401,0.66800921657176
+org/apache/commons/math/dfp/Dfp,59,1832,            result.mant[i] = rh;,0.03571,0,,0,0.6820685712219023,0.3179314287780991
+org/apache/commons/math/dfp/Dfp,59,1835,        if (result.mant[mant.length-1] == 0) {,0.03571,0,,0,0.44698820267920725,0.5530117973207926
+org/apache/commons/math/dfp/Dfp,59,1837,            result.shiftLeft();,0.03571,0,,0,0.16753355056557476,0.8324664494344247
+org/apache/commons/math/dfp/Dfp,59,1838,            final int r = rl * RADIX;        // compute the next digit and put it in,0.03571,0,,0,0.4786759281936084,0.5213240718063932
+org/apache/commons/math/dfp/Dfp,59,1839,            final int rh = r / divisor;,0.03571,0,,0,0.3303596276231982,0.6696403723768012
+org/apache/commons/math/dfp/Dfp,59,1840,            rl = r - rh * divisor;,0.03571,0,,0,0.3319907834282401,0.66800921657176
+org/apache/commons/math/dfp/Dfp,59,1841,            result.mant[0] = rh;,0.03571,0,,0,0.2782666325701351,0.7217333674298657
+org/apache/commons/math/dfp/Dfp,59,1844,        final int excp = result.round(rl * RADIX / divisor);  // do the rounding,0.03571,0,,0,0.6147843981836713,0.38521560181632786
+org/apache/commons/math/dfp/Dfp,59,1845,        if (excp != 0) {,0.03571,0,,0,0.368792746957679,0.6312072530423212
+org/apache/commons/math/dfp/Dfp,59,1846,"            result = dotrap(excp, DIVIDE_TRAP, result, result);",0.03571,0,,0,0.23617796352137976,0.7638220364786189
+org/apache/commons/math/dfp/Dfp,59,1849,        return result;,0.03571,0,,0,0.19871914671672533,0.8012808532832733
+org/apache/commons/math/dfp/Dfp,59,1859,        if (nans == FINITE && mant[mant.length-1] == 0) {,0.03571,0,,0,0.9375354492860936,0.062464550713905165
+org/apache/commons/math/dfp/Dfp,59,1864,        if (nans != FINITE) {,0.03571,0,,0,0.3929320455968662,0.6070679544031344
+org/apache/commons/math/dfp/Dfp,59,1884,        if (sign == -1) {,0.03571,0,,0,0.42749290113903976,0.5725070988609601
+org/apache/commons/math/dfp/Dfp,59,1895,        Dfp x = newInstance(this);,0.03571,0,,0,0.7302030946191207,0.269796905380878
+org/apache/commons/math/dfp/Dfp,59,1898,        if (x.exp < -1 || x.exp > 1) {,0.03571,0,,0,0.6221585143864604,0.3778414856135394
+org/apache/commons/math/dfp/Dfp,59,1903,        switch (x.mant[mant.length-1] / 2000) {,0.03571,0,,0,0.4491370040894794,0.5508629959105207
+org/apache/commons/math/dfp/Dfp,59,1905,                x.mant[mant.length-1] = x.mant[mant.length-1]/2+1;,0.03571,0,,0,0.33077503146704723,0.6692249685329528
+org/apache/commons/math/dfp/Dfp,59,1906,                break;,0.03571,0,,0,0.13525930526111157,0.8647406947388896
+org/apache/commons/math/dfp/Dfp,59,1914,                x.mant[mant.length-1] = 3000;,0.03571,0,,0,0.34122625934974277,0.6587737406502561
+org/apache/commons/math/dfp/Dfp,59,1917,        Dfp dx = newInstance(x);,0.03571,0,,0,0.7252989436439069,0.274701056356092
+org/apache/commons/math/dfp/Dfp,59,1922,        Dfp px  = getZero();,0.03571,0,,0,0.7464859936819089,0.25351400631809046
+org/apache/commons/math/dfp/Dfp,59,1923,        Dfp ppx = getZero();,0.03571,0,,0,0.7464859936819089,0.25351400631809046
+org/apache/commons/math/dfp/Dfp,59,1924,        while (x.unequal(px)) {,0.03571,0,,0,0.21837101998890174,0.7816289800110998
+org/apache/commons/math/dfp/Dfp,59,1925,            dx = newInstance(x);,0.03571,0,,0,0.4444799845917307,0.555520015408268
+org/apache/commons/math/dfp/Dfp,59,1926,            dx.sign = -1;,0.03571,0,,0,0.320926330528035,0.6790736694719648
+org/apache/commons/math/dfp/Dfp,59,1927,            dx = dx.add(this.divide(x));,0.03571,0,,0,0.2558258600131603,0.744174139986838
+org/apache/commons/math/dfp/Dfp,59,1928,            dx = dx.divide(2);,0.03571,0,,0,0.332325873338739,0.6676741266612609
+org/apache/commons/math/dfp/Dfp,59,1929,            ppx = px;,0.03571,0,,0,0.22995577602361644,0.770044223976384
+org/apache/commons/math/dfp/Dfp,59,1930,            px = x;,0.03571,0,,0,0.23190779546797902,0.7680922045320197
+org/apache/commons/math/dfp/Dfp,59,1931,            x = x.add(dx);,0.03571,0,,0,0.28884752105424727,0.7111524789457528
+org/apache/commons/math/dfp/Dfp,59,1933,            if (x.equals(ppx)) {,0.03571,0,,0,0.18009962275716465,0.8199003772428335
+org/apache/commons/math/dfp/Dfp,59,1940,            if (dx.mant[mant.length-1] == 0) {,0.03571,0,,0,0.39183986317247693,0.608160136827522
+org/apache/commons/math/dfp/Dfp,59,1941,                break;,0.03571,0,,0,0.13525930526111157,0.8647406947388896
+org/apache/commons/math/dfp/Dfp,59,1945,        return x;,0.03571,0,,0,0.2018164247917979,0.7981835752082028
+org/apache/commons/math/dfp/Dfp,59,1954,        if (nans != FINITE) {,0.03571,0,,0,0.3929320455968662,0.6070679544031344
+org/apache/commons/math/dfp/Dfp,59,1963,        if (exp > mant.length || exp < -1) {,0.03571,0,,0,0.6307665786165614,0.3692334213834374
+org/apache/commons/math/dfp/Dfp,59,1967,        return dfp2string();,0.03571,0,,0,0.33610430824218085,0.6638956917578184
+org/apache/commons/math/dfp/Dfp,59,2056,        char buffer[] = new char[mant.length*4 + 20];,0.03571,0,,0,0.4236439432142592,0.5763560567857412
+org/apache/commons/math/dfp/Dfp,59,2057,        int p = 1;,0.03571,0,,0,0.18728977175285946,0.8127102282471415
+org/apache/commons/math/dfp/Dfp,59,2059,        int e = exp;,0.03571,0,,0,0.20254533624065216,0.7974546637593464
+org/apache/commons/math/dfp/Dfp,59,2060,        boolean pointInserted = false;,0.03571,0,,0,0.27451854105490225,0.7254814589450985
+org/apache/commons/math/dfp/Dfp,59,2062,        buffer[0] = ' ';,0.03571,0,,0,0.7119012747414536,0.28809872525854613
+org/apache/commons/math/dfp/Dfp,59,2064,        if (e <= 0) {,0.03571,0,,0,0.37052115967015936,0.6294788403298391
+org/apache/commons/math/dfp/Dfp,59,2065,            buffer[p++] = '0';,0.03571,0,,0,0.870842885844582,0.12915711415541914
+org/apache/commons/math/dfp/Dfp,59,2066,            buffer[p++] = '.';,0.03571,0,,0,0.870842885844582,0.12915711415541914
+org/apache/commons/math/dfp/Dfp,59,2067,            pointInserted = true;,0.03571,0,,0,0.29620102716227326,0.7037989728377254
+org/apache/commons/math/dfp/Dfp,59,2070,        while (e < 0) {,0.03571,0,,0,0.36926018943965117,0.6307398105603478
+org/apache/commons/math/dfp/Dfp,59,2078,        for (int i = mant.length - 1; i >= 0; i--) {,0.03571,0,,0,0.45521525861704043,0.5447847413829586
+org/apache/commons/math/dfp/Dfp,59,2079,            buffer[p++] = (char) ((mant[i] / 1000) + '0');,0.03571,0,,0,0.9436259631906405,0.05637403680935783
+org/apache/commons/math/dfp/Dfp,59,2080,            buffer[p++] = (char) (((mant[i] / 100) % 10) + '0');,0.03571,0,,0,0.9730383848332275,0.026961615166774196
+org/apache/commons/math/dfp/Dfp,59,2081,            buffer[p++] = (char) (((mant[i] / 10) % 10) + '0');,0.03571,0,,0,0.9726491153206892,0.027350884679309063
+org/apache/commons/math/dfp/Dfp,59,2082,            buffer[p++] = (char) (((mant[i]) % 10) + '0');,0.03571,0,,0,0.9519876646797825,0.04801233532021809
+org/apache/commons/math/dfp/Dfp,59,2083,            if (--e == 0) {,0.03571,0,,0,0.381032029479758,0.6189679705202413
+org/apache/commons/math/dfp/Dfp,59,2084,                buffer[p++] = '.';,0.03571,0,,0,0.8360032251948901,0.1639967748051116
+org/apache/commons/math/dfp/Dfp,59,2085,                pointInserted = true;,0.03571,0,,0,0.2413851047443271,0.7586148952556727
+org/apache/commons/math/dfp/Dfp,59,2089,        while (e > 0) {,0.03571,0,,0,0.36926018943965117,0.6307398105603478
+org/apache/commons/math/dfp/Dfp,59,2097,        if (!pointInserted) {,0.03571,0,,0,0.3926634438489531,0.6073365561510463
+org/apache/commons/math/dfp/Dfp,59,2103,        q = 1;,0.03571,0,,0,0.24970219419757206,0.7502978058024286
+org/apache/commons/math/dfp/Dfp,59,2104,        while (buffer[q] == '0') {,0.03571,0,,0,0.7281316547092023,0.27186834529079923
+org/apache/commons/math/dfp/Dfp,59,2105,            q++;,0.03571,0,,0,0.2170310809462898,0.7829689190537105
+org/apache/commons/math/dfp/Dfp,59,2107,        if (buffer[q] == '.') {,0.03571,0,,0,0.7268362453887507,0.27316375461125064
+org/apache/commons/math/dfp/Dfp,59,2108,            q--;,0.03571,0,,0,0.2170310809462898,0.7829689190537105
+org/apache/commons/math/dfp/Dfp,59,2112,        while (buffer[p-1] == '0') {,0.03571,0,,0,0.8167149366369777,0.18328506336302053
+org/apache/commons/math/dfp/Dfp,59,2113,            p--;,0.03571,0,,0,0.2170310809462898,0.7829689190537105
+org/apache/commons/math/dfp/Dfp,59,2117,        if (sign < 0) {,0.03571,0,,0,0.36926018943965117,0.6307398105603478
+org/apache/commons/math/dfp/Dfp,59,2121,"        return new String(buffer, q, p - q);",0.03571,0,,0,0.731540079907396,0.2684599200926039
+org/apache/commons/math/dfp/Dfp,59,2133,        Dfp def = result;,0.03571,0,,0,0.5459960412178841,0.45400395878211414
+org/apache/commons/math/dfp/Dfp,59,2135,        switch (type) {,0.03571,0,,0,0.31856756246033535,0.6814324375396641
+org/apache/commons/math/dfp/Dfp,59,2184,            default: def = result; break;,0.03571,0,,0,0.4214604537937327,0.5785395462062657
+org/apache/commons/math/dfp/Dfp,59,2187,"        return trap(type, what, oper, def, result);",0.03571,0,,0,0.08722756761755024,0.9127724323824505
+org/apache/commons/math/dfp/Dfp,59,2203,        return def;,0.03571,0,,0,0.2003495874881648,0.7996504125118369
+org/apache/commons/math/dfp/Dfp,59,1000,            switch (rmode) {,0.03571,0,,0,0.2770779241640052,0.7229220758359948
+org/apache/commons/math/random/MersenneTwister,59,131,    public MersenneTwister(long seed) {,0.03571,0,,0,0.4568389897085775,0.5431610102914213
+org/apache/commons/math/random/MersenneTwister,59,132,        mt = new int[N];,0.03571,0,,0,0.7186473348097162,0.2813526651902846
+org/apache/commons/math/random/MersenneTwister,59,133,        setSeed(seed);,0.03571,0,,0,0.29782647493094405,0.7021735250690566
+org/apache/commons/math/random/MersenneTwister,59,134,    },0.03571,0,,0,0.14758055900883973,0.8524194409911597
 org/apache/commons/math/random/BitsStreamGenerator,59,35,    public BitsStreamGenerator() {,0.03333,0,-1,0
 org/apache/commons/math/random/BitsStreamGenerator,59,36,        nextGaussian = Double.NaN;,0.03333,0,-1,0
 org/apache/commons/math/random/BitsStreamGenerator,59,37,    },0.03333,0,-1,0
@@ -1106,7 +1106,7 @@ org/apache/commons/math/dfp/Dfp,59,994,        for (int i = 0; i < mant.length-r
 org/apache/commons/math/dfp/Dfp,59,995,            changed |= result.mant[i] != 0;,0.0,0,-1,0
 org/apache/commons/math/dfp/Dfp,59,996,            result.mant[i] = 0;,0.0,0,-1,0
 org/apache/commons/math/dfp/Dfp,59,999,        if (changed) {,0.0,0,-1,0
-org/apache/commons/math/dfp/Dfp,59,1000,            switch (rmode) {,0.0,0,1,0
+org/apache/commons/math/dfp/Dfp,59,1000,            switch (rmode) {,0.0,0,,0,0.2770779241640052,0.7229220758359948
 org/apache/commons/math/dfp/Dfp,59,1002,                    if (result.sign == -1) {,0.0,0,-1,0
 org/apache/commons/math/dfp/Dfp,59,1004,                        result = result.add(newInstance(-1));,0.0,0,-1,0
 org/apache/commons/math/dfp/Dfp,59,1009,                    if (result.sign == 1) {,0.0,0,-1,0
