@@ -1,0 +1,920 @@
+dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,other,lengthEle,lengthWord,depth,suspicious,accuracy,miss_line
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,986,        if (v.length != this.getColumnDimension()) {,2,1,0,2,5,2,1,0,0,6,44,4,0.33333,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,989,        final int nRows = this.getRowDimension();,1,0,0,1,2,3,1,0,1,6,41,4,0.33333,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,990,        final int nCols = this.getColumnDimension();,1,0,0,1,2,3,1,0,1,6,44,4,0.33333,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,991,        final BigDecimal[] out = new BigDecimal[v.length];,3,0,0,0,4,2,0,2,1,5,50,4,0.33333,1,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,992,        for (int row = 0; row < nRows; row++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.33333,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,993,            BigDecimal sum = ZERO;,2,0,0,0,0,0,0,1,0,2,22,6,0.33333,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,994,            for (int i = 0; i < nCols; i++) {,4,1,0,1,3,2,0,0,1,6,33,6,0.33333,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,995,                sum = sum.add(data[row][i].multiply(v[i]));,1,0,1,2,10,0,3,0,1,6,43,8,0.33333,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,997,            out[row] = sum;,1,0,1,0,2,0,0,0,1,4,15,6,0.33333,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,774,        final int nRows = this.getRowDimension();,1,0,0,1,2,3,1,0,1,6,41,4,0.33333,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,775,        final int nCols = this.getColumnDimension();,1,0,0,1,2,3,1,0,1,6,44,4,0.33333,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,776,        if (v.length != nCols) {,3,1,0,1,3,1,0,0,0,5,24,4,0.33333,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,779,        final double[] out = new double[v.length];,3,0,0,0,4,4,0,0,1,4,42,4,0.33333,1,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,780,        for (int row = 0; row < nRows; row++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.33333,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,781,            final double[] dataRow = data[row];,1,0,1,0,4,2,0,0,1,5,35,6,0.33333,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,782,            double sum = 0;,1,0,0,0,0,1,0,0,0,2,15,7,0.33333,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,783,            for (int i = 0; i < nCols; i++) {,4,1,0,1,3,2,0,0,1,6,33,6,0.33333,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,784,                sum += dataRow[i] * v[i];,1,1,1,0,4,0,0,0,1,5,25,8,0.33333,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,786,            out[row] = sum;,1,0,1,0,2,0,0,0,1,4,15,6,0.33333,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,154,                if (d[r].length != nCols) {,2,1,1,1,5,1,0,0,0,6,27,8,0.05263,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,138,"    public BigMatrixImpl(BigDecimal[][] d, boolean copyArray) {",3,0,0,0,7,2,0,1,1,5,59,2,0.04762,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,139,        if (copyArray) {,1,0,0,1,3,1,0,0,0,4,16,4,0.04762,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,142,            if (d == null) {,1,1,0,1,3,1,0,0,0,5,16,6,0.04762,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,145,            final int nRows = d.length;,3,0,0,0,0,2,0,0,1,3,27,6,0.04762,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,146,            if (nRows == 0) {,1,1,0,1,3,1,0,0,0,5,17,6,0.04762,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,149,            final int nCols = d[0].length;,2,0,1,0,2,2,0,0,1,5,30,6,0.04762,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,150,            if (nCols == 0) {,1,1,0,1,3,1,0,0,0,5,17,6,0.04762,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,153,            for (int r = 1; r < nRows; r++) {,4,1,0,1,3,2,0,0,1,6,33,6,0.04762,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,158,            data = d;,2,0,0,0,0,0,0,0,1,2,9,6,0.04762,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,160,        lu = null;,1,0,0,0,0,0,0,0,1,2,10,4,0.04762,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,161,    },0,0,0,0,1,0,0,0,0,1,1,2,0.04762,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,947,        return data.length;,2,0,0,0,0,1,0,0,0,2,19,5,0.03226,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,956,        return data[0].length;,1,0,1,0,2,1,0,0,0,4,22,5,0.03226,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,56,    protected BigDecimal data[][] = null;,1,0,0,0,4,1,0,1,1,5,37,2,0.03125,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,61,    protected BigDecimal lu[][] = null;,1,0,0,0,4,1,0,1,1,5,35,2,0.03125,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,64,    protected int[] permutation = null;,1,0,0,0,2,2,0,0,1,4,35,2,0.03125,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,67,    protected int parity = 1;,1,0,0,0,0,2,0,0,1,3,25,2,0.03125,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,70,    private int roundingMode = BigDecimal.ROUND_HALF_UP;,3,0,0,0,0,2,0,0,1,3,52,2,0.03125,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,73,    private int scale = 64;,1,0,0,0,0,2,0,0,1,3,23,2,0.03125,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,76,    private static final BigDecimal TOO_SMALL = new BigDecimal(10E-12);,1,0,0,1,2,4,0,2,4,6,67,2,0.03125,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,79,    static final BigDecimal ZERO = new BigDecimal(0);,1,0,0,1,2,3,0,2,3,6,49,2,0.03125,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,81,    static final BigDecimal ONE = new BigDecimal(1);,1,0,0,1,2,3,0,2,3,6,48,2,0.03125,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,146,                if (d[r].length != nCols) {,2,1,1,1,5,1,0,0,0,6,27,8,0.02,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,141,            final int nCols = d[0].length;,2,0,1,0,2,2,0,0,1,5,30,6,0.01887,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,142,            if (nCols == 0) {,1,1,0,1,3,1,0,0,0,5,17,6,0.01887,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,145,            for (int r = 1; r < nRows; r++) {,4,1,0,1,3,2,0,0,1,6,33,6,0.01887,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,150,            data = d;,2,0,0,0,0,0,0,0,1,2,9,6,0.01887,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,152,        lu = null;,1,0,0,0,0,0,0,0,1,2,10,4,0.01887,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,153,    },0,0,0,0,1,0,0,0,0,1,1,2,0.01887,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,130,"    public RealMatrixImpl(double[][] d, boolean copyArray) {",3,0,0,0,7,3,0,0,1,4,56,2,0.01852,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,131,        if (copyArray) {,1,0,0,1,3,1,0,0,0,4,16,4,0.01852,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,134,            if (d == null) {,1,1,0,1,3,1,0,0,0,5,16,6,0.01852,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,137,            final int nRows = d.length;,3,0,0,0,0,2,0,0,1,3,27,6,0.01852,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,138,            if (nRows == 0) {,1,1,0,1,3,1,0,0,0,5,17,6,0.01852,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,750,        return data[0].length;,1,0,1,0,2,1,0,0,0,4,22,5,0.01299,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,743,        return data.length;,2,0,0,0,0,1,0,0,0,2,19,5,0.01282,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,58,    protected double data[][] = null;,1,0,0,0,4,2,0,0,1,4,33,2,0.0122,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,63,    protected double lu[][] = null;,1,0,0,0,4,2,0,0,1,4,31,2,0.0122,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,66,    protected int[] permutation = null;,1,0,0,0,2,2,0,0,1,4,35,2,0.0122,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,69,    protected int parity = 1;,1,0,0,0,0,2,0,0,1,3,25,2,0.0122,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,86,    public BigMatrixImpl() {,1,0,0,1,3,1,0,0,1,5,24,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,87,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,97,"    public BigMatrixImpl(int rowDimension, int columnDimension) {",3,0,0,0,3,3,0,0,1,4,61,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,98,        if (rowDimension <=0 || columnDimension <=0) {,2,3,0,1,3,1,0,0,0,5,46,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,99,            throw new IllegalArgumentException,0,0,0,0,0,2,0,1,1,3,34,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,102,        data = new BigDecimal[rowDimension][columnDimension];,1,0,1,0,4,1,0,1,1,6,53,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,103,        lu = null;,1,0,0,0,0,0,0,0,1,2,10,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,104,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,118,    public BigMatrixImpl(BigDecimal[][] d) {,2,0,0,1,7,1,0,1,1,6,40,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,119,        this.copyIn(d);,0,0,0,1,2,1,2,0,0,4,15,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,120,        lu = null;,1,0,0,0,0,0,0,0,1,2,10,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,121,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,140,            copyIn(d);,0,0,0,1,2,0,2,0,1,4,10,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,143,                throw new NullPointerException();,0,0,0,1,2,2,0,1,1,5,33,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,147,"                throw new IllegalArgumentException(""Matrix must have at least one row.""); ",0,0,0,1,2,2,0,1,2,5,73,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,151,"                throw new IllegalArgumentException(""Matrix must have at least one column.""); ",0,0,0,1,2,2,0,1,2,5,76,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,155,"                    throw new IllegalArgumentException(""All input rows must have the same length."");",0,0,0,1,2,2,0,1,2,5,80,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,174,    public BigMatrixImpl(double[][] d) {,2,0,0,1,7,2,0,0,1,5,36,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,175,        final int nRows = d.length;,3,0,0,0,0,2,0,0,1,3,27,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,176,        if (nRows == 0) {,1,1,0,1,3,1,0,0,0,5,17,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,177,            throw new IllegalArgumentException(,0,0,0,0,1,2,0,1,1,4,35,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,180,        final int nCols = d[0].length;,2,0,1,0,2,2,0,0,1,5,30,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,181,        if (nCols == 0) {,1,1,0,1,3,1,0,0,0,5,17,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,182,            throw new IllegalArgumentException(,0,0,0,0,1,2,0,1,1,4,35,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,185,        for (int row = 1; row < nRows; row++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,186,            if (d[row].length != nCols) {,2,1,1,1,5,1,0,0,0,6,29,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,187,                throw new IllegalArgumentException(,0,0,0,0,1,2,0,1,1,4,35,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,191,        this.copyIn(d);,0,0,0,1,2,1,2,0,0,4,15,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,192,        lu = null;,1,0,0,0,0,0,0,0,1,2,10,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,193,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,204,    public BigMatrixImpl(String[][] d) {,2,0,0,1,7,1,0,1,1,6,36,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,205,        final int nRows = d.length;,3,0,0,0,0,2,0,0,1,3,27,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,206,        if (nRows == 0) {,1,1,0,1,3,1,0,0,0,5,17,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,207,            throw new IllegalArgumentException(,0,0,0,0,1,2,0,1,1,4,35,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,210,        final int nCols = d[0].length;,2,0,1,0,2,2,0,0,1,5,30,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,211,        if (nCols == 0) {,1,1,0,1,3,1,0,0,0,5,17,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,212,            throw new IllegalArgumentException(,0,0,0,0,1,2,0,1,1,4,35,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,215,        for (int row = 1; row < nRows; row++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,216,            if (d[row].length != nCols) {,2,1,1,1,5,1,0,0,0,6,29,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,217,                throw new IllegalArgumentException(,0,0,0,0,1,2,0,1,1,4,35,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,221,        this.copyIn(d);,0,0,0,1,2,1,2,0,0,4,15,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,222,        lu = null;,1,0,0,0,0,0,0,0,1,2,10,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,223,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,234,    public BigMatrixImpl(BigDecimal[] v) {,2,0,0,1,5,1,0,1,1,6,38,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,235,        final int nRows = v.length;,3,0,0,0,0,2,0,0,1,3,27,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,236,        data = new BigDecimal[nRows][1];,1,0,1,0,4,1,0,1,1,6,32,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,237,        for (int row = 0; row < nRows; row++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,238,            data[row][0] = v[row];,0,0,1,0,6,0,0,0,1,3,22,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,240,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,248,"        return new BigMatrixImpl(this.copyOut(), false);",0,0,0,1,4,3,1,1,2,6,48,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,260,            return add((BigMatrixImpl) m);,1,0,0,2,4,1,1,1,1,7,30,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,261,        } catch (ClassCastException cce) {,1,0,0,1,4,1,0,1,0,5,34,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,262,            final int rowCount    = getRowDimension();,1,0,0,1,2,2,1,0,2,6,42,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,263,            final int columnCount = getColumnDimension();,1,0,0,1,2,2,1,0,2,6,45,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,264,            if (columnCount != m.getColumnDimension() || rowCount != m.getRowDimension()) {,2,3,0,2,7,1,4,0,0,6,79,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,265,"                throw new IllegalArgumentException(""matrix dimension mismatch"");",0,0,0,1,2,2,0,1,2,5,64,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,267,            final BigDecimal[][] outData = new BigDecimal[rowCount][columnCount];,1,0,1,0,8,2,0,2,1,6,69,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,268,            for (int row = 0; row < rowCount; row++) {,4,1,0,1,3,2,0,0,1,6,42,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,269,                final BigDecimal[] dataRow    = data[row];,1,0,1,0,4,1,0,1,1,6,42,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,270,                final BigDecimal[] outDataRow = outData[row];,1,0,1,0,4,1,0,1,1,6,45,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,271,                for (int col = 0; col < columnCount; col++) {,4,1,0,1,3,2,0,0,1,6,45,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,272,"                    outDataRow[col] = dataRow[col].add(m.getEntry(row, col));",0,0,1,0,8,0,5,0,1,4,57,11,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,275,"            return new BigMatrixImpl(outData, false);",1,0,0,0,2,2,0,1,2,5,41,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,287,        final int rowCount    = getRowDimension();,1,0,0,1,2,2,1,0,2,6,42,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,288,        final int columnCount = getColumnDimension();,1,0,0,1,2,2,1,0,2,6,45,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,289,        if (columnCount != m.getColumnDimension() || rowCount != m.getRowDimension()) {,2,3,0,2,7,1,4,0,0,6,79,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,290,"            throw new IllegalArgumentException(""matrix dimension mismatch"");",0,0,0,1,2,2,0,1,2,5,64,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,292,        final BigDecimal[][] outData = new BigDecimal[rowCount][columnCount];,1,0,1,0,8,2,0,2,1,6,69,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,293,        for (int row = 0; row < rowCount; row++) {,4,1,0,1,3,2,0,0,1,6,42,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,294,            final BigDecimal[] dataRow    = data[row];,1,0,1,0,4,1,0,1,1,6,42,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,295,            final BigDecimal[] mRow       = m.data[row];,3,0,1,0,4,1,0,1,1,6,44,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,296,            final BigDecimal[] outDataRow = outData[row];,1,0,1,0,4,1,0,1,1,6,45,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,297,            for (int col = 0; col < columnCount; col++) {,4,1,0,1,3,2,0,0,1,6,45,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,298,                outDataRow[col] = dataRow[col].add(mRow[col]);,0,0,1,1,8,0,1,0,1,5,46,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,301,"        return new BigMatrixImpl(outData, false);",1,0,0,0,2,2,0,1,2,5,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,313,            return subtract((BigMatrixImpl) m);,1,0,0,2,4,1,1,1,1,7,35,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,314,        } catch (ClassCastException cce) {,1,0,0,1,4,1,0,1,0,5,34,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,315,            final int rowCount    = getRowDimension();,1,0,0,1,2,2,1,0,2,6,42,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,316,            final int columnCount = getColumnDimension();,1,0,0,1,2,2,1,0,2,6,45,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,317,            if (columnCount != m.getColumnDimension() || rowCount != m.getRowDimension()) {,2,3,0,2,7,1,4,0,0,6,79,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,318,"                throw new IllegalArgumentException(""matrix dimension mismatch"");",0,0,0,1,2,2,0,1,2,5,64,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,320,            final BigDecimal[][] outData = new BigDecimal[rowCount][columnCount];,1,0,1,0,8,2,0,2,1,6,69,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,321,            for (int row = 0; row < rowCount; row++) {,4,1,0,1,3,2,0,0,1,6,42,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,322,                final BigDecimal[] dataRow    = data[row];,1,0,1,0,4,1,0,1,1,6,42,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,323,                final BigDecimal[] outDataRow = outData[row];,1,0,1,0,4,1,0,1,1,6,45,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,324,                for (int col = 0; col < columnCount; col++) {,4,1,0,1,3,2,0,0,1,6,45,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,325,"                    outDataRow[col] = dataRow[col].subtract(getEntry(row, col));",0,0,1,0,8,0,4,0,2,4,60,11,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,328,"            return new BigMatrixImpl(outData, false);",1,0,0,0,2,2,0,1,2,5,41,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,340,        final int rowCount    = getRowDimension();,1,0,0,1,2,2,1,0,2,6,42,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,341,        final int columnCount = getColumnDimension();,1,0,0,1,2,2,1,0,2,6,45,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,342,        if (columnCount != m.getColumnDimension() || rowCount != m.getRowDimension()) {,2,3,0,2,7,1,4,0,0,6,79,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,343,"            throw new IllegalArgumentException(""matrix dimension mismatch"");",0,0,0,1,2,2,0,1,2,5,64,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,345,        final BigDecimal[][] outData = new BigDecimal[rowCount][columnCount];,1,0,1,0,8,2,0,2,1,6,69,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,346,        for (int row = 0; row < rowCount; row++) {,4,1,0,1,3,2,0,0,1,6,42,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,347,            final BigDecimal[] dataRow    = data[row];,1,0,1,0,4,1,0,1,1,6,42,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,348,            final BigDecimal[] mRow       = m.data[row];,3,0,1,0,4,1,0,1,1,6,44,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,349,            final BigDecimal[] outDataRow = outData[row];,1,0,1,0,4,1,0,1,1,6,45,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,350,            for (int col = 0; col < columnCount; col++) {,4,1,0,1,3,2,0,0,1,6,45,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,351,                outDataRow[col] = dataRow[col].subtract(mRow[col]);,0,0,1,1,8,0,1,0,1,5,51,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,354,"        return new BigMatrixImpl(outData, false);",1,0,0,0,2,2,0,1,2,5,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,364,        final int rowCount    = getRowDimension();,1,0,0,1,2,2,1,0,2,6,42,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,365,        final int columnCount = getColumnDimension();,1,0,0,1,2,2,1,0,2,6,45,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,366,        final BigDecimal[][] outData = new BigDecimal[rowCount][columnCount];,1,0,1,0,8,2,0,2,1,6,69,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,367,        for (int row = 0; row < rowCount; row++) {,4,1,0,1,3,2,0,0,1,6,42,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,368,            final BigDecimal[] dataRow    = data[row];,1,0,1,0,4,1,0,1,1,6,42,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,369,            final BigDecimal[] outDataRow = outData[row];,1,0,1,0,4,1,0,1,1,6,45,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,370,            for (int col = 0; col < columnCount; col++) {,4,1,0,1,3,2,0,0,1,6,45,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,371,                outDataRow[col] = dataRow[col].add(d);,0,0,1,1,6,0,2,0,1,5,38,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,374,"        return new BigMatrixImpl(outData, false);",1,0,0,0,2,2,0,1,2,5,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,383,        final int rowCount    = getRowDimension();,1,0,0,1,2,2,1,0,2,6,42,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,384,        final int columnCount = getColumnDimension();,1,0,0,1,2,2,1,0,2,6,45,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,385,        final BigDecimal[][] outData = new BigDecimal[rowCount][columnCount];,1,0,1,0,8,2,0,2,1,6,69,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,386,        for (int row = 0; row < rowCount; row++) {,4,1,0,1,3,2,0,0,1,6,42,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,387,            final BigDecimal[] dataRow    = data[row];,1,0,1,0,4,1,0,1,1,6,42,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,388,            final BigDecimal[] outDataRow = outData[row];,1,0,1,0,4,1,0,1,1,6,45,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,389,            for (int col = 0; col < columnCount; col++) {,4,1,0,1,3,2,0,0,1,6,45,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,390,                outDataRow[col] = dataRow[col].multiply(d);,0,0,1,1,6,0,2,0,1,5,43,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,393,"        return new BigMatrixImpl(outData, false);",1,0,0,0,2,2,0,1,2,5,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,405,            return multiply((BigMatrixImpl) m);,1,0,0,2,4,1,1,1,1,7,35,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,406,        } catch (ClassCastException cce) {,1,0,0,1,4,1,0,1,0,5,34,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,407,            if (this.getColumnDimension() != m.getRowDimension()) {,0,1,0,2,7,2,3,0,0,5,55,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,408,"                throw new IllegalArgumentException(""Matrices are not multiplication compatible."");",0,0,0,1,2,2,0,1,2,5,82,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,410,            final int nRows = this.getRowDimension();,1,0,0,1,2,3,1,0,1,6,41,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,411,            final int nCols = m.getColumnDimension();,1,0,0,1,2,2,2,0,1,6,41,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,412,            final int nSum = this.getColumnDimension();,1,0,0,1,2,3,1,0,1,6,43,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,413,            final BigDecimal[][] outData = new BigDecimal[nRows][nCols];,1,0,1,0,8,2,0,2,1,6,60,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,414,            for (int row = 0; row < nRows; row++) {,4,1,0,1,3,2,0,0,1,6,39,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,415,                final BigDecimal[] dataRow    = data[row];,1,0,1,0,4,1,0,1,1,6,42,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,416,                final BigDecimal[] outDataRow = outData[row];,1,0,1,0,4,1,0,1,1,6,45,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,417,                for (int col = 0; col < nCols; col++) {,4,1,0,1,3,2,0,0,1,6,39,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,418,                    BigDecimal sum = ZERO;,2,0,0,0,0,0,0,1,0,2,22,11,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,419,                    for (int i = 0; i < nSum; i++) {,4,1,0,1,3,2,0,0,1,6,32,11,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,420,"                        sum = sum.add(dataRow[i].multiply(m.getEntry(i, col)));",1,0,1,0,8,0,7,0,1,5,55,13,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,422,                    outDataRow[col] = sum;,1,0,1,0,2,0,0,0,1,4,22,11,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,425,"            return new BigMatrixImpl(outData, false);",1,0,0,0,2,2,0,1,2,5,41,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,437,        if (this.getColumnDimension() != m.getRowDimension()) {,0,1,0,2,7,2,3,0,0,5,55,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,438,"            throw new IllegalArgumentException(""Matrices are not multiplication compatible."");",0,0,0,1,2,2,0,1,2,5,82,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,440,        final int nRows = this.getRowDimension();,1,0,0,1,2,3,1,0,1,6,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,441,        final int nCols = m.getColumnDimension();,1,0,0,1,2,2,2,0,1,6,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,442,        final int nSum = this.getColumnDimension();,1,0,0,1,2,3,1,0,1,6,43,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,443,        final BigDecimal[][] outData = new BigDecimal[nRows][nCols];,1,0,1,0,8,2,0,2,1,6,60,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,444,        for (int row = 0; row < nRows; row++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,445,            final BigDecimal[] dataRow    = data[row];,1,0,1,0,4,1,0,1,1,6,42,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,446,            final BigDecimal[] outDataRow = outData[row];,1,0,1,0,4,1,0,1,1,6,45,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,447,            for (int col = 0; col < nCols; col++) {,4,1,0,1,3,2,0,0,1,6,39,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,448,                BigDecimal sum = ZERO;,2,0,0,0,0,0,0,1,0,2,22,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,449,                for (int i = 0; i < nSum; i++) {,4,1,0,1,3,2,0,0,1,6,32,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,450,                    sum = sum.add(dataRow[i].multiply(m.data[i][col]));,3,0,1,2,10,0,3,0,1,6,51,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,452,                outDataRow[col] = sum;,1,0,1,0,2,0,0,0,1,4,22,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,455,"        return new BigMatrixImpl(outData, false);",1,0,0,0,2,2,0,1,2,5,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,466,        return m.multiply(this);,0,0,0,1,2,2,2,0,0,4,24,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,477,        return copyOut();,0,0,0,1,2,1,1,0,1,5,17,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,489,        final int nRows = getRowDimension();,1,0,0,1,2,2,1,0,2,6,36,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,490,        final int nCols = getColumnDimension();,1,0,0,1,2,2,1,0,2,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,491,        final double d[][] = new double[nRows][nCols];,1,0,1,0,8,4,0,0,1,5,46,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,492,        for (int i = 0; i < nRows; i++) {,4,1,0,1,3,2,0,0,1,6,33,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,493,            for (int j = 0; j < nCols; j++) {,4,1,0,1,3,2,0,0,1,6,33,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,494,                d[i][j] = data[i][j].doubleValue();,0,0,1,1,10,0,1,0,1,5,35,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,497,        return d;,1,0,0,0,0,1,0,0,0,2,9,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,508,        return data;,1,0,0,0,0,1,0,0,0,2,12,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,518,        return roundingMode;,1,0,0,0,0,1,0,0,0,2,20,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,527,        this.roundingMode = roundingMode;,2,0,0,0,0,1,0,0,1,3,33,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,528,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,537,        return scale;,1,0,0,0,0,1,0,0,0,2,13,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,546,        this.scale = scale;,2,0,0,0,0,1,0,0,1,3,19,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,547,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,556,        BigDecimal maxColSum = ZERO;,2,0,0,0,0,0,0,1,0,2,28,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,557,        for (int col = 0; col < this.getColumnDimension(); col++) {,3,1,0,2,5,3,1,0,1,7,59,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,558,            BigDecimal sum = ZERO;,2,0,0,0,0,0,0,1,0,2,22,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,559,            for (int row = 0; row < this.getRowDimension(); row++) {,3,1,0,2,5,3,1,0,1,7,56,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,560,                sum = sum.add(data[row][col].abs());,1,0,1,2,8,0,3,0,1,6,36,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,562,            maxColSum = maxColSum.max(sum);,1,0,0,1,2,0,3,0,1,5,31,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,564,        return maxColSum;,1,0,0,0,0,1,0,0,0,2,17,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,582,        if (startRow < 0 || startRow > endRow || endRow > data.length ||,6,8,0,0,1,1,0,0,0,4,64,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,585,            throw new MatrixIndexException(,0,0,0,0,1,2,0,1,1,4,31,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,588,        final BigDecimal[][] subMatrixData =,1,0,0,0,4,1,0,1,1,5,36,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,590,        for (int i = startRow; i <= endRow; i++) {,5,1,0,1,3,2,0,0,1,6,42,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,591,"            System.arraycopy(data[i], startColumn,",0,0,1,0,3,0,3,0,0,3,38,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,595,"        return new BigMatrixImpl(subMatrixData, false);",1,0,0,0,2,2,0,1,2,5,47,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,611,        if (selectedRows.length * selectedColumns.length == 0) {,4,2,0,1,3,1,0,0,0,5,56,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,612,            throw new MatrixIndexException(,0,0,0,0,1,2,0,1,1,4,31,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,615,        final BigDecimal[][] subMatrixData =,1,0,0,0,4,1,0,1,1,5,36,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,618,            for (int i = 0; i < selectedRows.length; i++) {,5,1,0,1,3,2,0,0,1,6,47,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,619,                final BigDecimal[] subI = subMatrixData[i];,1,0,1,0,4,1,0,1,1,6,43,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,620,                final BigDecimal[] dataSelectedI = data[selectedRows[i]];,1,0,1,0,6,1,0,1,1,6,57,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,621,                for (int j = 0; j < selectedColumns.length; j++) {,5,1,0,1,3,2,0,0,1,6,50,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,622,                    subI[j] = dataSelectedI[selectedColumns[j]];,0,0,1,0,6,0,0,0,1,3,44,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,628,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,626,        catch (ArrayIndexOutOfBoundsException e) {,1,0,0,1,3,1,0,1,0,5,42,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,627,"            throw new MatrixIndexException(""matrix dimension mismatch"");",0,0,0,1,2,2,0,1,2,5,60,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,629,"        return new BigMatrixImpl(subMatrixData, false);",1,0,0,0,2,2,0,1,2,5,47,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,661,        if ((row < 0) || (column < 0)){,2,3,0,2,7,1,0,0,0,5,31,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,662,            throw new MatrixIndexException,0,0,0,0,0,2,0,1,1,3,30,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,665,        final int nRows = subMatrix.length;,3,0,0,0,0,2,0,0,1,3,35,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,666,        if (nRows == 0) {,1,1,0,1,3,1,0,0,0,5,17,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,667,            throw new IllegalArgumentException(,0,0,0,0,1,2,0,1,1,4,35,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,670,        final int nCols = subMatrix[0].length;,2,0,1,0,2,2,0,0,1,5,38,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,671,        if (nCols == 0) {,1,1,0,1,3,1,0,0,0,5,17,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,672,            throw new IllegalArgumentException(,0,0,0,0,1,2,0,1,1,4,35,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,675,        for (int r = 1; r < nRows; r++) {,4,1,0,1,3,2,0,0,1,6,33,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,676,            if (subMatrix[r].length != nCols) {,2,1,1,1,5,1,0,0,0,6,35,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,677,                throw new IllegalArgumentException(,0,0,0,0,1,2,0,1,1,4,35,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,681,        if (data == null) {,1,1,0,1,3,1,0,0,0,5,19,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,682,            if ((row > 0)||(column > 0)) throw new MatrixIndexException,2,3,0,2,6,3,0,1,1,7,59,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,684,            data = new BigDecimal[nRows][nCols];,1,0,1,0,4,1,0,1,1,6,36,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,685,"            System.arraycopy(subMatrix, 0, data, 0, subMatrix.length);          ",2,0,0,0,2,0,4,0,0,3,58,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,687,        if (((nRows + row) > this.getRowDimension()) ||,2,3,0,2,7,2,1,0,0,6,47,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,689,            throw new MatrixIndexException(,0,0,0,0,1,2,0,1,1,4,31,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,691,        for (int i = 0; i < nRows; i++) {,4,1,0,1,3,2,0,0,1,6,33,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,692,"            System.arraycopy(subMatrix[i], 0, data[row + i], column, nCols);",2,1,1,0,6,0,4,0,0,5,64,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,694,        lu = null;,1,0,0,0,0,0,0,0,1,2,10,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,695,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,706,"        if ( !isValidCoordinate( row, 0)) {",0,0,0,0,5,1,2,0,2,4,35,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,707,"            throw new MatrixIndexException(""illegal row argument"");",0,0,0,1,2,2,0,1,2,5,55,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,709,        final int ncols = this.getColumnDimension();,1,0,0,1,2,3,1,0,1,6,44,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,710,        final BigDecimal[][] out = new BigDecimal[1][ncols]; ,1,0,1,0,8,2,0,2,1,6,52,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,711,"        System.arraycopy(data[row], 0, out[0], 0, ncols);",0,0,1,0,6,0,3,0,0,3,49,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,712,"        return new BigMatrixImpl(out, false);",1,0,0,0,2,2,0,1,2,5,37,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,724,"        if ( !isValidCoordinate( 0, column)) {",0,0,0,0,5,1,2,0,2,4,38,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,725,"            throw new MatrixIndexException(""illegal column argument"");",0,0,0,1,2,2,0,1,2,5,58,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,727,        final int nRows = this.getRowDimension();,1,0,0,1,2,3,1,0,1,6,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,728,        final BigDecimal[][] out = new BigDecimal[nRows][1]; ,1,0,1,0,8,2,0,2,1,6,52,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,729,        for (int row = 0; row < nRows; row++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,730,            out[row][0] = data[row][column];,0,0,1,0,8,0,0,0,1,3,32,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,732,"        return new BigMatrixImpl(out, false);",1,0,0,0,2,2,0,1,2,5,37,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,746,"        if ( !isValidCoordinate( row, 0 ) ) {",0,0,0,0,5,1,2,0,2,4,37,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,747,"            throw new MatrixIndexException(""illegal row argument"");",0,0,0,1,2,2,0,1,2,5,55,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,749,        final int ncols = this.getColumnDimension();,1,0,0,1,2,3,1,0,1,6,44,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,750,        final BigDecimal[] out = new BigDecimal[ncols];,1,0,1,0,4,2,0,2,1,6,47,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,751,"        System.arraycopy(data[row], 0, out, 0, ncols);",0,0,1,0,4,0,4,0,0,3,46,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,752,        return out;,1,0,0,0,0,1,0,0,0,2,11,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,767,"        if ( !isValidCoordinate( row, 0 ) ) {",0,0,0,0,5,1,2,0,2,4,37,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,768,"            throw new MatrixIndexException(""illegal row argument"");",0,0,0,1,2,2,0,1,2,5,55,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,770,        final int ncols = this.getColumnDimension();,1,0,0,1,2,3,1,0,1,6,44,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,771,        final double[] out = new double[ncols];,1,0,1,0,4,4,0,0,1,5,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,772,        for (int i=0;i<ncols;i++) {,4,1,0,1,3,2,0,0,1,6,27,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,773,            out[i] = data[row][i].doubleValue();,0,0,1,1,8,0,1,0,1,5,36,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,775,        return out;,1,0,0,0,0,1,0,0,0,2,11,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,789,"        if ( !isValidCoordinate(0, col) ) {",0,0,0,0,5,1,2,0,2,4,35,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,790,"            throw new MatrixIndexException(""illegal column argument"");",0,0,0,1,2,2,0,1,2,5,58,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,792,        final int nRows = this.getRowDimension();,1,0,0,1,2,3,1,0,1,6,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,793,        final BigDecimal[] out = new BigDecimal[nRows];,1,0,1,0,4,2,0,2,1,6,47,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,794,        for (int i = 0; i < nRows; i++) {,4,1,0,1,3,2,0,0,1,6,33,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,795,            out[i] = data[i][col];,0,0,1,0,6,0,0,0,1,3,22,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,797,        return out;,1,0,0,0,0,1,0,0,0,2,11,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,812,"        if ( !isValidCoordinate( 0, col ) ) {",0,0,0,0,5,1,2,0,2,4,37,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,813,"            throw new MatrixIndexException(""illegal column argument"");",0,0,0,1,2,2,0,1,2,5,58,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,815,        final int nrows = this.getRowDimension();,1,0,0,1,2,3,1,0,1,6,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,816,        final double[] out = new double[nrows];,1,0,1,0,4,4,0,0,1,5,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,817,        for (int i=0;i<nrows;i++) {,4,1,0,1,3,2,0,0,1,6,27,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,818,            out[i] = data[i][col].doubleValue();,0,0,1,1,8,0,1,0,1,5,36,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,820,        return out;,1,0,0,0,0,1,0,0,0,2,11,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,841,            return data[row][column];,0,0,1,0,4,1,0,0,0,3,25,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,842,        } catch (ArrayIndexOutOfBoundsException e) {,1,0,0,1,4,1,0,1,0,5,44,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,843,"            throw new MatrixIndexException(""matrix entry does not exist"");",0,0,0,1,2,2,0,1,2,5,62,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,864,"        return getEntry(row,column).doubleValue();",0,0,0,1,4,1,4,0,1,5,42,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,873,        final int nRows = this.getRowDimension();,1,0,0,1,2,3,1,0,1,6,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,874,        final int nCols = this.getColumnDimension();,1,0,0,1,2,3,1,0,1,6,44,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,875,        final BigDecimal[][] outData = new BigDecimal[nCols][nRows];,1,0,1,0,8,2,0,2,1,6,60,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,876,        for (int row = 0; row < nRows; row++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,877,            final BigDecimal[] dataRow = data[row];,1,0,1,0,4,1,0,1,1,6,39,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,878,            for (int col = 0; col < nCols; col++) {,4,1,0,1,3,2,0,0,1,6,39,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,879,                outData[col][row] = dataRow[col];,0,0,1,0,6,0,0,0,1,3,33,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,882,"        return new BigMatrixImpl(outData, false);",1,0,0,0,2,2,0,1,2,5,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,892,        return solve(MatrixUtils.createBigIdentityMatrix(getRowDimension()));,0,0,0,3,6,1,4,0,2,5,69,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,902,        if (!isSquare()) {,0,0,0,2,5,1,1,0,2,5,18,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,903,"            throw new InvalidMatrixException(""matrix is not square"");",0,0,0,1,2,2,0,1,2,5,57,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,905,        if (isSingular()) {   // note: this has side effect of attempting LU decomp if lu == null,0,0,0,2,5,3,1,0,1,5,89,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,906,            return ZERO;,1,0,0,0,0,1,0,0,0,2,12,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,908,            BigDecimal det = (parity == 1) ? ONE : ONE.negate();,3,1,0,1,4,0,2,1,0,6,52,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,909,            for (int i = 0; i < this.getRowDimension(); i++) {,3,1,0,2,5,3,1,0,1,7,50,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,910,                det = det.multiply(lu[i][i]);,1,0,1,1,6,0,2,0,1,6,29,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,912,            return det;,1,0,0,0,0,1,0,0,0,2,11,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,921,        return (this.getColumnDimension() == this.getRowDimension());,0,1,0,2,6,3,2,0,0,5,61,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,929,        if (lu == null) {,1,1,0,1,3,1,0,0,0,5,17,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,931,                luDecompose();,0,0,0,1,2,0,1,0,1,4,14,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,932,                return false;,0,0,0,0,0,1,0,0,1,2,13,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,933,            } catch (InvalidMatrixException ex) {,1,0,0,1,4,1,0,1,0,5,37,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,934,                return true;,0,0,0,0,0,1,0,0,1,2,12,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,937,            return false; // so the matrix is not singular,0,0,0,0,0,1,0,0,1,2,46,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,968,        if (!isSquare()) {,0,0,0,2,5,1,1,0,2,5,18,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,969,"            throw new IllegalArgumentException(""matrix is not square"");",0,0,0,1,2,2,0,1,2,5,59,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,971,        BigDecimal trace = data[0][0];,1,0,1,0,4,0,0,1,0,4,30,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,972,        for (int i = 1; i < this.getRowDimension(); i++) {,3,1,0,2,5,3,1,0,1,7,50,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,973,            trace = trace.add(data[i][i]);,1,0,1,1,6,0,2,0,1,6,30,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,975,        return trace;,1,0,0,0,0,1,0,0,0,2,13,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,987,"            throw new IllegalArgumentException(""vector has wrong length"");",0,0,0,1,2,2,0,1,2,5,62,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,999,        return out;,1,0,0,0,0,1,0,0,0,2,11,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1010,        final BigDecimal bd[] = new BigDecimal[v.length];,3,0,0,0,4,2,0,2,1,5,49,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1011,        for (int i = 0; i < bd.length; i++) {,5,1,0,1,3,2,0,0,1,6,37,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1012,            bd[i] = new BigDecimal(v[i]);,0,0,1,1,6,1,0,1,2,6,29,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1014,        return operate(bd);,0,0,0,1,2,1,2,0,1,5,19,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1025,        final int nRows = this.getRowDimension();,1,0,0,1,2,3,1,0,1,6,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1026,        if (v.length != nRows) {,3,1,0,1,3,1,0,0,0,5,24,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1027,"            throw new IllegalArgumentException(""vector has wrong length"");",0,0,0,1,2,2,0,1,2,5,62,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1029,        final int nCols = this.getColumnDimension();,1,0,0,1,2,3,1,0,1,6,44,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1030,        final BigDecimal[] out = new BigDecimal[nCols];,1,0,1,0,4,2,0,2,1,6,47,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1031,        for (int col = 0; col < nCols; col++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1032,            BigDecimal sum = ZERO;,2,0,0,0,0,0,0,1,0,2,22,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1033,            for (int i = 0; i < nRows; i++) {,4,1,0,1,3,2,0,0,1,6,33,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1034,                sum = sum.add(data[i][col].multiply(v[i]));,1,0,1,2,10,0,3,0,1,6,43,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1036,            out[col] = sum;,1,0,1,0,2,0,0,0,1,4,15,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1038,        return out;,1,0,0,0,0,1,0,0,0,2,11,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1053,        final int nRows = this.getRowDimension();,1,0,0,1,2,3,1,0,1,6,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1054,        if (b.length != nRows) {,3,1,0,1,3,1,0,0,0,5,24,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1055,"            throw new IllegalArgumentException(""constant vector has wrong length"");",0,0,0,1,2,2,0,1,2,5,71,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1057,        final BigMatrix bMatrix = new BigMatrixImpl(b);,2,0,0,1,2,2,0,2,2,6,47,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1058,        final BigDecimal[][] solution = ((BigMatrixImpl) (solve(bMatrix))).getDataRef();,1,0,0,3,14,1,3,2,2,7,80,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1059,        final BigDecimal[] out = new BigDecimal[nRows];,1,0,1,0,4,2,0,2,1,6,47,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1060,        for (int row = 0; row < nRows; row++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1061,            out[row] = solution[row][0];,0,0,1,0,6,0,0,0,1,3,28,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1063,        return out;,1,0,0,0,0,1,0,0,0,2,11,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1078,        final BigDecimal bd[] = new BigDecimal[b.length];,3,0,0,0,4,2,0,2,1,5,49,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1079,        for (int i = 0; i < bd.length; i++) {,5,1,0,1,3,2,0,0,1,6,37,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1080,            bd[i] = new BigDecimal(b[i]);,0,0,1,1,6,1,0,1,2,6,29,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1082,        return solve(bd);,0,0,0,1,2,1,2,0,1,5,17,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1097,        if (b.getRowDimension() != this.getRowDimension()) {,0,1,0,2,7,2,3,0,0,5,52,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1098,"            throw new IllegalArgumentException(""Incorrect row dimension"");",0,0,0,1,2,2,0,1,2,5,62,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1100,        if (!this.isSquare()) {,0,0,0,2,5,2,1,0,1,5,23,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1101,"            throw new InvalidMatrixException(""coefficient matrix is not square"");",0,0,0,1,2,2,0,1,2,5,69,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1103,        if (this.isSingular()) { // side effect: compute LU decomp,0,0,0,2,5,2,1,0,0,4,58,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1104,"            throw new InvalidMatrixException(""Matrix is singular."");",0,0,0,1,2,2,0,1,2,5,56,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1107,        final int nCol = this.getColumnDimension();,1,0,0,1,2,3,1,0,1,6,43,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1108,        final int nColB = b.getColumnDimension();,1,0,0,1,2,2,2,0,1,6,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1109,        final int nRowB = b.getRowDimension();,1,0,0,1,2,2,2,0,1,6,38,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1112,        final BigDecimal[][] bp = new BigDecimal[nRowB][nColB];,1,0,1,0,8,2,0,2,1,6,55,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1113,        for (int row = 0; row < nRowB; row++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1114,            final BigDecimal[] bpRow = bp[row];,1,0,1,0,4,1,0,1,1,6,35,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1115,            for (int col = 0; col < nColB; col++) {,4,1,0,1,3,2,0,0,1,6,39,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1116,"                bpRow[col] = b.getEntry(permutation[row], col);",0,0,1,0,6,0,3,0,1,4,47,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1121,        for (int col = 0; col < nCol; col++) {,4,1,0,1,3,2,0,0,1,6,38,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1122,            for (int i = col + 1; i < nCol; i++) {,5,2,0,1,3,2,0,0,1,6,38,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1123,                final BigDecimal[] bpI = bp[i];,1,0,1,0,4,1,0,1,1,6,31,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1124,                final BigDecimal[] luI = lu[i];,1,0,1,0,4,1,0,1,1,6,31,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1125,                for (int j = 0; j < nColB; j++) {,4,1,0,1,3,2,0,0,1,6,33,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1126,                    bpI[j] = bpI[j].subtract(bp[col][j].multiply(luI[col]));,0,0,1,2,14,0,2,0,1,5,56,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1132,        for (int col = nCol - 1; col >= 0; col--) {,4,2,0,1,3,2,0,0,1,6,43,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1133,            final BigDecimal[] bpCol = bp[col];,1,0,1,0,4,1,0,1,1,6,35,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1134,            final BigDecimal luDiag = lu[col][col];,1,0,1,0,4,1,0,1,1,6,39,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1135,            for (int j = 0; j < nColB; j++) {,4,1,0,1,3,2,0,0,1,6,33,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1136,"                bpCol[j] = bpCol[j].divide(luDiag, scale, roundingMode);",0,0,1,0,6,0,4,0,1,4,56,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1138,            for (int i = 0; i < col; i++) {,4,1,0,1,3,2,0,0,1,6,31,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1139,                final BigDecimal[] bpI = bp[i];,1,0,1,0,4,1,0,1,1,6,31,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1140,                final BigDecimal[] luI = lu[i];,1,0,1,0,4,1,0,1,1,6,31,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1141,                for (int j = 0; j < nColB; j++) {,4,1,0,1,3,2,0,0,1,6,33,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1142,                    bpI[j] = bpI[j].subtract(bp[col][j].multiply(luI[col]));,0,0,1,2,14,0,2,0,1,5,56,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1147,"        return new BigMatrixImpl(bp, false);",1,0,0,0,2,2,0,1,2,5,36,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1171,        final int nRows = this.getRowDimension();,1,0,0,1,2,3,1,0,1,6,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1172,        final int nCols = this.getColumnDimension();,1,0,0,1,2,3,1,0,1,6,44,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1173,        if (nRows != nCols) {,2,1,0,1,3,1,0,0,0,5,21,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1174,"            throw new InvalidMatrixException(""LU decomposition requires that the matrix be square."");",0,0,0,1,2,2,0,1,2,5,89,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1176,        lu = this.getData();,1,0,0,1,2,1,1,0,1,6,20,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1179,        permutation = new int[nRows];,1,0,1,0,2,2,0,0,1,5,29,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1180,        for (int row = 0; row < nRows; row++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1181,            permutation[row] = row;,1,0,1,0,2,0,0,0,1,4,23,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1183,        parity = 1;,1,0,0,0,0,0,0,0,1,2,11,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1186,        for (int col = 0; col < nCols; col++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1188,            BigDecimal sum = ZERO;,2,0,0,0,0,0,0,1,0,2,22,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1191,            for (int row = 0; row < col; row++) {,4,1,0,1,3,2,0,0,1,6,37,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1192,                final BigDecimal[] luRow = lu[row];,1,0,1,0,4,1,0,1,1,6,35,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1193,                sum = luRow[col];,1,0,1,0,2,0,0,0,1,4,17,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1194,                for (int i = 0; i < row; i++) {,4,1,0,1,3,2,0,0,1,6,31,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1195,                    sum = sum.subtract(luRow[i].multiply(lu[i][col]));,1,0,1,2,10,0,3,0,1,6,50,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1197,                luRow[col] = sum;,1,0,1,0,2,0,0,0,1,4,17,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1201,            int max = col; // permutation row,2,0,0,0,0,1,0,0,0,2,33,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1202,            BigDecimal largest = ZERO;,2,0,0,0,0,0,0,1,0,2,26,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1203,            for (int row = col; row < nRows; row++) {,5,1,0,1,3,2,0,0,1,6,41,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1204,                final BigDecimal[] luRow = lu[row];,1,0,1,0,4,1,0,1,1,6,35,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1205,                sum = luRow[col];,1,0,1,0,2,0,0,0,1,4,17,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1206,                for (int i = 0; i < col; i++) {,4,1,0,1,3,2,0,0,1,6,31,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1207,                    sum = sum.subtract(luRow[i].multiply(lu[i][col]));,1,0,1,2,10,0,3,0,1,6,50,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1209,                luRow[col] = sum;,1,0,1,0,2,0,0,0,1,4,17,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1212,                if (sum.abs().compareTo(largest) == 1) {,0,1,0,2,7,1,4,0,0,5,40,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1213,                    largest = sum.abs();,1,0,0,1,2,0,2,0,1,5,20,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1214,                    max = row;,2,0,0,0,0,0,0,0,1,2,10,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1219,            if (lu[max][col].abs().compareTo(TOO_SMALL) <= 0) {,0,1,1,2,11,1,3,0,0,6,51,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1220,                lu = null;,1,0,0,0,0,0,0,0,1,2,10,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1221,"                throw new InvalidMatrixException(""matrix is singular"");",0,0,0,1,2,2,0,1,2,5,55,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1225,            if (max != col) {,2,1,0,1,3,1,0,0,0,5,17,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1226,                BigDecimal tmp = ZERO;,2,0,0,0,0,0,0,1,0,2,22,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1227,                for (int i = 0; i < nCols; i++) {,4,1,0,1,3,2,0,0,1,6,33,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1228,                    tmp = lu[max][i];,1,0,1,0,4,0,0,0,1,4,17,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1229,                    lu[max][i] = lu[col][i];,0,0,1,0,8,0,0,0,1,3,24,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1230,                    lu[col][i] = tmp;,1,0,1,0,4,0,0,0,1,4,17,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1232,                int temp = permutation[max];,1,0,1,0,2,1,0,0,0,4,28,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1233,                permutation[max] = permutation[col];,0,0,1,0,4,0,0,0,1,3,36,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1234,                permutation[col] = temp;,1,0,1,0,2,0,0,0,1,4,24,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1235,                parity = -parity;,2,0,0,0,0,0,0,0,2,2,17,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1239,            final BigDecimal luDiag = lu[col][col];,1,0,1,0,4,1,0,1,1,6,39,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1240,            for (int row = col + 1; row < nRows; row++) {,5,2,0,1,3,2,0,0,1,6,45,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1241,                final BigDecimal[] luRow = lu[row];,1,0,1,0,4,1,0,1,1,6,35,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1242,"                luRow[col] = luRow[col].divide(luDiag, scale, roundingMode);",0,0,1,0,6,0,4,0,1,4,60,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1247,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1254,        StringBuffer res = new StringBuffer();,1,0,0,1,2,1,0,2,1,6,38,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1255,"        res.append(""BigMatrixImpl{"");",0,0,0,1,3,0,2,0,1,4,29,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1256,        if (data != null) {,1,1,0,1,3,1,0,0,0,5,19,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1257,            for (int i = 0; i < data.length; i++) {,5,1,0,1,3,2,0,0,1,6,39,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1258,                if (i > 0) {,1,1,0,1,3,1,0,0,0,5,12,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1259,"                    res.append("","");",0,0,0,0,2,0,2,0,1,3,16,11,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1261,"                res.append(""{"");",0,0,0,1,3,0,2,0,1,4,16,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1262,                for (int j = 0; j < data[0].length; j++) {,4,1,1,1,5,2,0,0,1,7,42,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1263,                    if (j > 0) {,1,1,0,1,3,1,0,0,0,5,12,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1264,"                        res.append("","");",0,0,0,0,2,0,2,0,1,3,16,13,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1266,                    res.append(data[i][j]);,0,0,1,1,6,0,2,0,0,4,23,11,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1268,"                res.append(""}"");",0,0,0,1,3,0,2,0,1,4,16,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1271,"        res.append(""}"");",0,0,0,1,3,0,2,0,1,4,16,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1272,        return res.toString();,0,0,0,1,2,1,2,0,0,4,22,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1285,        if (object == this ) {,1,1,0,1,3,2,0,0,0,5,22,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1286,            return true;,0,0,0,0,0,1,0,0,1,2,12,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1288,        if (object instanceof BigMatrixImpl == false) {,1,1,0,1,3,2,0,1,1,7,47,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1289,            return false;,0,0,0,0,0,1,0,0,1,2,13,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1291,        final BigMatrix m = (BigMatrix) object;,2,0,0,1,2,1,0,2,1,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1292,        final int nRows = getRowDimension();,1,0,0,1,2,2,1,0,2,6,36,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1293,        final int nCols = getColumnDimension();,1,0,0,1,2,2,1,0,2,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1294,        if (m.getColumnDimension() != nCols || m.getRowDimension() != nRows) {,2,3,0,2,7,1,4,0,0,6,70,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1295,            return false;,0,0,0,0,0,1,0,0,1,2,13,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1297,        for (int row = 0; row < nRows; row++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1298,            final BigDecimal[] dataRow = data[row];,1,0,1,0,4,1,0,1,1,6,39,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1299,            for (int col = 0; col < nCols; col++) {,4,1,0,1,3,2,0,0,1,6,39,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1300,"                if (!dataRow[col].equals(m.getEntry(row, col))) {",0,0,1,0,9,1,5,0,1,5,49,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1301,                    return false;,0,0,0,0,0,1,0,0,1,2,13,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1305,        return true;,0,0,0,0,0,1,0,0,1,2,12,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1314,        int ret = 7;,1,0,0,0,0,1,0,0,0,2,12,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1315,        final int nRows = getRowDimension();,1,0,0,1,2,2,1,0,2,6,36,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1316,        final int nCols = getColumnDimension();,1,0,0,1,2,2,1,0,2,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1317,        ret = ret * 31 + nRows;,3,2,0,0,0,0,0,0,1,3,23,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1318,        ret = ret * 31 + nCols;,3,2,0,0,0,0,0,0,1,3,23,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1319,        for (int row = 0; row < nRows; row++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1320,            final BigDecimal[] dataRow = data[row];,1,0,1,0,4,1,0,1,1,6,39,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1321,            for (int col = 0; col < nCols; col++) {,4,1,0,1,3,2,0,0,1,6,39,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1322,                ret = ret * 31 + (11 * (row+1) + 17 * (col+1)) * ,4,8,0,2,6,0,0,0,1,5,48,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1326,        return ret;,1,0,0,0,0,1,0,0,0,2,11,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1359,        if (lu == null) {,1,1,0,1,3,1,0,0,0,5,17,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1360,            luDecompose();,0,0,0,1,2,0,1,0,1,4,14,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1362,        return new BigMatrixImpl(lu);,1,0,0,1,2,2,0,1,1,6,29,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1378,        final int[] out = new int[permutation.length];,3,0,0,0,4,4,0,0,1,4,46,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1379,"        System.arraycopy(permutation, 0, out, 0, permutation.length);",2,0,0,0,2,0,4,0,0,3,61,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1380,        return out;,1,0,0,0,0,1,0,0,0,2,11,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1391,        final int nRows = this.getRowDimension();,1,0,0,1,2,3,1,0,1,6,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1392,        final BigDecimal[][] out = new BigDecimal[nRows][this.getColumnDimension()];,1,0,1,1,10,3,1,2,1,8,76,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1394,        for (int i = 0; i < nRows; i++) {,4,1,0,1,3,2,0,0,1,6,33,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1395,"            System.arraycopy(data[i], 0, out[i], 0, data[i].length);",1,0,1,0,8,0,2,0,0,4,56,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1397,        return out;,1,0,0,0,0,1,0,0,0,2,11,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1411,"        setSubMatrix(in,0,0);",0,0,0,0,2,0,2,0,1,3,21,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1412,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1420,        final int nRows = in.length;,3,0,0,0,0,2,0,0,1,3,28,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1421,        final int nCols = in[0].length;,2,0,1,0,2,2,0,0,1,5,31,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1422,        data = new BigDecimal[nRows][nCols];,1,0,1,0,4,1,0,1,1,6,36,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1423,        for (int i = 0; i < nRows; i++) {,4,1,0,1,3,2,0,0,1,6,33,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1424,            final BigDecimal[] dataI = data[i];,1,0,1,0,4,1,0,1,1,6,35,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1425,            final double[] inI = in[i];,1,0,1,0,4,2,0,0,1,5,27,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1426,            for (int j = 0; j < nCols; j++) {,4,1,0,1,3,2,0,0,1,6,33,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1427,                dataI[j] = new BigDecimal(inI[j]);,0,0,1,1,6,1,0,1,2,6,34,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1430,        lu = null;,1,0,0,0,0,0,0,0,1,2,10,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1431,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1440,        final int nRows = in.length;,3,0,0,0,0,2,0,0,1,3,28,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1441,        final int nCols = in[0].length;,2,0,1,0,2,2,0,0,1,5,31,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1442,        data = new BigDecimal[nRows][nCols];,1,0,1,0,4,1,0,1,1,6,36,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1443,        for (int i = 0; i < nRows; i++) {,4,1,0,1,3,2,0,0,1,6,33,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1444,            final BigDecimal[] dataI = data[i];,1,0,1,0,4,1,0,1,1,6,35,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1445,            final String[] inI = in[i];,1,0,1,0,4,1,0,1,1,6,27,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1446,            for (int j = 0; j < nCols; j++) {,4,1,0,1,3,2,0,0,1,6,33,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1447,                dataI[j] = new BigDecimal(inI[j]);,0,0,1,1,6,1,0,1,2,6,34,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1450,        lu = null;,1,0,0,0,0,0,0,0,1,2,10,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1451,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1461,        final int nRows = this.getRowDimension();,1,0,0,1,2,3,1,0,1,6,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1462,        final int nCols = this.getColumnDimension();,1,0,0,1,2,3,1,0,1,6,44,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/BigMatrixImpl,98,1463,        return !(row < 0 || row >= nRows || col < 0 || col >= nCols);,6,7,0,1,2,1,0,0,1,6,61,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/MatrixIndexException,98,35,        super(message);,1,0,0,1,2,1,0,0,1,5,15,3,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/MatrixIndexException,98,36,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/InvalidMatrixException,98,35,        this(null);,0,0,0,1,2,1,0,0,0,3,11,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/InvalidMatrixException,98,36,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/InvalidMatrixException,98,43,        super(message);,1,0,0,1,2,1,0,0,1,5,15,3,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/InvalidMatrixException,98,44,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,77,    public RealMatrixImpl() {,1,0,0,1,3,1,0,0,1,5,25,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,78,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,88,"    public RealMatrixImpl(int rowDimension, int columnDimension) {",3,0,0,0,3,3,0,0,1,4,62,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,89,        if (rowDimension <= 0 || columnDimension <= 0) {,2,3,0,1,3,1,0,0,0,5,48,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,90,            throw new IllegalArgumentException(,0,0,0,0,1,2,0,1,1,4,35,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,93,        data = new double[rowDimension][columnDimension];,1,0,1,0,4,2,0,0,1,5,49,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,94,        lu = null;,1,0,0,0,0,0,0,0,1,2,10,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,95,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,110,    public RealMatrixImpl(double[][] d) {,2,0,0,1,7,2,0,0,1,5,37,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,111,        copyIn(d);,0,0,0,1,2,0,2,0,1,4,10,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,112,        lu = null;,1,0,0,0,0,0,0,0,1,2,10,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,113,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,132,            copyIn(d);,0,0,0,1,2,0,2,0,1,4,10,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,135,                throw new NullPointerException();,0,0,0,1,2,2,0,1,1,5,33,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,139,"                throw new IllegalArgumentException(""Matrix must have at least one row.""); ",0,0,0,1,2,2,0,1,2,5,73,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,143,"                throw new IllegalArgumentException(""Matrix must have at least one column.""); ",0,0,0,1,2,2,0,1,2,5,76,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,147,"                    throw new IllegalArgumentException(""All input rows must have the same length."");",0,0,0,1,2,2,0,1,2,5,80,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,163,    public RealMatrixImpl(double[] v) {,2,0,0,1,5,2,0,0,1,5,35,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,164,        final int nRows = v.length;,3,0,0,0,0,2,0,0,1,3,27,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,165,        data = new double[nRows][1];,1,0,1,0,4,2,0,0,1,5,28,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,166,        for (int row = 0; row < nRows; row++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,167,            data[row][0] = v[row];,0,0,1,0,6,0,0,0,1,3,22,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,169,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,177,"        return new RealMatrixImpl(copyOut(), false);",0,0,0,1,4,2,1,1,3,6,44,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,189,            return add((RealMatrixImpl) m);,1,0,0,2,4,1,1,1,1,7,31,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,190,        } catch (ClassCastException cce) {,1,0,0,1,4,1,0,1,0,5,34,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,191,            final int rowCount    = getRowDimension();,1,0,0,1,2,2,1,0,2,6,42,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,192,            final int columnCount = getColumnDimension();,1,0,0,1,2,2,1,0,2,6,45,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,193,            if (columnCount != m.getColumnDimension() || rowCount != m.getRowDimension()) {,2,3,0,2,7,1,4,0,0,6,79,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,194,"                throw new IllegalArgumentException(""matrix dimension mismatch"");",0,0,0,1,2,2,0,1,2,5,64,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,196,            final double[][] outData = new double[rowCount][columnCount];,1,0,1,0,8,4,0,0,1,5,61,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,197,            for (int row = 0; row < rowCount; row++) {,4,1,0,1,3,2,0,0,1,6,42,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,198,                final double[] dataRow    = data[row];,1,0,1,0,4,2,0,0,1,5,38,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,199,                final double[] outDataRow = outData[row];,1,0,1,0,4,2,0,0,1,5,41,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,200,                for (int col = 0; col < columnCount; col++) {,4,1,0,1,3,2,0,0,1,6,45,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,201,"                    outDataRow[col] = dataRow[col] + m.getEntry(row, col);",0,1,1,0,6,0,4,0,1,5,54,11,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,204,"            return new RealMatrixImpl(outData, false);",1,0,0,0,2,2,0,1,2,5,42,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,216,        final int rowCount    = getRowDimension();,1,0,0,1,2,2,1,0,2,6,42,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,217,        final int columnCount = getColumnDimension();,1,0,0,1,2,2,1,0,2,6,45,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,218,        if (columnCount != m.getColumnDimension() || rowCount != m.getRowDimension()) {,2,3,0,2,7,1,4,0,0,6,79,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,219,"            throw new IllegalArgumentException(""matrix dimension mismatch"");",0,0,0,1,2,2,0,1,2,5,64,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,221,        final double[][] outData = new double[rowCount][columnCount];,1,0,1,0,8,4,0,0,1,5,61,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,222,        for (int row = 0; row < rowCount; row++) {,4,1,0,1,3,2,0,0,1,6,42,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,223,            final double[] dataRow    = data[row];,1,0,1,0,4,2,0,0,1,5,38,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,224,            final double[] mRow       = m.data[row];,3,0,1,0,4,2,0,0,1,5,40,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,225,            final double[] outDataRow = outData[row];,1,0,1,0,4,2,0,0,1,5,41,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,226,            for (int col = 0; col < columnCount; col++) {,4,1,0,1,3,2,0,0,1,6,45,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,227,                outDataRow[col] = dataRow[col] + mRow[col];,0,1,1,0,6,0,0,0,1,4,43,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,230,"        return new RealMatrixImpl(outData, false);",1,0,0,0,2,2,0,1,2,5,42,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,242,            return subtract((RealMatrixImpl) m);,1,0,0,2,4,1,1,1,1,7,36,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,243,        } catch (ClassCastException cce) {,1,0,0,1,4,1,0,1,0,5,34,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,244,            final int rowCount    = getRowDimension();,1,0,0,1,2,2,1,0,2,6,42,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,245,            final int columnCount = getColumnDimension();,1,0,0,1,2,2,1,0,2,6,45,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,246,            if (columnCount != m.getColumnDimension() || rowCount != m.getRowDimension()) {,2,3,0,2,7,1,4,0,0,6,79,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,247,"                throw new IllegalArgumentException(""matrix dimension mismatch"");",0,0,0,1,2,2,0,1,2,5,64,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,249,            final double[][] outData = new double[rowCount][columnCount];,1,0,1,0,8,4,0,0,1,5,61,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,250,            for (int row = 0; row < rowCount; row++) {,4,1,0,1,3,2,0,0,1,6,42,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,251,                final double[] dataRow    = data[row];,1,0,1,0,4,2,0,0,1,5,38,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,252,                final double[] outDataRow = outData[row];,1,0,1,0,4,2,0,0,1,5,41,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,253,                for (int col = 0; col < columnCount; col++) {,4,1,0,1,3,2,0,0,1,6,45,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,254,"                    outDataRow[col] = dataRow[col] - m.getEntry(row, col);",0,1,1,0,6,0,4,0,1,5,54,11,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,257,"            return new RealMatrixImpl(outData, false);",1,0,0,0,2,2,0,1,2,5,42,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,269,        final int rowCount    = getRowDimension();,1,0,0,1,2,2,1,0,2,6,42,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,270,        final int columnCount = getColumnDimension();,1,0,0,1,2,2,1,0,2,6,45,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,271,        if (columnCount != m.getColumnDimension() || rowCount != m.getRowDimension()) {,2,3,0,2,7,1,4,0,0,6,79,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,272,"            throw new IllegalArgumentException(""matrix dimension mismatch"");",0,0,0,1,2,2,0,1,2,5,64,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,274,        final double[][] outData = new double[rowCount][columnCount];,1,0,1,0,8,4,0,0,1,5,61,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,275,        for (int row = 0; row < rowCount; row++) {,4,1,0,1,3,2,0,0,1,6,42,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,276,            final double[] dataRow    = data[row];,1,0,1,0,4,2,0,0,1,5,38,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,277,            final double[] mRow       = m.data[row];,3,0,1,0,4,2,0,0,1,5,40,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,278,            final double[] outDataRow = outData[row];,1,0,1,0,4,2,0,0,1,5,41,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,279,            for (int col = 0; col < columnCount; col++) {,4,1,0,1,3,2,0,0,1,6,45,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,280,                outDataRow[col] = dataRow[col] - mRow[col];,0,1,1,0,6,0,0,0,1,4,43,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,283,"        return new RealMatrixImpl(outData, false);",1,0,0,0,2,2,0,1,2,5,42,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,293,        final int rowCount    = getRowDimension();,1,0,0,1,2,2,1,0,2,6,42,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,294,        final int columnCount = getColumnDimension();,1,0,0,1,2,2,1,0,2,6,45,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,295,        final double[][] outData = new double[rowCount][columnCount];,1,0,1,0,8,4,0,0,1,5,61,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,296,        for (int row = 0; row < rowCount; row++) {,4,1,0,1,3,2,0,0,1,6,42,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,297,            final double[] dataRow    = data[row];,1,0,1,0,4,2,0,0,1,5,38,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,298,            final double[] outDataRow = outData[row];,1,0,1,0,4,2,0,0,1,5,41,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,299,            for (int col = 0; col < columnCount; col++) {,4,1,0,1,3,2,0,0,1,6,45,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,300,                outDataRow[col] = dataRow[col] + d;,1,1,1,0,4,0,0,0,1,5,35,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,303,"        return new RealMatrixImpl(outData, false);",1,0,0,0,2,2,0,1,2,5,42,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,312,        final int rowCount    = getRowDimension();,1,0,0,1,2,2,1,0,2,6,42,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,313,        final int columnCount = getColumnDimension();,1,0,0,1,2,2,1,0,2,6,45,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,314,        final double[][] outData = new double[rowCount][columnCount];,1,0,1,0,8,4,0,0,1,5,61,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,315,        for (int row = 0; row < rowCount; row++) {,4,1,0,1,3,2,0,0,1,6,42,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,316,            final double[] dataRow    = data[row];,1,0,1,0,4,2,0,0,1,5,38,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,317,            final double[] outDataRow = outData[row];,1,0,1,0,4,2,0,0,1,5,41,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,318,            for (int col = 0; col < columnCount; col++) {,4,1,0,1,3,2,0,0,1,6,45,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,319,                outDataRow[col] = dataRow[col] * d;,1,1,1,0,4,0,0,0,1,5,35,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,322,"        return new RealMatrixImpl(outData, false);",1,0,0,0,2,2,0,1,2,5,42,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,334,            return multiply((RealMatrixImpl) m);,1,0,0,2,4,1,1,1,1,7,36,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,335,        } catch (ClassCastException cce) {,1,0,0,1,4,1,0,1,0,5,34,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,336,            if (this.getColumnDimension() != m.getRowDimension()) {,0,1,0,2,7,2,3,0,0,5,55,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,337,"                throw new IllegalArgumentException(""Matrices are not multiplication compatible."");",0,0,0,1,2,2,0,1,2,5,82,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,339,            final int nRows = this.getRowDimension();,1,0,0,1,2,3,1,0,1,6,41,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,340,            final int nCols = m.getColumnDimension();,1,0,0,1,2,2,2,0,1,6,41,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,341,            final int nSum = this.getColumnDimension();,1,0,0,1,2,3,1,0,1,6,43,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,342,            final double[][] outData = new double[nRows][nCols];,1,0,1,0,8,4,0,0,1,5,52,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,343,            for (int row = 0; row < nRows; row++) {,4,1,0,1,3,2,0,0,1,6,39,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,344,                final double[] dataRow    = data[row];,1,0,1,0,4,2,0,0,1,5,38,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,345,                final double[] outDataRow = outData[row];,1,0,1,0,4,2,0,0,1,5,41,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,346,                for (int col = 0; col < nCols; col++) {,4,1,0,1,3,2,0,0,1,6,39,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,347,                    double sum = 0;,1,0,0,0,0,1,0,0,0,2,15,12,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,348,                    for (int i = 0; i < nSum; i++) {,4,1,0,1,3,2,0,0,1,6,32,11,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,349,"                        sum += dataRow[i] * m.getEntry(i, col);",1,1,1,0,4,0,4,0,1,6,39,13,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,351,                    outDataRow[col] = sum;,1,0,1,0,2,0,0,0,1,4,22,11,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,354,"            return new RealMatrixImpl(outData, false);",1,0,0,0,2,2,0,1,2,5,42,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,366,        if (this.getColumnDimension() != m.getRowDimension()) {,0,1,0,2,7,2,3,0,0,5,55,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,367,"            throw new IllegalArgumentException(""Matrices are not multiplication compatible."");",0,0,0,1,2,2,0,1,2,5,82,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,369,        final int nRows = this.getRowDimension();,1,0,0,1,2,3,1,0,1,6,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,370,        final int nCols = m.getColumnDimension();,1,0,0,1,2,2,2,0,1,6,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,371,        final int nSum = this.getColumnDimension();,1,0,0,1,2,3,1,0,1,6,43,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,372,        final double[][] outData = new double[nRows][nCols];,1,0,1,0,8,4,0,0,1,5,52,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,373,        for (int row = 0; row < nRows; row++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,374,            final double[] dataRow    = data[row];,1,0,1,0,4,2,0,0,1,5,38,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,375,            final double[] outDataRow = outData[row];,1,0,1,0,4,2,0,0,1,5,41,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,376,            for (int col = 0; col < nCols; col++) {,4,1,0,1,3,2,0,0,1,6,39,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,377,                double sum = 0;,1,0,0,0,0,1,0,0,0,2,15,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,378,                for (int i = 0; i < nSum; i++) {,4,1,0,1,3,2,0,0,1,6,32,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,379,                    sum += dataRow[i] * m.data[i][col];,3,1,1,0,6,0,0,0,1,5,35,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,381,                outDataRow[col] = sum;,1,0,1,0,2,0,0,0,1,4,22,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,384,"        return new RealMatrixImpl(outData, false);",1,0,0,0,2,2,0,1,2,5,42,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,395,        return m.multiply(this);,0,0,0,1,2,2,2,0,0,4,24,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,406,        return copyOut();,0,0,0,1,2,1,1,0,1,5,17,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,417,        return data;,1,0,0,0,0,1,0,0,0,2,12,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,425,        double maxColSum = 0;,1,0,0,0,0,1,0,0,0,2,21,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,426,        for (int col = 0; col < this.getColumnDimension(); col++) {,3,1,0,2,5,3,1,0,1,7,59,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,427,            double sum = 0;,1,0,0,0,0,1,0,0,0,2,15,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,428,            for (int row = 0; row < this.getRowDimension(); row++) {,3,1,0,2,5,3,1,0,1,7,56,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,429,                sum += Math.abs(data[row][col]);,1,0,1,1,6,0,2,0,1,6,32,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,431,"            maxColSum = Math.max(maxColSum, sum);",1,0,0,0,2,0,4,0,1,4,37,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,433,        return maxColSum;,1,0,0,0,0,1,0,0,0,2,17,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,451,        if (startRow < 0 || startRow > endRow || endRow > data.length ||,6,8,0,0,1,1,0,0,0,4,64,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,454,            throw new MatrixIndexException(,0,0,0,0,1,2,0,1,1,4,31,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,457,        final double[][] subMatrixData =,1,0,0,0,4,2,0,0,1,4,32,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,459,        for (int i = startRow; i <= endRow; i++) {,5,1,0,1,3,2,0,0,1,6,42,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,460,"            System.arraycopy(data[i], startColumn,",0,0,1,0,3,0,3,0,0,3,38,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,464,"        return new RealMatrixImpl(subMatrixData, false);",1,0,0,0,2,2,0,1,2,5,48,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,480,        if (selectedRows.length * selectedColumns.length == 0) {,4,2,0,1,3,1,0,0,0,5,56,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,481,            throw new MatrixIndexException(,0,0,0,0,1,2,0,1,1,4,31,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,484,        final double[][] subMatrixData =,1,0,0,0,4,2,0,0,1,4,32,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,487,            for (int i = 0; i < selectedRows.length; i++) {,5,1,0,1,3,2,0,0,1,6,47,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,488,                final double[] subI = subMatrixData[i];,1,0,1,0,4,2,0,0,1,5,39,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,489,                final double[] dataSelectedI = data[selectedRows[i]];,1,0,1,0,6,2,0,0,1,5,53,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,490,                for (int j = 0; j < selectedColumns.length; j++) {,5,1,0,1,3,2,0,0,1,6,50,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,491,                    subI[j] = dataSelectedI[selectedColumns[j]];,0,0,1,0,6,0,0,0,1,3,44,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,496,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,494,        } catch (ArrayIndexOutOfBoundsException e) {,1,0,0,1,4,1,0,1,0,5,44,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,495,"            throw new MatrixIndexException(""matrix dimension mismatch"");",0,0,0,1,2,2,0,1,2,5,60,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,497,"        return new RealMatrixImpl(subMatrixData, false);",1,0,0,0,2,2,0,1,2,5,48,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,529,        if ((row < 0) || (column < 0)){,2,3,0,2,7,1,0,0,0,5,31,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,530,            throw new MatrixIndexException,0,0,0,0,0,2,0,1,1,3,30,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,533,        final int nRows = subMatrix.length;,3,0,0,0,0,2,0,0,1,3,35,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,534,        if (nRows == 0) {,1,1,0,1,3,1,0,0,0,5,17,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,535,            throw new IllegalArgumentException(,0,0,0,0,1,2,0,1,1,4,35,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,538,        final int nCols = subMatrix[0].length;,2,0,1,0,2,2,0,0,1,5,38,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,539,        if (nCols == 0) {,1,1,0,1,3,1,0,0,0,5,17,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,540,            throw new IllegalArgumentException(,0,0,0,0,1,2,0,1,1,4,35,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,543,        for (int r = 1; r < nRows; r++) {,4,1,0,1,3,2,0,0,1,6,33,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,544,            if (subMatrix[r].length != nCols) {,2,1,1,1,5,1,0,0,0,6,35,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,545,                throw new IllegalArgumentException(,0,0,0,0,1,2,0,1,1,4,35,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,549,        if (data == null) {,1,1,0,1,3,1,0,0,0,5,19,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,550,            if ((row > 0)||(column > 0)) throw new MatrixIndexException,2,3,0,2,6,3,0,1,1,7,59,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,552,            data = new double[nRows][nCols];,1,0,1,0,4,2,0,0,1,5,32,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,553,"            System.arraycopy(subMatrix, 0, data, 0, subMatrix.length);          ",2,0,0,0,2,0,4,0,0,3,58,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,555,        if (((nRows + row) > this.getRowDimension()) ||,2,3,0,2,7,2,1,0,0,6,47,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,557,            throw new MatrixIndexException(,0,0,0,0,1,2,0,1,1,4,31,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,559,        for (int i = 0; i < nRows; i++) {,4,1,0,1,3,2,0,0,1,6,33,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,560,"            System.arraycopy(subMatrix[i], 0, data[row + i], column, nCols);",2,1,1,0,6,0,4,0,0,5,64,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,562,        lu = null;,1,0,0,0,0,0,0,0,1,2,10,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,563,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,574,"        if ( !isValidCoordinate( row, 0)) {",0,0,0,0,5,1,2,0,2,4,35,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,575,"            throw new MatrixIndexException(""illegal row argument"");",0,0,0,1,2,2,0,1,2,5,55,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,577,        final int ncols = this.getColumnDimension();,1,0,0,1,2,3,1,0,1,6,44,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,578,        final double[][] out = new double[1][ncols]; ,1,0,1,0,8,4,0,0,1,5,44,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,579,"        System.arraycopy(data[row], 0, out[0], 0, ncols);",0,0,1,0,6,0,3,0,0,3,49,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,580,"        return new RealMatrixImpl(out, false);",1,0,0,0,2,2,0,1,2,5,38,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,592,"        if ( !isValidCoordinate( 0, column)) {",0,0,0,0,5,1,2,0,2,4,38,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,593,"            throw new MatrixIndexException(""illegal column argument"");",0,0,0,1,2,2,0,1,2,5,58,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,595,        final int nRows = this.getRowDimension();,1,0,0,1,2,3,1,0,1,6,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,596,        final double[][] out = new double[nRows][1]; ,1,0,1,0,8,4,0,0,1,5,44,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,597,        for (int row = 0; row < nRows; row++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,598,            out[row][0] = data[row][column];,0,0,1,0,8,0,0,0,1,3,32,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,600,"        return new RealMatrixImpl(out, false);",1,0,0,0,2,2,0,1,2,5,38,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,614,"        if ( !isValidCoordinate( row, 0 ) ) {",0,0,0,0,5,1,2,0,2,4,37,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,615,"            throw new MatrixIndexException(""illegal row argument"");",0,0,0,1,2,2,0,1,2,5,55,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,617,        final int ncols = this.getColumnDimension();,1,0,0,1,2,3,1,0,1,6,44,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,618,        final double[] out = new double[ncols];,1,0,1,0,4,4,0,0,1,5,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,619,"        System.arraycopy(data[row], 0, out, 0, ncols);",0,0,1,0,4,0,4,0,0,3,46,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,620,        return out;,1,0,0,0,0,1,0,0,0,2,11,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,634,"        if ( !isValidCoordinate(0, col) ) {",0,0,0,0,5,1,2,0,2,4,35,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,635,"            throw new MatrixIndexException(""illegal column argument"");",0,0,0,1,2,2,0,1,2,5,58,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,637,        final int nRows = this.getRowDimension();,1,0,0,1,2,3,1,0,1,6,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,638,        final double[] out = new double[nRows];,1,0,1,0,4,4,0,0,1,5,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,639,        for (int row = 0; row < nRows; row++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,640,            out[row] = data[row][col];,0,0,1,0,6,0,0,0,1,3,26,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,642,        return out;,1,0,0,0,0,1,0,0,0,2,11,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,663,            return data[row][column];,0,0,1,0,4,1,0,0,0,3,25,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,664,        } catch (ArrayIndexOutOfBoundsException e) {,1,0,0,1,4,1,0,1,0,5,44,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,665,"            throw new MatrixIndexException(""matrix entry does not exist"");",0,0,0,1,2,2,0,1,2,5,62,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,675,        final int nRows = getRowDimension();,1,0,0,1,2,2,1,0,2,6,36,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,676,        final int nCols = getColumnDimension();,1,0,0,1,2,2,1,0,2,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,677,        final double[][] outData = new double[nCols][nRows];,1,0,1,0,8,4,0,0,1,5,52,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,678,        for (int row = 0; row < nRows; row++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,679,            final double[] dataRow = data[row];,1,0,1,0,4,2,0,0,1,5,35,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,680,            for (int col = 0; col < nCols; col++) {,4,1,0,1,3,2,0,0,1,6,39,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,681,                outData[col][row] = dataRow[col];,0,0,1,0,6,0,0,0,1,3,33,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,684,"        return new RealMatrixImpl(outData, false);",1,0,0,0,2,2,0,1,2,5,42,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,694,        return solve(MatrixUtils.createRealIdentityMatrix(getRowDimension()));,0,0,0,3,6,1,4,0,2,5,70,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,702,        if (!isSquare()) {,0,0,0,2,5,1,1,0,2,5,18,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,703,"            throw new InvalidMatrixException(""matrix is not square"");",0,0,0,1,2,2,0,1,2,5,57,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,705,        if (isSingular()) {   // note: this has side effect of attempting LU decomp if lu == null,0,0,0,2,5,3,1,0,1,5,89,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,706,            return 0d;,0,0,0,0,0,1,0,0,0,1,10,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,708,            double det = parity;,2,0,0,0,0,1,0,0,0,2,20,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,709,            for (int i = 0; i < this.getRowDimension(); i++) {,3,1,0,2,5,3,1,0,1,7,50,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,710,                det *= lu[i][i];,1,0,1,0,4,0,0,0,1,4,16,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,712,            return det;,1,0,0,0,0,1,0,0,0,2,11,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,720,        return (this.getColumnDimension() == this.getRowDimension());,0,1,0,2,6,3,2,0,0,5,61,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,727,        if (lu == null) {,1,1,0,1,3,1,0,0,0,5,17,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,729,                luDecompose();,0,0,0,1,2,0,1,0,1,4,14,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,730,                return false;,0,0,0,0,0,1,0,0,1,2,13,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,731,            } catch (InvalidMatrixException ex) {,1,0,0,1,4,1,0,1,0,5,37,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,732,                return true;,0,0,0,0,0,1,0,0,1,2,12,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,735,            return false; // so the matrix is not singular,0,0,0,0,0,1,0,0,1,2,46,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,758,        if (!isSquare()) {,0,0,0,2,5,1,1,0,2,5,18,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,759,"            throw new IllegalArgumentException(""matrix is not square"");",0,0,0,1,2,2,0,1,2,5,59,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,761,        double trace = data[0][0];,1,0,1,0,4,1,0,0,0,4,26,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,762,        for (int i = 1; i < this.getRowDimension(); i++) {,3,1,0,2,5,3,1,0,1,7,50,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,763,            trace += data[i][i];,1,0,1,0,4,0,0,0,1,4,20,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,765,        return trace;,1,0,0,0,0,1,0,0,0,2,13,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,777,"            throw new IllegalArgumentException(""vector has wrong length"");",0,0,0,1,2,2,0,1,2,5,62,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,788,        return out;,1,0,0,0,0,1,0,0,0,2,11,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,797,        final int nRows = this.getRowDimension();,1,0,0,1,2,3,1,0,1,6,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,798,        if (v.length != nRows) {,3,1,0,1,3,1,0,0,0,5,24,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,799,"            throw new IllegalArgumentException(""vector has wrong length"");",0,0,0,1,2,2,0,1,2,5,62,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,801,        final int nCols = this.getColumnDimension();,1,0,0,1,2,3,1,0,1,6,44,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,802,        final double[] out = new double[nCols];,1,0,1,0,4,4,0,0,1,5,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,803,        for (int col = 0; col < nCols; col++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,804,            double sum = 0;,1,0,0,0,0,1,0,0,0,2,15,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,805,            for (int i = 0; i < nRows; i++) {,4,1,0,1,3,2,0,0,1,6,33,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,806,                sum += data[i][col] * v[i];,1,1,1,0,6,0,0,0,1,5,27,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,808,            out[col] = sum;,1,0,1,0,2,0,0,0,1,4,15,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,810,        return out;,1,0,0,0,0,1,0,0,0,2,11,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,825,        final int nRows = this.getRowDimension();,1,0,0,1,2,3,1,0,1,6,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,826,        if (b.length != nRows) {,3,1,0,1,3,1,0,0,0,5,24,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,827,"            throw new IllegalArgumentException(""constant vector has wrong length"");",0,0,0,1,2,2,0,1,2,5,71,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,829,        final RealMatrix bMatrix = new RealMatrixImpl(b);,2,0,0,1,2,2,0,2,2,6,49,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,830,        final double[][] solution = ((RealMatrixImpl) (solve(bMatrix))).getDataRef();,1,0,0,3,14,2,3,1,2,7,77,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,831,        final double[] out = new double[nRows];,1,0,1,0,4,4,0,0,1,5,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,832,        for (int row = 0; row < nRows; row++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,833,            out[row] = solution[row][0];,0,0,1,0,6,0,0,0,1,3,28,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,835,        return out;,1,0,0,0,0,1,0,0,0,2,11,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,850,        if (b.getRowDimension() != this.getRowDimension()) {,0,1,0,2,7,2,3,0,0,5,52,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,851,"            throw new IllegalArgumentException(""Incorrect row dimension"");",0,0,0,1,2,2,0,1,2,5,62,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,853,        if (!this.isSquare()) {,0,0,0,2,5,2,1,0,1,5,23,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,854,"            throw new InvalidMatrixException(""coefficient matrix is not square"");",0,0,0,1,2,2,0,1,2,5,69,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,856,        if (this.isSingular()) { // side effect: compute LU decomp,0,0,0,2,5,2,1,0,0,4,58,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,857,"            throw new InvalidMatrixException(""Matrix is singular."");",0,0,0,1,2,2,0,1,2,5,56,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,860,        final int nCol  = this.getColumnDimension();,1,0,0,1,2,3,1,0,1,6,44,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,861,        final int nColB = b.getColumnDimension();,1,0,0,1,2,2,2,0,1,6,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,862,        final int nRowB = b.getRowDimension();,1,0,0,1,2,2,2,0,1,6,38,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,865,        final double[][] bp = new double[nRowB][nColB];,1,0,1,0,8,4,0,0,1,5,47,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,866,        for (int row = 0; row < nRowB; row++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,867,            final double[] bpRow = bp[row];,1,0,1,0,4,2,0,0,1,5,31,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,868,            for (int col = 0; col < nColB; col++) {,4,1,0,1,3,2,0,0,1,6,39,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,869,"                bpRow[col] = b.getEntry(permutation[row], col);",0,0,1,0,6,0,3,0,1,4,47,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,874,        for (int col = 0; col < nCol; col++) {,4,1,0,1,3,2,0,0,1,6,38,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,875,            for (int i = col + 1; i < nCol; i++) {,5,2,0,1,3,2,0,0,1,6,38,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,876,                final double[] bpI = bp[i];,1,0,1,0,4,2,0,0,1,5,27,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,877,                final double[] luI = lu[i];,1,0,1,0,4,2,0,0,1,5,27,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,878,                for (int j = 0; j < nColB; j++) {,4,1,0,1,3,2,0,0,1,6,33,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,879,                    bpI[j] -= bp[col][j] * luI[col];,0,1,1,0,8,0,0,0,1,4,32,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,885,        for (int col = nCol - 1; col >= 0; col--) {,4,2,0,1,3,2,0,0,1,6,43,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,886,            final double[] bpCol = bp[col];,1,0,1,0,4,2,0,0,1,5,31,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,887,            final double luDiag = lu[col][col];,1,0,1,0,4,2,0,0,1,5,35,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,888,            for (int j = 0; j < nColB; j++) {,4,1,0,1,3,2,0,0,1,6,33,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,889,                bpCol[j] /= luDiag;,1,0,1,0,2,0,0,0,1,4,19,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,891,            for (int i = 0; i < col; i++) {,4,1,0,1,3,2,0,0,1,6,31,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,892,                final double[] bpI = bp[i];,1,0,1,0,4,2,0,0,1,5,27,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,893,                final double[] luI = lu[i];,1,0,1,0,4,2,0,0,1,5,27,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,894,                for (int j = 0; j < nColB; j++) {,4,1,0,1,3,2,0,0,1,6,33,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,895,                    bpI[j] -= bp[col][j] * luI[col];,0,1,1,0,8,0,0,0,1,4,32,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,900,"        return new RealMatrixImpl(bp, false);",1,0,0,0,2,2,0,1,2,5,37,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,924,        final int nRows = this.getRowDimension();,1,0,0,1,2,3,1,0,1,6,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,925,        final int nCols = this.getColumnDimension();,1,0,0,1,2,3,1,0,1,6,44,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,926,        if (nRows != nCols) {,2,1,0,1,3,1,0,0,0,5,21,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,927,"            throw new InvalidMatrixException(""LU decomposition requires that the matrix be square."");",0,0,0,1,2,2,0,1,2,5,89,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,929,        lu = getData();,1,0,0,1,2,0,1,0,2,5,15,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,932,        permutation = new int[nRows];,1,0,1,0,2,2,0,0,1,5,29,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,933,        for (int row = 0; row < nRows; row++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,934,            permutation[row] = row;,1,0,1,0,2,0,0,0,1,4,23,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,936,        parity = 1;,1,0,0,0,0,0,0,0,1,2,11,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,939,        for (int col = 0; col < nCols; col++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,941,            double sum = 0;,1,0,0,0,0,1,0,0,0,2,15,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,944,            for (int row = 0; row < col; row++) {,4,1,0,1,3,2,0,0,1,6,37,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,945,                final double[] luRow = lu[row];,1,0,1,0,4,2,0,0,1,5,31,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,946,                sum = luRow[col];,1,0,1,0,2,0,0,0,1,4,17,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,947,                for (int i = 0; i < row; i++) {,4,1,0,1,3,2,0,0,1,6,31,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,948,                    sum -= luRow[i] * lu[i][col];,1,1,1,0,6,0,0,0,1,5,29,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,950,                luRow[col] = sum;,1,0,1,0,2,0,0,0,1,4,17,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,954,            int max = col; // permutation row,2,0,0,0,0,1,0,0,0,2,33,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,955,            double largest = 0d;,1,0,0,0,0,1,0,0,0,2,20,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,956,            for (int row = col; row < nRows; row++) {,5,1,0,1,3,2,0,0,1,6,41,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,957,                final double[] luRow = lu[row];,1,0,1,0,4,2,0,0,1,5,31,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,958,                sum = luRow[col];,1,0,1,0,2,0,0,0,1,4,17,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,959,                for (int i = 0; i < col; i++) {,4,1,0,1,3,2,0,0,1,6,31,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,960,                    sum -= luRow[i] * lu[i][col];,1,1,1,0,6,0,0,0,1,5,29,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,962,                luRow[col] = sum;,1,0,1,0,2,0,0,0,1,4,17,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,965,                if (Math.abs(sum) > largest) {,1,1,0,2,5,1,3,0,0,6,30,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,966,                    largest = Math.abs(sum);,1,0,0,1,2,0,3,0,1,5,24,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,967,                    max = row;,2,0,0,0,0,0,0,0,1,2,10,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,972,            if (Math.abs(lu[max][col]) < TOO_SMALL) {,1,1,1,2,9,1,2,0,0,7,41,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,973,                lu = null;,1,0,0,0,0,0,0,0,1,2,10,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,974,"                throw new InvalidMatrixException(""matrix is singular"");",0,0,0,1,2,2,0,1,2,5,55,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,978,            if (max != col) {,2,1,0,1,3,1,0,0,0,5,17,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,979,                double tmp = 0;,1,0,0,0,0,1,0,0,0,2,15,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,980,                for (int i = 0; i < nCols; i++) {,4,1,0,1,3,2,0,0,1,6,33,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,981,                    tmp = lu[max][i];,1,0,1,0,4,0,0,0,1,4,17,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,982,                    lu[max][i] = lu[col][i];,0,0,1,0,8,0,0,0,1,3,24,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,983,                    lu[col][i] = tmp;,1,0,1,0,4,0,0,0,1,4,17,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,985,                int temp = permutation[max];,1,0,1,0,2,1,0,0,0,4,28,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,986,                permutation[max] = permutation[col];,0,0,1,0,4,0,0,0,1,3,36,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,987,                permutation[col] = temp;,1,0,1,0,2,0,0,0,1,4,24,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,988,                parity = -parity;,2,0,0,0,0,0,0,0,2,2,17,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,992,            final double luDiag = lu[col][col];,1,0,1,0,4,2,0,0,1,5,35,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,993,            for (int row = col + 1; row < nRows; row++) {,5,2,0,1,3,2,0,0,1,6,45,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,994,                lu[row][col] /= luDiag;,1,0,1,0,4,0,0,0,1,4,23,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,997,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1004,        StringBuffer res = new StringBuffer();,1,0,0,1,2,1,0,2,1,6,38,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1005,"        res.append(""RealMatrixImpl{"");",0,0,0,1,3,0,2,0,1,4,30,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1006,        if (data != null) {,1,1,0,1,3,1,0,0,0,5,19,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1007,            for (int i = 0; i < data.length; i++) {,5,1,0,1,3,2,0,0,1,6,39,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1008,                if (i > 0) {,1,1,0,1,3,1,0,0,0,5,12,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1009,"                    res.append("","");",0,0,0,0,2,0,2,0,1,3,16,11,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1011,"                res.append(""{"");",0,0,0,1,3,0,2,0,1,4,16,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1012,                for (int j = 0; j < data[0].length; j++) {,4,1,1,1,5,2,0,0,1,7,42,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1013,                    if (j > 0) {,1,1,0,1,3,1,0,0,0,5,12,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1014,"                        res.append("","");",0,0,0,0,2,0,2,0,1,3,16,13,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1016,                    res.append(data[i][j]);,0,0,1,1,6,0,2,0,0,4,23,11,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1018,"                res.append(""}"");",0,0,0,1,3,0,2,0,1,4,16,9,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1021,"        res.append(""}"");",0,0,0,1,3,0,2,0,1,4,16,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1022,        return res.toString();,0,0,0,1,2,1,2,0,0,4,22,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1035,        if (object == this ) {,1,1,0,1,3,2,0,0,0,5,22,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1036,            return true;,0,0,0,0,0,1,0,0,1,2,12,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1038,        if (object instanceof RealMatrixImpl == false) {,1,1,0,1,3,2,0,1,1,7,48,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1039,            return false;,0,0,0,0,0,1,0,0,1,2,13,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1041,        RealMatrix m = (RealMatrix) object;,2,0,0,1,2,0,0,2,0,4,35,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1042,        final int nRows = getRowDimension();,1,0,0,1,2,2,1,0,2,6,36,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1043,        final int nCols = getColumnDimension();,1,0,0,1,2,2,1,0,2,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1044,        if (m.getColumnDimension() != nCols || m.getRowDimension() != nRows) {,2,3,0,2,7,1,4,0,0,6,70,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1045,            return false;,0,0,0,0,0,1,0,0,1,2,13,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1047,        for (int row = 0; row < nRows; row++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1048,            final double[] dataRow = data[row];,1,0,1,0,4,2,0,0,1,5,35,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1049,            for (int col = 0; col < nCols; col++) {,4,1,0,1,3,2,0,0,1,6,39,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1050,                if (Double.doubleToLongBits(dataRow[col]) != ,0,1,1,1,5,1,2,0,0,6,44,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1052,                    return false;,0,0,0,0,0,1,0,0,1,2,13,10,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1056,        return true;,0,0,0,0,0,1,0,0,1,2,12,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1065,        int ret = 7;,1,0,0,0,0,1,0,0,0,2,12,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1066,        final int nRows = getRowDimension();,1,0,0,1,2,2,1,0,2,6,36,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1067,        final int nCols = getColumnDimension();,1,0,0,1,2,2,1,0,2,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1068,        ret = ret * 31 + nRows;,3,2,0,0,0,0,0,0,1,3,23,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1069,        ret = ret * 31 + nCols;,3,2,0,0,0,0,0,0,1,3,23,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1070,        for (int row = 0; row < nRows; row++) {,4,1,0,1,3,2,0,0,1,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1071,            final double[] dataRow = data[row];,1,0,1,0,4,2,0,0,1,5,35,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1072,            for (int col = 0; col < nCols; col++) {,4,1,0,1,3,2,0,0,1,6,39,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1073,               ret = ret * 31 + (11 * (row+1) + 17 * (col+1)) * ,4,8,0,2,6,0,0,0,1,5,48,8,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1077,        return ret;,1,0,0,0,0,1,0,0,0,2,11,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1110,        if (lu == null) {,1,1,0,1,3,1,0,0,0,5,17,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1111,            luDecompose();,0,0,0,1,2,0,1,0,1,4,14,6,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1113,        return new RealMatrixImpl(lu);,1,0,0,1,2,2,0,1,1,6,30,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1129,        final int[] out = new int[permutation.length];,3,0,0,0,4,4,0,0,1,4,46,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1130,"        System.arraycopy(permutation, 0, out, 0, permutation.length);",2,0,0,0,2,0,4,0,0,3,61,5,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1131,        return out;,1,0,0,0,0,1,0,0,0,2,11,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1142,        final int nRows = this.getRowDimension();,1,0,0,1,2,3,1,0,1,6,41,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1143,        final double[][] out = new double[nRows][this.getColumnDimension()];,1,0,1,1,10,5,1,0,1,7,68,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1145,        for (int i = 0; i < nRows; i++) {,4,1,0,1,3,2,0,0,1,6,33,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1146,"            System.arraycopy(data[i], 0, out[i], 0, data[i].length);",1,0,1,0,8,0,2,0,0,4,56,7,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1148,        return out;,1,0,0,0,0,1,0,0,0,2,11,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1162,"        setSubMatrix(in,0,0);",0,0,0,0,2,0,2,0,1,3,21,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1163,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1173,        final int nRows = getRowDimension();,1,0,0,1,2,2,1,0,2,6,36,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1174,        final int nCols = getColumnDimension();,1,0,0,1,2,2,1,0,2,6,39,4,0.0,0,0
+defect4j,math,org/apache/commons/math/linear/RealMatrixImpl,98,1175,        return !(row < 0 || row > nRows - 1 || col < 0 || col > nCols -1);,6,9,0,1,2,1,0,0,1,6,66,4,0.0,0,0

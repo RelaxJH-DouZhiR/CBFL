@@ -1,0 +1,29 @@
+dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,logic,lengthEle,lengthWord,depth,suspicious,accuracy,miss_line,predict
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,708,        DateTimeParserBucket bucket = new DateTimeParserBucket(,2,0,0,0,1,0,0,4,0,6,55,4,6.125,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,710,"        int newPos = parser.parseInto(bucket, text, position);",0,0,0,1,2,0,0,0,0,3,54,4,6.125,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,711,"        instant.setMillis(bucket.computeMillis(false, text));",0,0,0,2,4,0,0,0,0,6,53,4,6.125,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,712,        if (iOffsetParsed && bucket.getOffsetInteger() != null) {,4,2,0,2,5,0,8,0,0,15,57,3,6.125,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,717,            chrono = chrono.withZone(bucket.getZone());,2,0,0,2,4,0,8,0,0,11,43,7,6.125,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,719,        instant.setChronology(chrono);,0,0,0,1,2,0,6,0,0,6,30,5,6.125,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,720,        if (iZone != null) {,2,1,0,1,3,0,0,0,0,3,20,4,6.125,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,723,        return newPos;,4,1,0,0,0,1,0,0,0,5,14,3,6.125,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,357,"                saveField(DateTimeFieldType.year(), iDefaultYear);",0,0,0,2,4,0,8,0,0,8,50,9,4.45455,0,0,-1
+defect4j,time,org/joda/time/DateTimeZone,17,1167,        long instantBefore = convertUTCToLocal(instant - 3 * DateTimeConstants.MILLIS_PER_HOUR);,8,2,0,1,2,0,2,0,0,12,88,5,0.5,1,0,-1
+defect4j,time,org/joda/time/DateTimeZone,17,1168,        long instantAfter = convertUTCToLocal(instant + 3 * DateTimeConstants.MILLIS_PER_HOUR);,0,0,0,1,2,0,0,0,0,3,87,4,0.5,1,0,-1
+defect4j,time,org/joda/time/DateTimeZone,17,1169,        if (instantBefore == instantAfter) {,2,0,0,1,3,0,2,0,0,4,36,5,0.5,1,0,-1
+defect4j,time,org/joda/time/DateTimeZone,17,1174,        long local = convertUTCToLocal(instant);,2,0,0,1,2,0,4,0,0,6,40,5,0.5,1,0,-1
+defect4j,time,org/joda/time/DateTimeZone,17,1175,"        return convertLocalToUTC(local, false, earlierOrLater ? instantAfter : instantBefore);",12,1,0,1,2,1,4,0,0,18,86,1,0.5,1,0,-1
+defect4j,time,org/joda/time/DateTime,17,665,"        long newMillis = getZone().adjustOffset(getMillis(), false);",0,0,0,3,6,0,0,0,0,9,60,4,0.5,0,0,-1
+defect4j,time,org/joda/time/DateTime,17,666,        return withMillis(newMillis);,0,0,0,1,2,1,4,0,0,4,29,5,0.5,0,0,-1
+defect4j,time,org/joda/time/DateTime,17,685,"        long newMillis = getZone().adjustOffset(getMillis(), true);",0,0,0,3,6,0,0,0,0,9,59,4,0.5,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,18,356,        if ((base = getBase()) != null) {,2,1,0,3,7,0,2,0,0,7,33,4,0.05556,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,18,364,            instant = iGregorianChronology.getDateTimeMillis,2,1,0,0,0,0,0,0,0,3,48,4,0.05556,1,0,-1
+defect4j,time,org/joda/time/field/FieldUtils,18,233,            throw new IllegalFieldValueException,0,0,0,0,0,0,0,0,0,0,36,4,0.05556,0,0,-1
+defect4j,time,org/joda/time/DateMidnight,18,343,"        super(year, monthOfYear, dayOfMonth, 0, 0, 0, 0, chronology);",0,0,0,1,2,0,0,0,0,3,61,4,0.03333,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,18,53,"            buf.append(""must be in the range ["")",6,1,0,1,3,0,8,0,0,15,36,3,0.01961,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,18,50,        } else if (upperBound == null) {,2,1,0,1,4,0,0,0,0,3,32,5,0.01563,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,18,108,"        super(createMessage(fieldType.getName(), value, lowerBound, upperBound, null));",2,0,0,3,6,0,16,0,0,21,79,3,0.01471,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,18,109,        iDateTimeFieldType = fieldType;,8,1,0,0,0,0,8,0,0,19,31,3,0.01471,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,18,110,        iDurationFieldType = null;,0,0,0,0,0,0,0,0,0,0,26,4,0.01471,0,0,-1
+defect4j,time,org/joda/time/DateTime,19,331,"        super(year, monthOfYear, dayOfMonth,",6,0,0,0,1,0,0,0,0,6,36,4,0.06667,0,0,-1
+defect4j,time,org/joda/time/DateTime,19,333,    },4,0,0,0,1,0,0,0,0,4,1,7,0.06667,0,0,-1

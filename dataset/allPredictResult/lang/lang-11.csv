@@ -1,0 +1,56 @@
+project_path,version,lines,statement,suspicious,faulty,predict,miss_line
+org/apache/commons/lang3/RandomStringUtils,11,253,                ch = (char) (random.nextInt(gap) + start);,0.5,1,1,1
+org/apache/commons/lang3/RandomStringUtils,11,163,"        return random(count, start, end, letters, numbers, null, RANDOM);",0.33333,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,234,        if (start == 0 && end == 0) {,0.33333,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,247,        char[] buffer = new char[count];,0.33333,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,248,        int gap = end - start;,0.33333,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,250,        while (count-- != 0) {,0.33333,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,252,            if (chars == null) {,0.33333,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,225,        if (count == 0) {,0.25,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,227,        } else if (count < 0) {,0.25,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,230,        if (chars != null && chars.length == 0) {,0.25,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,43,    private static final Random RANDOM = new Random();,0.2,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,54,      super();,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,55,    },0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,69,"        return random(count, false, false);",0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,83,"        return random(count, 32, 127, false, false);",0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,97,"        return random(count, true, false);",0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,111,"        return random(count, true, true);",0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,125,"        return random(count, false, true);",0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,143,"        return random(count, 0, 0, letters, numbers);",0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,187,"        return random(count, start, end, letters, numbers, chars, RANDOM);",0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,226,"            return """";",0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,228,"            throw new IllegalArgumentException(""Requested random string length "" + count + "" is less than 0."");",0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,231,"            throw new IllegalArgumentException(""The chars array must not be empty"");",0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,235,            if (chars != null) {,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,236,                end = chars.length;,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,238,                if (!letters && !numbers) {,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,239,                    end = Integer.MAX_VALUE;,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,241,                    end = 'z' + 1;,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,242,                    start = ' ';                ,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,255,                ch = chars[random.nextInt(gap) + start];,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,257,            if (letters && Character.isLetter(ch),0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,260,                if(ch >= 56320 && ch <= 57343) {,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,261,                    if(count == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,262,                        count++;,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,265,                        buffer[count] = ch;,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,266,                        count--;,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,267,                        buffer[count] = (char) (55296 + random.nextInt(128));,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,269,                } else if(ch >= 55296 && ch <= 56191) {,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,270,                    if(count == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,271,                        count++;,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,274,                        buffer[count] = (char) (56320 + random.nextInt(128));,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,275,                        count--;,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,276,                        buffer[count] = ch;,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,278,                } else if(ch >= 56192 && ch <= 56319) {,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,280,                    count++;,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,282,                    buffer[count] = ch;,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,285,                count++;,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,287,        },0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,288,        return new String(buffer);,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,306,        if (chars == null) {,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,307,"            return random(count, 0, 0, false, false, null, RANDOM);",0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,309,"        return random(count, chars.toCharArray());",0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,325,        if (chars == null) {,0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,326,"            return random(count, 0, 0, false, false, null, RANDOM);",0.0,0,-1,0
+org/apache/commons/lang3/RandomStringUtils,11,328,"        return random(count, 0, chars.length, false, false, chars, RANDOM);",0.0,0,-1,0

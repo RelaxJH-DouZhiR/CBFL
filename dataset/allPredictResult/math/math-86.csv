@@ -1,0 +1,1493 @@
+project_path,version,lines,statement,suspicious,faulty,predict,miss_line
+org/apache/commons/math/linear/AbstractRealMatrix,86,991,        final int nRows = getRowDimension();,1.0,0,1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,992,        final int nCols = getColumnDimension();,1.0,0,1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,993,        final StringBuffer res = new StringBuffer();,1.0,0,1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,994,        String fullClassName = getClass().getName();,1.0,0,1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,995,        String shortClassName = fullClassName.substring(fullClassName.lastIndexOf('.') + 1);,1.0,0,1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,996,"        res.append(shortClassName).append(""{"");",1.0,0,1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,998,        for (int i = 0; i < nRows; ++i) {,1.0,0,1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,999,            if (i > 0) {,1.0,0,1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1000,"                res.append("","");",1.0,0,1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1002,"            res.append(""{"");",1.0,0,1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1003,            for (int j = 0; j < nCols; ++j) {,1.0,0,1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1004,                if (j > 0) {,1.0,0,1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1005,"                    res.append("","");",1.0,0,1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1007,"                res.append(getEntry(i, j));",1.0,0,1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1009,"            res.append(""}"");",1.0,0,1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1012,"        res.append(""}"");",1.0,0,1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1013,        return res.toString();,1.0,0,1,0
+org/apache/commons/math/linear/MatrixUtils,86,627,        if (left.getColumnDimension() != right.getRowDimension()) {,0.5,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,633,    },0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,492,            return multiply((DenseRealMatrix) m);,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,555,"        MatrixUtils.checkMultiplicationCompatible(this, m);",0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,557,"        final DenseRealMatrix out = new DenseRealMatrix(rows, m.columns);",0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,560,        int blockIndex = 0;,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,561,        for (int iBlock = 0; iBlock < out.blockRows; ++iBlock) {,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,563,            final int pStart = iBlock * BLOCK_SIZE;,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,564,"            final int pEnd   = Math.min(pStart + BLOCK_SIZE, rows);",0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,566,            for (int jBlock = 0; jBlock < out.blockColumns; ++jBlock) {,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,567,                final int jWidth = out.blockWidth(jBlock);,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,568,                final int jWidth2 = jWidth  + jWidth;,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,569,                final int jWidth3 = jWidth2 + jWidth;,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,570,                final int jWidth4 = jWidth3 + jWidth;,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,573,                final double[] outBlock = out.blocks[blockIndex];,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,576,                for (int kBlock = 0; kBlock < blockColumns; ++kBlock) {,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,577,                    final int kWidth = blockWidth(kBlock);,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,578,                    final double[] tBlock = blocks[iBlock * blockColumns + kBlock];,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,579,                    final double[] mBlock = m.blocks[kBlock * m.blockColumns + jBlock];,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,580,"                    for (int p = pStart, k = 0; p < pEnd; ++p) {",0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,581,                        final int lStart = (p - pStart) * kWidth;,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,582,                        final int lEnd   = lStart + kWidth;,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,583,                        for (int nStart = 0; nStart < jWidth; ++nStart) {,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,584,                            double sum = 0;,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,585,                            int l = lStart;,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,586,                            int n = nStart;,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,587,                            while (l < lEnd - 3) {,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,588,                                sum += tBlock[l] * mBlock[n] +,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,592,                                l += 4;,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,593,                                n += jWidth4;,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,595,                            while (l < lEnd) {,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,596,                                sum += tBlock[l++] * mBlock[n];,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,597,                                n += jWidth;,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,599,                            outBlock[k++] += sum;,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,605,                ++blockIndex;,0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,610,        return out;,0.5,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,76,    },0.5,1,-1,1
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,132,        for (int i = 0; i < order; ++i) {,0.5,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,134,            final double[] ltI = lTData[i];,0.5,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,138,            ltI[i] = Math.sqrt(ltI[i]);,0.5,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,139,            final double inverse = 1.0 / ltI[i];,0.5,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,141,            for (int q = order - 1; q > i; --q) {,0.5,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,142,                ltI[q] *= inverse;,0.5,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,143,                final double[] ltQ = lTData[q];,0.5,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,144,                for (int p = q; p < order; ++p) {,0.5,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,145,                    ltQ[p] -= ltI[q] * ltI[p];,0.5,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,151,    },0.5,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,618,        final double[][] data = new double[getRowDimension()][getColumnDimension()];,0.44444,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,619,        final int lastColumns = columns - (blockColumns - 1) * BLOCK_SIZE;,0.44444,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,621,        for (int iBlock = 0; iBlock < blockRows; ++iBlock) {,0.44444,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,622,            final int pStart = iBlock * BLOCK_SIZE;,0.44444,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,623,"            final int pEnd   = Math.min(pStart + BLOCK_SIZE, rows);",0.44444,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,624,            int regularPos   = 0;,0.44444,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,625,            int lastPos      = 0;,0.44444,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,626,            for (int p = pStart; p < pEnd; ++p) {,0.44444,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,627,                final double[] dataP = data[p];,0.44444,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,628,                int blockIndex = iBlock * blockColumns;,0.44444,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,629,                int dataPos    = 0;,0.44444,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,630,                for (int jBlock = 0; jBlock < blockColumns - 1; ++jBlock) {,0.44444,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,634,"                System.arraycopy(blocks[blockIndex], lastPos, dataP, dataPos, lastColumns);",0.44444,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,635,                regularPos += BLOCK_SIZE;,0.44444,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,636,                lastPos    += lastColumns;,0.44444,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,640,        return data;,0.44444,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,104,        final int order = matrix.getRowDimension();,0.44444,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,105,        lTData   = matrix.getData();,0.44444,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,106,        cachedL  = null;,0.44444,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,107,        cachedLT = null;,0.44444,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,110,        for (int i = 0; i < order; ++i) {,0.44444,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,112,            final double[] lI = lTData[i];,0.44444,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,114,            if (lTData[i][i] < absolutePositivityThreshold) {,0.44444,1,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,118,            for (int j = i + 1; j < order; ++j) {,0.44444,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,119,                final double[] lJ = lTData[j];,0.44444,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,120,                final double lIJ = lI[j];,0.44444,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,121,                final double lJI = lJ[i];,0.44444,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,122,                final double maxDelta =,0.44444,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,124,                if (Math.abs(lIJ - lJI) > maxDelta) {,0.44444,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,127,                lJ[i] = 0;,0.44444,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,88,        return new DenseRealMatrix(data);,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,126,"        this(rawData.length, rawData[0].length, toBlocksLayout(rawData), false);",0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,127,    },0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,148,"        super(rows, columns);",0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,149,        this.rows    = rows;,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,150,        this.columns = columns;,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,153,        blockRows    = (rows    + BLOCK_SIZE - 1) / BLOCK_SIZE;,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,154,        blockColumns = (columns + BLOCK_SIZE - 1) / BLOCK_SIZE;,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,156,        if (copyArray) {,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,161,            blocks = blockData;,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,164,        int index = 0;,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,165,        for (int iBlock = 0; iBlock < blockRows; ++iBlock) {,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,166,            final int iHeight = blockHeight(iBlock);,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,167,"            for (int jBlock = 0; jBlock < blockColumns; ++jBlock, ++index) {",0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,168,                if (blockData[index].length != iHeight * blockWidth(jBlock)) {,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,173,                if (copyArray) {,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,179,    },0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,206,        final int rows         = rawData.length;,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,207,        final int columns      = rawData[0].length;,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,208,        final int blockRows    = (rows    + BLOCK_SIZE - 1) / BLOCK_SIZE;,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,209,        final int blockColumns = (columns + BLOCK_SIZE - 1) / BLOCK_SIZE;,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,212,        for (int i = 0; i < rawData.length; ++i) {,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,213,            final int length = rawData[i].length;,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,214,            if (length != columns) {,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,222,        final double[][] blocks = new double[blockRows * blockColumns][];,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,223,"        for (int iBlock = 0, blockIndex = 0; iBlock < blockRows; ++iBlock) {",0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,224,            final int pStart  = iBlock * BLOCK_SIZE;,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,225,"            final int pEnd    = Math.min(pStart + BLOCK_SIZE, rows);",0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,226,            final int iHeight = pEnd - pStart;,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,227,"            for (int jBlock = 0; jBlock < blockColumns; ++jBlock, ++blockIndex) {",0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,228,                final int qStart = jBlock * BLOCK_SIZE;,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,229,"                final int qEnd   = Math.min(qStart + BLOCK_SIZE, columns);",0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,230,                final int jWidth = qEnd - qStart;,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,233,                final double[] block = new double[iHeight * jWidth];,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,234,                blocks[blockIndex] = block;,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,237,"                for (int p = pStart, index = 0; p < pEnd; ++p, index += jWidth) {",0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,238,"                    System.arraycopy(rawData[p], qStart, block, index, jWidth);",0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,244,        return blocks;,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1317,        return rows;,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1323,        return columns;,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1626,        return (blockRow == blockRows - 1) ? rows - blockRow * BLOCK_SIZE : BLOCK_SIZE;,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1635,        return (blockColumn == blockColumns - 1) ? columns - blockColumn * BLOCK_SIZE : BLOCK_SIZE;,0.4,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,55,        throws IllegalArgumentException {,0.4,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,56,        if (rowDimension <= 0 ) {,0.4,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,61,        if (columnDimension <= 0) {,0.4,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,66,        lu = null;,0.4,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,67,    },0.4,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,639,        return (getColumnDimension() == getRowDimension());,0.4,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,74,"        this(matrix, DEFAULT_RELATIVE_SYMMETRY_THRESHOLD,",0.4,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,97,"               NotSymmetricMatrixException, NotPositiveDefiniteMatrixException {",0.4,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,99,        if (!matrix.isSquare()) {,0.4,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1214,            final int iBlock = row    / BLOCK_SIZE;,0.33333,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1215,            final int jBlock = column / BLOCK_SIZE;,0.33333,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1216,            final int k      = (row    - iBlock * BLOCK_SIZE) * blockWidth(jBlock) +,0.33333,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1218,            return blocks[iBlock * blockColumns + jBlock][k];,0.33333,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,98,"        super(rows, columns);",0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,99,        this.rows    = rows;,0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,100,        this.columns = columns;,0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,103,        blockRows    = (rows    + BLOCK_SIZE - 1) / BLOCK_SIZE;,0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,104,        blockColumns = (columns + BLOCK_SIZE - 1) / BLOCK_SIZE;,0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,107,"        blocks = createBlocksLayout(rows, columns);",0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,109,    },0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,262,        final int blockRows    = (rows    + BLOCK_SIZE - 1) / BLOCK_SIZE;,0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,263,        final int blockColumns = (columns + BLOCK_SIZE - 1) / BLOCK_SIZE;,0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,265,        final double[][] blocks = new double[blockRows * blockColumns][];,0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,266,"        for (int iBlock = 0, blockIndex = 0; iBlock < blockRows; ++iBlock) {",0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,267,            final int pStart  = iBlock * BLOCK_SIZE;,0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,268,"            final int pEnd    = Math.min(pStart + BLOCK_SIZE, rows);",0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,269,            final int iHeight = pEnd - pStart;,0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,270,"            for (int jBlock = 0; jBlock < blockColumns; ++jBlock, ++blockIndex) {",0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,271,                final int qStart = jBlock * BLOCK_SIZE;,0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,272,"                final int qEnd   = Math.min(qStart + BLOCK_SIZE, columns);",0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,273,                final int jWidth = qEnd - qStart;,0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,274,                blocks[blockIndex] = new double[iHeight * jWidth];,0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,278,        return blocks;,0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1281,        final int nRows = getRowDimension();,0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1282,        final int nCols = getColumnDimension();,0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1283,"        final DenseRealMatrix out = new DenseRealMatrix(nCols, nRows);",0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1286,        int blockIndex = 0;,0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1287,        for (int iBlock = 0; iBlock < blockColumns; ++iBlock) {,0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1288,            for (int jBlock = 0; jBlock < blockRows; ++jBlock) {,0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1291,                final double[] outBlock = out.blocks[blockIndex];,0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1292,                final double[] tBlock   = blocks[jBlock * blockColumns + iBlock];,0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1293,                final int      pStart   = iBlock * BLOCK_SIZE;,0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1294,"                final int      pEnd     = Math.min(pStart + BLOCK_SIZE, columns);",0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1295,                final int      qStart   = jBlock * BLOCK_SIZE;,0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1296,"                final int      qEnd     = Math.min(qStart + BLOCK_SIZE, rows);",0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1297,"                for (int p = pStart, k = 0; p < pEnd; ++p) {",0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1298,                    final int lInc = pEnd - pStart;,0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1299,"                    for (int q = qStart, l = p - pStart; q < qEnd; ++q, l+= lInc) {",0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1300,                        outBlock[k++] = tBlock[l];,0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1305,                ++blockIndex;,0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1310,        return out;,0.16667,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,64,public class DenseRealMatrix extends AbstractRealMatrix implements Serializable {,0.16667,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,155,        if (cachedL == null) {,0.16667,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,156,            cachedL = getLT().transpose();,0.16667,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,158,        return cachedL;,0.16667,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,164,        if (cachedLT == null) {,0.16667,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,165,            cachedLT = MatrixUtils.createRealMatrix(lTData);,0.16667,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,169,        return cachedLT;,0.16667,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,387,"        return new NullPointerException(buildMessage(Locale.US, pattern, arguments)) {",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,395,"                return buildMessage(Locale.getDefault(), pattern, arguments);",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,98,"      super(buildMessage(Locale.US, pattern, arguments));",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,99,      this.pattern   = pattern;,0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,100,      this.arguments = (arguments == null) ? new Object[0] : arguments.clone();,0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,101,    },0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,111,        super(rootCause);,0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,112,        this.pattern   = getMessage();,0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,113,        this.arguments = new Object[0];,0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,114,    },0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,127,"      super(buildMessage(Locale.US, pattern, arguments), rootCause);",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,128,      this.pattern   = pattern;,0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,129,      this.arguments = (arguments == null) ? new Object[0] : arguments.clone();,0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,130,    },0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,61,            ResourceBundle bundle =,0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,63,            if (bundle.getLocale().getLanguage().equals(locale.getLanguage())) {,0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,65,                return bundle.getString(s);,0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,70,        },0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,68,        } catch (MissingResourceException mre) {,0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,74,        return s;,0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,87,"        return (pattern == null) ? """" : new MessageFormat(translate(pattern, locale), locale).format(arguments);        ",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,137,        return pattern;,0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,145,        return arguments.clone();,0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,155,"        return buildMessage(locale, pattern, arguments);",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,161,        return getMessage(Locale.getDefault());,0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,169,        printStackTrace(System.err);,0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,170,    },0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,179,        synchronized (out) {,0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,180,"            PrintWriter pw = new PrintWriter(out, false);",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,181,            printStackTrace(pw);,0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,183,            pw.flush();,0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,184,        },0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,185,    },0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,196,"        return new ArithmeticException(buildMessage(Locale.US, pattern, arguments)) {",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,219,"        return new ArrayIndexOutOfBoundsException(buildMessage(Locale.US, pattern, arguments)) {",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,242,"        return new EOFException(buildMessage(Locale.US, pattern, arguments)) {",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,268,        IOException ioe = new IOException(rootCause.getLocalizedMessage());,0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,269,        ioe.initCause(rootCause);,0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,270,        return ioe;,0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,282,"        return new IllegalArgumentException(buildMessage(Locale.US, pattern, arguments)) {",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,304,        IllegalArgumentException iae = new IllegalArgumentException(rootCause.getLocalizedMessage());,0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,305,        iae.initCause(rootCause);,0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,306,        return iae;,0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,318,"        return new IllegalStateException(buildMessage(Locale.US, pattern, arguments)) {",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,341,"        return new ConcurrentModificationException(buildMessage(Locale.US, pattern, arguments)) {",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,364,"        return new NoSuchElementException(buildMessage(Locale.US, pattern, arguments)) {",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,387,"        return new NullPointerException(buildMessage(Locale.US, pattern, arguments)) {",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,413,"        return new ParseException(buildMessage(Locale.US, pattern, arguments), offset) {",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,37,public class MathRuntimeException extends RuntimeException {,0.0,0,-1,0
+org/apache/commons/math/MathException,86,93,        super();,0.0,0,-1,0
+org/apache/commons/math/MathException,86,94,        this.pattern   = null;,0.0,0,-1,0
+org/apache/commons/math/MathException,86,95,        this.arguments = new Object[0];,0.0,0,-1,0
+org/apache/commons/math/MathException,86,96,    },0.0,0,-1,0
+org/apache/commons/math/MathException,86,106,"      super(buildMessage(Locale.US, pattern, arguments));",0.0,0,-1,0
+org/apache/commons/math/MathException,86,107,      this.pattern   = pattern;,0.0,0,-1,0
+org/apache/commons/math/MathException,86,108,      this.arguments = (arguments == null) ? new Object[0] : arguments.clone();,0.0,0,-1,0
+org/apache/commons/math/MathException,86,109,    },0.0,0,-1,0
+org/apache/commons/math/MathException,86,119,        super(rootCause);,0.0,0,-1,0
+org/apache/commons/math/MathException,86,120,        this.pattern   = getMessage();,0.0,0,-1,0
+org/apache/commons/math/MathException,86,121,        this.arguments = new Object[0];,0.0,0,-1,0
+org/apache/commons/math/MathException,86,122,    },0.0,0,-1,0
+org/apache/commons/math/MathException,86,135,"      super(buildMessage(Locale.US, pattern, arguments), rootCause);",0.0,0,-1,0
+org/apache/commons/math/MathException,86,136,      this.pattern   = pattern;,0.0,0,-1,0
+org/apache/commons/math/MathException,86,137,      this.arguments = (arguments == null) ? new Object[0] : arguments.clone();,0.0,0,-1,0
+org/apache/commons/math/MathException,86,138,    },0.0,0,-1,0
+org/apache/commons/math/MathException,86,60,            ResourceBundle bundle =,0.0,0,-1,0
+org/apache/commons/math/MathException,86,62,            if (bundle.getLocale().getLanguage().equals(locale.getLanguage())) {,0.0,0,-1,0
+org/apache/commons/math/MathException,86,64,                return bundle.getString(s);,0.0,0,-1,0
+org/apache/commons/math/MathException,86,69,        },0.0,0,-1,0
+org/apache/commons/math/MathException,86,67,        } catch (MissingResourceException mre) {,0.0,0,-1,0
+org/apache/commons/math/MathException,86,73,        return s;,0.0,0,-1,0
+org/apache/commons/math/MathException,86,85,"        return (pattern == null) ? """" : new MessageFormat(translate(pattern, locale), locale).format(arguments);        ",0.0,0,-1,0
+org/apache/commons/math/MathException,86,146,        return pattern;,0.0,0,-1,0
+org/apache/commons/math/MathException,86,155,        return arguments.clone();,0.0,0,-1,0
+org/apache/commons/math/MathException,86,166,"        return buildMessage(locale, pattern, arguments);",0.0,0,-1,0
+org/apache/commons/math/MathException,86,172,        return getMessage(Locale.getDefault());,0.0,0,-1,0
+org/apache/commons/math/MathException,86,180,        printStackTrace(System.err);,0.0,0,-1,0
+org/apache/commons/math/MathException,86,181,    },0.0,0,-1,0
+org/apache/commons/math/MathException,86,190,        synchronized (out) {,0.0,0,-1,0
+org/apache/commons/math/MathException,86,191,"            PrintWriter pw = new PrintWriter(out, false);",0.0,0,-1,0
+org/apache/commons/math/MathException,86,192,            printStackTrace(pw);,0.0,0,-1,0
+org/apache/commons/math/MathException,86,194,            pw.flush();,0.0,0,-1,0
+org/apache/commons/math/MathException,86,195,        },0.0,0,-1,0
+org/apache/commons/math/MathException,86,196,    },0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,318,"        return new IllegalStateException(buildMessage(Locale.US, pattern, arguments)) {",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,326,"                return buildMessage(Locale.getDefault(), pattern, arguments);",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,242,"        return new EOFException(buildMessage(Locale.US, pattern, arguments)) {",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,250,"                return buildMessage(Locale.getDefault(), pattern, arguments);",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,413,"        return new ParseException(buildMessage(Locale.US, pattern, arguments), offset) {",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,421,"                return buildMessage(Locale.getDefault(), pattern, arguments);",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,219,"        return new ArrayIndexOutOfBoundsException(buildMessage(Locale.US, pattern, arguments)) {",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,227,"                return buildMessage(Locale.getDefault(), pattern, arguments);",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,341,"        return new ConcurrentModificationException(buildMessage(Locale.US, pattern, arguments)) {",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,349,"                return buildMessage(Locale.getDefault(), pattern, arguments);",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,364,"        return new NoSuchElementException(buildMessage(Locale.US, pattern, arguments)) {",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,372,"                return buildMessage(Locale.getDefault(), pattern, arguments);",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,282,"        return new IllegalArgumentException(buildMessage(Locale.US, pattern, arguments)) {",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,290,"                return buildMessage(Locale.getDefault(), pattern, arguments);",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,196,"        return new ArithmeticException(buildMessage(Locale.US, pattern, arguments)) {",0.0,0,-1,0
+org/apache/commons/math/MathRuntimeException,86,204,"                return buildMessage(Locale.getDefault(), pattern, arguments);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,44,        super();,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,45,    },0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,56,"        return new DenseRealMatrix(rows, columns);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,73,"        return new DenseFieldMatrix<T>(field, rows, columns);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,107,        return new DenseFieldMatrix<T>(data);,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,119,"        final RealMatrix m = createRealMatrix(dimension, dimension);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,120,        for (int i = 0; i < dimension; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,121,"            m.setEntry(i, i, 1.0);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,123,        return m;,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,139,        final T zero = field.getZero();,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,140,        final T one  = field.getOne();,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,141,"        final T[][] d = (T[][]) Array.newInstance(zero.getClass(), new int[] { dimension, dimension });",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,142,        for (int row = 0; row < dimension; row++) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,143,            final T[] dRow = d[row];,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,144,"            Arrays.fill(dRow, zero);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,145,            dRow[row] = one;,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,147,"        return new FieldMatrixImpl<T>(d, false);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,161,        final BigDecimal[][] d = new BigDecimal[dimension][dimension];,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,162,        for (int row = 0; row < dimension; row++) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,163,            final BigDecimal[] dRow = d[row];,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,164,"            Arrays.fill(dRow, BigMatrixImpl.ZERO);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,165,            dRow[row] = BigMatrixImpl.ONE;,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,167,"        return new BigMatrixImpl(d, false);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,179,"        final RealMatrix m = createRealMatrix(diagonal.length, diagonal.length);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,180,        for (int i = 0; i < diagonal.length; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,181,"            m.setEntry(i, i, diagonal[i]);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,183,        return m;,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,197,        final FieldMatrix<T> m =,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,199,        for (int i = 0; i < diagonal.length; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,200,"            m.setEntry(i, i, diagonal[i]);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,202,        return m;,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,218,        return new BigMatrixImpl(data);,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,234,        return new BigMatrixImpl(data);,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,256,"        return new BigMatrixImpl(data, copyArray);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,272,        return new BigMatrixImpl(data);,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,284,"        return new RealVectorImpl(data, true);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,297,"        return new FieldVectorImpl<T>(data, true);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,310,        final int nCols = rowData.length;,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,311,"        final RealMatrix m = createRealMatrix(1, nCols);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,312,        for (int i = 0; i < nCols; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,313,"            m.setEntry(0, i, rowData[i]);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,315,        return m;,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,330,        final int nCols = rowData.length;,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,331,        if (nCols == 0) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,332,"            throw MathRuntimeException.createIllegalArgumentException(""matrix must have at least one column""); ",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,334,"        final FieldMatrix<T> m = createFieldMatrix(rowData[0].getField(), 1, nCols);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,335,        for (int i = 0; i < nCols; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,336,"            m.setEntry(0, i, rowData[i]);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,338,        return m;,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,353,        final int nCols = rowData.length;,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,354,        final BigDecimal[][] data = new BigDecimal[1][nCols];,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,355,        for (int i = 0; i < nCols; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,356,            data[0][i] = new BigDecimal(rowData[i]);,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,358,"        return new BigMatrixImpl(data, false);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,373,        final int nCols = rowData.length;,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,374,        final BigDecimal[][] data = new BigDecimal[1][nCols];,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,375,"        System.arraycopy(rowData, 0, data[0], 0, nCols);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,376,"        return new BigMatrixImpl(data, false);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,391,        final int nCols = rowData.length;,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,392,        final BigDecimal[][] data = new BigDecimal[1][nCols];,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,393,        for (int i = 0; i < nCols; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,394,            data[0][i] = new BigDecimal(rowData[i]);,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,396,"        return new BigMatrixImpl(data, false);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,409,        final int nRows = columnData.length;,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,410,"        final RealMatrix m = createRealMatrix(nRows, 1);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,411,        for (int i = 0; i < nRows; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,412,"            m.setEntry(i, 0, columnData[i]);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,414,        return m;,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,429,        final int nRows = columnData.length;,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,430,        if (nRows == 0) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,431,"            throw MathRuntimeException.createIllegalArgumentException(""matrix must have at least one row""); ",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,433,"        final FieldMatrix<T> m = createFieldMatrix(columnData[0].getField(), nRows, 1);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,434,        for (int i = 0; i < nRows; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,435,"            m.setEntry(i, 0, columnData[i]);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,437,        return m;,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,452,        final int nRows = columnData.length;,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,453,        final BigDecimal[][] data = new BigDecimal[nRows][1];,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,454,        for (int row = 0; row < nRows; row++) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,455,            data[row][0] = new BigDecimal(columnData[row]);,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,457,"        return new BigMatrixImpl(data, false);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,472,        final int nRows = columnData.length;,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,473,        final BigDecimal[][] data = new BigDecimal[nRows][1];,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,474,        for (int row = 0; row < nRows; row++) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,475,            data[row][0] = columnData[row];,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,477,"        return new BigMatrixImpl(data, false);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,492,        int nRows = columnData.length;,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,493,        final BigDecimal[][] data = new BigDecimal[nRows][1];,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,494,        for (int row = 0; row < nRows; row++) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,495,            data[row][0] = new BigDecimal(columnData[row]);,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,497,"        return new BigMatrixImpl(data, false);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,507,        if (row < 0 || row >= m.getRowDimension()) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,508,"            throw new MatrixIndexException(""row index {0} out of allowed range [{1}, {2}]"",",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,511,    },0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,521,        if (column < 0 || column >= m.getColumnDimension()) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,522,"            throw new MatrixIndexException(""column index {0} out of allowed range [{1}, {2}]"",",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,525,    },0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,541,"        checkRowIndex(m, startRow);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,542,"        checkRowIndex(m, endRow);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,543,        if (startRow > endRow) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,544,"            throw new MatrixIndexException(""initial row {0} after final row {1}"",",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,548,"        checkColumnIndex(m, startColumn);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,549,"        checkColumnIndex(m, endColumn);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,550,        if (startColumn > endColumn) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,551,"            throw new MatrixIndexException(""initial column {0} after final column {1}"",",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,556,    },0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,570,        if (selectedRows.length * selectedColumns.length == 0) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,571,            if (selectedRows.length == 0) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,572,"                throw new MatrixIndexException(""empty selected row index array"");",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,574,"            throw new MatrixIndexException(""empty selected column index array"");",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,577,        for (final int row : selectedRows) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,578,"            checkRowIndex(m, row);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,580,        for (final int column : selectedColumns) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,581,"            checkColumnIndex(m, column);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,583,    },0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,593,        if ((left.getRowDimension()    != right.getRowDimension()) ||,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,595,            throw MathRuntimeException.createIllegalArgumentException(,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,600,    },0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,610,        if ((left.getRowDimension()    != right.getRowDimension()) ||,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,612,            throw MathRuntimeException.createIllegalArgumentException(,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,617,    },0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,628,            throw MathRuntimeException.createIllegalArgumentException(,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,641,        final FractionMatrixConverter converter = new FractionMatrixConverter();,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,642,        m.walkInOptimizedOrder(converter);,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,643,        return converter.getConvertedMatrix();,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,685,        final BigFractionMatrixConverter converter = new BigFractionMatrixConverter();,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,686,        m.walkInOptimizedOrder(converter);,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,687,        return converter.getConvertedMatrix();,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,766,        final int n = vector.getDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,767,        oos.writeInt(n);,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,768,        for (int i = 0; i < n; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,769,            oos.writeDouble(vector.getEntry(i));,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,771,    },0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,797,            final int n = ois.readInt();,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,798,            final double[] data = new double[n];,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,799,            for (int i = 0; i < n; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,800,                data[i] = ois.readDouble();,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,804,"            final RealVector vector = new RealVectorImpl(data, false);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,807,            final java.lang.reflect.Field f =,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,809,            f.setAccessible(true);,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,810,"            f.set(instance, vector);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,820,        },0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,812,        } catch (NoSuchFieldException nsfe) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,813,            IOException ioe = new IOException();,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,814,            ioe.initCause(nsfe);,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,815,            throw ioe;,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,816,        } catch (IllegalAccessException iae) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,817,            IOException ioe = new IOException();,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,818,            ioe.initCause(iae);,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,819,            throw ioe;,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,822,    },0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,867,        final int n = matrix.getRowDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,868,        final int m = matrix.getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,869,        oos.writeInt(n);,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,870,        oos.writeInt(m);,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,871,        for (int i = 0; i < n; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,872,            for (int j = 0; j < m; ++j) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,873,"                oos.writeDouble(matrix.getEntry(i, j));",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,876,    },0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,902,            final int n = ois.readInt();,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,903,            final int m = ois.readInt();,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,904,            final double[][] data = new double[n][m];,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,905,            for (int i = 0; i < n; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,906,                final double[] dataI = data[i];,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,907,                for (int j = 0; j < m; ++j) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,908,                    dataI[j] = ois.readDouble();,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,913,"            final RealMatrix matrix = new RealMatrixImpl(data, false);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,916,            final java.lang.reflect.Field f =,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,918,            f.setAccessible(true);,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,919,"            f.set(instance, matrix);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,929,        },0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,921,        } catch (NoSuchFieldException nsfe) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,922,            IOException ioe = new IOException();,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,923,            ioe.initCause(nsfe);,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,924,            throw ioe;,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,925,        } catch (IllegalAccessException iae) {,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,926,            IOException ioe = new IOException();,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,927,            ioe.initCause(iae);,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,928,            throw ioe;,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,931,    },0.0,0,-1,0
+org/apache/commons/math/linear/MatrixIndexException,86,38,"      super(pattern, arguments);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixIndexException,86,39,    },0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,158,            blocks = new double[blockRows * blockColumns][];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,169,                    throw MathRuntimeException.createIllegalArgumentException(,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,174,                    blocks[index] = blockData[index].clone();,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,215,                throw MathRuntimeException.createIllegalArgumentException(,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,286,"        return new DenseRealMatrix(rowDimension, columnDimension);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,294,"        DenseRealMatrix copied = new DenseRealMatrix(rows, columns);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,297,        for (int i = 0; i < blocks.length; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,298,"            System.arraycopy(blocks[i], 0, copied.blocks[i], 0, blocks[i].length);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,301,        return copied;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,310,            return add((DenseRealMatrix) m);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,311,        } catch (ClassCastException cce) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,314,"            MatrixUtils.checkAdditionCompatible(this, m);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,316,"            final DenseRealMatrix out = new DenseRealMatrix(rows, columns);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,319,            int blockIndex = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,320,            for (int iBlock = 0; iBlock < out.blockRows; ++iBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,321,                for (int jBlock = 0; jBlock < out.blockColumns; ++jBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,324,                    final double[] outBlock = out.blocks[blockIndex];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,325,                    final double[] tBlock   = blocks[blockIndex];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,326,                    final int      pStart   = iBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,327,"                    final int      pEnd     = Math.min(pStart + BLOCK_SIZE, rows);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,328,                    final int      qStart   = jBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,329,"                    final int      qEnd     = Math.min(qStart + BLOCK_SIZE, columns);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,330,"                    for (int p = pStart, k = 0; p < pEnd; ++p) {",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,331,"                        for (int q = qStart; q < qEnd; ++q, ++k) {",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,332,"                            outBlock[k] = tBlock[k] + m.getEntry(p, q);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,337,                    ++blockIndex;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,342,            return out;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,358,"        MatrixUtils.checkAdditionCompatible(this, m);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,360,"        final DenseRealMatrix out = new DenseRealMatrix(rows, columns);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,363,        for (int blockIndex = 0; blockIndex < out.blocks.length; ++blockIndex) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,364,            final double[] outBlock = out.blocks[blockIndex];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,365,            final double[] tBlock   = blocks[blockIndex];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,366,            final double[] mBlock   = m.blocks[blockIndex];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,367,            for (int k = 0; k < outBlock.length; ++k) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,368,                outBlock[k] = tBlock[k] + mBlock[k];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,372,        return out;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,381,            return subtract((DenseRealMatrix) m);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,382,        } catch (ClassCastException cce) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,385,"            MatrixUtils.checkSubtractionCompatible(this, m);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,387,"            final DenseRealMatrix out = new DenseRealMatrix(rows, columns);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,390,            int blockIndex = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,391,            for (int iBlock = 0; iBlock < out.blockRows; ++iBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,392,                for (int jBlock = 0; jBlock < out.blockColumns; ++jBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,395,                    final double[] outBlock = out.blocks[blockIndex];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,396,                    final double[] tBlock   = blocks[blockIndex];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,397,                    final int      pStart   = iBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,398,"                    final int      pEnd     = Math.min(pStart + BLOCK_SIZE, rows);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,399,                    final int      qStart   = jBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,400,"                    final int      qEnd     = Math.min(qStart + BLOCK_SIZE, columns);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,401,"                    for (int p = pStart, k = 0; p < pEnd; ++p) {",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,402,"                        for (int q = qStart; q < qEnd; ++q, ++k) {",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,403,"                            outBlock[k] = tBlock[k] - m.getEntry(p, q);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,408,                    ++blockIndex;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,413,            return out;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,429,"        MatrixUtils.checkSubtractionCompatible(this, m);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,431,"        final DenseRealMatrix out = new DenseRealMatrix(rows, columns);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,434,        for (int blockIndex = 0; blockIndex < out.blocks.length; ++blockIndex) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,435,            final double[] outBlock = out.blocks[blockIndex];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,436,            final double[] tBlock   = blocks[blockIndex];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,437,            final double[] mBlock   = m.blocks[blockIndex];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,438,            for (int k = 0; k < outBlock.length; ++k) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,439,                outBlock[k] = tBlock[k] - mBlock[k];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,443,        return out;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,452,"        final DenseRealMatrix out = new DenseRealMatrix(rows, columns);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,455,        for (int blockIndex = 0; blockIndex < out.blocks.length; ++blockIndex) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,456,            final double[] outBlock = out.blocks[blockIndex];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,457,            final double[] tBlock   = blocks[blockIndex];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,458,            for (int k = 0; k < outBlock.length; ++k) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,459,                outBlock[k] = tBlock[k] + d;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,463,        return out;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,472,"        final DenseRealMatrix out = new DenseRealMatrix(rows, columns);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,475,        for (int blockIndex = 0; blockIndex < out.blocks.length; ++blockIndex) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,476,            final double[] outBlock = out.blocks[blockIndex];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,477,            final double[] tBlock   = blocks[blockIndex];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,478,            for (int k = 0; k < outBlock.length; ++k) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,479,                outBlock[k] = tBlock[k] * d;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,483,        return out;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,493,        } catch (ClassCastException cce) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,496,"            MatrixUtils.checkMultiplicationCompatible(this, m);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,498,"            final DenseRealMatrix out = new DenseRealMatrix(rows, m.getColumnDimension());",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,501,            int blockIndex = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,502,            for (int iBlock = 0; iBlock < out.blockRows; ++iBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,504,                final int pStart = iBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,505,"                final int pEnd   = Math.min(pStart + BLOCK_SIZE, rows);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,507,                for (int jBlock = 0; jBlock < out.blockColumns; ++jBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,509,                    final int qStart = jBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,510,"                    final int qEnd   = Math.min(qStart + BLOCK_SIZE, m.getColumnDimension());",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,513,                    final double[] outBlock = out.blocks[blockIndex];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,516,                    for (int kBlock = 0; kBlock < blockColumns; ++kBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,517,                        final int kWidth      = blockWidth(kBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,518,                        final double[] tBlock = blocks[iBlock * blockColumns + kBlock];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,519,                        final int rStart      = kBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,520,"                        for (int p = pStart, k = 0; p < pEnd; ++p) {",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,521,                            final int lStart = (p - pStart) * kWidth;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,522,                            final int lEnd   = lStart + kWidth;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,523,                            for (int q = qStart; q < qEnd; ++q) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,524,                                double sum = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,525,"                                for (int l = lStart, r = rStart; l < lEnd; ++l, ++r) {",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,526,"                                    sum += tBlock[l] * m.getEntry(r, q);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,528,                                outBlock[k++] += sum;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,534,                    ++blockIndex;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,539,            return out;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,631,"                    System.arraycopy(blocks[blockIndex++], regularPos, dataP, dataPos, BLOCK_SIZE);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,632,                    dataPos += BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,647,        final double[] colSums = new double[BLOCK_SIZE];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,648,        double maxColSum = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,649,        for (int jBlock = 0; jBlock < blockColumns; jBlock++) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,650,            final int jWidth = blockWidth(jBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,651,"            Arrays.fill(colSums, 0, jWidth, 0.0);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,652,            for (int iBlock = 0; iBlock < blockRows; ++iBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,653,                final int iHeight = blockHeight(iBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,654,                final double[] block = blocks[iBlock * blockColumns + jBlock];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,655,                for (int j = 0; j < jWidth; ++j) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,656,                    double sum = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,657,                    for (int i = 0; i < iHeight; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,658,                        sum += Math.abs(block[i * jWidth + j]);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,660,                    colSums[j] += sum;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,663,            for (int j = 0; j < jWidth; ++j) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,664,"                maxColSum = Math.max(maxColSum, colSums[j]);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,667,        return maxColSum;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,673,        double sum2 = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,674,        for (int blockIndex = 0; blockIndex < blocks.length; ++blockIndex) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,675,            for (final double entry : blocks[blockIndex]) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,676,                sum2 += entry * entry;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,679,        return Math.sqrt(sum2);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,689,"        MatrixUtils.checkSubMatrixIndex(this, startRow, endRow, startColumn, endColumn);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,692,        final DenseRealMatrix out =,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,696,        final int blockStartRow    = startRow    / BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,697,        final int rowsShift        = startRow    % BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,698,        final int blockStartColumn = startColumn / BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,699,        final int columnsShift     = startColumn % BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,702,"        for (int iBlock = 0, pBlock = blockStartRow; iBlock < out.blockRows; ++iBlock, ++pBlock) {",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,703,            final int iHeight = out.blockHeight(iBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,704,"            for (int jBlock = 0, qBlock = blockStartColumn; jBlock < out.blockColumns; ++jBlock, ++qBlock) {",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,705,                final int jWidth = out.blockWidth(jBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,708,                final int      outIndex = iBlock * out.blockColumns + jBlock;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,709,                final double[] outBlock = out.blocks[outIndex];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,710,                final int      index    = pBlock * blockColumns + qBlock;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,711,                final int      width    = blockWidth(qBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,713,                final int heightExcess = iHeight + rowsShift - BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,714,                final int widthExcess  = jWidth + columnsShift - BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,715,                if (heightExcess > 0) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,717,                    if (widthExcess > 0) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,719,                        final int width2 = blockWidth(qBlock + 1);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,720,"                        copyBlockPart(blocks[index], width,",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,724,"                        copyBlockPart(blocks[index + 1], width2,",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,728,"                        copyBlockPart(blocks[index + blockColumns], width,",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,732,"                        copyBlockPart(blocks[index + blockColumns + 1], width2,",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,736,                    } else {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,738,"                        copyBlockPart(blocks[index], width,",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,742,"                        copyBlockPart(blocks[index + blockColumns], width,",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,749,                    if (widthExcess > 0) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,751,                        final int width2 = blockWidth(qBlock + 1);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,752,"                        copyBlockPart(blocks[index], width,",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,756,"                        copyBlockPart(blocks[index + 1], width2,",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,760,                    } else {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,762,"                        copyBlockPart(blocks[index], width,",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,772,        return out;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,796,        final int length = srcEndColumn - srcStartColumn;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,797,        int srcPos = srcStartRow * srcWidth + srcStartColumn;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,798,        int dstPos = dstStartRow * dstWidth + dstStartColumn;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,799,        for (int srcRow = srcStartRow; srcRow < srcEndRow; ++srcRow) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,800,"            System.arraycopy(srcBlock, srcPos, dstBlock, dstPos, length);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,801,            srcPos += srcWidth;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,802,            dstPos += dstWidth;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,804,    },0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,812,        final int refLength = subMatrix[0].length;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,813,        if (refLength < 1) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,814,"            throw MathRuntimeException.createIllegalArgumentException(""matrix must have at least one column"");             ",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,816,        final int endRow    = row + subMatrix.length - 1;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,817,        final int endColumn = column + refLength - 1;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,818,"        MatrixUtils.checkSubMatrixIndex(this, row, endRow, column, endColumn);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,819,        for (final double[] subRow : subMatrix) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,820,            if (subRow.length != refLength) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,821,                throw MathRuntimeException.createIllegalArgumentException(,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,828,        final int blockStartRow    = row / BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,829,        final int blockEndRow      = (endRow + BLOCK_SIZE) / BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,830,        final int blockStartColumn = column / BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,831,        final int blockEndColumn   = (endColumn + BLOCK_SIZE) / BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,834,        for (int iBlock = blockStartRow; iBlock < blockEndRow; ++iBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,835,            final int iHeight  = blockHeight(iBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,836,            final int firstRow = iBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,837,"            final int iStart   = Math.max(row,    firstRow);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,838,"            final int iEnd     = Math.min(endRow + 1, firstRow + iHeight);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,840,            for (int jBlock = blockStartColumn; jBlock < blockEndColumn; ++jBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,841,                final int jWidth      = blockWidth(jBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,842,                final int firstColumn = jBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,843,"                final int jStart      = Math.max(column,    firstColumn);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,844,"                final int jEnd        = Math.min(endColumn + 1, firstColumn + jWidth);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,845,                final int jLength     = jEnd - jStart;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,848,                final double[] block = blocks[iBlock * blockColumns + jBlock];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,849,                for (int i = iStart; i < iEnd; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,850,"                    System.arraycopy(subMatrix[i - row], jStart - column,",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,857,    },0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,864,"        MatrixUtils.checkRowIndex(this, row);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,865,"        final DenseRealMatrix out = new DenseRealMatrix(1, columns);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,868,        final int iBlock  = row / BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,869,        final int iRow    = row - iBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,870,        int outBlockIndex = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,871,        int outIndex      = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,872,        double[] outBlock = out.blocks[outBlockIndex];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,873,        for (int jBlock = 0; jBlock < blockColumns; ++jBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,874,            final int jWidth     = blockWidth(jBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,875,            final double[] block = blocks[iBlock * blockColumns + jBlock];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,876,            final int available  = outBlock.length - outIndex;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,877,            if (jWidth > available) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,878,"                System.arraycopy(block, iRow * jWidth, outBlock, outIndex, available);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,879,                outBlock = out.blocks[++outBlockIndex];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,880,"                System.arraycopy(block, iRow * jWidth, outBlock, 0, jWidth - available);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,881,                outIndex = jWidth - available;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,883,"                System.arraycopy(block, iRow * jWidth, outBlock, outIndex, jWidth);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,884,                outIndex += jWidth;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,888,        return out;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,897,"            setRowMatrix(row, (DenseRealMatrix) matrix);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,900,        },0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,898,        } catch (ClassCastException cce) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,899,"            super.setRowMatrix(row, matrix);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,901,    },0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,917,"        MatrixUtils.checkRowIndex(this, row);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,918,        final int nCols = getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,919,        if ((matrix.getRowDimension() != 1) ||,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,921,            throw new InvalidMatrixException(,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,928,        final int iBlock = row / BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,929,        final int iRow   = row - iBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,930,        int mBlockIndex  = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,931,        int mIndex       = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,932,        double[] mBlock  = matrix.blocks[mBlockIndex];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,933,        for (int jBlock = 0; jBlock < blockColumns; ++jBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,934,            final int jWidth     = blockWidth(jBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,935,            final double[] block = blocks[iBlock * blockColumns + jBlock];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,936,            final int available  = mBlock.length - mIndex;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,937,            if (jWidth > available) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,938,"                System.arraycopy(mBlock, mIndex, block, iRow * jWidth, available);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,939,                mBlock = matrix.blocks[++mBlockIndex];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,940,"                System.arraycopy(mBlock, 0, block, iRow * jWidth, jWidth - available);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,941,                mIndex = jWidth - available;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,943,"                System.arraycopy(mBlock, mIndex, block, iRow * jWidth, jWidth);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,944,                mIndex += jWidth;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,948,    },0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,955,"        MatrixUtils.checkColumnIndex(this, column);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,956,"        final DenseRealMatrix out = new DenseRealMatrix(rows, 1);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,959,        final int jBlock  = column / BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,960,        final int jColumn = column - jBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,961,        final int jWidth  = blockWidth(jBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,962,        int outBlockIndex = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,963,        int outIndex      = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,964,        double[] outBlock = out.blocks[outBlockIndex];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,965,        for (int iBlock = 0; iBlock < blockRows; ++iBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,966,            final int iHeight = blockHeight(iBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,967,            final double[] block = blocks[iBlock * blockColumns + jBlock];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,968,            for (int i = 0; i < iHeight; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,969,                if (outIndex >= outBlock.length) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,970,                    outBlock = out.blocks[++outBlockIndex];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,971,                    outIndex = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,973,                outBlock[outIndex++] = block[i * jWidth + jColumn];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,977,        return out;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,986,"            setColumnMatrix(column, (DenseRealMatrix) matrix);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,989,        },0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,987,        } catch (ClassCastException cce) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,988,"            super.setColumnMatrix(column, matrix);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,990,    },0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1006,"        MatrixUtils.checkColumnIndex(this, column);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1007,        final int nRows = getRowDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1008,        if ((matrix.getRowDimension() != nRows) ||,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1010,            throw new InvalidMatrixException(,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1017,        final int jBlock  = column / BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1018,        final int jColumn = column - jBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1019,        final int jWidth  = blockWidth(jBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1020,        int mBlockIndex = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1021,        int mIndex      = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1022,        double[] mBlock = matrix.blocks[mBlockIndex];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1023,        for (int iBlock = 0; iBlock < blockRows; ++iBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1024,            final int iHeight = blockHeight(iBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1025,            final double[] block = blocks[iBlock * blockColumns + jBlock];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1026,            for (int i = 0; i < iHeight; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1027,                if (mIndex >= mBlock.length) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1028,                    mBlock = matrix.blocks[++mBlockIndex];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1029,                    mIndex = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1031,                block[i * jWidth + jColumn] = mBlock[mIndex++];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1035,    },0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1042,"        MatrixUtils.checkRowIndex(this, row);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1043,        final double[] outData = new double[columns];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1046,        final int iBlock  = row / BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1047,        final int iRow    = row - iBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1048,        int outIndex      = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1049,        for (int jBlock = 0; jBlock < blockColumns; ++jBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1050,            final int jWidth     = blockWidth(jBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1051,            final double[] block = blocks[iBlock * blockColumns + jBlock];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1052,"            System.arraycopy(block, iRow * jWidth, outData, outIndex, jWidth);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1053,            outIndex += jWidth;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1056,"        return new RealVectorImpl(outData, false);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1065,"            setRow(row, ((RealVectorImpl) vector).getDataRef());",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1068,        },0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1066,        } catch (ClassCastException cce) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1067,"            super.setRowVector(row, vector);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1069,    },0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1076,"        MatrixUtils.checkColumnIndex(this, column);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1077,        final double[] outData = new double[rows];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1080,        final int jBlock  = column / BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1081,        final int jColumn = column - jBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1082,        final int jWidth  = blockWidth(jBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1083,        int outIndex      = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1084,        for (int iBlock = 0; iBlock < blockRows; ++iBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1085,            final int iHeight = blockHeight(iBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1086,            final double[] block = blocks[iBlock * blockColumns + jBlock];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1087,            for (int i = 0; i < iHeight; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1088,                outData[outIndex++] = block[i * jWidth + jColumn];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1092,"        return new RealVectorImpl(outData, false);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1101,"            setColumn(column, ((RealVectorImpl) vector).getDataRef());",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1104,        },0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1102,        } catch (ClassCastException cce) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1103,"            super.setColumnVector(column, vector);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1105,    },0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1112,"        MatrixUtils.checkRowIndex(this, row);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1113,        final double[] out = new double[columns];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1116,        final int iBlock  = row / BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1117,        final int iRow    = row - iBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1118,        int outIndex      = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1119,        for (int jBlock = 0; jBlock < blockColumns; ++jBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1120,            final int jWidth     = blockWidth(jBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1121,            final double[] block = blocks[iBlock * blockColumns + jBlock];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1122,"            System.arraycopy(block, iRow * jWidth, out, outIndex, jWidth);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1123,            outIndex += jWidth;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1126,        return out;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1135,"        MatrixUtils.checkRowIndex(this, row);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1136,        final int nCols = getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1137,        if (array.length != nCols) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1138,            throw new InvalidMatrixException(,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1144,        final int iBlock  = row / BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1145,        final int iRow    = row - iBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1146,        int outIndex      = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1147,        for (int jBlock = 0; jBlock < blockColumns; ++jBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1148,            final int jWidth     = blockWidth(jBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1149,            final double[] block = blocks[iBlock * blockColumns + jBlock];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1150,"            System.arraycopy(array, outIndex, block, iRow * jWidth, jWidth);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1151,            outIndex += jWidth;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1154,    },0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1161,"        MatrixUtils.checkColumnIndex(this, column);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1162,        final double[] out = new double[rows];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1165,        final int jBlock  = column / BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1166,        final int jColumn = column - jBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1167,        final int jWidth  = blockWidth(jBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1168,        int outIndex      = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1169,        for (int iBlock = 0; iBlock < blockRows; ++iBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1170,            final int iHeight = blockHeight(iBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1171,            final double[] block = blocks[iBlock * blockColumns + jBlock];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1172,            for (int i = 0; i < iHeight; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1173,                out[outIndex++] = block[i * jWidth + jColumn];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1177,        return out;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1186,"        MatrixUtils.checkColumnIndex(this, column);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1187,        final int nRows = getRowDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1188,        if (array.length != nRows) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1189,            throw new InvalidMatrixException(,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1195,        final int jBlock  = column / BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1196,        final int jColumn = column - jBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1197,        final int jWidth  = blockWidth(jBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1198,        int outIndex      = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1199,        for (int iBlock = 0; iBlock < blockRows; ++iBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1200,            final int iHeight = blockHeight(iBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1201,            final double[] block = blocks[iBlock * blockColumns + jBlock];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1202,            for (int i = 0; i < iHeight; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1203,                block[i * jWidth + jColumn] = array[outIndex++];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1207,    },0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1219,        } catch (ArrayIndexOutOfBoundsException e) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1220,            throw new MatrixIndexException(,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1231,            final int iBlock = row    / BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1232,            final int jBlock = column / BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1233,            final int k      = (row    - iBlock * BLOCK_SIZE) * blockWidth(jBlock) +,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1235,            blocks[iBlock * blockColumns + jBlock][k] = value;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1240,        },0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1236,        } catch (ArrayIndexOutOfBoundsException e) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1237,            throw new MatrixIndexException(,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1241,    },0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1248,            final int iBlock = row    / BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1249,            final int jBlock = column / BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1250,            final int k      = (row    - iBlock * BLOCK_SIZE) * blockWidth(jBlock) +,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1252,            blocks[iBlock * blockColumns + jBlock][k] += increment;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1257,        },0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1253,        } catch (ArrayIndexOutOfBoundsException e) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1254,            throw new MatrixIndexException(,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1258,    },0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1265,            final int iBlock = row    / BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1266,            final int jBlock = column / BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1267,            final int k      = (row    - iBlock * BLOCK_SIZE) * blockWidth(jBlock) +,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1269,            blocks[iBlock * blockColumns + jBlock][k] *= factor;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1274,        },0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1270,        } catch (ArrayIndexOutOfBoundsException e) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1271,            throw new MatrixIndexException(,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1275,    },0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1331,        if (v.length != columns) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1332,            throw MathRuntimeException.createIllegalArgumentException(,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1336,        final double[] out = new double[rows];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1339,        for (int iBlock = 0; iBlock < blockRows; ++iBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1340,            final int pStart = iBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1341,"            final int pEnd   = Math.min(pStart + BLOCK_SIZE, rows);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1342,            for (int jBlock = 0; jBlock < blockColumns; ++jBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1343,                final double[] block  = blocks[iBlock * blockColumns + jBlock];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1344,                final int      qStart = jBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1345,"                final int      qEnd   = Math.min(qStart + BLOCK_SIZE, columns);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1346,"                for (int p = pStart, k = 0; p < pEnd; ++p) {",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1347,                    double sum = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1348,                    int q = qStart;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1349,                    while (q < qEnd - 3) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1350,                        sum += block[k]     * v[q]     +,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1354,                        k += 4;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1355,                        q += 4;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1357,                    while (q < qEnd) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1358,                        sum += block[k++] * v[q++];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1360,                    out[p] += sum;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1365,        return out;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1374,        if (v.length != rows) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1375,            throw MathRuntimeException.createIllegalArgumentException(,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1379,        final double[] out = new double[columns];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1382,        for (int jBlock = 0; jBlock < blockColumns; ++jBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1383,            final int jWidth  = blockWidth(jBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1384,            final int jWidth2 = jWidth  + jWidth;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1385,            final int jWidth3 = jWidth2 + jWidth;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1386,            final int jWidth4 = jWidth3 + jWidth;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1387,            final int qStart = jBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1388,"            final int qEnd   = Math.min(qStart + BLOCK_SIZE, columns);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1389,            for (int iBlock = 0; iBlock < blockRows; ++iBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1390,                final double[] block  = blocks[iBlock * blockColumns + jBlock];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1391,                final int      pStart = iBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1392,"                final int      pEnd   = Math.min(pStart + BLOCK_SIZE, rows);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1393,                for (int q = qStart; q < qEnd; ++q) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1394,                    int k = q - qStart;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1395,                    double sum = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1396,                    int p = pStart;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1397,                    while (p < pEnd - 3) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1398,                        sum += block[k]           * v[p]     +,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1402,                        k += jWidth4;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1403,                        p += 4;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1405,                    while (p < pEnd) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1406,                        sum += block[k] * v[p++];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1407,                        k += jWidth;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1409,                    out[q] += sum;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1414,        return out;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1422,"        visitor.start(rows, columns, 0, rows - 1, 0, columns - 1);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1423,        for (int iBlock = 0; iBlock < blockRows; ++iBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1424,            final int pStart = iBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1425,"            final int pEnd   = Math.min(pStart + BLOCK_SIZE, rows);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1426,            for (int p = pStart; p < pEnd; ++p) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1427,                for (int jBlock = 0; jBlock < blockColumns; ++jBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1428,                    final int jWidth = blockWidth(jBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1429,                    final int qStart = jBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1430,"                    final int qEnd   = Math.min(qStart + BLOCK_SIZE, columns);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1431,                    final double[] block = blocks[iBlock * blockColumns + jBlock];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1432,"                    for (int q = qStart, k = (p - pStart) * jWidth; q < qEnd; ++q, ++k) {",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1433,"                        block[k] = visitor.visit(p, q, block[k]);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1438,        return visitor.end();,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1445,"        visitor.start(rows, columns, 0, rows - 1, 0, columns - 1);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1446,        for (int iBlock = 0; iBlock < blockRows; ++iBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1447,            final int pStart = iBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1448,"            final int pEnd   = Math.min(pStart + BLOCK_SIZE, rows);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1449,            for (int p = pStart; p < pEnd; ++p) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1450,                for (int jBlock = 0; jBlock < blockColumns; ++jBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1451,                    final int jWidth = blockWidth(jBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1452,                    final int qStart = jBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1453,"                    final int qEnd   = Math.min(qStart + BLOCK_SIZE, columns);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1454,                    final double[] block = blocks[iBlock * blockColumns + jBlock];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1455,"                    for (int q = qStart, k = (p - pStart) * jWidth; q < qEnd; ++q, ++k) {",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1456,"                        visitor.visit(p, q, block[k]);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1461,        return visitor.end();,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1470,"        MatrixUtils.checkSubMatrixIndex(this, startRow, endRow, startColumn, endColumn);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1471,"        visitor.start(rows, columns, startRow, endRow, startColumn, endColumn);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1472,        for (int iBlock = startRow / BLOCK_SIZE; iBlock < 1 + endRow / BLOCK_SIZE; ++iBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1473,            final int p0     = iBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1474,"            final int pStart = Math.max(startRow, p0);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1475,"            final int pEnd   = Math.min((iBlock + 1) * BLOCK_SIZE, 1 + endRow);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1476,            for (int p = pStart; p < pEnd; ++p) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1477,                for (int jBlock = startColumn / BLOCK_SIZE; jBlock < 1 + endColumn / BLOCK_SIZE; ++jBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1478,                    final int jWidth = blockWidth(jBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1479,                    final int q0     = jBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1480,"                    final int qStart = Math.max(startColumn, q0);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1481,"                    final int qEnd   = Math.min((jBlock + 1) * BLOCK_SIZE, 1 + endColumn);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1482,                    final double[] block = blocks[iBlock * blockColumns + jBlock];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1483,"                    for (int q = qStart, k = (p - p0) * jWidth + qStart - q0; q < qEnd; ++q, ++k) {",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1484,"                        block[k] = visitor.visit(p, q, block[k]);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1489,        return visitor.end();,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1498,"        MatrixUtils.checkSubMatrixIndex(this, startRow, endRow, startColumn, endColumn);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1499,"        visitor.start(rows, columns, startRow, endRow, startColumn, endColumn);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1500,        for (int iBlock = startRow / BLOCK_SIZE; iBlock < 1 + endRow / BLOCK_SIZE; ++iBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1501,            final int p0     = iBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1502,"            final int pStart = Math.max(startRow, p0);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1503,"            final int pEnd   = Math.min((iBlock + 1) * BLOCK_SIZE, 1 + endRow);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1504,            for (int p = pStart; p < pEnd; ++p) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1505,                for (int jBlock = startColumn / BLOCK_SIZE; jBlock < 1 + endColumn / BLOCK_SIZE; ++jBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1506,                    final int jWidth = blockWidth(jBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1507,                    final int q0     = jBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1508,"                    final int qStart = Math.max(startColumn, q0);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1509,"                    final int qEnd   = Math.min((jBlock + 1) * BLOCK_SIZE, 1 + endColumn);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1510,                    final double[] block = blocks[iBlock * blockColumns + jBlock];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1511,"                    for (int q = qStart, k = (p - p0) * jWidth + qStart - q0; q < qEnd; ++q, ++k) {",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1512,"                        visitor.visit(p, q, block[k]);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1517,        return visitor.end();,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1524,"        visitor.start(rows, columns, 0, rows - 1, 0, columns - 1);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1525,"        for (int iBlock = 0, blockIndex = 0; iBlock < blockRows; ++iBlock) {",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1526,            final int pStart = iBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1527,"            final int pEnd   = Math.min(pStart + BLOCK_SIZE, rows);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1528,"            for (int jBlock = 0; jBlock < blockColumns; ++jBlock, ++blockIndex) {",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1529,                final int qStart = jBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1530,"                final int qEnd   = Math.min(qStart + BLOCK_SIZE, columns);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1531,                final double[] block = blocks[blockIndex];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1532,"                for (int p = pStart, k = 0; p < pEnd; ++p) {",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1533,"                    for (int q = qStart; q < qEnd; ++q, ++k) {",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1534,"                        block[k] = visitor.visit(p, q, block[k]);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1539,        return visitor.end();,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1546,"        visitor.start(rows, columns, 0, rows - 1, 0, columns - 1);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1547,"        for (int iBlock = 0, blockIndex = 0; iBlock < blockRows; ++iBlock) {",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1548,            final int pStart = iBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1549,"            final int pEnd   = Math.min(pStart + BLOCK_SIZE, rows);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1550,"            for (int jBlock = 0; jBlock < blockColumns; ++jBlock, ++blockIndex) {",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1551,                final int qStart = jBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1552,"                final int qEnd   = Math.min(qStart + BLOCK_SIZE, columns);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1553,                final double[] block = blocks[blockIndex];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1554,"                for (int p = pStart, k = 0; p < pEnd; ++p) {",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1555,"                    for (int q = qStart; q < qEnd; ++q, ++k) {",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1556,"                        visitor.visit(p, q, block[k]);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1561,        return visitor.end();,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1570,"        MatrixUtils.checkSubMatrixIndex(this, startRow, endRow, startColumn, endColumn);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1571,"        visitor.start(rows, columns, startRow, endRow, startColumn, endColumn);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1572,        for (int iBlock = startRow / BLOCK_SIZE; iBlock < 1 + endRow / BLOCK_SIZE; ++iBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1573,            final int p0     = iBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1574,"            final int pStart = Math.max(startRow, p0);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1575,"            final int pEnd   = Math.min((iBlock + 1) * BLOCK_SIZE, 1 + endRow);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1576,            for (int jBlock = startColumn / BLOCK_SIZE; jBlock < 1 + endColumn / BLOCK_SIZE; ++jBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1577,                final int jWidth = blockWidth(jBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1578,                final int q0     = jBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1579,"                final int qStart = Math.max(startColumn, q0);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1580,"                final int qEnd   = Math.min((jBlock + 1) * BLOCK_SIZE, 1 + endColumn);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1581,                final double[] block = blocks[iBlock * blockColumns + jBlock];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1582,                for (int p = pStart; p < pEnd; ++p) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1583,"                    for (int q = qStart, k = (p - p0) * jWidth + qStart - q0; q < qEnd; ++q, ++k) {",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1584,"                        block[k] = visitor.visit(p, q, block[k]);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1589,        return visitor.end();,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1598,"        MatrixUtils.checkSubMatrixIndex(this, startRow, endRow, startColumn, endColumn);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1599,"        visitor.start(rows, columns, startRow, endRow, startColumn, endColumn);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1600,        for (int iBlock = startRow / BLOCK_SIZE; iBlock < 1 + endRow / BLOCK_SIZE; ++iBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1601,            final int p0     = iBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1602,"            final int pStart = Math.max(startRow, p0);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1603,"            final int pEnd   = Math.min((iBlock + 1) * BLOCK_SIZE, 1 + endRow);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1604,            for (int jBlock = startColumn / BLOCK_SIZE; jBlock < 1 + endColumn / BLOCK_SIZE; ++jBlock) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1605,                final int jWidth = blockWidth(jBlock);,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1606,                final int q0     = jBlock * BLOCK_SIZE;,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1607,"                final int qStart = Math.max(startColumn, q0);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1608,"                final int qEnd   = Math.min((jBlock + 1) * BLOCK_SIZE, 1 + endColumn);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1609,                final double[] block = blocks[iBlock * blockColumns + jBlock];,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1610,                for (int p = pStart; p < pEnd; ++p) {,0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1611,"                    for (int q = qStart, k = (p - p0) * jWidth + qStart - q0; q < qEnd; ++q, ++k) {",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1612,"                        visitor.visit(p, q, block[k]);",0.0,0,-1,0
+org/apache/commons/math/linear/DenseRealMatrix,86,1617,        return visitor.end();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,43,    protected AbstractRealMatrix() {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,44,        lu = null;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,45,    },0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,57,            throw MathRuntimeException.createIllegalArgumentException(,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,62,            throw MathRuntimeException.createIllegalArgumentException(,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,80,"        MatrixUtils.checkAdditionCompatible(this, m);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,82,        final int rowCount    = getRowDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,83,        final int columnCount = getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,84,"        final RealMatrix out = createMatrix(rowCount, columnCount);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,85,        for (int row = 0; row < rowCount; ++row) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,86,            for (int col = 0; col < columnCount; ++col) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,87,"                out.setEntry(row, col, getEntry(row, col) + m.getEntry(row, col));",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,91,        return out;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,99,"        MatrixUtils.checkSubtractionCompatible(this, m);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,101,        final int rowCount    = getRowDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,102,        final int columnCount = getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,103,"        final RealMatrix out = createMatrix(rowCount, columnCount);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,104,        for (int row = 0; row < rowCount; ++row) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,105,            for (int col = 0; col < columnCount; ++col) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,106,"                out.setEntry(row, col, getEntry(row, col) - m.getEntry(row, col));",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,110,        return out;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,117,        final int rowCount    = getRowDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,118,        final int columnCount = getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,119,"        final RealMatrix out = createMatrix(rowCount, columnCount);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,120,        for (int row = 0; row < rowCount; ++row) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,121,            for (int col = 0; col < columnCount; ++col) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,122,"                out.setEntry(row, col, getEntry(row, col) + d);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,126,        return out;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,133,        final int rowCount    = getRowDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,134,        final int columnCount = getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,135,"        final RealMatrix out = createMatrix(rowCount, columnCount);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,136,        for (int row = 0; row < rowCount; ++row) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,137,            for (int col = 0; col < columnCount; ++col) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,138,"                out.setEntry(row, col, getEntry(row, col) * d);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,142,        return out;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,151,"        MatrixUtils.checkMultiplicationCompatible(this, m);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,153,        final int nRows = getRowDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,154,        final int nCols = m.getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,155,        final int nSum  = getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,156,"        final RealMatrix out = createMatrix(nRows, nCols);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,157,        for (int row = 0; row < nRows; ++row) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,158,            for (int col = 0; col < nCols; ++col) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,159,                double sum = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,160,                for (int i = 0; i < nSum; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,161,"                    sum += getEntry(row, i) * m.getEntry(i, col);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,163,"                out.setEntry(row, col, sum);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,167,        return out;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,174,        return m.multiply(this);,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,180,        final double[][] data = new double[getRowDimension()][getColumnDimension()];,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,182,        for (int i = 0; i < data.length; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,183,            final double[] dataI = data[i];,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,184,            for (int j = 0; j < dataI.length; ++j) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,185,"                dataI[j] = getEntry(i, j);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,189,        return data;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,195,        return walkInColumnOrder(new RealMatrixPreservingVisitor() {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,234,        return walkInOptimizedOrder(new RealMatrixPreservingVisitor() {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,264,"        MatrixUtils.checkSubMatrixIndex(this, startRow, endRow, startColumn, endColumn);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,266,        final RealMatrix subMatrix =,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,268,        for (int i = startRow; i <= endRow; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,269,            for (int j = startColumn; j <= endColumn; ++j) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,270,"                subMatrix.setEntry(i - startRow, j - startColumn, getEntry(i, j));",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,274,        return subMatrix;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,283,"        MatrixUtils.checkSubMatrixIndex(this, selectedRows, selectedColumns);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,286,        final RealMatrix subMatrix =,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,288,        subMatrix.walkInOptimizedOrder(new DefaultRealMatrixChangingVisitor() {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,298,        return subMatrix;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,309,"        MatrixUtils.checkSubMatrixIndex(this, startRow, endRow, startColumn, endColumn);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,310,        final int rowsCount    = endRow + 1 - startRow;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,311,        final int columnsCount = endColumn + 1 - startColumn;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,312,        if ((destination.length < rowsCount) || (destination[0].length < columnsCount)) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,313,            throw MathRuntimeException.createIllegalArgumentException(,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,320,        walkInOptimizedOrder(new DefaultRealMatrixPreservingVisitor() {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,345,    },0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,352,"        MatrixUtils.checkSubMatrixIndex(this, selectedRows, selectedColumns);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,353,        if ((destination.length < selectedRows.length) ||,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,355,            throw MathRuntimeException.createIllegalArgumentException(,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,362,        for (int i = 0; i < selectedRows.length; i++) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,363,            final double[] destinationI = destination[i];,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,364,            for (int j = 0; j < selectedColumns.length; j++) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,365,"                destinationI[j] = getEntry(selectedRows[i], selectedColumns[j]);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,369,    },0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,375,        final int nRows = subMatrix.length;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,376,        if (nRows == 0) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,377,"            throw MathRuntimeException.createIllegalArgumentException(""matrix must have at least one row""); ",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,380,        final int nCols = subMatrix[0].length;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,381,        if (nCols == 0) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,382,"            throw MathRuntimeException.createIllegalArgumentException(""matrix must have at least one column""); ",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,385,        for (int r = 1; r < nRows; ++r) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,386,            if (subMatrix[r].length != nCols) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,387,                throw MathRuntimeException.createIllegalArgumentException(,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,393,"        MatrixUtils.checkRowIndex(this, row);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,394,"        MatrixUtils.checkColumnIndex(this, column);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,395,"        MatrixUtils.checkRowIndex(this, nRows + row - 1);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,396,"        MatrixUtils.checkColumnIndex(this, nCols + column - 1);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,398,        for (int i = 0; i < nRows; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,399,            for (int j = 0; j < nCols; ++j) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,400,"                setEntry(row + i, column + j, subMatrix[i][j]);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,404,        lu = null;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,406,    },0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,412,"        MatrixUtils.checkRowIndex(this, row);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,413,        final int nCols = getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,414,"        final RealMatrix out = createMatrix(1, nCols);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,415,        for (int i = 0; i < nCols; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,416,"            out.setEntry(0, i, getEntry(row, i));",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,419,        return out;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,427,"        MatrixUtils.checkRowIndex(this, row);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,428,        final int nCols = getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,429,        if ((matrix.getRowDimension() != 1) ||,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,431,            throw new InvalidMatrixException(,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,435,        for (int i = 0; i < nCols; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,436,"            setEntry(row, i, matrix.getEntry(0, i));",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,439,    },0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,445,"        MatrixUtils.checkColumnIndex(this, column);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,446,        final int nRows = getRowDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,447,"        final RealMatrix out = createMatrix(nRows, 1);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,448,        for (int i = 0; i < nRows; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,449,"            out.setEntry(i, 0, getEntry(i, column));",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,452,        return out;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,460,"        MatrixUtils.checkColumnIndex(this, column);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,461,        final int nRows = getRowDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,462,        if ((matrix.getRowDimension() != nRows) ||,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,464,            throw new InvalidMatrixException(,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,468,        for (int i = 0; i < nRows; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,469,"            setEntry(i, column, matrix.getEntry(i, 0));",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,472,    },0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,477,"        return new RealVectorImpl(getRow(row), false);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,484,"        MatrixUtils.checkRowIndex(this, row);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,485,        final int nCols = getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,486,        if (vector.getDimension() != nCols) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,487,            throw new InvalidMatrixException(,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,491,        for (int i = 0; i < nCols; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,492,"            setEntry(row, i, vector.getEntry(i));",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,495,    },0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,500,"        return new RealVectorImpl(getColumn(column), false);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,507,"        MatrixUtils.checkColumnIndex(this, column);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,508,        final int nRows = getRowDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,509,        if (vector.getDimension() != nRows) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,510,            throw new InvalidMatrixException(,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,514,        for (int i = 0; i < nRows; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,515,"            setEntry(i, column, vector.getEntry(i));",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,518,    },0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,524,"        MatrixUtils.checkRowIndex(this, row);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,525,        final int nCols = getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,526,        final double[] out = new double[nCols];,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,527,        for (int i = 0; i < nCols; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,528,"            out[i] = getEntry(row, i);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,531,        return out;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,539,"        MatrixUtils.checkRowIndex(this, row);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,540,        final int nCols = getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,541,        if (array.length != nCols) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,542,            throw new InvalidMatrixException(,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,546,        for (int i = 0; i < nCols; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,547,"            setEntry(row, i, array[i]);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,550,    },0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,556,"        MatrixUtils.checkColumnIndex(this, column);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,557,        final int nRows = getRowDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,558,        final double[] out = new double[nRows];,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,559,        for (int i = 0; i < nRows; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,560,"            out[i] = getEntry(i, column);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,563,        return out;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,571,"        MatrixUtils.checkColumnIndex(this, column);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,572,        final int nRows = getRowDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,573,        if (array.length != nRows) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,574,            throw new InvalidMatrixException(,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,578,        for (int i = 0; i < nRows; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,579,"            setEntry(i, column, array[i]);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,582,    },0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,603,        final int nRows = getRowDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,604,        final int nCols = getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,605,"        final RealMatrix out = createMatrix(nCols, nRows);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,606,        walkInOptimizedOrder(new DefaultRealMatrixPreservingVisitor() {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,616,        return out;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,624,        if (lu == null) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,625,"            lu = new LUDecompositionImpl(this, MathUtils.SAFE_MIN).getSolver();",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,627,        return lu.getInverse();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,634,"        return new LUDecompositionImpl(this, MathUtils.SAFE_MIN).getDeterminant();",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,645,        if (lu == null) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,646,"            lu = new LUDecompositionImpl(this, MathUtils.SAFE_MIN).getSolver();",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,648,        return !lu.isNonSingular();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,660,        final int nRows = getRowDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,661,        final int nCols = getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,662,        if (nRows != nCols) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,663,"            throw new NonSquareMatrixException(nRows, nCols);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,665,        double trace = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,666,        for (int i = 0; i < nRows; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,667,"            trace += getEntry(i, i);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,669,        return trace;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,676,        final int nRows = getRowDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,677,        final int nCols = getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,678,        if (v.length != nCols) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,679,            throw MathRuntimeException.createIllegalArgumentException(,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,684,        final double[] out = new double[nRows];,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,685,        for (int row = 0; row < nRows; ++row) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,686,            double sum = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,687,            for (int i = 0; i < nCols; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,688,"                sum += getEntry(row, i) * v[i];",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,690,            out[row] = sum;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,693,        return out;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,701,"            return new RealVectorImpl(operate(((RealVectorImpl) v).getDataRef()), false);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,702,        } catch (ClassCastException cce) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,703,            final int nRows = getRowDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,704,            final int nCols = getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,705,            if (v.getDimension() != nCols) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,706,                throw MathRuntimeException.createIllegalArgumentException(,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,711,            final double[] out = new double[nRows];,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,712,            for (int row = 0; row < nRows; ++row) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,713,                double sum = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,714,                for (int i = 0; i < nCols; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,715,"                    sum += getEntry(row, i) * v.getEntry(i);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,717,                out[row] = sum;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,720,"            return new RealVectorImpl(out, false);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,728,        final int nRows = getRowDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,729,        final int nCols = getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,730,        if (v.length != nRows) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,731,            throw MathRuntimeException.createIllegalArgumentException(,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,736,        final double[] out = new double[nCols];,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,737,        for (int col = 0; col < nCols; ++col) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,738,            double sum = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,739,            for (int i = 0; i < nRows; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,740,"                sum += getEntry(i, col) * v[i];",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,742,            out[col] = sum;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,745,        return out;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,753,"            return new RealVectorImpl(preMultiply(((RealVectorImpl) v).getDataRef()), false);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,754,        } catch (ClassCastException cce) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,756,            final int nRows = getRowDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,757,            final int nCols = getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,758,            if (v.getDimension() != nRows) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,759,                throw MathRuntimeException.createIllegalArgumentException(,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,764,            final double[] out = new double[nCols];,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,765,            for (int col = 0; col < nCols; ++col) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,766,                double sum = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,767,                for (int i = 0; i < nRows; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,768,"                    sum += getEntry(i, col) * v.getEntry(i);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,770,                out[col] = sum;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,773,            return new RealVectorImpl(out);,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,781,        final int rows    = getRowDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,782,        final int columns = getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,783,"        visitor.start(rows, columns, 0, rows - 1, 0, columns - 1);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,784,        for (int row = 0; row < rows; ++row) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,785,            for (int column = 0; column < columns; ++column) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,786,"                final double oldValue = getEntry(row, column);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,787,"                final double newValue = visitor.visit(row, column, oldValue);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,788,"                setEntry(row, column, newValue);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,791,        lu = null;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,792,        return visitor.end();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,798,        final int rows    = getRowDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,799,        final int columns = getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,800,"        visitor.start(rows, columns, 0, rows - 1, 0, columns - 1);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,801,        for (int row = 0; row < rows; ++row) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,802,            for (int column = 0; column < columns; ++column) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,803,"                visitor.visit(row, column, getEntry(row, column));",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,806,        return visitor.end();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,814,"        MatrixUtils.checkSubMatrixIndex(this, startRow, endRow, startColumn, endColumn);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,815,"        visitor.start(getRowDimension(), getColumnDimension(),",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,817,        for (int row = startRow; row <= endRow; ++row) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,818,            for (int column = startColumn; column <= endColumn; ++column) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,819,"                final double oldValue = getEntry(row, column);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,820,"                final double newValue = visitor.visit(row, column, oldValue);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,821,"                setEntry(row, column, newValue);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,824,        lu = null;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,825,        return visitor.end();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,833,"        MatrixUtils.checkSubMatrixIndex(this, startRow, endRow, startColumn, endColumn);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,834,"        visitor.start(getRowDimension(), getColumnDimension(),",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,836,        for (int row = startRow; row <= endRow; ++row) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,837,            for (int column = startColumn; column <= endColumn; ++column) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,838,"                visitor.visit(row, column, getEntry(row, column));",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,841,        return visitor.end();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,847,        final int rows    = getRowDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,848,        final int columns = getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,849,"        visitor.start(rows, columns, 0, rows - 1, 0, columns - 1);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,850,        for (int column = 0; column < columns; ++column) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,851,            for (int row = 0; row < rows; ++row) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,852,"                final double oldValue = getEntry(row, column);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,853,"                final double newValue = visitor.visit(row, column, oldValue);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,854,"                setEntry(row, column, newValue);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,857,        lu = null;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,858,        return visitor.end();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,864,        final int rows    = getRowDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,865,        final int columns = getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,866,"        visitor.start(rows, columns, 0, rows - 1, 0, columns - 1);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,867,        for (int column = 0; column < columns; ++column) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,868,            for (int row = 0; row < rows; ++row) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,869,"                visitor.visit(row, column, getEntry(row, column));",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,872,        return visitor.end();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,880,"        MatrixUtils.checkSubMatrixIndex(this, startRow, endRow, startColumn, endColumn);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,881,"        visitor.start(getRowDimension(), getColumnDimension(),",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,883,        for (int column = startColumn; column <= endColumn; ++column) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,884,            for (int row = startRow; row <= endRow; ++row) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,885,"                final double oldValue = getEntry(row, column);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,886,"                final double newValue = visitor.visit(row, column, oldValue);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,887,"                setEntry(row, column, newValue);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,890,        lu = null;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,891,        return visitor.end();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,899,"        MatrixUtils.checkSubMatrixIndex(this, startRow, endRow, startColumn, endColumn);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,900,"        visitor.start(getRowDimension(), getColumnDimension(),",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,902,        for (int column = startColumn; column <= endColumn; ++column) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,903,            for (int row = startRow; row <= endRow; ++row) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,904,"                visitor.visit(row, column, getEntry(row, column));",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,907,        return visitor.end();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,913,        return walkInRowOrder(visitor);,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,919,        return walkInRowOrder(visitor);,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,927,"        return walkInRowOrder(visitor, startRow, endRow, startColumn, endColumn);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,935,"        return walkInRowOrder(visitor, startRow, endRow, startColumn, endColumn);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,942,        if (lu == null) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,943,"            lu = new LUDecompositionImpl(this, MathUtils.SAFE_MIN).getSolver();",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,945,        return lu.solve(b);,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,952,        if (lu == null) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,953,"            lu = new LUDecompositionImpl(this, MathUtils.SAFE_MIN).getSolver();",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,955,        return lu.solve(b);,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,980,        if (lu == null) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,981,"            lu = new LUDecompositionImpl(this, MathUtils.SAFE_MIN).getSolver();",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,983,    },0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1027,        if (object == this ) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1028,            return true;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1030,        if (object instanceof RealMatrix == false) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1031,            return false;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1033,        RealMatrix m = (RealMatrix) object;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1034,        final int nRows = getRowDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1035,        final int nCols = getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1036,        if (m.getColumnDimension() != nCols || m.getRowDimension() != nRows) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1037,            return false;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1039,        for (int row = 0; row < nRows; ++row) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1040,            for (int col = 0; col < nCols; ++col) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1041,"                if (getEntry(row, col) != m.getEntry(row, col)) {",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1042,                    return false;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1046,        return true;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1056,        int ret = 7;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1057,        final int nRows = getRowDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1058,        final int nCols = getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1059,        ret = ret * 31 + nRows;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1060,        ret = ret * 31 + nCols;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1061,        for (int row = 0; row < nRows; ++row) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1062,            for (int col = 0; col < nCols; ++col) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1063,               ret = ret * 31 + (11 * (row+1) + 17 * (col+1)) * ,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,1067,        return ret;,0.0,0,-1,0
+org/apache/commons/math/linear/NonSquareMatrixException,86,37,"        super(""a {0}x{1} matrix was provided instead of a square matrix"",",0.0,0,-1,0
+org/apache/commons/math/linear/NonSquareMatrixException,86,39,    },0.0,0,-1,0
+org/apache/commons/math/linear/InvalidMatrixException,86,40,"        super(pattern, arguments);",0.0,0,-1,0
+org/apache/commons/math/linear/InvalidMatrixException,86,41,    },0.0,0,-1,0
+org/apache/commons/math/linear/InvalidMatrixException,86,50,        super(cause);,0.0,0,-1,0
+org/apache/commons/math/linear/InvalidMatrixException,86,51,    },0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,234,        return walkInOptimizedOrder(new RealMatrixPreservingVisitor() {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,243,                sum = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,244,            },0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,248,                sum += value * value;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,249,            },0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,253,                return Math.sqrt(sum);,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,195,        return walkInColumnOrder(new RealMatrixPreservingVisitor() {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,210,                this.endRow = endRow;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,211,                columnSum   = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,212,                maxColSum   = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,213,            },0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,217,                columnSum += Math.abs(value);,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,218,                if (row == endRow) {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,219,"                    maxColSum = Math.max(maxColSum, columnSum);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,220,                    columnSum = 0;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,222,            },0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,226,                return maxColSum;,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,698,            super(BigFraction.ZERO);,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,699,        },0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,705,            data = new double[rows][columns];,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,706,        },0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,711,            data[row][column] = value.doubleValue();,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,712,        },0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,718,"            return new RealMatrixImpl(data, false);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,691,    private static class BigFractionMatrixConverter extends DefaultFieldMatrixPreservingVisitor<BigFraction> {,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,100,"            throw new NonSquareMatrixException(matrix.getRowDimension(),",0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,115,                throw new NotPositiveDefiniteMatrixException();,0.0,1,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,125,                    throw new NotSymmetricMatrixException();,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,175,        double determinant = 1.0;,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,176,        for (int i = 0; i < lTData.length; ++i) {,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,177,            double lTii = lTData[i][i];,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,178,            determinant *= lTii * lTii;,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,180,        return determinant;,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,185,        return new Solver(lTData);,0.0,0,-1,0
+org/apache/commons/math/linear/NotPositiveDefiniteMatrixException,86,39,"        super(""not positive definite matrix"");",0.0,0,-1,0
+org/apache/commons/math/linear/NotPositiveDefiniteMatrixException,86,40,    },0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,198,        private Solver(final double[][] lTData) {,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,199,            this.lTData = lTData;,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,200,        },0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,189,    private static class Solver implements DecompositionSolver {,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,205,            return true;,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,212,            final int m = lTData.length;,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,213,            if (b.length != m) {,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,214,                throw MathRuntimeException.createIllegalArgumentException(,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,219,            final double[] x = b.clone();,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,222,            for (int j = 0; j < m; j++) {,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,223,                final double[] lJ = lTData[j];,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,224,                x[j] /= lJ[j];,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,225,                final double xJ = x[j];,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,226,                for (int i = j + 1; i < m; i++) {,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,227,                    x[i] -= xJ * lJ[i];,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,232,            for (int j = m - 1; j >= 0; j--) {,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,233,                x[j] /= lTData[j][j];,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,234,                final double xJ = x[j];,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,235,                for (int i = 0; i < j; i++) {,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,236,                    x[i] -= xJ * lTData[i][j];,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,240,            return x;,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,248,                return solve((RealVectorImpl) b);,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,249,            } catch (ClassCastException cce) {,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,251,                final int m = lTData.length;,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,252,                if (b.getDimension() != m) {,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,253,                    throw MathRuntimeException.createIllegalArgumentException(,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,258,                final double[] x = b.getData();,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,261,                for (int j = 0; j < m; j++) {,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,262,                    final double[] lJ = lTData[j];,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,263,                    x[j] /= lJ[j];,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,264,                    final double xJ = x[j];,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,265,                    for (int i = j + 1; i < m; i++) {,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,266,                        x[i] -= xJ * lJ[i];,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,271,                for (int j = m - 1; j >= 0; j--) {,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,272,                    x[j] /= lTData[j][j];,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,273,                    final double xJ = x[j];,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,274,                    for (int i = 0; i < j; i++) {,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,275,                        x[i] -= xJ * lTData[i][j];,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,279,"                return new RealVectorImpl(x, false);",0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,293,"            return new RealVectorImpl(solve(b.getDataRef()), false);",0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,300,            final int m = lTData.length;,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,301,            if (b.getRowDimension() != m) {,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,302,                throw MathRuntimeException.createIllegalArgumentException(,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,307,            final int nColB = b.getColumnDimension();,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,308,            double[][] x = b.getData();,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,311,            for (int j = 0; j < m; j++) {,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,312,                final double[] lJ = lTData[j];,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,313,                final double lJJ = lJ[j];,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,314,                final double[] xJ = x[j];,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,315,                for (int k = 0; k < nColB; ++k) {,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,316,                    xJ[k] /= lJJ;,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,318,                for (int i = j + 1; i < m; i++) {,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,319,                    final double[] xI = x[i];,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,320,                    final double lJI = lJ[i];,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,321,                    for (int k = 0; k < nColB; ++k) {,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,322,                        xI[k] -= xJ[k] * lJI;,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,328,            for (int j = m - 1; j >= 0; j--) {,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,329,                final double lJJ = lTData[j][j];,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,330,                final double[] xJ = x[j];,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,331,                for (int k = 0; k < nColB; ++k) {,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,332,                    xJ[k] /= lJJ;,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,334,                for (int i = 0; i < j; i++) {,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,335,                    final double[] xI = x[i];,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,336,                    final double lIJ = lTData[i][j];,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,337,                    for (int k = 0; k < nColB; ++k) {,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,338,                        xI[k] -= xJ[k] * lIJ;,0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,343,"            return new RealMatrixImpl(x, false);",0.0,0,-1,0
+org/apache/commons/math/linear/CholeskyDecompositionImpl,86,349,            return solve(MatrixUtils.createRealIdentityMatrix(lTData.length));,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,654,            super(Fraction.ZERO);,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,655,        },0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,661,            data = new double[rows][columns];,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,662,        },0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,667,            data[row][column] = value.doubleValue();,0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,668,        },0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,674,"            return new RealMatrixImpl(data, false);",0.0,0,-1,0
+org/apache/commons/math/linear/MatrixUtils,86,647,    private static class FractionMatrixConverter extends DefaultFieldMatrixPreservingVisitor<Fraction> {,0.0,0,-1,0
+org/apache/commons/math/linear/NotSymmetricMatrixException,86,39,"        super(""not symmetric matrix"");",0.0,0,-1,0
+org/apache/commons/math/linear/NotSymmetricMatrixException,86,40,    },0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,288,        subMatrix.walkInOptimizedOrder(new DefaultRealMatrixChangingVisitor() {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,293,"                return getEntry(selectedRows[row], selectedColumns[column]);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,320,        walkInOptimizedOrder(new DefaultRealMatrixPreservingVisitor() {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,333,                this.startRow    = startRow;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,334,                this.startColumn = startColumn;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,335,            },0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,340,                destination[row - startRow][column - startColumn] = value;,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,341,            },0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,606,        walkInOptimizedOrder(new DefaultRealMatrixPreservingVisitor() {,0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,611,"                out.setEntry(column, row, value);",0.0,0,-1,0
+org/apache/commons/math/linear/AbstractRealMatrix,86,612,            },0.0,0,-1,0

@@ -1,0 +1,519 @@
+dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,other,lengthEle,lengthWord,depth,suspicious,accuracy,miss_line
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,409,"        TimeZoneDisplayKey key = new TimeZoneDisplayKey(tz, daylight, style, locale);",5,0,0,0,2,1,0,2,1,5,77,4,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,410,        String value = cTimeZoneDisplayCache.get(key);,1,0,0,1,2,0,3,1,0,5,46,4,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,411,        if (value == null) {,1,1,0,1,3,1,0,0,0,5,20,4,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,413,"            value = tz.getDisplayName(daylight, style, locale);",1,0,0,0,2,0,5,0,1,4,51,6,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,414,"            String prior = cTimeZoneDisplayCache.putIfAbsent(key, value);",1,0,0,0,2,0,4,1,0,4,61,6,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,415,            if (prior != null) {,1,1,0,1,3,1,0,0,0,5,20,6,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,419,        return value;,1,0,0,0,0,1,0,0,0,2,13,4,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,555,                if (tokenLen >= 4) {,1,1,0,1,3,1,0,0,0,5,20,7,1.0,1,1
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,558,"                    rule = new TimeZoneNameRule(mTimeZone, mLocale, TimeZone.SHORT);",5,0,0,0,2,1,0,1,2,5,64,9,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,560,                break;,0,0,0,0,0,1,0,0,0,1,6,2,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1240,"            appendTo(buffer, calendar.get(Calendar.YEAR) % 100);",2,1,0,1,4,0,4,0,1,6,52,5,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1241,        },0,0,0,0,1,0,0,0,0,1,1,2,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1247,            buffer.append((char)(value / 10 + '0'));,1,2,0,2,6,1,2,0,1,7,40,6,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1248,            buffer.append((char)(value % 10 + '0'));,1,2,0,2,6,1,2,0,1,7,40,6,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1249,        },0,0,0,0,1,0,0,0,0,1,1,2,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1484,"                           boolean daylight, int style, Locale locale) {",3,0,0,0,2,2,0,1,0,4,45,4,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1485,            mTimeZone = timeZone;,2,0,0,0,0,0,0,0,1,2,21,5,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1486,            if (daylight) {,1,0,0,1,3,1,0,0,0,4,15,5,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1487,                style |= 0x80000000;,1,0,0,0,0,0,0,0,1,2,20,7,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1489,            mStyle = style;,2,0,0,0,0,0,0,0,1,2,15,5,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1490,            mLocale = locale;,2,0,0,0,0,0,0,0,1,2,17,5,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1491,        },0,0,0,0,1,0,0,0,0,1,1,2,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1498,            return (mStyle * 31 + mLocale.hashCode() ) * 31 + mTimeZone.hashCode();,1,4,0,2,6,1,4,0,0,6,71,5,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1387,"        TimeZoneNameRule(TimeZone timeZone, Locale locale, int style) {",4,0,0,0,3,1,0,2,0,4,63,3,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1388,            mTimeZone = timeZone;,2,0,0,0,0,0,0,0,1,2,21,5,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1390,"            mStandard = getTimeZoneDisplay(timeZone, false, style, locale);",1,0,0,0,2,0,4,0,3,4,63,5,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1391,"            mDaylight = getTimeZoneDisplay(timeZone, true, style, locale);",1,0,0,0,2,0,4,0,3,4,62,5,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1392,        },0,0,0,0,1,0,0,0,0,1,1,2,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1398,"            return Math.max(mStandard.length(), mDaylight.length());",0,0,0,1,6,1,6,0,0,4,56,6,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,498,                    rule = TwoDigitYearField.INSTANCE;,3,0,0,0,0,0,0,0,1,2,34,9,0.5,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,500,                break;,0,0,0,0,0,1,0,0,0,1,6,2,0.5,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,503,"                    rule = new TextField(Calendar.MONTH, months);",4,0,0,0,2,1,0,1,2,5,45,9,0.5,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,546,"                rule = new TextField(Calendar.AM_PM, AmPmStrings);",4,0,0,0,2,1,0,1,2,5,50,7,0.5,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,547,                break;,0,0,0,0,0,1,0,0,0,1,6,2,0.5,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1023,            buffer.append(mValues[calendar.get(mField)]);,0,0,1,2,6,0,5,0,0,4,45,6,0.5,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1024,        },0,0,0,0,1,0,0,0,0,1,1,2,0.5,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1062,            } else if (value < 100) {,1,1,0,1,4,2,0,0,0,5,25,6,0.5,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1063,                buffer.append((char)(value / 10 + '0'));,1,2,0,2,6,1,2,0,1,7,40,9,0.5,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1064,                buffer.append((char)(value % 10 + '0'));,1,2,0,2,6,1,2,0,1,7,40,9,0.5,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1226,            super();,0,0,0,1,2,1,0,0,1,4,8,4,0.5,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1227,        },0,0,0,0,1,0,0,0,0,1,1,2,0.5,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1220,        static final TwoDigitYearField INSTANCE = new TwoDigitYearField();,1,0,0,1,2,3,0,2,3,6,66,3,0.5,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1233,            return 2;,0,0,0,0,0,1,0,0,0,1,9,2,0.5,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1153,                for (int i = mSize; --i >= 2; ) {,3,1,0,1,3,2,0,0,1,6,33,7,0.33333,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1154,                    buffer.append('0');,0,0,0,1,2,0,2,0,1,4,19,10,0.33333,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1156,                buffer.append((char)(value / 10 + '0'));,1,2,0,2,6,1,2,0,1,7,40,8,0.33333,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1157,                buffer.append((char)(value % 10 + '0'));,1,2,0,2,6,1,2,0,1,7,40,8,0.33333,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1053,"            appendTo(buffer, calendar.get(mField));",0,0,0,1,4,0,5,0,1,4,39,5,0.33333,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1054,        },0,0,0,0,1,0,0,0,0,1,1,2,0.33333,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1060,            if (value < 10) {,1,1,0,1,3,1,0,0,0,5,17,5,0.33333,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1068,        },0,0,0,0,1,0,0,0,0,1,1,2,0.33333,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1096,"            appendTo(buffer, calendar.get(Calendar.MONTH) + 1);",2,1,0,1,4,0,4,0,1,6,51,5,0.33333,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1097,        },0,0,0,0,1,0,0,0,0,1,1,2,0.33333,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1103,            if (value < 10) {,1,1,0,1,3,1,0,0,0,5,17,5,0.33333,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1104,                buffer.append((char)(value + '0'));,1,1,0,2,6,1,2,0,1,7,35,8,0.33333,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1109,        },0,0,0,0,1,0,0,0,0,1,1,2,0.33333,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,509,                    rule = UnpaddedMonthField.INSTANCE;,3,0,0,0,0,0,0,0,1,2,35,11,0.25,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,511,                break;,0,0,0,0,0,1,0,0,0,1,6,2,0.25,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1082,            super();,0,0,0,1,2,1,0,0,1,4,8,4,0.25,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1083,        },0,0,0,0,1,0,0,0,0,1,1,2,0.25,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1075,        static final UnpaddedMonthField INSTANCE = new UnpaddedMonthField();,1,0,0,1,2,3,0,2,3,6,68,3,0.25,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1089,            return 2;,0,0,0,0,0,1,0,0,0,1,9,2,0.25,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,534,"                rule = selectNumberRule(Calendar.DAY_OF_YEAR, tokenLen);",3,0,0,0,2,0,2,0,2,4,56,7,0.2,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,535,                break;,0,0,0,0,0,1,0,0,0,1,6,2,0.2,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,655,            return new UnpaddedNumberField(field);,1,0,0,1,2,2,0,1,1,6,38,5,0.16667,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1038,        UnpaddedNumberField(int field) {,2,0,0,1,3,1,0,0,0,4,32,3,0.16667,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1039,            mField = field;,2,0,0,0,0,0,0,0,1,2,15,5,0.16667,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1040,        },0,0,0,0,1,0,0,0,0,1,1,2,0.16667,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1046,            return 4;,0,0,0,0,0,1,0,0,0,1,9,2,0.16667,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1457,                buffer.append(':');,0,0,0,1,2,0,2,0,1,4,19,8,0.16667,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1443,            int offset = calendar.get(Calendar.ZONE_OFFSET) + calendar.get(Calendar.DST_OFFSET);,5,1,0,1,4,1,4,0,0,6,84,6,0.14286,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1445,            if (offset < 0) {,1,1,0,1,3,1,0,0,0,5,17,5,0.14286,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1446,                buffer.append('-');,0,0,0,1,2,0,2,0,1,4,19,8,0.14286,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1447,                offset = -offset;,2,0,0,0,0,0,0,0,2,2,17,7,0.14286,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1452,            int hours = offset / (60 * 60 * 1000);,2,2,0,1,2,1,0,0,0,5,38,6,0.14286,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1453,            buffer.append((char)(hours / 10 + '0'));,1,2,0,2,6,1,2,0,1,7,40,6,0.14286,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1454,            buffer.append((char)(hours % 10 + '0'));,1,2,0,2,6,1,2,0,1,7,40,6,0.14286,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1456,            if (mColon) {,1,0,0,1,3,1,0,0,0,4,13,5,0.14286,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1460,            int minutes = offset / (60 * 1000) - 60 * hours;,3,4,0,1,2,1,0,0,0,5,48,6,0.14286,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1461,            buffer.append((char)(minutes / 10 + '0'));,1,2,0,2,6,1,2,0,1,7,42,6,0.14286,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1462,            buffer.append((char)(minutes % 10 + '0'));,1,2,0,2,6,1,2,0,1,7,42,6,0.14286,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1463,        },0,0,0,0,1,0,0,0,0,1,1,2,0.14286,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,706,"        Calendar c = new GregorianCalendar(mTimeZone, mLocale);  // hard code GregorianCalendar",3,0,0,0,2,1,0,2,1,5,87,4,0.03125,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,707,        c.setTime(date);,0,0,0,1,2,0,3,0,0,3,16,5,0.03125,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,708,"        return applyRules(c, new StringBuffer(mMaxLengthEstimate)).toString();",1,0,0,1,6,2,3,1,2,7,70,5,0.03125,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1276,"            appendTo(buffer, calendar.get(Calendar.MONTH) + 1);",2,1,0,1,4,0,4,0,1,6,51,5,0.03125,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1277,        },0,0,0,0,1,0,0,0,0,1,1,2,0.03125,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1283,            buffer.append((char)(value / 10 + '0'));,1,2,0,2,6,1,2,0,1,7,40,6,0.03125,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1284,            buffer.append((char)(value % 10 + '0'));,1,2,0,2,6,1,2,0,1,7,40,6,0.03125,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1285,        },0,0,0,0,1,0,0,0,0,1,1,2,0.03125,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,505,"                    rule = new TextField(Calendar.MONTH, shortMonths);",4,0,0,0,2,1,0,1,2,5,50,10,0.0303,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,562,                if (tokenLen == 1) {,1,1,0,1,3,1,0,0,0,5,20,7,0.0303,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,563,                    rule = TimeZoneNumberRule.INSTANCE_NO_COLON;,3,0,0,0,0,0,0,0,1,2,44,9,0.0303,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,565,                    rule = TimeZoneNumberRule.INSTANCE_COLON;,3,0,0,0,0,0,0,0,1,2,41,9,0.0303,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,567,                break;,0,0,0,0,0,1,0,0,0,1,6,2,0.0303,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1428,        TimeZoneNumberRule(boolean colon) {,2,0,0,1,3,1,0,0,0,4,35,3,0.0303,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1429,            mColon = colon;,2,0,0,0,0,0,0,0,1,2,15,5,0.0303,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1430,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0303,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1418,        static final TimeZoneNumberRule INSTANCE_COLON = new TimeZoneNumberRule(true);,1,0,0,1,2,3,0,2,4,6,78,3,0.0303,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1419,        static final TimeZoneNumberRule INSTANCE_NO_COLON = new TimeZoneNumberRule(false);,1,0,0,1,2,3,0,2,4,6,82,3,0.0303,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1436,            return 5;,0,0,0,0,0,1,0,0,0,1,9,2,0.0303,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,718,"        return format(calendar, new StringBuffer(mMaxLengthEstimate)).toString();",1,0,0,1,6,2,3,1,2,7,73,5,0.02941,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,757,"        return applyRules(calendar, buf);",0,0,0,0,2,1,3,0,1,4,33,4,0.02941,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1163,"                    Validate.isTrue(value > -1, ""Negative values should not be possible"", value);",1,1,0,0,2,0,3,0,2,5,77,10,0.02941,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1164,                    digits = Integer.toString(value).length();,1,0,0,1,4,0,4,0,1,5,42,9,0.02941,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,106,        if (expression == false) {,1,1,0,1,3,1,0,0,1,6,26,4,0.02941,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,109,    },0,0,0,0,1,0,0,0,0,1,1,2,0.02941,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,519,"                rule = selectNumberRule(Calendar.HOUR_OF_DAY, tokenLen);",3,0,0,0,2,0,2,0,2,4,56,7,0.02857,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,520,                break;,0,0,0,0,0,1,0,0,0,1,6,2,0.02857,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,525,"                rule = selectNumberRule(Calendar.SECOND, tokenLen);",3,0,0,0,2,0,2,0,2,4,51,7,0.02857,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,526,                break;,0,0,0,0,0,1,0,0,0,1,6,2,0.02857,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1145,"            appendTo(buffer, calendar.get(mField));",0,0,0,1,4,0,5,0,1,4,39,5,0.02857,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1146,        },0,0,0,0,1,0,0,0,0,1,1,2,0.02857,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1152,            if (value < 100) {,1,1,0,1,3,1,0,0,0,5,18,5,0.02857,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1160,                if (value < 1000) {,1,1,0,1,3,1,0,0,0,5,19,7,0.02857,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1166,                for (int i = mSize; --i >= digits; ) {,4,1,0,1,3,2,0,0,1,6,38,7,0.02857,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1169,                buffer.append(Integer.toString(value));,0,0,0,2,4,0,5,0,0,3,39,8,0.02857,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1171,        },0,0,0,0,1,0,0,0,0,1,1,2,0.02857,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,951,            buffer.append(mValue);,0,0,0,1,2,0,3,0,0,3,22,6,0.02857,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,952,        },0,0,0,0,1,0,0,0,0,1,1,2,0.02857,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,522,"                rule = selectNumberRule(Calendar.MINUTE, tokenLen);",3,0,0,0,2,0,2,0,2,4,51,7,0.02778,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,523,                break;,0,0,0,0,0,1,0,0,0,1,6,2,0.02778,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,531,"                rule = new TextField(Calendar.DAY_OF_WEEK, tokenLen < 4 ? shortWeekdays : weekdays);",6,1,0,0,2,1,0,1,2,6,84,7,0.02778,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,532,                break;,0,0,0,0,0,1,0,0,0,1,6,2,0.02778,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,624,                    if (i + 1 < length && pattern.charAt(i + 1) == '\'') {,3,5,0,2,5,1,2,0,1,7,54,10,0.02778,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,629,                        inLiteral = !inLiteral;,2,0,0,0,0,0,0,0,2,2,23,12,0.02778,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1200,"            appendTo(buffer, calendar.get(mField));",0,0,0,1,4,0,5,0,1,4,39,5,0.02778,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1201,        },0,0,0,0,1,0,0,0,0,1,1,2,0.02778,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1207,            if (value < 100) {,1,1,0,1,3,1,0,0,0,5,18,5,0.02778,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1208,                buffer.append((char)(value / 10 + '0'));,1,2,0,2,6,1,2,0,1,7,40,8,0.02778,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1209,                buffer.append((char)(value % 10 + '0'));,1,2,0,2,6,1,2,0,1,7,40,8,0.02778,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1213,        },0,0,0,0,1,0,0,0,0,1,1,2,0.02778,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1000,"        TextField(int field, String[] values) {",3,0,0,0,5,1,0,1,0,4,39,3,0.02703,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1001,            mField = field;,2,0,0,0,0,0,0,0,1,2,15,5,0.02703,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1002,            mValues = values;,2,0,0,0,0,0,0,0,1,2,17,5,0.02703,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1003,        },0,0,0,0,1,0,0,0,0,1,1,2,0.02703,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1009,            int max = 0;,1,0,0,0,0,1,0,0,0,2,12,6,0.02703,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1010,            for (int i=mValues.length; --i >= 0; ) {,4,1,0,1,3,2,0,0,1,6,40,5,0.02703,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1011,                int len = mValues[i].length();,1,0,1,1,4,1,1,0,0,6,30,8,0.02703,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1012,                if (len > max) {,2,1,0,1,3,1,0,0,0,5,16,7,0.02703,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1013,                    max = len;,2,0,0,0,0,0,0,0,1,2,10,9,0.02703,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1015,            },0,0,0,0,1,0,0,0,0,1,1,2,0.02703,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1016,            return max;,1,0,0,0,0,1,0,0,0,2,11,5,0.02703,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,769,        for (Rule rule : mRules) {,2,0,0,1,3,1,0,1,0,5,26,4,0.02632,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,770,"            rule.appendTo(buf, calendar);",0,0,0,0,2,0,4,0,0,2,29,7,0.02632,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,772,        return buf;,1,0,0,0,0,1,0,0,0,2,11,4,0.02632,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,159,"        return cache.getInstance(pattern, null, null);",0,0,0,0,2,1,3,0,0,3,46,5,0.025,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,513,"                rule = selectNumberRule(Calendar.DAY_OF_MONTH, tokenLen);",3,0,0,0,2,0,2,0,2,4,57,7,0.02439,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,514,                break;,0,0,0,0,0,1,0,0,0,1,6,2,0.02439,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,77,            locale = Locale.getDefault();,1,0,0,1,2,0,2,0,1,5,29,6,0.02439,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,507,                    rule = TwoDigitMonthField.INSTANCE;,3,0,0,0,0,0,0,0,1,2,35,11,0.02326,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1262,            super();,0,0,0,1,2,1,0,0,1,4,8,4,0.02326,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1263,        },0,0,0,0,1,0,0,0,0,1,1,2,0.02326,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1256,        static final TwoDigitMonthField INSTANCE = new TwoDigitMonthField();,1,0,0,1,2,3,0,2,3,6,68,3,0.02326,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1269,            return 2;,0,0,0,0,0,1,0,0,0,1,9,2,0.02326,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,504,                } else if (tokenLen == 3) {,1,1,0,1,4,2,0,0,0,5,27,8,0.02273,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,506,                } else if (tokenLen == 2) {,1,1,0,1,4,2,0,0,0,5,27,9,0.02273,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,496,"                    rule = selectNumberRule(Calendar.YEAR, tokenLen);",3,0,0,0,2,0,2,0,2,4,49,9,0.02222,1,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,659,"            return new PaddedNumberField(field, padding);",2,0,0,0,2,2,0,1,1,5,45,5,0.02222,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1125,"        PaddedNumberField(int field, int size) {",3,0,0,0,3,2,0,0,0,3,40,3,0.02222,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1126,            if (size < 3) {,1,1,0,1,3,1,0,0,0,5,15,5,0.02222,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1130,            mField = field;,2,0,0,0,0,0,0,0,1,2,15,5,0.02222,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1131,            mSize = size;,2,0,0,0,0,0,0,0,1,2,13,5,0.02222,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1132,        },0,0,0,0,1,0,0,0,0,1,1,2,0.02222,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1138,            return 4;,0,0,0,0,0,1,0,0,0,1,9,2,0.02222,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,495,                if (tokenLen >= 4) {,1,1,0,1,3,1,0,0,0,5,20,7,0.02174,1,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,502,                if (tokenLen >= 4) {,1,1,0,1,3,1,0,0,0,5,20,7,0.02174,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,571,                    rule = new CharacterLiteral(sub.charAt(0));,1,0,0,2,4,1,2,1,2,7,43,9,0.02174,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,657,            return new TwoDigitNumberField(field);,1,0,0,1,2,2,0,1,1,6,38,5,0.02174,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,74,            timeZone = TimeZone.getDefault();,1,0,0,1,2,0,2,0,1,5,33,6,0.02174,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1185,        TwoDigitNumberField(int field) {,2,0,0,1,3,1,0,0,0,4,32,3,0.02174,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1186,            mField = field;,2,0,0,0,0,0,0,0,1,2,15,5,0.02174,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1187,        },0,0,0,0,1,0,0,0,0,1,1,2,0.02174,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1193,            return 2;,0,0,0,0,0,1,0,0,0,1,9,2,0.02174,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,936,        CharacterLiteral(char value) {,2,0,0,1,3,1,0,0,0,4,30,3,0.02174,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,937,            mValue = value;,2,0,0,0,0,0,0,0,1,2,15,5,0.02174,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,938,        },0,0,0,0,1,0,0,0,0,1,1,2,0.02174,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,944,            return 1;,0,0,0,0,0,1,0,0,0,1,9,2,0.02174,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,432,"    protected FastDateFormat(String pattern, TimeZone timeZone, Locale locale) {",4,0,0,0,3,1,0,3,1,5,76,2,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,433,        mPattern = pattern;,2,0,0,0,0,0,0,0,1,2,19,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,434,        mTimeZone = timeZone;,2,0,0,0,0,0,0,0,1,2,21,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,435,        mLocale = locale;,2,0,0,0,0,0,0,0,1,2,17,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,437,        init();,0,0,0,1,2,0,1,0,1,4,7,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,438,    },0,0,0,0,1,0,0,0,0,1,1,2,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,107,    private static final FormatCache<FastDateFormat> cache= new FormatCache<FastDateFormat>() {,1,0,0,1,3,4,0,4,4,6,91,2,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,114,"    private static ConcurrentMap<TimeZoneDisplayKey, String> cTimeZoneDisplayCache =",1,0,0,0,0,2,0,3,2,4,80,2,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,444,        List<Rule> rulesList = parsePattern();,1,0,0,1,2,0,1,2,1,6,38,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,445,        mRules = rulesList.toArray(new Rule[rulesList.size()]);,1,0,0,2,6,1,4,1,1,7,55,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,447,        int len = 0;,1,0,0,0,0,1,0,0,0,2,12,5,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,448,        for (int i=mRules.length; --i >= 0; ) {,4,1,0,1,3,2,0,0,1,6,39,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,449,            len += mRules[i].estimateLength();,1,0,1,1,4,0,1,0,1,6,34,6,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,452,        mMaxLengthEstimate = len;,2,0,0,0,0,0,0,0,1,2,25,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,453,    },0,0,0,0,1,0,0,0,0,1,1,2,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,464,        DateFormatSymbols symbols = new DateFormatSymbols(mLocale);,2,0,0,1,2,1,0,2,1,6,59,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,465,        List<Rule> rules = new ArrayList<Rule>();,1,0,0,1,2,1,0,4,1,6,41,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,467,        String[] ERAs = symbols.getEras();,1,0,0,1,4,0,2,1,0,5,34,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,468,        String[] months = symbols.getMonths();,1,0,0,1,4,0,2,1,0,5,38,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,469,        String[] shortMonths = symbols.getShortMonths();,1,0,0,1,4,0,2,1,0,5,48,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,470,        String[] weekdays = symbols.getWeekdays();,1,0,0,1,4,0,2,1,0,5,42,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,471,        String[] shortWeekdays = symbols.getShortWeekdays();,1,0,0,1,4,0,2,1,0,5,52,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,472,        String[] AmPmStrings = symbols.getAmPmStrings();,1,0,0,1,4,0,2,1,0,5,48,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,474,        int length = mPattern.length();,1,0,0,1,2,1,2,0,0,5,31,5,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,475,        int[] indexRef = new int[1];,1,0,0,0,4,3,0,0,0,3,28,5,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,477,        for (int i = 0; i < length; i++) {,4,1,0,1,3,2,0,0,1,6,34,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,478,            indexRef[0] = i;,1,0,1,0,2,0,0,0,1,4,16,6,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,479,"            String token = parseToken(mPattern, indexRef);",1,0,0,0,2,0,3,1,1,5,46,6,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,480,            i = indexRef[0];,1,0,1,0,2,0,0,0,1,4,16,6,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,482,            int tokenLen = token.length();,1,0,0,1,2,1,2,0,0,5,30,7,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,483,            if (tokenLen == 0) {,1,1,0,1,3,1,0,0,0,5,20,6,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,488,            char c = token.charAt(0);,1,0,0,1,2,1,2,0,0,5,25,7,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,490,            switch (c) {,1,0,0,1,3,1,0,0,0,4,12,6,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,569,                String sub = token.substring(1);,1,0,0,1,2,0,2,1,0,5,32,7,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,570,                if (sub.length() == 1) {,0,1,0,2,5,1,2,0,0,5,24,7,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,580,            rules.add(rule);,0,0,0,1,2,0,3,0,0,3,16,7,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,583,        return rules;,1,0,0,0,0,1,0,0,0,2,13,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,594,        StringBuilder buf = new StringBuilder();,1,0,0,1,2,1,0,2,1,6,40,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,596,        int i = indexRef[0];,1,0,1,0,2,1,0,0,0,4,20,5,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,597,        int length = pattern.length();,1,0,0,1,2,1,2,0,0,5,30,5,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,599,        char c = pattern.charAt(i);,1,0,0,1,2,1,3,0,0,5,27,5,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,600,        if (c >= 'A' && c <= 'Z' || c >= 'a' && c <= 'z') {,4,7,0,1,3,1,0,0,4,6,51,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,603,            buf.append(c);,0,0,0,1,2,0,3,0,0,3,14,7,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,605,            while (i + 1 < length) {,2,2,0,1,3,1,0,0,0,5,24,6,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,606,                char peek = pattern.charAt(i + 1);,2,1,0,1,2,1,2,0,0,6,34,9,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,607,                if (peek == c) {,2,1,0,1,3,1,0,0,0,5,16,8,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,608,                    buf.append(c);,0,0,0,1,2,0,3,0,0,3,14,11,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,609,                    i++;,1,0,0,0,0,0,0,0,1,2,4,10,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,613,            },0,0,0,0,1,0,0,0,0,1,1,2,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,616,            buf.append('\'');,0,0,0,1,2,0,2,0,1,4,17,7,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,618,            boolean inLiteral = false;,1,0,0,0,0,1,0,0,1,3,26,7,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,620,            for (; i < length; i++) {,3,1,0,1,3,1,0,0,1,6,25,6,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,621,                c = pattern.charAt(i);,1,0,0,1,2,0,3,0,1,5,22,8,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,623,                if (c == '\'') {,1,1,0,1,3,1,0,0,1,6,16,8,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,631,                } else if (!inLiteral &&,1,1,0,0,2,2,0,0,1,5,24,9,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,633,                    i--;,1,0,0,0,0,0,0,0,1,2,4,11,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,634,                    break;,0,0,0,0,0,1,0,0,0,1,6,2,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,636,                    buf.append(c);,0,0,0,1,2,0,3,0,0,3,14,12,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,641,        indexRef[0] = i;,1,0,1,0,2,0,0,0,1,4,16,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,642,        return buf.toString();,0,0,0,1,2,1,2,0,0,4,22,5,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,653,        switch (padding) {,1,0,0,1,3,1,0,0,0,4,18,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,35,abstract class FormatCache<F extends Format> {,2,0,0,0,1,3,0,1,1,5,46,1,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,41,"    private final ConcurrentMap<MultipartKey, F> cInstanceCache ",1,0,0,0,0,2,0,3,2,4,59,2,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,44,"    private final ConcurrentMap<MultipartKey, String> cDateTimeInstanceCache ",1,0,0,0,0,2,0,3,2,4,72,2,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,158,    private static class MultipartKey {,1,0,0,0,1,3,0,0,2,4,35,2,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,70,        if (pattern == null) {,1,1,0,1,3,1,0,0,0,5,22,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,73,        if (timeZone == null) {,1,1,0,1,3,1,0,0,0,5,23,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,76,        if (locale == null) {,1,1,0,1,3,1,0,0,0,5,21,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,79,"        MultipartKey key = new MultipartKey(pattern, timeZone, locale);",4,0,0,0,2,1,0,2,1,5,63,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,80,        F format = cInstanceCache.get(key);,1,0,0,1,2,0,3,1,0,5,35,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,81,        if (format == null) {           ,1,1,0,1,3,1,0,0,0,5,21,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,82,"            format = createInstance(pattern, timeZone, locale);",1,0,0,0,2,0,4,0,2,4,51,6,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,83,"            F previousValue= cInstanceCache.putIfAbsent(key, format);",1,0,0,0,2,0,4,1,0,4,57,6,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,84,            if (previousValue != null) {,1,1,0,1,3,1,0,0,0,5,28,6,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,90,        return format;,1,0,0,0,0,1,0,0,0,2,14,4,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,107,    private static final FormatCache<FastDateFormat> cache= new FormatCache<FastDateFormat>() {,1,0,0,1,3,4,0,4,4,6,91,2,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,110,"            return new FastDateFormat(pattern, timeZone, locale);",3,0,0,0,2,2,0,1,1,5,53,8,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,166,        public MultipartKey(Object... keys) {,2,0,0,1,3,1,0,1,1,6,37,3,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,167,            this.keys = keys;,2,0,0,0,0,1,0,0,1,3,17,5,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,168,        },0,0,0,0,1,0,0,0,0,1,1,2,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,189,            if(hashCode==0) {,1,1,0,1,3,1,0,0,0,5,17,5,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,190,                int rc= 0;,1,0,0,0,0,1,0,0,0,2,10,8,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,191,                for(Object key : keys) {,2,0,0,1,3,1,0,1,0,5,24,7,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,192,                    if(key!=null) {,1,1,0,1,3,1,0,0,0,5,15,9,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,193,                        rc= rc*7 + key.hashCode();,2,2,0,1,2,0,2,0,1,6,26,11,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,196,                hashCode= rc;,2,0,0,0,0,0,0,0,1,2,13,7,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,198,            return hashCode;,1,0,0,0,0,1,0,0,0,2,16,5,0.02128,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,146,"        return cache.getDateTimeInstance(SHORT, SHORT, null, null);",0,0,0,0,2,1,4,0,0,3,59,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,174,"        return cache.getInstance(pattern, timeZone, null);",0,0,0,0,2,1,4,0,0,3,50,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,188,"        return cache.getInstance(pattern, null, locale);",0,0,0,0,2,1,4,0,0,3,48,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,205,"        return cache.getInstance(pattern, timeZone, locale);",0,0,0,0,2,1,5,0,0,3,52,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,220,"        return cache.getDateTimeInstance(style, null, null, null);",0,0,0,0,2,1,3,0,0,3,58,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,235,"        return cache.getDateTimeInstance(style, null, null, locale);",0,0,0,0,2,1,4,0,0,3,60,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,251,"        return cache.getDateTimeInstance(style, null, timeZone, null);",0,0,0,0,2,1,4,0,0,3,62,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,267,"        return cache.getDateTimeInstance(style, null, timeZone, locale);",0,0,0,0,2,1,5,0,0,3,64,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,282,"        return cache.getDateTimeInstance(null, style, null, null);",0,0,0,0,2,1,3,0,0,3,58,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,297,"        return cache.getDateTimeInstance(null, style, null, locale);",0,0,0,0,2,1,4,0,0,3,60,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,313,"        return cache.getDateTimeInstance(null, style, timeZone, null);",0,0,0,0,2,1,4,0,0,3,62,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,329,"        return cache.getDateTimeInstance(null, style, timeZone, locale);",0,0,0,0,2,1,5,0,0,3,64,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,345,"        return cache.getDateTimeInstance(dateStyle, timeStyle, null, null);",0,0,0,0,2,1,4,0,0,3,67,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,361,"        return cache.getDateTimeInstance(dateStyle, timeStyle, null, locale);",0,0,0,0,2,1,5,0,0,3,69,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,378,"        return getDateTimeInstance(dateStyle, timeStyle, timeZone, null);",0,0,0,0,2,1,4,0,1,4,65,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,395,"        return cache.getDateTimeInstance(dateStyle, timeStyle, timeZone, locale);",0,0,0,0,2,1,6,0,0,3,73,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,416,                value= prior;,2,0,0,0,0,0,0,0,1,2,13,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,484,                break;,0,0,0,0,0,1,0,0,0,1,6,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,492,"                rule = new TextField(Calendar.ERA, ERAs);",4,0,0,0,2,1,0,1,2,5,41,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,493,                break;,0,0,0,0,0,1,0,0,0,1,6,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,516,"                rule = new TwelveHourField(selectNumberRule(Calendar.HOUR, tokenLen));",3,0,0,0,4,1,2,1,3,6,70,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,517,                break;,0,0,0,0,0,1,0,0,0,1,6,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,528,"                rule = selectNumberRule(Calendar.MILLISECOND, tokenLen);",3,0,0,0,2,0,2,0,2,4,56,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,529,                break;,0,0,0,0,0,1,0,0,0,1,6,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,537,"                rule = selectNumberRule(Calendar.DAY_OF_WEEK_IN_MONTH, tokenLen);",3,0,0,0,2,0,2,0,2,4,65,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,538,                break;,0,0,0,0,0,1,0,0,0,1,6,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,540,"                rule = selectNumberRule(Calendar.WEEK_OF_YEAR, tokenLen);",3,0,0,0,2,0,2,0,2,4,57,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,541,                break;,0,0,0,0,0,1,0,0,0,1,6,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,543,"                rule = selectNumberRule(Calendar.WEEK_OF_MONTH, tokenLen);",3,0,0,0,2,0,2,0,2,4,58,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,544,                break;,0,0,0,0,0,1,0,0,0,1,6,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,549,"                rule = new TwentyFourHourField(selectNumberRule(Calendar.HOUR_OF_DAY, tokenLen));",3,0,0,0,4,1,2,1,3,6,81,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,550,                break;,0,0,0,0,0,1,0,0,0,1,6,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,552,"                rule = selectNumberRule(Calendar.HOUR, tokenLen);",3,0,0,0,2,0,2,0,2,4,49,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,553,                break;,0,0,0,0,0,1,0,0,0,1,6,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,556,"                    rule = new TimeZoneNameRule(mTimeZone, mLocale, TimeZone.LONG);",5,0,0,0,2,1,0,1,2,5,63,9,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,573,                    rule = new StringLiteral(sub);,2,0,0,1,2,1,0,1,2,6,30,9,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,575,                break;,0,0,0,0,0,1,0,0,0,1,6,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,577,"                throw new IllegalArgumentException(""Illegal pattern component: "" + token);",1,1,0,1,2,2,0,1,2,7,74,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,626,                        i++;,1,0,0,0,0,0,0,0,1,2,4,12,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,627,                        buf.append(c);,0,0,0,1,2,0,3,0,0,3,14,13,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,676,        if (obj instanceof Date) {,1,0,0,1,3,2,0,1,0,5,26,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,677,"            return format((Date) obj, toAppendTo);",1,0,0,1,4,1,2,1,1,7,38,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,678,        } else if (obj instanceof Calendar) {,1,0,0,1,4,3,0,1,0,5,37,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,679,"            return format((Calendar) obj, toAppendTo);",1,0,0,1,4,1,2,1,1,7,42,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,680,        } else if (obj instanceof Long) {,1,0,0,1,4,3,0,1,0,5,33,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,681,"            return format(((Long) obj).longValue(), toAppendTo);",1,0,0,2,8,1,3,1,1,7,52,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,683,"            throw new IllegalArgumentException(""Unknown class: "" +",0,1,0,0,1,3,0,1,2,5,54,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,696,        return format(new Date(millis));,1,0,0,2,4,2,1,1,2,7,32,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,731,"        return format(new Date(millis), buf);",1,0,0,1,4,2,2,1,2,7,37,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,743,"        Calendar c = new GregorianCalendar(mTimeZone, mLocale);  // hard code GregorianCalendar",3,0,0,0,2,1,0,2,1,5,87,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,744,        c.setTime(date);,0,0,0,1,2,0,3,0,0,3,16,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,745,"        return applyRules(c, buf);",0,0,0,0,2,1,3,0,1,4,26,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,786,        pos.setIndex(0);,0,0,0,1,2,0,2,0,0,3,16,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,787,        pos.setErrorIndex(0);,0,0,0,1,2,0,2,0,0,3,21,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,788,        return null;,0,0,0,0,0,1,0,0,0,1,12,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,799,        return mPattern;,1,0,0,0,0,1,0,0,0,2,16,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,810,        return mTimeZone;,1,0,0,0,0,1,0,0,0,2,17,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,819,        return mLocale;,1,0,0,0,0,1,0,0,0,2,15,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,832,        return mMaxLengthEstimate;,1,0,0,0,0,1,0,0,0,2,26,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,845,        if (obj instanceof FastDateFormat == false) {,1,1,0,1,3,2,0,1,1,7,45,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,846,            return false;,0,0,0,0,0,1,0,0,1,2,13,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,848,        FastDateFormat other = (FastDateFormat) obj;,2,0,0,1,2,0,0,2,0,4,44,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,849,        return mPattern.equals(other.mPattern),2,1,0,1,2,1,2,0,0,6,38,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,861,        return mPattern.hashCode() + 13 * (mTimeZone.hashCode() + 13 * mLocale.hashCode());,0,4,0,2,8,1,6,0,0,5,83,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,871,"        return ""FastDateFormat["" + mPattern + ""]"";",1,1,0,0,2,1,0,0,2,5,42,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,885,        in.defaultReadObject();,0,0,0,1,2,0,2,0,0,3,23,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,886,        init();,0,0,0,1,2,0,1,0,1,4,7,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,887,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,54,"        return getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT, TimeZone.getDefault(), Locale.getDefault());",4,0,0,1,6,1,5,0,1,6,107,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,71,"            throw new NullPointerException(""pattern must not be null"");",0,0,0,1,2,2,0,1,2,5,59,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,87,                format= previousValue;              ,2,0,0,0,0,0,0,0,1,2,22,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,120,        if (locale == null) {,1,1,0,1,3,1,0,0,0,5,21,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,121,            locale = Locale.getDefault();,1,0,0,1,2,0,2,0,1,5,29,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,123,"        MultipartKey key = new MultipartKey(dateStyle, timeStyle, locale);",4,0,0,0,2,1,0,2,1,5,66,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,125,        String pattern = cDateTimeInstanceCache.get(key);,1,0,0,1,2,0,3,1,0,5,49,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,126,        if (pattern == null) {,1,1,0,1,3,1,0,0,0,5,22,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,129,                if (dateStyle == null) {,1,1,0,1,3,1,0,0,0,5,24,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,130,"                    formatter = DateFormat.getTimeInstance(timeStyle, locale);                    ",1,0,0,0,2,0,4,0,1,4,58,10,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,132,                else if (timeStyle == null) {,1,1,0,1,3,2,0,0,0,5,29,9,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,133,"                    formatter = DateFormat.getDateInstance(dateStyle, locale);                    ",1,0,0,0,2,0,4,0,1,4,58,11,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,136,"                    formatter = DateFormat.getDateTimeInstance(dateStyle, timeStyle, locale);",1,0,0,0,2,0,5,0,1,4,73,11,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,138,                pattern = ((SimpleDateFormat)formatter).toPattern();,2,0,0,2,6,0,1,1,1,6,52,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,139,"                String previous = cDateTimeInstanceCache.putIfAbsent(key, pattern);",1,0,0,0,2,0,4,1,0,4,67,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,140,                if (previous != null) {,1,1,0,1,3,1,0,0,0,5,23,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,144,                    pattern= previous;,2,0,0,0,0,0,0,0,1,2,18,10,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,148,            },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,146,            } catch (ClassCastException ex) {,1,0,0,1,4,1,0,1,0,5,33,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,147,"                throw new IllegalArgumentException(""No date time pattern for locale: "" + locale);",1,1,0,1,2,3,0,1,2,7,81,9,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,151,"        return getInstance(pattern, timeZone, locale);",0,0,0,0,2,1,4,0,1,4,46,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1128,                throw new IllegalArgumentException();,0,0,0,1,2,2,0,1,1,5,37,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1161,                    digits = 3;,1,0,0,0,0,0,0,0,1,2,11,9,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1167,                    buffer.append('0');,0,0,0,1,2,0,2,0,1,4,19,10,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1342,        TwentyFourHourField(NumberRule rule) {,2,0,0,1,3,0,0,1,0,4,38,3,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1343,            mRule = rule;,2,0,0,0,0,0,0,0,1,2,13,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1344,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1350,            return mRule.estimateLength();,0,0,0,1,2,1,2,0,0,4,30,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1357,            int value = calendar.get(Calendar.HOUR_OF_DAY);,3,0,0,1,2,1,2,0,0,5,47,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1358,            if (value == 0) {,1,1,0,1,3,1,0,0,0,5,17,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1359,                value = calendar.getMaximum(Calendar.HOUR_OF_DAY) + 1;,3,1,0,1,2,0,2,0,1,6,54,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1361,"            mRule.appendTo(buffer, value);",0,0,0,0,2,0,4,0,0,2,30,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1362,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1368,"            mRule.appendTo(buffer, value);",0,0,0,0,2,0,4,0,0,2,30,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1369,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1211,                buffer.append(Integer.toString(value));,0,0,0,2,4,0,5,0,0,3,39,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,967,        StringLiteral(String value) {,2,0,0,1,3,0,0,1,0,4,29,3,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,968,            mValue = value;,2,0,0,0,0,0,0,0,1,2,15,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,969,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,975,            return mValue.length();,0,0,0,1,2,1,2,0,0,4,23,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,982,            buffer.append(mValue);,0,0,0,1,2,0,3,0,0,3,22,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,983,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1061,                buffer.append((char)(value + '0'));,1,1,0,2,6,1,2,0,1,7,35,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1066,                buffer.append(Integer.toString(value));,0,0,0,2,4,0,5,0,0,3,39,9,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,175,            if (this == obj) {,1,1,0,1,3,2,0,0,0,5,18,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,176,                return true;,0,0,0,0,0,1,0,0,1,2,12,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,178,            if ( obj instanceof MultipartKey == false ) {,1,1,0,1,3,2,0,1,1,7,45,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,179,                return false;,0,0,0,0,0,1,0,0,1,2,13,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FormatCache,18,181,"            return Arrays.equals(keys, ((MultipartKey)obj).keys);",2,0,0,2,6,1,3,1,0,6,53,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1300,        TwelveHourField(NumberRule rule) {,2,0,0,1,3,0,0,1,0,4,34,3,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1301,            mRule = rule;,2,0,0,0,0,0,0,0,1,2,13,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1302,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1308,            return mRule.estimateLength();,0,0,0,1,2,1,2,0,0,4,30,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1315,            int value = calendar.get(Calendar.HOUR);,3,0,0,1,2,1,2,0,0,5,40,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1316,            if (value == 0) {,1,1,0,1,3,1,0,0,0,5,17,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1317,                value = calendar.getLeastMaximum(Calendar.HOUR) + 1;,3,1,0,1,2,0,2,0,1,6,52,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1319,"            mRule.appendTo(buffer, value);",0,0,0,0,2,0,4,0,0,2,30,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1320,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1326,"            mRule.appendTo(buffer, value);",0,0,0,0,2,0,4,0,0,2,30,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1327,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1506,            if (this == obj) {,1,1,0,1,3,2,0,0,0,5,18,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1507,                return true;,0,0,0,0,0,1,0,0,1,2,12,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1509,            if (obj instanceof TimeZoneDisplayKey) {,1,0,0,1,3,2,0,1,0,5,40,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1510,                TimeZoneDisplayKey other = (TimeZoneDisplayKey)obj;,2,0,0,1,2,0,0,2,0,4,51,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1511,                return,0,0,0,0,0,0,0,0,0,0,6,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1516,            return false;,0,0,0,0,0,1,0,0,1,2,13,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1106,                buffer.append((char)(value / 10 + '0'));,1,2,0,2,6,1,2,0,1,7,40,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1107,                buffer.append((char)(value % 10 + '0'));,1,2,0,2,6,1,2,0,1,7,40,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1405,            if (mTimeZone.useDaylightTime() && calendar.get(Calendar.DST_OFFSET) != 0) {,2,2,0,2,7,1,4,0,0,6,76,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1406,                buffer.append(mDaylight);,0,0,0,1,2,0,3,0,0,3,25,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1408,                buffer.append(mStandard);,0,0,0,1,2,0,3,0,0,3,25,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1410,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/time/FastDateFormat,18,1449,                buffer.append('+');,0,0,0,1,2,0,2,0,1,4,19,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,80,      super();,0,0,0,1,2,1,0,0,1,4,8,3,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,81,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,107,"            throw new IllegalArgumentException(String.format(message, Long.valueOf(value)));",0,0,0,1,6,2,6,1,1,6,80,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,131,        if (expression == false) {,1,1,0,1,3,1,0,0,1,6,26,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,132,"            throw new IllegalArgumentException(String.format(message, new Double(value)));",1,0,0,1,6,3,3,2,2,7,78,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,134,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,155,        if (expression == false) {,1,1,0,1,3,1,0,0,1,6,26,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,156,"            throw new IllegalArgumentException(String.format(message, values));",0,0,0,0,4,2,4,1,1,5,67,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,158,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,180,        if (expression == false) {,1,1,0,1,3,1,0,0,1,6,26,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,181,            throw new IllegalArgumentException(DEFAULT_IS_TRUE_EX_MESSAGE);,1,0,0,1,2,2,0,1,1,6,63,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,183,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,204,"        return notNull(object, DEFAULT_IS_NULL_EX_MESSAGE);",0,0,0,0,2,1,3,0,1,4,51,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,222,        if (object == null) {,1,1,0,1,3,1,0,0,0,5,21,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,223,"            throw new NullPointerException(String.format(message, values));",0,0,0,0,4,2,4,1,1,5,63,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,225,        return object;,1,0,0,0,0,1,0,0,0,2,14,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,248,        if (array == null) {,1,1,0,1,3,1,0,0,0,5,20,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,249,"            throw new NullPointerException(String.format(message, values));",0,0,0,0,4,2,4,1,1,5,63,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,251,        if (array.length == 0) {,2,1,0,1,3,1,0,0,0,5,24,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,252,"            throw new IllegalArgumentException(String.format(message, values));",0,0,0,0,4,2,4,1,1,5,67,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,254,        return array;,1,0,0,0,0,1,0,0,0,2,13,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,274,"        return notEmpty(array, DEFAULT_NOT_EMPTY_ARRAY_EX_MESSAGE);",0,0,0,0,2,1,3,0,1,4,59,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,297,        if (collection == null) {,1,1,0,1,3,1,0,0,0,5,25,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,298,"            throw new NullPointerException(String.format(message, values));",0,0,0,0,4,2,4,1,1,5,63,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,300,        if (collection.size() == 0) {,0,1,0,2,5,1,2,0,0,5,29,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,301,"            throw new IllegalArgumentException(String.format(message, values));",0,0,0,0,4,2,4,1,1,5,67,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,303,        return collection;,1,0,0,0,0,1,0,0,0,2,18,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,323,"        return notEmpty(collection, DEFAULT_NOT_EMPTY_COLLECTION_EX_MESSAGE);",0,0,0,0,2,1,3,0,1,4,69,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,346,        if (map == null) {,1,1,0,1,3,1,0,0,0,5,18,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,347,"            throw new NullPointerException(String.format(message, values));",0,0,0,0,4,2,4,1,1,5,63,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,349,        if (map.size() == 0) {,0,1,0,2,5,1,2,0,0,5,22,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,350,"            throw new IllegalArgumentException(String.format(message, values));",0,0,0,0,4,2,4,1,1,5,67,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,352,        return map;,1,0,0,0,0,1,0,0,0,2,11,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,372,"        return notEmpty(map, DEFAULT_NOT_EMPTY_MAP_EX_MESSAGE);",0,0,0,0,2,1,3,0,1,4,55,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,395,        if (chars == null) {,1,1,0,1,3,1,0,0,0,5,20,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,396,"            throw new NullPointerException(String.format(message, values));",0,0,0,0,4,2,4,1,1,5,63,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,398,        if (chars.length() == 0) {,0,1,0,2,5,1,2,0,0,5,26,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,399,"            throw new IllegalArgumentException(String.format(message, values));",0,0,0,0,4,2,4,1,1,5,67,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,401,        return chars;,1,0,0,0,0,1,0,0,0,2,13,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,422,"        return notEmpty(chars, DEFAULT_NOT_EMPTY_CHAR_SEQUENCE_EX_MESSAGE);",0,0,0,0,2,1,3,0,1,4,67,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,448,        if (chars == null) {,1,1,0,1,3,1,0,0,0,5,20,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,449,"            throw new NullPointerException(String.format(message, values));",0,0,0,0,4,2,4,1,1,5,63,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,451,        if (StringUtils.isBlank(chars)) {,0,0,0,2,5,1,3,0,0,4,33,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,452,"            throw new IllegalArgumentException(String.format(message, values));",0,0,0,0,4,2,4,1,1,5,67,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,454,        return chars;,1,0,0,0,0,1,0,0,0,2,13,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,477,"        return notBlank(chars, DEFAULT_NOT_BLANK_EX_MESSAGE);",0,0,0,0,2,1,3,0,1,4,53,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,507,        Validate.notNull(array);,0,0,0,1,2,0,3,0,0,3,24,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,508,        for (int i = 0; i < array.length; i++) {,5,1,0,1,3,2,0,0,1,6,40,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,509,            if (array[i] == null) {,0,1,1,1,5,1,0,0,0,5,23,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,510,"                Object[] values2 = ArrayUtils.add(values, Integer.valueOf(i));",1,0,0,1,6,0,6,1,0,5,62,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,511,"                throw new IllegalArgumentException(String.format(message, values2));",0,0,0,0,4,2,4,1,1,5,68,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,514,        return array;,1,0,0,0,0,1,0,0,0,2,13,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,539,"        return noNullElements(array, DEFAULT_NO_NULL_ELEMENTS_ARRAY_EX_MESSAGE);",0,0,0,0,2,1,3,0,1,4,72,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,569,        Validate.notNull(iterable);,0,0,0,1,2,0,3,0,0,3,27,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,570,        int i = 0;,1,0,0,0,0,1,0,0,0,2,10,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,571,        for (Iterator<?> it = iterable.iterator(); it.hasNext(); i++) {,2,0,0,2,7,1,4,1,1,7,63,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,572,            if (it.next() == null) {,0,1,0,2,5,1,2,0,0,5,24,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,573,"                Object[] values2 = ArrayUtils.addAll(values, Integer.valueOf(i));",1,0,0,1,6,0,6,1,0,5,65,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,574,"                throw new IllegalArgumentException(String.format(message, values2));",0,0,0,0,4,2,4,1,1,5,68,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,577,        return iterable;,1,0,0,0,0,1,0,0,0,2,16,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,602,"        return noNullElements(iterable, DEFAULT_NO_NULL_ELEMENTS_COLLECTION_EX_MESSAGE);",0,0,0,0,2,1,3,0,1,4,80,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,630,        Validate.notNull(array);,0,0,0,1,2,0,3,0,0,3,24,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,631,        if (index < 0 || index >= array.length) {,4,3,0,1,3,1,0,0,0,5,41,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,632,"            throw new IndexOutOfBoundsException(String.format(message, values));",0,0,0,0,4,2,4,1,1,5,68,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,634,        return array;,1,0,0,0,0,1,0,0,0,2,13,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,661,"        return validIndex(array, index, DEFAULT_VALID_INDEX_ARRAY_EX_MESSAGE, Integer.valueOf(index));",0,0,0,1,4,1,7,0,1,5,94,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,689,        Validate.notNull(collection);,0,0,0,1,2,0,3,0,0,3,29,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,690,        if (index < 0 || index >= collection.size()) {,2,3,0,2,5,1,2,0,0,6,46,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,691,"            throw new IndexOutOfBoundsException(String.format(message, values));",0,0,0,0,4,2,4,1,1,5,68,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,693,        return collection;,1,0,0,0,0,1,0,0,0,2,18,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,717,"        return validIndex(collection, index, DEFAULT_VALID_INDEX_COLLECTION_EX_MESSAGE, Integer.valueOf(index));",0,0,0,1,4,1,7,0,1,5,104,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,746,        Validate.notNull(chars);,0,0,0,1,2,0,3,0,0,3,24,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,747,        if (index < 0 || index >= chars.length()) {,2,3,0,2,5,1,2,0,0,6,43,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,748,"            throw new IndexOutOfBoundsException(String.format(message, values));",0,0,0,0,4,2,4,1,1,5,68,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,750,        return chars;,1,0,0,0,0,1,0,0,0,2,13,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,778,"        return validIndex(chars, index, DEFAULT_VALID_INDEX_CHAR_SEQUENCE_EX_MESSAGE, Integer.valueOf(index));",0,0,0,1,4,1,7,0,1,5,102,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,804,        if (expression == false) {,1,1,0,1,3,1,0,0,1,6,26,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,805,            throw new IllegalStateException(DEFAULT_VALID_STATE_EX_MESSAGE);,1,0,0,1,2,2,0,1,1,6,64,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,807,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,826,        if (expression == false) {,1,1,0,1,3,1,0,0,1,6,26,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,827,"            throw new IllegalStateException(String.format(message, values));",0,0,0,0,4,2,4,1,1,5,64,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,829,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,850,"        if (Pattern.matches(pattern, input) == false) {",0,1,0,0,5,1,4,0,1,5,47,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,851,"            throw new IllegalArgumentException(String.format(DEFAULT_MATCHES_PATTERN_EX, input, pattern));",0,0,0,0,4,2,5,1,1,5,94,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,853,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,873,"        if (Pattern.matches(pattern, input) == false) {",0,1,0,0,5,1,4,0,1,5,47,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,874,"            throw new IllegalArgumentException(String.format(message, values));",0,0,0,0,4,2,4,1,1,5,67,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,876,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,897,        if (value.compareTo(start) < 0 || value.compareTo(end) > 0) {,0,3,0,2,7,1,6,0,0,5,61,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,898,"            throw new IllegalArgumentException(String.format(DEFAULT_INCLUSIVE_BETWEEN_EX_MESSAGE, value, start, end));",0,0,0,0,4,2,6,1,1,5,107,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,900,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,921,        if (value.compareTo(start) < 0 || value.compareTo(end) > 0) {,0,3,0,2,7,1,6,0,0,5,61,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,922,"            throw new IllegalArgumentException(String.format(message, values));",0,0,0,0,4,2,4,1,1,5,67,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,924,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,945,        if (value.compareTo(start) <= 0 || value.compareTo(end) >= 0) {,0,3,0,2,7,1,6,0,0,5,63,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,946,"            throw new IllegalArgumentException(String.format(DEFAULT_EXCLUSIVE_BETWEEN_EX_MESSAGE, value, start, end));",0,0,0,0,4,2,6,1,1,5,107,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,948,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,969,        if (value.compareTo(start) <= 0 || value.compareTo(end) >= 0) {,0,3,0,2,7,1,6,0,0,5,63,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,970,"            throw new IllegalArgumentException(String.format(message, values));",0,0,0,0,4,2,4,1,1,5,67,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,972,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,995,        if (type.isInstance(obj) == false) {,0,1,0,2,5,1,3,0,1,6,36,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,996,"            throw new IllegalArgumentException(String.format(DEFAULT_IS_INSTANCE_OF_EX_MESSAGE, type.getName()));",0,0,0,1,6,2,5,1,1,6,101,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,998,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,1018,        if (type.isInstance(obj) == false) {,0,1,0,2,5,1,3,0,1,6,36,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,1019,"            throw new IllegalArgumentException(String.format(message, values));",0,0,0,0,4,2,4,1,1,5,67,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,1021,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,1044,        if (superType.isAssignableFrom(type) == false) {,0,1,0,2,5,1,3,0,1,6,48,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,1045,"            throw new IllegalArgumentException(String.format(DEFAULT_IS_ASSIGNABLE_EX_MESSAGE, superType.getName()));",0,0,0,1,6,2,5,1,1,6,105,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,1047,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,1067,        if (superType.isAssignableFrom(type) == false) {,0,1,0,2,5,1,3,0,1,6,48,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,1068,"            throw new IllegalArgumentException(String.format(message, values));",0,0,0,0,4,2,4,1,1,5,67,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/Validate,18,1070,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0

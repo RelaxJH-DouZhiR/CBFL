@@ -1,0 +1,954 @@
+dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,other,lengthEle,lengthWord,depth,suspicious,accuracy,miss_line
+defect4j,chart,org/jfree/data/time/TimeSeries,9,883,"            throw new IllegalArgumentException(""Requires start <= end."");",0,0,0,1,2,2,0,1,2,5,61,6,1.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,921,        if (start == null) {,1,1,0,1,3,1,0,0,0,5,20,4,1.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,924,        if (end == null) {,1,1,0,1,3,1,0,0,0,5,18,4,1.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,927,        if (start.compareTo(end) > 0) {,0,1,0,2,5,1,3,0,0,5,31,4,1.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,931,        boolean emptyRange = false;,1,0,0,0,0,1,0,0,1,3,27,5,1.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,932,        int startIndex = getIndex(start);,1,0,0,1,2,1,2,0,1,6,33,5,1.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,933,        if (startIndex < 0) {,1,1,0,1,3,1,0,0,0,5,21,4,1.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,934,            startIndex = -(startIndex + 1);,2,1,0,1,2,0,0,0,2,5,31,6,1.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,935,            if (startIndex == this.data.size()) {,2,1,0,2,5,2,1,0,0,6,37,6,1.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,939,        int endIndex = getIndex(end);,1,0,0,1,2,1,2,0,1,6,29,5,1.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,940,        if (endIndex < 0) {             // end period is not in original series,1,1,0,1,3,1,0,0,0,5,71,4,1.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,941,            endIndex = -(endIndex + 1); // this is first item AFTER end period,2,1,0,1,2,1,0,0,2,6,66,6,1.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,942,            endIndex = endIndex - 1;    // so this is last item BEFORE end,2,1,0,0,0,1,0,0,1,4,62,6,1.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,944,        if (endIndex < 0) {,1,1,0,1,3,1,0,0,0,5,19,4,1.0,1,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,947,        if (emptyRange) {,1,0,0,1,3,1,0,0,0,4,17,4,1.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,953,"            return createCopy(startIndex, endIndex);",0,0,0,0,2,1,3,0,1,4,40,6,1.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,879,        if (start < 0) {,1,1,0,1,3,1,0,0,0,5,16,4,0.5,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,882,        if (end < start) {,2,1,0,1,3,1,0,0,0,5,18,4,0.5,0,0
+defect4j,chart,org/jfree/data/time/Day,9,122,"    public Day(int day, int month, int year) {",4,0,0,0,3,4,0,0,1,4,42,2,0.16667,0,0
+defect4j,chart,org/jfree/data/time/Day,9,123,"        this.serialDate = SerialDate.createInstance(day, month, year);",1,0,0,0,2,1,5,0,1,5,62,4,0.16667,0,0
+defect4j,chart,org/jfree/data/time/Day,9,124,        peg(Calendar.getInstance());,0,0,0,2,4,0,3,0,1,4,28,4,0.16667,0,0
+defect4j,chart,org/jfree/data/time/Day,9,125,    },0,0,0,0,1,0,0,0,0,1,1,2,0.16667,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,500,            return false;,0,0,0,0,0,1,0,0,1,2,13,6,0.16667,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,452,            if (SerialDate.isLeapYear(y)) {,0,0,0,2,5,1,3,0,0,4,31,7,0.14286,0,0
+defect4j,chart,org/jfree/data/time/Day,9,302,        return this.serialDate.toSerial();,1,0,0,1,2,2,1,0,0,5,34,5,0.125,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,430,        if (period == null) {,1,1,0,1,3,1,0,0,0,5,21,4,0.125,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,433,        TimeSeriesDataItem dummy = new TimeSeriesDataItem(,1,0,0,0,1,1,0,2,1,5,50,4,0.125,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,435,"        return Collections.binarySearch(this.data, dummy);",1,0,0,0,2,2,3,0,0,4,50,5,0.125,0,0
+defect4j,chart,org/jfree/data/time/Day,9,183,        return this.serialDate;,1,0,0,0,0,2,0,0,0,2,23,5,0.11111,0,0
+defect4j,chart,org/jfree/data/time/Day,9,404,        if (o1 instanceof Day) {,1,0,0,1,3,2,0,1,0,5,24,5,0.11111,0,0
+defect4j,chart,org/jfree/data/time/Day,9,405,            Day d = (Day) o1;,2,0,0,1,2,0,0,2,0,4,17,6,0.11111,0,0
+defect4j,chart,org/jfree/data/time/Day,9,406,            result = -d.getSerialDate().compare(this.serialDate);,2,0,0,1,4,1,3,0,2,6,53,6,0.11111,0,0
+defect4j,chart,org/jfree/data/time/Day,9,407,        },0,0,0,0,1,0,0,0,0,1,1,2,0.11111,0,0
+defect4j,chart,org/jfree/data/time/Day,9,423,        return result;,1,0,0,0,0,1,0,0,0,2,14,4,0.11111,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,211,        return this.serial;,1,0,0,0,0,2,0,0,0,2,19,5,0.11111,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,308,        return this.serial - other.toSerial();,1,1,0,1,2,2,2,0,0,6,38,4,0.11111,0,0
+defect4j,chart,org/jfree/data/time/Day,9,250,        this.firstMillisecond = getFirstMillisecond(calendar);,1,0,0,1,2,1,2,0,2,6,54,4,0.1,0,0
+defect4j,chart,org/jfree/data/time/Day,9,251,        this.lastMillisecond = getLastMillisecond(calendar);,1,0,0,1,2,1,2,0,2,6,52,4,0.1,0,0
+defect4j,chart,org/jfree/data/time/Day,9,252,    },0,0,0,0,1,0,0,0,0,1,1,2,0.1,0,0
+defect4j,chart,org/jfree/data/time/Day,9,317,        int year = this.serialDate.getYYYY();,2,0,0,1,2,2,1,0,0,5,37,5,0.1,0,0
+defect4j,chart,org/jfree/data/time/Day,9,318,        int month = this.serialDate.getMonth();,2,0,0,1,2,2,1,0,0,5,39,5,0.1,0,0
+defect4j,chart,org/jfree/data/time/Day,9,319,        int day = this.serialDate.getDayOfMonth();,2,0,0,1,2,2,1,0,0,5,42,5,0.1,0,0
+defect4j,chart,org/jfree/data/time/Day,9,320,        calendar.clear();,0,0,0,1,2,0,2,0,0,3,17,5,0.1,0,0
+defect4j,chart,org/jfree/data/time/Day,9,321,"        calendar.set(year, month - 1, day, 0, 0, 0);",1,1,0,0,2,0,4,0,0,4,44,5,0.1,0,0
+defect4j,chart,org/jfree/data/time/Day,9,322,"        calendar.set(Calendar.MILLISECOND, 0);",2,0,0,0,2,0,2,0,0,3,38,5,0.1,0,0
+defect4j,chart,org/jfree/data/time/Day,9,324,        return calendar.getTime().getTime();,0,0,0,1,4,1,3,0,0,4,36,5,0.1,0,0
+defect4j,chart,org/jfree/data/time/Day,9,339,        int year = this.serialDate.getYYYY();,2,0,0,1,2,2,1,0,0,5,37,5,0.1,0,0
+defect4j,chart,org/jfree/data/time/Day,9,340,        int month = this.serialDate.getMonth();,2,0,0,1,2,2,1,0,0,5,39,5,0.1,0,0
+defect4j,chart,org/jfree/data/time/Day,9,341,        int day = this.serialDate.getDayOfMonth();,2,0,0,1,2,2,1,0,0,5,42,5,0.1,0,0
+defect4j,chart,org/jfree/data/time/Day,9,342,        calendar.clear();,0,0,0,1,2,0,2,0,0,3,17,5,0.1,0,0
+defect4j,chart,org/jfree/data/time/Day,9,343,"        calendar.set(year, month - 1, day, 23, 59, 59);",1,1,0,0,2,0,4,0,0,4,47,5,0.1,0,0
+defect4j,chart,org/jfree/data/time/Day,9,344,"        calendar.set(Calendar.MILLISECOND, 999);",2,0,0,0,2,0,2,0,0,3,40,5,0.1,0,0
+defect4j,chart,org/jfree/data/time/Day,9,346,        return calendar.getTime().getTime();,0,0,0,1,4,1,3,0,0,4,36,5,0.1,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,210,    protected SerialDate() {,1,0,0,1,3,1,0,0,1,5,24,2,0.1,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,211,    },0,0,0,0,1,0,0,0,0,1,1,2,0.1,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,499,        if ((yyyy % 4) != 0) {,1,2,0,2,5,1,0,0,0,5,22,4,0.1,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,526,        final int leap4 = (yyyy - 1896) / 4;,2,2,0,1,2,2,0,0,1,6,36,4,0.1,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,527,        final int leap100 = (yyyy - 1800) / 100;,2,2,0,1,2,2,0,0,1,6,40,4,0.1,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,528,        final int leap400 = (yyyy - 1600) / 400;,2,2,0,1,2,2,0,0,1,6,40,4,0.1,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,529,        return leap4 - leap100 + leap400;,3,2,0,0,0,1,0,0,0,3,33,4,0.1,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,792,"        return new SpreadsheetDate(day, month, yyyy);",3,0,0,0,2,2,0,1,1,5,45,4,0.1,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,107,"    public SpreadsheetDate(final int day, final int month, final int year) {",4,0,0,0,3,7,0,0,4,4,72,2,0.1,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,109,        if ((year >= 1900) && (year <= 9999)) {,2,3,0,2,7,1,0,0,0,5,39,4,0.1,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,110,            this.year = year;,2,0,0,0,0,1,0,0,1,3,17,6,0.1,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,118,        if ((month >= MonthConstants.JANUARY),3,2,0,1,3,1,0,0,0,5,37,4,0.1,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,120,            this.month = month;,2,0,0,0,0,1,0,0,1,3,19,6,0.1,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,128,"        if ((day >= 1) && (day <= SerialDate.lastDayOfMonth(month, year))) {",2,3,0,1,9,1,4,0,0,6,68,4,0.1,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,129,            this.day = day;,2,0,0,0,0,1,0,0,1,3,15,6,0.1,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,136,"        this.serial = calcSerial(day, month, year);",1,0,0,0,2,1,4,0,2,5,43,4,0.1,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,138,    },0,0,0,0,1,0,0,0,0,1,1,2,0.1,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,231,        return this.year;,1,0,0,0,0,2,0,0,0,2,17,5,0.1,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,240,        return this.month;,1,0,0,0,0,2,0,0,0,2,18,5,0.1,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,249,        return this.day;,1,0,0,0,0,2,0,0,0,2,16,5,0.1,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,449,        final int yy = ((y - 1900) * 365) + SerialDate.leapYearCount(y - 1);,3,4,0,2,6,2,2,0,1,7,68,4,0.1,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,450,        int mm = SerialDate.AGGREGATE_DAYS_TO_END_OF_PRECEDING_MONTH[m];,3,0,1,0,2,1,0,0,0,4,64,5,0.1,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,451,        if (m > MonthConstants.FEBRUARY) {,3,1,0,1,3,1,0,0,0,5,34,4,0.1,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,456,        final int dd = d;,2,0,0,0,0,2,0,0,1,3,17,4,0.1,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,457,        return yy + mm + dd + 1;,3,1,0,0,0,1,0,0,0,3,24,4,0.1,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,142,"        this(name, DEFAULT_DOMAIN_DESCRIPTION, DEFAULT_RANGE_DESCRIPTION,",3,0,0,0,1,1,0,0,0,3,65,4,0.09091,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,144,    },0,0,0,0,1,0,0,0,0,1,1,2,0.09091,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,143,                Day.class);,0,0,0,0,1,1,0,1,0,3,11,6,0.08333,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,92,        DATE_FORMAT_SYMBOLS = new SimpleDateFormat().getDateFormatSymbols();,1,0,0,1,4,1,1,1,1,7,68,3,0.07692,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,137,    static final int[] LAST_DAY_OF_MONTH =,1,0,0,0,2,3,0,0,2,4,38,2,0.07692,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,141,    static final int[] AGGREGATE_DAYS_TO_END_OF_MONTH =,1,0,0,0,2,3,0,0,2,4,51,2,0.07692,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,145,    static final int[] AGGREGATE_DAYS_TO_END_OF_PRECEDING_MONTH =,1,0,0,0,2,3,0,0,2,4,61,2,0.07692,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,149,    static final int[] LEAP_YEAR_AGGREGATE_DAYS_TO_END_OF_MONTH =,1,0,0,0,2,3,0,0,2,4,61,2,0.07692,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,156,        LEAP_YEAR_AGGREGATE_DAYS_TO_END_OF_PRECEDING_MONTH =,1,0,0,0,0,0,0,0,0,1,52,3,0.07692,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,544,        final int result = LAST_DAY_OF_MONTH[month];,1,0,1,0,2,2,0,0,1,5,44,4,0.07692,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,545,        if (month != FEBRUARY) {,2,1,0,1,3,1,0,0,0,5,24,4,0.07692,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,546,            return result;,1,0,0,0,0,1,0,0,0,2,14,6,0.07692,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,203,        if (o1 instanceof TimeSeriesDataItem) {,1,0,0,1,3,2,0,1,0,5,39,5,0.07692,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,204,            TimeSeriesDataItem datapair = (TimeSeriesDataItem) o1;,2,0,0,1,2,0,0,2,0,4,54,6,0.07692,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,205,            result = getPeriod().compareTo(datapair.getPeriod());,1,0,0,2,6,0,4,0,2,5,53,6,0.07692,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,206,        },0,0,0,0,1,0,0,0,0,1,1,2,0.07692,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,215,        return result;,1,0,0,0,0,1,0,0,0,2,14,4,0.07692,0,0
+defect4j,chart,org/jfree/data/time/Day,9,83,    protected static final DateFormat DATE_FORMAT,1,0,0,0,0,3,0,1,3,4,45,2,0.0625,0,0
+defect4j,chart,org/jfree/data/time/Day,9,88,        DATE_FORMAT_SHORT = DateFormat.getDateInstance(DateFormat.SHORT);,3,0,0,1,2,0,2,0,0,4,65,3,0.0625,0,0
+defect4j,chart,org/jfree/data/time/Day,9,92,        DATE_FORMAT_MEDIUM = DateFormat.getDateInstance(DateFormat.MEDIUM);,3,0,0,1,2,0,2,0,0,4,67,3,0.0625,0,0
+defect4j,chart,org/jfree/data/time/Day,9,96,        DATE_FORMAT_LONG = DateFormat.getDateInstance(DateFormat.LONG);,3,0,0,1,2,0,2,0,0,4,63,3,0.0625,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,561,"        add(period, value, true);",0,0,0,0,2,0,3,0,2,3,25,4,0.05,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,562,    },0,0,0,0,1,0,0,0,0,1,1,2,0.05,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,574,"        TimeSeriesDataItem item = new TimeSeriesDataItem(period, value);",3,0,0,0,2,1,0,2,1,5,64,4,0.05,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,575,"        add(item, notify);",0,0,0,0,2,0,3,0,1,3,18,4,0.05,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,576,    },0,0,0,0,1,0,0,0,0,1,1,2,0.05,0,0
+defect4j,chart,org/jfree/data/time/Year,9,96,    public Year(int year) {,2,0,0,1,3,2,0,0,1,5,23,2,0.04762,0,0
+defect4j,chart,org/jfree/data/time/Year,9,97,        if ((year < SerialDate.MINIMUM_YEAR_SUPPORTED),3,2,0,1,3,1,0,0,0,5,46,4,0.04762,0,0
+defect4j,chart,org/jfree/data/time/Year,9,103,        this.year = (short) year;,2,0,0,1,2,2,0,0,1,5,25,4,0.04762,0,0
+defect4j,chart,org/jfree/data/time/Year,9,104,        peg(Calendar.getInstance());,0,0,0,2,4,0,3,0,1,4,28,4,0.04762,0,0
+defect4j,chart,org/jfree/data/time/Year,9,105,    },0,0,0,0,1,0,0,0,0,1,1,2,0.04762,0,0
+defect4j,chart,org/jfree/data/time/Year,9,136,        return this.year;,1,0,0,0,0,2,0,0,0,2,17,5,0.04762,0,0
+defect4j,chart,org/jfree/data/time/Year,9,176,        this.firstMillisecond = getFirstMillisecond(calendar);,1,0,0,1,2,1,2,0,2,6,54,4,0.04762,0,0
+defect4j,chart,org/jfree/data/time/Year,9,177,        this.lastMillisecond = getLastMillisecond(calendar);,1,0,0,1,2,1,2,0,2,6,52,4,0.04762,0,0
+defect4j,chart,org/jfree/data/time/Year,9,178,    },0,0,0,0,1,0,0,0,0,1,1,2,0.04762,0,0
+defect4j,chart,org/jfree/data/time/Year,9,218,        return this.year;,1,0,0,0,0,2,0,0,0,2,17,5,0.04762,0,0
+defect4j,chart,org/jfree/data/time/Year,9,233,"        calendar.set(this.year, Calendar.JANUARY, 1, 0, 0, 0);",3,0,0,0,2,1,2,0,0,4,54,5,0.04762,0,0
+defect4j,chart,org/jfree/data/time/Year,9,234,"        calendar.set(Calendar.MILLISECOND, 0);",2,0,0,0,2,0,2,0,0,3,38,5,0.04762,0,0
+defect4j,chart,org/jfree/data/time/Year,9,237,        return calendar.getTime().getTime();,0,0,0,1,4,1,3,0,0,4,36,5,0.04762,0,0
+defect4j,chart,org/jfree/data/time/Year,9,252,"        calendar.set(this.year, Calendar.DECEMBER, 31, 23, 59, 59);",3,0,0,0,2,1,2,0,0,4,59,5,0.04762,0,0
+defect4j,chart,org/jfree/data/time/Year,9,253,"        calendar.set(Calendar.MILLISECOND, 999);",2,0,0,0,2,0,2,0,0,3,40,5,0.04762,0,0
+defect4j,chart,org/jfree/data/time/Year,9,256,        return calendar.getTime().getTime();,0,0,0,1,4,1,3,0,0,4,36,5,0.04762,0,0
+defect4j,chart,org/jfree/data/time/Year,9,317,        if (o1 instanceof Year) {,1,0,0,1,3,2,0,1,0,5,25,5,0.04762,0,0
+defect4j,chart,org/jfree/data/time/Year,9,318,            Year y = (Year) o1;,2,0,0,1,2,0,0,2,0,4,19,6,0.04762,0,0
+defect4j,chart,org/jfree/data/time/Year,9,319,            result = this.year - y.getYear();,2,1,0,1,2,1,2,0,1,7,33,6,0.04762,0,0
+defect4j,chart,org/jfree/data/time/Year,9,320,        },0,0,0,0,1,0,0,0,0,1,1,2,0.04762,0,0
+defect4j,chart,org/jfree/data/time/Year,9,336,        return result;,1,0,0,0,0,1,0,0,0,2,14,4,0.04762,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,588,"        add(period, value, true);",0,0,0,0,2,0,3,0,2,3,25,4,0.04545,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,589,    },0,0,0,0,1,0,0,0,0,1,1,2,0.04545,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,602,"        TimeSeriesDataItem item = new TimeSeriesDataItem(period, value);",3,0,0,0,2,1,0,2,1,5,64,4,0.04545,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,603,"        add(item, notify);",0,0,0,0,2,0,3,0,1,3,18,4,0.04545,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,604,    },0,0,0,0,1,0,0,0,0,1,1,2,0.04545,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,107,"        this(period, new Double(value));",2,0,0,1,4,2,0,1,1,6,32,4,0.04167,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,108,    },0,0,0,0,1,0,0,0,0,1,1,2,0.04167,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,155,"        this(name, DEFAULT_DOMAIN_DESCRIPTION, DEFAULT_RANGE_DESCRIPTION,",3,0,0,0,1,1,0,0,0,3,65,4,0.04,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,157,    },0,0,0,0,1,0,0,0,0,1,1,2,0.04,0,0
+defect4j,chart,org/jfree/data/general/SeriesChangeEvent,9,61,        super(source);,1,0,0,1,2,1,0,0,1,5,14,3,0.03704,0,0
+defect4j,chart,org/jfree/data/general/SeriesChangeEvent,9,62,    },0,0,0,0,1,0,0,0,0,1,1,2,0.03704,0,0
+defect4j,chart,org/jfree/data/general/Series,9,313,        if (this.notify) {,1,0,0,1,3,2,0,0,0,4,18,5,0.03704,0,0
+defect4j,chart,org/jfree/data/general/Series,9,314,            notifyListeners(new SeriesChangeEvent(this));,0,0,0,2,4,2,1,1,2,6,45,6,0.03704,0,0
+defect4j,chart,org/jfree/data/general/Series,9,316,    },0,0,0,0,1,0,0,0,0,1,1,2,0.03704,0,0
+defect4j,chart,org/jfree/data/general/Series,9,326,        Object[] listenerList = this.listeners.getListenerList();,2,0,0,1,4,1,1,1,0,6,57,4,0.03704,0,0
+defect4j,chart,org/jfree/data/general/Series,9,327,        for (int i = listenerList.length - 2; i >= 0; i -= 2) {,5,2,0,1,3,2,0,0,1,6,55,4,0.03704,0,0
+defect4j,chart,org/jfree/data/general/Series,9,334,    },0,0,0,0,1,0,0,0,0,1,1,2,0.03704,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,70,"public abstract class RegularTimePeriod implements TimePeriod, Comparable,",1,0,0,0,0,4,0,2,2,4,74,1,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,92,"    public TimeSeriesDataItem(RegularTimePeriod period, Number value) {",3,0,0,0,3,1,0,2,1,5,67,2,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,93,        if (period == null) {,1,1,0,1,3,1,0,0,0,5,21,4,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,96,        this.period = period;,2,0,0,0,0,1,0,0,1,3,21,4,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,97,        this.value = value;,2,0,0,0,0,1,0,0,1,3,19,4,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,98,    },0,0,0,0,1,0,0,0,0,1,1,2,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,116,        return this.period;,1,0,0,0,0,2,0,0,0,2,19,5,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,341,        return (TimeSeriesDataItem) this.data.get(index);,1,0,0,1,4,2,2,1,0,6,49,5,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,372,        return getDataItem(index).getPeriod();,0,0,0,1,4,1,3,0,1,5,38,5,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,491,        if (item == null) {,1,1,0,1,3,1,0,0,0,5,19,4,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,494,        if (!item.getPeriod().getClass().equals(this.timePeriodClass)) {,1,0,0,2,9,2,4,0,1,6,64,4,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,506,        boolean added = false;,1,0,0,0,0,1,0,0,1,3,22,5,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,507,        int count = getItemCount();,1,0,0,1,2,1,1,0,1,6,27,5,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,508,        if (count == 0) {,1,1,0,1,3,1,0,0,0,5,17,4,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,509,            this.data.add(item);,1,0,0,1,2,1,2,0,0,5,20,7,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,510,            added = true;,1,0,0,0,0,0,0,0,2,2,13,6,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,513,            RegularTimePeriod last = getTimePeriod(getItemCount() - 1);,1,1,0,2,4,0,2,1,2,7,59,6,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,514,            if (item.getPeriod().compareTo(last) > 0) {,0,1,0,2,7,1,4,0,0,5,43,6,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,515,                this.data.add(item);,1,0,0,1,2,1,2,0,0,5,20,9,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,516,                added = true;,1,0,0,0,0,0,0,0,2,2,13,8,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,536,        if (added) {,1,0,0,1,3,1,0,0,0,4,12,4,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,538,            if (getItemCount() > this.maximumItemCount) {,1,1,0,2,5,2,1,0,1,7,45,6,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,542,"            removeAgedItems(false);  // remove old items if necessary, but",0,0,0,1,2,1,1,0,2,5,62,6,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,545,            if (notify) {,1,0,0,1,3,1,0,0,0,4,13,6,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,546,                fireSeriesChanged();,0,0,0,1,2,0,1,0,1,4,20,8,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,550,    },0,0,0,0,1,0,0,0,0,1,1,2,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,740,        if (getItemCount() > 1) {,0,1,0,2,5,1,1,0,1,6,25,4,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,741,            long latest = getTimePeriod(getItemCount() - 1).getSerialIndex();,1,1,0,2,6,1,3,0,2,7,65,7,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,742,            boolean removed = false;,1,0,0,0,0,1,0,0,1,3,24,7,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,744,                    > this.maximumItemAge) {,1,0,0,0,2,1,0,0,0,3,24,8,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,748,            if (removed && notify) {,2,1,0,1,3,1,0,0,0,5,24,6,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,752,    },0,0,0,0,1,0,0,0,0,1,1,2,0.03704,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,240,        return this.data.size();,1,0,0,1,2,2,1,0,0,5,24,5,0.03571,0,0
+defect4j,chart,org/jfree/data/general/Series,9,102,"        this(key, null);",1,0,0,0,2,1,0,0,0,3,16,4,0.03226,0,0
+defect4j,chart,org/jfree/data/general/Series,9,103,    },0,0,0,0,1,0,0,0,0,1,1,2,0.03226,0,0
+defect4j,chart,org/jfree/data/general/Series,9,111,"    protected Series(Comparable key, String description) {",3,0,0,0,3,1,0,2,1,5,54,2,0.03226,0,0
+defect4j,chart,org/jfree/data/general/Series,9,112,        if (key == null) {,1,1,0,1,3,1,0,0,0,5,18,4,0.03226,0,0
+defect4j,chart,org/jfree/data/general/Series,9,115,        this.key = key;,2,0,0,0,0,1,0,0,1,3,15,4,0.03226,0,0
+defect4j,chart,org/jfree/data/general/Series,9,116,        this.description = description;,2,0,0,0,0,1,0,0,1,3,31,4,0.03226,0,0
+defect4j,chart,org/jfree/data/general/Series,9,117,        this.listeners = new EventListenerList();,1,0,0,1,2,2,0,1,2,6,41,4,0.03226,0,0
+defect4j,chart,org/jfree/data/general/Series,9,118,        this.propertyChangeSupport = new PropertyChangeSupport(this);,1,0,0,1,2,3,0,1,2,6,61,4,0.03226,0,0
+defect4j,chart,org/jfree/data/general/Series,9,119,        this.notify = true;   ,1,0,0,0,0,1,0,0,2,3,19,4,0.03226,0,0
+defect4j,chart,org/jfree/data/general/Series,9,120,    },0,0,0,0,1,0,0,0,0,1,1,2,0.03226,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,161,    public static final TimeZone DEFAULT_TIME_ZONE = TimeZone.getDefault();,1,0,0,1,2,3,2,1,3,7,71,2,0.03226,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,174,        super(name);,1,0,0,1,2,1,0,0,1,5,12,3,0.03226,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,175,        this.domain = domain;,2,0,0,0,0,1,0,0,1,3,21,4,0.03226,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,176,        this.range = range;,2,0,0,0,0,1,0,0,1,3,19,4,0.03226,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,177,        this.timePeriodClass = timePeriodClass;,2,0,0,0,0,1,0,0,1,3,39,4,0.03226,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,178,        this.data = new java.util.ArrayList();,4,0,0,1,2,2,0,0,2,5,38,4,0.03226,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,179,        this.maximumItemCount = Integer.MAX_VALUE;,3,0,0,0,0,1,0,0,1,3,42,4,0.03226,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,180,        this.maximumItemAge = Long.MAX_VALUE;,3,0,0,0,0,1,0,0,1,3,37,4,0.03226,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,181,    },0,0,0,0,1,0,0,0,0,1,1,2,0.03226,0,0
+defect4j,chart,org/jfree/data/general/SeriesException,9,61,        super(message);,1,0,0,1,2,1,0,0,1,5,15,3,0.0,0,0
+defect4j,chart,org/jfree/data/general/SeriesException,9,62,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,113,"            throw new IllegalArgumentException(""Null 'key' argument."");",0,0,0,1,2,2,0,1,2,5,59,6,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,130,        return this.key;,1,0,0,0,0,2,0,0,0,2,16,5,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,142,        if (key == null) {,1,1,0,1,3,1,0,0,0,5,18,4,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,143,"            throw new IllegalArgumentException(""Null 'key' argument."");",0,0,0,1,2,2,0,1,2,5,59,6,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,145,        Comparable old = this.key;,2,0,0,0,0,1,0,1,0,3,26,4,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,146,        this.key = key;,2,0,0,0,0,1,0,0,1,3,15,4,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,147,"        this.propertyChangeSupport.firePropertyChange(""Key"", old, key);",1,0,0,0,2,1,3,0,1,5,63,5,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,148,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,158,        return this.description;,1,0,0,0,0,2,0,0,0,2,24,5,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,170,        String old = this.description;,2,0,0,0,0,1,0,1,0,3,30,4,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,171,        this.description = description;,2,0,0,0,0,1,0,0,1,3,31,4,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,172,"        this.propertyChangeSupport.firePropertyChange(""Description"", old, ",1,0,0,0,1,1,2,0,1,5,65,5,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,174,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,185,        return this.notify;,1,0,0,0,0,2,0,0,0,2,19,5,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,197,        if (this.notify != notify) {,2,1,0,1,3,2,0,0,0,5,28,4,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,198,            this.notify = notify;,2,0,0,0,0,1,0,0,1,3,21,6,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,199,            fireSeriesChanged();,0,0,0,1,2,0,1,0,1,4,20,6,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,201,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,212,        return (getItemCount() == 0);,0,1,0,2,4,1,1,0,1,6,29,5,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,241,        Series clone = (Series) super.clone();,2,0,0,1,4,1,0,2,0,5,38,4,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,242,        clone.listeners = new EventListenerList();,2,0,0,1,2,1,0,1,2,6,42,4,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,243,        clone.propertyChangeSupport = new PropertyChangeSupport(clone);,3,0,0,1,2,1,0,1,2,6,63,4,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,244,        return clone;,1,0,0,0,0,1,0,0,0,2,13,4,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,256,        if (obj == this) {,1,1,0,1,3,2,0,0,0,5,18,4,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,257,            return true;,0,0,0,0,0,1,0,0,1,2,12,6,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,259,        if (!(obj instanceof Series)) {,1,0,0,2,5,2,0,1,1,6,31,4,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,260,            return false;,0,0,0,0,0,1,0,0,1,2,13,6,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,262,        Series that = (Series) obj;,2,0,0,1,2,0,0,2,0,4,27,4,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,263,        if (!getKey().equals(that.getKey())) {,0,0,0,3,9,1,4,0,2,5,38,4,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,264,            return false;,0,0,0,0,0,1,0,0,1,2,13,6,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,266,"        if (!ObjectUtilities.equal(getDescription(), that.getDescription())) {",0,0,0,1,9,1,5,0,2,5,70,4,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,267,            return false;,0,0,0,0,0,1,0,0,1,2,13,6,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,269,        return true;,0,0,0,0,0,1,0,0,1,2,12,4,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,279,        result = this.key.hashCode();,2,0,0,1,2,1,1,0,1,6,29,4,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,280,        result = 29 * result + (this.description != null ,3,3,0,0,1,1,0,0,1,5,48,4,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,282,        return result;,1,0,0,0,0,1,0,0,0,2,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,295,"        this.listeners.add(SeriesChangeListener.class, listener);",1,0,0,0,2,2,2,1,0,5,57,5,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,296,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,305,"        this.listeners.remove(SeriesChangeListener.class, listener);",1,0,0,0,2,2,2,1,0,5,60,5,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,306,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,328,            if (listenerList[i] == SeriesChangeListener.class) {,0,1,1,1,5,2,0,1,0,6,52,6,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,329,                ((SeriesChangeListener) listenerList[i + 1]).seriesChanged(,1,1,1,2,7,0,1,1,0,7,59,9,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,342,        this.propertyChangeSupport.addPropertyChangeListener(listener);,1,0,0,1,2,1,2,0,0,5,63,5,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,343,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,351,        this.propertyChangeSupport.removePropertyChangeListener(listener);,1,0,0,1,2,1,2,0,0,5,66,5,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,352,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,363,"        this.propertyChangeSupport.firePropertyChange(property, oldValue, ",1,0,0,0,1,1,3,0,0,4,65,5,0.0,0,0
+defect4j,chart,org/jfree/data/general/Series,9,365,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,74,        this(new Date());,0,0,0,2,4,2,0,1,1,5,17,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,75,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,83,        this(new Date(millisecond));,1,0,0,2,4,2,0,1,1,6,28,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,84,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,91,    public FixedMillisecond(Date time) {,2,0,0,1,3,1,0,1,1,6,36,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,92,        this.time = time.getTime();,1,0,0,1,2,1,2,0,1,6,27,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,93,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,101,        return new Date(this.time);,1,0,0,1,2,3,0,1,1,6,27,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,113,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,121,        RegularTimePeriod result = null;,1,0,0,0,0,0,0,1,0,2,32,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,122,        long t = this.time;,2,0,0,0,0,2,0,0,0,2,19,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,123,        if (t != Long.MIN_VALUE) {,3,1,0,1,3,1,0,0,0,5,26,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,124,            result = new FixedMillisecond(t - 1);,2,1,0,1,2,1,0,1,2,7,37,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,126,        return result;,1,0,0,0,0,1,0,0,0,2,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,135,        RegularTimePeriod result = null;,1,0,0,0,0,0,0,1,0,2,32,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,136,        long t = this.time;,2,0,0,0,0,2,0,0,0,2,19,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,137,        if (t != Long.MAX_VALUE) {,3,1,0,1,3,1,0,0,0,5,26,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,138,            result = new FixedMillisecond(t + 1);,2,1,0,1,2,1,0,1,2,7,37,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,140,        return result;,1,0,0,0,0,1,0,0,0,2,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,151,        if (object instanceof FixedMillisecond) {,1,0,0,1,3,2,0,1,0,5,41,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,152,            FixedMillisecond m = (FixedMillisecond) object;,2,0,0,1,2,0,0,2,0,4,47,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,153,            return this.time == m.getFirstMillisecond();,1,1,0,1,2,2,2,0,0,6,44,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,156,            return false;,0,0,0,0,0,1,0,0,1,2,13,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,167,        return (int) this.time;,1,0,0,1,2,3,0,0,0,4,23,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,186,        if (o1 instanceof FixedMillisecond) {,1,0,0,1,3,2,0,1,0,5,37,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,187,            FixedMillisecond t1 = (FixedMillisecond) o1;,2,0,0,1,2,0,0,2,0,4,44,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,188,            difference = this.time - t1.time;,4,1,0,0,0,1,0,0,1,4,33,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,189,            if (difference > 0) {,1,1,0,1,3,1,0,0,0,5,21,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,190,                result = 1;,1,0,0,0,0,0,0,0,1,2,11,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,193,                if (difference < 0) {,1,1,0,1,3,1,0,0,0,5,21,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,194,                   result = -1;,1,0,0,0,0,0,0,0,2,2,12,10,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,197,                    result = 0;,1,0,0,0,0,0,0,0,1,2,11,10,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,200,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,204,        else if (o1 instanceof RegularTimePeriod) {,1,0,0,1,3,3,0,1,0,5,43,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,206,            result = 0;,1,0,0,0,0,0,0,0,1,2,11,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,213,            result = 1;,1,0,0,0,0,0,0,0,1,2,11,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,216,        return result;,1,0,0,0,0,1,0,0,0,2,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,226,        return this.time;,1,0,0,0,0,2,0,0,0,2,17,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,238,        return this.time;,1,0,0,0,0,2,0,0,0,2,17,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,247,        return this.time;,1,0,0,0,0,2,0,0,0,2,17,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,258,        return this.time;,1,0,0,0,0,2,0,0,0,2,17,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,267,        return this.time;,1,0,0,0,0,2,0,0,0,2,17,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,278,        return this.time;,1,0,0,0,0,2,0,0,0,2,17,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/FixedMillisecond,9,287,        return this.time;,1,0,0,0,0,2,0,0,0,2,17,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,85,        RegularTimePeriod result = null;,1,0,0,0,0,0,0,1,0,2,32,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,87,            Constructor constructor = c.getDeclaredConstructor(,1,0,0,0,1,0,2,1,0,4,51,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,89,            result = (RegularTimePeriod) constructor.newInstance(,1,0,0,1,3,0,2,1,1,6,53,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,94,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,92,        catch (Exception e) {,1,0,0,1,3,1,0,1,0,5,21,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,95,        return result;,1,0,0,0,0,1,0,0,0,2,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,107,        if (c.equals(Year.class)) {,0,0,0,2,5,2,2,1,0,5,27,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,108,            return Quarter.class;,0,0,0,0,0,2,0,1,0,2,21,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,110,        else if (c.equals(Quarter.class)) {,0,0,0,2,5,3,2,1,0,5,35,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,111,            return Month.class;,0,0,0,0,0,2,0,1,0,2,19,9,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,113,        else if (c.equals(Month.class)) {,0,0,0,2,5,3,2,1,0,5,33,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,114,            return Day.class;,0,0,0,0,0,2,0,1,0,2,17,10,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,116,        else if (c.equals(Day.class)) {,0,0,0,2,5,3,2,1,0,5,31,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,117,            return Hour.class;,0,0,0,0,0,2,0,1,0,2,18,11,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,119,        else if (c.equals(Hour.class)) {,0,0,0,2,5,3,2,1,0,5,32,9,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,120,            return Minute.class;,0,0,0,0,0,2,0,1,0,2,20,12,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,122,        else if (c.equals(Minute.class)) {,0,0,0,2,5,3,2,1,0,5,34,10,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,123,            return Second.class;,0,0,0,0,0,2,0,1,0,2,20,13,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,125,        else if (c.equals(Second.class)) {,0,0,0,2,5,3,2,1,0,5,34,11,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,126,            return Millisecond.class;,0,0,0,0,0,2,0,1,0,2,25,14,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,129,            return Millisecond.class;,0,0,0,0,0,2,0,1,0,2,25,14,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,182,        return new Date(getFirstMillisecond());,0,0,0,2,4,2,1,1,2,6,39,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,194,        return new Date(getLastMillisecond());,0,0,0,2,4,2,1,1,2,6,38,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,254,        long m1 = getFirstMillisecond();,1,0,0,1,2,1,1,0,1,6,32,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,255,        long m2 = getLastMillisecond();,1,0,0,1,2,1,1,0,1,6,31,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,256,        return m1 + (m2 - m1) / 2;,3,3,0,1,2,1,0,0,0,5,26,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,268,        long m1 = getFirstMillisecond(calendar);,1,0,0,1,2,1,2,0,1,6,40,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,269,        long m2 = getLastMillisecond(calendar);,1,0,0,1,2,1,2,0,1,6,39,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,270,        return m1 + (m2 - m1) / 2;,3,3,0,1,2,1,0,0,0,5,26,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,279,        return String.valueOf(getStart());,0,0,0,2,4,1,3,0,1,5,34,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,9,88,"                    new Class[] {Date.class, TimeZone.class});",0,0,0,0,5,3,0,3,0,3,42,9,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimePeriodFormatException,9,55,        super(message);,1,0,0,1,2,1,0,0,1,5,15,3,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimePeriodFormatException,9,56,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,88,        this(new Date());,0,0,0,2,4,2,0,1,1,5,17,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,89,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,100,            throw new IllegalArgumentException(,0,0,0,0,1,2,0,1,1,4,35,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,114,"        this(time, RegularTimePeriod.DEFAULT_TIME_ZONE);",3,0,0,0,2,1,0,0,0,3,48,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,115,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,123,"    public Year(Date time, TimeZone zone) {",3,0,0,0,3,1,0,2,1,5,39,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,124,        Calendar calendar = Calendar.getInstance(zone);,1,0,0,1,2,0,3,1,0,5,47,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,125,        calendar.setTime(time);,0,0,0,1,2,0,3,0,0,3,23,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,126,        this.year = (short) calendar.get(Calendar.YEAR);,3,0,0,1,4,2,2,0,1,6,48,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,127,        peg(calendar);,0,0,0,1,2,0,2,0,1,4,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,128,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,150,        return this.firstMillisecond;,1,0,0,0,0,2,0,0,0,2,29,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,164,        return this.lastMillisecond;,1,0,0,0,0,2,0,0,0,2,28,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,187,        if (this.year > SerialDate.MINIMUM_YEAR_SUPPORTED) {,3,1,0,1,3,2,0,0,0,5,52,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,188,            return new Year(this.year - 1);,1,1,0,1,2,3,0,1,1,7,31,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,191,            return null;,0,0,0,0,0,1,0,0,0,1,12,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,202,        if (this.year < SerialDate.MAXIMUM_YEAR_SUPPORTED) {,3,1,0,1,3,2,0,0,0,5,52,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,203,            return new Year(this.year + 1);,1,1,0,1,2,3,0,1,1,7,31,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,206,            return null;,0,0,0,0,0,1,0,0,0,1,12,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,271,        if (object != null) {,1,1,0,1,3,1,0,0,0,5,21,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,272,            if (object instanceof Year) {,1,0,0,1,3,2,0,1,0,5,29,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,273,                Year target = (Year) object;,2,0,0,1,2,0,0,2,0,4,28,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,274,                return (this.year == target.getYear());,1,1,0,2,4,2,2,0,0,6,39,9,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,277,                return false;,0,0,0,0,0,1,0,0,1,2,13,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,281,            return false;,0,0,0,0,0,1,0,0,1,2,13,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,295,        int result = 17;,1,0,0,0,0,1,0,0,0,2,16,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,296,        int c = this.year;,2,0,0,0,0,2,0,0,0,2,18,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,297,        result = 37 * result + c;,3,2,0,0,0,0,0,0,1,3,25,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,298,        return result;,1,0,0,0,0,1,0,0,0,2,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,324,        else if (o1 instanceof RegularTimePeriod) {,1,0,0,1,3,3,0,1,0,5,43,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,326,            result = 0;,1,0,0,0,0,0,0,0,1,2,11,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,333,            result = 1;,1,0,0,0,0,0,0,0,1,2,11,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,346,        return Integer.toString(this.year);,1,0,0,1,2,2,2,0,0,5,35,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,364,            y = Integer.parseInt(s.trim());,1,0,0,2,4,0,4,0,1,5,31,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,368,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,366,        catch (NumberFormatException e) {,1,0,0,1,3,1,0,1,0,5,33,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,367,"            throw new TimePeriodFormatException(""Cannot parse string."");",0,0,0,1,2,2,0,1,2,5,60,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,372,            return new Year(y);,1,0,0,1,2,2,0,1,1,6,19,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,374,        catch (IllegalArgumentException e) {,1,0,0,1,3,1,0,1,0,5,36,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Year,9,375,"            throw new TimePeriodFormatException(""Year outside valid range."");",0,0,0,1,2,2,0,1,2,5,65,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,112,        this(new Date());,0,0,0,2,4,2,0,1,1,5,17,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,113,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,132,    public Day(SerialDate serialDate) {,2,0,0,1,3,1,0,1,1,6,35,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,133,        if (serialDate == null) {,1,1,0,1,3,1,0,0,0,5,25,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,134,"            throw new IllegalArgumentException(""Null 'serialDate' argument."");",0,0,0,1,2,2,0,1,2,5,66,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,136,        this.serialDate = serialDate;,2,0,0,0,0,1,0,0,1,3,29,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,137,        peg(Calendar.getInstance());,0,0,0,2,4,0,3,0,1,4,28,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,138,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,148,"        this(time, RegularTimePeriod.DEFAULT_TIME_ZONE);",3,0,0,0,2,1,0,0,0,3,48,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,149,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,157,"    public Day(Date time, TimeZone zone) {",3,0,0,0,3,1,0,2,1,5,38,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,158,        if (time == null) {,1,1,0,1,3,1,0,0,0,5,19,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,159,"            throw new IllegalArgumentException(""Null 'time' argument."");",0,0,0,1,2,2,0,1,2,5,60,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,161,        if (zone == null) {,1,1,0,1,3,1,0,0,0,5,19,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,162,"            throw new IllegalArgumentException(""Null 'zone' argument."");",0,0,0,1,2,2,0,1,2,5,60,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,164,        Calendar calendar = Calendar.getInstance(zone);,1,0,0,1,2,0,3,1,0,5,47,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,165,        calendar.setTime(time);,0,0,0,1,2,0,3,0,0,3,23,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,166,        int d = calendar.get(Calendar.DAY_OF_MONTH);,3,0,0,1,2,1,2,0,0,5,44,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,167,        int m = calendar.get(Calendar.MONTH) + 1;,3,1,0,1,2,1,2,0,0,6,41,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,168,        int y = calendar.get(Calendar.YEAR);,3,0,0,1,2,1,2,0,0,5,36,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,169,"        this.serialDate = SerialDate.createInstance(d, m, y);",1,0,0,0,2,1,5,0,1,5,53,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,170,        peg(calendar);,0,0,0,1,2,0,2,0,1,4,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,171,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,192,        return this.serialDate.getYYYY();,1,0,0,1,2,2,1,0,0,5,33,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,201,        return this.serialDate.getMonth();,1,0,0,1,2,2,1,0,0,5,34,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,210,        return this.serialDate.getDayOfMonth();,1,0,0,1,2,2,1,0,0,5,39,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,224,        return this.firstMillisecond;,1,0,0,0,0,2,0,0,0,2,29,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,238,        return this.lastMillisecond;,1,0,0,0,0,2,0,0,0,2,28,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,262,        int serial = this.serialDate.toSerial();,2,0,0,1,2,2,1,0,0,5,40,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,263,        if (serial > SerialDate.SERIAL_LOWER_BOUND) {,3,1,0,1,3,1,0,0,0,5,45,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,264,            SerialDate yesterday = SerialDate.createInstance(serial - 1);,2,1,0,1,2,0,2,1,0,6,61,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,265,            return new Day(yesterday);,1,0,0,1,2,2,0,1,1,6,26,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,268,            result = null;,1,0,0,0,0,0,0,0,1,2,14,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,270,        return result;,1,0,0,0,0,1,0,0,0,2,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,284,        int serial = this.serialDate.toSerial();,2,0,0,1,2,2,1,0,0,5,40,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,285,        if (serial < SerialDate.SERIAL_UPPER_BOUND) {,3,1,0,1,3,1,0,0,0,5,45,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,286,            SerialDate tomorrow = SerialDate.createInstance(serial + 1);,2,1,0,1,2,0,2,1,0,6,60,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,287,            return new Day(tomorrow);,1,0,0,1,2,2,0,1,1,6,25,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,290,            result = null;,1,0,0,0,0,0,0,0,1,2,14,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,292,        return result;,1,0,0,0,0,1,0,0,0,2,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,361,        if (obj == this) {,1,1,0,1,3,2,0,0,0,5,18,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,362,            return true;,0,0,0,0,0,1,0,0,1,2,12,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,364,        if (!(obj instanceof Day)) {,1,0,0,2,5,2,0,1,1,6,28,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,365,            return false;,0,0,0,0,0,1,0,0,1,2,13,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,367,        Day that = (Day) obj;,2,0,0,1,2,0,0,2,0,4,21,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,368,        if (!this.serialDate.equals(that.getSerialDate())) {,1,0,0,3,7,2,3,0,1,6,52,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,369,            return false;,0,0,0,0,0,1,0,0,1,2,13,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,371,        return true;,0,0,0,0,0,1,0,0,1,2,12,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,385,        return this.serialDate.hashCode();,1,0,0,1,2,2,1,0,0,5,34,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,411,        else if (o1 instanceof RegularTimePeriod) {,1,0,0,1,3,3,0,1,0,5,43,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,413,            result = 0;,1,0,0,0,0,0,0,0,1,2,11,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,420,            result = 1;,1,0,0,0,0,0,0,0,1,2,11,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,433,        return this.serialDate.toString();,1,0,0,1,2,2,1,0,0,5,34,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,450,            return new Day (Day.DATE_FORMAT.parse(s));,2,0,0,2,4,2,2,1,1,7,42,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,452,        catch (ParseException e1) {,1,0,0,1,3,1,0,1,0,5,27,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,454,                return new Day (Day.DATE_FORMAT_SHORT.parse(s));,2,0,0,2,4,2,2,1,1,7,48,9,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,456,            catch (ParseException e2) {,1,0,0,1,3,1,0,1,0,5,27,9,0.0,0,0
+defect4j,chart,org/jfree/data/time/Day,9,460,        return null;,0,0,0,0,0,1,0,0,0,1,12,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,224,        switch(code) {,1,0,0,1,3,1,0,0,0,4,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,232,                return true;,0,0,0,0,0,1,0,0,1,2,12,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,234,                return false;,0,0,0,0,0,1,0,0,1,2,13,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,249,        final String[] shortWeekdayNames,1,0,0,0,2,1,0,1,1,5,32,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,251,        final String[] weekDayNames = DATE_FORMAT_SYMBOLS.getWeekdays();,1,0,0,1,4,1,2,1,1,7,64,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,253,        int result = -1;,1,0,0,0,0,1,0,0,1,3,16,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,254,        s = s.trim();,1,0,0,1,2,0,2,0,1,5,13,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,255,        for (int i = 0; i < weekDayNames.length; i++) {,5,1,0,1,3,2,0,0,1,6,47,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,256,            if (s.equals(shortWeekdayNames[i])) {,0,0,1,2,7,1,2,0,0,5,37,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,257,                result = i;,2,0,0,0,0,0,0,0,1,2,11,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,258,                break;,0,0,0,0,0,1,0,0,0,1,6,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,260,            if (s.equals(weekDayNames[i])) {,0,0,1,2,7,1,2,0,0,5,32,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,261,                result = i;,2,0,0,0,0,0,0,0,1,2,11,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,262,                break;,0,0,0,0,0,1,0,0,0,1,6,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,265,        return result;,1,0,0,0,0,1,0,0,0,2,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,280,        final String[] weekdays = DATE_FORMAT_SYMBOLS.getWeekdays();,1,0,0,1,4,1,2,1,1,7,60,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,281,        return weekdays[weekday];,0,0,1,0,2,1,0,0,0,3,25,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,292,        return getMonths(false);,0,0,0,1,2,1,1,0,2,5,24,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,306,        if (shortened) {,1,0,0,1,3,1,0,0,0,4,16,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,307,            return DATE_FORMAT_SYMBOLS.getShortMonths();,0,0,0,1,2,1,2,0,0,4,44,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,310,            return DATE_FORMAT_SYMBOLS.getMonths();,0,0,0,1,2,1,2,0,0,4,39,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,325,        switch(code) {,1,0,0,1,3,1,0,0,0,4,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,338,                return true;,0,0,0,0,0,1,0,0,1,2,12,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,340,                return false;,0,0,0,0,0,1,0,0,1,2,13,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,354,        switch(code) {,1,0,0,1,3,1,0,0,0,4,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,357,            case MARCH: return 1;,1,0,0,0,0,2,0,0,0,2,21,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,360,            case JUNE: return 2;,1,0,0,0,0,2,0,0,0,2,20,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,363,            case SEPTEMBER: return 3;,1,0,0,0,0,2,0,0,0,2,25,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,366,            case DECEMBER: return 4;,1,0,0,0,0,2,0,0,0,2,24,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,367,            default: throw new IllegalArgumentException(,0,0,0,0,1,3,0,1,2,4,44,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,385,"        return monthCodeToString(month, false);",0,0,0,0,2,1,2,0,2,4,39,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,405,        if (!isValidMonthCode(month)) {,0,0,0,2,5,1,2,0,2,5,31,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,406,            throw new IllegalArgumentException(,0,0,0,0,1,2,0,1,1,4,35,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,412,        if (shortened) {,1,0,0,1,3,1,0,0,0,4,16,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,413,            months = DATE_FORMAT_SYMBOLS.getShortMonths();,1,0,0,1,2,0,2,0,1,5,46,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,416,            months = DATE_FORMAT_SYMBOLS.getMonths();,1,0,0,1,2,0,2,0,1,5,41,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,419,        return months[month - 1];,1,1,1,0,2,1,0,0,0,5,25,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,437,        final String[] shortMonthNames = DATE_FORMAT_SYMBOLS.getShortMonths();,1,0,0,1,4,1,2,1,1,7,70,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,438,        final String[] monthNames = DATE_FORMAT_SYMBOLS.getMonths();,1,0,0,1,4,1,2,1,1,7,60,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,440,        int result = -1;,1,0,0,0,0,1,0,0,1,3,16,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,441,        s = s.trim();,1,0,0,1,2,0,2,0,1,5,13,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,445,            result = Integer.parseInt(s);,1,0,0,1,2,0,3,0,1,5,29,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,449,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,447,        catch (NumberFormatException e) {,1,0,0,1,3,1,0,1,0,5,33,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,452,        if ((result < 1) || (result > 12)) {,2,3,0,2,7,1,0,0,0,5,36,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,453,            for (int i = 0; i < monthNames.length; i++) {,5,1,0,1,3,2,0,0,1,6,45,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,454,                if (s.equals(shortMonthNames[i])) {,0,0,1,2,7,1,2,0,0,5,35,9,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,455,                    result = i + 1;,2,1,0,0,0,0,0,0,1,3,15,10,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,456,                    break;,0,0,0,0,0,1,0,0,0,1,6,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,458,                if (s.equals(monthNames[i])) {,0,0,1,2,7,1,2,0,0,5,30,9,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,459,                    result = i + 1;,2,1,0,0,0,0,0,0,1,3,15,10,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,460,                    break;,0,0,0,0,0,1,0,0,0,1,6,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,465,        return result;,1,0,0,0,0,1,0,0,0,2,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,479,        switch(code) {,1,0,0,1,3,1,0,0,0,4,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,484,            case LAST_WEEK_IN_MONTH: return true;,1,0,0,0,0,2,0,0,1,3,37,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,485,            default: return false;,0,0,0,0,0,2,0,0,2,2,22,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,502,        else if ((yyyy % 400) == 0) {,1,2,0,2,5,2,0,0,0,5,29,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,503,            return true;,0,0,0,0,0,1,0,0,1,2,12,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,505,        else if ((yyyy % 100) == 0) {,1,2,0,2,5,2,0,0,0,5,29,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,506,            return false;,0,0,0,0,0,1,0,0,1,2,13,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,509,            return true;,0,0,0,0,0,1,0,0,1,2,12,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,548,        else if (isLeapYear(yyyy)) {,0,0,0,2,5,2,2,0,1,5,28,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,549,            return result + 1;,1,1,0,0,0,1,0,0,0,3,18,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,552,            return result;,1,0,0,0,0,1,0,0,0,2,14,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,568,        final int serialDayNumber = base.toSerial() + days;,2,1,0,1,2,2,2,0,1,7,51,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,569,        return SerialDate.createInstance(serialDayNumber);,0,0,0,1,2,1,3,0,0,4,50,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,588,        final int yy = (12 * base.getYYYY() + base.getMonth() + months - 1),2,5,0,2,6,2,4,0,1,7,67,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,590,        final int mm = (12 * base.getYYYY() + base.getMonth() + months - 1),2,6,0,2,6,2,4,0,1,7,67,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,592,        final int dd = Math.min(,1,0,0,0,1,2,2,0,1,5,24,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,595,"        return SerialDate.createInstance(dd, mm, yy);",0,0,0,0,2,1,5,0,0,3,45,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,610,        final int baseY = base.getYYYY();,1,0,0,1,2,2,2,0,1,6,33,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,611,        final int baseM = base.getMonth();,1,0,0,1,2,2,2,0,1,6,34,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,612,        final int baseD = base.getDayOfMonth();,1,0,0,1,2,2,2,0,1,6,39,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,614,        final int targetY = baseY + years;,3,1,0,0,0,2,0,0,1,4,34,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,615,        final int targetD = Math.min(,1,0,0,0,1,2,2,0,1,5,29,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,619,"        return SerialDate.createInstance(targetD, baseM, targetY);",0,0,0,0,2,1,5,0,0,3,58,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,637,        if (!SerialDate.isValidWeekdayCode(targetWeekday)) {,0,0,0,2,5,1,3,0,1,5,52,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,638,            throw new IllegalArgumentException(,0,0,0,0,1,2,0,1,1,4,35,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,645,        final int baseDOW = base.getDayOfWeek();,1,0,0,1,2,2,2,0,1,6,40,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,646,        if (baseDOW > targetWeekday) {,2,1,0,1,3,1,0,0,0,5,30,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,647,"            adjust = Math.min(0, targetWeekday - baseDOW);",3,1,0,0,2,0,2,0,1,5,46,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,650,"            adjust = -7 + Math.max(0, targetWeekday - baseDOW);",3,2,0,0,2,0,2,0,2,5,51,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,653,"        return SerialDate.addDays(adjust, base);",0,0,0,0,2,1,4,0,0,3,40,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,671,        if (!SerialDate.isValidWeekdayCode(targetWeekday)) {,0,0,0,2,5,1,3,0,1,5,52,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,672,            throw new IllegalArgumentException(,0,0,0,0,1,2,0,1,1,4,35,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,679,        final int baseDOW = base.getDayOfWeek();,1,0,0,1,2,2,2,0,1,6,40,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,680,        if (baseDOW > targetWeekday) {,2,1,0,1,3,1,0,0,0,5,30,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,681,"            adjust = 7 + Math.min(0, targetWeekday - baseDOW);",3,2,0,0,2,0,2,0,1,5,50,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,684,"            adjust = Math.max(0, targetWeekday - baseDOW);",3,1,0,0,2,0,2,0,1,5,46,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,687,"        return SerialDate.addDays(adjust, base);",0,0,0,0,2,1,4,0,0,3,40,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,704,        if (!SerialDate.isValidWeekdayCode(targetDOW)) {,0,0,0,2,5,1,3,0,1,5,48,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,705,            throw new IllegalArgumentException(,0,0,0,0,1,2,0,1,1,4,35,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,711,        final int baseDOW = base.getDayOfWeek();,1,0,0,1,2,2,2,0,1,6,40,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,712,        int adjust = -Math.abs(targetDOW - baseDOW);,3,1,0,1,2,1,2,0,1,7,44,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,713,        if (adjust >= 4) {,1,1,0,1,3,1,0,0,0,5,18,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,714,            adjust = 7 - adjust;,2,1,0,0,0,0,0,0,1,3,20,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,716,        if (adjust <= -4) {,1,1,0,1,3,1,0,0,1,6,19,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,717,            adjust = 7 + adjust;,2,1,0,0,0,0,0,0,1,3,20,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,719,"        return SerialDate.addDays(adjust, base);",0,0,0,0,2,1,4,0,0,3,40,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,731,        final int last = SerialDate.lastDayOfMonth(,1,0,0,0,1,2,2,0,1,5,43,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,734,"        return SerialDate.createInstance(last, base.getMonth(), base.getYYYY());",0,0,0,1,6,1,7,0,0,4,72,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,748,        switch (count) {,1,0,0,1,3,1,0,0,0,4,16,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,749,"            case SerialDate.FIRST_WEEK_IN_MONTH : return ""First"";",2,0,0,0,0,2,0,0,1,3,53,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,750,"            case SerialDate.SECOND_WEEK_IN_MONTH : return ""Second"";",2,0,0,0,0,2,0,0,1,3,55,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,751,"            case SerialDate.THIRD_WEEK_IN_MONTH : return ""Third"";",2,0,0,0,0,2,0,0,1,3,53,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,752,"            case SerialDate.FOURTH_WEEK_IN_MONTH : return ""Fourth"";",2,0,0,0,0,2,0,0,1,3,55,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,753,"            case SerialDate.LAST_WEEK_IN_MONTH : return ""Last"";",2,0,0,0,0,2,0,0,1,3,51,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,755,"                return ""SerialDate.weekInMonthToString(): invalid code."";",0,0,0,1,2,1,0,0,1,4,57,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,771,        switch (relative) {,1,0,0,1,3,1,0,0,0,4,19,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,772,"            case SerialDate.PRECEDING : return ""Preceding"";",2,0,0,0,0,2,0,0,1,3,47,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,773,"            case SerialDate.NEAREST : return ""Nearest"";",2,0,0,0,0,2,0,0,1,3,43,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,774,"            case SerialDate.FOLLOWING : return ""Following"";",2,0,0,0,0,2,0,0,1,3,47,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,775,"            default : return ""ERROR : Relative To String"";",0,0,0,0,0,2,0,0,2,2,46,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,804,        return new SpreadsheetDate(serial);,1,0,0,1,2,2,0,1,1,6,35,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,816,        final GregorianCalendar calendar = new GregorianCalendar();,1,0,0,1,2,2,0,2,2,6,59,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,817,        calendar.setTime(date);,0,0,0,1,2,0,3,0,0,3,23,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,818,"        return new SpreadsheetDate(calendar.get(Calendar.DATE),",2,0,0,1,3,2,2,1,1,7,55,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,849,        return this.description;,1,0,0,0,0,2,0,0,0,2,24,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,859,        this.description = description;,2,0,0,0,0,1,0,0,1,3,31,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,860,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,868,"        return getDayOfMonth() + ""-"" + SerialDate.monthCodeToString(getMonth())",0,1,0,2,6,1,4,0,3,6,71,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,1005,"        return getPreviousDayOfWeek(targetDOW, this);",0,0,0,0,2,2,2,0,1,4,45,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,1018,"        return getFollowingDayOfWeek(targetDOW, this);",0,0,0,0,2,2,2,0,1,4,46,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SerialDate,9,1029,"        return getNearestDayOfWeek(targetDOW, this);",0,0,0,0,2,2,2,0,1,4,44,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,94,"            throw new IllegalArgumentException(""Null 'period' argument."");",0,0,0,1,2,2,0,1,2,5,62,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,125,        return this.value;,1,0,0,0,0,2,0,0,0,2,18,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,134,        this.value = value;,2,0,0,0,0,1,0,0,1,3,19,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,135,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,145,        if (this == o) {,1,1,0,1,3,2,0,0,0,5,16,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,146,            return true;,0,0,0,0,0,1,0,0,1,2,12,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,148,        if (!(o instanceof TimeSeriesDataItem)) {,1,0,0,2,5,2,0,1,1,6,41,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,149,            return false;,0,0,0,0,0,1,0,0,1,2,13,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,151,        TimeSeriesDataItem timeSeriesDataItem = (TimeSeriesDataItem) o;,2,0,0,1,2,0,0,2,0,4,63,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,152,        if (this.period != null) {,1,1,0,1,3,2,0,0,0,5,26,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,153,            if (!this.period.equals(timeSeriesDataItem.period)) {,3,0,0,2,5,2,1,0,1,6,53,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,154,                return false;,0,0,0,0,0,1,0,0,1,2,13,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,157,        else if (timeSeriesDataItem.period != null) {,2,1,0,1,3,2,0,0,0,5,45,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,158,           return false;,0,0,0,0,0,1,0,0,1,2,13,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,161,        if (this.value != null) {,1,1,0,1,3,2,0,0,0,5,25,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,162,            if (!this.value.equals(timeSeriesDataItem.value)) {,3,0,0,2,5,2,1,0,1,6,51,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,163,                return false;,0,0,0,0,0,1,0,0,1,2,13,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,166,        else if (timeSeriesDataItem.value != null) {,2,1,0,1,3,2,0,0,0,5,44,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,167,            return false;,0,0,0,0,0,1,0,0,1,2,13,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,170,        return true;,0,0,0,0,0,1,0,0,1,2,12,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,180,        result = (this.period != null ? this.period.hashCode() : 0);,3,1,0,2,4,2,1,0,1,7,60,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,181,        result = 29 * result + (this.value != null ? this.value.hashCode() : 0);,4,3,0,2,4,2,1,0,1,7,72,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,182,        return result;,1,0,0,0,0,1,0,0,0,2,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,212,            result = 1;,1,0,0,0,0,0,0,0,1,2,11,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,226,        Object clone = null;,1,0,0,0,0,0,0,1,0,2,20,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,228,            clone = super.clone();,2,0,0,1,2,1,0,0,1,5,22,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,232,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,230,        catch (CloneNotSupportedException e) { // won't get here...,1,0,0,1,3,1,0,1,0,5,59,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,231,            e.printStackTrace();,0,0,0,1,2,0,2,0,0,3,20,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeriesDataItem,9,233,        return clone;,1,0,0,0,0,1,0,0,0,2,13,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,113,            throw new IllegalArgumentException(,0,0,0,0,1,2,0,1,1,4,35,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,123,            throw new IllegalArgumentException(,0,0,0,0,1,2,0,1,1,4,35,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,132,"            throw new IllegalArgumentException(""Invalid 'day' argument."");",0,0,0,1,2,2,0,1,2,5,62,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,146,    public SpreadsheetDate(final int serial) {,2,0,0,1,3,3,0,0,2,5,42,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,148,        if ((serial >= SERIAL_LOWER_BOUND) && (serial <= SERIAL_UPPER_BOUND)) {,4,3,0,2,7,1,0,0,0,5,71,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,149,            this.serial = serial;,2,0,0,0,0,1,0,0,1,3,21,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,152,            throw new IllegalArgumentException(,0,0,0,0,1,2,0,1,1,4,35,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,158,      final int days = this.serial - SERIAL_LOWER_BOUND;,3,1,0,0,0,3,0,0,1,4,50,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,160,      final int overestimatedYYYY = 1900 + (days / 365);,2,2,0,1,2,2,0,0,1,6,50,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,161,      final int leaps = SerialDate.leapYearCount(overestimatedYYYY);,1,0,0,1,2,2,3,0,1,6,62,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,162,      final int nonleapdays = days - leaps;,3,1,0,0,0,2,0,0,1,4,37,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,164,      int underestimatedYYYY = 1900 + (nonleapdays / 365);,2,2,0,1,2,1,0,0,0,5,52,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,166,      if (underestimatedYYYY == overestimatedYYYY) {,2,1,0,1,3,1,0,0,0,5,46,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,167,          this.year = underestimatedYYYY;,2,0,0,0,0,1,0,0,1,3,31,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,170,"          int ss1 = calcSerial(1, 1, underestimatedYYYY);",1,0,0,0,2,1,2,0,1,5,47,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,171,          while (ss1 <= this.serial) {,2,1,0,1,3,2,0,0,0,5,28,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,172,              underestimatedYYYY = underestimatedYYYY + 1;,2,1,0,0,0,0,0,0,1,3,44,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,173,"              ss1 = calcSerial(1, 1, underestimatedYYYY);",1,0,0,0,2,0,2,0,2,4,43,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,175,          this.year = underestimatedYYYY - 1;,2,1,0,0,0,1,0,0,1,4,35,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,178,"      final int ss2 = calcSerial(1, 1, this.year);",2,0,0,0,2,3,1,0,2,5,44,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,180,      int[] daysToEndOfPrecedingMonth,1,0,0,0,2,1,0,0,0,3,31,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,183,      if (isLeapYear(this.year)) {,1,0,0,2,5,2,1,0,1,6,28,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,184,          daysToEndOfPrecedingMonth,1,0,0,0,0,0,0,0,1,2,25,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,189,      int mm = 1;,1,0,0,0,0,1,0,0,0,2,11,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,190,      int sss = ss2 + daysToEndOfPrecedingMonth[mm] - 1;,2,2,1,0,2,1,0,0,0,5,50,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,191,      while (sss < this.serial) {,2,1,0,1,3,2,0,0,0,5,27,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,192,          mm = mm + 1;,2,1,0,0,0,0,0,0,1,3,12,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,193,          sss = ss2 + daysToEndOfPrecedingMonth[mm] - 1;,2,2,1,0,2,0,0,0,1,5,46,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,195,      this.month = mm - 1;,2,1,0,0,0,1,0,0,1,4,20,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,198,      this.day = this.serial - ss2,3,2,0,0,0,2,0,0,1,4,28,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,201,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,220,        final Calendar calendar = Calendar.getInstance();,1,0,0,1,2,1,2,1,1,7,49,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,221,"        calendar.set(getYYYY(), getMonth() - 1, getDayOfMonth(), 0, 0, 0);",0,1,0,1,8,0,5,0,3,5,66,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,222,        return calendar.getTime();,0,0,0,1,2,1,2,0,0,4,26,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,263,        return (this.serial + 6) % 7 + 1;,1,3,0,1,2,2,0,0,0,5,33,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,279,        if (object instanceof SerialDate) {,1,0,0,1,3,2,0,1,0,5,35,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,280,            final SerialDate s = (SerialDate) object;,2,0,0,1,2,1,0,2,1,6,41,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,281,            return (s.toSerial() == this.toSerial());,0,1,0,2,6,2,3,0,0,5,41,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,284,            return false;,0,0,0,0,0,1,0,0,1,2,13,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,295,        return toSerial();,0,0,0,1,2,1,1,0,1,5,18,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,320,        return compare((SerialDate) other);,1,0,0,2,4,1,1,1,1,7,35,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,333,        return (this.serial == other.toSerial());,1,1,0,2,4,2,2,0,0,6,41,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,346,        return (this.serial < other.toSerial());,1,1,0,2,4,2,2,0,0,6,40,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,359,        return (this.serial <= other.toSerial());,1,1,0,2,4,2,2,0,0,6,41,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,372,        return (this.serial > other.toSerial());,1,1,0,2,4,2,2,0,0,6,40,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,385,        return (this.serial >= other.toSerial());,1,1,0,2,4,2,2,0,0,6,41,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,399,"        return isInRange(d1, d2, SerialDate.INCLUDE_BOTH);",2,0,0,0,2,1,3,0,1,5,50,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,417,        final int s1 = d1.toSerial();,1,0,0,1,2,2,2,0,1,6,29,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,418,        final int s2 = d2.toSerial();,1,0,0,1,2,2,2,0,1,6,29,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,419,"        final int start = Math.min(s1, s2);",1,0,0,0,2,2,4,0,1,5,35,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,420,"        final int end = Math.max(s1, s2);",1,0,0,0,2,2,4,0,1,5,33,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,422,        final int s = toSerial();,1,0,0,1,2,2,1,0,2,6,25,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,423,        if (include == SerialDate.INCLUDE_BOTH) {,3,1,0,1,3,1,0,0,0,5,41,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,424,            return (s >= start && s <= end);,4,3,0,1,2,1,0,0,0,5,32,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,426,        else if (include == SerialDate.INCLUDE_FIRST) {,3,1,0,1,3,2,0,0,0,5,47,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,427,            return (s >= start && s < end);,4,3,0,1,2,1,0,0,0,5,31,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,429,        else if (include == SerialDate.INCLUDE_SECOND) {,3,1,0,1,3,2,0,0,0,5,48,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,430,            return (s > start && s <= end);,4,3,0,1,2,1,0,0,0,5,31,9,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,433,            return (s > start && s < end);,4,3,0,1,2,1,0,0,0,5,30,9,0.0,0,0
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,453,                mm = mm + 1;,2,1,0,0,0,0,0,0,1,3,12,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,191,        return this.domain;,1,0,0,0,0,2,0,0,0,2,19,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,204,        String old = this.domain;,2,0,0,0,0,1,0,1,0,3,25,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,205,        this.domain = description;,2,0,0,0,0,1,0,0,1,3,26,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,206,"        firePropertyChange(""Domain"", old, description);",0,0,0,0,2,0,3,0,2,3,47,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,207,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,217,        return this.range;,1,0,0,0,0,2,0,0,0,2,18,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,229,        String old = this.range;,2,0,0,0,0,1,0,1,0,3,24,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,230,        this.range = description;,2,0,0,0,0,1,0,0,1,3,25,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,231,"        firePropertyChange(""Range"", old, description);",0,0,0,0,2,0,3,0,2,3,46,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,232,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,250,        return Collections.unmodifiableList(this.data);,1,0,0,1,2,2,2,0,0,5,47,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,262,        return this.maximumItemCount;,1,0,0,0,0,2,0,0,0,2,29,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,277,        if (maximum < 0) {,1,1,0,1,3,1,0,0,0,5,18,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,278,"            throw new IllegalArgumentException(""Negative 'maximum' argument."");",0,0,0,1,2,2,0,1,2,5,67,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,280,        this.maximumItemCount = maximum;,2,0,0,0,0,1,0,0,1,3,32,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,281,        int count = this.data.size();,2,0,0,1,2,2,1,0,0,5,29,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,282,        if (count > maximum) {,2,1,0,1,3,1,0,0,0,5,22,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,283,"            delete(0, count - maximum - 1);",2,1,0,0,2,0,1,0,1,5,31,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,285,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,295,        return this.maximumItemAge;,1,0,0,0,0,2,0,0,0,2,27,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,311,        if (periods < 0) {,1,1,0,1,3,1,0,0,0,5,18,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,312,"            throw new IllegalArgumentException(""Negative 'periods' argument."");",0,0,0,1,2,2,0,1,2,5,67,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,314,        this.maximumItemAge = periods;,2,0,0,0,0,1,0,0,1,3,30,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,315,        removeAgedItems(true);  // remove old items and notify if necessary,0,0,0,1,2,1,1,0,2,5,67,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,316,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,328,        return this.timePeriodClass;,1,0,0,0,0,2,0,0,0,2,28,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,355,        int index = getIndex(period);,1,0,0,1,2,1,2,0,1,6,29,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,356,        if (index >= 0) {,1,1,0,1,3,1,0,0,0,5,17,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,357,            return (TimeSeriesDataItem) this.data.get(index);,1,0,0,1,4,2,2,1,0,6,49,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,360,            return null;,0,0,0,0,0,1,0,0,0,1,12,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,382,        RegularTimePeriod last = getTimePeriod(getItemCount() - 1);,1,1,0,2,4,0,2,1,2,7,59,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,383,        return last.next();,0,0,0,1,2,1,2,0,0,4,19,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,392,        Collection result = new java.util.ArrayList();,4,0,0,1,2,1,0,1,1,6,46,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,393,        for (int i = 0; i < getItemCount(); i++) {,3,1,0,2,5,2,1,0,2,7,42,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,394,            result.add(getTimePeriod(i));,0,0,0,2,4,0,4,0,1,4,29,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,396,        return result;,1,0,0,0,0,1,0,0,0,2,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,409,        Collection result = new java.util.ArrayList();,4,0,0,1,2,1,0,1,1,6,46,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,410,        for (int i = 0; i < series.getItemCount(); i++) {,3,1,0,2,5,2,2,0,1,7,49,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,411,            RegularTimePeriod period = series.getTimePeriod(i);,1,0,0,1,2,0,3,1,0,5,51,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,412,            int index = getIndex(period);,1,0,0,1,2,1,2,0,1,6,29,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,413,            if (index < 0) {,1,1,0,1,3,1,0,0,0,5,16,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,414,                result.add(period);,0,0,0,1,2,0,3,0,0,3,19,9,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,417,        return result;,1,0,0,0,0,1,0,0,0,2,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,431,"            throw new IllegalArgumentException(""Null 'period' argument."");",0,0,0,1,2,2,0,1,2,5,62,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,446,        return getDataItem(index).getValue();,0,0,0,1,4,1,3,0,1,5,37,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,459,        int index = getIndex(period);,1,0,0,1,2,1,2,0,1,6,29,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,460,        if (index >= 0) {,1,1,0,1,3,1,0,0,0,5,17,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,461,            return getValue(index);,0,0,0,1,2,1,2,0,1,5,23,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,464,            return null;,0,0,0,0,0,1,0,0,0,1,12,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,478,"        add(item, true);",0,0,0,0,2,0,2,0,2,3,16,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,479,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,492,"            throw new IllegalArgumentException(""Null 'item' argument."");",0,0,0,1,2,2,0,1,2,5,60,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,495,            StringBuffer b = new StringBuffer();,1,0,0,1,2,1,0,2,1,6,36,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,496,"            b.append(""You are trying to add data where the time period class "");",0,0,0,1,2,1,2,0,1,5,68,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,497,"            b.append(""is "");",0,0,0,1,2,0,2,0,1,4,16,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,498,            b.append(item.getPeriod().getClass().getName());,0,0,0,2,8,0,6,0,0,3,48,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,499,"            b.append("", but the TimeSeries is expecting an instance of "");",0,0,0,0,2,0,2,0,1,3,62,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,500,            b.append(this.timePeriodClass.getName());,1,0,0,2,4,1,3,0,0,5,41,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,501,"            b.append(""."");",0,0,0,1,2,0,2,0,1,4,14,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,502,            throw new SeriesException(b.toString());,0,0,0,2,4,2,2,1,1,6,40,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,519,"                int index = Collections.binarySearch(this.data, item);",2,0,0,0,2,2,3,0,0,4,54,9,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,520,                if (index < 0) {,1,1,0,1,3,1,0,0,0,5,16,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,521,"                    this.data.add(-index - 1, item);",2,1,0,0,2,1,2,0,1,6,32,11,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,522,                    added = true;,1,0,0,0,0,0,0,0,2,2,13,10,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,525,                    StringBuffer b = new StringBuffer();,1,0,0,1,2,1,0,2,1,6,36,10,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,526,"                    b.append(""You are attempting to add an observation for "");",0,0,0,1,2,1,2,0,1,5,58,11,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,527,"                    b.append(""the time period "");",0,0,0,1,2,0,2,0,1,4,29,11,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,528,                    b.append(item.getPeriod().toString());,0,0,0,2,6,0,5,0,0,3,38,11,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,529,"                    b.append("" but the series already contains an observation"");",0,0,0,1,2,0,2,0,1,4,60,11,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,530,"                    b.append("" for that time period. Duplicates are not "");",0,0,0,1,2,1,2,0,1,5,55,11,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,531,"                    b.append(""permitted.  Try using the addOrUpdate() method."");",0,0,0,2,4,0,2,0,1,4,60,11,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,532,                    throw new SeriesException(b.toString());,0,0,0,2,4,2,2,1,1,6,40,10,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,539,                this.data.remove(0);,1,0,0,1,2,1,1,0,0,5,20,9,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,614,"        TimeSeriesDataItem temp = new TimeSeriesDataItem(period, value);",3,0,0,0,2,1,0,2,1,5,64,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,615,"        int index = Collections.binarySearch(this.data, temp);",2,0,0,0,2,2,3,0,0,4,54,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,616,        if (index >= 0) {,1,1,0,1,3,1,0,0,0,5,17,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,617,            TimeSeriesDataItem pair = (TimeSeriesDataItem) this.data.get(index);,2,0,0,1,4,1,2,2,0,6,68,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,618,            pair.setValue(value);,0,0,0,1,2,0,3,0,0,3,21,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,619,            fireSeriesChanged();,0,0,0,1,2,0,1,0,1,4,20,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,620,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,622,            throw new SeriesException(,0,0,0,0,1,2,0,1,1,4,26,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,627,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,636,        TimeSeriesDataItem item = getDataItem(index);,1,0,0,1,2,0,2,1,1,6,45,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,637,        item.setValue(value);,0,0,0,1,2,0,3,0,0,3,21,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,638,        fireSeriesChanged();,0,0,0,1,2,0,1,0,1,4,20,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,639,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,650,"        TimeSeries overwritten = new TimeSeries(""Overwritten values from: """,1,1,0,0,1,1,0,2,2,6,67,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,652,        for (int i = 0; i < series.getItemCount(); i++) {,3,1,0,2,5,2,2,0,1,7,49,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,653,            TimeSeriesDataItem item = series.getDataItem(i);,1,0,0,1,2,0,3,1,0,5,48,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,654,"            TimeSeriesDataItem oldItem = addOrUpdate(item.getPeriod(),",1,0,0,1,3,0,3,1,1,6,58,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,656,            if (oldItem != null) {,1,1,0,1,3,1,0,0,0,5,22,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,657,                overwritten.add(oldItem);,0,0,0,1,2,0,3,0,0,3,25,9,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,660,        return overwritten;,1,0,0,0,0,1,0,0,0,2,19,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,677,"        return addOrUpdate(period, new Double(value));",1,0,0,1,4,2,2,1,2,7,46,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,695,        if (period == null) {,1,1,0,1,3,1,0,0,0,5,21,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,696,"            throw new IllegalArgumentException(""Null 'period' argument."");",0,0,0,1,2,2,0,1,2,5,62,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,698,        TimeSeriesDataItem overwritten = null;,1,0,0,0,0,0,0,1,0,2,38,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,700,"        TimeSeriesDataItem key = new TimeSeriesDataItem(period, value);",3,0,0,0,2,1,0,2,1,5,63,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,701,"        int index = Collections.binarySearch(this.data, key);",2,0,0,0,2,2,3,0,0,4,53,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,702,        if (index >= 0) {,1,1,0,1,3,1,0,0,0,5,17,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,703,            TimeSeriesDataItem existing,1,0,0,0,0,0,0,1,0,2,27,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,705,            overwritten = (TimeSeriesDataItem) existing.clone();,1,0,0,1,4,0,2,1,1,6,52,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,706,            existing.setValue(value);,0,0,0,1,2,0,3,0,0,3,25,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,707,"            removeAgedItems(false);  // remove old items if necessary, but",0,0,0,1,2,1,1,0,2,5,62,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,710,            fireSeriesChanged();,0,0,0,1,2,0,1,0,1,4,20,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,711,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,713,"            this.data.add(-index - 1, new TimeSeriesDataItem(period, value));",4,1,0,0,4,2,1,1,2,7,65,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,716,            if (getItemCount() > this.maximumItemCount) {,1,1,0,2,5,2,1,0,1,7,45,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,717,                this.data.remove(0);,1,0,0,1,2,1,1,0,0,5,20,9,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,720,"            removeAgedItems(false);  // remove old items if necessary, but",0,0,0,1,2,1,1,0,2,5,62,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,723,            fireSeriesChanged();,0,0,0,1,2,0,1,0,1,4,20,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,725,        return overwritten;,1,0,0,0,0,1,0,0,0,2,19,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,745,                this.data.remove(0);,1,0,0,1,2,1,1,0,0,5,20,9,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,746,                removed = true;,1,0,0,0,0,0,0,0,2,2,15,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,749,                fireSeriesChanged();,0,0,0,1,2,0,1,0,1,4,20,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,767,        long index = Long.MAX_VALUE;,3,0,0,0,0,1,0,0,0,2,28,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,769,            Method m = RegularTimePeriod.class.getDeclaredMethod(,1,0,0,0,1,1,1,2,0,5,53,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,772,            RegularTimePeriod newest = (RegularTimePeriod) m.invoke(,1,0,0,1,3,0,2,2,0,5,56,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,775,            index = newest.getSerialIndex();,1,0,0,1,2,0,2,0,1,5,32,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,785,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,777,        catch (NoSuchMethodException e) {,1,0,0,1,3,1,0,1,0,5,33,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,778,            e.printStackTrace();,0,0,0,1,2,0,2,0,0,3,20,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,780,        catch (IllegalAccessException e) {,1,0,0,1,3,1,0,1,0,5,34,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,781,            e.printStackTrace();,0,0,0,1,2,0,2,0,0,3,20,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,783,        catch (InvocationTargetException e) {,1,0,0,1,3,1,0,1,0,5,37,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,784,            e.printStackTrace();,0,0,0,1,2,0,2,0,0,3,20,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,789,        boolean removed = false;,1,0,0,0,0,1,0,0,1,3,24,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,790,        while (getItemCount() > 0 && (index,1,4,0,1,4,1,1,0,1,7,35,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,792,            this.data.remove(0);,1,0,0,1,2,1,1,0,0,5,20,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,793,            removed = true;,1,0,0,0,0,0,0,0,2,2,15,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,795,        if (removed && notify) {,2,1,0,1,3,1,0,0,0,5,24,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,796,            fireSeriesChanged();,0,0,0,1,2,0,1,0,1,4,20,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,798,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,805,        if (this.data.size() > 0) {,1,1,0,2,5,2,1,0,0,6,27,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,806,            this.data.clear();,1,0,0,1,2,1,1,0,0,5,18,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,807,            fireSeriesChanged();,0,0,0,1,2,0,1,0,1,4,20,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,809,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,820,        int index = getIndex(period);,1,0,0,1,2,1,2,0,1,6,29,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,821,        if (index >= 0) {,1,1,0,1,3,1,0,0,0,5,17,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,822,            this.data.remove(index);,1,0,0,1,2,1,2,0,0,5,24,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,823,            fireSeriesChanged();,0,0,0,1,2,0,1,0,1,4,20,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,825,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,834,        if (end < start) {,2,1,0,1,3,1,0,0,0,5,18,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,835,"            throw new IllegalArgumentException(""Requires start <= end."");",0,0,0,1,2,2,0,1,2,5,61,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,837,        for (int i = 0; i <= (end - start); i++) {,5,2,0,2,5,2,0,0,1,6,42,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,838,            this.data.remove(start);,1,0,0,1,2,1,2,0,0,5,24,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,840,        fireSeriesChanged();,0,0,0,1,2,0,1,0,1,4,20,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,841,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,859,        TimeSeries clone = (TimeSeries) super.clone();,2,0,0,1,4,1,0,2,0,5,46,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,860,        clone.data = (List) ObjectUtilities.deepClone(this.data);,3,0,0,1,4,1,2,1,1,7,57,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,861,        return clone;,1,0,0,0,0,1,0,0,0,2,13,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,880,"            throw new IllegalArgumentException(""Requires start >= 0."");",0,0,0,1,2,2,0,1,2,5,59,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,885,        TimeSeries copy = (TimeSeries) super.clone();,2,0,0,1,4,1,0,2,0,5,45,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,887,        copy.data = new java.util.ArrayList();,5,0,0,1,2,1,0,0,2,5,38,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,888,        if (this.data.size() > 0) {,1,1,0,2,5,2,1,0,0,6,27,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,889,            for (int index = start; index <= end; index++) {,5,1,0,1,3,2,0,0,1,6,48,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,890,                TimeSeriesDataItem item,1,0,0,0,0,0,0,1,0,2,23,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,892,                TimeSeriesDataItem clone = (TimeSeriesDataItem) item.clone();,1,0,0,1,4,0,2,2,0,5,61,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,894,                    copy.add(clone);,0,0,0,1,2,0,3,0,0,3,16,11,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,898,                },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,896,                catch (SeriesException e) {,1,0,0,1,3,1,0,1,0,5,27,10,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,897,                    e.printStackTrace();,0,0,0,1,2,0,2,0,0,3,20,12,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,901,        return copy;,1,0,0,0,0,1,0,0,0,2,12,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,922,"            throw new IllegalArgumentException(""Null 'start' argument."");",0,0,0,1,2,2,0,1,2,5,61,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,925,"            throw new IllegalArgumentException(""Null 'end' argument."");",0,0,0,1,2,2,0,1,2,5,59,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,928,            throw new IllegalArgumentException(,0,0,0,0,1,2,0,1,1,4,35,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,936,                emptyRange = true;  // start is after last data item,1,0,0,0,0,0,0,0,2,2,52,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,945,            emptyRange = true;,1,0,0,0,0,0,0,0,2,2,18,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,948,            TimeSeries copy = (TimeSeries) super.clone();,2,0,0,1,4,1,0,2,0,5,45,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,949,            copy.data = new java.util.ArrayList();,5,0,0,1,2,1,0,0,2,5,38,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,950,            return copy;,1,0,0,0,0,1,0,0,0,2,12,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,966,        if (object == this) {,1,1,0,1,3,2,0,0,0,5,21,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,967,            return true;,0,0,0,0,0,1,0,0,1,2,12,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,969,        if (!(object instanceof TimeSeries) || !super.equals(object)) {,3,1,0,2,7,3,0,1,2,7,63,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,970,            return false;,0,0,0,0,0,1,0,0,1,2,13,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,972,        TimeSeries s = (TimeSeries) object;,2,0,0,1,2,0,0,2,0,4,35,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,973,"        if (!ObjectUtilities.equal(getDomainDescription(),",0,0,0,1,4,1,3,0,2,5,50,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,975,            return false;,0,0,0,0,0,1,0,0,1,2,13,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,978,"        if (!ObjectUtilities.equal(getRangeDescription(),",0,0,0,1,4,1,3,0,2,5,49,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,980,            return false;,0,0,0,0,0,1,0,0,1,2,13,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,983,        if (!getClass().equals(s.getClass())) {,0,0,0,3,9,1,4,0,2,5,39,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,984,            return false;,0,0,0,0,0,1,0,0,1,2,13,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,987,        if (getMaximumItemAge() != s.getMaximumItemAge()) {,0,1,0,2,7,1,3,0,1,6,51,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,988,            return false;,0,0,0,0,0,1,0,0,1,2,13,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,991,        if (getMaximumItemCount() != s.getMaximumItemCount()) {,0,1,0,2,7,1,3,0,1,6,55,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,992,            return false;,0,0,0,0,0,1,0,0,1,2,13,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,995,        int count = getItemCount();,1,0,0,1,2,1,1,0,1,6,27,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,996,        if (count != s.getItemCount()) {,1,1,0,2,5,1,2,0,0,6,32,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,997,            return false;,0,0,0,0,0,1,0,0,1,2,13,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,999,        for (int i = 0; i < count; i++) {,4,1,0,1,3,2,0,0,1,6,33,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,1000,            if (!getDataItem(i).equals(s.getDataItem(i))) {,0,0,0,3,9,1,6,0,2,5,47,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,1001,                return false;,0,0,0,0,0,1,0,0,1,2,13,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,1004,        return true;,0,0,0,0,0,1,0,0,1,2,12,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,1013,        int result = super.hashCode();,2,0,0,1,2,2,0,0,0,4,30,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,1014,        result = 29 * result + (this.domain != null ? this.domain.hashCode(),4,3,0,1,3,2,1,0,1,7,68,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,1016,        result = 29 * result + (this.range != null ? this.range.hashCode() : 0);,4,3,0,2,4,2,1,0,1,7,72,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,1017,        result = 29 * result + (this.timePeriodClass != null,3,3,0,0,1,1,0,0,1,5,52,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,1021,        int count = getItemCount();,1,0,0,1,2,1,1,0,1,6,27,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,1022,        if (count > 0) {,1,1,0,1,3,1,0,0,0,5,16,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,1023,            TimeSeriesDataItem item = getDataItem(0);,1,0,0,1,2,0,1,1,1,6,41,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,1024,            result = 29 * result + item.hashCode();,2,2,0,1,2,0,2,0,1,6,39,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,1026,        if (count > 1) {,1,1,0,1,3,1,0,0,0,5,16,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,1027,            TimeSeriesDataItem item = getDataItem(count - 1);,2,1,0,1,2,0,1,1,1,7,49,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,1028,            result = 29 * result + item.hashCode();,2,2,0,1,2,0,2,0,1,6,39,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,1030,        if (count > 2) {,1,1,0,1,3,1,0,0,0,5,16,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,1031,            TimeSeriesDataItem item = getDataItem(count / 2);,2,1,0,1,2,0,1,1,1,7,49,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,1032,            result = 29 * result + item.hashCode();,2,2,0,1,2,0,2,0,1,6,39,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,1034,        result = 29 * result + this.maximumItemCount;,3,2,0,0,0,1,0,0,1,4,45,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,1035,        result = 29 * result + (int) this.maximumItemAge;,3,2,0,1,2,2,0,0,1,6,49,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/TimeSeries,9,1036,        return result;,1,0,0,0,0,1,0,0,0,2,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,94,        this(new Date());,0,0,0,2,4,2,0,1,1,5,17,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,95,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,103,"    public Month(int month, int year) {",3,0,0,0,3,3,0,0,1,4,35,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,104,        if ((month < 1) || (month > 12)) {,2,3,0,2,7,1,0,0,0,5,34,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,105,"            throw new IllegalArgumentException(""Month outside valid range."");",0,0,0,1,2,2,0,1,2,5,65,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,107,        this.month = month;,2,0,0,0,0,1,0,0,1,3,19,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,108,        this.year = year;,2,0,0,0,0,1,0,0,1,3,17,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,109,        peg(Calendar.getInstance());,0,0,0,2,4,0,3,0,1,4,28,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,110,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,118,"    public Month(int month, Year year) {",3,0,0,0,3,2,0,1,1,5,36,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,119,        if ((month < 1) || (month > 12)) {,2,3,0,2,7,1,0,0,0,5,34,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,120,"            throw new IllegalArgumentException(""Month outside valid range."");",0,0,0,1,2,2,0,1,2,5,65,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,122,        this.month = month;,2,0,0,0,0,1,0,0,1,3,19,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,123,        this.year = year.getYear();,1,0,0,1,2,1,2,0,1,6,27,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,124,        peg(Calendar.getInstance());,0,0,0,2,4,0,3,0,1,4,28,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,125,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,134,"        this(time, RegularTimePeriod.DEFAULT_TIME_ZONE);",3,0,0,0,2,1,0,0,0,3,48,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,135,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,145,"    public Month(Date time, TimeZone zone) {",3,0,0,0,3,1,0,2,1,5,40,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,146,        Calendar calendar = Calendar.getInstance(zone);,1,0,0,1,2,0,3,1,0,5,47,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,147,        calendar.setTime(time);,0,0,0,1,2,0,3,0,0,3,23,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,148,        this.month = calendar.get(Calendar.MONTH) + 1;,3,1,0,1,2,1,2,0,1,7,46,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,149,        this.year = calendar.get(Calendar.YEAR);,3,0,0,1,2,1,2,0,1,6,40,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,150,        peg(calendar);,0,0,0,1,2,0,2,0,1,4,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,151,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,159,        return new Year(this.year);,1,0,0,1,2,3,0,1,1,6,27,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,168,        return this.year;,1,0,0,0,0,2,0,0,0,2,17,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,177,        return this.month;,1,0,0,0,0,2,0,0,0,2,18,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,191,        return this.firstMillisecond;,1,0,0,0,0,2,0,0,0,2,29,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,205,        return this.lastMillisecond;,1,0,0,0,0,2,0,0,0,2,28,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,217,        this.firstMillisecond = getFirstMillisecond(calendar);,1,0,0,1,2,1,2,0,2,6,54,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,218,        this.lastMillisecond = getLastMillisecond(calendar);,1,0,0,1,2,1,2,0,2,6,52,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,219,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,228,        if (this.month != MonthConstants.JANUARY) {,3,1,0,1,3,2,0,0,0,5,43,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,229,"            result = new Month(this.month - 1, this.year);",3,1,0,0,2,3,0,1,2,6,46,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,232,            if (this.year > 1900) {,1,1,0,1,3,2,0,0,0,5,23,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,233,"                result = new Month(MonthConstants.DECEMBER, this.year - 1);",4,1,0,0,2,2,0,1,2,6,59,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,236,                result = null;,1,0,0,0,0,0,0,0,1,2,14,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,239,        return result;,1,0,0,0,0,1,0,0,0,2,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,249,        if (this.month != MonthConstants.DECEMBER) {,3,1,0,1,3,2,0,0,0,5,44,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,250,"            result = new Month(this.month + 1, this.year);",3,1,0,0,2,3,0,1,2,6,46,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,253,            if (this.year < 9999) {,1,1,0,1,3,2,0,0,0,5,23,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,254,"                result = new Month(MonthConstants.JANUARY, this.year + 1);",4,1,0,0,2,2,0,1,2,6,58,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,257,                result = null;,1,0,0,0,0,0,0,0,1,2,14,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,260,        return result;,1,0,0,0,0,1,0,0,0,2,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,269,        return this.year * 12L + this.month;,2,2,0,0,0,3,0,0,0,3,36,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,280,"        return SerialDate.monthCodeToString(this.month) + "" "" + this.year;",2,1,0,1,2,3,2,0,1,7,66,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,295,        if (obj != null) {,1,1,0,1,3,1,0,0,0,5,18,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,296,            if (obj instanceof Month) {,1,0,0,1,3,2,0,1,0,5,27,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,297,                Month target = (Month) obj;,2,0,0,1,2,0,0,2,0,4,27,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,298,                return (this.month == target.getMonth(),1,2,0,1,3,2,2,0,0,6,39,9,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,302,                return false;,0,0,0,0,0,1,0,0,1,2,13,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,306,            return false;,0,0,0,0,0,1,0,0,1,2,13,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,321,        int result = 17;,1,0,0,0,0,1,0,0,0,2,16,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,322,        result = 37 * result + this.month;,3,2,0,0,0,1,0,0,1,4,34,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,323,        result = 37 * result + this.year;,3,2,0,0,0,1,0,0,1,4,33,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,324,        return result;,1,0,0,0,0,1,0,0,0,2,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,342,        if (o1 instanceof Month) {,1,0,0,1,3,2,0,1,0,5,26,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,343,            Month m = (Month) o1;,2,0,0,1,2,0,0,2,0,4,21,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,344,            result = this.year - m.getYearValue();,2,1,0,1,2,1,2,0,1,7,38,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,345,            if (result == 0) {,1,1,0,1,3,1,0,0,0,5,18,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,346,                result = this.month - m.getMonth();,2,1,0,1,2,1,2,0,1,7,35,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,348,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,352,        else if (o1 instanceof RegularTimePeriod) {,1,0,0,1,3,3,0,1,0,5,43,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,354,            result = 0;,1,0,0,0,0,0,0,0,1,2,11,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,361,            result = 1;,1,0,0,0,0,0,0,0,1,2,11,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,364,        return result;,1,0,0,0,0,1,0,0,0,2,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,380,"        calendar.set(this.year, this.month - 1, 1, 0, 0, 0);",2,1,0,0,2,2,2,0,0,5,52,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,381,"        calendar.set(Calendar.MILLISECOND, 0);",2,0,0,0,2,0,2,0,0,3,38,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,384,        return calendar.getTime().getTime();,0,0,0,1,4,1,3,0,0,4,36,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,399,"        int eom = SerialDate.lastDayOfMonth(this.month, this.year);",3,0,0,0,2,3,2,0,0,4,59,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,400,"        calendar.set(this.year, this.month - 1, eom, 23, 59, 59);",2,1,0,0,2,2,3,0,0,5,57,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,401,"        calendar.set(Calendar.MILLISECOND, 999);",2,0,0,0,2,0,2,0,0,3,40,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,404,        return calendar.getTime().getTime();,0,0,0,1,4,1,3,0,0,4,36,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,420,        Month result = null;,1,0,0,0,0,0,0,1,0,2,20,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,421,        if (s != null) {,1,1,0,1,3,1,0,0,0,5,16,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,424,            s = s.trim();,1,0,0,1,2,0,2,0,1,5,13,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,426,            int i = Month.findSeparator(s);,1,0,0,1,2,1,3,0,0,5,31,7,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,427,            if (i != -1) {,1,1,0,1,3,1,0,0,1,6,14,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,428,"                String s1 = s.substring(0, i).trim();",1,0,0,1,4,0,4,1,0,5,37,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,429,"                String s2 = s.substring(i + 1, s.length()).trim();",2,1,0,1,6,0,5,1,0,6,50,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,431,                Year year = Month.evaluateAsYear(s1);,1,0,0,1,2,0,3,1,0,5,37,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,433,                if (year != null) {,1,1,0,1,3,1,0,0,0,5,19,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,434,                    month = SerialDate.stringToMonthCode(s2);,1,0,0,1,2,0,3,0,1,5,41,10,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,435,                    if (month == -1) {,1,1,0,1,3,1,0,0,1,6,18,10,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,436,                        throw new TimePeriodFormatException(,0,0,0,0,1,2,0,1,1,4,36,12,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,440,"                    result = new Month(month, year);",3,0,0,0,2,1,0,1,2,5,32,10,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,443,                    year = Month.evaluateAsYear(s2);,1,0,0,1,2,0,3,0,1,5,32,10,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,444,                    if (year != null) {,1,1,0,1,3,1,0,0,0,5,19,10,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,445,                        month = SerialDate.stringToMonthCode(s1);,1,0,0,1,2,0,3,0,1,5,41,12,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,446,                        if (month == -1) {,1,1,0,1,3,1,0,0,1,6,18,12,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,447,                            throw new TimePeriodFormatException(,0,0,0,0,1,2,0,1,1,4,36,14,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,451,"                        result = new Month(month, year);",3,0,0,0,2,1,0,1,2,5,32,12,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,454,                        throw new TimePeriodFormatException(,0,0,0,0,1,2,0,1,1,4,36,12,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,460,            },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,462,                throw new TimePeriodFormatException(,0,0,0,0,1,2,0,1,1,4,36,8,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,468,        return result;,1,0,0,0,0,1,0,0,0,2,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,482,        int result = s.indexOf('-');,1,0,0,1,2,1,2,0,1,6,28,5,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,483,        if (result == -1) {,1,1,0,1,3,1,0,0,1,6,19,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,484,"            result = s.indexOf(',');",1,0,0,0,2,0,2,0,2,4,24,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,486,        if (result == -1) {,1,1,0,1,3,1,0,0,1,6,19,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,487,            result = s.indexOf(' ');,1,0,0,1,2,0,2,0,2,5,24,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,489,        if (result == -1) {,1,1,0,1,3,1,0,0,1,6,19,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,490,            result = s.indexOf('.');,1,0,0,1,2,0,2,0,2,5,24,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,492,        return result;,1,0,0,0,0,1,0,0,0,2,14,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,506,        Year result = null;,1,0,0,0,0,0,0,1,0,2,19,4,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,508,            result = Year.parseYear(s);,1,0,0,1,2,0,3,0,1,5,27,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,512,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,510,        catch (TimePeriodFormatException e) {,1,0,0,1,3,1,0,1,0,5,37,6,0.0,0,0
+defect4j,chart,org/jfree/data/time/Month,9,513,        return result;,1,0,0,0,0,1,0,0,0,2,14,4,0.0,0,0

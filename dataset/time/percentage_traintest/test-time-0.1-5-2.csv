@@ -1,0 +1,30 @@
+dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,logic,lengthEle,lengthWord,depth,suspicious,accuracy,miss_line,predict
+defect4j,time,org/joda/time/MonthDay,10,408,        switch (index) {,2,0,0,1,3,0,0,0,0,2,16,4,2.0,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,11,255,        int size = period.size();,0,0,0,1,2,0,0,0,0,3,25,4,1.0,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,11,256,        int[] values = new int[size];,16,3,0,2,4,0,10,0,0,29,29,3,1.0,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,11,257,        if (startInstant != endInstant) {,0,0,0,1,3,0,0,0,0,4,33,4,1.0,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,11,258,            for (int i = 0; i < size; i++) {,18,2,0,1,3,0,4,0,0,26,32,6,1.0,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,11,259,                DurationField field = period.getFieldType(i).getField(this);,14,3,1,2,4,0,16,2,0,39,60,3,1.0,0,0,-1
+defect4j,time,org/joda/time/field/PreciseDurationDateTimeField,12,129,            return (instant + 1) % iUnitMillis + iUnitMillis - 1;,6,4,0,1,2,1,0,0,0,10,53,6,4.0,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,2016,        return ISODateTimeFormat.dateTime().print(this);,0,0,0,2,4,1,6,0,0,6,48,5,1.77778,1,1,-1
+defect4j,time,org/joda/time/LocalDateTime,12,612,        if (type == null) {,0,0,0,1,3,0,0,0,0,4,19,4,1.33333,1,1,-1
+defect4j,time,org/joda/time/LocalDateTime,12,615,        return type.getField(getChronology()).isSupported();,4,0,0,3,6,3,4,4,0,14,52,1,1.33333,1,1,-1
+defect4j,time,org/joda/time/LocalDate,12,1805,        return ISODateTimeFormat.date().print(this);,0,0,0,2,4,1,6,0,0,6,44,5,1.33333,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,597,        if (type == null) {,0,0,0,1,3,0,0,0,0,4,19,4,0.8,0,0,-1
+defect4j,time,org/joda/time/Period,13,967,        int[] values = getValues();  // cloned,2,0,0,2,4,0,2,0,0,4,38,5,1.0,0,0,-1
+defect4j,time,org/joda/time/Period,13,968,"        getPeriodType().setIndexedField(this, PeriodType.MILLI_INDEX, values, millis);",4,1,0,2,4,0,0,0,0,5,78,7,1.0,0,0,-1
+defect4j,time,org/joda/time/Period,13,969,"        return new Period(values, getPeriodType());",0,0,0,2,4,1,0,0,0,7,43,4,1.0,0,0,-1
+defect4j,time,org/joda/time/format/FormatUtils,13,337,            if (value != Long.MIN_VALUE) {,0,0,0,1,3,0,0,0,0,4,30,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/FormatUtils,13,338,                return calculateDigitCount(-value) + 1;,2,0,0,1,2,1,12,0,0,15,39,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/FormatUtils,13,237,            buf.append('-');,0,0,0,1,2,0,0,0,0,3,16,4,0.33333,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,14,314,        return iMessage;,2,0,0,0,0,1,0,0,0,2,16,4,18.0,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicMonthOfYearDateTimeField,14,206,        if (valueToAdd == 0) {,2,1,0,1,3,0,0,0,0,3,22,4,4.92308,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicMonthOfYearDateTimeField,14,210,        if (DateTimeUtils.isContiguous(partial)) {,0,0,0,2,5,0,0,0,0,7,42,4,4.92308,1,1,-1
+defect4j,time,org/joda/time/chrono/BasicMonthOfYearDateTimeField,14,211,            long instant = 0L;,0,0,0,0,0,0,0,0,0,0,18,4,4.92308,1,1,-1
+defect4j,time,org/joda/time/chrono/BasicMonthOfYearDateTimeField,14,212,"            for (int i = 0, isize = partial.size(); i < isize; i++) {",0,0,0,2,5,0,0,0,0,7,57,4,4.92308,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicMonthOfYearDateTimeField,14,213,"                instant = partial.getFieldType(i).getField(iChronology).set(instant, values[i]);",2,0,1,4,8,0,14,0,0,21,80,8,4.92308,0,0,-1
+defect4j,time,org/joda/time/MonthDay,14,518,        int[] newValues = getValues();,2,0,0,2,4,0,8,0,0,10,30,1,4.92308,0,0,-1
+defect4j,time,org/joda/time/field/FieldUtils,15,138,                return -val1;,2,0,0,0,0,1,0,0,0,3,13,5,0.08333,1,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,698,        DateTimeParser parser = requireParser();,2,0,0,1,2,0,2,2,0,6,40,4,6.125,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,699,        if (instant == null) {,0,0,0,1,3,0,0,0,0,4,22,4,6.125,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,703,        long instantMillis = instant.getMillis();,0,0,0,1,2,0,0,0,0,3,41,4,6.125,0,0,-1

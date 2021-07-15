@@ -1,0 +1,58 @@
+project_path,version,lines,statement,suspicious,faulty,predict,miss_line
+org/apache/commons/lang/time/StopWatch,55,179,        stopTime = System.currentTimeMillis();,1.0,1,,1
+org/apache/commons/lang/time/StopWatch,55,180,        this.runningState = STATE_SUSPENDED;,1.0,1,,1
+org/apache/commons/lang/time/StopWatch,55,181,    },1.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,176,        if(this.runningState != STATE_RUNNING) {,0.5,0,,0
+org/apache/commons/lang/time/StopWatch,55,210,            return this.stopTime - this.startTime;,0.33333,0,,0
+org/apache/commons/lang/time/StopWatch,55,115,        if(this.runningState != STATE_RUNNING && this.runningState != STATE_SUSPENDED) {,0.25,0,,0
+org/apache/commons/lang/time/StopWatch,55,118,            stopTime = System.currentTimeMillis();,0.25,0,,0
+org/apache/commons/lang/time/StopWatch,55,119,        this.runningState = STATE_STOPPED;,0.25,0,,0
+org/apache/commons/lang/time/StopWatch,55,120,    },0.25,0,,0
+org/apache/commons/lang/time/StopWatch,55,209,        if(this.runningState == STATE_STOPPED || this.runningState == STATE_SUSPENDED) {,0.25,0,,0
+org/apache/commons/lang/time/StopWatch,55,85,        super();,0.2,0,,0
+org/apache/commons/lang/time/StopWatch,55,65,    private int runningState = STATE_UNSTARTED;,0.2,0,,0
+org/apache/commons/lang/time/StopWatch,55,70,    private int splitState   = STATE_UNSPLIT;,0.2,0,,0
+org/apache/commons/lang/time/StopWatch,55,75,    private long startTime = -1;,0.2,0,,0
+org/apache/commons/lang/time/StopWatch,55,79,    private long stopTime = -1;,0.2,0,,0
+org/apache/commons/lang/time/StopWatch,55,86,    },0.2,0,,0
+org/apache/commons/lang/time/StopWatch,55,96,        if(this.runningState == STATE_STOPPED) {,0.2,0,,0
+org/apache/commons/lang/time/StopWatch,55,99,        if(this.runningState != STATE_UNSTARTED) {,0.2,0,,0
+org/apache/commons/lang/time/StopWatch,55,102,        stopTime = -1;,0.2,0,,0
+org/apache/commons/lang/time/StopWatch,55,103,        startTime = System.currentTimeMillis();,0.2,0,,0
+org/apache/commons/lang/time/StopWatch,55,104,        this.runningState = STATE_RUNNING;,0.2,0,,0
+org/apache/commons/lang/time/StopWatch,55,105,    },0.2,0,,0
+org/apache/commons/lang/time/StopWatch,55,97,"            throw new IllegalStateException(""Stopwatch must be reset before being restarted. "");",0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,100,"            throw new IllegalStateException(""Stopwatch already started. "");",0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,116,"            throw new IllegalStateException(""Stopwatch is not running. "");",0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,128,        this.runningState = STATE_UNSTARTED;,0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,129,        this.splitState   = STATE_UNSPLIT;,0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,130,        startTime = -1;,0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,131,        stopTime = -1;,0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,132,    },0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,144,        if(this.runningState != STATE_RUNNING) {,0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,145,"            throw new IllegalStateException(""Stopwatch is not running. "");",0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,147,        stopTime = System.currentTimeMillis();,0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,148,        this.splitState = STATE_SPLIT;,0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,149,    },0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,160,        if(this.splitState != STATE_SPLIT) {,0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,161,"            throw new IllegalStateException(""Stopwatch has not been split. "");",0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,163,        stopTime = -1;,0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,164,        this.splitState = STATE_UNSPLIT;,0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,165,    },0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,177,"            throw new IllegalStateException(""Stopwatch must be running to suspend. "");",0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,192,        if(this.runningState != STATE_SUSPENDED) {,0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,193,"            throw new IllegalStateException(""Stopwatch must be suspended to resume. "");",0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,195,        startTime += (System.currentTimeMillis() - stopTime);,0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,196,        stopTime = -1;,0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,197,        this.runningState = STATE_RUNNING;,0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,198,    },0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,212,        if(this.runningState == STATE_UNSTARTED) {,0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,213,            return 0;,0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,215,        if(this.runningState == STATE_RUNNING) {,0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,216,            return System.currentTimeMillis() - this.startTime;,0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,218,"        throw new RuntimeException(""Illegal running state has occured. "");",0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,232,        if(this.splitState != STATE_SPLIT) {,0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,233,"            throw new IllegalStateException(""Stopwatch must be split to get the split time. "");",0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,235,        return this.stopTime - this.startTime;,0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,247,        return DurationFormatUtils.formatDurationHMS(getTime());,0.0,0,,0
+org/apache/commons/lang/time/StopWatch,55,260,        return DurationFormatUtils.formatDurationHMS(getSplitTime());,0.0,0,,0

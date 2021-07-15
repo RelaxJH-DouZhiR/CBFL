@@ -1,0 +1,35 @@
+dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,logic,lengthEle,lengthWord,depth,suspicious,accuracy,miss_line,predict
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,1,462,                pfxLen += pfx.length();,2,0,0,1,2,0,4,0,0,7,23,8,0.33333,0,0,-1
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,1,463,                break;,0,0,0,0,0,0,0,0,0,0,6,4,0.33333,0,0,-1
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,1,467,            final int hexDigits = str.length() - pfxLen;,6,2,0,1,2,1,4,0,0,13,44,4,0.33333,1,0,-1
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,1,468,            if (hexDigits > 16) { // too many for Long,2,1,0,1,3,0,0,0,0,3,42,6,0.33333,1,0,-1
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,1,471,            if (hexDigits > 8) { // too many for an int,4,2,0,1,3,0,0,0,0,6,43,4,0.33333,1,0,-1
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,1,474,            return createInteger(str);,2,0,0,1,2,1,4,0,0,7,26,5,0.33333,0,0,-1
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,1,680,        if (str == null) {,2,1,0,1,3,0,0,0,0,3,18,4,0.25,0,0,-1
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,1,684,        return Integer.decode(str);,0,0,0,1,2,1,6,0,0,6,27,5,0.25,0,0,-1
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,1,451,        if (str == null) {,4,1,0,1,3,0,0,0,0,5,18,4,0.11111,0,0,-1
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,1,454,        if (StringUtils.isBlank(str)) {,0,0,0,2,5,0,0,0,0,7,31,4,0.11111,0,0,-1
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,1,458,"        final String[] hex_prefixes = {""0x"", ""0X"", ""-0x"", ""-0X"", ""#"", ""-#""};",2,0,0,2,4,1,0,2,0,11,68,4,0.11111,0,0,-1
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,3,494,                dec = str.substring(decPos + 1);,6,2,0,1,2,0,4,2,0,16,32,5,0.5,0,0,-1
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,3,573,            exp = null;,0,0,0,0,0,0,0,0,0,0,11,4,0.33333,0,0,-1
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,3,594,                if (!(f.isInfinite() || (f.floatValue() == 0.0F && !allZeros))) {,0,0,0,5,11,0,0,0,0,16,65,4,0.33333,1,1,-1
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,3,595,                    return f;,2,0,0,0,0,1,0,0,0,2,9,8,0.33333,0,0,-1
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,3,492,"                dec = str.substring(decPos + 1, expPos);",0,0,0,1,2,0,0,0,0,3,40,4,0.25,0,0,-1
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,3,496,"            mant = str.substring(0, decPos);",0,0,0,1,2,0,0,0,0,3,32,4,0.25,0,0,-1
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,3,497,            numDecimals = dec.length(); // gets number of digits past the decimal to ensure no loss of precision for floating point numbers.,0,0,0,1,2,0,0,0,0,3,128,4,0.25,0,0,-1
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,3,570,        if (expPos > -1 && expPos < str.length() - 1) {,6,4,0,2,5,3,4,4,0,22,47,1,0.25,0,0,-1
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,3,571,"            exp = str.substring(expPos + 1, str.length());",4,1,0,2,4,0,8,0,0,14,46,6,0.25,0,0,-1
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,3,575,        if (dec == null && exp == null) { // no decimal point and no exponent,4,3,0,1,3,0,0,0,0,7,69,4,0.25,0,0,-1
+defect4j,lang,org/apache/commons/lang3/math/NumberUtils,3,591,        final boolean allZeros = isAllZeros(mant) && isAllZeros(exp);,2,1,0,2,4,1,8,0,0,12,61,4,0.25,0,0,-1
+defect4j,lang,org/apache/commons/lang3/text/translate/LookupTranslator,4,76,"            final CharSequence subSeq = input.subSequence(index, index + i);",6,1,0,1,2,1,6,2,0,16,64,6,0.04167,0,0,-1
+defect4j,lang,org/apache/commons/lang3/LocaleUtils,5,99,"                throw new IllegalArgumentException(""Invalid locale format: "" + str);",0,0,0,1,2,0,0,0,0,3,68,4,0.5,1,1,-1
+defect4j,lang,org/apache/commons/lang3/StringEscapeUtils,6,556,        return ESCAPE_CSV.translate(input);,0,0,0,1,2,1,6,0,0,6,35,5,1.0,0,0,-1
+defect4j,lang,org/apache/commons/lang3/StringEscapeUtils,6,156,            if(index != 0) {,2,1,0,1,3,0,0,0,0,3,16,5,0.5,0,0,-1
+defect4j,lang,org/apache/commons/lang3/StringEscapeUtils,6,160,"            if (StringUtils.containsNone(input.toString(), CSV_SEARCH_CHARS)) {",0,0,0,3,7,0,10,0,0,10,67,6,0.5,0,0,-1
+defect4j,lang,org/apache/commons/lang3/StringEscapeUtils,6,161,                out.write(input.toString());,0,0,0,2,4,0,8,0,0,8,28,8,0.5,0,0,-1
+defect4j,lang,org/apache/commons/lang3/StringEscapeUtils,6,167,            return input.length();,0,0,0,1,2,1,4,0,0,4,22,6,0.5,0,0,-1
+defect4j,lang,org/apache/commons/lang3/StringUtils,6,1737,        if (cs == null || searchChars == null) {,4,3,0,1,3,0,0,0,0,7,40,4,0.5,0,0,-1
+defect4j,lang,org/apache/commons/lang3/StringUtils,6,1740,        int csLen = cs.length();,14,1,0,1,2,3,4,4,0,27,24,1,0.5,0,0,-1
+defect4j,lang,org/apache/commons/lang3/StringUtils,6,1741,        int csLast = csLen - 1;,4,1,0,0,0,0,0,0,0,5,23,5,0.5,0,0,-1
+defect4j,lang,org/apache/commons/lang3/StringUtils,6,1742,        int searchLen = searchChars.length;,12,0,0,0,0,0,0,0,0,12,35,5,0.5,0,0,-1
+defect4j,lang,org/apache/commons/lang3/StringUtils,6,1743,        int searchLast = searchLen - 1;,4,1,0,0,0,0,0,0,0,5,31,5,0.5,0,0,-1

@@ -1,0 +1,78 @@
+dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,logic,lengthEle,lengthWord,depth,suspicious,accuracy,miss_line,predict
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,66,159,                        u = x + d;,2,0,0,0,0,0,0,0,0,3,10,6,3.2,0,0,-1
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,43,"        super(100, 1E-10);",0,0,0,1,2,0,0,0,0,3,18,4,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,44,    },0,0,0,0,1,0,0,0,0,1,1,4,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/optimization/univariate/BrentOptimizer,67,37,    private static final double GOLDEN_SECTION = 0.5 * (3 - Math.sqrt(5));,6,1,0,2,4,1,6,0,0,14,70,3,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,381,                            tmp = 0.1;,2,0,0,0,0,0,0,0,0,3,10,12,0.28571,1,1,-1
+defect4j,math,org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,607,            } else if (fp < 0) {,0,0,0,1,4,0,0,0,0,5,20,4,0.28571,1,1,-1
+defect4j,math,org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,161,        TDistribution tDistribution = new TDistributionImpl(nObs - 2);,4,1,0,1,2,0,0,4,0,9,62,4,0.8,0,0,-1
+defect4j,math,org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,162,        int nVars = correlationMatrix.getColumnDimension();,2,0,0,1,2,0,0,0,0,2,51,4,0.8,0,0,-1
+defect4j,math,org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,163,        double[][] out = new double[nVars][nVars];,4,0,0,4,8,0,14,0,0,18,42,5,0.8,0,0,-1
+defect4j,math,org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,164,        for (int i = 0; i < nVars; i++) {,0,0,0,1,3,0,0,0,0,4,33,4,0.8,0,0,-1
+defect4j,math,org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,165,            for (int j = 0; j < nVars; j++) {,0,0,0,1,3,0,0,0,0,4,33,4,0.8,0,0,-1
+defect4j,math,org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,166,                if (i == j) {,4,1,0,1,3,0,0,0,0,5,13,8,0.8,0,0,-1
+defect4j,math,org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,167,                    out[i][j] = 0d;,0,0,0,2,4,0,0,0,0,6,15,4,0.8,0,0,-1
+defect4j,math,org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,169,"                    double r = correlationMatrix.getEntry(i, j);",2,0,0,1,2,0,8,0,0,10,44,11,0.8,0,0,-1
+defect4j,math,org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,170,                    double t = Math.abs(r * Math.sqrt((nObs - 2)/(1 - r * r)));,0,0,0,4,8,0,0,0,0,12,59,4,0.8,0,0,-1
+defect4j,math,org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,171,                    out[i][j] = 2 * (1 - tDistribution.cumulativeProbability(t));,0,0,0,4,8,0,0,0,0,12,61,4,0.8,1,0,-1
+defect4j,math,org/apache/commons/math/stat/correlation/PearsonsCorrelation,69,175,        return new BlockRealMatrix(out);,2,0,0,1,2,1,0,2,0,4,32,5,0.8,0,0,-1
+defect4j,math,org/apache/commons/math/analysis/solvers/BisectionSolver,70,66,"        return solve(f, min, max);",0,0,0,1,2,1,8,0,0,8,26,5,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/ode/nonstiff/RungeKuttaIntegrator,71,180,                loop     = false;,2,0,0,0,0,0,0,0,0,4,17,12,1.0,1,0,-1
+defect4j,math,org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator,71,300,                  loop     = false;,0,0,0,0,0,0,0,0,0,0,17,4,1.0,1,0,-1
+defect4j,math,org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator,71,150,    if ((initialStepSize < minStep) || (initialStepSize > maxStep)) {,0,0,0,3,7,0,0,0,0,10,65,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator,71,153,      initialStep = initialStepSize;,0,0,0,0,0,0,0,0,0,0,30,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl,72,196,        return (start < mid) && (mid < end);,8,3,0,2,4,1,0,0,0,11,36,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl,73,196,        return (start < mid) && (mid < end);,12,3,0,2,4,1,0,0,0,16,36,3,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator,74,292,          filteredH = maxStep;,0,0,0,0,0,0,0,0,0,0,20,4,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator,74,309,                    final double factor = computeStepGrowShrinkFactor(error);,0,0,0,1,2,0,0,0,0,3,57,4,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator,74,310,"                    hNew = filterStep(stepSize * factor, forward, false);",12,4,0,1,2,0,4,0,0,23,53,3,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator,74,311,                    interpolator.rescale(hNew);,0,0,0,1,2,0,6,0,0,6,27,11,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator,74,290,                        final double dt = manager.getEventTime() - stepStart;,0,0,0,1,2,0,0,0,0,3,53,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator,74,291,                        if (Math.abs(dt) <= Math.ulp(stepStart)) {,0,0,0,3,7,0,0,0,0,10,42,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator,74,296,                            hNew = dt;,0,0,0,0,0,0,0,0,0,0,10,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator,74,297,                            interpolator.rescale(hNew);,0,0,0,1,2,0,6,0,0,6,27,15,0.5,0,0,-1
+defect4j,math,org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator,74,299,                    } else {,6,0,0,0,2,2,6,12,0,26,8,1,0.5,0,0,-1
+defect4j,math,org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator,74,356,        final double stopTime  = stepStart;,4,0,0,0,0,1,0,0,0,5,35,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator,74,357,        stepStart = Double.NaN;,8,2,0,0,0,0,6,0,0,17,23,3,0.5,0,0,-1
+defect4j,math,org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator,74,358,        stepSize  = Double.NaN;,6,0,0,0,0,0,0,0,0,7,23,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator,74,359,        return stopTime;,0,0,0,0,0,1,0,0,0,1,16,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math/linear/AbstractRealMatrix,74,919,        return walkInRowOrder(visitor);,0,0,0,1,2,1,14,0,0,14,31,3,0.33333,0,0,-1
+defect4j,math,org/apache/commons/math/stat/Frequency,75,331,        return getPct(Long.valueOf(v));,0,0,0,2,4,1,8,0,0,8,31,5,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/linear/SingularValueDecompositionImpl,76,143,            --p;,2,0,0,0,0,0,0,0,0,3,4,6,4.0,0,0,-1
+defect4j,math,org/apache/commons/math/linear/SingularValueDecompositionImpl,76,283,        if (cachedVt == null) {,0,0,0,1,3,0,0,0,0,4,23,4,2.0,1,1,-1
+defect4j,math,org/apache/commons/math/linear/SingularValueDecompositionImpl,76,284,            cachedVt = getV().transpose();,2,0,0,2,4,0,10,0,0,13,30,3,2.0,1,1,-1
+defect4j,math,org/apache/commons/math/linear/SingularValueDecompositionImpl,76,288,        return cachedVt;,0,0,0,0,0,1,2,0,0,2,16,5,2.0,1,1,-1
+defect4j,math,org/apache/commons/math/linear/SingularValueDecompositionImpl,76,182,                    wData[i] = new double[p];,8,1,1,2,4,0,0,0,0,17,25,3,0.8,0,0,-1
+defect4j,math,org/apache/commons/math/linear/SingularValueDecompositionImpl,76,217,        if (cachedS == null) {,2,1,0,1,3,0,0,0,0,3,22,4,0.8,0,0,-1
+defect4j,math,org/apache/commons/math/linear/SingularValueDecompositionImpl,76,220,            cachedS = MatrixUtils.createRealDiagonalMatrix(singularValues);,0,0,0,1,2,0,0,0,0,3,63,4,0.8,0,0,-1
+defect4j,math,org/apache/commons/math/linear/SingularValueDecompositionImpl,76,223,        return cachedS;,8,3,0,0,0,1,0,0,0,12,15,3,0.8,0,0,-1
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,76,202,"        final RealMatrix m = createRealMatrix(diagonal.length, diagonal.length);",0,0,0,1,2,0,0,0,0,3,72,4,0.8,0,0,-1
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,76,203,        for (int i = 0; i < diagonal.length; ++i) {,12,2,0,1,3,0,0,0,0,15,43,3,0.8,0,0,-1
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,76,204,"            m.setEntry(i, i, diagonal[i]);",0,0,1,2,4,0,8,0,0,12,30,7,0.8,0,0,-1
+defect4j,math,org/apache/commons/math/linear/MatrixUtils,76,206,        return m;,2,0,0,0,0,1,0,0,0,2,9,4,0.8,0,0,-1
+defect4j,math,org/apache/commons/math/linear/DefaultRealMatrixPreservingVisitor,76,30,public class DefaultRealMatrixPreservingVisitor implements RealMatrixPreservingVisitor {,10,1,0,0,1,0,0,0,0,12,88,5,0.5,0,0,-1
+defect4j,math,org/apache/commons/math/linear/DefaultRealMatrixPreservingVisitor,76,35,    },2,0,0,0,1,0,6,0,0,8,1,3,0.5,0,0,-1
+defect4j,math,org/apache/commons/math/linear/DefaultRealMatrixPreservingVisitor,76,44,        return 0;,8,1,0,0,0,1,0,0,0,12,9,3,0.5,0,0,-1
+defect4j,math,org/apache/commons/math/linear/AbstractRealMatrix,76,195,        return walkInColumnOrder(new RealMatrixPreservingVisitor() {,0,0,0,1,4,1,2,2,0,4,60,5,0.5,0,0,-1
+defect4j,math,org/apache/commons/math/linear/AbstractRealVector,77,210,        double sum = 0;,2,0,0,0,0,0,0,0,0,2,15,5,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/linear/AbstractRealVector,77,211,        Iterator<Entry> it = sparseIterator();,0,0,0,1,2,0,0,0,0,3,38,4,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/linear/AbstractRealVector,77,213,        while (it.hasNext() && (e = it.next()) != null) {,8,3,0,4,9,0,8,0,0,21,49,3,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/linear/AbstractRealVector,77,214,            final double value = e.getValue();,2,0,0,1,2,0,0,0,0,4,34,4,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/linear/AbstractRealVector,77,215,            sum += value * value;,0,0,0,0,0,0,0,0,0,0,21,4,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/linear/AbstractRealVector,77,216,        },0,0,0,0,1,0,0,0,0,1,1,4,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/linear/AbstractRealVector,77,217,        return Math.sqrt(sum);,0,0,0,1,2,1,0,0,0,4,22,4,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/linear/AbstractRealVector,77,222,        double norm = 0;,10,0,0,0,0,0,12,0,0,23,16,3,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/linear/AbstractRealVector,77,223,        Iterator<Entry> it = sparseIterator();,0,0,0,1,2,0,0,0,0,3,38,4,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/linear/AbstractRealVector,77,225,        while (it.hasNext() && (e = it.next()) != null) {,2,2,0,4,9,0,8,0,0,13,49,4,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/linear/AbstractRealVector,77,226,            norm += Math.abs(e.getValue());,2,1,1,2,4,0,0,0,0,12,31,6,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/linear/AbstractRealVector,77,228,        return norm;,4,1,1,0,0,1,0,0,0,9,12,3,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/linear/OpenMapRealVector,77,499,        double max = 0;,2,0,0,0,0,0,0,0,0,2,15,5,1.0,1,0,-1
+defect4j,math,org/apache/commons/math/linear/OpenMapRealVector,77,500,        Iterator iter = entries.iterator();,0,0,0,1,2,0,0,0,0,3,35,4,1.0,1,0,-1
+defect4j,math,org/apache/commons/math/analysis/solvers/BrentSolver,78,267,                    double r1 = y0 / y2;,6,1,0,0,0,0,0,0,0,7,20,11,0.11111,0,0,-1
+defect4j,math,org/apache/commons/math/analysis/solvers/BrentSolver,78,268,                    double r2 = y1 / y2;,6,1,0,0,0,0,0,0,0,7,20,11,0.11111,0,0,-1
+defect4j,math,org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,30,"public class EuclideanIntegerPoint implements Clusterable<EuclideanIntegerPoint>, Serializable {",2,0,0,0,1,1,0,6,0,9,96,1,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/stat/clustering/Cluster,79,45,    public Cluster(final T center) {,0,0,0,1,3,0,0,0,0,4,32,4,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/linear/EigenDecompositionImpl,80,1090,                    work[4 * deflatedEnd - 3 - pingPong] = 0.0;,4,3,1,1,2,0,0,0,0,10,43,11,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/linear/EigenDecompositionImpl,80,1091,                    dMin = 0.0;,2,0,0,0,0,0,0,0,0,3,11,11,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/linear/EigenDecompositionImpl,80,1092,                    updateSigma(tau);,0,0,0,1,2,0,0,0,0,3,17,4,1.0,0,0,-1
+defect4j,math,org/apache/commons/math/linear/EigenDecompositionImpl,80,1093,                    return deflatedEnd;,0,0,0,0,0,1,0,0,0,1,19,4,1.0,0,0,-1

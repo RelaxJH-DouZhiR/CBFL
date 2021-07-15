@@ -1,0 +1,1724 @@
+project_path,version,lines,statement,suspicious,faulty,predict,miss_line
+org/apache/commons/lang3/math/NumberUtils,3,494,                dec = str.substring(decPos + 1);,0.5,0,1,0
+org/apache/commons/lang3/math/NumberUtils,3,573,            exp = null;,0.33333,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,594,                if (!(f.isInfinite() || (f.floatValue() == 0.0F && !allZeros))) {,0.33333,1,-1,1
+org/apache/commons/lang3/math/NumberUtils,3,595,                    return f;,0.33333,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,492,"                dec = str.substring(decPos + 1, expPos);",0.25,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,496,"            mant = str.substring(0, decPos);",0.25,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,497,            numDecimals = dec.length(); // gets number of digits past the decimal to ensure no loss of precision for floating point numbers.,0.25,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,570,        if (expPos > -1 && expPos < str.length() - 1) {,0.25,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,571,"            exp = str.substring(expPos + 1, str.length());",0.25,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,575,        if (dec == null && exp == null) { // no decimal point and no exponent,0.25,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,591,        final boolean allZeros = isAllZeros(mant) && isAllZeros(exp);,0.25,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,593,                final Float f = createFloat(str);,0.25,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,488,            if (expPos > -1) { // there is an exponent,0.2,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,489,                if (expPos < decPos || expPos > str.length()) { // prevents double exponent causing IOOBE,0.2,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,509,        if (!Character.isDigit(lastChar) && lastChar != '.') {,0.16667,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,621,        if (str == null) {,0.16667,1,-1,1
+org/apache/commons/lang3/math/NumberUtils,3,624,        for (int i = str.length() - 1; i >= 0; i--) {,0.16667,1,-1,1
+org/apache/commons/lang3/math/NumberUtils,3,625,            if (str.charAt(i) != '0') {,0.16667,1,-1,1
+org/apache/commons/lang3/math/NumberUtils,3,626,                return false;,0.16667,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,643,        if (str == null) {,0.16667,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,646,        return Float.valueOf(str);,0.16667,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,451,        if (str == null) {,0.125,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,454,        if (StringUtils.isBlank(str)) {,0.125,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,458,"        final String[] hex_prefixes = {""0x"", ""0X"", ""-0x"", ""-0X"", ""#"", ""-#""};",0.125,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,459,        int pfxLen = 0;,0.125,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,460,        for(final String pfx : hex_prefixes) {,0.125,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,461,            if (str.startsWith(pfx)) {,0.125,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,466,        if (pfxLen > 0) { // we have a hex number,0.125,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,476,        final char lastChar = str.charAt(str.length() - 1);,0.125,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,480,        final int decPos = str.indexOf('.');,0.125,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,481,        final int expPos = str.indexOf('e') + str.indexOf('E') + 1; // assumes both not present,0.125,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,485,        int numDecimals = 0; // Check required precision (LANG-693),0.125,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,486,        if (decPos > -1) { // there is a decimal point,0.125,0,-1,0
+org/apache/commons/lang3/StringUtils,3,257,        if (cs == null || (strLen = cs.length()) == 0) {,0.11111,0,-1,0
+org/apache/commons/lang3/StringUtils,3,260,        for (int i = 0; i < strLen; i++) {,0.11111,0,-1,0
+org/apache/commons/lang3/StringUtils,3,261,            if (Character.isWhitespace(cs.charAt(i)) == false) {,0.11111,0,-1,0
+org/apache/commons/lang3/StringUtils,3,262,                return false;,0.11111,0,-1,0
+org/apache/commons/lang3/StringUtils,3,181,"    private static final Pattern WHITESPACE_PATTERN = Pattern.compile(""(?: \\s|[\\s&&[^ ]])\\s*"");",0.1,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,34,    public static final Long LONG_ZERO = Long.valueOf(0L);,0.01163,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,36,    public static final Long LONG_ONE = Long.valueOf(1L);,0.01163,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,38,    public static final Long LONG_MINUS_ONE = Long.valueOf(-1L);,0.01163,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,40,    public static final Integer INTEGER_ZERO = Integer.valueOf(0);,0.01163,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,42,    public static final Integer INTEGER_ONE = Integer.valueOf(1);,0.01163,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,44,    public static final Integer INTEGER_MINUS_ONE = Integer.valueOf(-1);,0.01163,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,46,    public static final Short SHORT_ZERO = Short.valueOf((short) 0);,0.01163,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,48,    public static final Short SHORT_ONE = Short.valueOf((short) 1);,0.01163,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,50,    public static final Short SHORT_MINUS_ONE = Short.valueOf((short) -1);,0.01163,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,52,    public static final Byte BYTE_ZERO = Byte.valueOf((byte) 0);,0.01163,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,54,    public static final Byte BYTE_ONE = Byte.valueOf((byte) 1);,0.01163,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,56,    public static final Byte BYTE_MINUS_ONE = Byte.valueOf((byte) -1);,0.01163,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,58,    public static final Double DOUBLE_ZERO = Double.valueOf(0.0d);,0.01163,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,60,    public static final Double DOUBLE_ONE = Double.valueOf(1.0d);,0.01163,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,62,    public static final Double DOUBLE_MINUS_ONE = Double.valueOf(-1.0d);,0.01163,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,64,    public static final Float FLOAT_ZERO = Float.valueOf(0.0f);,0.01163,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,66,    public static final Float FLOAT_ONE = Float.valueOf(1.0f);,0.01163,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,68,    public static final Float FLOAT_MINUS_ONE = Float.valueOf(-1.0f);,0.01163,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,78,        super();,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,79,    },0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,100,"        return toInt(str, 0);",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,121,        if(str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,122,            return defaultValue;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,125,            return Integer.parseInt(str);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,126,        } catch (final NumberFormatException nfe) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,127,            return defaultValue;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,149,"        return toLong(str, 0L);",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,170,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,171,            return defaultValue;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,174,            return Long.parseLong(str);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,175,        } catch (final NumberFormatException nfe) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,176,            return defaultValue;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,199,"        return toFloat(str, 0.0f);",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,222,      if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,223,          return defaultValue;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,226,          return Float.parseFloat(str);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,227,      } catch (final NumberFormatException nfe) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,228,          return defaultValue;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,251,"        return toDouble(str, 0.0d);",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,274,      if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,275,          return defaultValue;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,278,          return Double.parseDouble(str);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,279,      } catch (final NumberFormatException nfe) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,280,          return defaultValue;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,303,"        return toByte(str, (byte) 0);",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,324,        if(str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,325,            return defaultValue;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,328,            return Byte.parseByte(str);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,329,        } catch (final NumberFormatException nfe) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,330,            return defaultValue;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,352,"        return toShort(str, (short) 0);",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,373,        if(str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,374,            return defaultValue;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,377,            return Short.parseShort(str);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,378,        } catch (final NumberFormatException nfe) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,379,            return defaultValue;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,452,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,455,"            throw new NumberFormatException(""A blank string is not a valid number"");",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,462,                pfxLen += pfx.length();,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,463,                break;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,467,            final int hexDigits = str.length() - pfxLen;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,468,            if (hexDigits > 16) { // too many for Long,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,469,                return createBigInteger(str);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,471,            if (hexDigits > 8) { // too many for an int,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,472,                return createLong(str);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,474,            return createInteger(str);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,490,"                    throw new NumberFormatException(str + "" is not a valid number."");",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,499,            if (expPos > -1) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,500,                if (expPos > str.length()) { // prevents double exponent causing IOOBE,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,501,"                    throw new NumberFormatException(str + "" is not a valid number."");",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,503,"                mant = str.substring(0, expPos);",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,505,                mant = str;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,507,            dec = null;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,510,            if (expPos > -1 && expPos < str.length() - 1) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,511,"                exp = str.substring(expPos + 1, str.length() - 1);",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,513,                exp = null;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,516,"            final String numeric = str.substring(0, str.length() - 1);",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,517,            final boolean allZeros = isAllZeros(mant) && isAllZeros(exp);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,518,            switch (lastChar) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,521,                    if (dec == null,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,525,                            return createLong(numeric);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,526,                        } catch (final NumberFormatException nfe) { // NOPMD,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,529,                        return createBigInteger(numeric);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,532,"                    throw new NumberFormatException(str + "" is not a valid number."");",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,536,                        final Float f = NumberUtils.createFloat(numeric);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,537,                        if (!(f.isInfinite() || (f.floatValue() == 0.0F && !allZeros))) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,540,                            return f;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,545,                    },0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,543,                    } catch (final NumberFormatException nfe) { // NOPMD,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,550,                        final Double d = NumberUtils.createDouble(numeric);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,551,                        if (!(d.isInfinite() || (d.floatValue() == 0.0D && !allZeros))) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,552,                            return d;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,556,                    },0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,554,                    } catch (final NumberFormatException nfe) { // NOPMD,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,558,                        return createBigDecimal(numeric);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,559,                    } catch (final NumberFormatException e) { // NOPMD,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,564,"                    throw new NumberFormatException(str + "" is not a valid number."");",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,578,                return createInteger(str);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,579,            } catch (final NumberFormatException nfe) { // NOPMD,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,583,                return createLong(str);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,584,            } catch (final NumberFormatException nfe) { // NOPMD,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,587,            return createBigInteger(str);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,599,        },0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,597,        } catch (final NumberFormatException nfe) { // NOPMD,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,601,                final Double d = createDouble(str);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,602,                if (!(d.isInfinite() || (d.doubleValue() == 0.0D && !allZeros))) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,603,                    return d;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,607,        },0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,605,        } catch (final NumberFormatException nfe) { // NOPMD,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,609,        return createBigDecimal(str);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,622,            return true;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,629,        return str.length() > 0;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,644,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,659,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,660,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,662,        return Double.valueOf(str);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,676,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,677,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,680,        return Integer.decode(str);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,694,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,695,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,697,        return Long.decode(str);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,711,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,712,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,714,        int pos = 0; // offset within string,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,715,        int radix = 10;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,716,        boolean negate = false; // need to negate later?,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,717,"        if (str.startsWith(""-"")) {",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,718,            negate = true;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,719,            pos = 1;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,721,"        if (str.startsWith(""0x"", pos) || str.startsWith(""0x"", pos)) { // hex",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,722,            radix = 16;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,723,            pos += 2;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,724,"        } else if (str.startsWith(""#"", pos)) { // alternative hex (allowed by Long/Integer)",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,725,            radix = 16;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,726,            pos ++;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,727,"        } else if (str.startsWith(""0"", pos) && str.length() > pos + 1) { // octal; so long as there are additional digits",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,728,            radix = 8;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,729,            pos ++;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,732,"        final BigInteger value = new BigInteger(str.substring(pos), radix);",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,733,        return negate ? value.negate() : value;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,746,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,747,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,750,        if (StringUtils.isBlank(str)) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,751,"            throw new NumberFormatException(""A blank string is not a valid number"");",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,753,"        if (str.trim().startsWith(""--"")) {",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,758,"            throw new NumberFormatException(str + "" is not a valid number."");",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,760,        return new BigDecimal(str);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,775,        validateArray(array);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,778,        long min = array[0];,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,779,        for (int i = 1; i < array.length; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,780,            if (array[i] < min) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,781,                min = array[i];,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,785,        return min;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,798,        validateArray(array);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,801,        int min = array[0];,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,802,        for (int j = 1; j < array.length; j++) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,803,            if (array[j] < min) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,804,                min = array[j];,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,808,        return min;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,821,        validateArray(array);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,824,        short min = array[0];,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,825,        for (int i = 1; i < array.length; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,826,            if (array[i] < min) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,827,                min = array[i];,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,831,        return min;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,844,        validateArray(array);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,847,        byte min = array[0];,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,848,        for (int i = 1; i < array.length; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,849,            if (array[i] < min) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,850,                min = array[i];,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,854,        return min;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,868,        validateArray(array);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,871,        double min = array[0];,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,872,        for (int i = 1; i < array.length; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,873,            if (Double.isNaN(array[i])) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,874,                return Double.NaN;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,876,            if (array[i] < min) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,877,                min = array[i];,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,881,        return min;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,895,        validateArray(array);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,898,        float min = array[0];,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,899,        for (int i = 1; i < array.length; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,900,            if (Float.isNaN(array[i])) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,901,                return Float.NaN;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,903,            if (array[i] < min) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,904,                min = array[i];,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,908,        return min;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,923,        validateArray(array);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,926,        long max = array[0];,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,927,        for (int j = 1; j < array.length; j++) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,928,            if (array[j] > max) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,929,                max = array[j];,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,933,        return max;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,946,        validateArray(array);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,949,        int max = array[0];,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,950,        for (int j = 1; j < array.length; j++) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,951,            if (array[j] > max) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,952,                max = array[j];,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,956,        return max;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,969,        validateArray(array);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,972,        short max = array[0];,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,973,        for (int i = 1; i < array.length; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,974,            if (array[i] > max) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,975,                max = array[i];,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,979,        return max;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,992,        validateArray(array);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,995,        byte max = array[0];,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,996,        for (int i = 1; i < array.length; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,997,            if (array[i] > max) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,998,                max = array[i];,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1002,        return max;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1016,        validateArray(array);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1019,        double max = array[0];,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1020,        for (int j = 1; j < array.length; j++) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1021,            if (Double.isNaN(array[j])) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1022,                return Double.NaN;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1024,            if (array[j] > max) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1025,                max = array[j];,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1029,        return max;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1043,        validateArray(array);,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1046,        float max = array[0];,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1047,        for (int j = 1; j < array.length; j++) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1048,            if (Float.isNaN(array[j])) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1049,                return Float.NaN;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1051,            if (array[j] > max) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1052,                max = array[j];,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1056,        return max;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1066,        if (array == null) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1067,"            throw new IllegalArgumentException(""The Array must not be null"");",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1068,        } else if (Array.getLength(array) == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1069,"            throw new IllegalArgumentException(""Array cannot be empty."");",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1071,    },0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1084,        if (b < a) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1085,            a = b;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1087,        if (c < a) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1088,            a = c;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1090,        return a;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1102,        if (b < a) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1103,            a = b;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1105,        if (c < a) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1106,            a = c;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1108,        return a;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1120,        if (b < a) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1121,            a = b;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1123,        if (c < a) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1124,            a = c;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1126,        return a;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1138,        if (b < a) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1139,            a = b;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1141,        if (c < a) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1142,            a = c;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1144,        return a;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1160,"        return Math.min(Math.min(a, b), c);",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1176,"        return Math.min(Math.min(a, b), c);",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1190,        if (b > a) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1191,            a = b;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1193,        if (c > a) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1194,            a = c;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1196,        return a;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1208,        if (b > a) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1209,            a = b;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1211,        if (c > a) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1212,            a = c;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1214,        return a;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1226,        if (b > a) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1227,            a = b;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1229,        if (c > a) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1230,            a = c;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1232,        return a;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1244,        if (b > a) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1245,            a = b;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1247,        if (c > a) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1248,            a = c;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1250,        return a;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1266,"        return Math.max(Math.max(a, b), c);",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1282,"        return Math.max(Math.max(a, b), c);",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1297,        if (StringUtils.isEmpty(str)) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1298,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1300,        for (int i = 0; i < str.length(); i++) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1301,            if (!Character.isDigit(str.charAt(i))) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1302,                return false;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1305,        return true;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1322,        if (StringUtils.isEmpty(str)) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1323,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1325,        final char[] chars = str.toCharArray();,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1326,        int sz = chars.length;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1327,        boolean hasExp = false;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1328,        boolean hasDecPoint = false;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1329,        boolean allowSigns = false;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1330,        boolean foundDigit = false;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1332,        final int start = (chars[0] == '-') ? 1 : 0;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1333,        if (sz > start + 1 && chars[start] == '0' && chars[start + 1] == 'x') {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1334,            int i = start + 2;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1335,            if (i == sz) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1336,"                return false; // str == ""0x""",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1339,            for (; i < chars.length; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1340,                if ((chars[i] < '0' || chars[i] > '9'),0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1343,                    return false;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1346,            return true;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1348,"        sz--; // don't want to loop to the last char, check it afterwords",0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1350,        int i = start;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1353,        while (i < sz || (i < sz + 1 && allowSigns && !foundDigit)) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1354,            if (chars[i] >= '0' && chars[i] <= '9') {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1355,                foundDigit = true;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1356,                allowSigns = false;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1358,            } else if (chars[i] == '.') {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1359,                if (hasDecPoint || hasExp) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1361,                    return false;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1363,                hasDecPoint = true;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1364,            } else if (chars[i] == 'e' || chars[i] == 'E') {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1366,                if (hasExp) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1368,                    return false;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1370,                if (!foundDigit) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1371,                    return false;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1373,                hasExp = true;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1374,                allowSigns = true;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1375,            } else if (chars[i] == '+' || chars[i] == '-') {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1376,                if (!allowSigns) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1377,                    return false;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1379,                allowSigns = false;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1380,                foundDigit = false; // we need a digit after the E,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1382,                return false;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1384,            i++;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1386,        if (i < chars.length) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1387,            if (chars[i] >= '0' && chars[i] <= '9') {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1389,                return true;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1391,            if (chars[i] == 'e' || chars[i] == 'E') {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1393,                return false;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1395,            if (chars[i] == '.') {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1396,                if (hasDecPoint || hasExp) {,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1398,                    return false;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1401,                return foundDigit;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1403,            if (!allowSigns,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1408,                return foundDigit;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1410,            if (chars[i] == 'l',0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1413,                return foundDigit && !hasExp && !hasDecPoint;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1416,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/math/NumberUtils,3,1420,        return !allowSigns && foundDigit;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,192,        super();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,193,    },0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,217,        return cs == null || cs.length() == 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,236,        return !StringUtils.isEmpty(cs);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,258,            return true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,265,        return true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,286,        return !StringUtils.isBlank(cs);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,315,        return str == null ? null : str.trim();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,341,        final String ts = trim(str);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,342,        return isEmpty(ts) ? null : ts;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,367,        return str == null ? EMPTY : str.trim();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,395,"        return strip(str, null);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,422,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,423,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,425,"        str = strip(str, null);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,426,        return str.length() == 0 ? null : str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,452,"        return str == null ? EMPTY : strip(str, null);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,482,        if (isEmpty(str)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,483,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,485,"        str = stripStart(str, stripChars);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,486,"        return stripEnd(str, stripChars);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,515,        if (str == null || (strLen = str.length()) == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,516,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,518,        int start = 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,519,        if (stripChars == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,520,            while (start != strLen && Character.isWhitespace(str.charAt(start))) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,521,                start++;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,523,        } else if (stripChars.length() == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,524,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,526,            while (start != strLen && stripChars.indexOf(str.charAt(start)) != INDEX_NOT_FOUND) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,527,                start++;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,530,        return str.substring(start);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,560,        if (str == null || (end = str.length()) == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,561,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,564,        if (stripChars == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,565,            while (end != 0 && Character.isWhitespace(str.charAt(end - 1))) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,566,                end--;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,568,        } else if (stripChars.length() == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,569,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,571,            while (end != 0 && stripChars.indexOf(str.charAt(end - 1)) != INDEX_NOT_FOUND) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,572,                end--;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,575,"        return str.substring(0, end);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,600,"        return stripAll(strs, null);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,630,        if (strs == null || (strsLen = strs.length) == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,631,            return strs;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,633,        final String[] newArr = new String[strsLen];,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,634,        for (int i = 0; i < strsLen; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,635,"            newArr[i] = strip(strs[i], stripChars);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,637,        return newArr;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,659,        if(input == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,660,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,662,"        final Pattern pattern = Pattern.compile(""\\p{InCombiningDiacriticalMarks}+"");//$NON-NLS-1$",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,663,"        final String decomposed = Normalizer.normalize(input, Normalizer.Form.NFD);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,665,"        return pattern.matcher(decomposed).replaceAll("""");//$NON-NLS-1$",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,692,        if (cs1 == cs2) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,693,            return true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,695,        if (cs1 == null || cs2 == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,696,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,698,        if (cs1 instanceof String && cs2 instanceof String) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,699,            return cs1.equals(cs2);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,701,"        return CharSequenceUtils.regionMatches(cs1, false, 0, cs2, 0, Math.max(cs1.length(), cs2.length()));",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,726,        if (str1 == null || str2 == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,727,            return str1 == str2;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,728,        } else if (str1 == str2) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,729,            return true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,730,        } else if (str1.length() != str2.length()) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,731,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,733,"            return CharSequenceUtils.regionMatches(str1, true, 0, str2, 0, str1.length());",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,760,        if (isEmpty(seq)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,761,            return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,763,"        return CharSequenceUtils.indexOf(seq, searchChar, 0);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,793,        if (isEmpty(seq)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,794,            return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,796,"        return CharSequenceUtils.indexOf(seq, searchChar, startPos);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,824,        if (seq == null || searchSeq == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,825,            return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,827,"        return CharSequenceUtils.indexOf(seq, searchSeq, 0);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,864,        if (seq == null || searchSeq == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,865,            return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,867,"        return CharSequenceUtils.indexOf(seq, searchSeq, startPos);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,905,"        return ordinalIndexOf(str, searchStr, ordinal, false);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,923,        if (str == null || searchStr == null || ordinal <= 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,924,            return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,926,        if (searchStr.length() == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,927,            return lastIndex ? str.length() : 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,929,        int found = 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,930,        int index = lastIndex ? str.length() : INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,932,            if (lastIndex) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,933,"                index = CharSequenceUtils.lastIndexOf(str, searchStr, index - 1);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,935,"                index = CharSequenceUtils.indexOf(str, searchStr, index + 1);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,937,            if (index < 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,938,                return index;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,940,            found++;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,941,        } while (found < ordinal);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,942,        return index;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,971,"        return indexOfIgnoreCase(str, searchStr, 0);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1007,        if (str == null || searchStr == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1008,            return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1010,        if (startPos < 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1011,            startPos = 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1013,        final int endLimit = str.length() - searchStr.length() + 1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1014,        if (startPos > endLimit) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1015,            return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1017,        if (searchStr.length() == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1018,            return startPos;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1020,        for (int i = startPos; i < endLimit; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1021,"            if (CharSequenceUtils.regionMatches(str, true, i, searchStr, 0, searchStr.length())) {",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1022,                return i;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1025,        return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1051,        if (isEmpty(seq)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1052,            return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1054,"        return CharSequenceUtils.lastIndexOf(seq, searchChar, seq.length());",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1086,        if (isEmpty(seq)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1087,            return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1089,"        return CharSequenceUtils.lastIndexOf(seq, searchChar, startPos);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1116,        if (seq == null || searchSeq == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1117,            return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1119,"        return CharSequenceUtils.lastIndexOf(seq, searchSeq, seq.length());",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1157,"        return ordinalIndexOf(str, searchStr, ordinal, true);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1190,        if (seq == null || searchSeq == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1191,            return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1193,"        return CharSequenceUtils.lastIndexOf(seq, searchSeq, startPos);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1220,        if (str == null || searchStr == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1221,            return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1223,"        return lastIndexOfIgnoreCase(str, searchStr, str.length());",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1256,        if (str == null || searchStr == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1257,            return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1259,        if (startPos > str.length() - searchStr.length()) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1260,            startPos = str.length() - searchStr.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1262,        if (startPos < 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1263,            return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1265,        if (searchStr.length() == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1266,            return startPos;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1269,        for (int i = startPos; i >= 0; i--) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1270,"            if (CharSequenceUtils.regionMatches(str, true, i, searchStr, 0, searchStr.length())) {",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1271,                return i;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1274,        return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1300,        if (isEmpty(seq)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1301,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1303,"        return CharSequenceUtils.indexOf(seq, searchChar, 0) >= 0;",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1329,        if (seq == null || searchSeq == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1330,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1332,"        return CharSequenceUtils.indexOf(seq, searchSeq, 0) >= 0;",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1360,        if (str == null || searchStr == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1361,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1363,        final int len = searchStr.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1364,        final int max = str.length() - len;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1365,        for (int i = 0; i <= max; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1366,"            if (CharSequenceUtils.regionMatches(str, true, i, searchStr, 0, len)) {",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1367,                return true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1370,        return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1383,        if (isEmpty(seq)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1384,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1386,        final int strLen = seq.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1387,        for (int i = 0; i < strLen; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1388,            if (Character.isWhitespace(seq.charAt(i))) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1389,                return true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1392,        return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1421,        if (isEmpty(cs) || ArrayUtils.isEmpty(searchChars)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1422,            return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1424,        final int csLen = cs.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1425,        final int csLast = csLen - 1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1426,        final int searchLen = searchChars.length;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1427,        final int searchLast = searchLen - 1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1428,        for (int i = 0; i < csLen; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1429,            final char ch = cs.charAt(i);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1430,            for (int j = 0; j < searchLen; j++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1431,                if (searchChars[j] == ch) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1432,                    if (i < csLast && j < searchLast && Character.isHighSurrogate(ch)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1434,                        if (searchChars[j + 1] == cs.charAt(i + 1)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1435,                            return i;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1438,                        return i;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1443,        return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1470,        if (isEmpty(cs) || isEmpty(searchChars)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1471,            return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1473,"        return indexOfAny(cs, searchChars.toCharArray());",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1503,        if (isEmpty(cs) || ArrayUtils.isEmpty(searchChars)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1504,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1506,        final int csLength = cs.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1507,        final int searchLength = searchChars.length;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1508,        final int csLast = csLength - 1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1509,        final int searchLast = searchLength - 1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1510,        for (int i = 0; i < csLength; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1511,            final char ch = cs.charAt(i);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1512,            for (int j = 0; j < searchLength; j++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1513,                if (searchChars[j] == ch) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1514,                    if (Character.isHighSurrogate(ch)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1515,                        if (j == searchLast) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1517,                            return true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1519,                        if (i < csLast && searchChars[j + 1] == cs.charAt(i + 1)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1520,                            return true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1524,                        return true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1529,        return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1561,        if (searchChars == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1562,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1564,"        return containsAny(cs, CharSequenceUtils.toCharArray(searchChars));",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1594,        if (isEmpty(cs) || ArrayUtils.isEmpty(searchChars)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1595,            return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1597,        final int csLen = cs.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1598,        final int csLast = csLen - 1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1599,        final int searchLen = searchChars.length;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1600,        final int searchLast = searchLen - 1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1602,        for (int i = 0; i < csLen; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1603,            final char ch = cs.charAt(i);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1604,            for (int j = 0; j < searchLen; j++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1605,                if (searchChars[j] == ch) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1606,                    if (i < csLast && j < searchLast && Character.isHighSurrogate(ch)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1607,                        if (searchChars[j + 1] == cs.charAt(i + 1)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1608,                            continue outer;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1615,            return i;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1617,        return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1644,        if (isEmpty(seq) || isEmpty(searchChars)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1645,            return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1647,        final int strLen = seq.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1648,        for (int i = 0; i < strLen; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1649,            final char ch = seq.charAt(i);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1650,"            final boolean chFound = CharSequenceUtils.indexOf(searchChars, ch, 0) >= 0;",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1651,            if (i + 1 < strLen && Character.isHighSurrogate(ch)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1652,                final char ch2 = seq.charAt(i + 1);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1653,"                if (chFound && CharSequenceUtils.indexOf(searchChars, ch2, 0) < 0) {",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1654,                    return i;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1656,            } else {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1657,                if (!chFound) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1658,                    return i;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1662,        return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1691,        if (valid == null || cs == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1692,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1694,        if (cs.length() == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1695,            return true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1697,        if (valid.length == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1698,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1700,"        return indexOfAnyBut(cs, valid) == INDEX_NOT_FOUND;",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1727,        if (cs == null || validChars == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1728,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1730,"        return containsOnly(cs, validChars.toCharArray());",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1759,        if (cs == null || searchChars == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1760,            return true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1762,        final int csLen = cs.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1763,        final int csLast = csLen - 1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1764,        final int searchLen = searchChars.length;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1765,        final int searchLast = searchLen - 1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1766,        for (int i = 0; i < csLen; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1767,            final char ch = cs.charAt(i);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1768,            for (int j = 0; j < searchLen; j++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1769,                if (searchChars[j] == ch) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1770,                    if (Character.isHighSurrogate(ch)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1771,                        if (j == searchLast) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1773,                            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1775,                        if (i < csLast && searchChars[j + 1] == cs.charAt(i + 1)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1776,                            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1780,                        return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1785,        return true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1812,        if (cs == null || invalidChars == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1813,            return true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1815,"        return containsNone(cs, invalidChars.toCharArray());",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1848,        if (str == null || searchStrs == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1849,            return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1851,        final int sz = searchStrs.length;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1854,        int ret = Integer.MAX_VALUE;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1856,        int tmp = 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1857,        for (int i = 0; i < sz; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1858,            final CharSequence search = searchStrs[i];,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1859,            if (search == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1860,                continue;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1862,"            tmp = CharSequenceUtils.indexOf(str, search, 0);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1863,            if (tmp == INDEX_NOT_FOUND) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1864,                continue;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1867,            if (tmp < ret) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1868,                ret = tmp;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1872,        return ret == Integer.MAX_VALUE ? INDEX_NOT_FOUND : ret;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1902,        if (str == null || searchStrs == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1903,            return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1905,        final int sz = searchStrs.length;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1906,        int ret = INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1907,        int tmp = 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1908,        for (int i = 0; i < sz; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1909,            final CharSequence search = searchStrs[i];,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1910,            if (search == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1911,                continue;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1913,"            tmp = CharSequenceUtils.lastIndexOf(str, search, str.length());",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1914,            if (tmp > ret) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1915,                ret = tmp;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1918,        return ret;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1948,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1949,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1953,        if (start < 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1954,            start = str.length() + start; // remember start is negative,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1957,        if (start < 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1958,            start = 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1960,        if (start > str.length()) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1961,            return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,1964,        return str.substring(start);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2003,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2004,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2008,        if (end < 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2009,            end = str.length() + end; // remember end is negative,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2011,        if (start < 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2012,            start = str.length() + start; // remember start is negative,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2016,        if (end > str.length()) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2017,            end = str.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2021,        if (start > end) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2022,            return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2025,        if (start < 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2026,            start = 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2028,        if (end < 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2029,            end = 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2032,"        return str.substring(start, end);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2058,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2059,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2061,        if (len < 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2062,            return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2064,        if (str.length() <= len) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2065,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2067,"        return str.substring(0, len);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2091,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2092,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2094,        if (len < 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2095,            return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2097,        if (str.length() <= len) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2098,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2100,        return str.substring(str.length() - len);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2129,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2130,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2132,        if (len < 0 || pos > str.length()) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2133,            return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2135,        if (pos < 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2136,            pos = 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2138,        if (str.length() <= pos + len) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2139,            return str.substring(pos);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2141,"        return str.substring(pos, pos + len);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2174,        if (isEmpty(str) || separator == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2175,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2177,        if (separator.length() == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2178,            return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2180,        final int pos = str.indexOf(separator);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2181,        if (pos == INDEX_NOT_FOUND) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2182,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2184,"        return str.substring(0, pos);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2216,        if (isEmpty(str)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2217,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2219,        if (separator == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2220,            return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2222,        final int pos = str.indexOf(separator);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2223,        if (pos == INDEX_NOT_FOUND) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2224,            return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2226,        return str.substring(pos + separator.length());,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2257,        if (isEmpty(str) || isEmpty(separator)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2258,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2260,        final int pos = str.lastIndexOf(separator);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2261,        if (pos == INDEX_NOT_FOUND) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2262,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2264,"        return str.substring(0, pos);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2297,        if (isEmpty(str)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2298,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2300,        if (isEmpty(separator)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2301,            return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2303,        final int pos = str.lastIndexOf(separator);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2304,        if (pos == INDEX_NOT_FOUND || pos == str.length() - separator.length()) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2305,            return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2307,        return str.substring(pos + separator.length());,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2334,"        return substringBetween(str, tag, tag);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2365,        if (str == null || open == null || close == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2366,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2368,        final int start = str.indexOf(open);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2369,        if (start != INDEX_NOT_FOUND) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2370,"            final int end = str.indexOf(close, start + open.length());",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2371,            if (end != INDEX_NOT_FOUND) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2372,"                return str.substring(start + open.length(), end);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2375,        return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2401,        if (str == null || isEmpty(open) || isEmpty(close)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2402,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2404,        final int strLen = str.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2405,        if (strLen == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2406,            return ArrayUtils.EMPTY_STRING_ARRAY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2408,        final int closeLen = close.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2409,        final int openLen = open.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2410,        final List<String> list = new ArrayList<String>();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2411,        int pos = 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2412,        while (pos < strLen - closeLen) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2413,"            int start = str.indexOf(open, pos);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2414,            if (start < 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2415,                break;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2417,            start += openLen;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2418,"            final int end = str.indexOf(close, start);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2419,            if (end < 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2420,                break;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2422,"            list.add(str.substring(start, end));",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2423,            pos = end + closeLen;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2424,        },0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2425,        if (list.isEmpty()) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2426,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2428,        return list.toArray(new String [list.size()]);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2459,"        return split(str, null, -1);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2487,"        return splitWorker(str, separatorChar, false);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2516,"        return splitWorker(str, separatorChars, -1, false);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2550,"        return splitWorker(str, separatorChars, max, false);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2577,"        return splitByWholeSeparatorWorker( str, separator, -1, false ) ;",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2608,"        return splitByWholeSeparatorWorker(str, separator, max, false);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2637,"        return splitByWholeSeparatorWorker(str, separator, -1, true);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2670,"        return splitByWholeSeparatorWorker(str, separator, max, true);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2689,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2690,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2693,        final int len = str.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2695,        if (len == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2696,            return ArrayUtils.EMPTY_STRING_ARRAY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2699,        if (separator == null || EMPTY.equals(separator)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2701,"            return splitWorker(str, null, max, preserveAllTokens);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2704,        final int separatorLength = separator.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2706,        final ArrayList<String> substrings = new ArrayList<String>();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2707,        int numberOfSubstrings = 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2708,        int beg = 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2709,        int end = 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2710,        while (end < len) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2711,"            end = str.indexOf(separator, beg);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2713,            if (end > -1) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2714,                if (end > beg) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2715,                    numberOfSubstrings += 1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2717,                    if (numberOfSubstrings == max) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2718,                        end = len;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2719,                        substrings.add(str.substring(beg));,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2723,"                        substrings.add(str.substring(beg, end));",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2728,                        beg = end + separatorLength;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2732,                    if (preserveAllTokens) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2733,                        numberOfSubstrings += 1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2734,                        if (numberOfSubstrings == max) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2735,                            end = len;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2736,                            substrings.add(str.substring(beg));,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2738,                            substrings.add(EMPTY);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2741,                    beg = end + separatorLength;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2745,                substrings.add(str.substring(beg));,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2746,                end = len;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2750,        return substrings.toArray(new String[substrings.size()]);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2779,"        return splitWorker(str, null, -1, true);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2815,"        return splitWorker(str, separatorChar, true);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2833,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2834,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2836,        final int len = str.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2837,        if (len == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2838,            return ArrayUtils.EMPTY_STRING_ARRAY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2840,        final List<String> list = new ArrayList<String>();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2841,"        int i = 0, start = 0;",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2842,        boolean match = false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2843,        boolean lastMatch = false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2844,        while (i < len) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2845,            if (str.charAt(i) == separatorChar) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2846,                if (match || preserveAllTokens) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2847,"                    list.add(str.substring(start, i));",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2848,                    match = false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2849,                    lastMatch = true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2851,                start = ++i;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2852,                continue;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2854,            lastMatch = false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2855,            match = true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2856,            i++;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2858,        if (match || preserveAllTokens && lastMatch) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2859,"            list.add(str.substring(start, i));",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2861,        return list.toArray(new String[list.size()]);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2898,"        return splitWorker(str, separatorChars, -1, true);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2938,"        return splitWorker(str, separatorChars, max, true);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2960,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2961,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2963,        final int len = str.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2964,        if (len == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2965,            return ArrayUtils.EMPTY_STRING_ARRAY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2967,        final List<String> list = new ArrayList<String>();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2968,        int sizePlus1 = 1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2969,"        int i = 0, start = 0;",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2970,        boolean match = false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2971,        boolean lastMatch = false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2972,        if (separatorChars == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2974,            while (i < len) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2975,                if (Character.isWhitespace(str.charAt(i))) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2976,                    if (match || preserveAllTokens) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2977,                        lastMatch = true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2978,                        if (sizePlus1++ == max) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2979,                            i = len;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2980,                            lastMatch = false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2982,"                        list.add(str.substring(start, i));",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2983,                        match = false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2985,                    start = ++i;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2986,                    continue;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2988,                lastMatch = false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2989,                match = true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2990,                i++;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2992,        } else if (separatorChars.length() == 1) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2994,            final char sep = separatorChars.charAt(0);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2995,            while (i < len) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2996,                if (str.charAt(i) == sep) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2997,                    if (match || preserveAllTokens) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2998,                        lastMatch = true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,2999,                        if (sizePlus1++ == max) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3000,                            i = len;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3001,                            lastMatch = false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3003,"                        list.add(str.substring(start, i));",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3004,                        match = false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3006,                    start = ++i;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3007,                    continue;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3009,                lastMatch = false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3010,                match = true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3011,                i++;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3013,        } else {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3015,            while (i < len) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3016,                if (separatorChars.indexOf(str.charAt(i)) >= 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3017,                    if (match || preserveAllTokens) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3018,                        lastMatch = true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3019,                        if (sizePlus1++ == max) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3020,                            i = len;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3021,                            lastMatch = false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3023,"                        list.add(str.substring(start, i));",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3024,                        match = false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3026,                    start = ++i;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3027,                    continue;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3029,                lastMatch = false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3030,                match = true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3031,                i++;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3034,        if (match || preserveAllTokens && lastMatch) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3035,"            list.add(str.substring(start, i));",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3037,        return list.toArray(new String[list.size()]);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3060,"        return splitByCharacterType(str, false);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3088,"        return splitByCharacterType(str, true);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3106,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3107,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3109,        if (str.length() == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3110,            return ArrayUtils.EMPTY_STRING_ARRAY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3112,        final char[] c = str.toCharArray();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3113,        final List<String> list = new ArrayList<String>();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3114,        int tokenStart = 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3115,        int currentType = Character.getType(c[tokenStart]);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3116,        for (int pos = tokenStart + 1; pos < c.length; pos++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3117,            final int type = Character.getType(c[pos]);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3118,            if (type == currentType) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3119,                continue;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3121,            if (camelCase && type == Character.LOWERCASE_LETTER && currentType == Character.UPPERCASE_LETTER) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3122,                final int newTokenStart = pos - 1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3123,                if (newTokenStart != tokenStart) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3124,"                    list.add(new String(c, tokenStart, newTokenStart - tokenStart));",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3125,                    tokenStart = newTokenStart;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3127,            } else {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3128,"                list.add(new String(c, tokenStart, pos - tokenStart));",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3129,                tokenStart = pos;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3131,            currentType = type;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3133,"        list.add(new String(c, tokenStart, c.length - tokenStart));",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3134,        return list.toArray(new String[list.size()]);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3162,"        return join(elements, null);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3188,        if (array == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3189,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3191,"        return join(array, separator, 0, array.length);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3220,        if (array == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3221,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3223,"        return join(array, separator, 0, array.length);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3252,        if (array == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3253,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3255,"        return join(array, separator, 0, array.length);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3284,        if (array == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3285,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3287,"        return join(array, separator, 0, array.length);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3316,        if (array == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3317,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3319,"        return join(array, separator, 0, array.length);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3348,        if (array == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3349,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3351,"        return join(array, separator, 0, array.length);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3380,        if (array == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3381,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3383,"        return join(array, separator, 0, array.length);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3412,        if (array == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3413,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3415,"        return join(array, separator, 0, array.length);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3446,        if (array == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3447,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3449,        final int noOfItems = endIndex - startIndex;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3450,        if (noOfItems <= 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3451,            return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3453,        final StringBuilder buf = new StringBuilder(noOfItems * 16);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3454,        for (int i = startIndex; i < endIndex; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3455,            if (i > startIndex) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3456,                buf.append(separator);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3458,            if (array[i] != null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3459,                buf.append(array[i]);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3462,        return buf.toString();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3497,        if (array == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3498,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3500,        final int noOfItems = endIndex - startIndex;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3501,        if (noOfItems <= 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3502,            return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3504,        final StringBuilder buf = new StringBuilder(noOfItems * 16);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3505,        for (int i = startIndex; i < endIndex; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3506,            if (i > startIndex) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3507,                buf.append(separator);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3509,            buf.append(array[i]);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3511,        return buf.toString();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3546,        if (array == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3547,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3549,        final int noOfItems = endIndex - startIndex;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3550,        if (noOfItems <= 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3551,            return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3553,        final StringBuilder buf = new StringBuilder(noOfItems * 16);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3554,        for (int i = startIndex; i < endIndex; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3555,            if (i > startIndex) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3556,                buf.append(separator);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3558,            buf.append(array[i]);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3560,        return buf.toString();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3595,        if (array == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3596,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3598,        final int noOfItems = endIndex - startIndex;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3599,        if (noOfItems <= 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3600,            return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3602,        final StringBuilder buf = new StringBuilder(noOfItems * 16);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3603,        for (int i = startIndex; i < endIndex; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3604,            if (i > startIndex) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3605,                buf.append(separator);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3607,            buf.append(array[i]);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3609,        return buf.toString();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3644,        if (array == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3645,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3647,        final int noOfItems = endIndex - startIndex;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3648,        if (noOfItems <= 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3649,            return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3651,        final StringBuilder buf = new StringBuilder(noOfItems * 16);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3652,        for (int i = startIndex; i < endIndex; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3653,            if (i > startIndex) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3654,                buf.append(separator);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3656,            buf.append(array[i]);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3658,        return buf.toString();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3693,        if (array == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3694,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3696,        final int noOfItems = endIndex - startIndex;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3697,        if (noOfItems <= 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3698,            return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3700,        final StringBuilder buf = new StringBuilder(noOfItems * 16);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3701,        for (int i = startIndex; i < endIndex; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3702,            if (i > startIndex) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3703,                buf.append(separator);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3705,            buf.append(array[i]);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3707,        return buf.toString();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3742,        if (array == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3743,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3745,        final int noOfItems = endIndex - startIndex;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3746,        if (noOfItems <= 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3747,            return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3749,        final StringBuilder buf = new StringBuilder(noOfItems * 16);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3750,        for (int i = startIndex; i < endIndex; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3751,            if (i > startIndex) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3752,                buf.append(separator);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3754,            buf.append(array[i]);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3756,        return buf.toString();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3791,        if (array == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3792,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3794,        final int noOfItems = endIndex - startIndex;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3795,        if (noOfItems <= 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3796,            return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3798,        final StringBuilder buf = new StringBuilder(noOfItems * 16);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3799,        for (int i = startIndex; i < endIndex; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3800,            if (i > startIndex) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3801,                buf.append(separator);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3803,            buf.append(array[i]);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3805,        return buf.toString();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3833,        if (array == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3834,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3836,"        return join(array, separator, 0, array.length);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3875,        if (array == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3876,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3878,        if (separator == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3879,            separator = EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3884,        final int noOfItems = endIndex - startIndex;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3885,        if (noOfItems <= 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3886,            return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3889,        final StringBuilder buf = new StringBuilder(noOfItems * 16);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3891,        for (int i = startIndex; i < endIndex; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3892,            if (i > startIndex) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3893,                buf.append(separator);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3895,            if (array[i] != null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3896,                buf.append(array[i]);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3899,        return buf.toString();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3919,        if (iterator == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3920,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3922,        if (!iterator.hasNext()) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3923,            return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3925,        final Object first = iterator.next();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3926,        if (!iterator.hasNext()) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3927,            return ObjectUtils.toString(first);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3931,"        final StringBuilder buf = new StringBuilder(256); // Java default is 16, probably too small",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3932,        if (first != null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3933,            buf.append(first);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3936,        while (iterator.hasNext()) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3937,            buf.append(separator);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3938,            final Object obj = iterator.next();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3939,            if (obj != null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3940,                buf.append(obj);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3942,        },0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3944,        return buf.toString();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3963,        if (iterator == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3964,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3966,        if (!iterator.hasNext()) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3967,            return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3969,        final Object first = iterator.next();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3970,        if (!iterator.hasNext()) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3971,            return ObjectUtils.toString(first);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3975,"        final StringBuilder buf = new StringBuilder(256); // Java default is 16, probably too small",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3976,        if (first != null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3977,            buf.append(first);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3980,        while (iterator.hasNext()) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3981,            if (separator != null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3982,                buf.append(separator);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3984,            final Object obj = iterator.next();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3985,            if (obj != null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3986,                buf.append(obj);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3988,        },0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,3989,        return buf.toString();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4007,        if (iterable == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4008,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4010,"        return join(iterable.iterator(), separator);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4028,        if (iterable == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4029,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4031,"        return join(iterable.iterator(), separator);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4051,        if (isEmpty(str)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4052,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4054,        final int sz = str.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4055,        final char[] chs = new char[sz];,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4056,        int count = 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4057,        for (int i = 0; i < sz; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4058,            if (!Character.isWhitespace(str.charAt(i))) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4059,                chs[count++] = str.charAt(i);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4062,        if (count == sz) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4063,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4065,"        return new String(chs, 0, count);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4095,        if (isEmpty(str) || isEmpty(remove)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4096,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4098,        if (str.startsWith(remove)){,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4099,            return str.substring(remove.length());,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4101,        return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4130,        if (isEmpty(str) || isEmpty(remove)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4131,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4133,"        if (startsWithIgnoreCase(str, remove)) {",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4134,            return str.substring(remove.length());,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4136,        return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4164,        if (isEmpty(str) || isEmpty(remove)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4165,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4167,        if (str.endsWith(remove)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4168,"            return str.substring(0, str.length() - remove.length());",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4170,        return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4200,        if (isEmpty(str) || isEmpty(remove)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4201,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4203,"        if (endsWithIgnoreCase(str, remove)) {",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4204,"            return str.substring(0, str.length() - remove.length());",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4206,        return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4233,        if (isEmpty(str) || isEmpty(remove)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4234,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4236,"        return replace(str, remove, EMPTY, -1);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4259,        if (isEmpty(str) || str.indexOf(remove) == INDEX_NOT_FOUND) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4260,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4262,        final char[] chars = str.toCharArray();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4263,        int pos = 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4264,        for (int i = 0; i < chars.length; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4265,            if (chars[i] != remove) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4266,                chars[pos++] = chars[i];,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4269,"        return new String(chars, 0, pos);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4298,"        return replace(text, searchString, replacement, 1);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4322,"        return Pattern.compile(regex, Pattern.DOTALL).matcher(source).replaceAll(replacement);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4338,"        return replacePattern(source, regex, StringUtils.EMPTY);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4365,"        return replace(text, searchString, replacement, -1);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4397,        if (isEmpty(text) || isEmpty(searchString) || replacement == null || max == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4398,            return text;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4400,        int start = 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4401,"        int end = text.indexOf(searchString, start);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4402,        if (end == INDEX_NOT_FOUND) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4403,            return text;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4405,        final int replLength = searchString.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4406,        int increase = replacement.length() - replLength;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4407,        increase = increase < 0 ? 0 : increase;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4408,        increase *= max < 0 ? 16 : max > 64 ? 64 : max;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4409,        final StringBuilder buf = new StringBuilder(text.length() + increase);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4410,        while (end != INDEX_NOT_FOUND) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4411,"            buf.append(text.substring(start, end)).append(replacement);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4412,            start = end + replLength;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4413,            if (--max == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4414,                break;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4416,"            end = text.indexOf(searchString, start);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4418,        buf.append(text.substring(start));,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4419,        return buf.toString();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4462,"        return replaceEach(text, searchList, replacementList, false, 0);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4512,        final int timeToLive = searchList == null ? 0 : searchList.length;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4513,"        return replaceEach(text, searchList, replacementList, true, timeToLive);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4570,        if (text == null || text.length() == 0 || searchList == null ||,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4572,            return text;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4576,        if (timeToLive < 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4577,"            throw new IllegalStateException(""Aborting to protect against StackOverflowError - "" +",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4581,        final int searchLength = searchList.length;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4582,        final int replacementLength = replacementList.length;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4585,        if (searchLength != replacementLength) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4586,"            throw new IllegalArgumentException(""Search and Replace array lengths don't match: """,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4593,        final boolean[] noMoreMatchesForReplIndex = new boolean[searchLength];,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4596,        int textIndex = -1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4597,        int replaceIndex = -1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4598,        int tempIndex = -1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4602,        for (int i = 0; i < searchLength; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4603,            if (noMoreMatchesForReplIndex[i] || searchList[i] == null ||,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4605,                continue;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4607,            tempIndex = text.indexOf(searchList[i]);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4610,            if (tempIndex == -1) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4611,                noMoreMatchesForReplIndex[i] = true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4613,                if (textIndex == -1 || tempIndex < textIndex) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4614,                    textIndex = tempIndex;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4615,                    replaceIndex = i;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4622,        if (textIndex == -1) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4623,            return text;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4626,        int start = 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4629,        int increase = 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4632,        for (int i = 0; i < searchList.length; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4633,            if (searchList[i] == null || replacementList[i] == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4634,                continue;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4636,            final int greater = replacementList[i].length() - searchList[i].length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4637,            if (greater > 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4638,                increase += 3 * greater; // assume 3 matches,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4642,"        increase = Math.min(increase, text.length() / 5);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4644,        final StringBuilder buf = new StringBuilder(text.length() + increase);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4646,        while (textIndex != -1) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4648,            for (int i = start; i < textIndex; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4649,                buf.append(text.charAt(i));,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4651,            buf.append(replacementList[replaceIndex]);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4653,            start = textIndex + searchList[replaceIndex].length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4655,            textIndex = -1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4656,            replaceIndex = -1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4657,            tempIndex = -1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4660,            for (int i = 0; i < searchLength; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4661,                if (noMoreMatchesForReplIndex[i] || searchList[i] == null ||,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4663,                    continue;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4665,"                tempIndex = text.indexOf(searchList[i], start);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4668,                if (tempIndex == -1) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4669,                    noMoreMatchesForReplIndex[i] = true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4671,                    if (textIndex == -1 || tempIndex < textIndex) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4672,                        textIndex = tempIndex;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4673,                        replaceIndex = i;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4680,        final int textLength = text.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4681,        for (int i = start; i < textLength; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4682,            buf.append(text.charAt(i));,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4684,        final String result = buf.toString();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4685,        if (!repeat) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4686,            return result;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4689,"        return replaceEach(result, searchList, replacementList, repeat, timeToLive - 1);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4715,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4716,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4718,"        return str.replace(searchChar, replaceChar);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4758,        if (isEmpty(str) || isEmpty(searchChars)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4759,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4761,        if (replaceChars == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4762,            replaceChars = EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4764,        boolean modified = false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4765,        final int replaceCharsLength = replaceChars.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4766,        final int strLength = str.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4767,        final StringBuilder buf = new StringBuilder(strLength);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4768,        for (int i = 0; i < strLength; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4769,            final char ch = str.charAt(i);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4770,            final int index = searchChars.indexOf(ch);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4771,            if (index >= 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4772,                modified = true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4773,                if (index < replaceCharsLength) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4774,                    buf.append(replaceChars.charAt(index));,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4777,                buf.append(ch);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4780,        if (modified) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4781,            return buf.toString();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4783,        return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4818,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4819,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4821,        if (overlay == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4822,            overlay = EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4824,        final int len = str.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4825,        if (start < 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4826,            start = 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4828,        if (start > len) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4829,            start = len;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4831,        if (end < 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4832,            end = 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4834,        if (end > len) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4835,            end = len;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4837,        if (start > end) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4838,            final int temp = start;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4839,            start = end;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4840,            end = temp;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4842,        return new StringBuilder(len + start - end + overlay.length() + 1),0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4877,        if (isEmpty(str)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4878,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4881,        if (str.length() == 1) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4882,            final char ch = str.charAt(0);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4883,            if (ch == CharUtils.CR || ch == CharUtils.LF) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4884,                return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4886,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4889,        int lastIdx = str.length() - 1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4890,        final char last = str.charAt(lastIdx);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4892,        if (last == CharUtils.LF) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4893,            if (str.charAt(lastIdx - 1) == CharUtils.CR) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4894,                lastIdx--;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4896,        } else if (last != CharUtils.CR) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4897,            lastIdx++;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4899,"        return str.substring(0, lastIdx);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4931,"        return removeEnd(str,separator);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4960,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4961,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4963,        final int strLen = str.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4964,        if (strLen < 2) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4965,            return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4967,        final int lastIdx = strLen - 1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4968,"        final String ret = str.substring(0, lastIdx);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4969,        final char last = str.charAt(lastIdx);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4970,        if (last == CharUtils.LF && ret.charAt(lastIdx - 1) == CharUtils.CR) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4971,"            return ret.substring(0, lastIdx - 1);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,4973,        return ret;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5002,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5003,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5005,        if (repeat <= 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5006,            return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5008,        final int inputLength = str.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5009,        if (repeat == 1 || inputLength == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5010,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5012,        if (inputLength == 1 && repeat <= PAD_LIMIT) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5013,"            return repeat(str.charAt(0), repeat);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5016,        final int outputLength = inputLength * repeat;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5017,        switch (inputLength) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5019,"                return repeat(str.charAt(0), repeat);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5021,                final char ch0 = str.charAt(0);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5022,                final char ch1 = str.charAt(1);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5023,                final char[] output2 = new char[outputLength];,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5024,"                for (int i = repeat * 2 - 2; i >= 0; i--, i--) {",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5025,                    output2[i] = ch0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5026,                    output2[i + 1] = ch1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5028,                return new String(output2);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5030,                final StringBuilder buf = new StringBuilder(outputLength);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5031,                for (int i = 0; i < repeat; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5032,                    buf.append(str);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5034,                return buf.toString();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5059,        if(str == null || separator == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5060,"            return repeat(str, repeat);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5063,"            final String result = repeat(str + separator, repeat);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5064,"            return removeEnd(result, separator);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5091,        final char[] buf = new char[repeat];,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5092,        for (int i = repeat - 1; i >= 0; i--) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5093,            buf[i] = ch;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5095,        return new String(buf);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5118,"        return rightPad(str, size, ' ');",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5143,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5144,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5146,        final int pads = size - str.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5147,        if (pads <= 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5148,            return str; // returns original String when possible,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5150,        if (pads > PAD_LIMIT) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5151,"            return rightPad(str, size, String.valueOf(padChar));",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5153,"        return str.concat(repeat(padChar, pads));",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5180,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5181,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5183,        if (isEmpty(padStr)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5184,            padStr = SPACE;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5186,        final int padLen = padStr.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5187,        final int strLen = str.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5188,        final int pads = size - strLen;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5189,        if (pads <= 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5190,            return str; // returns original String when possible,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5192,        if (padLen == 1 && pads <= PAD_LIMIT) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5193,"            return rightPad(str, size, padStr.charAt(0));",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5196,        if (pads == padLen) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5197,            return str.concat(padStr);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5198,        } else if (pads < padLen) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5199,"            return str.concat(padStr.substring(0, pads));",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5201,            final char[] padding = new char[pads];,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5202,            final char[] padChars = padStr.toCharArray();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5203,            for (int i = 0; i < pads; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5204,                padding[i] = padChars[i % padLen];,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5206,            return str.concat(new String(padding));,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5230,"        return leftPad(str, size, ' ');",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5255,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5256,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5258,        final int pads = size - str.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5259,        if (pads <= 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5260,            return str; // returns original String when possible,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5262,        if (pads > PAD_LIMIT) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5263,"            return leftPad(str, size, String.valueOf(padChar));",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5265,"        return repeat(padChar, pads).concat(str);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5292,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5293,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5295,        if (isEmpty(padStr)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5296,            padStr = SPACE;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5298,        final int padLen = padStr.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5299,        final int strLen = str.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5300,        final int pads = size - strLen;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5301,        if (pads <= 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5302,            return str; // returns original String when possible,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5304,        if (padLen == 1 && pads <= PAD_LIMIT) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5305,"            return leftPad(str, size, padStr.charAt(0));",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5308,        if (pads == padLen) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5309,            return padStr.concat(str);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5310,        } else if (pads < padLen) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5311,"            return padStr.substring(0, pads).concat(str);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5313,            final char[] padding = new char[pads];,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5314,            final char[] padChars = padStr.toCharArray();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5315,            for (int i = 0; i < pads; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5316,                padding[i] = padChars[i % padLen];,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5318,            return new String(padding).concat(str);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5334,        return cs == null ? 0 : cs.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5363,"        return center(str, size, ' ');",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5391,        if (str == null || size <= 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5392,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5394,        final int strLen = str.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5395,        final int pads = size - strLen;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5396,        if (pads <= 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5397,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5399,"        str = leftPad(str, strLen + pads / 2, padChar);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5400,"        str = rightPad(str, size, padChar);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5401,        return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5431,        if (str == null || size <= 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5432,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5434,        if (isEmpty(padStr)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5435,            padStr = SPACE;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5437,        final int strLen = str.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5438,        final int pads = size - strLen;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5439,        if (pads <= 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5440,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5442,"        str = leftPad(str, strLen + pads / 2, padStr);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5443,"        str = rightPad(str, size, padStr);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5444,        return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5469,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5470,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5472,        return str.toUpperCase();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5492,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5493,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5495,        return str.toUpperCase(locale);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5518,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5519,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5521,        return str.toLowerCase();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5541,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5542,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5544,        return str.toLowerCase(locale);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5569,        if (str == null || (strLen = str.length()) == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5570,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5572,        return new StringBuilder(strLen),0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5600,        if (str == null || (strLen = str.length()) == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5601,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5603,        return new StringBuilder(strLen),0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5637,        if (StringUtils.isEmpty(str)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5638,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5641,        final char[] buffer = str.toCharArray();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5643,        for (int i = 0; i < buffer.length; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5644,            final char ch = buffer[i];,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5645,            if (Character.isUpperCase(ch)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5646,                buffer[i] = Character.toLowerCase(ch);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5647,            } else if (Character.isTitleCase(ch)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5648,                buffer[i] = Character.toLowerCase(ch);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5649,            } else if (Character.isLowerCase(ch)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5650,                buffer[i] = Character.toUpperCase(ch);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5653,        return new String(buffer);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5679,        if (isEmpty(str) || isEmpty(sub)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5680,            return 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5682,        int count = 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5683,        int idx = 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5684,"        while ((idx = CharSequenceUtils.indexOf(str, sub, idx)) != INDEX_NOT_FOUND) {",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5685,            count++;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5686,            idx += sub.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5688,        return count;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5714,        if (cs == null || cs.length() == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5715,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5717,        final int sz = cs.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5718,        for (int i = 0; i < sz; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5719,            if (Character.isLetter(cs.charAt(i)) == false) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5720,                return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5723,        return true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5749,        if (cs == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5750,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5752,        final int sz = cs.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5753,        for (int i = 0; i < sz; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5754,            if (Character.isLetter(cs.charAt(i)) == false && cs.charAt(i) != ' ') {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5755,                return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5758,        return true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5784,        if (cs == null || cs.length() == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5785,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5787,        final int sz = cs.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5788,        for (int i = 0; i < sz; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5789,            if (Character.isLetterOrDigit(cs.charAt(i)) == false) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5790,                return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5793,        return true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5819,        if (cs == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5820,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5822,        final int sz = cs.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5823,        for (int i = 0; i < sz; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5824,            if (Character.isLetterOrDigit(cs.charAt(i)) == false && cs.charAt(i) != ' ') {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5825,                return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5828,        return true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5858,        if (cs == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5859,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5861,        final int sz = cs.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5862,        for (int i = 0; i < sz; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5863,            if (CharUtils.isAsciiPrintable(cs.charAt(i)) == false) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5864,                return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5867,        return true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5901,        if (cs == null || cs.length() == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5902,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5904,        final int sz = cs.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5905,        for (int i = 0; i < sz; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5906,            if (Character.isDigit(cs.charAt(i)) == false) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5907,                return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5910,        return true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5938,        if (cs == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5939,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5941,        final int sz = cs.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5942,        for (int i = 0; i < sz; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5943,            if (Character.isDigit(cs.charAt(i)) == false && cs.charAt(i) != ' ') {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5944,                return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5947,        return true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5971,        if (cs == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5972,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5974,        final int sz = cs.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5975,        for (int i = 0; i < sz; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5976,            if (Character.isWhitespace(cs.charAt(i)) == false) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5977,                return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,5980,        return true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6003,        if (cs == null || isEmpty(cs)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6004,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6006,        final int sz = cs.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6007,        for (int i = 0; i < sz; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6008,            if (Character.isLowerCase(cs.charAt(i)) == false) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6009,                return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6012,        return true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6035,        if (cs == null || isEmpty(cs)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6036,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6038,        final int sz = cs.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6039,        for (int i = 0; i < sz; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6040,            if (Character.isUpperCase(cs.charAt(i)) == false) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6041,                return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6044,        return true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6066,        return str == null ? EMPTY : str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6087,        return str == null ? defaultStr : str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6109,        return StringUtils.isBlank(str) ? defaultStr : str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6131,        return StringUtils.isEmpty(str) ? defaultStr : str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6151,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6152,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6154,        return new StringBuilder(str).reverse().toString();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6177,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6178,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6182,"        final String[] strs = split(str, separatorChar);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6183,        ArrayUtils.reverse(strs);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6184,"        return join(strs, separatorChar);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6222,"        return abbreviate(str, 0, maxWidth);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6261,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6262,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6264,        if (maxWidth < 4) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6265,"            throw new IllegalArgumentException(""Minimum abbreviation width is 4"");",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6267,        if (str.length() <= maxWidth) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6268,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6270,        if (offset > str.length()) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6271,            offset = str.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6273,        if (str.length() - offset < maxWidth - 3) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6274,            offset = str.length() - (maxWidth - 3);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6276,"        final String abrevMarker = ""..."";",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6277,        if (offset <= 4) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6278,"            return str.substring(0, maxWidth - 3) + abrevMarker;",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6280,        if (maxWidth < 7) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6281,"            throw new IllegalArgumentException(""Minimum abbreviation width with offset is 7"");",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6283,        if (offset + maxWidth - 3 < str.length()) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6284,"            return abrevMarker + abbreviate(str.substring(offset), maxWidth - 3);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6286,        return abrevMarker + str.substring(str.length() - (maxWidth - 3));,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6319,        if (isEmpty(str) || isEmpty(middle)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6320,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6323,        if (length >= str.length() || length < middle.length()+2) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6324,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6327,        final int targetSting = length-middle.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6328,        final int startOffset = targetSting/2+targetSting%2;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6329,        final int endOffset = str.length()-targetSting/2;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6331,        final StringBuilder builder = new StringBuilder(length);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6332,"        builder.append(str.substring(0,startOffset));",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6333,        builder.append(middle);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6334,        builder.append(str.substring(endOffset));,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6336,        return builder.toString();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6370,        if (str1 == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6371,            return str2;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6373,        if (str2 == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6374,            return str1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6376,"        final int at = indexOfDifference(str1, str2);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6377,        if (at == INDEX_NOT_FOUND) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6378,            return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6380,        return str2.substring(at);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6409,        if (cs1 == cs2) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6410,            return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6412,        if (cs1 == null || cs2 == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6413,            return 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6416,        for (i = 0; i < cs1.length() && i < cs2.length(); ++i) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6417,            if (cs1.charAt(i) != cs2.charAt(i)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6418,                break;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6421,        if (i < cs2.length() || i < cs1.length()) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6422,            return i;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6424,        return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6460,        if (css == null || css.length <= 1) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6461,            return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6463,        boolean anyStringNull = false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6464,        boolean allStringsNull = true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6465,        final int arrayLen = css.length;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6466,        int shortestStrLen = Integer.MAX_VALUE;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6467,        int longestStrLen = 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6472,        for (int i = 0; i < arrayLen; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6473,            if (css[i] == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6474,                anyStringNull = true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6475,                shortestStrLen = 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6477,                allStringsNull = false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6478,"                shortestStrLen = Math.min(css[i].length(), shortestStrLen);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6479,"                longestStrLen = Math.max(css[i].length(), longestStrLen);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6484,        if (allStringsNull || longestStrLen == 0 && !anyStringNull) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6485,            return INDEX_NOT_FOUND;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6489,        if (shortestStrLen == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6490,            return 0;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6494,        int firstDiff = -1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6495,        for (int stringPos = 0; stringPos < shortestStrLen; stringPos++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6496,            final char comparisonChar = css[0].charAt(stringPos);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6497,            for (int arrayPos = 1; arrayPos < arrayLen; arrayPos++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6498,                if (css[arrayPos].charAt(stringPos) != comparisonChar) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6499,                    firstDiff = stringPos;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6500,                    break;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6503,            if (firstDiff != -1) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6504,                break;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6508,        if (firstDiff == -1 && shortestStrLen != longestStrLen) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6512,            return shortestStrLen;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6514,        return firstDiff;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6551,        if (strs == null || strs.length == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6552,            return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6554,        final int smallestIndexOfDiff = indexOfDifference(strs);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6555,        if (smallestIndexOfDiff == INDEX_NOT_FOUND) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6557,            if (strs[0] == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6558,                return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6560,            return strs[0];,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6561,        } else if (smallestIndexOfDiff == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6563,            return EMPTY;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6566,"            return strs[0].substring(0, smallestIndexOfDiff);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6609,        if (s == null || t == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6610,"            throw new IllegalArgumentException(""Strings must not be null"");",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6630,        int n = s.length(); // length of s,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6631,        int m = t.length(); // length of t,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6633,        if (n == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6634,            return m;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6635,        } else if (m == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6636,            return n;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6639,        if (n > m) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6641,            final CharSequence tmp = s;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6642,            s = t;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6643,            t = tmp;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6644,            n = m;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6645,            m = t.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6648,"        int p[] = new int[n + 1]; //'previous' cost array, horizontally",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6649,"        int d[] = new int[n + 1]; // cost array, horizontally",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6660,        for (i = 0; i <= n; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6661,            p[i] = i;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6664,        for (j = 1; j <= m; j++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6665,            t_j = t.charAt(j - 1);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6666,            d[0] = j;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6668,            for (i = 1; i <= n; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6669,                cost = s.charAt(i - 1) == t_j ? 0 : 1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6671,"                d[i] = Math.min(Math.min(d[i - 1] + 1, p[i] + 1), p[i - 1] + cost);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6675,            _d = p;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6676,            p = d;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6677,            d = _d;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6682,        return p[n];,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6718,        if (s == null || t == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6719,"            throw new IllegalArgumentException(""Strings must not be null"");",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6721,        if (threshold < 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6722,"            throw new IllegalArgumentException(""Threshold must not be negative"");",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6769,        int n = s.length(); // length of s,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6770,        int m = t.length(); // length of t,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6773,        if (n == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6774,            return m <= threshold ? m : -1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6775,        } else if (m == 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6776,            return n <= threshold ? n : -1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6779,        if (n > m) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6781,            final CharSequence tmp = s;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6782,            s = t;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6783,            t = tmp;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6784,            n = m;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6785,            m = t.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6788,"        int p[] = new int[n + 1]; // 'previous' cost array, horizontally",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6789,"        int d[] = new int[n + 1]; // cost array, horizontally",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6793,"        final int boundary = Math.min(n, threshold) + 1;",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6794,        for (int i = 0; i < boundary; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6795,            p[i] = i;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6799,"        Arrays.fill(p, boundary, p.length, Integer.MAX_VALUE);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6800,"        Arrays.fill(d, Integer.MAX_VALUE);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6803,        for (int j = 1; j <= m; j++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6804,            final char t_j = t.charAt(j - 1); // jth character of t,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6805,            d[0] = j;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6808,"            final int min = Math.max(1, j - threshold);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6809,"            final int max = Math.min(n, j + threshold);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6812,            if (min > max) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6813,                return -1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6817,            if (min > 1) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6818,                d[min - 1] = Integer.MAX_VALUE;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6822,            for (int i = min; i <= max; i++) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6823,                if (s.charAt(i - 1) == t_j) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6825,                    d[i] = p[i - 1];,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6828,"                    d[i] = 1 + Math.min(Math.min(d[i - 1], p[i]), p[i - 1]);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6833,            _d = p;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6834,            p = d;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6835,            d = _d;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6840,        if (p[n] <= threshold) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6841,            return p[n];,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6843,            return -1;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6873,"        return startsWith(str, prefix, false);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6899,"        return startsWith(str, prefix, true);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6914,        if (str == null || prefix == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6915,            return str == null && prefix == null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6917,        if (prefix.length() > str.length()) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6918,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6920,"        return CharSequenceUtils.regionMatches(str, ignoreCase, 0, prefix, 0, prefix.length());",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6943,        if (isEmpty(string) || ArrayUtils.isEmpty(searchStrings)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6944,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6946,        for (final CharSequence searchString : searchStrings) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6947,"            if (StringUtils.startsWith(string, searchString)) {",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6948,                return true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6951,        return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,6981,"        return endsWith(str, suffix, false);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7008,"        return endsWith(str, suffix, true);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7023,        if (str == null || suffix == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7024,            return str == null && suffix == null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7026,        if (suffix.length() > str.length()) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7027,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7029,        final int strOffset = str.length() - suffix.length();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7030,"        return CharSequenceUtils.regionMatches(str, ignoreCase, strOffset, suffix, 0, suffix.length());",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7075,        if (str == null) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7076,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7078,        return WHITESPACE_PATTERN.matcher(trim(str)).replaceAll(SPACE);,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7100,        if (isEmpty(string) || ArrayUtils.isEmpty(searchStrings)) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7101,            return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7103,        for (final CharSequence searchString : searchStrings) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7104,"            if (StringUtils.endsWith(string, searchString)) {",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7105,                return true;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7108,        return false;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7123,"        if (str == null || isEmpty(suffix) || endsWith(str, suffix, ignoreCase)) {",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7124,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7126,        if (suffixes != null && suffixes.length > 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7127,            for (final CharSequence s : suffixes) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7128,"                if (endsWith(str, s, ignoreCase)) {",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7129,                    return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7133,        return str + suffix.toString();,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7171,"        return appendIfMissing(str, suffix, false, suffixes);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7209,"        return appendIfMissing(str, suffix, true, suffixes);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7224,"        if (str == null || isEmpty(prefix) || startsWith(str, prefix, ignoreCase)) {",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7225,            return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7227,        if (prefixes != null && prefixes.length > 0) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7228,            for (final CharSequence p : prefixes) {,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7229,"                if (startsWith(str, p, ignoreCase)) {",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7230,                    return str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7234,        return prefix.toString() + str;,0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7272,"        return prependIfMissing(str, prefix, false, prefixes);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7310,"        return prependIfMissing(str, prefix, true, prefixes);",0.0,0,-1,0
+org/apache/commons/lang3/StringUtils,3,7328,"        return charsetName == null ? new String(bytes) : new String(bytes, charsetName);",0.0,0,-1,0

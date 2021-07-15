@@ -1,0 +1,189 @@
+project_path,version,lines,statement,suspicious,faulty,predict,miss_line
+org/apache/commons/math3/genetics/ListPopulation,34,112,        this.chromosomes.addAll(chromosomeColl);,1.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,113,    },1.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,209,        return chromosomes.iterator();,1.0,1,,0
+org/apache/commons/math3/genetics/ListPopulation,34,108,        if (chromosomes.size() + chromosomeColl.size() > populationLimit) {,0.5,0,,0
+org/apache/commons/math3/genetics/BinaryChromosome,34,39,        super(representation);,0.125,0,,0
+org/apache/commons/math3/genetics/BinaryChromosome,34,40,    },0.125,0,,0
+org/apache/commons/math3/genetics/BinaryChromosome,34,58,        for (int i : chromosomeRepresentation) {,0.125,0,,0
+org/apache/commons/math3/genetics/BinaryChromosome,34,59,            if (i < 0 || i >1) {,0.125,0,,0
+org/apache/commons/math3/genetics/BinaryChromosome,34,63,        },0.125,0,,0
+org/apache/commons/math3/genetics/BinaryChromosome,34,64,    },0.125,0,,0
+org/apache/commons/math3/genetics/BinaryChromosome,34,73,        List<Integer> rList= new ArrayList<Integer> (length);,0.125,0,,0
+org/apache/commons/math3/genetics/BinaryChromosome,34,74,        for (int j=0; j<length; j++) {,0.125,0,,0
+org/apache/commons/math3/genetics/BinaryChromosome,34,75,            rList.add(GeneticAlgorithm.getRandomGenerator().nextInt(2));,0.125,0,,0
+org/apache/commons/math3/genetics/BinaryChromosome,34,77,        return rList;,0.125,0,,0
+org/apache/commons/math3/genetics/AbstractListChromosome,34,42,    public AbstractListChromosome(final List<T> representation) {,0.11111,0,,0
+org/apache/commons/math3/genetics/AbstractListChromosome,34,43,        checkValidity(representation);,0.11111,0,,0
+org/apache/commons/math3/genetics/AbstractListChromosome,34,44,        this.representation = Collections.unmodifiableList(new ArrayList<T> (representation));,0.11111,0,,0
+org/apache/commons/math3/genetics/AbstractListChromosome,34,45,    },0.11111,0,,0
+org/apache/commons/math3/random/JDKRandomGenerator,34,28,public class JDKRandomGenerator extends Random implements RandomGenerator {,0.1,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,40,    private static RandomGenerator randomGenerator = new JDKRandomGenerator();,0.1,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,104,        return randomGenerator;,0.1,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,53,    },0.07143,0,,0
+org/apache/commons/math3/genetics/Chromosome,34,28,"public abstract class Chromosome implements Comparable<Chromosome>,Fitness {",0.07143,0,,0
+org/apache/commons/math3/genetics/Chromosome,34,33,    private double fitness = NO_FITNESS;,0.07143,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,52,"        this(Collections.<Chromosome> emptyList(), populationLimit);",0.06667,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,75,        this.populationLimit = populationLimit;,0.05263,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,76,        this.chromosomes = new ArrayList<Chromosome>(populationLimit);,0.05263,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,77,        this.chromosomes.addAll(chromosomes);,0.05263,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,78,    },0.05263,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,71,        if (chromosomes.size() > populationLimit) {,0.05,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,64,"    public ListPopulation(final List<Chromosome> chromosomes, final int populationLimit) {",0.04545,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,65,        if (chromosomes == null) {,0.04545,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,68,        if (populationLimit <= 0) {,0.04545,0,,0
+org/apache/commons/math3/random/JDKRandomGenerator,34,35,        setSeed((long) seed);,0.0,0,,0
+org/apache/commons/math3/random/JDKRandomGenerator,34,36,    },0.0,0,,0
+org/apache/commons/math3/random/JDKRandomGenerator,34,41,        final long prime = 4294967291l;,0.0,0,,0
+org/apache/commons/math3/random/JDKRandomGenerator,34,43,        long combined = 0l;,0.0,0,,0
+org/apache/commons/math3/random/JDKRandomGenerator,34,44,        for (int s : seed) {,0.0,0,,0
+org/apache/commons/math3/random/JDKRandomGenerator,34,45,            combined = combined * prime + s;,0.0,0,,0
+org/apache/commons/math3/random/JDKRandomGenerator,34,47,        setSeed(combined);,0.0,0,,0
+org/apache/commons/math3/random/JDKRandomGenerator,34,48,    },0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,66,            throw new NullArgumentException();,0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,69,"            throw new NotPositiveException(LocalizedFormats.POPULATION_LIMIT_NOT_POSITIVE, populationLimit);",0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,72,"            throw new NumberIsTooLargeException(LocalizedFormats.LIST_OF_CHROMOSOMES_BIGGER_THAN_POPULATION_SIZE,",0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,90,        if (chromosomes == null) {,0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,91,            throw new NullArgumentException();,0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,93,        if (chromosomes.size() > populationLimit) {,0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,94,"            throw new NumberIsTooLargeException(LocalizedFormats.LIST_OF_CHROMOSOMES_BIGGER_THAN_POPULATION_SIZE,",0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,97,        this.chromosomes.clear();,0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,98,        this.chromosomes.addAll(chromosomes);,0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,99,    },0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,109,"            throw new NumberIsTooLargeException(LocalizedFormats.LIST_OF_CHROMOSOMES_BIGGER_THAN_POPULATION_SIZE,",0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,120,        return Collections.unmodifiableList(chromosomes);,0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,128,        return chromosomes;,0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,138,        if (chromosomes.size() >= populationLimit) {,0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,139,"            throw new NumberIsTooLargeException(LocalizedFormats.LIST_OF_CHROMOSOMES_BIGGER_THAN_POPULATION_SIZE,",0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,142,        this.chromosomes.add(chromosome);,0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,143,    },0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,151,        Chromosome bestChromosome = this.chromosomes.get(0);,0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,152,        for (Chromosome chromosome : this.chromosomes) {,0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,153,            if (chromosome.compareTo(bestChromosome) > 0) {,0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,155,                bestChromosome = chromosome;,0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,157,        },0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,158,        return bestChromosome;,0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,166,        return this.populationLimit;,0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,177,        if (populationLimit <= 0) {,0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,178,"            throw new NotPositiveException(LocalizedFormats.POPULATION_LIMIT_NOT_POSITIVE, populationLimit);",0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,180,        if (populationLimit < chromosomes.size()) {,0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,181,"            throw new NumberIsTooSmallException(populationLimit, chromosomes.size(), true);",0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,183,        this.populationLimit = populationLimit;,0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,184,    },0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,191,        return this.chromosomes.size();,0.0,0,,0
+org/apache/commons/math3/genetics/ListPopulation,34,199,        return this.chromosomes.toString();,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,72,                            final SelectionPolicy selectionPolicy) {,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,58,    private int generationsEvolved = 0;,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,74,        if (crossoverRate < 0 || crossoverRate > 1) {,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,75,"            throw new OutOfRangeException(LocalizedFormats.CROSSOVER_RATE,",0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,78,        if (mutationRate < 0 || mutationRate > 1) {,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,79,"            throw new OutOfRangeException(LocalizedFormats.MUTATION_RATE,",0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,82,        this.crossoverPolicy = crossoverPolicy;,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,83,        this.crossoverRate = crossoverRate;,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,84,        this.mutationPolicy = mutationPolicy;,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,85,        this.mutationRate = mutationRate;,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,86,        this.selectionPolicy = selectionPolicy;,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,87,    },0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,95,        randomGenerator = random;,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,96,    },0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,118,        Population current = initial;,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,119,        generationsEvolved = 0;,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,120,        while (!condition.isSatisfied(current)) {,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,121,            current = nextGeneration(current);,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,122,            generationsEvolved++;,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,124,        return current;,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,150,        Population nextGeneration = current.nextGeneration();,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,152,        RandomGenerator randGen = getRandomGenerator();,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,154,        while (nextGeneration.getPopulationSize() < nextGeneration.getPopulationLimit()) {,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,156,            ChromosomePair pair = getSelectionPolicy().select(current);,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,159,            if (randGen.nextDouble() < getCrossoverRate()) {,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,161,"                pair = getCrossoverPolicy().crossover(pair.getFirst(), pair.getSecond());",0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,165,            if (randGen.nextDouble() < getMutationRate()) {,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,167,                pair = new ChromosomePair(,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,173,            nextGeneration.addChromosome(pair.getFirst());,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,175,            if (nextGeneration.getPopulationSize() < nextGeneration.getPopulationLimit()) {,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,177,                nextGeneration.addChromosome(pair.getSecond());,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,179,        },0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,181,        return nextGeneration;,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,189,        return crossoverPolicy;,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,197,        return crossoverRate;,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,205,        return mutationPolicy;,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,213,        return mutationRate;,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,221,        return selectionPolicy;,0.0,0,,0
+org/apache/commons/math3/genetics/GeneticAlgorithm,34,232,        return generationsEvolved;,0.0,0,,0
+org/apache/commons/math3/exception/OutOfRangeException,34,46,"        this(LocalizedFormats.OUT_OF_RANGE_SIMPLE, wrong, lo, hi);",0.0,0,,0
+org/apache/commons/math3/exception/OutOfRangeException,34,47,    },0.0,0,,0
+org/apache/commons/math3/exception/OutOfRangeException,34,62,"        super(specific, wrong, lo, hi);",0.0,0,,0
+org/apache/commons/math3/exception/OutOfRangeException,34,63,        this.lo = lo;,0.0,0,,0
+org/apache/commons/math3/exception/OutOfRangeException,34,64,        this.hi = hi;,0.0,0,,0
+org/apache/commons/math3/exception/OutOfRangeException,34,65,    },0.0,0,,0
+org/apache/commons/math3/exception/OutOfRangeException,34,71,        return lo;,0.0,0,,0
+org/apache/commons/math3/exception/OutOfRangeException,34,77,        return hi;,0.0,0,,0
+org/apache/commons/math3/exception/MathIllegalNumberException,34,46,"        super(pattern, wrong, arguments);",0.0,0,,0
+org/apache/commons/math3/exception/MathIllegalNumberException,34,47,        argument = wrong;,0.0,0,,0
+org/apache/commons/math3/exception/MathIllegalNumberException,34,48,    },0.0,0,,0
+org/apache/commons/math3/exception/MathIllegalNumberException,34,54,        return argument;,0.0,0,,0
+org/apache/commons/math3/exception/MathIllegalArgumentException,34,44,                                        Object ... args) {,0.0,0,,0
+org/apache/commons/math3/exception/MathIllegalArgumentException,34,45,        context = new ExceptionContext(this);,0.0,0,,0
+org/apache/commons/math3/exception/MathIllegalArgumentException,34,46,"        context.addMessage(pattern, args);",0.0,0,,0
+org/apache/commons/math3/exception/MathIllegalArgumentException,34,47,    },0.0,0,,0
+org/apache/commons/math3/exception/MathIllegalArgumentException,34,51,        return context;,0.0,0,,0
+org/apache/commons/math3/exception/MathIllegalArgumentException,34,57,        return context.getMessage();,0.0,0,,0
+org/apache/commons/math3/exception/MathIllegalArgumentException,34,63,        return context.getLocalizedMessage();,0.0,0,,0
+org/apache/commons/math3/genetics/BinaryChromosome,34,49,        super(representation);,0.0,0,,0
+org/apache/commons/math3/genetics/BinaryChromosome,34,50,    },0.0,0,,0
+org/apache/commons/math3/genetics/BinaryChromosome,34,60,"                throw new InvalidRepresentationException(LocalizedFormats.INVALID_BINARY_DIGIT,",0.0,0,,0
+org/apache/commons/math3/genetics/BinaryChromosome,34,86,        if (! (another instanceof BinaryChromosome)) {,0.0,0,,0
+org/apache/commons/math3/genetics/BinaryChromosome,34,87,            return false;,0.0,0,,0
+org/apache/commons/math3/genetics/BinaryChromosome,34,89,        BinaryChromosome anotherBc = (BinaryChromosome) another;,0.0,0,,0
+org/apache/commons/math3/genetics/BinaryChromosome,34,91,        if (getLength() != anotherBc.getLength()) {,0.0,0,,0
+org/apache/commons/math3/genetics/BinaryChromosome,34,92,            return false;,0.0,0,,0
+org/apache/commons/math3/genetics/BinaryChromosome,34,95,        for (int i=0; i< getRepresentation().size(); i++) {,0.0,0,,0
+org/apache/commons/math3/genetics/BinaryChromosome,34,96,            if (!(getRepresentation().get(i).equals(anotherBc.getRepresentation().get(i)))) {,0.0,0,,0
+org/apache/commons/math3/genetics/BinaryChromosome,34,97,                return false;,0.0,0,,0
+org/apache/commons/math3/genetics/BinaryChromosome,34,101,        return true;,0.0,0,,0
+org/apache/commons/math3/genetics/AbstractListChromosome,34,52,        this(Arrays.asList(representation));,0.0,0,,0
+org/apache/commons/math3/genetics/AbstractListChromosome,34,53,    },0.0,0,,0
+org/apache/commons/math3/genetics/AbstractListChromosome,34,69,        return representation;,0.0,0,,0
+org/apache/commons/math3/genetics/AbstractListChromosome,34,77,        return getRepresentation().size();,0.0,0,,0
+org/apache/commons/math3/genetics/AbstractListChromosome,34,100,"        return String.format(""(f=%s %s)"", getFitness(), getRepresentation());",0.0,0,,0
+org/apache/commons/math3/genetics/Chromosome,34,45,        if (this.fitness == NO_FITNESS) {,0.0,0,,0
+org/apache/commons/math3/genetics/Chromosome,34,47,            this.fitness = fitness();,0.0,0,,0
+org/apache/commons/math3/genetics/Chromosome,34,49,        return this.fitness;,0.0,0,,0
+org/apache/commons/math3/genetics/Chromosome,34,65,        return ((Double)this.getFitness()).compareTo(another.getFitness());,0.0,0,,0
+org/apache/commons/math3/genetics/Chromosome,34,76,        return false;,0.0,0,,0
+org/apache/commons/math3/genetics/Chromosome,34,89,        for (Chromosome anotherChr : population) {,0.0,0,,0
+org/apache/commons/math3/genetics/Chromosome,34,90,            if (this.isSame(anotherChr)) {,0.0,0,,0
+org/apache/commons/math3/genetics/Chromosome,34,91,                return anotherChr;,0.0,0,,0
+org/apache/commons/math3/genetics/Chromosome,34,93,        },0.0,0,,0
+org/apache/commons/math3/genetics/Chromosome,34,94,        return null;,0.0,0,,0
+org/apache/commons/math3/genetics/Chromosome,34,104,        Chromosome sameChromosome = findSameChromosome(population);,0.0,0,,0
+org/apache/commons/math3/genetics/Chromosome,34,105,        if (sameChromosome != null) {,0.0,0,,0
+org/apache/commons/math3/genetics/Chromosome,34,106,            fitness = sameChromosome.getFitness();,0.0,0,,0
+org/apache/commons/math3/genetics/Chromosome,34,108,    },0.0,0,,0
+org/apache/commons/math3/genetics/InvalidRepresentationException,34,40,"       super(pattern, args);",0.0,0,,0
+org/apache/commons/math3/genetics/InvalidRepresentationException,34,41,    },0.0,0,,0
+org/apache/commons/math3/exception/NullArgumentException,34,41,        this(LocalizedFormats.NULL_NOT_ALLOWED);,0.0,0,,0
+org/apache/commons/math3/exception/NullArgumentException,34,42,    },0.0,0,,0
+org/apache/commons/math3/exception/NullArgumentException,34,50,"        super(pattern, arguments);",0.0,0,,0
+org/apache/commons/math3/exception/NullArgumentException,34,51,    },0.0,0,,0
+org/apache/commons/math3/exception/NotPositiveException,34,37,"        super(value, 0, true);",0.0,0,,0
+org/apache/commons/math3/exception/NotPositiveException,34,38,    },0.0,0,,0
+org/apache/commons/math3/exception/NotPositiveException,34,47,"        super(specific, value, 0, true);",0.0,0,,0
+org/apache/commons/math3/exception/NotPositiveException,34,48,    },0.0,0,,0
+org/apache/commons/math3/exception/NumberIsTooSmallException,34,50,        this(boundIsAllowed ?,0.0,0,,0
+org/apache/commons/math3/exception/NumberIsTooSmallException,34,54,    },0.0,0,,0
+org/apache/commons/math3/exception/NumberIsTooSmallException,34,68,"        super(specific, wrong, min);",0.0,0,,0
+org/apache/commons/math3/exception/NumberIsTooSmallException,34,70,        this.min = min;,0.0,0,,0
+org/apache/commons/math3/exception/NumberIsTooSmallException,34,71,        this.boundIsAllowed = boundIsAllowed;,0.0,0,,0
+org/apache/commons/math3/exception/NumberIsTooSmallException,34,72,    },0.0,0,,0
+org/apache/commons/math3/exception/NumberIsTooSmallException,34,78,        return boundIsAllowed;,0.0,0,,0
+org/apache/commons/math3/exception/NumberIsTooSmallException,34,85,        return min;,0.0,0,,0
+org/apache/commons/math3/exception/NumberIsTooLargeException,34,50,        this(boundIsAllowed ?,0.0,0,,0
+org/apache/commons/math3/exception/NumberIsTooLargeException,34,54,    },0.0,0,,0
+org/apache/commons/math3/exception/NumberIsTooLargeException,34,67,"        super(specific, wrong, max);",0.0,0,,0
+org/apache/commons/math3/exception/NumberIsTooLargeException,34,69,        this.max = max;,0.0,0,,0
+org/apache/commons/math3/exception/NumberIsTooLargeException,34,70,        this.boundIsAllowed = boundIsAllowed;,0.0,0,,0
+org/apache/commons/math3/exception/NumberIsTooLargeException,34,71,    },0.0,0,,0
+org/apache/commons/math3/exception/NumberIsTooLargeException,34,77,        return boundIsAllowed;,0.0,0,,0
+org/apache/commons/math3/exception/NumberIsTooLargeException,34,84,        return max;,0.0,0,,0

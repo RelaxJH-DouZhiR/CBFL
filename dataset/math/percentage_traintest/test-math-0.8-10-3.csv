@@ -1,0 +1,199 @@
+dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,logic,lengthEle,lengthWord,depth,suspicious,accuracy,miss_line,predict
+defect4j,math,org/apache/commons/math3/optimization/direct/CMAESOptimizer,20,703,            double oldFac = hsig ? 0 : ccov1 * cc * (2. - cc);,20,7,0,1,2,0,6,0,0,35,50,3,0.07143,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/direct/CMAESOptimizer,20,704,            oldFac += 1. - ccov1 - ccovmu;,2,0,0,0,0,0,8,0,0,10,30,3,0.07143,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/direct/CMAESOptimizer,20,705,            if (isActiveCMA) {,0,0,0,1,3,0,0,0,0,4,18,4,0.07143,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/direct/CMAESOptimizer,20,707,                negccov = (1. - ccovmu) * 0.25 * mueff /,6,3,0,1,2,0,0,0,0,10,40,8,0.07143,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/direct/CMAESOptimizer,20,709,                double negminresidualvariance = 0.66;,2,0,1,0,0,0,4,0,0,8,37,4,0.07143,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/direct/CMAESOptimizer,20,712,                double negalphaold = 0.5; // where to make up for the variance,0,0,0,0,0,0,0,0,0,0,62,4,0.07143,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/AbstractRealMatrix,21,97,"        MatrixUtils.checkSubtractionCompatible(this, m);",0,0,0,1,2,0,6,0,0,7,48,3,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/AbstractRealMatrix,21,99,        final int rowCount    = getRowDimension();,0,0,0,1,2,0,0,0,0,3,42,4,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/AbstractRealMatrix,21,100,        final int columnCount = getColumnDimension();,0,0,0,1,2,0,0,0,0,3,45,4,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/AbstractRealMatrix,21,101,"        final RealMatrix out = createMatrix(rowCount, columnCount);",8,1,0,1,2,0,0,0,0,10,59,6,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/AbstractRealMatrix,21,102,        for (int row = 0; row < rowCount; ++row) {,0,1,0,1,3,0,20,0,0,21,42,7,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/AbstractRealMatrix,21,103,            for (int col = 0; col < columnCount; ++col) {,6,1,0,1,3,0,0,0,0,7,45,3,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/AbstractRealMatrix,21,104,"                out.setEntry(row, col, getEntry(row, col) - m.getEntry(row, col));",0,0,0,3,6,0,0,0,0,9,66,4,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/AbstractRealMatrix,21,108,        return out;,2,0,0,0,0,1,2,4,0,8,11,4,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/AbstractRealMatrix,21,241,        return walkInColumnOrder(new RealMatrixPreservingVisitor() {,0,0,0,1,4,1,0,0,0,6,60,4,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/Array2DRowRealMatrix,21,456,        final int rows    = getRowDimension();,0,0,0,1,2,0,0,0,0,3,38,4,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/Array2DRowRealMatrix,21,457,        final int columns = getColumnDimension();,2,0,0,1,2,1,2,0,0,5,41,4,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/Array2DRowRealMatrix,21,458,"        visitor.start(rows, columns, 0, rows - 1, 0, columns - 1);",0,0,0,1,2,0,0,0,0,3,58,4,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/Array2DRowRealMatrix,21,459,        for (int j = 0; j < columns; ++j) {,8,1,0,1,3,0,0,0,0,10,35,4,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/Array2DRowRealMatrix,21,460,            for (int i = 0; i < rows; ++i) {,24,3,0,1,3,0,0,0,0,30,32,3,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/Array2DRowRealMatrix,21,461,"                visitor.visit(i, j, data[i][j]);",0,0,1,3,6,0,8,0,0,14,32,9,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/Array2DRowRealMatrix,21,464,        return visitor.end();,0,0,0,1,2,1,4,0,0,4,21,5,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/MatrixUtils,21,130,        if (data == null ||,4,4,0,0,1,3,4,0,0,15,19,1,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/MatrixUtils,21,134,        return (data.length * data[0].length <= 4096) ?,6,2,1,2,4,1,0,0,0,10,47,6,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/MatrixUtils,21,523,        if ((left.getRowDimension()    != right.getRowDimension()) ||,0,0,0,3,7,0,0,0,0,10,61,4,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/MatrixUtils,21,528,    },4,0,0,0,1,0,0,0,0,5,1,4,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/AbstractRealMatrix,21,241,        return walkInColumnOrder(new RealMatrixPreservingVisitor() {,10,1,0,1,4,1,0,0,0,12,60,3,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/AbstractRealMatrix,21,256,                this.endRow = endRow;,4,0,0,0,0,0,0,0,0,5,21,10,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/AbstractRealMatrix,21,257,                columnSum   = 0;,20,8,0,0,0,1,0,0,0,29,16,4,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/AbstractRealMatrix,21,258,                maxColSum   = 0;,0,0,0,0,0,0,0,0,0,0,16,4,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/AbstractRealMatrix,21,259,            },0,0,0,0,1,0,0,0,0,1,1,4,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/AbstractRealMatrix,21,263,                columnSum += FastMath.abs(value);,6,0,1,1,2,1,6,0,0,19,33,1,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/AbstractRealMatrix,21,264,                if (row == endRow) {,0,0,0,1,3,0,0,0,0,4,20,4,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/AbstractRealMatrix,21,265,"                    maxColSum = FastMath.max(maxColSum, columnSum);",0,0,0,1,2,0,0,0,0,3,47,4,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/AbstractRealMatrix,21,266,                    columnSum = 0;,0,0,0,0,0,0,0,0,0,0,14,4,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/AbstractRealMatrix,21,268,            },2,0,0,0,1,0,2,0,0,4,1,5,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/AbstractRealMatrix,21,272,                return maxColSum;,4,0,0,0,0,1,0,0,0,4,17,3,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,21,3508,            return a;,0,0,1,0,0,1,0,0,0,3,9,6,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,21,3511,            return b;,2,0,1,0,0,1,0,0,0,11,9,3,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,21,3514,        if (a != b) {,4,1,0,1,3,0,0,0,0,5,13,4,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,21,3519,        long bits = Double.doubleToRawLongBits(a);,0,0,0,1,2,0,0,0,0,3,42,4,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,21,3520,        if (bits == 0x8000000000000000L) {,2,0,0,1,3,0,0,0,0,3,34,8,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,21,3523,        return a;,0,0,0,0,0,1,0,0,0,1,9,4,4.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/RectangularCholeskyDecomposition,21,63,        throws NonPositiveDefiniteMatrixException {,2,0,0,0,1,0,0,0,0,2,43,2,2.0,1,1,-1
+defect4j,math,org/apache/commons/math3/linear/RectangularCholeskyDecomposition,21,65,        final int order = matrix.getRowDimension();,0,0,0,1,2,0,0,0,0,3,43,4,2.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/RectangularCholeskyDecomposition,21,66,        final double[][] c = matrix.getData();,0,0,0,3,6,0,0,0,0,9,38,4,2.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/RectangularCholeskyDecomposition,21,67,        final double[][] b = new double[order][order];,0,0,0,4,8,0,0,0,0,12,46,4,2.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/RectangularCholeskyDecomposition,21,69,        int[] swap  = new int[order];,2,0,1,2,4,0,4,0,0,8,29,3,2.0,1,0,-1
+defect4j,math,org/apache/commons/math3/linear/RectangularCholeskyDecomposition,21,70,        int[] index = new int[order];,2,0,1,2,4,0,0,0,0,4,29,5,2.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/RectangularCholeskyDecomposition,21,71,        for (int i = 0; i < order; ++i) {,8,1,0,1,3,0,0,0,0,10,33,4,2.0,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/FDistribution,22,275,        return true;,0,0,0,0,0,1,0,0,0,1,12,4,1.0,1,0,-1
+defect4j,math,org/apache/commons/math3/distribution/UniformRealDistribution,22,184,        return false;,6,1,0,0,0,1,4,0,0,11,13,3,1.0,1,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,22,1107,            return Double.NEGATIVE_INFINITY;,4,0,0,0,0,1,0,0,0,4,32,7,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/FDistribution,22,129,        final double nhalf = numeratorDegreesOfFreedom / 2;,4,1,0,0,0,1,4,0,0,10,51,12,0.25,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/FDistribution,22,130,        final double mhalf = denominatorDegreesOfFreedom / 2;,0,0,0,0,0,0,0,0,0,0,53,4,0.25,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/FDistribution,22,131,        final double logx = FastMath.log(x);,2,1,0,1,2,0,0,0,0,3,36,4,0.25,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/FDistribution,22,132,        final double logn = FastMath.log(numeratorDegreesOfFreedom);,4,0,0,1,2,2,6,0,0,12,60,1,0.25,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/FDistribution,22,133,        final double logm = FastMath.log(denominatorDegreesOfFreedom);,10,0,0,1,2,1,8,2,0,21,62,3,0.25,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/FDistribution,22,134,        final double lognxm = FastMath.log(numeratorDegreesOfFreedom * x +,6,2,0,0,1,1,4,0,0,13,66,4,0.25,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/FDistribution,22,136,        return FastMath.exp(nhalf * logn + nhalf * logx - logx +,10,8,0,0,1,1,4,0,0,22,56,5,0.25,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/UniformRealDistribution,22,109,        if (x < lower || x > upper) {,2,0,0,1,3,0,0,0,0,2,29,7,0.25,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/UniformRealDistribution,22,112,        return 1 / (upper - lower);,6,2,0,1,2,1,0,0,0,9,27,3,0.25,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/UniformRealDistribution,22,174,        return upper;,0,0,0,0,0,1,0,0,0,1,13,4,0.25,0,0,-1
+defect4j,math,org/apache/commons/math3/special/Beta,22,170,"        return logBeta(a, b, DEFAULT_EPSILON, Integer.MAX_VALUE);",0,0,0,1,2,1,0,0,0,4,57,4,0.25,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/FDistribution,22,258,        return 0;,6,1,0,0,0,1,0,0,0,7,9,6,0.14286,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,22,864,            intVal = (int) x;,0,0,0,1,2,0,0,0,0,3,17,4,0.11111,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,22,866,            if (intVal > 709) {,0,0,0,1,3,0,0,0,0,4,19,4,0.11111,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,22,874,            intPartA = ExpIntTable.EXP_INT_TABLE_A[EXP_INT_TABLE_MAX_INDEX+intVal];,0,0,0,1,2,0,0,0,0,3,71,4,0.11111,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,22,875,            intPartB = ExpIntTable.EXP_INT_TABLE_B[EXP_INT_TABLE_MAX_INDEX+intVal];,0,0,0,1,2,0,0,0,0,3,71,4,0.11111,0,0,-1
+defect4j,math,org/apache/commons/math3/util/MathArrays,23,234,        double previous = val[0];,2,0,1,1,2,0,0,0,0,4,25,5,1.0,0,0,-1
+defect4j,math,org/apache/commons/math3/util/MathArrays,23,235,        final int max = val.length;,0,0,0,0,0,0,0,0,0,0,27,4,1.0,0,0,-1
+defect4j,math,org/apache/commons/math3/util/MathArrays,23,239,        for (index = 1; index < max; index++) {,0,0,0,1,3,0,4,0,0,4,39,5,1.0,0,0,-1
+defect4j,math,org/apache/commons/math3/util/MathArrays,23,240,            switch (dir) {,8,4,0,1,3,0,0,0,0,13,14,10,1.0,0,0,-1
+defect4j,math,org/apache/commons/math3/util/MathArrays,23,242,                if (strict) {,2,0,0,1,3,0,0,0,0,2,13,8,1.0,0,0,-1
+defect4j,math,org/apache/commons/math3/util/MathArrays,23,243,                    if (val[index] <= previous) {,0,0,0,2,5,0,0,0,0,7,29,4,1.0,0,0,-1
+defect4j,math,org/apache/commons/math3/util/MathArrays,23,268,            previous = val[index];,0,0,0,1,2,0,0,0,0,3,22,4,1.0,0,0,-1
+defect4j,math,org/apache/commons/math3/util/MathArrays,23,271,        if (index == max) {,10,2,1,1,3,0,0,0,0,21,19,1,1.0,0,0,-1
+defect4j,math,org/apache/commons/math3/util/MathArrays,23,273,            return true;,2,0,0,0,0,1,0,0,0,3,12,3,1.0,0,0,-1
+defect4j,math,org/apache/commons/math3/util/MathArrays,23,295,"        checkOrder(val, dir, strict, true);",0,0,0,1,2,0,8,0,0,9,35,5,1.0,0,0,-1
+defect4j,math,org/apache/commons/math3/util/MathArrays,23,296,    },2,0,1,0,1,0,0,0,0,5,1,4,1.0,0,0,-1
+defect4j,math,org/apache/commons/math3/util/MathArrays,23,306,"        checkOrder(val, OrderDirection.INCREASING, true);",10,3,1,1,2,0,10,0,0,31,49,3,1.0,0,0,-1
+defect4j,math,org/apache/commons/math3/util/MathArrays,23,307,    },0,0,0,0,1,0,0,0,0,1,1,4,1.0,0,0,-1
+defect4j,math,org/apache/commons/math3/util/MathArrays,23,143,    public static enum OrderDirection {,0,0,0,0,1,0,0,0,0,1,35,4,1.0,0,0,-1
+defect4j,math,org/apache/commons/math3/util/MathArrays,23,145,"        INCREASING,",0,0,0,0,0,0,0,0,0,0,11,4,1.0,0,0,-1
+defect4j,math,org/apache/commons/math3/util/MathArrays,23,147,        DECREASING,0,0,0,0,0,0,0,0,0,0,10,4,1.0,0,0,-1
+defect4j,math,org/apache/commons/math3/util/MathArrays,23,166,            switch (dir) {,0,0,0,1,3,0,0,0,0,4,14,4,1.0,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/FunctionUtils,23,141,        return new UnivariateFunction() {,8,3,1,1,3,1,0,2,0,18,33,3,1.0,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/FunctionUtils,23,141,        return new UnivariateFunction() {,0,0,0,1,3,1,0,2,0,2,33,6,1.0,0,0,-1
+defect4j,math,org/apache/commons/math3/util/MathArrays,24,532,"         return copyOf(source, source.length);",4,0,0,1,2,1,4,0,0,8,37,5,0.25,0,0,-1
+defect4j,math,org/apache/commons/math3/util/MathArrays,24,560,         final double[] output = new double[len];,4,0,1,2,4,1,4,0,0,11,40,4,0.25,0,0,-1
+defect4j,math,org/apache/commons/math3/util/MathArrays,24,561,"         System.arraycopy(source, 0, output, 0, FastMath.min(len, source.length));",0,0,0,2,4,0,0,0,0,6,73,4,0.25,0,0,-1
+defect4j,math,org/apache/commons/math3/util/MathArrays,24,562,         return output;,18,3,0,0,0,2,6,2,0,30,14,2,0.25,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/function/Sin,24,33,"public class Sin implements UnivariateDifferentiable, DifferentiableUnivariateFunction {",2,0,0,0,1,3,0,0,0,5,88,2,0.25,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/function/Sin,24,36,        return FastMath.sin(x);,0,0,0,1,2,1,6,0,0,6,23,5,0.25,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/univariate/BrentOptimizer,24,183,                            if (x <= m) {,0,0,0,1,3,0,0,0,0,4,13,4,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/univariate/BrentOptimizer,24,184,                                d = tol1;,0,0,0,0,0,0,0,0,0,0,9,4,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,24,1653,        double x2 = x*x;,6,1,0,0,0,1,0,0,0,8,16,6,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,24,1655,        double p = 2.7553817452272217E-6;,0,0,0,0,0,0,0,0,0,0,33,4,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,24,1656,        p = p * x2 + -1.9841269659586505E-4;,6,2,0,0,0,0,0,0,0,10,36,4,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,24,1657,        p = p * x2 + 0.008333333333329196;,0,0,0,0,0,0,0,0,0,0,34,4,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,24,1658,        p = p * x2 + -0.16666666666666666;,0,0,0,0,0,0,0,0,0,0,34,4,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,24,1661,        p = p * x2 * x;,2,0,0,0,0,0,0,8,0,10,15,4,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,24,1663,        return p;,2,0,0,0,0,1,0,0,0,2,9,3,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,24,1673,        double x2 = x*x;,6,1,0,0,0,0,0,0,0,7,16,5,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,24,1675,        double p = 2.479773539153719E-5;,0,0,0,0,0,0,0,0,0,0,32,4,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,24,1676,        p = p * x2 + -0.0013888888689039883;,0,0,0,0,0,0,8,0,0,8,36,7,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,24,1677,        p = p * x2 + 0.041666666666621166;,6,2,0,0,0,0,0,0,0,9,34,4,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/fitting/HarmonicFitter,25,326,                a = FastMath.sqrt(c1 / c2);,6,1,0,1,2,0,4,0,0,12,27,7,0.33333,1,1,-1
+defect4j,math,org/apache/commons/math3/optimization/fitting/HarmonicFitter,25,327,                omega = FastMath.sqrt(c2 / c3);,2,1,0,1,2,0,0,0,0,3,31,4,0.33333,1,1,-1
+defect4j,math,org/apache/commons/math3/optimization/fitting/HarmonicFitter,25,201,            this.observations = observations.clone();,8,4,0,1,2,0,4,0,0,17,41,1,0.25,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/fitting/HarmonicFitter,25,202,        },2,0,1,0,1,1,4,0,0,11,1,3,0.25,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/fitting/HarmonicFitter,25,215,            sortObservations();,0,0,0,1,2,0,2,0,0,2,19,6,0.25,0,0,-1
+defect4j,math,org/apache/commons/math3/exception/ConvergenceException,26,48,                                Object ... args) {,2,0,0,0,2,0,0,2,0,4,18,3,1.0,0,0,-1
+defect4j,math,org/apache/commons/math3/exception/ConvergenceException,26,49,"        getContext().addMessage(pattern, args);",2,1,0,2,4,0,24,0,0,27,39,3,1.0,0,0,-1
+defect4j,math,org/apache/commons/math3/exception/ConvergenceException,26,50,    },0,0,0,0,1,0,0,0,0,1,1,4,1.0,0,0,-1
+defect4j,math,org/apache/commons/math3/exception/MathIllegalStateException,26,69,        this(LocalizedFormats.ILLEGAL_STATE);,0,0,0,1,2,0,0,0,0,3,37,4,0.16667,0,0,-1
+defect4j,math,org/apache/commons/math3/exception/MathIllegalStateException,26,70,    },0,0,0,0,1,0,0,0,0,1,1,4,0.16667,0,0,-1
+defect4j,math,org/apache/commons/math3/exception/MathIllegalStateException,26,74,        return context;,2,0,0,0,0,1,0,0,0,2,15,4,0.16667,0,0,-1
+defect4j,math,org/apache/commons/math3/exception/MathIllegalStateException,26,45,                                     Object ... args) {,0,0,0,0,2,0,0,0,0,2,18,4,0.14286,0,0,-1
+defect4j,math,org/apache/commons/math3/exception/MathIllegalStateException,26,46,        context = new ExceptionContext(this);,0,0,0,1,2,0,0,0,0,3,37,4,0.14286,0,0,-1
+defect4j,math,org/apache/commons/math3/exception/MathIllegalStateException,26,47,"        context.addMessage(pattern, args);",4,0,0,1,2,0,8,0,0,13,34,0,0.14286,0,0,-1
+defect4j,math,org/apache/commons/math3/exception/MathIllegalStateException,26,48,    },0,0,0,0,1,0,0,0,0,1,1,4,0.14286,0,0,-1
+defect4j,math,org/apache/commons/math3/fraction/Fraction,26,188,            this.numerator = (int) a0;,4,0,0,1,2,0,0,0,0,5,26,6,0.04545,0,0,-1
+defect4j,math,org/apache/commons/math3/fraction/Fraction,26,189,            this.denominator = 1;,2,0,0,0,0,0,0,0,0,3,21,6,0.04545,0,0,-1
+defect4j,math,org/apache/commons/math3/fraction/Fraction,26,190,            return;,6,1,0,0,0,1,0,0,0,7,7,4,0.04545,0,0,-1
+defect4j,math,org/apache/commons/math3/fraction/Fraction,26,215,                p0 = p1;,18,8,0,0,0,0,0,0,0,26,8,3,0.03846,0,0,-1
+defect4j,math,org/apache/commons/math3/fraction/Fraction,26,216,                p1 = p2;,4,0,0,0,0,0,0,0,0,5,8,6,0.03846,0,0,-1
+defect4j,math,org/apache/commons/math3/fraction/Fraction,26,217,                q0 = q1;,0,1,0,0,0,0,14,0,0,15,8,5,0.03846,0,0,-1
+defect4j,math,org/apache/commons/math3/fraction/Fraction,26,218,                q1 = q2;,0,0,0,0,0,0,0,0,0,0,8,4,0.03846,0,0,-1
+defect4j,math,org/apache/commons/math3/fraction/Fraction,26,219,                a0 = a1;,0,0,0,0,0,0,0,0,0,0,8,4,0.03846,0,0,-1
+defect4j,math,org/apache/commons/math3/fraction/Fraction,26,220,                r0 = r1;,10,2,0,0,0,0,0,0,0,15,8,3,0.03846,0,0,-1
+defect4j,math,org/apache/commons/math3/fraction/Fraction,27,597,        return multiply(100).doubleValue();,0,0,0,2,4,1,4,0,0,4,35,5,1.0,1,0,-1
+defect4j,math,org/apache/commons/math3/fraction/Fraction,27,555,"        return new Fraction(numerator * i, denominator);",6,0,0,1,2,1,4,0,0,11,48,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/fraction/Fraction,27,319,        return (double)numerator / (double)denominator;,4,0,0,2,4,1,0,0,0,5,47,4,0.03846,0,0,-1
+defect4j,math,org/apache/commons/math3/fraction/Fraction,27,256,"    public Fraction(int num, int den) {",0,0,0,1,3,0,0,0,0,4,35,4,0.00488,0,0,-1
+defect4j,math,org/apache/commons/math3/fraction/Fraction,27,257,        if (den == 0) {,8,2,0,1,3,1,4,0,0,15,15,3,0.00488,0,0,-1
+defect4j,math,org/apache/commons/math3/fraction/Fraction,27,261,        if (den < 0) {,2,1,0,1,3,0,0,0,0,3,14,4,0.00488,0,0,-1
+defect4j,math,org/apache/commons/math3/fraction/Fraction,27,271,"        final int d = ArithmeticUtils.gcd(num, den);",4,0,1,1,2,1,8,0,0,20,44,3,0.00488,0,0,-1
+defect4j,math,org/apache/commons/math3/fraction/Fraction,27,272,        if (d > 1) {,0,0,0,1,3,0,0,0,0,4,12,4,0.00488,0,0,-1
+defect4j,math,org/apache/commons/math3/fraction/Fraction,27,273,            num /= d;,0,0,0,0,0,0,0,0,0,0,9,4,0.00488,0,0,-1
+defect4j,math,org/apache/commons/math3/fraction/Fraction,27,274,            den /= d;,0,0,0,0,0,0,0,0,0,0,9,4,0.00488,0,0,-1
+defect4j,math,org/apache/commons/math3/fraction/Fraction,27,278,        if (den < 0) {,0,0,0,1,3,0,0,0,0,4,14,4,0.00488,0,0,-1
+defect4j,math,org/apache/commons/math3/fraction/Fraction,27,282,        this.numerator   = num;,4,0,0,0,0,0,0,0,0,5,23,4,0.00488,0,0,-1
+defect4j,math,org/apache/commons/math3/fraction/Fraction,27,283,        this.denominator = den;,12,3,0,0,0,1,6,0,0,23,23,4,0.00488,0,0,-1
+defect4j,math,org/apache/commons/math3/fraction/Fraction,27,284,    },0,0,0,0,1,0,6,0,0,6,1,5,0.00488,0,0,-1
+defect4j,math,org/apache/commons/math3/fraction/Fraction,27,42,"    public static final Fraction TWO = new Fraction(2, 1);",0,0,0,1,2,0,0,0,0,3,54,4,0.00488,0,0,-1
+defect4j,math,org/apache/commons/math3/fraction/Fraction,27,45,"    public static final Fraction ONE = new Fraction(1, 1);",2,0,0,1,2,3,0,4,0,9,54,2,0.00488,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/linear/SimplexSolver,28,138,                Integer minRow = null;,2,0,0,0,0,0,0,2,0,4,22,7,0.33333,1,1,-1
+defect4j,math,org/apache/commons/math3/optimization/linear/SimplexSolver,28,139,                int minIndex = tableau.getWidth();,4,3,0,1,2,0,0,0,0,7,34,8,0.33333,1,1,-1
+defect4j,math,org/apache/commons/math3/optimization/linear/SimplexSolver,28,140,                for (Integer row : minRatioPositions) {,6,1,0,1,3,0,0,2,0,9,39,4,0.33333,1,1,-1
+defect4j,math,org/apache/commons/math3/optimization/linear/SimplexSolver,28,141,                    int i = tableau.getNumObjectiveFunctions();,0,0,0,1,2,0,0,0,0,3,43,4,0.33333,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/linear/SimplexSolver,28,142,                    for (; i < tableau.getWidth() - 1 && minRow != row; i++) {,8,4,0,2,5,0,4,0,0,17,58,9,0.33333,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/linear/SimplexSolver,28,143,                        if (row == tableau.getBasicRow(i)) {,2,1,0,2,5,0,6,0,0,9,36,11,0.33333,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/linear/SimplexSolver,28,144,                            if (i < minIndex) {,0,0,0,1,3,0,0,0,0,4,19,4,0.33333,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/linear/SimplexSolver,28,145,                                minIndex = i;,0,0,0,0,0,0,0,0,0,0,13,4,0.33333,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/linear/SimplexSolver,28,146,                                minRow = row;,8,0,0,0,0,0,0,0,0,10,13,3,0.33333,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/linear/SimplexSolver,28,150,                },0,0,0,0,1,0,0,0,0,1,1,4,0.33333,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/linear/SimplexSolver,28,151,                return minRow;,0,0,0,0,0,1,0,0,0,1,14,4,0.33333,0,0,-1
+defect4j,math,org/apache/commons/math3/exception/MathIllegalStateException,28,45,                                     Object ... args) {,2,1,0,0,2,0,12,0,0,16,18,4,0.25,0,0,-1
+defect4j,math,org/apache/commons/math3/exception/MathIllegalStateException,28,46,        context = new ExceptionContext(this);,2,0,0,1,2,0,0,2,0,5,37,4,0.25,0,0,-1
+defect4j,math,org/apache/commons/math3/exception/MathIllegalStateException,28,47,"        context.addMessage(pattern, args);",12,3,1,1,2,0,24,2,0,48,34,1,0.25,0,0,-1
+defect4j,math,org/apache/commons/math3/exception/MathIllegalStateException,28,48,    },4,2,0,0,1,0,8,0,0,14,1,5,0.25,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/linear/SimplexSolver,28,127,                },0,0,0,0,1,0,0,0,0,1,1,4,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/linear/SimplexSolver,28,121,                        int column = i + tableau.getArtificialVariableOffset();,4,1,0,1,2,3,18,4,0,30,55,1,0.125,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/linear/SimplexSolver,28,122,"                        final double entry = tableau.getEntry(row, column);",4,1,0,1,2,0,0,0,0,5,51,7,0.125,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/linear/SimplexSolver,28,123,"                        if (Precision.equals(entry, 1d, maxUlps) && row.equals(tableau.getBasicRow(column))) {",0,0,0,4,9,0,0,0,0,13,86,4,0.125,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/linear/SimplexSolver,28,124,                            return row;,0,0,0,0,0,1,0,0,0,1,11,4,0.125,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/linear/SimplexSolver,28,104,                    minRatioPositions.add(i);,0,0,0,1,2,0,6,0,0,6,25,11,0.11111,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/linear/SimplexSolver,28,119,                for (Integer row : minRatioPositions) {,0,0,0,1,3,0,0,0,0,4,39,4,0.11111,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/linear/SimplexSolver,28,120,                    for (int i = 0; i < tableau.getNumArtificialVariables(); i++) {,0,0,0,2,5,0,0,0,0,7,63,4,0.11111,0,0,-1
+defect4j,math,org/apache/commons/math3/util/Precision,28,117,            return -1;,4,0,0,0,0,1,0,0,0,5,10,4,0.07692,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/linear/SimplexTableau,28,231,"                matrix.setEntry(row, getSlackVariableOffset() + slackVar++, -1); // excess",10,3,0,2,4,0,8,0,0,24,74,3,0.07143,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/linear/SimplexSolver,28,227,            doIteration(tableau);,0,0,0,1,2,0,0,0,0,3,21,4,0.06667,1,1,-1
+defect4j,math,org/apache/commons/math3/util/Precision,28,115,            return 0;,4,0,0,0,0,1,0,0,0,5,9,6,0.0625,0,0,-1
+defect4j,math,org/apache/commons/math3/util/MathUtils,28,257,        if (o == null) {,4,0,0,1,3,0,0,0,0,4,16,5,0.05556,0,0,-1
+defect4j,math,org/apache/commons/math3/util/MathUtils,28,260,    },2,0,0,0,1,0,4,0,0,8,1,3,0.05556,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/Array2DRowRealMatrix,28,74,"        throws DimensionMismatchException, NoDataException, NullArgumentException {",0,0,0,0,1,0,0,0,0,1,75,4,0.05556,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/Array2DRowRealMatrix,28,75,        copyIn(d);,0,0,0,1,2,0,6,0,0,6,10,5,0.05556,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/Array2DRowRealMatrix,28,76,    },6,1,0,0,1,1,0,0,0,8,1,6,0.05556,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/Array2DRowRealMatrix,28,262,        if (data == null) {,2,1,0,1,3,0,0,0,0,3,19,4,0.05556,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/Array2DRowRealMatrix,28,263,            if (row > 0) {,2,1,0,1,3,0,0,0,0,3,14,6,0.05556,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/Array2DRowRealMatrix,28,266,            if (column > 0) {,0,1,0,1,3,0,12,0,0,13,17,4,0.05556,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/Array2DRowRealMatrix,28,269,            MathUtils.checkNotNull(subMatrix);,0,0,0,1,2,0,0,0,0,3,34,4,0.05556,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/Array2DRowRealMatrix,28,270,            final int nRows = subMatrix.length;,12,3,0,0,0,3,0,4,0,23,35,1,0.05556,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/Array2DRowRealMatrix,28,271,            if (nRows == 0) {,2,0,0,1,3,0,0,0,0,2,17,4,0.05556,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/Array2DRowRealMatrix,28,275,            final int nCols = subMatrix[0].length;,0,0,0,1,2,0,0,0,0,3,38,4,0.05556,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/Array2DRowRealMatrix,28,276,            if (nCols == 0) {,4,1,0,1,3,0,0,0,0,6,17,3,0.05556,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/Array2DRowRealMatrix,28,279,            data = new double[subMatrix.length][nCols];,0,0,0,2,4,0,0,0,0,6,43,4,0.05556,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/Array2DRowRealMatrix,28,280,            for (int i = 0; i < data.length; ++i) {,2,0,0,1,3,3,12,0,0,17,39,1,0.05556,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/Array2DRowRealMatrix,28,281,                if (subMatrix[i].length != nCols) {,0,0,0,2,5,0,0,0,0,7,35,4,0.05556,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/Array2DRowRealMatrix,28,284,"                System.arraycopy(subMatrix[i], 0, data[i + row], column, nCols);",8,2,1,3,6,0,0,0,0,14,64,1,0.05556,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/Array2DRowRealMatrix,28,286,        } else {,0,0,0,0,2,0,0,0,0,2,8,4,0.05556,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/Array2DRowRealMatrix,28,290,    },2,0,0,0,1,3,0,0,0,5,1,2,0.05556,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/Array2DRowRealMatrix,28,526,"        setSubMatrix(in, 0, 0);",4,3,0,1,2,0,4,0,0,12,23,3,0.05556,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/Array2DRowRealMatrix,28,527,    },0,0,0,0,1,0,0,0,0,1,1,4,0.05556,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/OpenMapRealVector,29,361,        OpenMapRealVector res = new OpenMapRealVector(this);,2,0,0,1,2,0,0,4,0,6,52,4,2.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/OpenMapRealVector,29,362,        Iterator iter = entries.iterator();,0,0,0,1,2,0,0,0,0,3,35,4,2.0,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/OpenMapRealVector,29,363,        while (iter.hasNext()) {,2,0,0,2,5,1,0,0,0,3,24,2,2.0,0,0,-1

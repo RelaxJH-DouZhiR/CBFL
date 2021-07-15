@@ -1,0 +1,252 @@
+project_path,version,lines,statement,suspicious,faulty,predict,miss_line
+org/apache/commons/math/optimization/RealPointValuePair,84,61,                                final boolean copyArray) {,2.0,0,,0
+org/apache/commons/math/optimization/RealPointValuePair,84,62,        this.point = copyArray ? point.clone() : point;,2.0,0,,0
+org/apache/commons/math/optimization/RealPointValuePair,84,63,        this.value  = value;,2.0,0,,0
+org/apache/commons/math/optimization/RealPointValuePair,84,64,    },2.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,278,                    final double v1 = o1.getValue();,2.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,279,                    final double v2 = o2.getValue();,2.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,280,                    return (goalType == GoalType.MINIMIZE) ?,2.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,142,        final int n = steps.length;,2.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,143,        startConfiguration = new double[n][n];,2.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,144,        for (int i = 0; i < n; ++i) {,2.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,145,            final double[] vertexI = startConfiguration[i];,2.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,146,            for (int j = 0; j < i + 1; ++j) {,2.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,147,                if (steps[j] == 0.0) {,2.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,152,"                System.arraycopy(steps, 0, vertexI, 0, j + 1);",2.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,155,    },2.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,291,        RealPointValuePair[] previous = new RealPointValuePair[simplex.length];,2.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,294,            if (iterations > 0) {,2.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,306,"            System.arraycopy(simplex, 0, previous, 0, simplex.length);",2.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,307,            iterateSimplex(comparator);,2.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,319,        if (++iterations > maxIterations) {,2.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,322,    },2.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,401,"        Arrays.sort(simplex, comparator);",2.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,403,    },2.0,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,45,    public MultiDirectional() {,2.0,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,46,        this.khi   = 2.0;,2.0,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,47,        this.gamma = 0.5;,2.0,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,48,    },2.0,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,66,            incrementIterationsCounter();,2.0,1,,1
+org/apache/commons/math/optimization/direct/MultiDirectional,84,69,            final RealPointValuePair[] original = simplex;,2.0,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,70,            final RealPointValuePair best = original[0];,2.0,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,73,"            final RealPointValuePair reflected = evaluateNewSimplex(original, 1.0, comparator);",2.0,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,74,"            if (comparator.compare(reflected, best) < 0) {",2.0,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,89,"            final RealPointValuePair contracted = evaluateNewSimplex(original, gamma, comparator);",2.0,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,90,"            if (comparator.compare(contracted, best) < 0) {",2.0,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,97,        },2.0,1,,1
+org/apache/commons/math/optimization/direct/MultiDirectional,84,115,        final double[] xSmallest = original[0].getPointRef();,2.0,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,116,        final int n = xSmallest.length;,2.0,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,119,        simplex = new RealPointValuePair[n + 1];,2.0,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,120,        simplex[0] = original[0];,2.0,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,121,        for (int i = 1; i <= n; ++i) {,2.0,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,122,            final double[] xOriginal    = original[i].getPointRef();,2.0,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,123,            final double[] xTransformed = new double[n];,2.0,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,124,            for (int j = 0; j < n; ++j) {,2.0,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,125,                xTransformed[j] = xSmallest[j] + coeff * (xSmallest[j] - xOriginal[j]);,2.0,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,127,"            simplex[i] = new RealPointValuePair(xTransformed, Double.NaN, false);",2.0,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,131,        evaluateSimplex(comparator);,2.0,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,132,        return simplex[0];,2.0,0,,0
+org/apache/commons/math/optimization/GoalType,84,27,public enum GoalType implements Serializable {,1.33333,0,,0
+org/apache/commons/math/optimization/GoalType,84,30,"    MAXIMIZE,",1.33333,0,,0
+org/apache/commons/math/optimization/GoalType,84,33,    MINIMIZE,1.33333,0,,0
+org/apache/commons/math/optimization/SimpleScalarValueChecker,84,50,    public SimpleScalarValueChecker() {,1.33333,0,,0
+org/apache/commons/math/optimization/SimpleScalarValueChecker,84,51,        this.relativeThreshold = DEFAULT_RELATIVE_THRESHOLD;,1.33333,0,,0
+org/apache/commons/math/optimization/SimpleScalarValueChecker,84,52,        this.absoluteThreshold = DEFAULT_ABSOLUTE_THRESHOLD;,1.33333,0,,0
+org/apache/commons/math/optimization/SimpleScalarValueChecker,84,53,    },1.33333,0,,0
+org/apache/commons/math/optimization/RealPointValuePair,84,48,"    public RealPointValuePair(final double[] point, final double value) {",1.33333,0,,0
+org/apache/commons/math/optimization/RealPointValuePair,84,49,        this.point = point.clone();,1.33333,0,,0
+org/apache/commons/math/optimization/RealPointValuePair,84,50,        this.value  = value;,1.33333,0,,0
+org/apache/commons/math/optimization/RealPointValuePair,84,51,    },1.33333,0,,0
+org/apache/commons/math/optimization/RealPointValuePair,84,79,        return point;,1.33333,0,,0
+org/apache/commons/math/optimization/RealPointValuePair,84,86,        return value;,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,275,            new Comparator<RealPointValuePair>() {,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,116,    protected DirectSearchOptimizer() {,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,117,        setConvergenceChecker(new SimpleScalarValueChecker());,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,118,        setMaxIterations(Integer.MAX_VALUE);,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,119,        setMaxEvaluations(Integer.MAX_VALUE);,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,120,    },1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,220,        this.maxIterations = maxIterations;,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,221,    },1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,230,        this.maxEvaluations = maxEvaluations;,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,231,    },1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,250,        this.checker = checker;,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,251,    },1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,265,        if (startConfiguration == null) {,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,273,        this.f = f;,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,274,        final Comparator<RealPointValuePair> comparator =,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,286,        iterations  = 0;,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,287,        evaluations = 0;,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,288,        buildSimplex(startPoint);,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,289,        evaluateSimplex(comparator);,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,345,        if (++evaluations > maxEvaluations) {,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,349,        return f.value(x);,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,360,        final int n = startPoint.length;,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,361,        if (n != startConfiguration.length) {,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,368,        simplex = new RealPointValuePair[n + 1];,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,369,"        simplex[0] = new RealPointValuePair(startPoint, Double.NaN);",1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,372,        for (int i = 0; i < n; ++i) {,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,373,            final double[] confI   = startConfiguration[i];,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,374,            final double[] vertexI = new double[n];,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,375,            for (int k = 0; k < n; ++k) {,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,376,                vertexI[k] = startPoint[k] + confI[k];,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,378,"            simplex[i + 1] = new RealPointValuePair(vertexI, Double.NaN);",1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,381,    },1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,392,        for (int i = 0; i < simplex.length; ++i) {,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,393,            final RealPointValuePair vertex = simplex[i];,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,394,            final double[] point = vertex.getPointRef();,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,395,            if (Double.isNaN(vertex.getValue())) {,1.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,396,"                simplex[i] = new RealPointValuePair(point, evaluate(point), false);",1.33333,0,,0
+org/apache/commons/math/MaxIterationsExceededException,84,43,"        super(""Maximal number of iterations ({0}) exceeded"", maxIterations);",1.0,0,,0
+org/apache/commons/math/MaxIterationsExceededException,84,44,        this.maxIterations = maxIterations;,1.0,0,,0
+org/apache/commons/math/MaxIterationsExceededException,84,45,    },1.0,0,,0
+org/apache/commons/math/ConvergenceException,84,45,"        super(pattern, arguments);",1.0,0,,0
+org/apache/commons/math/ConvergenceException,84,46,    },1.0,0,,0
+org/apache/commons/math/ConvergenceException,84,53,        super(cause);,1.0,0,,0
+org/apache/commons/math/ConvergenceException,84,54,    },1.0,0,,0
+org/apache/commons/math/MathException,84,166,"        return buildMessage(locale, pattern, arguments);",1.0,0,,0
+org/apache/commons/math/MathException,84,172,        return getMessage(Locale.getDefault());,1.0,0,,0
+org/apache/commons/math/optimization/RealPointValuePair,84,70,        return point.clone();,1.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,320,            throw new OptimizationException(new MaxIterationsExceededException(maxIterations));,1.0,0,,0
+org/apache/commons/math/optimization/OptimizationException,84,50,        super(cause);,1.0,0,,0
+org/apache/commons/math/optimization/OptimizationException,84,51,    },1.0,0,,0
+org/apache/commons/math/MathException,84,106,"      super(buildMessage(Locale.US, pattern, arguments));",0.5,0,,0
+org/apache/commons/math/MathException,84,107,      this.pattern   = pattern;,0.5,0,,0
+org/apache/commons/math/MathException,84,108,      this.arguments = (arguments == null) ? new Object[0] : arguments.clone();,0.5,0,,0
+org/apache/commons/math/MathException,84,109,    },0.5,0,,0
+org/apache/commons/math/MathException,84,119,        super(rootCause);,0.5,0,,0
+org/apache/commons/math/MathException,84,120,        this.pattern   = getMessage();,0.5,0,,0
+org/apache/commons/math/MathException,84,121,        this.arguments = new Object[0];,0.5,0,,0
+org/apache/commons/math/MathException,84,122,    },0.5,0,,0
+org/apache/commons/math/MathException,84,60,            ResourceBundle bundle =,0.5,0,,0
+org/apache/commons/math/MathException,84,67,        } catch (MissingResourceException mre) {,0.5,0,,0
+org/apache/commons/math/MathException,84,73,        return s;,0.5,0,,0
+org/apache/commons/math/MathException,84,85,"        return (pattern == null) ? """" : new MessageFormat(translate(pattern, locale), locale).format(arguments);        ",0.5,0,,0
+org/apache/commons/math/optimization/SimpleScalarValueChecker,84,65,                                 final double absoluteThreshold) {,0.33333,0,,0
+org/apache/commons/math/optimization/SimpleScalarValueChecker,84,66,        this.relativeThreshold = relativeThreshold;,0.33333,0,,0
+org/apache/commons/math/optimization/SimpleScalarValueChecker,84,67,        this.absoluteThreshold = absoluteThreshold;,0.33333,0,,0
+org/apache/commons/math/optimization/SimpleScalarValueChecker,84,68,    },0.33333,0,,0
+org/apache/commons/math/optimization/SimpleScalarValueChecker,84,74,        final double p          = previous.getValue();,0.33333,0,,0
+org/apache/commons/math/optimization/SimpleScalarValueChecker,84,75,        final double c          = current.getValue();,0.33333,0,,0
+org/apache/commons/math/optimization/SimpleScalarValueChecker,84,76,        final double difference = Math.abs(p - c);,0.33333,0,,0
+org/apache/commons/math/optimization/SimpleScalarValueChecker,84,77,"        final double size       = Math.max(Math.abs(p), Math.abs(c));",0.33333,0,,0
+org/apache/commons/math/optimization/SimpleScalarValueChecker,84,78,        return (difference <= (size * relativeThreshold)) || (difference <= absoluteThreshold);,0.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,245,        return evaluations;,0.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,268,            final double[] unit = new double[startPoint.length];,0.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,269,"            Arrays.fill(unit, 1.0);",0.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,270,            setStartConfiguration(unit);,0.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,295,                boolean converged = true;,0.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,296,                for (int i = 0; i < simplex.length; ++i) {,0.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,297,"                    converged &= checker.converged(iterations, previous[i], simplex[i]);",0.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,299,                if (converged) {,0.33333,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,301,                    return simplex[0];,0.33333,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,77,                final RealPointValuePair[] reflectedSimplex = simplex;,0.33333,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,78,"                final RealPointValuePair expanded = evaluateNewSimplex(original, khi, comparator);",0.33333,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,79,"                if (comparator.compare(reflected, expanded) <= 0) {",0.33333,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,81,                    simplex = reflectedSimplex;,0.33333,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,84,                return;,0.33333,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,94,                return;,0.33333,1,,1
+org/apache/commons/math/MaxIterationsExceededException,84,56,"        super(pattern, arguments);",0.0,0,,0
+org/apache/commons/math/MaxIterationsExceededException,84,57,        this.maxIterations = maxIterations;,0.0,0,,0
+org/apache/commons/math/MaxIterationsExceededException,84,58,    },0.0,0,,0
+org/apache/commons/math/MaxIterationsExceededException,84,64,        return maxIterations;,0.0,0,,0
+org/apache/commons/math/ConvergenceException,84,34,"        super(""Convergence failed"");",0.0,0,,0
+org/apache/commons/math/ConvergenceException,84,35,    },0.0,0,,0
+org/apache/commons/math/ConvergenceException,84,65,"        super(cause, pattern, arguments);",0.0,0,,0
+org/apache/commons/math/ConvergenceException,84,66,    },0.0,0,,0
+org/apache/commons/math/MathException,84,93,        super();,0.0,0,,0
+org/apache/commons/math/MathException,84,94,        this.pattern   = null;,0.0,0,,0
+org/apache/commons/math/MathException,84,95,        this.arguments = new Object[0];,0.0,0,,0
+org/apache/commons/math/MathException,84,96,    },0.0,0,,0
+org/apache/commons/math/MathException,84,135,"      super(buildMessage(Locale.US, pattern, arguments), rootCause);",0.0,0,,0
+org/apache/commons/math/MathException,84,136,      this.pattern   = pattern;,0.0,0,,0
+org/apache/commons/math/MathException,84,137,      this.arguments = (arguments == null) ? new Object[0] : arguments.clone();,0.0,0,,0
+org/apache/commons/math/MathException,84,138,    },0.0,0,,0
+org/apache/commons/math/MathException,84,62,            if (bundle.getLocale().getLanguage().equals(locale.getLanguage())) {,0.0,0,,0
+org/apache/commons/math/MathException,84,64,                return bundle.getString(s);,0.0,0,,0
+org/apache/commons/math/MathException,84,69,        },0.0,0,,0
+org/apache/commons/math/MathException,84,146,        return pattern;,0.0,0,,0
+org/apache/commons/math/MathException,84,155,        return arguments.clone();,0.0,0,,0
+org/apache/commons/math/MathException,84,180,        printStackTrace(System.err);,0.0,0,,0
+org/apache/commons/math/MathException,84,181,    },0.0,0,,0
+org/apache/commons/math/MathException,84,190,        synchronized (out) {,0.0,0,,0
+org/apache/commons/math/MathException,84,191,"            PrintWriter pw = new PrintWriter(out, false);",0.0,0,,0
+org/apache/commons/math/MathException,84,192,            printStackTrace(pw);,0.0,0,,0
+org/apache/commons/math/MathException,84,194,            pw.flush();,0.0,0,,0
+org/apache/commons/math/MathException,84,195,        },0.0,0,,0
+org/apache/commons/math/MathException,84,196,    },0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,148,                    throw MathRuntimeException.createIllegalArgumentException(,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,171,        final int n = referenceSimplex.length - 1;,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,172,        if (n < 0) {,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,173,            throw MathRuntimeException.createIllegalArgumentException(,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,176,        startConfiguration = new double[n][n];,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,177,        final double[] ref0 = referenceSimplex[0];,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,180,        for (int i = 0; i < n + 1; ++i) {,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,182,            final double[] refI = referenceSimplex[i];,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,185,            if (refI.length != n) {,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,186,                throw MathRuntimeException.createIllegalArgumentException(,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,190,            for (int j = 0; j < i; ++j) {,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,191,                final double[] refJ = referenceSimplex[j];,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,192,                boolean allEquals = true;,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,193,                for (int k = 0; k < n; ++k) {,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,194,                    if (refI[k] != refJ[k]) {,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,195,                        allEquals = false;,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,196,                        break;,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,199,                if (allEquals) {,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,200,                    throw MathRuntimeException.createIllegalArgumentException(,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,207,            if (i > 0) {,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,208,                final double[] confI = startConfiguration[i - 1];,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,209,                for (int k = 0; k < n; ++k) {,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,210,                    confI[k] = refI[k] - ref0[k];,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,216,    },0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,225,        return maxIterations;,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,235,        return maxEvaluations;,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,240,        return iterations;,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,255,        return checker;,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,346,"            throw new FunctionEvaluationException(new MaxEvaluationsExceededException(maxEvaluations),",0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,362,            throw MathRuntimeException.createIllegalArgumentException(,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,411,        int n = simplex.length - 1;,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,412,        for (int i = 0; i < n; ++i) {,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,413,"            if (comparator.compare(simplex[i], pointValuePair) > 0) {",0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,414,                RealPointValuePair tmp = simplex[i];,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,415,                simplex[i]         = pointValuePair;,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,416,                pointValuePair     = tmp;,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,419,        simplex[n] = pointValuePair;,0.0,0,,0
+org/apache/commons/math/optimization/direct/DirectSearchOptimizer,84,420,    },0.0,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,54,"    public MultiDirectional(final double khi, final double gamma) {",0.0,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,55,        this.khi   = khi;,0.0,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,56,        this.gamma = gamma;,0.0,0,,0
+org/apache/commons/math/optimization/direct/MultiDirectional,84,57,    },0.0,0,,0
+org/apache/commons/math/optimization/OptimizationException,84,42,"        super(specifier, parts);",0.0,0,,0
+org/apache/commons/math/optimization/OptimizationException,84,43,    },0.0,0,,0
+org/apache/commons/math/MaxEvaluationsExceededException,84,43,"        super(""Maximal number of evaluations ({0}) exceeded"", maxEvaluations);",0.0,0,,0
+org/apache/commons/math/MaxEvaluationsExceededException,84,44,        this.maxEvaluations = maxEvaluations;,0.0,0,,0
+org/apache/commons/math/MaxEvaluationsExceededException,84,45,    },0.0,0,,0
+org/apache/commons/math/MaxEvaluationsExceededException,84,56,"        super(pattern, arguments);",0.0,0,,0
+org/apache/commons/math/MaxEvaluationsExceededException,84,57,        this.maxEvaluations = maxEvaluations;,0.0,0,,0
+org/apache/commons/math/MaxEvaluationsExceededException,84,58,    },0.0,0,,0
+org/apache/commons/math/MaxEvaluationsExceededException,84,64,        return maxEvaluations;,0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,84,44,"        super(""evaluation failed for argument = {0}"", argument);",0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,84,45,        this.argument = new double[] { argument };,0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,84,46,    },0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,84,56,"        super(""evaluation failed for argument = {0}"", new ArrayRealVector(argument));",0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,84,57,        this.argument = argument.clone();,0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,84,58,    },0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,84,70,"        super(pattern, arguments);",0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,84,71,        this.argument = new double[] { argument };,0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,84,72,    },0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,84,84,"        super(pattern, arguments);",0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,84,85,        this.argument = argument.clone();,0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,84,86,    },0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,84,96,        super(cause);,0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,84,97,        this.argument = new double[] { argument };,0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,84,98,    },0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,84,108,        super(cause);,0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,84,109,        this.argument = argument.clone();,0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,84,110,    },0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,84,124,"        super(cause, pattern, arguments);",0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,84,125,        this.argument = new double[] { argument };,0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,84,126,    },0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,84,140,"        super(cause, pattern, arguments);",0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,84,141,        this.argument = argument.clone();,0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,84,142,    },0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,84,150,        return argument.clone();,0.0,0,,0

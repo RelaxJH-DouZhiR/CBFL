@@ -1,0 +1,908 @@
+dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,logic,lengthEle,lengthWord,depth,suspicious,accuracy,miss_line,predict
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2357,                    limit--;,2,0,0,0,0,0,0,0,0,3,8,9,0.01111,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2358,                    position++;,2,0,0,0,0,0,0,0,0,3,11,9,0.01111,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2315,            limit--;,0,0,0,0,0,0,0,0,0,0,8,4,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2316,            position++;,0,0,0,0,0,0,0,0,0,0,11,4,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2330,"            if (digitCount(text, position, 2) < 2) {",20,3,0,2,5,0,6,0,0,31,40,1,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2337,"            int hours = FormatUtils.parseTwoDigits(text, position);",2,0,0,1,2,0,8,0,0,10,55,6,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2338,            if (hours > 23) {,2,1,0,1,3,0,0,0,0,3,17,5,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2341,            offset = hours * DateTimeConstants.MILLIS_PER_HOUR;,14,3,0,0,0,0,4,2,0,24,51,1,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2342,            limit -= 2;,0,0,0,0,0,0,0,0,0,0,11,4,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2343,            position += 2;,0,0,0,0,0,0,0,0,0,0,14,4,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2349,                if (limit <= 0) {,0,0,0,1,3,0,0,0,0,4,17,4,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2354,                c = text.charAt(position);,4,0,0,1,2,0,6,2,0,14,26,1,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2355,                if (c == ':') {,2,1,0,1,3,0,0,0,0,4,15,7,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2367,"                int count = digitCount(text, position, 2);",2,0,0,1,2,0,6,0,0,8,42,8,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2368,                if (count == 0 && !expectSeparators) {,0,0,0,1,3,0,0,0,0,4,38,4,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2370,                } else if (count < 2) {,6,1,0,1,4,0,0,0,0,8,23,4,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2375,"                int minutes = FormatUtils.parseTwoDigits(text, position);",2,0,0,1,2,0,8,0,0,10,57,8,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2376,                if (minutes > 59) {,2,1,0,1,3,0,0,0,0,3,19,7,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2379,                offset += minutes * DateTimeConstants.MILLIS_PER_MINUTE;,0,0,0,0,0,0,0,0,0,0,56,4,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2380,                limit -= 2;,0,0,0,0,0,0,0,0,0,0,11,4,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2381,                position += 2;,2,0,0,0,0,0,0,0,0,3,14,7,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2385,                if (limit <= 0) {,0,0,0,1,3,0,0,0,0,4,17,4,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2444,            bucket.setOffset(Integer.valueOf(negative ? -offset : offset));,0,0,0,2,4,0,8,0,0,8,63,6,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2445,            return position;,0,0,0,0,0,1,0,0,0,1,16,4,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2453,"            int limit = Math.min(text.length() - position, amount);",4,1,0,2,4,0,10,0,0,15,55,6,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2454,            amount = 0;,2,0,0,0,0,0,0,0,0,3,11,5,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2455,            for (; limit > 0; limit--) {,10,2,0,1,3,0,4,0,0,17,28,1,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2456,                char c = text.charAt(position + amount);,6,1,0,1,2,0,4,0,0,11,40,8,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2457,                if (c < '0' || c > '9') {,0,0,0,1,3,0,8,0,0,8,25,7,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2460,                amount++;,2,0,0,0,0,0,0,0,0,3,9,7,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,9,2462,            return amount;,2,0,0,0,0,1,0,0,0,2,14,5,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/FormatUtils,9,352,        int value = text.charAt(position) - '0';,0,0,0,1,2,0,0,0,0,3,40,4,0.01099,0,0,-1
+defect4j,time,org/joda/time/format/FormatUtils,9,353,        return ((value << 3) + (value << 1)) + text.charAt(position + 1) - '0';,0,0,0,4,8,1,0,0,0,13,71,4,0.01099,0,0,-1
+defect4j,time,org/joda/time/DateTimeZone,9,634,        } else {,0,0,0,0,2,0,0,0,0,2,8,4,0.01053,0,0,-1
+defect4j,time,org/joda/time/DateTimeZone,9,350,            return DateTimeZone.UTC;,6,1,0,0,0,1,0,0,0,7,24,5,0.01042,0,0,-1
+defect4j,time,org/joda/time/MonthDay,10,334,"        this(monthOfYear, dayOfMonth, null);",4,0,0,1,2,0,0,0,0,4,36,4,2.0,0,0,-1
+defect4j,time,org/joda/time/MonthDay,10,335,    },0,0,0,0,1,0,0,0,0,1,1,4,2.0,0,0,-1
+defect4j,time,org/joda/time/MonthDay,10,352,"        super(new int[] {monthOfYear, dayOfMonth}, chronology);",0,0,0,3,6,0,0,0,0,9,55,4,2.0,0,0,-1
+defect4j,time,org/joda/time/MonthDay,10,353,    },0,0,0,0,1,0,0,0,0,1,1,4,2.0,0,0,-1
+defect4j,time,org/joda/time/MonthDay,10,79,    private static final DateTimeFieldType[] FIELD_TYPES = new DateTimeFieldType[] {,2,0,0,2,5,3,10,4,0,19,80,1,2.0,0,0,-1
+defect4j,time,org/joda/time/MonthDay,10,84,    private static final DateTimeFormatter PARSER = new DateTimeFormatterBuilder(),2,0,0,1,2,3,0,4,0,9,78,2,2.0,0,0,-1
+defect4j,time,org/joda/time/MonthDay,10,395,        return 2;,2,0,0,0,0,1,6,0,0,8,9,9,2.0,0,0,-1
+defect4j,time,org/joda/time/MonthDay,10,408,        switch (index) {,2,0,0,1,3,0,0,0,0,2,16,4,2.0,0,0,-1
+defect4j,time,org/joda/time/MonthDay,10,410,            return chrono.monthOfYear();,0,0,0,1,2,1,4,0,0,4,28,6,2.0,0,0,-1
+defect4j,time,org/joda/time/MonthDay,10,412,            return chrono.dayOfMonth();,2,0,0,1,2,1,0,0,0,4,27,7,2.0,0,0,-1
+defect4j,time,org/joda/time/MonthDay,10,426,        return FIELD_TYPES[index];,0,0,1,1,2,1,0,0,0,4,26,5,2.0,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicGJChronology,10,129,        return MAX_DAYS_PER_MONTH_ARRAY[month - 1];,2,1,1,1,2,1,0,0,0,5,43,5,2.0,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicDayOfMonthDateTimeField,10,89,                return iChronology.getDaysInMonthMax(month);,6,1,0,1,2,1,8,0,0,16,44,3,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,147,"    private static final Map<String, DateTimeFormatter> cPatternedCache = new HashMap<String, DateTimeFormatter>(7);",2,0,0,1,2,0,8,0,0,11,112,8,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,149,    private static final DateTimeFormatter[] cStyleCache = new DateTimeFormatter[25];,0,0,0,2,4,0,0,0,0,6,81,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,170,        return createFormatterForPattern(pattern);,0,0,0,1,2,1,4,0,0,4,42,5,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,400,        int length = pattern.length();,0,0,0,1,2,0,0,0,0,3,30,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,401,        int[] indexRef = new int[1];,8,1,0,2,4,0,4,0,0,13,28,1,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,403,        for (int i=0; i<length; i++) {,14,1,0,1,3,0,0,2,0,18,30,3,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,404,            indexRef[0] = i;,2,0,1,1,2,0,0,0,0,5,16,6,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,405,"            String token = parseToken(pattern, indexRef);",2,0,0,1,2,0,14,2,0,18,45,3,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,406,            i = indexRef[0];,12,0,1,1,2,0,4,2,0,22,16,3,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,408,            int tokenLen = token.length();,2,0,0,1,2,0,4,0,0,6,30,7,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,409,            if (tokenLen == 0) {,0,0,0,1,3,0,0,0,0,4,20,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,412,            char c = token.charAt(0);,0,0,0,1,2,0,0,0,0,3,25,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,414,            switch (c) {,2,0,0,1,3,0,0,0,0,2,12,6,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,479,                if (tokenLen >= 3) {,2,1,0,1,3,0,0,0,0,3,20,7,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,486,                    builder.appendMonthOfYear(tokenLen);,0,0,0,1,2,0,12,0,0,14,36,3,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,488,                break;,14,1,0,0,0,0,4,6,0,26,6,3,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,490,                builder.appendDayOfMonth(tokenLen);,0,0,0,1,2,0,14,0,0,14,35,3,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,491,                break;,0,0,0,0,0,0,0,0,0,0,6,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,549,                String sub = token.substring(1);,0,0,0,1,2,0,0,0,0,3,32,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,550,                if (sub.length() == 1) {,0,1,0,2,5,0,4,0,0,5,24,7,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,551,                    builder.appendLiteral(sub.charAt(0));,0,0,0,2,4,0,0,0,0,6,37,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,555,                    builder.appendLiteral(new String(sub));,0,0,0,2,4,0,0,0,0,6,39,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,557,                break;,2,1,0,0,0,0,0,0,0,3,6,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,563,    },0,0,0,0,1,0,0,0,0,1,1,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,574,        StringBuilder buf = new StringBuilder();,0,0,0,1,2,0,0,0,0,3,40,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,576,        int i = indexRef[0];,0,0,0,1,2,0,0,0,0,1,20,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,577,        int length = pattern.length();,4,1,0,1,2,0,4,0,0,9,30,3,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,579,        char c = pattern.charAt(i);,0,0,0,1,2,0,0,0,0,3,27,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,580,        if (c >= 'A' && c <= 'Z' || c >= 'a' && c <= 'z') {,8,7,0,1,3,0,0,0,0,19,51,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,583,            buf.append(c);,0,0,0,1,2,0,0,0,0,3,14,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,585,            while (i + 1 < length) {,0,0,0,1,3,0,0,0,0,4,24,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,586,                char peek = pattern.charAt(i + 1);,0,0,0,1,2,0,0,0,0,3,34,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,587,                if (peek == c) {,4,1,0,1,3,0,0,0,0,5,16,8,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,588,                    buf.append(c);,0,0,0,1,2,0,0,0,0,3,14,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,589,                    i++;,18,0,0,0,0,0,4,2,0,27,4,3,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,593,            },0,0,0,0,1,0,0,0,0,1,1,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,596,            buf.append('\'');,0,0,0,1,2,0,0,0,0,3,17,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,598,            boolean inLiteral = false;,2,0,0,0,0,0,0,0,0,3,26,7,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,600,            for (; i < length; i++) {,2,1,0,1,3,0,0,0,0,3,25,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,601,                c = pattern.charAt(i);,0,0,0,1,2,0,0,0,0,3,22,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,603,                if (c == '\'') {,2,1,0,1,3,0,0,0,0,4,16,8,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,611,                } else if (!inLiteral &&,0,0,0,0,2,0,0,0,0,2,24,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,613,                    i--;,2,0,0,0,0,0,0,0,0,3,4,11,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,614,                    break;,6,1,0,0,0,0,2,2,0,11,6,1,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,616,                    buf.append(c);,0,0,0,1,2,0,0,0,0,3,14,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,621,        indexRef[0] = i;,2,0,1,1,2,0,0,0,0,5,16,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,622,        return buf.toString();,0,0,0,1,2,1,4,0,0,4,22,5,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,674,        if (pattern == null || pattern.length() == 0) {,2,3,0,2,5,0,4,0,0,9,47,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,677,        DateTimeFormatter formatter = null;,0,0,0,0,0,0,0,0,0,0,35,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,678,        synchronized (cPatternedCache) {,2,0,0,1,3,0,0,0,0,2,32,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,679,            formatter = cPatternedCache.get(pattern);,0,0,0,1,2,0,0,0,0,3,41,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,680,            if (formatter == null) {,0,0,0,1,3,0,0,0,0,4,24,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,681,                DateTimeFormatterBuilder builder = new DateTimeFormatterBuilder();,0,0,0,1,2,0,0,0,0,3,66,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,682,"                parsePatternTo(builder, pattern);",2,0,0,1,2,0,10,0,0,12,33,3,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,683,                formatter = builder.toFormatter();,2,0,0,1,2,0,4,0,0,7,34,8,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,685,"                cPatternedCache.put(pattern, formatter);",0,0,0,1,2,0,8,0,0,8,40,9,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,687,        },0,0,0,0,1,0,0,0,0,1,1,4,2.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,10,688,        return formatter;,6,1,0,0,0,1,8,0,0,15,17,1,2.0,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicMonthOfYearDateTimeField,10,93,            return instant; // the easy case,2,0,0,0,0,1,0,0,0,2,32,6,1.0,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicMonthOfYearDateTimeField,10,260,            int subtrahendDom = iChronology.getDayOfMonth,2,0,0,0,0,0,4,0,0,6,45,7,1.0,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicMonthOfYearDateTimeField,10,262,            if (subtrahendDom > minuendDom) {,4,1,0,1,3,0,0,0,0,5,33,6,1.0,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,10,595,        if (ldp == null) {,0,0,0,1,3,0,0,0,0,4,18,4,1.0,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,10,596,            ldp = dateElementParser().withZoneUTC();,0,0,0,2,4,0,0,0,0,6,40,4,1.0,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,10,598,        return ldp;,0,0,0,0,0,1,0,0,0,1,11,4,1.0,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,10,301,        return withZone(DateTimeZone.UTC);,0,0,0,1,2,1,0,0,0,4,34,4,0.66667,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,10,321,        if (iZone == zone) {,0,0,0,1,3,0,0,0,0,4,20,4,0.66667,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,10,324,"        return new DateTimeFormatter(iPrinter, iParser, iLocale,",0,0,0,0,1,1,0,0,0,2,56,4,0.66667,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicChronology,10,565,        return 31;,0,0,0,0,0,1,0,0,0,1,10,4,0.57143,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicChronology,10,575,        int thisYear = getYear(instant);,0,0,0,1,2,0,0,0,0,3,32,4,0.57143,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicChronology,10,576,"        int thisMonth = getMonthOfYear(instant, thisYear);",0,0,0,1,2,0,0,0,0,3,50,4,0.57143,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicChronology,10,577,"        return getDaysInYearMonth(thisYear, thisMonth);",2,0,0,1,2,1,8,0,0,11,47,4,0.57143,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicDayOfMonthDateTimeField,10,59,        return iChronology.getDaysInMonthMax();,0,0,0,1,2,1,4,0,0,4,39,5,0.57143,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicDayOfMonthDateTimeField,10,79,        int size = partial.size();,0,0,0,1,2,0,0,0,0,3,26,4,0.57143,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicDayOfMonthDateTimeField,10,80,        for (int i = 0; i < size; i++) {,0,0,0,1,3,0,0,0,0,4,32,4,0.57143,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicDayOfMonthDateTimeField,10,81,            if (partial.getFieldType(i) == DateTimeFieldType.monthOfYear()) {,0,1,0,3,7,0,10,0,0,11,65,6,0.57143,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicDayOfMonthDateTimeField,10,82,                int month = values[i];,0,0,0,1,2,0,0,0,0,3,22,4,0.57143,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicDayOfMonthDateTimeField,10,83,                for (int j = 0; j < size; j++) {,8,1,0,1,3,0,0,0,0,10,32,8,0.57143,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicDayOfMonthDateTimeField,10,84,                    if (partial.getFieldType(j) == DateTimeFieldType.year()) {,0,0,0,3,7,0,0,0,0,10,58,4,0.57143,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,408,        if (text == null) {,2,1,0,1,3,0,0,0,0,3,19,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,411,        switch (text.length()) {,0,0,0,2,5,0,0,0,0,7,24,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,417,                return append0(new StringLiteral(text));,0,0,0,2,4,1,0,0,0,7,40,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,444,"            return append0(new UnpaddedNumber(fieldType, maxDigits, false));",8,1,0,2,4,1,2,2,0,14,64,5,0.5,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,765,"        return appendDecimal(DateTimeFieldType.dayOfWeek(), minDigits, 1);",0,0,0,2,4,1,0,0,0,7,66,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,785,"        return appendDecimal(DateTimeFieldType.dayOfYear(), minDigits, 3);",8,2,1,2,4,1,14,0,0,29,66,1,0.5,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,795,"        return appendDecimal(DateTimeFieldType.weekOfWeekyear(), minDigits, 2);",2,0,0,2,4,1,8,0,0,10,71,1,0.5,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,807,"        return appendSignedDecimal(DateTimeFieldType.weekyear(), minDigits, maxDigits);",0,0,0,2,4,1,0,0,0,7,79,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,1171,        return false;,0,0,0,0,0,1,0,0,0,1,13,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,1401,"            super(fieldType, maxParsedDigits, signed);",0,0,0,1,2,0,0,0,0,3,42,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,1402,        },0,0,0,0,1,0,0,0,0,1,1,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,1405,            return iMaxParsedDigits;,0,0,0,0,0,1,0,0,0,1,24,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,1270,            super();,0,0,0,1,2,0,0,0,0,3,8,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,1271,            iValue = value;,0,0,0,0,0,0,0,0,0,0,15,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,1272,        },2,0,0,0,1,0,0,0,0,2,1,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,1275,            return iValue.length();,0,0,0,1,2,1,0,0,0,4,23,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,1299,            return iValue.length();,0,0,0,1,2,1,0,0,0,4,23,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,10,613,        if (dpe == null) {,10,1,0,1,3,0,6,2,0,22,18,1,0.5,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,10,614,            dpe = new DateTimeFormatterBuilder(),2,0,0,1,2,0,0,0,0,3,36,6,0.5,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,10,636,        return dpe;,2,0,0,0,0,1,0,0,0,2,11,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,10,1614,        if (we == null) {,0,0,0,1,3,0,0,0,0,4,17,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,10,1615,            we = new DateTimeFormatterBuilder(),0,0,0,1,2,0,0,0,0,3,35,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,10,1619,        return we;,0,0,0,0,0,1,0,0,0,1,10,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,10,1623,        if (wwe == null) {,10,2,0,1,3,0,0,0,0,13,18,1,0.5,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,10,1624,            wwe = new DateTimeFormatterBuilder(),2,0,0,1,2,0,0,0,0,3,36,7,0.5,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,10,1629,        return wwe;,0,0,0,0,0,1,0,0,0,1,11,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,10,1633,        if (dwe == null) {,0,0,0,1,3,0,0,0,0,4,18,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,10,1634,            dwe = new DateTimeFormatterBuilder(),4,0,0,1,2,0,0,2,0,6,36,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,10,1639,        return dwe;,4,0,0,0,0,1,0,0,0,4,11,3,0.5,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,10,1643,        if (dye == null) {,2,0,0,1,3,0,8,0,0,10,18,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,10,1644,            dye = new DateTimeFormatterBuilder(),0,0,0,1,2,0,0,0,0,3,36,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,10,1649,        return dye;,0,0,0,0,0,1,0,0,0,1,11,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,153,        Object f = getFormatter();,2,0,0,1,2,0,6,0,0,9,26,9,0.44444,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,154,        if (isParser(f)) {,8,2,0,2,5,0,0,0,0,10,18,3,0.44444,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,155,            return (DateTimeParser) f;,6,4,0,1,2,1,4,0,0,14,26,1,0.44444,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,305,        if (printer != null) {,2,0,0,1,3,0,0,0,0,2,22,5,0.44444,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,308,        if (parsers == null) {,0,0,0,1,3,0,0,0,0,4,22,4,0.44444,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,311,        int length = parsers.length;,4,0,0,0,0,0,0,4,0,8,28,10,0.44444,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,312,        if (length == 1) {,0,0,0,1,3,0,0,0,0,4,18,4,0.44444,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,319,        DateTimeParser[] copyOfParsers = new DateTimeParser[length];,0,0,0,2,4,0,0,0,0,6,60,4,0.44444,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,321,        for (i = 0; i < length - 1; i++) {,0,0,0,1,3,0,0,0,0,4,34,4,0.44444,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,322,            if ((copyOfParsers[i] = parsers[i]) == null) {,6,1,0,4,9,0,0,0,0,7,46,6,0.44444,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,326,        copyOfParsers[i] = parsers[i];,0,0,0,2,4,0,8,0,0,8,30,5,0.44444,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,328,"        return append0(printer, new MatchingParser(copyOfParsers));",12,1,0,2,4,1,4,2,0,20,59,1,0.44444,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,345,        checkParser(parser);,0,0,0,1,2,0,4,0,0,4,20,5,0.44444,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,346,"        DateTimeParser[] parsers = new DateTimeParser[] {parser, null};",0,0,0,3,6,0,0,0,0,9,63,4,0.44444,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,347,"        return append0(null, new MatchingParser(parsers));",0,0,0,2,4,1,0,0,0,7,50,4,0.44444,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,357,        if (parser == null) {,0,0,0,1,3,0,0,0,0,4,21,4,0.44444,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,360,    },0,0,0,0,1,0,0,0,0,1,1,4,0.44444,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,1150,                    f = parser;,0,0,0,0,0,0,0,0,0,0,11,4,0.44444,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,2794,            super();,0,0,0,1,2,0,0,0,0,3,8,4,0.44444,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,2795,            iParsers = parsers;,0,0,0,0,0,0,0,0,0,0,19,4,0.44444,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,2796,            int est = 0;,2,0,0,0,0,0,0,0,0,2,12,6,0.44444,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,10,2797,            for (int i=parsers.length; --i>=0 ;) {,0,0,0,1,3,0,0,0,0,4,38,4,0.44444,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,11,255,        int size = period.size();,0,0,0,1,2,0,0,0,0,3,25,4,1.0,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,11,256,        int[] values = new int[size];,16,3,0,2,4,0,10,0,0,29,29,3,1.0,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,11,257,        if (startInstant != endInstant) {,0,0,0,1,3,0,0,0,0,4,33,4,1.0,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,11,258,            for (int i = 0; i < size; i++) {,18,2,0,1,3,0,4,0,0,26,32,6,1.0,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,11,259,                DurationField field = period.getFieldType(i).getField(this);,14,3,1,2,4,0,16,2,0,39,60,3,1.0,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,11,260,"                int value = field.getDifference(endInstant, startInstant);",0,0,0,1,2,0,0,0,0,3,58,4,1.0,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,11,261,"                startInstant = field.add(startInstant, value);",2,0,0,1,2,0,12,0,0,15,46,3,1.0,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,11,262,                values[i] = value;,2,1,0,1,2,0,0,0,0,3,18,4,1.0,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,11,265,        return values;,6,0,0,0,0,1,8,0,0,14,14,3,1.0,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,11,276,        int size = period.size();,2,0,0,1,2,0,4,0,0,6,25,5,1.0,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,11,277,        int[] values = new int[size];,4,0,1,2,4,0,4,0,0,11,29,3,1.0,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,11,278,        if (duration != 0) {,6,0,0,1,3,0,0,0,0,6,20,4,1.0,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,11,289,        return values;,0,0,0,0,0,1,0,0,0,1,14,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,225,    public DateTimeZoneBuilder() {,0,0,0,1,3,0,0,0,0,4,30,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,226,        iRuleSets = new ArrayList<RuleSet>(10);,0,0,0,1,2,0,0,0,0,3,39,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,227,    },0,0,0,0,1,0,0,0,0,1,1,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,252,        if (iRuleSets.size() > 0) {,2,2,0,2,5,0,4,0,0,8,27,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,258,        iRuleSets.add(new RuleSet());,0,0,0,2,4,0,4,2,0,6,29,5,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,259,        return this;,0,0,0,0,0,1,0,0,0,1,12,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,268,        getLastRuleSet().setStandardOffset(standardOffset);,0,0,0,2,4,0,0,0,0,6,51,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,269,        return this;,0,0,0,0,0,1,0,0,0,1,12,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,309,        if (fromYear <= toYear) {,0,0,0,1,3,0,0,0,0,4,25,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,310,            OfYear ofYear = new OfYear,4,1,0,0,0,0,12,4,0,22,26,1,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,312,"            Recurrence recurrence = new Recurrence(ofYear, nameKey, saveMillis);",8,0,0,1,2,0,0,4,0,12,68,6,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,313,"            Rule rule = new Rule(recurrence, fromYear, toYear);",8,0,0,1,2,0,0,4,0,12,51,6,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,314,            getLastRuleSet().addRule(rule);,10,0,0,2,4,0,10,2,0,23,31,6,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,316,        return this;,2,0,0,0,0,1,0,2,0,4,12,3,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,320,        if (iRuleSets.size() == 0) {,0,0,0,2,5,0,0,0,0,7,28,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,323,        return iRuleSets.get(iRuleSets.size() - 1);,0,1,0,2,4,1,8,0,0,9,43,5,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,333,        if (id == null) {,0,0,0,1,3,0,0,0,0,4,17,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,339,        ArrayList<Transition> transitions = new ArrayList<Transition>();,0,0,0,1,2,0,0,0,0,3,64,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,343,        DSTZone tailZone = null;,0,0,0,0,0,0,0,0,0,0,24,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,345,        long millis = Long.MIN_VALUE;,2,0,0,0,0,3,0,4,0,9,29,2,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,346,        int saveMillis = 0;,2,0,0,0,0,0,0,0,0,2,19,5,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,348,        int ruleSetCount = iRuleSets.size();,0,0,0,1,2,0,0,0,0,3,36,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,349,        for (int i=0; i<ruleSetCount; i++) {,0,0,0,1,3,0,0,0,0,4,36,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,350,            RuleSet rs = iRuleSets.get(i);,0,0,0,1,2,0,0,0,0,3,30,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,351,            Transition next = rs.firstTransition(millis);,0,0,0,1,2,0,0,0,0,3,45,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,352,            if (next == null) {,2,1,0,1,3,0,0,0,0,3,19,6,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,355,"            addTransition(transitions, next);",2,1,0,1,2,0,6,0,0,9,33,3,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,356,            millis = next.getMillis();,0,0,0,1,2,0,0,0,0,3,26,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,357,            saveMillis = next.getSaveMillis();,0,0,0,1,2,0,0,0,0,3,34,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,360,            rs = new RuleSet(rs);,0,0,0,1,2,0,0,0,0,3,21,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,362,"            while ((next = rs.nextTransition(millis, saveMillis)) != null) {",4,1,0,3,7,0,12,0,0,19,64,3,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,363,"                if (addTransition(transitions, next)) {",0,0,0,2,5,0,0,0,0,7,39,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,364,                    if (tailZone != null) {,4,1,0,1,3,0,0,0,0,5,23,3,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,366,                        break;,2,1,0,0,0,0,0,0,0,3,6,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,369,                millis = next.getMillis();,0,0,0,1,2,0,0,0,0,3,26,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,370,                saveMillis = next.getSaveMillis();,0,0,0,1,2,0,0,0,0,3,34,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,371,                if (tailZone == null && i == ruleSetCount - 1) {,6,4,0,1,3,0,0,0,0,10,48,8,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,372,                    tailZone = rs.buildTailZone(id);,0,0,0,1,2,0,0,0,0,3,32,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,379,            millis = rs.getUpperLimit(saveMillis);,2,0,0,1,2,0,6,0,0,9,38,6,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,383,        if (transitions.size() == 0) {,0,0,0,2,5,0,0,0,0,7,30,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,390,        if (transitions.size() == 1 && tailZone == null) {,2,3,0,2,5,0,10,0,0,15,50,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,396,"        PrecalculatedZone zone = PrecalculatedZone.create(id, outputID, transitions, tailZone);",2,0,0,1,2,0,12,2,0,16,87,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,397,        if (zone.isCachable()) {,0,0,0,2,5,0,4,0,0,4,24,5,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,398,            return CachedDateTimeZone.forZone(zone);,4,0,0,1,2,1,18,0,0,22,40,3,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,404,        int size = transitions.size();,4,0,0,1,2,0,0,2,0,6,30,5,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,405,        if (size == 0) {,2,0,0,1,3,2,0,10,0,14,16,3,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,406,            transitions.add(tr);,0,0,0,1,2,0,6,0,0,6,20,7,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,407,            return true;,2,1,0,0,0,1,0,0,0,4,12,1,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,410,        Transition last = transitions.get(size - 1);,4,0,0,1,2,0,0,0,0,4,44,7,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,411,        if (!tr.isTransitionFrom(last)) {,0,0,0,2,5,0,0,0,0,7,33,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,417,        int offsetForLast = 0;,2,0,0,0,0,0,0,0,0,2,22,5,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,418,        if (size >= 2) {,0,0,0,1,3,0,0,0,0,4,16,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,419,            offsetForLast = transitions.get(size - 2).getWallOffset();,4,1,0,2,4,0,6,0,0,12,58,6,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,421,        int offsetForNew = last.getWallOffset();,6,0,0,1,2,0,8,0,0,15,40,1,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,423,        long lastLocal = last.getMillis() + offsetForLast;,4,1,0,1,2,0,4,0,0,9,50,5,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,424,        long newLocal = tr.getMillis() + offsetForNew;,4,1,0,1,2,0,4,0,0,9,46,5,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,426,        if (newLocal != lastLocal) {,4,1,0,1,3,0,0,0,0,5,28,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,427,            transitions.add(tr);,0,0,0,1,2,0,0,0,0,3,20,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,428,            return true;,2,0,0,0,0,1,0,0,0,2,12,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/ZoneInfoCompiler,11,78,        return cVerbose.get();,12,1,0,1,2,1,10,0,0,24,22,1,1.0,0,0,-1
+defect4j,time,org/joda/time/chrono/ISOChronology,11,86,        return getInstance(DateTimeZone.getDefault());,4,3,0,2,4,1,6,0,0,13,46,1,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,816,"        Rule(Recurrence recurrence, int fromYear, int toYear) {",18,8,0,1,3,0,8,2,0,38,55,1,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,817,            iRecurrence = recurrence;,6,0,0,0,0,0,0,0,0,7,25,1,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,818,            iFromYear = fromYear;,4,0,0,0,0,0,0,0,0,5,21,5,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,819,            iToYear = toYear;,0,0,0,0,0,0,0,0,0,0,17,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,820,        },0,0,0,0,1,0,0,0,0,1,1,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,827,            return iToYear;,0,0,0,0,0,1,0,0,0,1,15,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,835,            return iRecurrence.getNameKey();,0,0,0,1,2,1,0,0,0,4,32,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,839,            return iRecurrence.getSaveMillis();,2,0,0,1,2,1,4,0,0,7,35,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,843,            Chronology chrono = ISOChronology.getInstanceUTC();,0,0,0,1,2,0,0,0,0,3,51,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,845,            final int wallOffset = standardOffset + saveMillis;,6,1,0,0,0,1,0,0,0,8,51,5,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,846,            long testInstant = instant;,0,0,0,0,0,0,0,0,0,0,27,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,849,            if (instant == Long.MIN_VALUE) {,0,0,0,1,3,0,0,0,0,4,32,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,850,                year = Integer.MIN_VALUE;,0,0,0,0,0,0,0,0,0,0,25,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,852,                year = chrono.year().get(instant + wallOffset);,0,0,0,2,4,0,0,0,0,6,47,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,855,            if (year < iFromYear) {,0,0,0,1,3,0,0,0,0,4,23,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,857,"                testInstant = chrono.year().set(0, iFromYear) - wallOffset;",8,1,0,2,4,0,10,0,0,20,59,1,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,860,                testInstant -= 1;,0,0,0,0,0,0,0,0,0,0,17,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,863,"            long next = iRecurrence.next(testInstant, standardOffset, saveMillis);",12,3,0,1,2,0,0,0,0,16,70,1,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,865,            if (next > instant) {,12,2,0,1,3,0,0,0,0,14,21,1,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,866,                year = chrono.year().get(next + wallOffset);,0,0,0,2,4,0,0,0,0,6,44,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,867,                if (year > iToYear) {,0,0,0,1,3,0,0,0,0,4,21,4,1.0,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,873,            return next;,0,0,0,0,0,1,0,0,0,1,12,4,1.0,0,0,-1
+defect4j,time,org/joda/time/field/PreciseDurationDateTimeField,12,129,            return (instant + 1) % iUnitMillis + iUnitMillis - 1;,6,4,0,1,2,1,0,0,0,10,53,6,4.0,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,2016,        return ISODateTimeFormat.dateTime().print(this);,0,0,0,2,4,1,6,0,0,6,48,5,1.77778,1,1,-1
+defect4j,time,org/joda/time/LocalDateTime,12,612,        if (type == null) {,0,0,0,1,3,0,0,0,0,4,19,4,1.33333,1,1,-1
+defect4j,time,org/joda/time/LocalDateTime,12,615,        return type.getField(getChronology()).isSupported();,4,0,0,3,6,3,4,4,0,14,52,1,1.33333,1,1,-1
+defect4j,time,org/joda/time/LocalDate,12,1805,        return ISODateTimeFormat.date().print(this);,0,0,0,2,4,1,6,0,0,6,44,5,1.33333,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,597,        if (type == null) {,0,0,0,1,3,0,0,0,0,4,19,4,0.8,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,600,        return type.getField(getChronology()).get(getLocalMillis());,0,0,0,4,8,1,0,0,0,13,60,4,0.8,0,0,-1
+defect4j,time,org/joda/time/LocalDate,12,548,        return fieldType.getField(getChronology()).get(getLocalMillis());,4,3,0,4,8,1,0,0,0,7,65,4,0.8,1,1,-1
+defect4j,time,org/joda/time/LocalDateTime,12,567,        switch (index) {,0,0,0,1,3,0,0,0,0,4,16,4,0.7619,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,569,                return getChronology().year().get(getLocalMillis());,6,0,0,4,8,1,0,0,0,6,52,4,0.7619,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,571,                return getChronology().monthOfYear().get(getLocalMillis());,0,0,0,4,8,1,18,0,0,19,59,3,0.7619,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,573,                return getChronology().dayOfMonth().get(getLocalMillis());,0,0,0,4,8,1,0,0,0,13,58,4,0.7619,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,575,                return getChronology().millisOfDay().get(getLocalMillis());,4,0,0,4,8,1,8,0,0,12,59,3,0.7619,0,0,-1
+defect4j,time,org/joda/time/LocalDate,12,542,        if (fieldType == null) {,4,0,0,1,3,0,6,2,0,13,24,3,0.7619,1,1,-1
+defect4j,time,org/joda/time/LocalDate,12,545,        if (isSupported(fieldType) == false) {,0,0,0,2,5,0,0,0,0,7,38,4,0.7619,1,1,-1
+defect4j,time,org/joda/time/LocalDate,12,567,            return type.getField(getChronology()).isSupported();,12,1,0,3,6,1,12,0,0,27,52,1,0.66667,0,0,-1
+defect4j,time,org/joda/time/LocalDate,12,560,        if (type == null) {,0,0,0,1,3,0,0,0,0,4,19,4,0.61538,0,0,-1
+defect4j,time,org/joda/time/LocalDate,12,563,        DurationFieldType durType = type.getDurationType();,2,0,0,1,2,0,4,2,0,8,51,4,0.61538,0,0,-1
+defect4j,time,org/joda/time/LocalDate,12,564,        if (DATE_DURATION_TYPES.contains(durType) ||,0,0,0,1,3,0,0,0,0,4,44,4,0.61538,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,199,        int yearOfEra = calendar.get(Calendar.YEAR);,8,0,0,1,2,0,8,0,0,17,44,1,0.57143,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,200,        return new LocalDateTime(,0,0,0,0,1,1,0,0,0,2,25,4,0.57143,0,0,-1
+defect4j,time,org/joda/time/LocalDate,12,210,        int yearOfEra = calendar.get(Calendar.YEAR);,0,0,0,1,2,0,0,0,0,3,44,4,0.57143,0,0,-1
+defect4j,time,org/joda/time/LocalDate,12,211,        return new LocalDate(,0,0,0,0,1,1,0,2,0,2,21,6,0.57143,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,196,        if (calendar == null) {,2,1,0,1,3,0,0,0,0,3,23,4,0.5,0,0,-1
+defect4j,time,org/joda/time/LocalDate,12,207,        if (calendar == null) {,2,1,0,1,3,0,0,0,0,3,23,4,0.5,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,546,                return chrono.monthOfYear();,0,0,0,1,2,1,8,0,0,10,28,3,0.37209,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,548,                return chrono.dayOfMonth();,0,0,0,1,2,1,8,0,0,9,27,1,0.37209,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,550,                return chrono.millisOfDay();,0,0,0,1,2,1,0,0,0,4,28,4,0.37209,0,0,-1
+defect4j,time,org/joda/time/DateTimeFieldType,12,526,                    return chronology.millisOfDay();,2,0,1,1,2,1,0,0,0,7,32,4,0.37209,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,529,        return 4;,0,0,0,0,0,1,0,0,0,1,9,4,0.36364,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,542,        switch (index) {,0,0,0,1,3,0,6,0,0,6,16,10,0.36364,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,544,                return chrono.year();,2,1,0,1,2,1,4,0,0,8,21,3,0.36364,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,669,                return iLocalMillis == other.iLocalMillis;,6,1,0,0,0,1,0,0,0,7,42,8,0.32,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,237,        return new LocalDateTime(,2,1,0,0,1,1,0,0,0,3,25,4,0.30769,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,666,        if (partial instanceof LocalDateTime) {,2,0,0,1,3,0,0,2,0,4,39,5,0.30769,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,667,            LocalDateTime other = (LocalDateTime) partial;,4,0,0,1,2,0,0,4,0,8,46,6,0.30769,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,668,            if (iChronology.equals(other.iChronology)) {,0,0,1,2,5,0,0,0,0,3,44,11,0.30769,0,0,-1
+defect4j,time,org/joda/time/LocalDate,12,244,        return new LocalDate(,2,0,0,0,1,1,0,2,0,4,21,4,0.30769,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,663,        if (this == partial) {,0,0,0,1,3,0,0,0,0,4,22,4,0.30189,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,233,        if (date == null) {,0,0,0,1,3,0,0,0,0,4,19,4,0.28571,0,0,-1
+defect4j,time,org/joda/time/LocalDate,12,240,        if (date == null) {,2,0,0,1,3,0,14,0,0,16,19,1,0.28571,0,0,-1
+defect4j,time,org/joda/time/chrono/ISOChronology,12,190,        return super.equals(obj);,0,0,0,1,2,1,0,0,0,4,25,4,0.2735,0,0,-1
+defect4j,time,org/joda/time/LocalDate,12,628,                return iLocalMillis == other.iLocalMillis;,6,1,0,0,0,1,0,0,0,7,42,8,0.26667,0,0,-1
+defect4j,time,org/joda/time/LocalDate,12,622,        if (this == partial) {,2,0,0,1,3,0,0,0,0,2,22,4,0.25806,0,0,-1
+defect4j,time,org/joda/time/LocalDate,12,625,        if (partial instanceof LocalDate) {,2,0,0,1,3,0,0,2,0,4,35,5,0.25806,0,0,-1
+defect4j,time,org/joda/time/LocalDate,12,626,            LocalDate other = (LocalDate) partial;,14,0,0,1,2,0,4,4,0,24,38,3,0.25806,0,0,-1
+defect4j,time,org/joda/time/LocalDate,12,627,            if (iChronology.equals(other.iChronology)) {,6,0,0,2,5,0,4,0,0,11,44,1,0.25806,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,12,239,"        for (int i = 0, isize = partial.size(); i < isize; i++) {",16,2,0,2,5,0,8,0,0,27,57,1,0.21918,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,12,240,"            instant = partial.getFieldType(i).getField(this).set(instant, partial.getValue(i));",0,0,0,4,8,0,0,0,0,12,83,4,0.21918,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,12,242,        return instant;,2,0,0,0,0,1,0,0,0,2,15,4,0.21918,0,0,-1
+defect4j,time,org/joda/time/chrono/GregorianChronology,12,131,"                    chrono = getInstance(DateTimeZone.UTC, minDaysInFirstWeek);",6,0,0,1,2,0,4,0,0,11,59,10,0.20847,0,0,-1
+defect4j,time,org/joda/time/chrono/GregorianChronology,12,132,                    chrono = new GregorianChronology,0,0,0,0,0,0,6,0,0,6,32,11,0.20847,0,0,-1
+defect4j,time,org/joda/time/LocalDate,12,426,"        this(year, monthOfYear, dayOfMonth, ISOChronology.getInstanceUTC());",0,0,0,2,4,0,0,0,0,6,68,4,0.20253,0,0,-1
+defect4j,time,org/joda/time/LocalDate,12,427,    },0,0,0,0,1,0,0,0,0,1,1,4,0.20253,0,0,-1
+defect4j,time,org/joda/time/chrono/GregorianChronology,12,171,        return INSTANCE_UTC;,6,0,0,0,0,1,0,0,0,7,20,3,0.19104,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,471,"        this(year, monthOfYear, dayOfMonth, hourOfDay,",8,0,0,0,1,0,0,0,0,8,46,4,0.17778,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,473,    },0,0,0,0,1,0,0,0,0,1,1,4,0.17778,0,0,-1
+defect4j,time,org/joda/time/DateTimeFieldType,12,498,                    return chronology.dayOfMonth();,2,0,0,1,2,1,4,0,0,6,31,4,0.17021,0,0,-1
+defect4j,time,org/joda/time/DateTimeFieldType,12,492,                    return chronology.year();,0,0,0,1,2,1,4,0,0,4,25,7,0.15534,0,0,-1
+defect4j,time,org/joda/time/DateTimeFieldType,12,496,                    return chronology.monthOfYear();,0,0,0,1,2,1,4,0,0,4,32,7,0.15059,0,0,-1
+defect4j,time,org/joda/time/chrono/AssembledChronology,12,120,"            return base.getDateTimeMillis(year, monthOfYear, dayOfMonth, millisOfDay);",0,0,0,1,2,1,12,0,0,12,74,7,0.13008,0,0,-1
+defect4j,time,org/joda/time/chrono/AssembledChronology,12,118,        if ((base = iBase) != null && (iBaseFlags & 6) == 6) {,0,0,0,3,7,0,0,0,0,10,54,4,0.128,0,0,-1
+defect4j,time,org/joda/time/base/BaseLocal,12,47,        super();,2,0,0,1,2,0,0,0,0,2,8,5,0.125,0,0,-1
+defect4j,time,org/joda/time/base/BaseLocal,12,48,    },0,0,0,0,1,0,0,0,0,1,1,4,0.125,0,0,-1
+defect4j,time,org/joda/time/base/AbstractPartial,12,79,"        return getField(index, getChronology()).getType();",0,0,0,3,6,1,0,0,0,10,50,4,0.12308,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,499,        super();,0,0,0,1,2,0,0,0,0,3,8,4,0.11679,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,500,        chronology = DateTimeUtils.getChronology(chronology).withUTC();,2,0,0,2,4,0,8,0,0,11,63,4,0.11679,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,501,"        long instant = chronology.getDateTimeMillis(year, monthOfYear, dayOfMonth,",2,0,0,0,1,0,10,0,0,12,74,5,0.11679,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,503,        iChronology = chronology;,0,0,0,0,0,0,0,0,0,0,25,4,0.11679,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,504,        iLocalMillis = instant;,6,0,0,0,0,0,0,0,0,7,23,3,0.11679,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,505,    },0,0,0,0,1,0,0,0,0,1,1,4,0.11679,0,0,-1
+defect4j,time,org/joda/time/DateTimeFieldType,12,480,            chronology = DateTimeUtils.getChronology(chronology);,2,0,0,1,2,0,6,0,0,9,53,5,0.10997,0,0,-1
+defect4j,time,org/joda/time/DateTimeFieldType,12,482,            switch (iOrdinal) {,2,0,0,1,3,0,0,0,0,2,19,5,0.10997,0,0,-1
+defect4j,time,org/joda/time/chrono/BuddhistChronology,12,84,        return INSTANCE_UTC;,2,0,0,0,0,1,8,2,0,12,20,6,0.10774,0,0,-1
+defect4j,time,org/joda/time/LocalDate,12,445,        super();,0,0,0,1,2,0,0,0,0,3,8,4,0.10738,0,0,-1
+defect4j,time,org/joda/time/LocalDate,12,446,        chronology = DateTimeUtils.getChronology(chronology).withUTC();,2,0,0,2,4,0,8,0,0,11,63,4,0.10738,0,0,-1
+defect4j,time,org/joda/time/LocalDate,12,447,"        long instant = chronology.getDateTimeMillis(year, monthOfYear, dayOfMonth, 0);",2,0,0,1,2,0,4,4,0,10,78,4,0.10738,0,0,-1
+defect4j,time,org/joda/time/LocalDate,12,448,        iChronology = chronology;,0,0,0,0,0,0,0,0,0,0,25,4,0.10738,0,0,-1
+defect4j,time,org/joda/time/LocalDate,12,449,        iLocalMillis = instant;,4,0,0,0,0,0,0,0,0,5,23,4,0.10738,0,0,-1
+defect4j,time,org/joda/time/LocalDate,12,450,    },0,0,0,0,1,0,0,0,0,1,1,4,0.10738,0,0,-1
+defect4j,time,org/joda/time/LocalDate,12,600,        return iLocalMillis;,4,0,0,0,0,1,6,0,0,10,20,1,0.1,0,0,-1
+defect4j,time,org/joda/time/field/PreciseDurationDateTimeField,12,126,        if (instant >= 0) {,2,0,0,1,3,0,4,0,0,6,19,5,0.09756,0,0,-1
+defect4j,time,org/joda/time/LocalDate,12,609,        return iChronology;,16,4,0,0,0,1,16,4,0,42,19,1,0.09249,0,0,-1
+defect4j,time,org/joda/time/DateTimeFieldType,12,522,                    return chronology.secondOfDay();,0,0,0,1,2,1,0,0,0,4,32,4,0.08649,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,641,        return iLocalMillis;,2,0,0,0,0,1,0,0,0,2,20,4,0.08466,0,0,-1
+defect4j,time,org/joda/time/LocalDateTime,12,650,        return iChronology;,0,0,0,0,0,1,0,0,0,1,19,4,0.08122,0,0,-1
+defect4j,time,org/joda/time/chrono/AssembledChronology,12,136,"        return super.getDateTimeMillis(year, monthOfYear, dayOfMonth,",0,0,0,0,1,1,0,0,0,2,61,4,0.07556,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,12,132,"        long instant = year().set(0, year);",4,1,0,2,4,0,6,0,0,11,35,3,0.07556,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,12,133,"        instant = monthOfYear().set(instant, monthOfYear);",0,0,0,2,4,0,0,0,0,6,50,4,0.07556,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,12,134,"        instant = dayOfMonth().set(instant, dayOfMonth);",0,0,0,2,4,0,0,0,0,6,48,4,0.07556,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,12,135,"        instant = hourOfDay().set(instant, hourOfDay);",0,0,0,2,4,0,0,0,0,6,46,4,0.07556,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,12,136,"        instant = minuteOfHour().set(instant, minuteOfHour);",0,0,0,2,4,0,0,0,0,6,52,4,0.07556,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,12,137,"        instant = secondOfMinute().set(instant, secondOfMinute);",2,0,0,2,4,0,2,2,0,6,56,6,0.07556,0,0,-1
+defect4j,time,org/joda/time/chrono/BaseChronology,12,138,"        return millisOfSecond().set(instant, millisOfSecond);",2,0,0,2,4,1,0,0,0,2,53,4,0.07556,0,0,-1
+defect4j,time,org/joda/time/field/DecoratedDateTimeField,12,82,"        return iField.set(instant, value);",0,0,0,1,2,1,0,0,0,4,34,4,0.07556,0,0,-1
+defect4j,time,org/joda/time/field/OffsetDateTimeField,12,152,"        FieldUtils.verifyValueBounds(this, value, iMin, iMax);",0,0,0,1,2,0,0,0,0,3,54,4,0.07556,0,0,-1
+defect4j,time,org/joda/time/field/OffsetDateTimeField,12,153,"        return super.set(instant, value - iOffset);",10,1,1,1,2,1,0,0,0,13,43,3,0.07556,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicWeekyearDateTimeField,12,228,        return iChronology.getMaxYear();,12,0,1,1,2,1,4,2,0,23,32,1,0.07556,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,12,644,            if (instant >= iCutover) {,8,1,0,1,3,0,0,0,0,10,26,1,0.07556,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,12,647,                return iJulianField.get(instant);,4,0,0,1,2,1,6,0,0,11,33,4,0.07556,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,12,710,            if (instant >= iCutover) {,2,0,0,1,3,0,4,0,0,6,26,6,0.07556,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,12,711,"                instant = iGregorianField.set(instant, value);",0,0,0,1,2,0,0,0,0,3,46,4,0.07556,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,12,712,                if (instant < iCutover) {,0,0,0,1,3,0,0,0,0,4,25,4,0.07556,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,12,714,                    if (instant + iGapDuration < iCutover) {,0,0,0,1,3,0,0,0,0,4,40,4,0.07556,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,12,715,                        instant = gregorianToJulian(instant);,0,0,0,1,2,0,0,0,0,3,37,4,0.07556,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,12,718,                    if (get(instant) != value) {,2,1,0,2,5,0,4,0,0,7,28,9,0.07556,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,12,724,"                instant = iJulianField.set(instant, value);",0,0,0,1,2,0,0,0,0,3,43,4,0.07556,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,12,725,                if (instant >= iCutover) {,0,0,0,1,3,0,0,2,0,3,26,7,0.07556,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,12,737,            return instant;,0,0,0,0,0,1,0,0,0,1,15,4,0.07556,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,12,795,            return iJulianField.getMinimumValue();,0,0,0,1,2,1,4,0,0,4,38,6,0.07556,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,12,826,            return iGregorianField.getMaximumValue();,0,0,0,1,2,1,0,0,0,4,41,4,0.07556,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,12,912,            if (iConvertByWeekyear) {,0,0,0,1,3,0,0,0,0,4,25,4,0.07556,0,0,-1
+defect4j,time,org/joda/time/Period,13,967,        int[] values = getValues();  // cloned,2,0,0,2,4,0,2,0,0,4,38,5,1.0,0,0,-1
+defect4j,time,org/joda/time/Period,13,968,"        getPeriodType().setIndexedField(this, PeriodType.MILLI_INDEX, values, millis);",4,1,0,2,4,0,0,0,0,5,78,7,1.0,0,0,-1
+defect4j,time,org/joda/time/Period,13,969,"        return new Period(values, getPeriodType());",0,0,0,2,4,1,0,0,0,7,43,4,1.0,0,0,-1
+defect4j,time,org/joda/time/format/FormatUtils,13,337,            if (value != Long.MIN_VALUE) {,0,0,0,1,3,0,0,0,0,4,30,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/FormatUtils,13,338,                return calculateDigitCount(-value) + 1;,2,0,0,1,2,1,12,0,0,15,39,4,0.5,0,0,-1
+defect4j,time,org/joda/time/format/FormatUtils,13,237,            buf.append('-');,0,0,0,1,2,0,0,0,0,3,16,4,0.33333,0,0,-1
+defect4j,time,org/joda/time/format/FormatUtils,13,238,            if (value != Integer.MIN_VALUE) {,6,1,0,1,3,0,0,0,0,7,33,6,0.33333,0,0,-1
+defect4j,time,org/joda/time/format/FormatUtils,13,239,                value = -value;,4,0,0,0,0,0,0,0,0,6,15,8,0.33333,0,0,-1
+defect4j,time,org/joda/time/format/FormatUtils,13,81,                digits = 3;,2,0,0,0,0,0,0,0,0,3,11,9,0.25,0,0,-1
+defect4j,time,org/joda/time/format/FormatUtils,13,251,            int d = ((value + 1) * 13421772) >> 27;,4,3,0,2,4,0,6,0,0,13,39,4,0.25,0,0,-1
+defect4j,time,org/joda/time/format/FormatUtils,13,252,            buf.append((char) (d + '0'));,2,1,0,3,6,0,4,0,0,8,29,8,0.25,0,0,-1
+defect4j,time,org/joda/time/format/FormatUtils,13,254,            buf.append((char) (value - (d << 3) - (d << 1) + '0'));,8,4,0,5,10,0,8,0,0,21,55,4,0.25,0,0,-1
+defect4j,time,org/joda/time/format/FormatUtils,13,255,        } else {,0,0,0,0,2,0,0,0,0,2,8,4,0.25,0,0,-1
+defect4j,time,org/joda/time/format/FormatUtils,13,247,        } else if (value < 100) {,2,0,0,1,4,0,8,2,0,12,25,10,0.2,0,0,-1
+defect4j,time,org/joda/time/Period,13,226,"        return new Period(new int[] {0, 0, 0, 0, 0, 0, 0, millis}, PeriodType.standard());",0,0,0,4,8,1,0,0,0,13,82,4,0.16667,0,0,-1
+defect4j,time,org/joda/time/Period,13,212,"        return new Period(new int[] {0, 0, 0, 0, 0, 0, seconds, 0}, PeriodType.standard());",0,0,0,4,8,1,0,0,0,13,83,4,0.125,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1103,                    sum -= 4; // remove three digits and decimal point,4,1,1,0,0,0,0,0,0,8,50,1,0.125,0,0,-1
+defect4j,time,org/joda/time/Period,13,110,"        return new Period(new int[] {years, 0, 0, 0, 0, 0, 0, 0, 0}, PeriodType.standard());",4,1,0,4,8,1,4,2,0,11,84,3,0.07143,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1651,                sum += iText.length();,2,0,0,1,2,0,4,0,0,6,22,6,0.07143,1,1,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1098,"                sum = Math.max(sum, 4);",0,0,0,1,2,0,0,0,0,3,23,4,0.07143,1,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1100,                sum++;,2,0,0,0,0,0,0,0,0,3,6,7,0.07143,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1101,                if (iFieldType == SECONDS_OPTIONAL_MILLIS &&,4,2,0,0,1,0,0,0,0,6,44,7,0.07143,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1106,                valueLong = valueLong / DateTimeConstants.MILLIS_PER_SECOND;,0,0,0,0,0,0,0,0,0,0,60,4,0.07143,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1674,                buf.append(iText);,0,0,0,1,2,0,0,0,0,3,18,4,0.06667,1,1,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1127,                value = (int) (valueLong / DateTimeConstants.MILLIS_PER_SECOND);,4,1,0,2,4,0,0,0,0,5,64,4,0.06667,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1140,                int dp = (int) (Math.abs(valueLong) % DateTimeConstants.MILLIS_PER_SECOND);,0,0,0,3,6,0,0,0,0,9,75,4,0.06667,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1141,                if (iFieldType == SECONDS_MILLIS || dp > 0) {,0,0,0,1,3,0,0,0,0,4,45,4,0.06667,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1142,                    buf.append('.');,2,1,0,1,2,0,0,0,0,3,16,6,0.06667,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1143,"                    FormatUtils.appendPaddedInteger(buf, dp, 3);",0,0,0,1,2,0,8,0,0,8,44,10,0.06667,0,0,-1
+defect4j,time,org/joda/time/PeriodType,13,692,        values[realIndex] = newValue;,0,0,0,1,2,0,0,0,0,3,29,4,0.05263,0,0,-1
+defect4j,time,org/joda/time/PeriodType,13,693,        return true;,0,0,0,0,0,1,0,0,0,1,12,4,0.05263,0,0,-1
+defect4j,time,org/joda/time/PeriodType,13,688,        int realIndex = iIndices[index];,2,0,0,1,2,0,0,2,0,5,32,6,0.05,0,0,-1
+defect4j,time,org/joda/time/PeriodType,13,689,        if (realIndex == -1) {,0,0,0,1,3,0,0,0,0,4,22,4,0.05,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1650,"            } else if (iUseAfter && after.countFieldsToPrint(period, 1, locale) > 0) {",2,3,0,2,6,0,12,0,0,17,74,1,0.05,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1673,"            } else if (iUseAfter && after.countFieldsToPrint(period, 1, locale) > 0) {",2,0,0,2,6,0,12,0,0,14,74,1,0.04762,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,864,            return iText.length();,0,0,0,1,2,1,4,0,0,4,22,6,0.04348,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1422,                int seconds = period.get(DurationFieldType.seconds());,0,0,0,2,4,0,0,0,0,6,54,4,0.04348,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1423,                int millis = period.get(DurationFieldType.millis());,2,0,0,2,4,0,8,0,0,10,52,7,0.04348,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1424,                value = (seconds * (long) DateTimeConstants.MILLIS_PER_SECOND) + millis;,12,3,0,2,4,0,2,0,0,18,72,1,0.04348,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,868,            buf.append(iText);,0,0,0,1,2,0,6,0,0,6,18,6,0.04167,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,869,        },2,1,0,0,1,0,6,0,0,9,1,6,0.04167,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1553,            return iText.length();,4,0,0,1,2,1,0,0,0,5,22,4,0.03333,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1557,            buf.append(iText);,0,0,0,1,2,0,6,0,0,6,18,6,0.03226,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1558,        },0,0,0,0,1,0,0,0,0,1,1,4,0.03226,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1466,                    return false;,0,0,0,0,0,1,0,0,0,1,13,4,0.02703,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1441,                        return Long.MAX_VALUE;,6,1,0,0,0,1,0,0,0,7,22,1,0.02632,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1494,                return type.isSupported(DurationFieldType.seconds()) ||,2,1,0,2,4,1,18,0,0,21,55,1,0.025,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1085,            return 0;,2,0,0,0,0,1,0,2,0,5,9,10,0.02439,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1091,                return 0;,0,0,0,0,0,1,0,0,0,1,9,4,0.02326,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1123,                return;,14,6,0,0,0,1,8,0,0,32,7,1,0.02326,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1114,                sum += iSuffix.calculatePrintedLength(value);,0,0,0,1,2,0,0,0,0,3,45,4,0.02222,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1147,"                iSuffix.printTo(buf, value);",0,0,0,1,2,0,0,0,0,3,28,4,0.02174,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1633,            PeriodPrinter before = iBeforePrinter;,0,0,0,0,0,0,0,0,0,0,38,4,0.02128,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1634,            PeriodPrinter after = iAfterPrinter;,4,0,0,0,0,0,0,2,0,6,36,5,0.02128,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1636,"            int sum = before.calculatePrintedLength(period, locale)",0,0,0,1,2,0,0,0,0,3,55,4,0.02128,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1639,            if (iUseBefore) {,4,0,0,1,3,0,6,0,0,10,17,4,0.02128,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1654,            return sum;,2,0,0,0,0,1,0,0,0,2,11,5,0.02128,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1658,            PeriodPrinter before = iBeforePrinter;,14,1,0,0,0,0,0,2,0,18,38,1,0.02083,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1659,            PeriodPrinter after = iAfterPrinter;,0,0,0,0,0,0,0,0,0,0,36,4,0.02083,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1661,"            before.printTo(buf, period, locale);",0,0,0,1,2,0,0,0,0,3,36,4,0.02083,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1662,            if (iUseBefore) {,0,0,0,1,3,0,0,0,0,4,17,4,0.02083,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1676,"            after.printTo(buf, period, locale);",0,0,0,1,2,0,0,0,0,3,35,4,0.02083,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1677,        },0,0,0,0,1,0,0,0,0,1,1,4,0.02083,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1412,                value = period.get(DurationFieldType.minutes());,0,0,0,2,4,0,0,0,0,6,48,4,0.02041,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1413,                break;,16,2,0,0,0,0,12,0,0,33,6,1,0.02041,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1403,                value = period.get(DurationFieldType.weeks());,0,0,0,2,4,0,0,0,0,6,46,4,0.01961,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1404,                break;,0,0,0,0,0,0,0,0,0,0,6,4,0.01961,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1400,                value = period.get(DurationFieldType.months());,0,0,0,2,4,0,0,0,0,6,47,4,0.01887,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1401,                break;,0,0,0,0,0,0,0,0,0,0,6,4,0.01887,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1406,                value = period.get(DurationFieldType.days());,0,0,0,2,4,0,0,0,0,6,45,4,0.01887,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1407,                break;,0,0,0,0,0,0,0,0,0,0,6,4,0.01887,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1409,                value = period.get(DurationFieldType.hours());,0,0,0,2,4,0,0,0,0,6,46,4,0.01786,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1410,                break;,0,0,0,0,0,0,0,0,0,0,6,4,0.01786,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1483,                return type.isSupported(DurationFieldType.days());,2,1,0,2,4,1,14,0,0,17,50,1,0.01695,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1434,                    if (isZero(period) && iFieldFormatters[iFieldType] == this) {,0,0,0,3,7,0,0,0,0,10,61,4,0.01667,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1481,                return type.isSupported(DurationFieldType.weeks());,0,0,0,2,4,1,8,0,0,8,51,7,0.01639,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1487,                return type.isSupported(DurationFieldType.minutes());,0,0,0,2,4,1,0,0,0,7,53,4,0.01639,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1479,                return type.isSupported(DurationFieldType.months());,0,0,0,2,4,1,10,2,0,12,52,1,0.01613,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1485,                return type.isSupported(DurationFieldType.hours());,0,0,0,2,4,1,8,0,0,8,51,7,0.01563,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1397,                value = period.get(DurationFieldType.years());,2,0,0,2,4,0,8,0,0,11,46,6,0.01515,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1398,                break;,0,0,0,0,0,0,0,0,0,0,6,4,0.01515,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1477,                return type.isSupported(DurationFieldType.years());,0,0,0,2,4,1,0,0,0,7,51,4,0.01493,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1464,"            for (int i = 0, isize = period.size(); i < isize; i++) {",8,5,0,2,5,0,0,0,0,13,56,4,0.01471,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1465,                if (period.getValue(i) != 0) {,0,1,0,2,5,0,8,0,0,10,30,1,0.01471,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1083,                return 1;,0,0,0,0,0,1,0,0,0,1,9,4,0.01408,0,0,-1
+defect4j,time,org/joda/time/base/BasePeriod,13,293,        super();,0,0,0,1,2,0,0,0,0,3,8,4,0.01389,0,0,-1
+defect4j,time,org/joda/time/base/BasePeriod,13,294,        iType = type;,0,0,0,0,0,0,0,0,0,0,13,4,0.01389,0,0,-1
+defect4j,time,org/joda/time/base/BasePeriod,13,295,        iValues = values;,0,0,0,0,0,0,0,0,0,0,17,4,0.01389,0,0,-1
+defect4j,time,org/joda/time/base/BasePeriod,13,296,    },2,0,0,0,1,0,4,0,0,7,1,4,0.01389,0,0,-1
+defect4j,time,org/joda/time/Period,13,683,"        super(values, type);",4,0,0,1,2,0,4,0,0,9,20,3,0.01389,0,0,-1
+defect4j,time,org/joda/time/Period,13,684,    },0,0,0,0,1,0,0,0,0,1,1,4,0.01389,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1430,                switch (iPrintZeroSetting) {,0,0,0,1,3,0,0,0,0,4,28,4,0.01316,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1079,            if (stopAt <= 0) {,0,0,0,1,3,0,0,0,0,4,18,4,0.01299,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1082,            if (iPrintZeroSetting == PRINT_ZERO_ALWAYS || getFieldValue(period) != Long.MAX_VALUE) {,0,0,0,2,5,0,0,0,0,7,88,4,0.01299,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1788,            int sum = 0;,0,0,0,0,0,0,0,0,0,0,12,4,0.01282,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1789,            PeriodPrinter[] printers = iPrinters;,8,3,0,1,2,0,8,2,0,21,37,1,0.01282,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1790,            for (int i=printers.length; sum < stopAt && --i>=0; ) {,0,0,0,1,3,0,0,0,0,4,55,4,0.01282,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1791,"                sum += printers[i].countFieldsToPrint(period, Integer.MAX_VALUE, locale);",0,0,0,2,4,0,0,0,0,6,73,4,0.01282,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1793,            return sum;,0,0,0,0,0,1,0,0,0,1,11,4,0.01282,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1135,"                FormatUtils.appendUnpaddedInteger(buf, value);",0,0,0,1,2,0,0,0,0,3,46,4,0.0125,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1385,                type = period.getPeriodType();,0,0,0,1,2,0,0,0,0,3,30,4,0.01235,0,0,-1
+defect4j,time,org/joda/time/format/FormatUtils,13,246,            buf.append((char)(value + '0'));,2,1,0,3,6,0,4,0,0,8,32,7,0.01235,0,0,-1
+defect4j,time,org/joda/time/format/PeriodFormatterBuilder,13,1473,            switch (field) {,4,0,0,1,3,0,4,0,0,8,16,1,0.0122,0,0,-1
+defect4j,time,org/joda/time/format/FormatUtils,13,236,        if (value < 0) {,0,0,0,1,3,0,0,0,0,4,16,4,0.0122,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,14,314,        return iMessage;,2,0,0,0,0,1,0,0,0,2,16,4,18.0,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicMonthOfYearDateTimeField,14,206,        if (valueToAdd == 0) {,2,1,0,1,3,0,0,0,0,3,22,4,4.92308,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicMonthOfYearDateTimeField,14,210,        if (DateTimeUtils.isContiguous(partial)) {,0,0,0,2,5,0,0,0,0,7,42,4,4.92308,1,1,-1
+defect4j,time,org/joda/time/chrono/BasicMonthOfYearDateTimeField,14,211,            long instant = 0L;,0,0,0,0,0,0,0,0,0,0,18,4,4.92308,1,1,-1
+defect4j,time,org/joda/time/chrono/BasicMonthOfYearDateTimeField,14,212,"            for (int i = 0, isize = partial.size(); i < isize; i++) {",0,0,0,2,5,0,0,0,0,7,57,4,4.92308,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicMonthOfYearDateTimeField,14,213,"                instant = partial.getFieldType(i).getField(iChronology).set(instant, values[i]);",2,0,1,4,8,0,14,0,0,21,80,8,4.92308,0,0,-1
+defect4j,time,org/joda/time/MonthDay,14,518,        int[] newValues = getValues();,2,0,0,2,4,0,8,0,0,10,30,1,4.92308,0,0,-1
+defect4j,time,org/joda/time/MonthDay,14,519,"        newValues = getField(index).add(this, index, newValues, amount);",0,0,0,2,4,0,0,0,0,6,64,4,4.92308,0,0,-1
+defect4j,time,org/joda/time/MonthDay,14,515,        if (amount == 0) {,0,0,0,1,3,0,0,0,0,4,18,4,3.55556,0,0,-1
+defect4j,time,org/joda/time/MonthDay,14,514,        int index = indexOfSupported(fieldType);,0,0,0,1,2,0,0,0,0,3,40,4,3.04762,0,0,-1
+defect4j,time,org/joda/time/DateTimeUtils,14,347,        return true;,0,0,0,0,0,1,0,0,0,1,12,4,2.0,0,0,-1
+defect4j,time,org/joda/time/DateTimeUtils,14,334,        if (partial == null) {,2,1,0,1,3,0,0,0,0,3,22,4,1.88235,0,0,-1
+defect4j,time,org/joda/time/DateTimeUtils,14,337,        DurationFieldType lastType = null;,4,0,0,0,0,0,4,2,0,11,34,3,1.88235,0,0,-1
+defect4j,time,org/joda/time/DateTimeUtils,14,338,        for (int i = 0; i < partial.size(); i++) {,8,1,0,2,5,2,8,4,0,24,42,1,1.88235,0,0,-1
+defect4j,time,org/joda/time/DateTimeUtils,14,339,            DateTimeField loopField = partial.getField(i);,0,0,0,1,2,0,0,0,0,3,46,4,1.88235,0,0,-1
+defect4j,time,org/joda/time/DateTimeUtils,14,340,            if (i > 0) {,2,1,0,1,3,0,0,0,0,3,12,6,1.88235,0,0,-1
+defect4j,time,org/joda/time/DateTimeUtils,14,341,                if (loopField.getRangeDurationField().getType() != lastType) {,0,0,0,3,7,0,0,0,0,10,62,4,1.88235,0,0,-1
+defect4j,time,org/joda/time/DateTimeUtils,14,345,            lastType = loopField.getDurationField().getType();,2,0,0,2,4,0,0,2,0,5,50,6,1.88235,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicGJChronology,14,129,        return MAX_DAYS_PER_MONTH_ARRAY[month - 1];,0,0,0,1,2,1,0,0,0,4,43,4,1.14286,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicDayOfMonthDateTimeField,14,89,                return iChronology.getDaysInMonthMax(month);,0,0,0,1,2,1,0,0,0,4,44,4,1.14286,0,0,-1
+defect4j,time,org/joda/time/base/AbstractPartial,14,223,        return index;,2,0,0,0,0,1,0,2,0,5,13,6,0.95522,0,0,-1
+defect4j,time,org/joda/time/MonthDay,14,352,"        super(new int[] {monthOfYear, dayOfMonth}, chronology);",6,2,1,3,6,0,0,0,0,14,55,6,0.91429,0,0,-1
+defect4j,time,org/joda/time/MonthDay,14,353,    },0,0,0,0,1,0,0,0,0,1,1,4,0.91429,0,0,-1
+defect4j,time,org/joda/time/MonthDay,14,592,"        return withFieldAdded(DurationFieldType.months(), months);",0,0,0,2,4,1,0,0,0,7,58,4,0.9,0,0,-1
+defect4j,time,org/joda/time/MonthDay,14,652,"        return withFieldAdded(DurationFieldType.months(), FieldUtils.safeNegate(months));",0,0,0,3,6,1,12,0,0,12,81,5,0.9,0,0,-1
+defect4j,time,org/joda/time/MonthDay,14,410,            return chrono.monthOfYear();,0,0,0,1,2,1,0,0,0,4,28,4,0.87671,0,0,-1
+defect4j,time,org/joda/time/MonthDay,14,412,            return chrono.dayOfMonth();,0,0,0,1,2,1,0,0,0,4,27,4,0.87671,0,0,-1
+defect4j,time,org/joda/time/MonthDay,14,408,        switch (index) {,2,0,0,1,3,0,0,0,0,2,16,4,0.86486,0,0,-1
+defect4j,time,org/joda/time/base/AbstractPartial,14,204,                return i;,4,1,0,0,0,1,0,0,0,6,9,3,0.82051,0,0,-1
+defect4j,time,org/joda/time/base/AbstractPartial,14,219,        int index = indexOf(type);,2,0,0,1,2,0,4,0,0,6,26,5,0.75294,0,0,-1
+defect4j,time,org/joda/time/base/AbstractPartial,14,220,        if (index == -1) {,2,1,0,1,3,0,0,0,0,4,18,4,0.75294,0,0,-1
+defect4j,time,org/joda/time/MonthDay,14,426,        return FIELD_TYPES[index];,0,0,1,1,2,1,0,0,0,4,26,5,0.68085,0,0,-1
+defect4j,time,org/joda/time/base/AbstractPartial,14,202,"        for (int i = 0, isize = size(); i < isize; i++) {",0,0,0,2,5,0,0,0,0,7,49,4,0.66667,0,0,-1
+defect4j,time,org/joda/time/base/AbstractPartial,14,203,            if (getFieldType(i).getDurationType() == type) {,2,1,0,3,7,0,6,0,0,9,48,6,0.66667,0,0,-1
+defect4j,time,org/joda/time/MonthDay,14,395,        return 2;,0,0,0,0,0,1,0,0,0,1,9,4,0.64646,0,0,-1
+defect4j,time,org/joda/time/MonthDay,14,79,    private static final DateTimeFieldType[] FIELD_TYPES = new DateTimeFieldType[] {,0,0,0,2,5,0,0,0,0,7,80,4,0.62136,0,0,-1
+defect4j,time,org/joda/time/MonthDay,14,84,    private static final DateTimeFormatter PARSER = new DateTimeFormatterBuilder(),2,0,0,1,2,3,0,4,0,9,78,2,0.62136,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,555,                    builder.appendLiteral(new String(sub));,2,0,0,2,4,0,4,2,0,8,39,10,0.52033,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,557,                break;,4,1,0,0,0,0,4,2,0,11,6,6,0.52033,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicChronology,14,575,        int thisYear = getYear(instant);,0,0,0,1,2,0,0,0,0,3,32,4,0.52033,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicChronology,14,576,"        int thisMonth = getMonthOfYear(instant, thisYear);",0,0,0,1,2,0,0,0,0,3,50,4,0.52033,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicChronology,14,577,"        return getDaysInYearMonth(thisYear, thisMonth);",4,0,0,1,2,1,6,0,0,11,47,3,0.52033,0,0,-1
+defect4j,time,org/joda/time/field/FieldUtils,14,218,            throw new IllegalFieldValueException,0,0,0,0,0,0,0,2,0,2,36,8,0.48,0,0,-1
+defect4j,time,org/joda/time/base/BasePartial,14,237,        return (int[]) iValues.clone();,0,0,0,3,6,1,0,0,0,10,31,4,0.47407,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicDayOfMonthDateTimeField,14,82,                int month = values[i];,2,0,1,1,2,0,0,0,0,6,22,9,0.44755,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicDayOfMonthDateTimeField,14,83,                for (int j = 0; j < size; j++) {,12,2,0,1,3,0,0,0,0,15,32,1,0.44755,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicDayOfMonthDateTimeField,14,84,                    if (partial.getFieldType(j) == DateTimeFieldType.year()) {,0,1,0,3,7,0,10,0,0,11,58,10,0.44755,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,14,595,        if (ldp == null) {,2,1,0,1,3,0,0,0,0,3,18,4,0.44444,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,14,596,            ldp = dateElementParser().withZoneUTC();,0,0,0,2,4,0,0,0,0,6,40,4,0.44444,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,14,598,        return ldp;,2,1,0,0,0,1,0,0,0,3,11,4,0.44444,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicDayOfMonthDateTimeField,14,79,        int size = partial.size();,2,0,0,1,2,0,4,0,0,6,26,5,0.4183,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicDayOfMonthDateTimeField,14,80,        for (int i = 0; i < size; i++) {,8,1,0,1,3,0,0,0,0,10,32,4,0.4183,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicDayOfMonthDateTimeField,14,81,            if (partial.getFieldType(i) == DateTimeFieldType.monthOfYear()) {,0,1,0,3,7,0,10,0,0,11,65,6,0.4183,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,14,53,"            buf.append(""must be in the range ["")",4,1,0,1,3,0,0,0,0,5,36,4,0.37895,0,0,-1
+defect4j,time,org/joda/time/field/FieldUtils,14,49,        if (value == Integer.MIN_VALUE) {,0,0,0,1,3,0,0,0,0,4,33,4,0.36364,0,0,-1
+defect4j,time,org/joda/time/field/FieldUtils,14,52,        return -value;,0,0,0,0,0,1,0,0,0,1,14,4,0.36364,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicChronology,14,565,        return 31;,0,0,0,0,0,1,0,0,0,1,10,4,0.34973,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,486,                    builder.appendMonthOfYear(tokenLen);,0,0,0,1,2,0,6,0,0,6,36,10,0.34409,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,488,                break;,2,0,0,0,0,0,8,0,0,10,6,11,0.34409,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,490,                builder.appendDayOfMonth(tokenLen);,0,0,0,1,2,0,0,0,0,3,35,4,0.33684,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,491,                break;,0,0,0,0,0,0,0,0,0,0,6,4,0.33684,0,0,-1
+defect4j,time,org/joda/time/MonthDay,14,780,        List<DateTimeFieldType> fields = new ArrayList<DateTimeFieldType>();,2,0,0,1,2,0,0,8,0,10,68,4,0.33333,0,0,-1
+defect4j,time,org/joda/time/MonthDay,14,781,        fields.add(DateTimeFieldType.monthOfYear());,4,1,0,2,4,0,0,0,0,5,44,4,0.33333,0,0,-1
+defect4j,time,org/joda/time/MonthDay,14,782,        fields.add(DateTimeFieldType.dayOfMonth());,4,0,0,2,4,0,12,0,0,16,43,1,0.33333,0,0,-1
+defect4j,time,org/joda/time/MonthDay,14,783,"        return ISODateTimeFormat.forFields(fields, true, true).print(this);",2,0,0,2,4,4,0,8,0,13,67,2,0.33333,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,14,50,        } else if (upperBound == null) {,2,1,0,1,4,0,0,0,0,3,32,5,0.32432,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,14,108,"        super(createMessage(fieldType.getName(), value, lowerBound, upperBound, null));",0,0,0,3,6,0,12,0,0,14,79,3,0.31304,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,14,109,        iDateTimeFieldType = fieldType;,4,1,0,0,0,0,4,0,0,10,31,3,0.31304,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,14,110,        iDurationFieldType = null;,4,1,0,0,0,0,14,0,0,21,26,1,0.31304,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,14,111,        iFieldName = fieldType.getName();,2,0,0,1,2,0,4,0,0,7,33,4,0.31304,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,14,112,        iNumberValue = value;,4,0,0,0,0,0,0,0,0,5,21,4,0.31304,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,14,113,        iStringValue = null;,2,0,0,0,0,0,0,0,0,3,20,4,0.31304,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,14,114,        iLowerBound = lowerBound;,4,0,0,0,0,0,0,0,0,5,25,4,0.31304,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,14,115,        iUpperBound = upperBound;,2,1,0,0,0,0,0,0,0,3,25,4,0.31304,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,14,116,        iMessage = super.getMessage();,4,0,0,1,2,0,0,0,0,5,30,4,0.31304,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,14,117,    },0,0,0,0,1,0,0,0,0,1,1,4,0.31304,0,0,-1
+defect4j,time,org/joda/time/base/AbstractPartial,14,267,                return false;,4,0,0,0,0,1,0,2,0,7,13,1,0.30769,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,14,328,"                appendSeparator(bld, extended);",0,0,0,1,2,0,6,0,0,6,31,10,0.30769,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,14,329,                bld.appendDayOfMonth(2);,0,0,0,1,2,0,0,0,0,3,24,4,0.30769,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,479,                if (tokenLen >= 3) {,0,0,0,1,3,0,0,0,0,4,20,4,0.30189,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicDayOfMonthDateTimeField,14,59,        return iChronology.getDaysInMonthMax();,0,0,0,1,2,1,4,0,0,4,39,5,0.29224,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,14,41,        StringBuffer buf = new StringBuffer(),2,0,0,1,2,0,0,0,0,2,37,5,0.288,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,14,44,        if (lowerBound == null) {,2,1,0,1,3,0,0,0,0,3,25,4,0.288,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,14,59,        if (explain != null) {,0,0,0,1,3,0,0,0,0,4,22,4,0.288,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,14,63,        return buf.toString();,2,0,0,1,2,1,10,4,0,17,22,1,0.288,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,14,323,            bld.appendLiteral('-');,2,1,0,1,2,0,4,0,0,8,23,3,0.28571,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,14,324,            bld.appendLiteral('-');,0,0,0,1,2,0,0,0,0,3,23,4,0.28571,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,14,325,            bld.appendMonthOfYear(2);,2,2,0,1,2,0,4,0,0,8,25,10,0.28571,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,14,326,            if (fields.remove(DateTimeFieldType.dayOfMonth())) {,0,0,0,3,7,0,0,0,0,10,52,4,0.28571,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,551,                    builder.appendLiteral(sub.charAt(0));,0,0,0,2,4,0,18,0,0,18,37,5,0.27586,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,613,                    i--;,8,1,0,0,0,0,0,0,0,11,4,1,0.27468,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,614,                    break;,10,4,0,0,0,0,0,0,0,15,6,3,0.27468,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,549,                String sub = token.substring(1);,0,0,0,1,2,0,0,0,0,3,32,4,0.2735,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,550,                if (sub.length() == 1) {,0,0,0,2,5,0,0,0,0,7,24,4,0.2735,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,596,            buf.append('\'');,0,0,0,1,2,0,10,0,0,10,17,8,0.2735,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,598,            boolean inLiteral = false;,2,1,0,0,0,0,0,0,0,4,26,5,0.2735,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,600,            for (; i < length; i++) {,6,1,0,1,3,0,0,0,0,8,25,6,0.2735,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,601,                c = pattern.charAt(i);,0,0,0,1,2,0,0,0,0,3,22,4,0.2735,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,603,                if (c == '\'') {,2,0,0,1,3,0,10,0,0,12,16,1,0.2735,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,611,                } else if (!inLiteral &&,0,0,0,0,2,0,0,0,0,2,24,4,0.2735,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,616,                    buf.append(c);,2,0,0,1,2,0,6,0,0,8,14,3,0.2735,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,588,                    buf.append(c);,2,0,0,1,2,0,6,0,0,9,14,6,0.26667,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,589,                    i++;,0,0,0,0,0,0,0,0,0,0,4,4,0.26667,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,593,            },0,0,0,0,1,0,8,0,0,8,1,5,0.26667,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,14,300,        return withZone(DateTimeZone.UTC);,6,1,0,1,2,1,0,2,0,10,34,1,0.26667,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,586,                char peek = pattern.charAt(i + 1);,0,0,0,1,2,0,0,0,0,3,34,4,0.25703,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,587,                if (peek == c) {,0,0,0,1,3,0,0,0,0,4,16,4,0.25703,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,14,2577,                iPrinters = null;,0,0,0,0,0,0,0,0,0,0,17,4,0.24806,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,14,2578,                iPrintedLengthEstimate = 0;,10,0,0,0,0,0,26,2,0,40,27,1,0.24806,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,683,                formatter = builder.toFormatter();,10,0,0,1,2,0,8,2,0,23,34,3,0.24615,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,685,"                cPatternedCache.put(pattern, formatter);",4,1,0,1,2,0,8,0,0,13,40,1,0.24615,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,687,        },0,0,0,0,1,0,0,0,0,1,1,4,0.24615,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,688,        return formatter;,0,0,0,0,0,1,0,0,0,1,17,4,0.24615,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,170,        return createFormatterForPattern(pattern);,14,1,0,1,2,1,6,4,0,25,42,1,0.24521,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,674,        if (pattern == null || pattern.length() == 0) {,2,3,0,2,5,0,4,0,0,9,47,4,0.24521,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,677,        DateTimeFormatter formatter = null;,4,0,0,0,0,0,4,0,0,8,35,4,0.24521,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,678,        synchronized (cPatternedCache) {,0,0,0,1,3,0,0,0,0,4,32,4,0.24521,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,679,            formatter = cPatternedCache.get(pattern);,0,0,0,1,2,0,0,0,0,3,41,4,0.24521,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,680,            if (formatter == null) {,0,0,0,1,3,0,0,0,0,4,24,4,0.24521,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,681,                DateTimeFormatterBuilder builder = new DateTimeFormatterBuilder();,4,2,0,1,2,0,0,0,0,6,66,9,0.24521,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,682,"                parsePatternTo(builder, pattern);",0,0,0,1,2,0,0,0,0,3,33,4,0.24521,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,14,320,        if (iZone == zone) {,10,1,0,1,3,0,12,2,0,27,20,1,0.24427,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,14,323,"        return new DateTimeFormatter(iPrinter, iParser, iLocale,",8,1,0,0,1,1,0,2,0,11,56,3,0.24427,0,0,-1
+defect4j,time,org/joda/time/field/BaseDateTimeField,14,317,                nextField = instant.getField(fieldIndex - 1);,0,0,0,1,2,0,0,0,0,3,45,4,0.23529,0,0,-1
+defect4j,time,org/joda/time/field/BaseDateTimeField,14,319,                if (getRangeDurationField().getType() != nextField.getDurationField().getType()) {,2,1,0,5,11,0,10,0,0,13,82,1,0.23529,0,0,-1
+defect4j,time,org/joda/time/field/BaseDateTimeField,14,323,            valueToAdd -= (max + 1) - values[fieldIndex];  // reduce the amount to add,4,2,1,2,4,0,0,0,0,11,74,6,0.23529,0,0,-1
+defect4j,time,org/joda/time/field/BaseDateTimeField,14,324,"            values = nextField.add(instant, fieldIndex - 1, values, 1);  // add 1 to next bigger field",0,0,0,1,2,0,0,0,0,3,90,4,0.23529,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,563,    },14,4,1,0,1,0,12,0,0,37,1,3,0.23273,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,583,            buf.append(c);,0,0,0,1,2,0,6,0,0,6,14,7,0.23273,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,585,            while (i + 1 < length) {,0,0,0,1,3,0,0,0,0,4,24,4,0.23273,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,400,        int length = pattern.length();,0,0,0,1,2,0,0,0,0,3,30,4,0.23188,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,401,        int[] indexRef = new int[1];,2,0,0,2,4,0,8,0,0,11,28,4,0.23188,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,403,        for (int i=0; i<length; i++) {,0,0,0,1,3,0,0,0,0,4,30,4,0.23188,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,404,            indexRef[0] = i;,2,0,0,1,2,0,14,2,0,20,16,1,0.23188,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,405,"            String token = parseToken(pattern, indexRef);",0,0,0,1,2,0,0,0,0,3,45,4,0.23188,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,406,            i = indexRef[0];,4,0,1,1,2,0,0,0,0,7,16,3,0.23188,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,408,            int tokenLen = token.length();,2,0,0,1,2,0,4,0,0,6,30,7,0.23188,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,409,            if (tokenLen == 0) {,4,1,0,1,3,0,0,0,0,5,20,3,0.23188,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,412,            char c = token.charAt(0);,2,0,0,1,2,0,12,0,0,14,25,3,0.23188,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,14,414,            switch (c) {,2,0,0,1,3,0,0,0,0,3,12,6,0.23188,0,0,-1
+defect4j,time,org/joda/time/field/FieldUtils,15,138,                return -val1;,2,0,0,0,0,1,0,0,0,3,13,5,0.08333,1,0,-1
+defect4j,time,org/joda/time/field/FieldUtils,15,142,                return val1;,0,0,0,0,0,1,0,0,0,1,12,4,0.04,0,0,-1
+defect4j,time,org/joda/time/field/FieldUtils,15,144,        long total = val1 * val2;,6,1,0,0,0,0,0,0,0,7,25,5,0.03846,0,0,-1
+defect4j,time,org/joda/time/field/FieldUtils,15,145,        if (total / val2 != val1) {,10,2,0,1,3,0,0,0,0,12,27,3,0.03846,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,698,        DateTimeParser parser = requireParser();,2,0,0,1,2,0,2,2,0,6,40,4,6.125,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,699,        if (instant == null) {,0,0,0,1,3,0,0,0,0,4,22,4,6.125,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,703,        long instantMillis = instant.getMillis();,0,0,0,1,2,0,0,0,0,3,41,4,6.125,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,704,        Chronology chrono = instant.getChronology();,2,0,0,1,2,0,4,2,0,8,44,4,6.125,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,705,        long instantLocal = instantMillis + chrono.getZone().getOffset(instantMillis);,0,0,0,2,4,0,0,0,0,6,78,4,6.125,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,706,        chrono = selectChronology(chrono);,0,0,0,1,2,0,0,0,0,3,34,4,6.125,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,708,        DateTimeParserBucket bucket = new DateTimeParserBucket(,2,0,0,0,1,0,0,4,0,6,55,4,6.125,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,710,"        int newPos = parser.parseInto(bucket, text, position);",0,0,0,1,2,0,0,0,0,3,54,4,6.125,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,711,"        instant.setMillis(bucket.computeMillis(false, text));",0,0,0,2,4,0,0,0,0,6,53,4,6.125,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,712,        if (iOffsetParsed && bucket.getOffsetInteger() != null) {,4,2,0,2,5,0,8,0,0,15,57,3,6.125,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,717,            chrono = chrono.withZone(bucket.getZone());,2,0,0,2,4,0,8,0,0,11,43,7,6.125,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,719,        instant.setChronology(chrono);,0,0,0,1,2,0,6,0,0,6,30,5,6.125,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,720,        if (iZone != null) {,2,1,0,1,3,0,0,0,0,3,20,4,6.125,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,723,        return newPos;,4,1,0,0,0,1,0,0,0,5,14,3,6.125,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,357,"                saveField(DateTimeFieldType.year(), iDefaultYear);",0,0,0,2,4,0,8,0,0,8,50,9,4.45455,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,358,"                return computeMillis(resetFields, text);",2,0,0,1,2,1,16,0,0,19,40,1,4.45455,0,0,-1
+defect4j,time,org/joda/time/base/BaseDateTime,16,329,        iChronology = checkChronology(chronology);,4,0,0,1,2,0,12,2,0,19,42,3,3.0625,0,0,-1
+defect4j,time,org/joda/time/base/BaseDateTime,16,330,    },0,0,0,0,1,0,0,0,0,1,1,4,3.0625,0,0,-1
+defect4j,time,org/joda/time/MutableDateTime,16,564,        super.setChronology(chronology);,4,0,0,1,2,0,0,0,0,4,32,5,3.0625,0,0,-1
+defect4j,time,org/joda/time/MutableDateTime,16,565,    },4,0,0,0,1,0,4,0,0,8,1,5,3.0625,0,0,-1
+defect4j,time,org/joda/time/MutableDateTime,16,351,"        super(year, monthOfYear, dayOfMonth,",2,0,0,0,1,0,10,0,0,12,36,1,2.57895,0,0,-1
+defect4j,time,org/joda/time/MutableDateTime,16,353,    },0,0,0,0,1,0,0,0,0,1,1,4,2.57895,0,0,-1
+defect4j,time,org/joda/time/field/BaseDurationField,16,150,            return 0;,2,0,0,0,0,1,0,0,0,2,9,4,1.88462,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,518,            return 1;,0,0,0,0,0,1,4,0,0,6,9,7,1.48485,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,421,                    SavedField t = array[j];,2,0,1,1,2,0,0,2,0,8,24,10,1.225,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,422,                    array[j] = array[j-1];,2,1,1,2,4,0,0,0,0,10,22,10,1.225,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,423,                    array[j-1] = t;,4,1,1,1,2,0,0,0,0,8,15,10,1.225,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,16,971,        if (dtx == null) {,2,1,0,1,3,0,0,0,0,3,18,4,0.83051,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,16,972,            dtx = new DateTimeFormatterBuilder(),4,0,0,1,2,0,4,2,0,12,36,3,0.83051,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,16,977,        return dtx;,10,0,0,0,0,1,0,0,0,10,11,3,0.83051,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,16,935,        if (ttx == null) {,8,1,0,1,3,0,0,0,0,9,18,6,0.75385,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,16,936,            ttx = new DateTimeFormatterBuilder(),2,0,0,1,2,0,0,2,0,5,36,6,0.75385,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,16,941,        return ttx;,0,0,0,0,0,1,0,0,0,1,11,4,0.75385,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,16,938,        return appendShortText(DateTimeFieldType.dayOfWeek());,0,0,0,2,4,1,0,0,0,7,54,4,0.73134,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,16,897,        if (tx == null) {,2,1,0,1,3,0,0,0,0,3,17,4,0.72059,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,16,898,            tx = new DateTimeFormatterBuilder(),2,0,0,1,2,0,0,2,0,5,35,6,0.72059,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,16,903,        return tx;,8,0,0,0,0,1,0,6,0,15,10,3,0.72059,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,16,1442,        if (hms == null) {,2,1,0,1,3,0,0,0,0,3,18,4,0.69014,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,16,1443,            hms = new DateTimeFormatterBuilder(),0,0,0,1,2,0,0,0,0,3,36,4,0.69014,0,0,-1
+defect4j,time,org/joda/time/format/ISODateTimeFormat,16,1449,        return hms;,2,0,1,0,0,1,0,0,0,4,11,5,0.69014,0,0,-1
+defect4j,time,org/joda/time/MutableDateTime,16,1224,        return ISODateTimeFormat.dateTime().print(this);,4,1,0,2,4,1,16,0,0,21,48,1,0.62821,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,16,511,        if (fieldType == null) {,0,0,0,1,3,0,0,0,0,4,24,4,0.57647,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,16,514,"        return append0(new TextField(fieldType, true));",4,0,0,2,4,1,8,2,0,16,47,1,0.57647,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,16,1611,            long prev = transitions[i - 1];,2,1,0,1,2,0,0,0,0,3,31,4,0.55172,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,16,1612,            if (prev > Long.MIN_VALUE) {,0,0,0,1,3,0,0,0,0,4,28,4,0.55172,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,16,1613,                return prev - 1;,2,1,0,0,0,1,0,0,0,3,16,4,0.55172,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,16,1784,            return estimatePrintedLength();,0,0,0,1,2,1,2,0,0,2,31,6,0.47115,0,0,-1
+defect4j,time,org/joda/time/MutableDateTime,16,456,                break;,0,0,0,0,0,0,0,0,0,0,6,4,0.42982,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,16,1716,            super();,0,1,0,1,2,0,6,0,0,7,8,4,0.42609,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,16,1717,            iFieldType = fieldType;,0,0,0,0,0,0,0,0,0,0,23,4,0.42609,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,16,1718,            iShort = isShort;,0,0,0,0,0,0,0,0,0,0,17,4,0.42609,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,16,1719,        },10,1,0,0,1,0,0,0,0,12,1,3,0.42609,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,16,1710,"        private static Map<Locale, Map<DateTimeFieldType, Object[]>> cParseCache =",2,0,0,1,2,2,0,10,0,14,74,3,0.42609,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,16,1722,            return iShort ? 6 : 20;,0,0,0,0,0,1,0,0,0,1,23,4,0.42609,0,0,-1
+defect4j,time,org/joda/time/base/BaseDateTime,16,317,"        iMillis = checkInstant(instant, iChronology);",2,0,0,1,2,0,6,0,0,9,45,4,0.40833,0,0,-1
+defect4j,time,org/joda/time/base/BaseDateTime,16,318,    },0,0,0,0,1,0,0,0,0,1,1,4,0.40833,0,0,-1
+defect4j,time,org/joda/time/MutableDateTime,16,454,        switch (iRoundingMode) {,0,0,0,1,3,0,0,0,0,4,24,4,0.40833,0,0,-1
+defect4j,time,org/joda/time/MutableDateTime,16,474,        super.setMillis(instant);,0,0,0,1,2,0,0,0,0,3,25,4,0.40833,0,0,-1
+defect4j,time,org/joda/time/MutableDateTime,16,475,    },0,0,0,0,1,0,0,0,0,1,1,4,0.40833,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,188,        if (locale == getLocale() || (locale != null && locale.equals(getLocale()))) {,4,4,0,5,11,0,8,0,0,18,78,4,0.37895,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,191,"        return new DateTimeFormatter(iPrinter, iParser, locale,",10,0,0,0,1,1,0,2,0,13,55,1,0.37895,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatter,16,202,        return iLocale;,6,0,0,0,0,1,8,0,0,15,15,3,0.37895,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,152,        return iZone;,2,0,0,0,0,1,0,0,0,2,13,4,0.31818,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicChronology,16,410,            year--;,10,0,0,0,0,2,30,6,0,50,7,1,0.28571,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,486,                    builder.appendMonthOfYear(tokenLen);,0,0,0,1,2,0,0,0,0,3,36,4,0.28,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,488,                break;,0,0,0,0,0,0,0,0,0,0,6,4,0.28,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,381,        } else if (iZone != null) {,2,1,0,1,4,0,0,0,0,3,27,5,0.25789,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,382,            int offset = iZone.getOffsetFromLocal(millis);,2,0,0,1,2,0,6,0,0,8,46,8,0.25789,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,383,            millis -= offset;,4,0,0,0,0,0,0,0,0,5,17,7,0.25789,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,384,            if (offset != iZone.getOffset(millis)) {,2,1,0,2,5,0,6,0,0,9,40,7,0.25789,0,0,-1
+defect4j,time,org/joda/time/chrono/ISOChronology,16,147,            return this;,0,0,0,0,0,1,0,0,0,1,12,4,0.25654,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,479,                if (tokenLen >= 3) {,2,1,0,1,3,0,0,0,0,3,20,7,0.24378,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicChronology,16,415,                oneYear = DateTimeConstants.MILLIS_PER_DAY * 366L;,6,1,0,0,0,0,0,0,0,8,50,9,0.23529,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,16,1924,                if (buf != null) {,2,1,0,1,3,0,0,0,0,3,18,7,0.20588,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,16,1925,                    while (--minDigits >= 0) {,0,0,0,1,3,0,0,0,0,4,26,4,0.20588,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,16,1926,                        buf.append('0');,0,0,0,1,2,0,0,0,0,3,16,4,0.20588,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormatterBuilder,16,1933,                return;,0,0,0,0,0,1,0,0,0,1,7,4,0.20588,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,683,                formatter = builder.toFormatter();,2,0,0,1,2,0,4,0,0,7,34,8,0.19679,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,685,"                cPatternedCache.put(pattern, formatter);",0,0,0,1,2,0,8,0,0,8,40,9,0.19679,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,687,        },2,1,0,0,1,0,0,0,0,3,1,5,0.19679,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,688,        return formatter;,2,0,0,0,0,1,0,0,0,2,17,4,0.19679,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,170,        return createFormatterForPattern(pattern);,0,0,0,1,2,1,8,0,0,9,42,3,0.196,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,674,        if (pattern == null || pattern.length() == 0) {,0,0,0,2,5,0,0,0,0,7,47,4,0.196,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,677,        DateTimeFormatter formatter = null;,0,0,0,0,0,0,0,0,0,0,35,4,0.196,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,678,        synchronized (cPatternedCache) {,14,5,0,1,3,0,2,2,0,24,32,3,0.196,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,679,            formatter = cPatternedCache.get(pattern);,4,0,0,1,2,0,6,0,0,12,41,4,0.196,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,680,            if (formatter == null) {,0,0,0,1,3,0,0,0,0,4,24,4,0.196,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,681,                DateTimeFormatterBuilder builder = new DateTimeFormatterBuilder();,2,0,0,1,2,0,0,4,0,6,66,8,0.196,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,682,"                parsePatternTo(builder, pattern);",2,0,0,1,2,0,6,0,0,8,33,1,0.196,0,0,-1
+defect4j,time,org/joda/time/base/AbstractInstant,16,262,        if (readableInstant instanceof ReadableInstant == false) {,2,1,0,1,3,0,0,2,0,6,58,4,0.18702,0,0,-1
+defect4j,time,org/joda/time/base/AbstractInstant,16,265,        ReadableInstant otherInstant = (ReadableInstant) readableInstant;,0,0,0,1,2,0,0,0,0,3,65,4,0.18702,0,0,-1
+defect4j,time,org/joda/time/base/AbstractInstant,16,266,        return,6,1,0,0,0,0,8,0,0,16,6,3,0.18702,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,563,    },0,0,0,0,1,0,0,0,0,1,1,4,0.18561,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,583,            buf.append(c);,0,0,0,1,2,0,0,0,0,3,14,4,0.18561,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,585,            while (i + 1 < length) {,0,0,0,1,3,0,0,0,0,4,24,4,0.18561,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,400,        int length = pattern.length();,6,0,0,1,2,0,0,8,0,14,30,1,0.18491,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,401,        int[] indexRef = new int[1];,0,0,0,2,4,0,4,0,0,4,28,7,0.18491,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,403,        for (int i=0; i<length; i++) {,0,0,0,1,3,0,10,0,0,10,30,5,0.18491,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,404,            indexRef[0] = i;,0,0,0,1,2,0,0,0,0,3,16,4,0.18491,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,405,"            String token = parseToken(pattern, indexRef);",0,0,0,1,2,0,0,0,0,3,45,4,0.18491,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,406,            i = indexRef[0];,2,0,1,1,2,0,0,0,0,5,16,6,0.18491,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,408,            int tokenLen = token.length();,0,0,0,1,2,0,0,0,0,3,30,4,0.18491,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,409,            if (tokenLen == 0) {,2,0,0,1,3,0,0,0,0,2,20,5,0.18491,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,412,            char c = token.charAt(0);,2,0,0,1,2,0,4,0,0,6,25,7,0.18491,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,414,            switch (c) {,6,1,0,1,3,0,0,0,0,8,12,3,0.18491,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,574,        StringBuffer buf = new StringBuffer();,0,1,1,1,2,0,8,0,0,14,38,1,0.18491,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,576,        int i = indexRef[0];,2,0,1,1,2,0,0,0,0,4,20,5,0.18491,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,577,        int length = pattern.length();,0,0,0,1,2,0,0,0,0,3,30,4,0.18491,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,579,        char c = pattern.charAt(i);,0,0,0,1,2,0,0,0,0,3,27,4,0.18491,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,580,        if (c >= 'A' && c <= 'Z' || c >= 'a' && c <= 'z') {,8,7,0,1,3,0,0,0,0,19,51,4,0.18491,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,621,        indexRef[0] = i;,0,0,0,1,2,0,0,0,0,3,16,4,0.18491,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,622,        return buf.toString();,2,0,0,1,2,1,4,2,0,8,22,5,0.18491,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,503,                return result;,0,0,0,0,0,1,0,0,0,1,14,4,0.18352,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,147,"    private static final Map<String, DateTimeFormatter> cPatternedCache = new HashMap<String, DateTimeFormatter>(7);",10,0,0,1,2,3,2,12,0,28,112,1,0.18284,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeFormat,16,149,    private static final DateTimeFormatter[] cStyleCache = new DateTimeFormatter[25];,0,0,0,2,4,0,0,0,0,6,81,4,0.18284,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,499,            DateTimeField other = obj.iField;,6,0,0,0,0,0,0,2,0,8,33,5,0.18148,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,500,            int result = compareReverse,0,0,0,0,0,0,0,0,0,0,27,4,0.18148,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,502,            if (result != 0) {,4,1,0,1,3,0,0,0,0,6,18,7,0.18148,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,520,        return -a.compareTo(b);,0,0,0,1,2,1,6,0,0,7,23,4,0.17883,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,517,        if (b == null || !b.isSupported()) {,4,0,0,2,5,0,0,0,0,5,36,5,0.17754,0,0,-1
+defect4j,time,org/joda/time/base/BaseDateTime,16,225,    },2,0,0,0,1,0,0,2,0,4,1,3,0.17626,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,353,            DurationField months = DurationFieldType.months().getField(iChrono);,4,0,0,2,4,0,0,0,0,5,68,5,0.17563,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,354,            DurationField days = DurationFieldType.days().getField(iChrono);,4,1,0,2,4,0,4,0,0,9,64,1,0.17563,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,355,            DurationField first = savedFields[0].iField.getDurationField();,4,0,1,2,4,0,2,2,0,10,63,6,0.17563,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,356,"            if (compareReverse(first, months) >= 0 && compareReverse(first, days) <= 0) {",0,3,0,3,7,0,12,0,0,15,77,6,0.17563,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,365,"                millis = savedFields[i].set(millis, resetFields);",0,0,0,2,4,0,0,0,0,6,49,4,0.17563,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,420,                for (int j=i; j>0 && (array[j-1]).compareTo(array[j])>0; j--) {,0,0,0,5,11,0,0,0,0,16,63,4,0.17563,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,511,        if (a == null || !a.isSupported()) {,2,2,0,2,5,0,6,0,0,11,36,1,0.17563,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,482,            if (iText == null) {,0,0,0,1,3,0,0,0,0,4,20,4,0.17563,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,483,"                millis = iField.set(millis, iValue);",0,0,0,1,2,0,0,0,0,3,36,4,0.17563,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,487,            if (reset) {,14,3,0,1,3,0,0,0,0,18,12,1,0.17563,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,490,            return millis;,2,0,0,0,0,1,0,0,0,2,14,5,0.17563,0,0,-1
+defect4j,time,org/joda/time/base/BaseDateTime,16,223,"        this(year, monthOfYear, dayOfMonth, hourOfDay,",6,1,0,0,1,0,0,2,0,9,46,4,0.175,0,0,-1
+defect4j,time,org/joda/time/chrono/ISOChronology,16,143,        if (zone == null) {,14,0,0,1,3,0,0,2,0,18,19,1,0.16388,0,0,-1
+defect4j,time,org/joda/time/chrono/ISOChronology,16,146,        if (zone == getZone()) {,6,1,0,2,5,0,2,0,0,10,24,3,0.16388,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,394,        return millis;,2,0,0,0,0,1,0,0,0,2,14,4,0.16333,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,344,        SavedField[] savedFields = iSavedFields;,4,0,0,1,2,0,0,2,0,6,40,4,0.16225,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,345,        int count = iSavedFieldsCount;,4,0,0,0,0,0,0,0,0,5,30,5,0.16225,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,346,        if (iSavedFieldsShared) {,0,0,0,1,3,0,0,0,0,4,25,4,0.16225,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,350,"        sort(savedFields, count);",0,0,0,1,2,0,0,0,0,3,25,4,0.16225,0,0,-1
+defect4j,time,org/joda/time/format/DateTimeParserBucket,16,351,        if (count > 0) {,2,1,0,1,3,0,0,0,0,3,16,4,0.16225,0,0,-1
+defect4j,time,org/joda/time/DateTimeZone,17,1167,        long instantBefore = convertUTCToLocal(instant - 3 * DateTimeConstants.MILLIS_PER_HOUR);,8,2,0,1,2,0,2,0,0,12,88,5,0.5,1,0,-1
+defect4j,time,org/joda/time/DateTimeZone,17,1168,        long instantAfter = convertUTCToLocal(instant + 3 * DateTimeConstants.MILLIS_PER_HOUR);,0,0,0,1,2,0,0,0,0,3,87,4,0.5,1,0,-1
+defect4j,time,org/joda/time/DateTimeZone,17,1169,        if (instantBefore == instantAfter) {,2,0,0,1,3,0,2,0,0,4,36,5,0.5,1,0,-1
+defect4j,time,org/joda/time/DateTimeZone,17,1174,        long local = convertUTCToLocal(instant);,2,0,0,1,2,0,4,0,0,6,40,5,0.5,1,0,-1
+defect4j,time,org/joda/time/DateTimeZone,17,1175,"        return convertLocalToUTC(local, false, earlierOrLater ? instantAfter : instantBefore);",12,1,0,1,2,1,4,0,0,18,86,1,0.5,1,0,-1
+defect4j,time,org/joda/time/DateTime,17,665,"        long newMillis = getZone().adjustOffset(getMillis(), false);",0,0,0,3,6,0,0,0,0,9,60,4,0.5,0,0,-1
+defect4j,time,org/joda/time/DateTime,17,666,        return withMillis(newMillis);,0,0,0,1,2,1,4,0,0,4,29,5,0.5,0,0,-1
+defect4j,time,org/joda/time/DateTime,17,685,"        long newMillis = getZone().adjustOffset(getMillis(), true);",0,0,0,3,6,0,0,0,0,9,59,4,0.5,0,0,-1
+defect4j,time,org/joda/time/DateTime,17,686,        return withMillis(newMillis);,0,0,0,1,2,1,4,0,0,4,29,5,0.5,0,0,-1
+defect4j,time,org/joda/time/DateTime,17,331,"        super(year, monthOfYear, dayOfMonth,",4,1,0,0,1,0,6,0,0,12,36,3,0.05882,0,0,-1
+defect4j,time,org/joda/time/DateTime,17,333,    },0,0,0,0,1,0,0,0,0,1,1,4,0.05882,0,0,-1
+defect4j,time,org/joda/time/DateTime,17,1098,        if (hours == 0) {,2,1,0,1,3,0,0,0,0,3,17,4,0.05,0,0,-1
+defect4j,time,org/joda/time/DateTime,17,1101,"        long instant = getChronology().hours().add(getMillis(), hours);",2,0,0,4,8,0,10,0,0,12,63,5,0.05,0,0,-1
+defect4j,time,org/joda/time/DateTime,17,1102,        return withMillis(instant);,0,0,0,1,2,1,4,0,0,4,27,5,0.05,0,0,-1
+defect4j,time,org/joda/time/base/AbstractInstant,17,71,        return getChronology().getZone();,0,1,0,2,4,1,8,0,0,10,33,3,0.01887,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,17,1531,                return iWallOffsets[i];,2,0,1,1,2,1,0,0,0,6,23,1,0.01639,0,0,-1
+defect4j,time,org/joda/time/tz/CachedDateTimeZone,17,202,            return iNextInfo.getOffset(millis);,8,1,0,1,2,1,10,6,0,25,35,1,0.00862,0,0,-1
+defect4j,time,org/joda/time/DateTime,17,582,"        return (newMillis == getMillis() ? this : new DateTime(newMillis, getChronology()));",4,1,0,4,8,1,4,2,0,11,84,6,0.005,0,0,-1
+defect4j,time,org/joda/time/chrono/ZonedChronology,17,318,            int offset = getOffsetToAdd(instant);,0,0,0,1,2,0,0,0,0,3,37,4,0.00476,0,0,-1
+defect4j,time,org/joda/time/chrono/ZonedChronology,17,319,"            instant = iField.add(instant + offset, value);",6,1,0,1,2,0,6,0,0,14,46,5,0.00476,0,0,-1
+defect4j,time,org/joda/time/chrono/ZonedChronology,17,320,            return instant - (iTimeField ? offset : getOffsetFromLocalToSubtract(instant));,0,0,0,2,4,1,0,0,0,7,79,4,0.00476,0,0,-1
+defect4j,time,org/joda/time/base/AbstractInstant,17,424,        return ISODateTimeFormat.dateTime().print(this);,0,0,0,2,4,1,6,0,0,6,48,5,0.00444,0,0,-1
+defect4j,time,org/joda/time/chrono/ZonedChronology,17,344,            int offset = this.iZone.getOffset(instant);,0,0,0,1,2,0,0,0,0,3,43,4,0.00383,0,0,-1
+defect4j,time,org/joda/time/chrono/ZonedChronology,17,345,            long sum = instant + offset;,6,1,0,0,0,0,0,0,0,7,28,6,0.00383,0,0,-1
+defect4j,time,org/joda/time/chrono/ZonedChronology,17,347,            if ((instant ^ sum) < 0 && (instant ^ offset) >= 0) {,8,5,0,3,7,0,0,0,0,13,53,5,0.00383,0,0,-1
+defect4j,time,org/joda/time/chrono/ZonedChronology,17,350,            return offset;,2,0,0,0,0,1,0,0,0,2,14,5,0.00383,0,0,-1
+defect4j,time,org/joda/time/base/AbstractInstant,17,262,        if (readableInstant instanceof ReadableInstant == false) {,2,1,0,1,3,0,0,2,0,6,58,4,0.0037,0,0,-1
+defect4j,time,org/joda/time/base/AbstractInstant,17,265,        ReadableInstant otherInstant = (ReadableInstant) readableInstant;,0,0,0,1,2,0,0,0,0,3,65,4,0.0037,0,0,-1
+defect4j,time,org/joda/time/base/AbstractInstant,17,266,        return,0,0,0,0,0,0,0,0,0,0,6,4,0.0037,0,0,-1
+defect4j,time,org/joda/time/base/BaseDateTime,17,225,    },0,0,0,0,1,0,6,0,0,6,1,6,0.00339,0,0,-1
+defect4j,time,org/joda/time/base/BaseDateTime,17,223,"        this(year, monthOfYear, dayOfMonth, hourOfDay,",4,3,0,0,1,0,5,0,0,12,46,1,0.00337,0,0,-1
+defect4j,time,org/joda/time/field/PreciseDurationDateTimeField,17,127,            return instant % iUnitMillis;,4,1,0,0,0,1,0,0,0,5,29,6,0.00275,0,0,-1
+defect4j,time,org/joda/time/field/PreciseDurationDateTimeField,17,126,        if (instant >= 0) {,4,0,0,1,3,0,0,0,0,5,19,4,0.00273,0,0,-1
+defect4j,time,org/joda/time/DateTimeFieldType,17,522,                    return chronology.secondOfDay();,0,0,0,1,2,1,0,0,0,4,32,4,0.00242,0,0,-1
+defect4j,time,org/joda/time/DateTime,17,220,"        super(instant, chronology);",0,0,0,1,2,0,0,0,0,3,27,4,0.00204,0,0,-1
+defect4j,time,org/joda/time/DateTime,17,221,    },0,0,0,0,1,0,0,0,0,1,1,4,0.00204,0,0,-1
+defect4j,time,org/joda/time/DateTimeUtils,17,167,        Chronology chrono = instant.getChronology();,0,0,0,1,2,0,0,0,0,3,44,4,0.00177,0,0,-1
+defect4j,time,org/joda/time/DateTimeUtils,17,168,        if (chrono == null) {,6,1,0,1,3,0,0,2,0,9,21,3,0.00177,0,0,-1
+defect4j,time,org/joda/time/DateTimeUtils,17,171,        return chrono;,0,0,0,0,0,1,0,0,0,1,14,4,0.00177,0,0,-1
+defect4j,time,org/joda/time/DateTimeUtils,17,164,        if (instant == null) {,2,1,0,1,3,0,0,0,0,3,22,4,0.00169,0,0,-1
+defect4j,time,org/joda/time/DateTimeUtils,17,149,        return instant.getMillis();,2,0,0,1,2,1,12,2,0,16,27,3,0.00166,0,0,-1
+defect4j,time,org/joda/time/DateTimeUtils,17,146,        if (instant == null) {,4,2,0,1,3,0,0,0,0,6,22,3,0.00158,0,0,-1
+defect4j,time,org/joda/time/chrono/ZonedChronology,17,147,        return instant;,0,0,0,0,0,1,0,0,0,1,15,4,0.00152,0,0,-1
+defect4j,time,org/joda/time/chrono/ZonedChronology,17,139,        DateTimeZone zone = getZone();,0,0,0,1,2,0,0,0,0,3,30,4,0.0015,0,0,-1
+defect4j,time,org/joda/time/chrono/ZonedChronology,17,140,        int offset = zone.getOffsetFromLocal(instant);,2,0,0,1,2,0,6,0,0,8,46,5,0.0015,0,0,-1
+defect4j,time,org/joda/time/chrono/ZonedChronology,17,141,        instant -= offset;,0,0,0,0,0,0,0,0,0,0,18,4,0.0015,0,0,-1
+defect4j,time,org/joda/time/chrono/ZonedChronology,17,142,        if (offset != zone.getOffset(instant)) {,4,0,0,2,5,0,0,0,0,5,40,4,0.0015,0,0,-1
+defect4j,time,org/joda/time/chrono/ZonedChronology,17,119,        return localToUTC(getBase().getDateTimeMillis,2,0,0,1,3,1,6,0,0,9,45,1,0.0015,0,0,-1
+defect4j,time,org/joda/time/DateTimeFieldType,17,524,                    return chronology.secondOfMinute();,0,0,0,1,2,1,0,0,0,4,35,4,0.00148,0,0,-1
+defect4j,time,org/joda/time/tz/CachedDateTimeZone,17,162,            periodStart = next;,4,0,0,0,0,0,0,0,0,5,19,6,0.0014,0,0,-1
+defect4j,time,org/joda/time/tz/CachedDateTimeZone,17,163,"            chain = (chain.iNextInfo = new Info(iZone, periodStart));",0,0,0,2,4,0,0,0,0,6,57,4,0.0014,0,0,-1
+defect4j,time,org/joda/time/tz/CachedDateTimeZone,17,164,        },0,0,0,0,1,0,0,0,0,1,1,4,0.0014,0,0,-1
+defect4j,time,org/joda/time/DateTimeZone,17,900,        } else if (offsetLocal >= 0) {,0,0,0,1,4,0,0,0,0,5,30,4,0.00139,1,1,-1
+defect4j,time,org/joda/time/DateTimeZone,17,910,        return offsetAdjusted;,2,0,0,0,0,1,0,0,0,2,22,4,0.00138,1,1,-1
+defect4j,time,org/joda/time/DateTimeFieldType,17,498,                    return chronology.dayOfMonth();,0,0,0,1,2,1,4,0,0,4,31,7,0.00136,0,0,-1
+defect4j,time,org/joda/time/DateTimeZone,17,882,        final int offsetLocal = getOffset(instantLocal);,0,0,0,1,2,0,0,0,0,3,48,4,0.00136,1,1,-1
+defect4j,time,org/joda/time/DateTimeZone,17,884,        final long instantAdjusted = instantLocal - offsetLocal;,10,2,0,0,0,1,0,0,0,13,56,4,0.00136,0,0,-1
+defect4j,time,org/joda/time/DateTimeZone,17,885,        final int offsetAdjusted = getOffset(instantAdjusted);,2,0,0,1,2,1,4,0,0,7,54,4,0.00136,0,0,-1
+defect4j,time,org/joda/time/DateTimeZone,17,887,        if (offsetLocal != offsetAdjusted) {,2,0,0,1,3,0,0,4,0,6,36,5,0.00136,0,0,-1
+defect4j,time,org/joda/time/DateTimeFieldType,17,520,                    return chronology.minuteOfHour();,0,0,0,1,2,1,4,0,0,4,33,7,0.00131,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicGJChronology,17,140,            return MAX_TOTAL_MILLIS_BY_MONTH_ARRAY[month - 1];,6,0,0,1,2,1,8,0,0,15,50,6,0.00129,0,0,-1
+defect4j,time,org/joda/time/DateTimeFieldType,17,496,                    return chronology.monthOfYear();,0,0,0,1,2,1,4,0,0,4,32,7,0.00128,0,0,-1
+defect4j,time,org/joda/time/DateTimeFieldType,17,516,                    return chronology.hourOfDay();,0,0,0,1,2,1,4,0,0,4,30,7,0.00127,0,0,-1
+defect4j,time,org/joda/time/DateTimeFieldType,17,492,                    return chronology.year();,0,0,0,1,2,1,0,0,0,4,25,4,0.00127,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicGJChronology,17,121,            return MAX_DAYS_PER_MONTH_ARRAY[month - 1];,2,0,0,1,2,1,0,0,0,2,43,4,0.00125,0,0,-1
+defect4j,time,org/joda/time/base/BaseDateTime,17,124,        super();,0,0,0,1,2,0,0,0,0,3,8,4,0.00123,0,0,-1
+defect4j,time,org/joda/time/base/BaseDateTime,17,125,        iChronology = checkChronology(chronology);,0,0,0,1,2,0,0,0,0,3,42,4,0.00123,0,0,-1
+defect4j,time,org/joda/time/base/BaseDateTime,17,126,"        iMillis = checkInstant(instant, iChronology);",2,0,0,1,2,0,6,0,0,9,45,4,0.00123,0,0,-1
+defect4j,time,org/joda/time/base/BaseDateTime,17,127,    },2,0,0,0,1,0,0,4,0,6,1,8,0.00123,0,0,-1
+defect4j,time,org/joda/time/base/AbstractInstant,17,259,        if (this == readableInstant) {,2,1,0,1,3,0,0,0,0,3,30,4,0.00114,0,0,-1
+defect4j,time,org/joda/time/chrono/AssembledChronology,17,133,"            return base.getDateTimeMillis(year, monthOfYear, dayOfMonth,",0,0,0,0,1,1,0,0,0,2,60,4,0.00109,0,0,-1
+defect4j,time,org/joda/time/DateTimeZone,17,955,            return instantUTC;,2,0,0,0,0,1,0,0,0,2,18,6,0.00104,0,0,-1
+defect4j,time,org/joda/time/DateTimeZone,17,951,        int offsetOriginal = getOffset(originalInstantUTC);,4,0,0,1,2,0,12,0,0,17,51,1,0.00099,0,0,-1
+defect4j,time,org/joda/time/DateTimeZone,17,952,        long instantUTC = instantLocal - offsetOriginal;,4,0,0,0,0,0,6,0,0,11,48,1,0.00099,0,0,-1
+defect4j,time,org/joda/time/DateTimeZone,17,953,        int offsetLocalFromOriginal = getOffset(instantUTC);,2,0,0,1,2,0,4,0,0,6,52,5,0.00099,0,0,-1
+defect4j,time,org/joda/time/DateTimeZone,17,954,        if (offsetLocalFromOriginal == offsetOriginal) {,4,1,0,1,3,0,0,0,0,5,48,4,0.00099,0,0,-1
+defect4j,time,org/joda/time/field/PreciseDurationField,17,104,        long addition = value * iUnitMillis;  // safe,0,0,0,0,0,0,0,0,0,0,45,4,0.00096,0,0,-1
+defect4j,time,org/joda/time/field/PreciseDurationField,17,105,"        return FieldUtils.safeAdd(instant, addition);",0,0,0,1,2,1,8,0,0,8,45,5,0.00096,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,17,1535,                if (i > 0) {,2,1,0,1,3,0,0,0,0,3,12,7,0.00088,0,0,-1
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,17,1536,                    return iWallOffsets[i - 1];,4,2,1,1,2,1,0,0,0,9,27,1,0.00088,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,18,356,        if ((base = getBase()) != null) {,2,1,0,3,7,0,2,0,0,7,33,4,0.05556,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,18,364,            instant = iGregorianChronology.getDateTimeMillis,2,1,0,0,0,0,0,0,0,3,48,4,0.05556,1,0,-1
+defect4j,time,org/joda/time/field/FieldUtils,18,233,            throw new IllegalFieldValueException,0,0,0,0,0,0,0,0,0,0,36,4,0.05556,0,0,-1
+defect4j,time,org/joda/time/DateMidnight,18,343,"        super(year, monthOfYear, dayOfMonth, 0, 0, 0, 0, chronology);",0,0,0,1,2,0,0,0,0,3,61,4,0.03333,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,18,53,"            buf.append(""must be in the range ["")",6,1,0,1,3,0,8,0,0,15,36,3,0.01961,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,18,50,        } else if (upperBound == null) {,2,1,0,1,4,0,0,0,0,3,32,5,0.01563,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,18,108,"        super(createMessage(fieldType.getName(), value, lowerBound, upperBound, null));",2,0,0,3,6,0,16,0,0,21,79,3,0.01471,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,18,109,        iDateTimeFieldType = fieldType;,8,1,0,0,0,0,8,0,0,19,31,3,0.01471,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,18,110,        iDurationFieldType = null;,0,0,0,0,0,0,0,0,0,0,26,4,0.01471,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,18,111,        iFieldName = fieldType.getName();,2,0,0,1,2,0,4,0,0,7,33,4,0.01471,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,18,112,        iNumberValue = value;,6,0,0,0,0,0,10,0,0,17,21,3,0.01471,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,18,113,        iStringValue = null;,0,0,0,0,0,0,0,0,0,0,20,4,0.01471,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,18,114,        iLowerBound = lowerBound;,6,0,0,0,0,0,4,2,0,13,25,3,0.01471,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,18,115,        iUpperBound = upperBound;,0,0,0,0,0,0,0,0,0,0,25,4,0.01471,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,18,116,        iMessage = super.getMessage();,4,0,0,1,2,0,0,0,0,5,30,4,0.01471,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,18,117,    },6,1,0,0,1,0,4,0,0,11,1,5,0.01471,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,18,41,        StringBuffer buf = new StringBuffer(),2,0,0,1,2,3,4,12,0,21,37,1,0.01282,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,18,44,        if (lowerBound == null) {,10,2,0,1,3,0,2,0,0,16,25,3,0.01282,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,18,59,        if (explain != null) {,2,1,0,1,3,0,0,0,0,3,22,4,0.01282,0,0,-1
+defect4j,time,org/joda/time/IllegalFieldValueException,18,63,        return buf.toString();,0,0,0,1,2,1,4,0,0,4,22,5,0.01282,0,0,-1
+defect4j,time,org/joda/time/DateTimeFieldType,18,378,        return iName;,0,0,0,0,0,1,0,0,0,1,13,4,0.00833,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,18,123,"        return getInstance(DateTimeZone.UTC, DEFAULT_CUTOVER, 4);",0,0,0,1,2,1,0,0,0,4,57,4,0.00541,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,18,194,            cutoverInstant = gregorianCutover.toInstant();,0,0,0,1,2,0,10,0,0,10,46,7,0.00129,0,0,-1
+defect4j,time,org/joda/time/Instant,18,144,        return this;,0,1,1,0,0,1,0,0,0,5,12,6,0.00129,0,0,-1
+defect4j,time,org/joda/time/chrono/JulianChronology,18,224,            leapYears = (relativeYear + 3) >> 2;,12,2,0,1,2,0,0,0,0,15,36,5,0.00104,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,18,489,"            fields.millisOfSecond = new CutoverField(julian.millisOfSecond(), fields.millisOfSecond, iCutoverMillis);",10,0,0,2,4,0,4,2,0,17,105,6,0.00104,1,1,-1
+defect4j,time,org/joda/time/chrono/GJChronology,18,490,"            fields.millisOfDay = new CutoverField(julian.millisOfDay(), fields.millisOfDay, iCutoverMillis);",10,0,0,2,4,0,4,2,0,17,96,6,0.00104,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,18,491,"            fields.secondOfMinute = new CutoverField(julian.secondOfMinute(), fields.secondOfMinute, iCutoverMillis);",0,0,0,2,4,0,0,0,0,6,105,4,0.00104,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,18,492,"            fields.secondOfDay = new CutoverField(julian.secondOfDay(), fields.secondOfDay, iCutoverMillis);",0,0,0,2,4,0,0,0,0,6,96,4,0.00104,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,18,493,"            fields.minuteOfHour = new CutoverField(julian.minuteOfHour(), fields.minuteOfHour, iCutoverMillis);",10,0,0,2,4,0,16,2,0,29,99,3,0.00104,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,18,494,"            fields.minuteOfDay = new CutoverField(julian.minuteOfDay(), fields.minuteOfDay, iCutoverMillis);",0,0,0,2,4,0,0,0,0,6,96,4,0.00104,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,18,495,"            fields.hourOfDay = new CutoverField(julian.hourOfDay(), fields.hourOfDay, iCutoverMillis);",10,0,0,2,4,0,4,2,0,17,90,6,0.00104,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,18,496,"            fields.hourOfHalfday = new CutoverField(julian.hourOfHalfday(), fields.hourOfHalfday, iCutoverMillis);",0,0,0,2,4,0,0,0,0,6,102,4,0.00104,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,18,497,"            fields.clockhourOfDay = new CutoverField(julian.clockhourOfDay(), fields.clockhourOfDay, iCutoverMillis);",10,0,0,2,4,0,4,2,0,17,105,6,0.00104,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,18,498,"            fields.clockhourOfHalfday = new CutoverField(julian.clockhourOfHalfday(),",0,0,0,1,3,0,0,0,0,4,73,4,0.00104,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,18,500,"            fields.halfdayOfDay = new CutoverField(julian.halfdayOfDay(), fields.halfdayOfDay, iCutoverMillis);",0,0,0,2,4,0,0,0,0,6,99,4,0.00104,0,0,-1
+defect4j,time,org/joda/time/chrono/BasicYearDateTimeField,18,131,            instant = iChronology.getYearMillis(year + 1);,4,1,0,1,2,0,4,0,0,10,46,6,0.00104,0,0,-1
+defect4j,time,org/joda/time/field/BaseDateTimeField,18,886,        long newInstant = roundFloor(instant);,2,0,0,1,2,0,4,0,0,6,38,5,0.00104,0,0,-1
+defect4j,time,org/joda/time/field/BaseDateTimeField,18,887,        if (newInstant != instant) {,4,1,0,1,3,0,0,0,0,5,28,4,0.00104,0,0,-1
+defect4j,time,org/joda/time/field/BaseDateTimeField,18,888,"            instant = add(newInstant, 1);",2,0,0,1,2,0,4,0,0,7,29,6,0.00104,0,0,-1
+defect4j,time,org/joda/time/field/BaseDateTimeField,18,890,        return instant;,0,0,0,0,0,1,0,0,0,1,15,4,0.00104,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,18,922,"            this(julianField, gregorianField, null, cutoverMillis, false);",8,0,0,1,2,0,0,0,0,9,62,4,0.00104,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,18,923,        },0,0,0,0,1,0,0,0,0,1,1,4,0.00104,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,18,933,"            this(julianField, gregorianField, durationField, cutoverMillis, false);",2,1,0,1,2,0,4,0,0,9,71,4,0.00104,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,18,934,        },4,0,0,0,1,0,0,0,0,4,1,6,0.00104,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,18,944,        {,0,0,0,0,1,0,0,0,0,1,1,4,0.00104,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,18,945,"            super(julianField, gregorianField, cutoverMillis, convertByWeekyear);",12,1,0,1,2,0,10,4,0,29,69,3,0.00104,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,18,946,            if (durationField == null) {,0,0,0,1,3,0,0,0,0,4,28,4,0.00104,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,18,947,"                durationField = new LinkedDurationField(iDurationField, this);",4,0,0,1,2,0,0,2,0,7,62,7,0.00104,0,0,-1
+defect4j,time,org/joda/time/chrono/GJChronology,18,949,            iDurationField = durationField;,2,0,0,0,0,0,6,0,0,9,31,7,0.00104,0,0,-1

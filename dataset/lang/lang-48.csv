@@ -1,0 +1,228 @@
+project_path,version,lines,statement,suspicious,faulty,predict,miss_line
+org/apache/commons/lang/builder/EqualsBuilder,48,372,            return this;,0.06667,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,381,                isEquals = lhs.equals(rhs);,0.05263,1,,1
+org/apache/commons/lang/builder/EqualsBuilder,48,368,        if (isEquals == false) {,0.02222,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,371,        if (lhs == rhs) {,0.02222,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,374,        if (lhs == null || rhs == null) {,0.02222,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,378,        Class lhsClass = lhs.getClass();,0.02222,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,379,        if (!lhsClass.isArray()) {,0.02222,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,408,        return this;,0.02222,1,,1
+org/apache/commons/lang/builder/EqualsBuilder,48,831,        return this.isEquals;,0.01639,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,100,    public EqualsBuilder() {,0.01613,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,92,    private boolean isEquals = true;,0.01613,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,102,    },0.01613,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,125,"        return reflectionEquals(lhs, rhs, false, null, null);",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,148,"        return reflectionEquals(lhs, rhs, ReflectionToStringBuilder.toNoNullStringArray(excludeFields));",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,171,"        return reflectionEquals(lhs, rhs, false, null, excludeFields);",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,195,"        return reflectionEquals(lhs, rhs, testTransients, null, null);",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,224,"        return reflectionEquals(lhs, rhs, testTransients, reflectUpToClass, null);",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,255,        if (lhs == rhs) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,256,            return true;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,258,        if (lhs == null || rhs == null) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,259,            return false;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,265,        Class lhsClass = lhs.getClass();,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,266,        Class rhsClass = rhs.getClass();,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,268,        if (lhsClass.isInstance(rhs)) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,269,            testClass = lhsClass;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,270,            if (!rhsClass.isInstance(lhs)) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,272,                testClass = rhsClass;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,274,        } else if (rhsClass.isInstance(lhs)) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,275,            testClass = rhsClass;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,276,            if (!lhsClass.isInstance(rhs)) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,278,                testClass = lhsClass;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,282,            return false;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,284,        EqualsBuilder equalsBuilder = new EqualsBuilder();,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,286,"            reflectionAppend(lhs, rhs, testClass, equalsBuilder, testTransients, excludeFields);",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,287,            while (testClass.getSuperclass() != null && testClass != reflectUpToClass) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,288,                testClass = testClass.getSuperclass();,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,289,"                reflectionAppend(lhs, rhs, testClass, equalsBuilder, testTransients, excludeFields);",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,298,        },0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,291,        } catch (IllegalArgumentException e) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,297,            return false;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,299,        return equalsBuilder.isEquals();,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,320,        Field[] fields = clazz.getDeclaredFields();,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,321,        List excludedFieldList = excludeFields != null ? Arrays.asList(excludeFields) : Collections.EMPTY_LIST;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,322,"        AccessibleObject.setAccessible(fields, true);",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,323,        for (int i = 0; i < fields.length && builder.isEquals; i++) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,324,            Field f = fields[i];,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,325,            if (!excludedFieldList.contains(f.getName()),0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,330,"                    builder.append(f.get(lhs), f.get(rhs));",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,335,                },0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,331,                } catch (IllegalAccessException e) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,334,"                    throw new InternalError(""Unexpected IllegalAccessException"");",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,338,    },0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,350,        if (isEquals == false) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,351,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,353,        isEquals = superEquals;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,354,        return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,369,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,375,            this.setEquals(false);,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,376,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,382,        } else if (lhs.getClass() != rhs.getClass()) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,384,            this.setEquals(false);,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,388,        else if (lhs instanceof long[]) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,389,"            append((long[]) lhs, (long[]) rhs);",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,390,        } else if (lhs instanceof int[]) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,391,"            append((int[]) lhs, (int[]) rhs);",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,392,        } else if (lhs instanceof short[]) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,393,"            append((short[]) lhs, (short[]) rhs);",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,394,        } else if (lhs instanceof char[]) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,395,"            append((char[]) lhs, (char[]) rhs);",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,396,        } else if (lhs instanceof byte[]) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,397,"            append((byte[]) lhs, (byte[]) rhs);",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,398,        } else if (lhs instanceof double[]) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,399,"            append((double[]) lhs, (double[]) rhs);",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,400,        } else if (lhs instanceof float[]) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,401,"            append((float[]) lhs, (float[]) rhs);",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,402,        } else if (lhs instanceof boolean[]) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,403,"            append((boolean[]) lhs, (boolean[]) rhs);",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,406,"            append((Object[]) lhs, (Object[]) rhs);",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,423,        if (isEquals == false) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,424,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,426,        isEquals = (lhs == rhs);,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,427,        return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,438,        if (isEquals == false) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,439,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,441,        isEquals = (lhs == rhs);,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,442,        return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,453,        if (isEquals == false) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,454,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,456,        isEquals = (lhs == rhs);,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,457,        return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,468,        if (isEquals == false) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,469,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,471,        isEquals = (lhs == rhs);,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,472,        return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,483,        if (isEquals == false) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,484,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,486,        isEquals = (lhs == rhs);,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,487,        return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,504,        if (isEquals == false) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,505,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,507,"        return append(Double.doubleToLongBits(lhs), Double.doubleToLongBits(rhs));",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,524,        if (isEquals == false) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,525,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,527,"        return append(Float.floatToIntBits(lhs), Float.floatToIntBits(rhs));",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,538,        if (isEquals == false) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,539,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,541,        isEquals = (lhs == rhs);,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,542,        return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,556,        if (isEquals == false) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,557,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,559,        if (lhs == rhs) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,560,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,562,        if (lhs == null || rhs == null) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,563,            this.setEquals(false);,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,564,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,566,        if (lhs.length != rhs.length) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,567,            this.setEquals(false);,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,568,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,570,        for (int i = 0; i < lhs.length && isEquals; ++i) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,571,"            append(lhs[i], rhs[i]);",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,573,        return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,587,        if (isEquals == false) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,588,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,590,        if (lhs == rhs) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,591,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,593,        if (lhs == null || rhs == null) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,594,            this.setEquals(false);,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,595,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,597,        if (lhs.length != rhs.length) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,598,            this.setEquals(false);,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,599,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,601,        for (int i = 0; i < lhs.length && isEquals; ++i) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,602,"            append(lhs[i], rhs[i]);",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,604,        return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,618,        if (isEquals == false) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,619,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,621,        if (lhs == rhs) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,622,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,624,        if (lhs == null || rhs == null) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,625,            this.setEquals(false);,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,626,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,628,        if (lhs.length != rhs.length) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,629,            this.setEquals(false);,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,630,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,632,        for (int i = 0; i < lhs.length && isEquals; ++i) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,633,"            append(lhs[i], rhs[i]);",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,635,        return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,649,        if (isEquals == false) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,650,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,652,        if (lhs == rhs) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,653,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,655,        if (lhs == null || rhs == null) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,656,            this.setEquals(false);,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,657,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,659,        if (lhs.length != rhs.length) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,660,            this.setEquals(false);,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,661,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,663,        for (int i = 0; i < lhs.length && isEquals; ++i) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,664,"            append(lhs[i], rhs[i]);",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,666,        return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,680,        if (isEquals == false) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,681,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,683,        if (lhs == rhs) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,684,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,686,        if (lhs == null || rhs == null) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,687,            this.setEquals(false);,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,688,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,690,        if (lhs.length != rhs.length) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,691,            this.setEquals(false);,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,692,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,694,        for (int i = 0; i < lhs.length && isEquals; ++i) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,695,"            append(lhs[i], rhs[i]);",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,697,        return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,711,        if (isEquals == false) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,712,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,714,        if (lhs == rhs) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,715,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,717,        if (lhs == null || rhs == null) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,718,            this.setEquals(false);,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,719,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,721,        if (lhs.length != rhs.length) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,722,            this.setEquals(false);,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,723,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,725,        for (int i = 0; i < lhs.length && isEquals; ++i) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,726,"            append(lhs[i], rhs[i]);",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,728,        return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,742,        if (isEquals == false) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,743,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,745,        if (lhs == rhs) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,746,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,748,        if (lhs == null || rhs == null) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,749,            this.setEquals(false);,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,750,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,752,        if (lhs.length != rhs.length) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,753,            this.setEquals(false);,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,754,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,756,        for (int i = 0; i < lhs.length && isEquals; ++i) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,757,"            append(lhs[i], rhs[i]);",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,759,        return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,773,        if (isEquals == false) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,774,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,776,        if (lhs == rhs) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,777,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,779,        if (lhs == null || rhs == null) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,780,            this.setEquals(false);,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,781,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,783,        if (lhs.length != rhs.length) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,784,            this.setEquals(false);,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,785,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,787,        for (int i = 0; i < lhs.length && isEquals; ++i) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,788,"            append(lhs[i], rhs[i]);",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,790,        return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,804,        if (isEquals == false) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,805,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,807,        if (lhs == rhs) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,808,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,810,        if (lhs == null || rhs == null) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,811,            this.setEquals(false);,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,812,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,814,        if (lhs.length != rhs.length) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,815,            this.setEquals(false);,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,816,            return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,818,        for (int i = 0; i < lhs.length && isEquals; ++i) {,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,819,"            append(lhs[i], rhs[i]);",0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,821,        return this;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,841,        this.isEquals = isEquals;,0.0,0,,0
+org/apache/commons/lang/builder/EqualsBuilder,48,842,    },0.0,0,,0

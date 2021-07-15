@@ -1,0 +1,337 @@
+project_path,version,lines,statement,suspicious,faulty,predict,miss_line
+org/apache/commons/lang/Entities,62,840,                    if (entityName.length() == 1) {,0.5,0,,0
+org/apache/commons/lang/Entities,62,843,                        char charAt1 = entityName.charAt(1);,0.5,0,,0
+org/apache/commons/lang/Entities,62,845,                            if (charAt1 == 'x' || charAt1=='X') {,0.5,0,,0
+org/apache/commons/lang/Entities,62,848,                                entityValue = Integer.parseInt(entityName.substring(1));,0.5,0,,0
+org/apache/commons/lang/Entities,62,852,                        },0.5,1,,1
+org/apache/commons/lang/Entities,62,853,                    },0.5,0,,0
+org/apache/commons/lang/Entities,62,862,                    buf.append((char) (entityValue));,0.25,0,,0
+org/apache/commons/lang/Entities,62,819,        StringBuffer buf = new StringBuffer(str.length());,0.2,0,,0
+org/apache/commons/lang/Entities,62,820,"        buf.append(str.substring(0, firstAmp));",0.2,0,,0
+org/apache/commons/lang/Entities,62,821,        for (int i = firstAmp; i < str.length(); ++i) {,0.2,0,,0
+org/apache/commons/lang/Entities,62,822,            char ch = str.charAt(i);,0.2,0,,0
+org/apache/commons/lang/Entities,62,823,            if (ch == '&') {,0.2,0,,0
+org/apache/commons/lang/Entities,62,824,"                int semi = str.indexOf(';', i + 1);",0.2,0,,0
+org/apache/commons/lang/Entities,62,825,                if (semi == -1) {,0.2,0,,0
+org/apache/commons/lang/Entities,62,829,"                int amph = str.indexOf('&', i + 1);",0.2,0,,0
+org/apache/commons/lang/Entities,62,830,                if( amph != -1 && amph < semi ) {,0.2,0,,0
+org/apache/commons/lang/Entities,62,835,"                String entityName = str.substring(i + 1, semi);",0.2,0,,0
+org/apache/commons/lang/Entities,62,837,                if (entityName.length() == 0) {,0.2,0,,0
+org/apache/commons/lang/Entities,62,839,                } else if (entityName.charAt(0) == '#') {,0.2,0,,0
+org/apache/commons/lang/Entities,62,857,                if (entityValue == -1) {,0.2,0,,0
+org/apache/commons/lang/Entities,62,864,                i = semi;,0.2,0,,0
+org/apache/commons/lang/Entities,62,865,            } else {,0.2,0,,0
+org/apache/commons/lang/Entities,62,869,        return buf.toString();,0.2,0,,0
+org/apache/commons/lang/Entities,62,814,        int firstAmp = str.indexOf('&');,0.03704,0,,0
+org/apache/commons/lang/Entities,62,815,        if (firstAmp < 0) {,0.03704,0,,0
+org/apache/commons/lang/IntHashMap,62,83,"        protected Entry(int hash, int key, Object value, Entry next) {",0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,84,            this.hash = hash;,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,85,            this.key = key;,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,86,            this.value = value;,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,87,            this.next = next;,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,88,        },0.02439,0,,0
+org/apache/commons/lang/Entities,62,502,    static class LookupEntityMap extends PrimitiveEntityMap {,0.02439,0,,0
+org/apache/commons/lang/Entities,62,504,        private int LOOKUP_TABLE_SIZE = 256;,0.02439,0,,0
+org/apache/commons/lang/Entities,62,419,    static class PrimitiveEntityMap implements EntityMap {,0.02439,0,,0
+org/apache/commons/lang/Entities,62,420,        private Map mapNameToValue = new HashMap();,0.02439,0,,0
+org/apache/commons/lang/Entities,62,421,        private IntHashMap mapValueToName = new IntHashMap();,0.02439,0,,0
+org/apache/commons/lang/Entities,62,427,"            mapNameToValue.put(name, new Integer(value));",0.02439,0,,0
+org/apache/commons/lang/Entities,62,428,"            mapValueToName.put(value, name);",0.02439,0,,0
+org/apache/commons/lang/Entities,62,429,        },0.02439,0,,0
+org/apache/commons/lang/Entities,62,39,class Entities {,0.02439,0,,0
+org/apache/commons/lang/Entities,62,693,    EntityMap map = new Entities.LookupEntityMap();,0.02439,0,,0
+org/apache/commons/lang/Entities,62,41,    private static final String[][] BASIC_ARRAY = {,0.02439,0,,0
+org/apache/commons/lang/Entities,62,48,    private static final String[][] APOS_ARRAY = {,0.02439,0,,0
+org/apache/commons/lang/Entities,62,53,    static final String[][] ISO8859_1_ARRAY = {,0.02439,0,,0
+org/apache/commons/lang/Entities,62,154,    static final String[][] HTML40_ARRAY = {,0.02439,0,,0
+org/apache/commons/lang/Entities,62,366,        XML = new Entities();,0.02439,0,,0
+org/apache/commons/lang/Entities,62,367,        XML.addEntities(BASIC_ARRAY);,0.02439,0,,0
+org/apache/commons/lang/Entities,62,368,        XML.addEntities(APOS_ARRAY);,0.02439,0,,0
+org/apache/commons/lang/Entities,62,372,        HTML32 = new Entities();,0.02439,0,,0
+org/apache/commons/lang/Entities,62,373,        HTML32.addEntities(BASIC_ARRAY);,0.02439,0,,0
+org/apache/commons/lang/Entities,62,374,        HTML32.addEntities(ISO8859_1_ARRAY);,0.02439,0,,0
+org/apache/commons/lang/Entities,62,378,        HTML40 = new Entities();,0.02439,0,,0
+org/apache/commons/lang/Entities,62,379,        fillWithHtml40Entities(HTML40);,0.02439,0,,0
+org/apache/commons/lang/Entities,62,380,    },0.02439,0,,0
+org/apache/commons/lang/Entities,62,388,        entities.addEntities(BASIC_ARRAY);,0.02439,0,,0
+org/apache/commons/lang/Entities,62,389,        entities.addEntities(ISO8859_1_ARRAY);,0.02439,0,,0
+org/apache/commons/lang/Entities,62,390,        entities.addEntities(HTML40_ARRAY);,0.02439,0,,0
+org/apache/commons/lang/Entities,62,391,    },0.02439,0,,0
+org/apache/commons/lang/Entities,62,701,        for (int i = 0; i < entityArray.length; ++i) {,0.02439,0,,0
+org/apache/commons/lang/Entities,62,702,"            addEntity(entityArray[i][0], Integer.parseInt(entityArray[i][1]));",0.02439,0,,0
+org/apache/commons/lang/Entities,62,704,    },0.02439,0,,0
+org/apache/commons/lang/Entities,62,713,"        map.add(name, value);",0.02439,0,,0
+org/apache/commons/lang/Entities,62,714,    },0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,96,"        this(20, 0.75f);",0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,97,    },0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,121,        super();,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,122,        if (initialCapacity < 0) {,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,125,        if (loadFactor <= 0) {,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,128,        if (initialCapacity == 0) {,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,132,        this.loadFactor = loadFactor;,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,133,        table = new Entry[initialCapacity];,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,134,        threshold = (int) (initialCapacity * loadFactor);,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,135,    },0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,258,        int oldCapacity = table.length;,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,259,        Entry oldMap[] = table;,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,261,        int newCapacity = oldCapacity * 2 + 1;,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,262,        Entry newMap[] = new Entry[newCapacity];,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,264,        threshold = (int) (newCapacity * loadFactor);,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,265,        table = newMap;,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,267,        for (int i = oldCapacity; i-- > 0;) {,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,268,            for (Entry old = oldMap[i]; old != null;) {,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,269,                Entry e = old;,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,270,                old = old.next;,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,272,                int index = (e.hash & 0x7FFFFFFF) % newCapacity;,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,273,                e.next = newMap[index];,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,274,                newMap[index] = e;,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,275,            },0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,277,    },0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,296,        Entry tab[] = table;,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,297,        int hash = key;,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,298,        int index = (hash & 0x7FFFFFFF) % tab.length;,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,299,        for (Entry e = tab[index]; e != null; e = e.next) {,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,300,            if (e.hash == hash) {,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,307,        if (count >= threshold) {,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,309,            rehash();,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,311,            tab = table;,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,312,            index = (hash & 0x7FFFFFFF) % tab.length;,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,316,"        Entry e = new Entry(hash, key, value, tab[index]);",0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,317,        tab[index] = e;,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,318,        count++;,0.02439,0,,0
+org/apache/commons/lang/IntHashMap,62,319,        return null;,0.02439,0,,0
+org/apache/commons/lang/Entities,62,510,            if (value < LOOKUP_TABLE_SIZE) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,511,                return lookupTable()[value];,0.0,0,,0
+org/apache/commons/lang/Entities,62,513,            return super.name(value);,0.0,0,,0
+org/apache/commons/lang/Entities,62,523,            if (lookupTable == null) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,524,                createLookupTable();,0.0,0,,0
+org/apache/commons/lang/Entities,62,526,            return lookupTable;,0.0,0,,0
+org/apache/commons/lang/Entities,62,533,            lookupTable = new String[LOOKUP_TABLE_SIZE];,0.0,0,,0
+org/apache/commons/lang/Entities,62,534,            for (int i = 0; i < LOOKUP_TABLE_SIZE; ++i) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,535,                lookupTable[i] = super.name(i);,0.0,0,,0
+org/apache/commons/lang/Entities,62,537,        },0.0,0,,0
+org/apache/commons/lang/Entities,62,435,            return (String) mapValueToName.get(value);,0.0,0,,0
+org/apache/commons/lang/Entities,62,442,            Object value = mapNameToValue.get(name);,0.0,0,,0
+org/apache/commons/lang/Entities,62,443,            if (value == null) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,444,                return -1;,0.0,0,,0
+org/apache/commons/lang/Entities,62,446,            return ((Integer) value).intValue();,0.0,0,,0
+org/apache/commons/lang/Entities,62,723,        return map.name(value);,0.0,0,,0
+org/apache/commons/lang/Entities,62,733,        return map.value(name);,0.0,0,,0
+org/apache/commons/lang/Entities,62,747,        StringBuffer buf = new StringBuffer(str.length() * 2);,0.0,0,,0
+org/apache/commons/lang/Entities,62,749,        for (i = 0; i < str.length(); ++i) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,750,            char ch = str.charAt(i);,0.0,0,,0
+org/apache/commons/lang/Entities,62,751,            String entityName = this.entityName(ch);,0.0,0,,0
+org/apache/commons/lang/Entities,62,752,            if (entityName == null) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,753,                if (ch > 0x7F) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,754,                    int intValue = ch;,0.0,0,,0
+org/apache/commons/lang/Entities,62,755,"                    buf.append(""&#"");",0.0,0,,0
+org/apache/commons/lang/Entities,62,756,                    buf.append(intValue);,0.0,0,,0
+org/apache/commons/lang/Entities,62,757,                    buf.append(';');,0.0,0,,0
+org/apache/commons/lang/Entities,62,758,                } else {,0.0,0,,0
+org/apache/commons/lang/Entities,62,759,                    buf.append(ch);,0.0,0,,0
+org/apache/commons/lang/Entities,62,762,                buf.append('&');,0.0,0,,0
+org/apache/commons/lang/Entities,62,763,                buf.append(entityName);,0.0,0,,0
+org/apache/commons/lang/Entities,62,764,                buf.append(';');,0.0,0,,0
+org/apache/commons/lang/Entities,62,767,        return buf.toString();,0.0,0,,0
+org/apache/commons/lang/Entities,62,784,        int len = str.length();,0.0,0,,0
+org/apache/commons/lang/Entities,62,785,        for (int i = 0; i < len; i++) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,786,            char c = str.charAt(i);,0.0,0,,0
+org/apache/commons/lang/Entities,62,787,            String entityName = this.entityName(c);,0.0,0,,0
+org/apache/commons/lang/Entities,62,788,            if (entityName == null) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,789,                if (c > 0x7F) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,790,"                    writer.write(""&#"");",0.0,0,,0
+org/apache/commons/lang/Entities,62,791,"                    writer.write(Integer.toString(c, 10));",0.0,0,,0
+org/apache/commons/lang/Entities,62,792,                    writer.write(';');,0.0,0,,0
+org/apache/commons/lang/Entities,62,794,                    writer.write(c);,0.0,0,,0
+org/apache/commons/lang/Entities,62,797,                writer.write('&');,0.0,0,,0
+org/apache/commons/lang/Entities,62,798,                writer.write(entityName);,0.0,0,,0
+org/apache/commons/lang/Entities,62,799,                writer.write(';');,0.0,0,,0
+org/apache/commons/lang/Entities,62,802,    },0.0,0,,0
+org/apache/commons/lang/Entities,62,816,            return str;,0.0,0,,0
+org/apache/commons/lang/Entities,62,826,                    buf.append(ch);,0.0,0,,0
+org/apache/commons/lang/Entities,62,827,                    continue;,0.0,0,,0
+org/apache/commons/lang/Entities,62,832,                    buf.append(ch);,0.0,0,,0
+org/apache/commons/lang/Entities,62,833,                    continue;,0.0,0,,0
+org/apache/commons/lang/Entities,62,838,                    entityValue = -1;,0.0,0,,0
+org/apache/commons/lang/Entities,62,841,                        entityValue = -1;,0.0,0,,0
+org/apache/commons/lang/Entities,62,846,"                                entityValue = Integer.valueOf(entityName.substring(2), 16).intValue();",0.0,0,,0
+org/apache/commons/lang/Entities,62,850,                        } catch (NumberFormatException ex) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,851,                            entityValue = -1;,0.0,0,,0
+org/apache/commons/lang/Entities,62,855,                    entityValue = this.entityValue(entityName);,0.0,0,,0
+org/apache/commons/lang/Entities,62,858,                    buf.append('&');,0.0,0,,0
+org/apache/commons/lang/Entities,62,859,                    buf.append(entityName);,0.0,0,,0
+org/apache/commons/lang/Entities,62,860,                    buf.append(';');,0.0,0,,0
+org/apache/commons/lang/Entities,62,866,                buf.append(ch);,0.0,0,,0
+org/apache/commons/lang/Entities,62,885,        int firstAmp = string.indexOf('&');,0.0,0,,0
+org/apache/commons/lang/Entities,62,886,        if (firstAmp < 0) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,887,            writer.write(string);,0.0,0,,0
+org/apache/commons/lang/Entities,62,888,            return;,0.0,0,,0
+org/apache/commons/lang/Entities,62,891,"        writer.write(string, 0, firstAmp);",0.0,0,,0
+org/apache/commons/lang/Entities,62,892,        int len = string.length();,0.0,0,,0
+org/apache/commons/lang/Entities,62,893,        for (int i = firstAmp; i < len; i++) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,894,            char c = string.charAt(i);,0.0,0,,0
+org/apache/commons/lang/Entities,62,895,            if (c == '&') {,0.0,0,,0
+org/apache/commons/lang/Entities,62,896,                int nextIdx = i+1;,0.0,0,,0
+org/apache/commons/lang/Entities,62,897,"                int semiColonIdx = string.indexOf(';', nextIdx);",0.0,0,,0
+org/apache/commons/lang/Entities,62,898,                if (semiColonIdx == -1) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,899,                    writer.write(c);,0.0,0,,0
+org/apache/commons/lang/Entities,62,900,                    continue;,0.0,0,,0
+org/apache/commons/lang/Entities,62,902,"                int amphersandIdx = string.indexOf('&', i + 1);",0.0,0,,0
+org/apache/commons/lang/Entities,62,903,                if( amphersandIdx != -1 && amphersandIdx < semiColonIdx ) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,905,                    writer.write(c);,0.0,0,,0
+org/apache/commons/lang/Entities,62,906,                    continue;,0.0,0,,0
+org/apache/commons/lang/Entities,62,908,"                String entityContent = string.substring(nextIdx, semiColonIdx);",0.0,0,,0
+org/apache/commons/lang/Entities,62,909,                int entityValue = -1;,0.0,0,,0
+org/apache/commons/lang/Entities,62,910,                int entityContentLen = entityContent.length();,0.0,0,,0
+org/apache/commons/lang/Entities,62,911,                if (entityContentLen > 0) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,912,                    if (entityContent.charAt(0) == '#') { //escaped value content is an integer (decimal or hexidecimal),0.0,0,,0
+org/apache/commons/lang/Entities,62,913,                        if (entityContentLen > 1) {  ,0.0,0,,0
+org/apache/commons/lang/Entities,62,914,                            char isHexChar = entityContent.charAt(1);,0.0,0,,0
+org/apache/commons/lang/Entities,62,916,                                switch (isHexChar) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,919,"                                        entityValue = Integer.parseInt(entityContent.substring(2), 16);",0.0,0,,0
+org/apache/commons/lang/Entities,62,922,"                                        entityValue = Integer.parseInt(entityContent.substring(1), 10);",0.0,1,,1
+org/apache/commons/lang/Entities,62,926,                            },0.0,1,,1
+org/apache/commons/lang/Entities,62,925,                            } catch (NumberFormatException e) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,927,                        },0.0,1,,1
+org/apache/commons/lang/Entities,62,929,                        entityValue = this.entityValue(entityContent);,0.0,0,,0
+org/apache/commons/lang/Entities,62,933,                if (entityValue == -1) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,934,                    writer.write('&');,0.0,0,,0
+org/apache/commons/lang/Entities,62,935,                    writer.write(entityContent);,0.0,0,,0
+org/apache/commons/lang/Entities,62,936,                    writer.write(';');,0.0,0,,0
+org/apache/commons/lang/Entities,62,938,                    writer.write(entityValue);,0.0,0,,0
+org/apache/commons/lang/Entities,62,940,                i = semiColonIdx; //move index up to the semi-colon                ,0.0,0,,0
+org/apache/commons/lang/Entities,62,941,            } else {,0.0,0,,0
+org/apache/commons/lang/Entities,62,942,                writer.write(c);,0.0,0,,0
+org/apache/commons/lang/Entities,62,945,    },0.0,0,,0
+org/apache/commons/lang/Entities,62,624,          super();,0.0,0,,0
+org/apache/commons/lang/Entities,62,625,        },0.0,0,,0
+org/apache/commons/lang/Entities,62,634,            super(growBy);,0.0,0,,0
+org/apache/commons/lang/Entities,62,635,        },0.0,0,,0
+org/apache/commons/lang/Entities,62,645,            int low = 0;,0.0,0,,0
+org/apache/commons/lang/Entities,62,646,            int high = size - 1;,0.0,0,,0
+org/apache/commons/lang/Entities,62,648,            while (low <= high) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,649,                int mid = (low + high) >> 1;,0.0,0,,0
+org/apache/commons/lang/Entities,62,650,                int midVal = values[mid];,0.0,0,,0
+org/apache/commons/lang/Entities,62,652,                if (midVal < key) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,653,                    low = mid + 1;,0.0,0,,0
+org/apache/commons/lang/Entities,62,654,                } else if (midVal > key) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,655,                    high = mid - 1;,0.0,0,,0
+org/apache/commons/lang/Entities,62,657,                    return mid; // key found,0.0,0,,0
+org/apache/commons/lang/Entities,62,659,            },0.0,0,,0
+org/apache/commons/lang/Entities,62,660,            return -(low + 1);  // key not found.,0.0,0,,0
+org/apache/commons/lang/Entities,62,667,            ensureCapacity(size + 1);,0.0,0,,0
+org/apache/commons/lang/Entities,62,668,            int insertAt = binarySearch(value);,0.0,0,,0
+org/apache/commons/lang/Entities,62,669,            if (insertAt > 0) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,670,                return;    // note: this means you can't insert the same value twice,0.0,0,,0
+org/apache/commons/lang/Entities,62,672,            insertAt = -(insertAt + 1);  // binarySearch returns it negative and off-by-one,0.0,0,,0
+org/apache/commons/lang/Entities,62,673,"            System.arraycopy(values, insertAt, values, insertAt + 1, size - insertAt);",0.0,0,,0
+org/apache/commons/lang/Entities,62,674,            values[insertAt] = value;,0.0,0,,0
+org/apache/commons/lang/Entities,62,675,"            System.arraycopy(names, insertAt, names, insertAt + 1, size - insertAt);",0.0,0,,0
+org/apache/commons/lang/Entities,62,676,            names[insertAt] = name;,0.0,0,,0
+org/apache/commons/lang/Entities,62,677,            size++;,0.0,0,,0
+org/apache/commons/lang/Entities,62,678,        },0.0,0,,0
+org/apache/commons/lang/Entities,62,684,            int index = binarySearch(value);,0.0,0,,0
+org/apache/commons/lang/Entities,62,685,            if (index < 0) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,686,                return null;,0.0,0,,0
+org/apache/commons/lang/Entities,62,688,            return names[index];,0.0,0,,0
+org/apache/commons/lang/Entities,62,549,        public ArrayEntityMap() {,0.0,0,,0
+org/apache/commons/lang/Entities,62,541,        protected int growBy = 100;,0.0,0,,0
+org/apache/commons/lang/Entities,62,542,        protected int size = 0;,0.0,0,,0
+org/apache/commons/lang/Entities,62,550,            names = new String[growBy];,0.0,0,,0
+org/apache/commons/lang/Entities,62,551,            values = new int[growBy];,0.0,0,,0
+org/apache/commons/lang/Entities,62,552,        },0.0,0,,0
+org/apache/commons/lang/Entities,62,560,        public ArrayEntityMap(int growBy) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,561,            this.growBy = growBy;,0.0,0,,0
+org/apache/commons/lang/Entities,62,562,            names = new String[growBy];,0.0,0,,0
+org/apache/commons/lang/Entities,62,563,            values = new int[growBy];,0.0,0,,0
+org/apache/commons/lang/Entities,62,564,        },0.0,0,,0
+org/apache/commons/lang/Entities,62,570,            ensureCapacity(size + 1);,0.0,0,,0
+org/apache/commons/lang/Entities,62,571,            names[size] = name;,0.0,0,,0
+org/apache/commons/lang/Entities,62,572,            values[size] = value;,0.0,0,,0
+org/apache/commons/lang/Entities,62,573,            size++;,0.0,0,,0
+org/apache/commons/lang/Entities,62,574,        },0.0,0,,0
+org/apache/commons/lang/Entities,62,582,            if (capacity > names.length) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,583,"                int newSize = Math.max(capacity, size + growBy);",0.0,0,,0
+org/apache/commons/lang/Entities,62,584,                String[] newNames = new String[newSize];,0.0,0,,0
+org/apache/commons/lang/Entities,62,585,"                System.arraycopy(names, 0, newNames, 0, size);",0.0,0,,0
+org/apache/commons/lang/Entities,62,586,                names = newNames;,0.0,0,,0
+org/apache/commons/lang/Entities,62,587,                int[] newValues = new int[newSize];,0.0,0,,0
+org/apache/commons/lang/Entities,62,588,"                System.arraycopy(values, 0, newValues, 0, size);",0.0,0,,0
+org/apache/commons/lang/Entities,62,589,                values = newValues;,0.0,0,,0
+org/apache/commons/lang/Entities,62,591,        },0.0,0,,0
+org/apache/commons/lang/Entities,62,597,            for (int i = 0; i < size; ++i) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,598,                if (values[i] == value) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,599,                    return names[i];,0.0,0,,0
+org/apache/commons/lang/Entities,62,602,            return null;,0.0,0,,0
+org/apache/commons/lang/Entities,62,609,            for (int i = 0; i < size; ++i) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,610,                if (names[i].equals(name)) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,611,                    return values[i];,0.0,0,,0
+org/apache/commons/lang/Entities,62,614,            return -1;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,108,"        this(initialCapacity, 0.75f);",0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,109,    },0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,123,"            throw new IllegalArgumentException(""Illegal Capacity: "" + initialCapacity);",0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,126,"            throw new IllegalArgumentException(""Illegal Load: "" + loadFactor);",0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,129,            initialCapacity = 1;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,143,        return count;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,153,        return count == 0;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,175,        if (value == null) {,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,176,            throw new NullPointerException();,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,179,        Entry tab[] = table;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,180,        for (int i = tab.length; i-- > 0;) {,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,181,            for (Entry e = tab[i]; e != null; e = e.next) {,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,182,                if (e.value.equals(value)) {,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,183,                    return true;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,187,        return false;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,203,        return contains(value);,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,216,        Entry tab[] = table;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,217,        int hash = key;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,218,        int index = (hash & 0x7FFFFFFF) % tab.length;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,219,        for (Entry e = tab[index]; e != null; e = e.next) {,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,220,            if (e.hash == hash) {,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,221,                return true;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,224,        return false;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,237,        Entry tab[] = table;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,238,        int hash = key;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,239,        int index = (hash & 0x7FFFFFFF) % tab.length;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,240,        for (Entry e = tab[index]; e != null; e = e.next) {,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,241,            if (e.hash == hash) {,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,242,                return e.value;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,245,        return null;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,301,                Object old = e.value;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,302,                e.value = value;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,303,                return old;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,334,        Entry tab[] = table;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,335,        int hash = key;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,336,        int index = (hash & 0x7FFFFFFF) % tab.length;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,337,"        for (Entry e = tab[index], prev = null; e != null; prev = e, e = e.next) {",0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,338,            if (e.hash == hash) {,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,339,                if (prev != null) {,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,340,                    prev.next = e.next;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,342,                    tab[index] = e.next;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,344,                count--;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,345,                Object oldValue = e.value;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,346,                e.value = null;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,347,                return oldValue;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,350,        return null;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,357,        Entry tab[] = table;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,358,        for (int index = tab.length; --index >= 0;) {,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,359,            tab[index] = null;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,361,        count = 0;,0.0,0,,0
+org/apache/commons/lang/IntHashMap,62,362,    },0.0,0,,0
+org/apache/commons/lang/Entities,62,486,        public HashEntityMap() {,0.0,0,,0
+org/apache/commons/lang/Entities,62,487,            mapNameToValue = new HashMap();,0.0,0,,0
+org/apache/commons/lang/Entities,62,488,            mapValueToName = new HashMap();,0.0,0,,0
+org/apache/commons/lang/Entities,62,489,        },0.0,0,,0
+org/apache/commons/lang/Entities,62,451,    static abstract class MapIntMap implements Entities.EntityMap {,0.0,0,,0
+org/apache/commons/lang/Entities,62,459,"            mapNameToValue.put(name, new Integer(value));",0.0,0,,0
+org/apache/commons/lang/Entities,62,460,"            mapValueToName.put(new Integer(value), name);",0.0,0,,0
+org/apache/commons/lang/Entities,62,461,        },0.0,0,,0
+org/apache/commons/lang/Entities,62,467,            return (String) mapValueToName.get(new Integer(value));,0.0,0,,0
+org/apache/commons/lang/Entities,62,474,            Object value = mapNameToValue.get(name);,0.0,0,,0
+org/apache/commons/lang/Entities,62,475,            if (value == null) {,0.0,0,,0
+org/apache/commons/lang/Entities,62,476,                return -1;,0.0,0,,0
+org/apache/commons/lang/Entities,62,478,            return ((Integer) value).intValue();,0.0,0,,0
+org/apache/commons/lang/Entities,62,496,        public TreeEntityMap() {,0.0,0,,0
+org/apache/commons/lang/Entities,62,497,            mapNameToValue = new TreeMap();,0.0,0,,0
+org/apache/commons/lang/Entities,62,498,            mapValueToName = new TreeMap();,0.0,0,,0
+org/apache/commons/lang/Entities,62,499,        },0.0,0,,0

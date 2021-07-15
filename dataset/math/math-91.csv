@@ -1,0 +1,472 @@
+project_path,version,lines,statement,suspicious,faulty,predict,miss_line
+org/apache/commons/math/fraction/Fraction,91,270,        return (double)numerator / (double)denominator;,0.03846,0,,0
+org/apache/commons/math/util/MathUtils,91,604,                t /= 2; // cast out twos,0.02439,0,,0
+org/apache/commons/math/util/MathUtils,91,434,    private static final long[] factorials = new long[] ,0.01818,0,,0
+org/apache/commons/math/util/MathUtils,91,561,        int u = p;,0.01818,0,,0
+org/apache/commons/math/util/MathUtils,91,562,        int v = q;,0.01818,0,,0
+org/apache/commons/math/util/MathUtils,91,563,        if ((u == 0) || (v == 0)) {,0.01818,0,,0
+org/apache/commons/math/util/MathUtils,91,564,            if ((u == Integer.MIN_VALUE) || (v == Integer.MIN_VALUE)) {,0.01818,0,,0
+org/apache/commons/math/util/MathUtils,91,569,            return (Math.abs(u) + Math.abs(v));,0.01818,0,,0
+org/apache/commons/math/util/MathUtils,91,576,        if (u > 0) {,0.01818,0,,0
+org/apache/commons/math/util/MathUtils,91,577,            u = -u;,0.01818,0,,0
+org/apache/commons/math/util/MathUtils,91,579,        if (v > 0) {,0.01818,0,,0
+org/apache/commons/math/util/MathUtils,91,580,            v = -v;,0.01818,0,,0
+org/apache/commons/math/util/MathUtils,91,583,        int k = 0;,0.01818,0,,0
+org/apache/commons/math/util/MathUtils,91,584,        while ((u & 1) == 0 && (v & 1) == 0 && k < 31) { // while u and v are,0.01818,0,,0
+org/apache/commons/math/util/MathUtils,91,590,        if (k == 31) {,0.01818,0,,0
+org/apache/commons/math/util/MathUtils,91,597,        int t = ((u & 1) == 1) ? v : -(u / 2)/* B3 */;,0.01818,0,,0
+org/apache/commons/math/util/MathUtils,91,603,            while ((t & 1) == 0) { // while t is even..,0.01818,0,,0
+org/apache/commons/math/util/MathUtils,91,607,            if (t > 0) {,0.01818,0,,0
+org/apache/commons/math/util/MathUtils,91,608,                u = -t;,0.01818,0,,0
+org/apache/commons/math/util/MathUtils,91,610,                v = t;,0.01818,0,,0
+org/apache/commons/math/util/MathUtils,91,613,            t = (v - u) / 2;,0.01818,0,,0
+org/apache/commons/math/util/MathUtils,91,616,        } while (t != 0);,0.01818,0,,0
+org/apache/commons/math/util/MathUtils,91,617,        return -u * (1 << k); // gcd is u*2^k,0.01818,0,,0
+org/apache/commons/math/fraction/Fraction,91,209,        super();,0.01818,0,,0
+org/apache/commons/math/fraction/Fraction,91,210,        if (den == 0) {,0.01818,0,,0
+org/apache/commons/math/fraction/Fraction,91,214,        if (den < 0) {,0.01818,0,,0
+org/apache/commons/math/fraction/Fraction,91,223,"        int d = MathUtils.gcd(num, den);",0.01818,0,,0
+org/apache/commons/math/fraction/Fraction,91,224,        if (d > 1) {,0.01818,0,,0
+org/apache/commons/math/fraction/Fraction,91,230,        if (den < 0) {,0.01818,0,,0
+org/apache/commons/math/fraction/Fraction,91,234,        this.numerator = num;,0.01818,0,,0
+org/apache/commons/math/fraction/Fraction,91,235,        this.denominator = den;,0.01818,0,,0
+org/apache/commons/math/fraction/Fraction,91,236,    },0.01818,0,,0
+org/apache/commons/math/fraction/Fraction,91,33,"    public static final Fraction TWO = new Fraction(2, 1);",0.01818,0,,0
+org/apache/commons/math/fraction/Fraction,91,36,"    public static final Fraction ONE = new Fraction(1, 1);",0.01818,0,,0
+org/apache/commons/math/fraction/Fraction,91,39,"    public static final Fraction ZERO = new Fraction(0, 1);",0.01818,0,,0
+org/apache/commons/math/fraction/Fraction,91,42,"    public static final Fraction MINUS_ONE = new Fraction(-1, 1);",0.01818,0,,0
+org/apache/commons/math/util/MathUtils,91,65,        super();,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,66,    },0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,79,        long s = (long)x + (long)y;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,80,        if (s < Integer.MIN_VALUE || s > Integer.MAX_VALUE) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,81,"            throw new ArithmeticException(""overflow: add"");",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,83,        return (int)s;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,97,"        return addAndCheck(a, b, ""overflow: add"");",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,113,        if (a > b) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,115,"            ret = addAndCheck(b, a, msg);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,119,            if (a < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,120,                if (b < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,122,                    if (Long.MIN_VALUE - b <= a) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,123,                        ret = a + b;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,125,                        throw new ArithmeticException(msg);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,129,                    ret = a + b;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,136,                if (a <= Long.MAX_VALUE - b) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,137,                    ret = a + b;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,139,                    throw new ArithmeticException(msg);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,143,        return ret;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,172,        if (n < k) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,173,            throw new IllegalArgumentException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,176,        if (n < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,177,            throw new IllegalArgumentException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,180,        if ((n == k) || (k == 0)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,181,            return 1;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,183,        if ((k == 1) || (k == n - 1)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,184,            return n;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,187,        if (k > n / 2),0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,188,"            return binomialCoefficient(n, n - k);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,195,        long result = 1;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,196,        if (n <= 61) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,198,"            for (int j = 1, i = n - k + 1; j <= k; i++, j++) {",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,199,                result = result * i / j;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,201,        } else if (n <= 66) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,204,"            for (int j = 1, i = n - k + 1; j <= k; i++, j++) {",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,211,"                long d = gcd(i, j);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,212,                result = (result / (j / d)) * (i / d);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,218,"            for (int j = 1, i = n - k + 1; j <= k; i++, j++) {",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,219,"                long d = gcd(i, j);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,220,"                result = mulAndCheck((result / (j / d)), (i / d));",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,223,        return result;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,249,        if (n < k) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,250,            throw new IllegalArgumentException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,253,        if (n < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,254,            throw new IllegalArgumentException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,257,        if ((n == k) || (k == 0)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,258,            return 1d;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,260,        if ((k == 1) || (k == n - 1)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,261,            return n;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,263,        if (k > n/2) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,264,"            return binomialCoefficientDouble(n, n - k);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,266,        if (n < 67) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,267,"            return binomialCoefficient(n,k);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,270,        double result = 1d;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,271,        for (int i = 1; i <= k; i++) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,272,             result *= (double)(n - k + i) / (double)i;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,275,        return Math.floor(result + 0.5);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,297,        if (n < k) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,298,            throw new IllegalArgumentException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,301,        if (n < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,302,            throw new IllegalArgumentException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,305,        if ((n == k) || (k == 0)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,306,            return 0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,308,        if ((k == 1) || (k == n - 1)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,309,            return Math.log((double) n);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,316,        if (n < 67) {  ,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,317,"            return Math.log(binomialCoefficient(n,k));",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,324,        if (n < 1030) { ,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,325,"            return Math.log(binomialCoefficientDouble(n, k));",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,328,        if (k > n / 2) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,329,"            return binomialCoefficientLog(n, n - k);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,335,        double logSum = 0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,338,        for (int i = n - k + 1; i <= n; i++) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,339,            logSum += Math.log((double) i);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,343,        for (int i = 2; i <= k; i++) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,344,            logSum -= Math.log((double) i);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,347,        return logSum;      ,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,361,"        if (equals(x, y, eps)) {",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,362,            return 0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,363,        } else if (x < y) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,364,          return -1;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,366,        return 1;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,377,        return (Math.exp(x) + Math.exp(-x)) / 2.0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,389,        return ((Double.isNaN(x) && Double.isNaN(y)) || x == y);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,405,"      return equals(x, y) || (Math.abs(y - x) <= eps);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,419,        if ((x == null) || (y == null)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,420,            return !((x == null) ^ (y == null));,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,422,        if (x.length != y.length) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,423,            return false;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,425,        for (int i = 0; i < x.length; ++i) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,426,"            if (!equals(x[i], y[i])) {",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,427,                return false;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,430,        return true;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,463,        if (n < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,464,"            throw new IllegalArgumentException(""must have n >= 0 for n!"");",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,466,        if (n > 20) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,467,            throw new ArithmeticException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,470,        return factorials[n];,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,494,        if (n < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,495,"            throw new IllegalArgumentException(""must have n >= 0 for n!"");",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,497,        if (n < 21) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,498,            return factorial(n);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,500,        return Math.floor(Math.exp(factorialLog(n)) + 0.5);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,517,        if (n < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,518,"            throw new IllegalArgumentException(""must have n > 0 for n!"");",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,520,        if (n < 21) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,521,            return Math.log(factorial(n));,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,523,        double logSum = 0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,524,        for (int i = 2; i <= n; i++) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,525,            logSum += Math.log((double)i);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,527,        return logSum;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,565,                throw MathRuntimeException.createArithmeticException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,586,            u /= 2;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,587,            v /= 2;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,588,            k++; // cast out twos.,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,591,            throw MathRuntimeException.createArithmeticException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,627,        return new Double(value).hashCode();,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,638,        return Arrays.hashCode(value);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,649,        return (x >= ZB) ? PB : NB;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,661,        if (Double.isNaN(x)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,662,            return Double.NaN;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,664,        return (x >= 0.0) ? 1.0 : -1.0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,675,        if (Float.isNaN(x)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,676,            return Float.NaN;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,678,        return (x >= 0.0F) ? 1.0F : -1.0F;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,688,        return (x >= 0) ? 1 : -1;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,698,        return (x >= 0L) ? 1L : -1L;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,709,        return (x >= ZS) ? PS : NS;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,736,        if (a==0 || b==0){,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,737,            return 0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,739,"        int lcm = Math.abs(mulAndCheck(a / gcd(a, b), b));",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,740,        if (lcm == Integer.MIN_VALUE){,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,741,"            throw new ArithmeticException(""overflow: lcm is 2^31"");",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,743,        return lcm;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,763,        return Math.log(x)/Math.log(base);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,777,        long m = ((long)x) * ((long)y);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,778,        if (m < Integer.MIN_VALUE || m > Integer.MAX_VALUE) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,779,"            throw new ArithmeticException(""overflow: mul"");",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,781,        return (int)m;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,796,"        String msg = ""overflow: multiply"";",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,797,        if (a > b) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,799,"            ret = mulAndCheck(b, a);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,801,            if (a < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,802,                if (b < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,804,                    if (a >= Long.MAX_VALUE / b) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,805,                        ret = a * b;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,807,                        throw new ArithmeticException(msg);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,809,                } else if (b > 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,811,                    if (Long.MIN_VALUE / b <= a) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,812,                        ret = a * b;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,814,                        throw new ArithmeticException(msg);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,819,                    ret = 0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,821,            } else if (a > 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,826,                if (a <= Long.MAX_VALUE / b) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,827,                    ret = a * b;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,829,                    throw new ArithmeticException(msg);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,833,                ret = 0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,836,        return ret;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,859,        if (Double.isNaN(d) || Double.isInfinite(d)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,860,                return d;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,861,        } else if (d == 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,862,                return (direction < 0) ? -Double.MIN_VALUE : Double.MIN_VALUE;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,868,        long bits     = Double.doubleToLongBits(d);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,869,        long sign     = bits & 0x8000000000000000L;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,870,        long exponent = bits & 0x7ff0000000000000L;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,871,        long mantissa = bits & 0x000fffffffffffffL;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,873,        if (d * (direction - d) >= 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,875,                if (mantissa == 0x000fffffffffffffL) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,876,                        return Double.longBitsToDouble(sign |,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,879,                        return Double.longBitsToDouble(sign |,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,884,                if (mantissa == 0L) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,885,                        return Double.longBitsToDouble(sign |,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,889,                        return Double.longBitsToDouble(sign |,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,908,        if ((d == 0) || Double.isNaN(d) || Double.isInfinite(d)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,909,            return d;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,913,        final long bits     = Double.doubleToLongBits(d);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,914,        final long exponent = bits & 0x7ff0000000000000L;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,915,        final long rest     = bits & 0x800fffffffffffffL;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,918,        final long newBits = rest | (exponent + (((long) scaleFactor) << 52));,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,919,        return Double.longBitsToDouble(newBits);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,943,         return a - TWO_PI * Math.floor((a + Math.PI - center) / TWO_PI);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,956,"        return round(x, scale, BigDecimal.ROUND_HALF_UP);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,973,            return (new BigDecimal,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,977,        } catch (NumberFormatException ex) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,978,            if (Double.isInfinite(x)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,979,                return x;          ,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,981,                return Double.NaN;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,996,"        return round(x, scale, BigDecimal.ROUND_HALF_UP);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1012,        float sign = indicator(x);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1013,"        float factor = (float)Math.pow(10.0f, scale) * sign;",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1014,"        return (float)roundUnscaled(x * factor, sign, roundingMethod) / factor;",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1031,        switch (roundingMethod) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1033,            if (sign == -1) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1034,"                unscaled = Math.floor(nextAfter(unscaled, Double.NEGATIVE_INFINITY));",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1036,"                unscaled = Math.ceil(nextAfter(unscaled, Double.POSITIVE_INFINITY));",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1038,            break;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1040,"            unscaled = Math.floor(nextAfter(unscaled, Double.NEGATIVE_INFINITY));",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1041,            break;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1043,            if (sign == -1) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1044,"                unscaled = Math.ceil(nextAfter(unscaled, Double.POSITIVE_INFINITY));",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1046,"                unscaled = Math.floor(nextAfter(unscaled, Double.NEGATIVE_INFINITY));",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1048,            break;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1050,"            unscaled = nextAfter(unscaled, Double.NEGATIVE_INFINITY);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1051,            double fraction = unscaled - Math.floor(unscaled);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1052,            if (fraction > 0.5) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1053,                unscaled = Math.ceil(unscaled);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1055,                unscaled = Math.floor(unscaled);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1057,            break;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1060,            double fraction = unscaled - Math.floor(unscaled);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1061,            if (fraction > 0.5) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1062,                unscaled = Math.ceil(unscaled);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1063,            } else if (fraction < 0.5) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1064,                unscaled = Math.floor(unscaled);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1067,                if (Math.floor(unscaled) / 2.0 == Math.floor(Math,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1069,                    unscaled = Math.floor(unscaled);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1071,                    unscaled = Math.ceil(unscaled);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1074,            break;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1077,"            unscaled = nextAfter(unscaled, Double.POSITIVE_INFINITY);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1078,            double fraction = unscaled - Math.floor(unscaled);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1079,            if (fraction >= 0.5) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1080,                unscaled = Math.ceil(unscaled);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1082,                unscaled = Math.floor(unscaled);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1084,            break;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1087,            if (unscaled != Math.floor(unscaled)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1088,"                throw new ArithmeticException(""Inexact result from rounding"");",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1092,"            unscaled = Math.ceil(nextAfter(unscaled,  Double.POSITIVE_INFINITY));",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1093,            break;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1095,"            throw new IllegalArgumentException(""Invalid rounding method."");",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1097,        return unscaled;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1111,        return (x == ZB) ? ZB : (x > ZB) ? PB : NB;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1127,        if (Double.isNaN(x)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1128,            return Double.NaN;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1130,        return (x == 0.0) ? 0.0 : (x > 0.0) ? 1.0 : -1.0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1145,        if (Float.isNaN(x)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1146,            return Float.NaN;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1148,        return (x == 0.0F) ? 0.0F : (x > 0.0F) ? 1.0F : -1.0F;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1162,        return (x == 0) ? 0 : (x > 0) ? 1 : -1;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1176,        return (x == 0L) ? 0L : (x > 0L) ? 1L : -1L;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1191,        return (x == ZS) ? ZS : (x > ZS) ? PS : NS;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1202,        return (Math.exp(x) - Math.exp(-x)) / 2.0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1216,        long s = (long)x - (long)y;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1217,        if (s < Integer.MIN_VALUE || s > Integer.MAX_VALUE) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1218,"            throw new ArithmeticException(""overflow: subtract"");",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1220,        return (int)s;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1235,"        String msg = ""overflow: subtract"";",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1236,        if (b == Long.MIN_VALUE) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1237,            if (a < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1238,                ret = a - b;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1240,                throw new ArithmeticException(msg);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1244,"            ret = addAndCheck(a, -b, msg);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,91,1246,        return ret;,0.0,0,,0
+org/apache/commons/math/MathException,91,100,        super();,0.0,0,,0
+org/apache/commons/math/MathException,91,101,        this.pattern   = null;,0.0,0,,0
+org/apache/commons/math/MathException,91,102,        this.arguments = new Object[0];,0.0,0,,0
+org/apache/commons/math/MathException,91,103,    },0.0,0,,0
+org/apache/commons/math/MathException,91,113,"      super(buildMessage(Locale.US, pattern, arguments));",0.0,0,,0
+org/apache/commons/math/MathException,91,114,      this.pattern   = pattern;,0.0,0,,0
+org/apache/commons/math/MathException,91,115,      this.arguments = (arguments == null) ? new Object[0] : arguments.clone();,0.0,0,,0
+org/apache/commons/math/MathException,91,116,    },0.0,0,,0
+org/apache/commons/math/MathException,91,126,        super(rootCause);,0.0,0,,0
+org/apache/commons/math/MathException,91,127,        this.pattern   = getMessage();,0.0,0,,0
+org/apache/commons/math/MathException,91,128,        this.arguments = new Object[0];,0.0,0,,0
+org/apache/commons/math/MathException,91,129,    },0.0,0,,0
+org/apache/commons/math/MathException,91,142,"      super(buildMessage(Locale.US, pattern, arguments), rootCause);",0.0,0,,0
+org/apache/commons/math/MathException,91,143,      this.pattern   = pattern;,0.0,0,,0
+org/apache/commons/math/MathException,91,144,      this.arguments = (arguments == null) ? new Object[0] : arguments.clone();,0.0,0,,0
+org/apache/commons/math/MathException,91,145,    },0.0,0,,0
+org/apache/commons/math/MathException,91,42,    private static ResourceBundle cachedResources = null;,0.0,0,,0
+org/apache/commons/math/MathException,91,63,            if ((cachedResources == null) || (! cachedResources.getLocale().equals(locale))) {,0.0,0,,0
+org/apache/commons/math/MathException,91,65,                cachedResources =,0.0,0,,0
+org/apache/commons/math/MathException,91,69,            if (cachedResources.getLocale().getLanguage().equals(locale.getLanguage())) {,0.0,0,,0
+org/apache/commons/math/MathException,91,71,                return cachedResources.getString(s);,0.0,0,,0
+org/apache/commons/math/MathException,91,76,        },0.0,0,,0
+org/apache/commons/math/MathException,91,74,        } catch (MissingResourceException mre) {,0.0,0,,0
+org/apache/commons/math/MathException,91,80,        return s;,0.0,0,,0
+org/apache/commons/math/MathException,91,92,"        return (pattern == null) ? """" : new MessageFormat(translate(pattern, locale), locale).format(arguments);        ",0.0,0,,0
+org/apache/commons/math/MathException,91,153,        return pattern;,0.0,0,,0
+org/apache/commons/math/MathException,91,162,        return arguments.clone();,0.0,0,,0
+org/apache/commons/math/MathException,91,173,"        return buildMessage(locale, pattern, arguments);",0.0,0,,0
+org/apache/commons/math/MathException,91,178,        return getMessage(Locale.getDefault());,0.0,0,,0
+org/apache/commons/math/MathException,91,185,        printStackTrace(System.err);,0.0,0,,0
+org/apache/commons/math/MathException,91,186,    },0.0,0,,0
+org/apache/commons/math/MathException,91,194,        synchronized (out) {,0.0,0,,0
+org/apache/commons/math/MathException,91,195,"            PrintWriter pw = new PrintWriter(out, false);",0.0,0,,0
+org/apache/commons/math/MathException,91,196,            printStackTrace(pw);,0.0,0,,0
+org/apache/commons/math/MathException,91,198,            pw.flush();,0.0,0,,0
+org/apache/commons/math/MathException,91,199,        },0.0,0,,0
+org/apache/commons/math/MathException,91,200,    },0.0,0,,0
+org/apache/commons/math/ConvergenceException,91,34,"        super(""Convergence failed"");",0.0,0,,0
+org/apache/commons/math/ConvergenceException,91,35,    },0.0,0,,0
+org/apache/commons/math/ConvergenceException,91,45,"        super(pattern, arguments);",0.0,0,,0
+org/apache/commons/math/ConvergenceException,91,46,    },0.0,0,,0
+org/apache/commons/math/ConvergenceException,91,53,        super(cause);,0.0,0,,0
+org/apache/commons/math/ConvergenceException,91,54,    },0.0,0,,0
+org/apache/commons/math/ConvergenceException,91,65,"        super(cause, pattern, arguments);",0.0,0,,0
+org/apache/commons/math/ConvergenceException,91,66,    },0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,60,"        this(value, 1.0e-5, 100);",0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,61,    },0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,82,"        this(value, epsilon, Integer.MAX_VALUE, maxIterations);",0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,83,    },0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,102,"       this(value, 0, maxDenominator, 100);",0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,103,    },0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,138,    {,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,139,        long overflow = Integer.MAX_VALUE;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,140,        double r0 = value;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,141,        long a0 = (long)Math.floor(r0);,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,142,        if (a0 > overflow) {,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,143,"            throw new FractionConversionException(value, a0, 1l);",0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,148,        if (Math.abs(a0 - value) < epsilon) {,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,149,            this.numerator = (int) a0;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,150,            this.denominator = 1;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,151,            return;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,154,        long p0 = 1;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,155,        long q0 = 0;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,156,        long p1 = a0;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,157,        long q1 = 1;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,159,        long p2 = 0;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,160,        long q2 = 1;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,162,        int n = 0;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,163,        boolean stop = false;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,165,            ++n;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,166,            double r1 = 1.0 / (r0 - a0);,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,167,            long a1 = (long)Math.floor(r1);,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,168,            p2 = (a1 * p1) + p0;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,169,            q2 = (a1 * q1) + q0;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,170,            if ((p2 > overflow) || (q2 > overflow)) {,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,171,"                throw new FractionConversionException(value, p2, q2);",0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,174,            double convergent = (double)p2 / (double)q2;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,175,            if (n < maxIterations && Math.abs(convergent - value) > epsilon && q2 < maxDenominator) {,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,176,                p0 = p1;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,177,                p1 = p2;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,178,                q0 = q1;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,179,                q1 = q2;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,180,                a0 = a1;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,181,                r0 = r1;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,183,                stop = true;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,185,        } while (!stop);,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,187,        if (n >= maxIterations) {,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,188,"            throw new FractionConversionException(value, maxIterations);",0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,191,        if (q2 < maxDenominator) {,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,192,            this.numerator = (int) p2;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,193,            this.denominator = (int) q2;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,195,            this.numerator = (int) p1;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,196,            this.denominator = (int) q1;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,199,    },0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,211,"            throw MathRuntimeException.createArithmeticException(""zero denominator in fraction {0}/{1}"",",0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,215,            if (num == Integer.MIN_VALUE || den == Integer.MIN_VALUE) {,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,216,"                throw MathRuntimeException.createArithmeticException(""overflow in fraction {0}/{1}, cannot negate"",",0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,219,            num = -num;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,220,            den = -den;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,225,            num /= d;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,226,            den /= d;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,231,            num *= -1;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,232,            den *= -1;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,244,        if (numerator >= 0) {,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,245,            ret = this;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,247,            ret = negate();,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,249,        return ret;        ,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,259,        double nOd = doubleValue();,0.0,1,,0
+org/apache/commons/math/fraction/Fraction,91,260,        double dOn = object.doubleValue();,0.0,1,,0
+org/apache/commons/math/fraction/Fraction,91,261,        return (nOd < dOn) ? -1 : ((nOd > dOn) ? +1 : 0);,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,285,        if (this == other) { ,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,286,            ret = true;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,287,        } else if (other == null) {,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,288,            ret = false;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,293,                Fraction rhs = (Fraction)other;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,294,                ret = (numerator == rhs.numerator) &&,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,299,            },0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,296,            } catch (ClassCastException ex) {,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,298,                ret = false;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,302,        return ret;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,311,        return (float)doubleValue();,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,319,        return denominator;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,327,        return numerator;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,335,        return 37 * (37 * 17 + getNumerator()) + getDenominator();,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,344,        return (int)doubleValue();,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,353,        return (long)doubleValue();,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,361,        if (numerator==Integer.MIN_VALUE) {,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,362,"            throw MathRuntimeException.createArithmeticException(""overflow in fraction {0}/{1}, cannot negate"",",0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,365,"        return new Fraction(-numerator, denominator);",0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,373,"        return new Fraction(denominator, numerator);",0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,387,"        return addSub(fraction, true /* add */);",0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,401,"        return addSub(fraction, false /* subtract */);",0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,415,        if (fraction == null) {,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,416,"            throw new IllegalArgumentException(""The fraction must not be null"");",0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,419,        if (numerator == 0) {,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,420,            return isAdd ? fraction : fraction.negate();,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,422,        if (fraction.numerator == 0) {,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,423,            return this;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,427,"        int d1 = MathUtils.gcd(denominator, fraction.denominator);",0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,428,        if (d1==1) {,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,430,"            int uvp = MathUtils.mulAndCheck(numerator, fraction.denominator);",0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,431,"            int upv = MathUtils.mulAndCheck(fraction.numerator, denominator);",0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,432,            return new Fraction,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,440,        BigInteger uvp = BigInteger.valueOf(numerator),0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,442,        BigInteger upv = BigInteger.valueOf(fraction.numerator),0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,444,        BigInteger t = isAdd ? uvp.add(upv) : uvp.subtract(upv);,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,447,        int tmodd1 = t.mod(BigInteger.valueOf(d1)).intValue();,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,448,"        int d2 = (tmodd1==0)?d1:MathUtils.gcd(tmodd1, d1);",0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,451,        BigInteger w = t.divide(BigInteger.valueOf(d2));,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,452,        if (w.bitLength() > 31) {,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,453,"            throw MathRuntimeException.createArithmeticException(""overflow, numerator too large after multiply: {0}"",",0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,456,"        return new Fraction (w.intValue(), ",0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,472,        if (fraction == null) {,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,473,"            throw new IllegalArgumentException(""The fraction must not be null"");",0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,475,        if (numerator == 0 || fraction.numerator == 0) {,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,476,            return ZERO;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,480,"        int d1 = MathUtils.gcd(numerator, fraction.denominator);",0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,481,"        int d2 = MathUtils.gcd(fraction.numerator, denominator);",0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,482,        return getReducedFraction,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,498,        if (fraction == null) {,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,499,"            throw new IllegalArgumentException(""The fraction must not be null"");",0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,501,        if (fraction.numerator == 0) {,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,502,            throw MathRuntimeException.createArithmeticException(,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,506,        return multiply(fraction.reciprocal());,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,521,        if (denominator == 0) {,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,522,            throw MathRuntimeException.createArithmeticException(,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,526,        if (numerator==0) {,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,527,            return ZERO; // normalize zero.,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,530,        if (denominator==Integer.MIN_VALUE && (numerator&1)==0) {,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,531,            numerator/=2; denominator/=2;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,533,        if (denominator < 0) {,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,534,            if (numerator==Integer.MIN_VALUE ||,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,536,                throw MathRuntimeException.createArithmeticException(,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,540,            numerator = -numerator;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,541,            denominator = -denominator;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,544,"        int gcd = MathUtils.gcd(numerator, denominator);",0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,545,        numerator /= gcd;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,546,        denominator /= gcd;,0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,547,"        return new Fraction(numerator, denominator);",0.0,0,,0
+org/apache/commons/math/fraction/Fraction,91,30,public class Fraction extends Number implements Comparable<Fraction> {,0.0,0,,0
+org/apache/commons/math/fraction/FractionConversionException,91,41,"        super(""Unable to convert {0} to fraction after {1} iterations"", value, maxIterations);",0.0,0,,0
+org/apache/commons/math/fraction/FractionConversionException,91,42,    },0.0,0,,0
+org/apache/commons/math/fraction/FractionConversionException,91,52,"        super(""Overflow trying to convert {0} to fraction ({1}/{2})"", value, p, q);",0.0,0,,0
+org/apache/commons/math/fraction/FractionConversionException,91,53,    },0.0,0,,0

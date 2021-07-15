@@ -1,0 +1,621 @@
+project_path,version,lines,statement,suspicious,faulty,predict,miss_line
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,381,                            tmp = 0.1;,0.28571,1,,1
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,607,            } else if (fp < 0) {,0.28571,1,,1
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,608,"                paru = Math.min(paru, lmPar);",0.28571,1,,1
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,510,            for (int j = 0; j < solvedCols; ++j) {,0.25,1,,1
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,511,                int pj = permutation[j];,0.25,1,,1
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,512,                work1[pj] *= diag[pj] / dxNorm;,0.25,1,,1
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,514,            sum2 = 0;,0.25,1,,1
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,515,            for (int j = 0; j < solvedCols; ++j) {,0.25,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,516,                int pj = permutation[j];,0.25,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,517,                double sum = 0;,0.25,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,518,                for (int i = 0; i < j; ++i) {,0.25,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,519,                    sum += jacobian[i][pj] * work1[permutation[i]];,0.25,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,521,                double s = (work1[pj] - sum) / diagR[pj];,0.25,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,522,                work1[pj] = s;,0.25,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,523,                sum2 += s * s;,0.25,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,525,            parl = fp / (delta * sum2);,0.25,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,585,            for (int j = 0; j < solvedCols; ++j) {,0.25,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,586,                int pj = permutation[j];,0.25,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,587,                work1[pj] = work3[pj] * diag[pj] / dxNorm;,0.25,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,589,            for (int j = 0; j < solvedCols; ++j) {,0.25,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,590,                int pj = permutation[j];,0.25,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,591,                work1[pj] /= work2[j];,0.25,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,592,                double tmp = work1[pj];,0.25,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,593,                for (int i = j + 1; i < solvedCols; ++i) {,0.25,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,594,                    work1[permutation[i]] -= jacobian[i][pj] * tmp;,0.25,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,597,            sum2 = 0;,0.25,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,598,            for (int j = 0; j < solvedCols; ++j) {,0.25,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,599,                double s = work1[permutation[j]];,0.25,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,600,                sum2 += s * s;,0.25,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,602,            double correction = fp / (delta * sum2);,0.25,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,605,            if (fp > 0) {,0.25,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,612,"            lmPar = Math.max(parl, lmPar + correction);",0.25,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,402,                    cost = previousCost;,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,403,                    for (int j = 0; j < solvedCols; ++j) {,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,404,                        int pj = permutation[j];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,405,                        point[pj] = oldX[pj];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,407,                    tmpVec    = residuals;,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,408,                    residuals = oldRes;,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,409,                    oldRes    = tmpVec;,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,508,        double parl = 0;,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,509,        if (rank == solvedCols) {,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,529,        sum2 = 0;,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,530,        for (int j = 0; j < solvedCols; ++j) {,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,531,            int pj = permutation[j];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,532,            double sum = 0;,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,533,            for (int i = 0; i <= j; ++i) {,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,534,                sum += jacobian[i][pj] * qy[i];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,536,            sum /= diag[pj];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,537,            sum2 += sum * sum;,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,539,        double gNorm = Math.sqrt(sum2);,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,540,        double paru = gNorm / delta;,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,541,        if (paru == 0) {,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,548,"        lmPar = Math.min(paru, Math.max(lmPar, parl));",0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,549,        if (lmPar == 0) {,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,553,        for (int countdown = 10; countdown >= 0; --countdown) {,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,556,            if (lmPar == 0) {,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,559,            double sPar = Math.sqrt(lmPar);,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,560,            for (int j = 0; j < solvedCols; ++j) {,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,561,                int pj = permutation[j];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,562,                work1[pj] = sPar * diag[pj];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,564,"            determineLMDirection(qy, work1, work2, work3);",0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,566,            dxNorm = 0;,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,567,            for (int j = 0; j < solvedCols; ++j) {,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,568,                int pj = permutation[j];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,569,                double s = diag[pj] * lmDir[pj];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,570,                work3[pj] = s;,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,571,                dxNorm += s * s;,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,573,            dxNorm = Math.sqrt(dxNorm);,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,574,            double previousFP = fp;,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,575,            fp = dxNorm - delta;,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,579,            if ((Math.abs(fp) <= 0.1 * delta) ||,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,581,                return;,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,642,        for (int j = 0; j < solvedCols; ++j) {,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,643,            int pj = permutation[j];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,644,            for (int i = j + 1; i < solvedCols; ++i) {,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,645,                jacobian[i][pj] = jacobian[j][permutation[i]];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,647,            lmDir[j] = diagR[pj];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,648,            work[j]  = qy[j];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,652,        for (int j = 0; j < solvedCols; ++j) {,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,656,            int pj = permutation[j];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,657,            double dpj = diag[pj];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,658,            if (dpj != 0) {,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,659,"                Arrays.fill(lmDiag, j + 1, lmDiag.length, 0);",0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,661,            lmDiag[j] = dpj;,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,666,            double qtbpj = 0;,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,667,            for (int k = j; k < solvedCols; ++k) {,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,668,                int pk = permutation[k];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,672,                if (lmDiag[k] != 0) {,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,676,                    double rkk = jacobian[k][pk];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,677,                    if (Math.abs(rkk) < Math.abs(lmDiag[k])) {,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,678,                        final double cotan = rkk / lmDiag[k];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,679,                        sin   = 1.0 / Math.sqrt(1.0 + cotan * cotan);,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,680,                        cos   = sin * cotan;,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,681,                    } else {,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,682,                        final double tan = lmDiag[k] / rkk;,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,683,                        cos = 1.0 / Math.sqrt(1.0 + tan * tan);,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,684,                        sin = cos * tan;,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,689,                    jacobian[k][pk] = cos * rkk + sin * lmDiag[k];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,690,                    final double temp = cos * work[k] + sin * qtbpj;,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,691,                    qtbpj = -sin * work[k] + cos * qtbpj;,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,692,                    work[k] = temp;,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,695,                    for (int i = k + 1; i < solvedCols; ++i) {,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,696,                        double rik = jacobian[i][pk];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,697,                        final double temp2 = cos * rik + sin * lmDiag[i];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,698,                        lmDiag[i] = -sin * rik + cos * lmDiag[i];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,699,                        jacobian[i][pk] = temp2;,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,707,            lmDiag[j] = jacobian[j][permutation[j]];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,708,            jacobian[j][permutation[j]] = lmDir[j];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,714,        int nSing = solvedCols;,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,715,        for (int j = 0; j < solvedCols; ++j) {,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,716,            if ((lmDiag[j] == 0) && (nSing == solvedCols)) {,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,719,            if (nSing < solvedCols) {,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,723,        if (nSing > 0) {,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,724,            for (int j = nSing - 1; j >= 0; --j) {,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,725,                int pj = permutation[j];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,726,                double sum = 0;,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,727,                for (int i = j + 1; i < nSing; ++i) {,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,728,                    sum += jacobian[i][pj] * work[i];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,730,                work[j] = (work[j] - sum) / lmDiag[j];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,735,        for (int j = 0; j < lmDir.length; ++j) {,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,736,            lmDir[permutation[j]] = work[j];,0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,739,    },0.22222,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,378,                    double tmp =,0.21053,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,380,                        if ((0.1 * cost >= previousCost) || (tmp < 0.1)) {,0.21053,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,383,"                        delta = tmp * Math.min(delta, 10.0 * lmNorm);",0.21053,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,384,                        lmPar /= tmp;,0.21053,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,385,                } else if ((lmPar == 0) || (ratio >= 0.75)) {,0.21053,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,419,"                        return new VectorialPointValuePair(point, objective);",0.13793,1,,0
+org/apache/commons/math/optimization/VectorialPointValuePair,68,77,        return point;,0.13333,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,239,        double criterion = 0;,0.13333,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,240,        for (int i = 0; i < rows; ++i) {,0.13333,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,241,            final double residual = residuals[i];,0.13333,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,242,            criterion += residualsWeights[i] * residual * residual;,0.13333,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,244,        return Math.sqrt(criterion / rows);,0.13333,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,830,        rank = solvedCols;,0.11111,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,832,    },0.11111,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,483,                lmDir[permutation[i]] -= ypk * jacobian[i][pk];,0.10811,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,500,            lmPar = 0;,0.10256,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,501,            return;,0.10256,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,818,                double gamma = 0;,0.10256,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,819,                for (int j = k; j < jacobian.length; ++j) {,0.10256,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,820,                    gamma += jacobian[j][pk] * jacobian[j][permutation[k + dk]];,0.10256,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,822,                gamma *= betak;,0.10256,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,823,                for (int j = k; j < jacobian.length; ++j) {,0.10256,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,824,                    jacobian[j][permutation[k + dk]] -= gamma * jacobian[j][pk];,0.10256,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,256,            qTy(residuals);,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,260,            for (int k = 0; k < solvedCols; ++k) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,261,                int pk = permutation[k];,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,262,                jacobian[k][pk] = diagR[pk];,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,265,            if (firstIteration) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,269,                xNorm = 0;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,270,                for (int k = 0; k < cols; ++k) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,271,                    double dk = jacNorm[k];,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,272,                    if (dk == 0) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,275,                    double xk = dk * point[k];,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,276,                    xNorm  += xk * xk;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,277,                    diag[k] = dk;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,279,                xNorm = Math.sqrt(xNorm);,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,282,                delta = (xNorm == 0) ? initialStepBoundFactor : (initialStepBoundFactor * xNorm);,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,287,            double maxCosine = 0;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,288,            if (cost != 0) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,289,                for (int j = 0; j < solvedCols; ++j) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,290,                    int    pj = permutation[j];,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,291,                    double s  = jacNorm[pj];,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,292,                    if (s != 0) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,293,                        double sum = 0;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,294,                        for (int i = 0; i <= j; ++i) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,295,                            sum += jacobian[i][pj] * residuals[i];,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,297,"                        maxCosine = Math.max(maxCosine, Math.abs(sum) / (s * cost));",0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,301,            if (maxCosine <= orthoTolerance) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,307,            for (int j = 0; j < cols; ++j) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,308,"                diag[j] = Math.max(diag[j], jacNorm[j]);",0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,312,            for (double ratio = 0; ratio < 1.0e-4;) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,315,                for (int j = 0; j < solvedCols; ++j) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,316,                    int pj = permutation[j];,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,317,                    oldX[pj] = point[pj];,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,319,                double previousCost = cost;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,320,                double[] tmpVec = residuals;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,321,                residuals = oldRes;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,322,                oldRes    = tmpVec;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,325,"                determineLMParameter(oldRes, delta, diag, work1, work2, work3);",0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,328,                double lmNorm = 0;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,329,                for (int j = 0; j < solvedCols; ++j) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,330,                    int pj = permutation[j];,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,331,                    lmDir[pj] = -lmDir[pj];,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,332,                    point[pj] = oldX[pj] + lmDir[pj];,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,333,                    double s = diag[pj] * lmDir[pj];,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,334,                    lmNorm  += s * s;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,336,                lmNorm = Math.sqrt(lmNorm);,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,339,                if (firstIteration) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,340,"                    delta = Math.min(delta, lmNorm);",0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,344,                updateResidualsAndCost();,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,347,                double actRed = -1.0;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,348,                if (0.1 * cost < previousCost) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,349,                    double r = cost / previousCost;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,350,                    actRed = 1.0 - r * r;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,355,                for (int j = 0; j < solvedCols; ++j) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,356,                    int pj = permutation[j];,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,357,                    double dirJ = lmDir[pj];,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,358,                    work1[j] = 0;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,359,                    for (int i = 0; i <= j; ++i) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,360,                        work1[i] += jacobian[i][pj] * dirJ;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,363,                double coeff1 = 0;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,364,                for (int j = 0; j < solvedCols; ++j) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,365,                    coeff1 += work1[j] * work1[j];,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,367,                double pc2 = previousCost * previousCost;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,368,                coeff1 = coeff1 / pc2;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,369,                double coeff2 = lmPar * lmNorm * lmNorm / pc2;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,370,                double preRed = coeff1 + 2 * coeff2;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,371,                double dirDer = -(coeff1 + coeff2);,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,374,                ratio = (preRed == 0) ? 0 : (actRed / preRed);,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,377,                if (ratio <= 0.25) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,386,                    delta = 2 * lmNorm;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,387,                    lmPar *= 0.5;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,391,                if (ratio >= 1.0e-4) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,393,                    firstIteration = false;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,394,                    xNorm = 0;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,395,                    for (int k = 0; k < cols; ++k) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,396,                        double xK = diag[k] * point[k];,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,397,                        xNorm    += xK * xK;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,399,                    xNorm = Math.sqrt(xNorm);,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,415,                    if (((Math.abs(actRed) <= costRelativeTolerance) &&,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,424,                if ((Math.abs(actRed) <= 2.2204e-16) && (preRed <= 2.2204e-16) && (ratio <= 2.0)) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,429,                } else if (delta <= 2.2204e-16 * xNorm) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,434,                } else if (maxCosine <= 2.2204e-16)  {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,440,            },0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,442,        },0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,473,        for (int j = 0; j < rank; ++j) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,474,            lmDir[permutation[j]] = qy[j];,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,476,        for (int j = rank; j < cols; ++j) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,479,        for (int k = rank - 1; k >= 0; --k) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,480,            int pk = permutation[k];,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,481,            double ypk = lmDir[pk] / diagR[pk];,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,482,            for (int i = 0; i < k; ++i) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,485,            lmDir[pk] = ypk;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,490,        double dxNorm = 0;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,491,        for (int j = 0; j < solvedCols; ++j) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,492,            int pj = permutation[j];,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,493,            double s = diag[pj] * lmDir[pj];,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,494,            work1[pj] = s;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,495,            dxNorm += s * s;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,497,        dxNorm = Math.sqrt(dxNorm);,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,498,        double fp = dxNorm - delta;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,499,        if (fp <= 0.1 * delta) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,840,        for (int k = 0; k < cols; ++k) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,841,            int pk = permutation[k];,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,842,            double gamma = 0;,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,843,            for (int i = k; i < rows; ++i) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,844,                gamma += jacobian[i][pk] * y[i];,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,846,            gamma *= beta[pk];,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,847,            for (int i = k; i < rows; ++i) {,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,848,                y[i] -= gamma * jacobian[i][pk];,0.1,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,851,    },0.1,0,,0
+org/apache/commons/math/optimization/VectorialPointValuePair,68,46,"    public VectorialPointValuePair(final double[] point, final double[] value) {",0.09756,0,,0
+org/apache/commons/math/optimization/VectorialPointValuePair,68,47,        this.point = point.clone();,0.09756,0,,0
+org/apache/commons/math/optimization/VectorialPointValuePair,68,48,        this.value = value.clone();,0.09756,0,,0
+org/apache/commons/math/optimization/VectorialPointValuePair,68,49,    },0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,160,    public LevenbergMarquardtOptimizer() {,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,163,        setMaxIterations(1000);,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,166,        setInitialStepBoundFactor(100.0);,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,167,        setCostRelativeTolerance(1.0e-10);,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,168,        setParRelativeTolerance(1.0e-10);,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,169,        setOrthoTolerance(1.0e-10);,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,171,    },0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,183,        this.initialStepBoundFactor = initialStepBoundFactor;,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,184,    },0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,193,        this.costRelativeTolerance = costRelativeTolerance;,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,194,    },0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,204,        this.parRelativeTolerance = parRelativeTolerance;,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,205,    },0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,215,        this.orthoTolerance = orthoTolerance;,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,216,    },0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,224,"        solvedCols  = Math.min(rows, cols);",0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,225,        diagR       = new double[cols];,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,226,        jacNorm     = new double[cols];,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,227,        beta        = new double[cols];,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,228,        permutation = new int[cols];,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,229,        lmDir       = new double[cols];,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,232,        double   delta   = 0;,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,233,        double   xNorm   = 0;,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,234,        double[] diag    = new double[cols];,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,235,        double[] oldX    = new double[cols];,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,236,        double[] oldRes  = new double[rows];,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,237,        double[] work1   = new double[cols];,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,238,        double[] work2   = new double[cols];,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,239,        double[] work3   = new double[cols];,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,242,        updateResidualsAndCost();,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,245,        lmPar = 0;,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,246,        boolean firstIteration = true;,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,249,            incrementIterationsCounter();,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,252,            updateJacobian();,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,253,            qrDecomposition();,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,766,        for (int k = 0; k < cols; ++k) {,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,767,            permutation[k] = k;,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,768,            double norm2 = 0;,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,769,            for (int i = 0; i < jacobian.length; ++i) {,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,770,                double akk = jacobian[i][k];,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,771,                norm2 += akk * akk;,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,773,            jacNorm[k] = Math.sqrt(norm2);,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,777,        for (int k = 0; k < cols; ++k) {,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,780,            int nextColumn = -1;,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,781,            double ak2 = Double.NEGATIVE_INFINITY;,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,782,            for (int i = k; i < cols; ++i) {,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,783,                double norm2 = 0;,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,784,                for (int j = k; j < jacobian.length; ++j) {,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,785,                    double aki = jacobian[j][permutation[i]];,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,786,                    norm2 += aki * aki;,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,788,                if (Double.isInfinite(norm2) || Double.isNaN(norm2)) {,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,793,                if (norm2 > ak2) {,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,794,                    nextColumn = i;,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,795,                    ak2        = norm2;,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,798,            if (ak2 == 0) {,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,802,            int pk                  = permutation[nextColumn];,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,803,            permutation[nextColumn] = permutation[k];,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,804,            permutation[k]          = pk;,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,807,            double akk   = jacobian[k][pk];,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,808,            double alpha = (akk > 0) ? -Math.sqrt(ak2) : Math.sqrt(ak2);,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,809,            double betak = 1.0 / (ak2 - akk * alpha);,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,810,            beta[pk]     = betak;,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,813,            diagR[pk]        = alpha;,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,814,            jacobian[k][pk] -= alpha;,0.09756,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,817,            for (int dk = cols - 1 - k; dk > 0; --dk) {,0.09756,0,,0
+org/apache/commons/math/optimization/SimpleVectorialValueChecker,68,50,    public SimpleVectorialValueChecker() {,0.09524,0,,0
+org/apache/commons/math/optimization/SimpleVectorialValueChecker,68,51,        this.relativeThreshold = DEFAULT_RELATIVE_THRESHOLD;,0.09524,0,,0
+org/apache/commons/math/optimization/SimpleVectorialValueChecker,68,52,        this.absoluteThreshold = DEFAULT_ABSOLUTE_THRESHOLD;,0.09524,0,,0
+org/apache/commons/math/optimization/SimpleVectorialValueChecker,68,53,    },0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,115,    protected AbstractLeastSquaresOptimizer() {,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,116,        setConvergenceChecker(new SimpleVectorialValueChecker());,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,117,        setMaxIterations(DEFAULT_MAX_ITERATIONS);,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,118,        setMaxEvaluations(Integer.MAX_VALUE);,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,119,    },0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,123,        this.maxIterations = maxIterations;,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,124,    },0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,138,        this.maxEvaluations = maxEvaluations;,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,139,    },0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,158,        this.checker = convergenceChecker;,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,159,    },0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,172,        if (++iterations > maxIterations) {,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,175,    },0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,183,        ++jacobianEvaluations;,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,184,        jacobian = jF.value(point);,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,185,        if (jacobian.length != rows) {,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,189,        for (int i = 0; i < rows; i++) {,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,190,            final double[] ji = jacobian[i];,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,191,            final double factor = -Math.sqrt(residualsWeights[i]);,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,192,            for (int j = 0; j < cols; ++j) {,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,193,                ji[j] *= factor;,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,196,    },0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,207,        if (++objectiveEvaluations > maxEvaluations) {,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,211,        objective = function.value(point);,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,212,        if (objective.length != rows) {,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,216,        cost = 0;,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,217,        int index = 0;,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,218,        for (int i = 0; i < rows; i++) {,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,219,            final double residual = targetValues[i] - objective[i];,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,220,            residuals[i] = residual;,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,221,            cost += residualsWeights[i] * residual * residual;,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,222,            index += cols;,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,224,        cost = Math.sqrt(cost);,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,226,    },0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,329,        if (target.length != weights.length) {,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,335,        iterations           = 0;,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,336,        objectiveEvaluations = 0;,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,337,        jacobianEvaluations  = 0;,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,340,        function         = f;,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,341,        jF               = f.jacobian();,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,342,        targetValues     = target.clone();,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,343,        residualsWeights = weights.clone();,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,344,        this.point       = startPoint.clone();,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,345,        this.residuals   = new double[target.length];,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,348,        rows      = target.length;,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,349,        cols      = point.length;,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,350,        jacobian  = new double[rows][cols];,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,352,        cost = Double.POSITIVE_INFINITY;,0.09524,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,354,        return doOptimize();,0.09524,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,606,"                parl = Math.max(parl, lmPar);",0.06667,0,,0
+org/apache/commons/math/MaxEvaluationsExceededException,68,43,"        super(""Maximal number of evaluations ({0}) exceeded"", maxEvaluations);",0.0,0,,0
+org/apache/commons/math/MaxEvaluationsExceededException,68,44,        this.maxEvaluations = maxEvaluations;,0.0,0,,0
+org/apache/commons/math/MaxEvaluationsExceededException,68,45,    },0.0,0,,0
+org/apache/commons/math/MaxEvaluationsExceededException,68,56,"        super(pattern, arguments);",0.0,0,,0
+org/apache/commons/math/MaxEvaluationsExceededException,68,57,        this.maxEvaluations = maxEvaluations;,0.0,0,,0
+org/apache/commons/math/MaxEvaluationsExceededException,68,58,    },0.0,0,,0
+org/apache/commons/math/MaxEvaluationsExceededException,68,64,        return maxEvaluations;,0.0,0,,0
+org/apache/commons/math/ConvergenceException,68,34,"        super(""Convergence failed"");",0.0,0,,0
+org/apache/commons/math/ConvergenceException,68,35,    },0.0,0,,0
+org/apache/commons/math/ConvergenceException,68,45,"        super(pattern, arguments);",0.0,0,,0
+org/apache/commons/math/ConvergenceException,68,46,    },0.0,0,,0
+org/apache/commons/math/ConvergenceException,68,53,        super(cause);,0.0,0,,0
+org/apache/commons/math/ConvergenceException,68,54,    },0.0,0,,0
+org/apache/commons/math/ConvergenceException,68,65,"        super(cause, pattern, arguments);",0.0,0,,0
+org/apache/commons/math/ConvergenceException,68,66,    },0.0,0,,0
+org/apache/commons/math/MathException,68,55,    public MathException() {,0.0,0,,0
+org/apache/commons/math/MathException,68,56,        this.pattern   = null;,0.0,0,,0
+org/apache/commons/math/MathException,68,57,        this.arguments = new Object[0];,0.0,0,,0
+org/apache/commons/math/MathException,68,58,    },0.0,0,,0
+org/apache/commons/math/MathException,68,67,"    public MathException(String pattern, Object ... arguments) {",0.0,0,,0
+org/apache/commons/math/MathException,68,68,      this.pattern   = pattern;,0.0,0,,0
+org/apache/commons/math/MathException,68,69,      this.arguments = (arguments == null) ? new Object[0] : arguments.clone();,0.0,0,,0
+org/apache/commons/math/MathException,68,70,    },0.0,0,,0
+org/apache/commons/math/MathException,68,80,        super(rootCause);,0.0,0,,0
+org/apache/commons/math/MathException,68,81,        this.pattern   = getMessage();,0.0,0,,0
+org/apache/commons/math/MathException,68,82,        this.arguments = new Object[0];,0.0,0,,0
+org/apache/commons/math/MathException,68,83,    },0.0,0,,0
+org/apache/commons/math/MathException,68,96,      super(rootCause);,0.0,0,,0
+org/apache/commons/math/MathException,68,97,      this.pattern   = pattern;,0.0,0,,0
+org/apache/commons/math/MathException,68,98,      this.arguments = (arguments == null) ? new Object[0] : arguments.clone();,0.0,0,,0
+org/apache/commons/math/MathException,68,99,    },0.0,0,,0
+org/apache/commons/math/MathException,68,110,            ResourceBundle bundle =,0.0,0,,0
+org/apache/commons/math/MathException,68,112,            if (bundle.getLocale().getLanguage().equals(locale.getLanguage())) {,0.0,0,,0
+org/apache/commons/math/MathException,68,114,                return bundle.getString(s);,0.0,0,,0
+org/apache/commons/math/MathException,68,119,        },0.0,0,,0
+org/apache/commons/math/MathException,68,117,        } catch (MissingResourceException mre) {,0.0,0,,0
+org/apache/commons/math/MathException,68,123,        return s;,0.0,0,,0
+org/apache/commons/math/MathException,68,133,        return pattern;,0.0,0,,0
+org/apache/commons/math/MathException,68,142,        return arguments.clone();,0.0,0,,0
+org/apache/commons/math/MathException,68,153,"        return (pattern == null) ? """" : new MessageFormat(translate(pattern, locale), locale).format(arguments);",0.0,0,,0
+org/apache/commons/math/MathException,68,159,        return getMessage(Locale.US);,0.0,0,,0
+org/apache/commons/math/MathException,68,165,        return getMessage(Locale.getDefault());,0.0,0,,0
+org/apache/commons/math/MathException,68,173,        printStackTrace(System.err);,0.0,0,,0
+org/apache/commons/math/MathException,68,174,    },0.0,0,,0
+org/apache/commons/math/MathException,68,183,        synchronized (out) {,0.0,0,,0
+org/apache/commons/math/MathException,68,184,"            PrintWriter pw = new PrintWriter(out, false);",0.0,0,,0
+org/apache/commons/math/MathException,68,185,            printStackTrace(pw);,0.0,0,,0
+org/apache/commons/math/MathException,68,187,            pw.flush();,0.0,0,,0
+org/apache/commons/math/MathException,68,188,        },0.0,0,,0
+org/apache/commons/math/MathException,68,189,    },0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,405,        return new NoSuchElementException() {,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,413,"                return buildMessage(Locale.US, pattern, arguments);",0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,419,"                return buildMessage(Locale.getDefault(), pattern, arguments);",0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,59,"    public MathRuntimeException(final String pattern, final Object ... arguments) {",0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,60,        this.pattern   = pattern;,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,61,        this.arguments = (arguments == null) ? new Object[0] : arguments.clone();,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,62,    },0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,72,        super(rootCause);,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,73,        this.pattern   = getMessage();,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,74,        this.arguments = new Object[0];,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,75,    },0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,88,        super(rootCause);,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,89,        this.pattern   = pattern;,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,90,        this.arguments = (arguments == null) ? new Object[0] : arguments.clone();,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,91,    },0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,102,            ResourceBundle bundle =,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,104,            if (bundle.getLocale().getLanguage().equals(locale.getLanguage())) {,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,106,                return bundle.getString(s);,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,111,        },0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,109,        } catch (MissingResourceException mre) {,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,115,        return s;,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,128,"        return (pattern == null) ? """" : new MessageFormat(translate(pattern, locale), locale).format(arguments);",0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,136,        return pattern;,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,144,        return arguments.clone();,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,154,"        return buildMessage(locale, pattern, arguments);",0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,160,        return getMessage(Locale.US);,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,166,        return getMessage(Locale.getDefault());,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,174,        printStackTrace(System.err);,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,175,    },0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,184,        synchronized (out) {,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,185,"            PrintWriter pw = new PrintWriter(out, false);",0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,186,            printStackTrace(pw);,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,188,            pw.flush();,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,189,        },0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,190,    },0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,201,        return new ArithmeticException() {,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,230,        return new ArrayIndexOutOfBoundsException() {,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,259,        return new EOFException() {,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,291,        IOException ioe = new IOException(rootCause.getLocalizedMessage());,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,292,        ioe.initCause(rootCause);,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,293,        return ioe;,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,305,        return new IllegalArgumentException() {,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,333,        IllegalArgumentException iae = new IllegalArgumentException(rootCause.getLocalizedMessage());,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,334,        iae.initCause(rootCause);,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,335,        return iae;,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,347,        return new IllegalStateException() {,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,376,        return new ConcurrentModificationException() {,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,405,        return new NoSuchElementException() {,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,434,        return new NullPointerException() {,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,466,"        return new ParseException(null, offset) {",0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,492,"        final String pattern  = ""internal error, please fill a bug report at {0}"";",0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,493,"        final String argument = ""https://issues.apache.org/jira/browse/MATH"";",0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,495,        return new RuntimeException() {,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,37,public class MathRuntimeException extends RuntimeException {,0.0,0,,0
+org/apache/commons/math/MaxIterationsExceededException,68,43,"        super(""Maximal number of iterations ({0}) exceeded"", maxIterations);",0.0,0,,0
+org/apache/commons/math/MaxIterationsExceededException,68,44,        this.maxIterations = maxIterations;,0.0,0,,0
+org/apache/commons/math/MaxIterationsExceededException,68,45,    },0.0,0,,0
+org/apache/commons/math/MaxIterationsExceededException,68,56,"        super(pattern, arguments);",0.0,0,,0
+org/apache/commons/math/MaxIterationsExceededException,68,57,        this.maxIterations = maxIterations;,0.0,0,,0
+org/apache/commons/math/MaxIterationsExceededException,68,58,    },0.0,0,,0
+org/apache/commons/math/MaxIterationsExceededException,68,64,        return maxIterations;,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,434,        return new NullPointerException() {,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,442,"                return buildMessage(Locale.US, pattern, arguments);",0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,448,"                return buildMessage(Locale.getDefault(), pattern, arguments);",0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,347,        return new IllegalStateException() {,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,355,"                return buildMessage(Locale.US, pattern, arguments);",0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,361,"                return buildMessage(Locale.getDefault(), pattern, arguments);",0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,68,48,"        super(FAILED_EVALUATION_MESSAGE, argument);",0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,68,49,        this.argument = new double[] { argument };,0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,68,50,    },0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,68,60,"        super(FAILED_EVALUATION_MESSAGE, new ArrayRealVector(argument));",0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,68,61,        this.argument = argument.clone();,0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,68,62,    },0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,68,74,"        super(pattern, arguments);",0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,68,75,        this.argument = new double[] { argument };,0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,68,76,    },0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,68,88,"        super(pattern, arguments);",0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,68,89,        this.argument = argument.clone();,0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,68,90,    },0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,68,100,        super(cause);,0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,68,101,        this.argument = new double[] { argument };,0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,68,102,    },0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,68,112,        super(cause);,0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,68,113,        this.argument = argument.clone();,0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,68,114,    },0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,68,128,"        super(cause, pattern, arguments);",0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,68,129,        this.argument = new double[] { argument };,0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,68,130,    },0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,68,144,"        super(cause, pattern, arguments);",0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,68,145,        this.argument = argument.clone();,0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,68,146,    },0.0,0,,0
+org/apache/commons/math/FunctionEvaluationException,68,154,        return argument.clone();,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,466,"        return new ParseException(null, offset) {",0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,474,"                return buildMessage(Locale.US, pattern, arguments);",0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,480,"                return buildMessage(Locale.getDefault(), pattern, arguments);",0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,201,        return new ArithmeticException() {,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,209,"                return buildMessage(Locale.US, pattern, arguments);",0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,215,"                return buildMessage(Locale.getDefault(), pattern, arguments);",0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,230,        return new ArrayIndexOutOfBoundsException() {,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,238,"                return buildMessage(Locale.US, pattern, arguments);",0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,244,"                return buildMessage(Locale.getDefault(), pattern, arguments);",0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,495,        return new RuntimeException() {,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,503,"                return buildMessage(Locale.US, pattern, argument);",0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,509,"                return buildMessage(Locale.getDefault(), pattern, argument);",0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,259,        return new EOFException() {,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,267,"                return buildMessage(Locale.US, pattern, arguments);",0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,273,"                return buildMessage(Locale.getDefault(), pattern, arguments);",0.0,0,,0
+org/apache/commons/math/optimization/SimpleVectorialValueChecker,68,65,                                       final double absoluteThreshold) {,0.0,0,,0
+org/apache/commons/math/optimization/SimpleVectorialValueChecker,68,66,        this.relativeThreshold = relativeThreshold;,0.0,0,,0
+org/apache/commons/math/optimization/SimpleVectorialValueChecker,68,67,        this.absoluteThreshold = absoluteThreshold;,0.0,0,,0
+org/apache/commons/math/optimization/SimpleVectorialValueChecker,68,68,    },0.0,0,,0
+org/apache/commons/math/optimization/SimpleVectorialValueChecker,68,74,        final double[] p        = previous.getValueRef();,0.0,0,,0
+org/apache/commons/math/optimization/SimpleVectorialValueChecker,68,75,        final double[] c        = current.getValueRef();,0.0,0,,0
+org/apache/commons/math/optimization/SimpleVectorialValueChecker,68,76,        for (int i = 0; i < p.length; ++i) {,0.0,0,,0
+org/apache/commons/math/optimization/SimpleVectorialValueChecker,68,77,            final double pi         = p[i];,0.0,0,,0
+org/apache/commons/math/optimization/SimpleVectorialValueChecker,68,78,            final double ci         = c[i];,0.0,0,,0
+org/apache/commons/math/optimization/SimpleVectorialValueChecker,68,79,            final double difference = Math.abs(pi - ci);,0.0,0,,0
+org/apache/commons/math/optimization/SimpleVectorialValueChecker,68,80,"            final double size       = Math.max(Math.abs(pi), Math.abs(ci));",0.0,0,,0
+org/apache/commons/math/optimization/SimpleVectorialValueChecker,68,81,            if ((difference > (size * relativeThreshold)) &&,0.0,0,,0
+org/apache/commons/math/optimization/SimpleVectorialValueChecker,68,83,                return false;,0.0,0,,0
+org/apache/commons/math/optimization/SimpleVectorialValueChecker,68,86,        return true;,0.0,0,,0
+org/apache/commons/math/optimization/VectorialPointValuePair,68,59,                                   final boolean copyArray) {,0.0,0,,0
+org/apache/commons/math/optimization/VectorialPointValuePair,68,60,        this.point = copyArray ? point.clone() : point;,0.0,0,,0
+org/apache/commons/math/optimization/VectorialPointValuePair,68,61,        this.value = copyArray ? value.clone() : value;,0.0,0,,0
+org/apache/commons/math/optimization/VectorialPointValuePair,68,62,    },0.0,0,,0
+org/apache/commons/math/optimization/VectorialPointValuePair,68,68,        return point.clone();,0.0,0,,0
+org/apache/commons/math/optimization/VectorialPointValuePair,68,84,        return value.clone();,0.0,0,,0
+org/apache/commons/math/optimization/VectorialPointValuePair,68,93,        return value;,0.0,0,,0
+org/apache/commons/math/optimization/OptimizationException,68,42,"        super(specifier, parts);",0.0,0,,0
+org/apache/commons/math/optimization/OptimizationException,68,43,    },0.0,0,,0
+org/apache/commons/math/optimization/OptimizationException,68,50,        super(cause);,0.0,0,,0
+org/apache/commons/math/optimization/OptimizationException,68,51,    },0.0,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,273,                        dk = 1.0;,0.0,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,303,"                return new VectorialPointValuePair(point, objective);",0.0,1,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,425,"                    throw new OptimizationException(""cost relative tolerance is too small ({0}),"" +",0.0,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,430,"                    throw new OptimizationException(""parameters relative tolerance is too small"" +",0.0,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,435,"                    throw new OptimizationException(""orthogonality tolerance is too small ({0}),"" +",0.0,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,477,            lmDir[permutation[j]] = 0;,0.0,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,543,"            paru = 2.2251e-308 / Math.min(delta, 0.1);",0.0,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,550,            lmPar = gNorm / dxNorm;,0.0,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,557,"                lmPar = Math.max(2.2251e-308, 0.001 * paru);",0.0,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,615,    },0.0,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,717,                nSing = j;,0.0,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,720,                work[j] = 0;,0.0,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,789,                    throw new OptimizationException(,0.0,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,799,                rank = k;,0.0,0,,0
+org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer,68,800,                return;,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,128,        return maxIterations;,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,133,        return iterations;,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,143,        return maxEvaluations;,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,148,        return objectiveEvaluations;,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,153,        return jacobianEvaluations;,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,163,        return checker;,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,173,            throw new OptimizationException(new MaxIterationsExceededException(maxIterations));,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,186,"            throw new FunctionEvaluationException(point, ""dimension mismatch {0} != {1}"",",0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,208,"            throw new FunctionEvaluationException(new MaxEvaluationsExceededException(maxEvaluations),",0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,213,"            throw new FunctionEvaluationException(point, ""dimension mismatch {0} != {1}"",",0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,252,        double chiSquare = 0;,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,253,        for (int i = 0; i < rows; ++i) {,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,254,            final double residual = residuals[i];,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,255,            chiSquare += residual * residual / residualsWeights[i];,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,257,        return chiSquare;,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,272,        updateJacobian();,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,275,        double[][] jTj = new double[cols][cols];,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,276,        for (int i = 0; i < cols; ++i) {,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,277,            for (int j = i; j < cols; ++j) {,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,278,                double sum = 0;,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,279,                for (int k = 0; k < rows; ++k) {,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,280,                    sum += jacobian[k][i] * jacobian[k][j];,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,282,                jTj[i][j] = sum;,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,283,                jTj[j][i] = sum;,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,289,            RealMatrix inverse =,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,291,            return inverse.getData();,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,292,        } catch (InvalidMatrixException ime) {,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,293,"            throw new OptimizationException(""unable to compute covariances: singular problem"");",0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,309,        if (rows <= cols) {,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,310,            throw new OptimizationException(,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,314,        double[] errors = new double[cols];,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,315,        final double c = Math.sqrt(getChiSquare() / (rows - cols));,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,316,        double[][] covar = getCovariances();,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,317,        for (int i = 0; i < errors.length; ++i) {,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,318,            errors[i] = Math.sqrt(covar[i][i]) * c;,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,320,        return errors;,0.0,0,,0
+org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer,68,330,"            throw new OptimizationException(""dimension mismatch {0} != {1}"",",0.0,0,,0
+org/apache/commons/math/linear/InvalidMatrixException,68,40,"        super(pattern, arguments);",0.0,0,,0
+org/apache/commons/math/linear/InvalidMatrixException,68,41,    },0.0,0,,0
+org/apache/commons/math/linear/InvalidMatrixException,68,50,        super(cause);,0.0,0,,0
+org/apache/commons/math/linear/InvalidMatrixException,68,51,    },0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,376,        return new ConcurrentModificationException() {,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,384,"                return buildMessage(Locale.US, pattern, arguments);",0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,390,"                return buildMessage(Locale.getDefault(), pattern, arguments);",0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,305,        return new IllegalArgumentException() {,0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,313,"                return buildMessage(Locale.US, pattern, arguments);",0.0,0,,0
+org/apache/commons/math/MathRuntimeException,68,319,"                return buildMessage(Locale.getDefault(), pattern, arguments);",0.0,0,,0

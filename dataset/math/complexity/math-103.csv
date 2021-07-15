@@ -1,0 +1,239 @@
+dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,other,lengthEle,lengthWord,depth,suspicious,accuracy,miss_line
+defect4j,math,org/apache/commons/math/special/Gamma,103,161,            ret = 0.0;,1,0,0,0,0,0,0,0,1,2,10,7,0.25,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,109,            return 0.5 * (1.0 + Erf.erf((x - mean) /,2,4,0,1,4,1,2,0,0,6,40,4,0.14286,1,1
+defect4j,math,org/apache/commons/math/special/Erf,103,56,"        double ret = Gamma.regularizedGammaP(0.5, x * x, 1.0e-15, 10000);",3,1,0,0,2,1,2,0,0,5,65,5,0.14286,0,0
+defect4j,math,org/apache/commons/math/special/Erf,103,57,        if (x < 0) {,1,1,0,1,3,1,0,0,0,5,12,4,0.14286,0,0
+defect4j,math,org/apache/commons/math/special/Erf,103,58,            ret = -ret;,2,0,0,0,0,0,0,0,2,2,11,6,0.14286,0,0
+defect4j,math,org/apache/commons/math/special/Erf,103,60,        return ret;,1,0,0,0,0,1,0,0,0,2,11,4,0.14286,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,40,    private static double[] lanczos =,1,0,0,0,2,3,0,0,2,4,33,2,0.08333,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,60,    private static final double HALF_LOG_2_PI = 0.5 * Math.log(2.0 * Math.PI);,3,2,0,1,2,4,2,0,3,7,74,2,0.08333,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,90,        if (Double.isNaN(x) || (x <= 0.0)) {,1,2,0,2,7,1,3,0,0,6,36,4,0.08333,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,93,            double g = 607.0 / 128.0;,1,1,0,0,0,1,0,0,0,3,25,7,0.08333,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,95,            double sum = 0.0;,1,0,0,0,0,1,0,0,0,2,17,7,0.08333,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,96,            for (int i = lanczos.length - 1; i > 0; --i) {,5,2,0,1,3,2,0,0,1,6,46,6,0.08333,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,97,                sum = sum + (lanczos[i] / (x + i));,4,3,1,2,6,0,0,0,1,6,35,8,0.08333,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,99,            sum = sum + lanczos[0];,2,1,1,0,2,0,0,0,1,5,23,6,0.08333,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,101,            double tmp = x + g + .5;,3,1,0,0,0,1,0,0,0,3,24,7,0.08333,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,102,            ret = ((x + .5) * Math.log(tmp)) - tmp +,3,5,0,2,6,0,3,0,1,6,40,6,0.08333,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,106,        return ret;,1,0,0,0,0,1,0,0,0,2,11,4,0.08333,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,158,        if (Double.isNaN(a) || Double.isNaN(x) || (a <= 0.0) || (x < 0.0)) {,2,3,0,2,11,1,6,0,0,6,68,4,0.08333,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,160,        } else if (x == 0.0) {,1,1,0,1,4,2,0,0,0,5,22,5,0.08333,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,162,        } else if (a >= 1.0 && x > a) {,3,3,0,1,4,2,0,0,0,5,31,6,0.08333,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,168,            double n = 0.0; // current element index,1,0,0,0,0,1,0,0,0,2,40,9,0.08333,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,169,            double an = 1.0 / a; // n-th element in the series,2,1,0,0,0,1,0,0,0,3,50,9,0.08333,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,170,            double sum = an; // partial sum,2,0,0,0,0,1,0,0,0,2,31,9,0.08333,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,171,            while (Math.abs(an) > epsilon && n < maxIterations) {,3,3,0,2,5,1,3,0,0,6,53,8,0.08333,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,173,                n = n + 1.0;,2,1,0,0,0,0,0,0,1,3,12,10,0.08333,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,174,                an = an * (x / (a + n));,5,3,0,2,4,0,0,0,1,5,24,10,0.08333,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,177,                sum = sum + an;,3,1,0,0,0,0,0,0,1,3,15,10,0.08333,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,179,            if (n >= maxIterations) {,2,1,0,1,3,1,0,0,0,5,25,8,0.08333,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,182,                ret = Math.exp(-x + (a * Math.log(x)) - logGamma(a)) * sum;,4,4,0,3,8,0,7,0,3,6,59,10,0.08333,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,186,        return ret;,1,0,0,0,0,1,0,0,0,2,11,4,0.08333,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractContinuousDistribution,103,45,        super();,0,0,0,1,2,1,0,0,1,4,8,3,0.05263,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractContinuousDistribution,103,46,    },0,0,0,0,1,0,0,0,0,1,1,2,0.05263,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractDistribution,103,38,        super();,0,0,0,1,2,1,0,0,1,4,8,3,0.05263,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractDistribution,103,39,    },0,0,0,0,1,0,0,0,0,1,1,2,0.05263,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,50,        super();,0,0,0,1,2,1,0,0,1,4,8,3,0.05263,1,1
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,39,    private double mean = 0;,1,0,0,0,0,2,0,0,1,3,24,2,0.05263,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,42,    private double standardDeviation = 1;,1,0,0,0,0,2,0,0,1,3,37,2,0.05263,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,51,        setMean(mean);,0,0,0,1,2,0,2,0,1,4,14,4,0.05263,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,52,        setStandardDeviation(sd);,0,0,0,1,2,0,2,0,1,4,25,4,0.05263,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,53,    },0,0,0,0,1,0,0,0,0,1,1,2,0.05263,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,76,        this.mean = mean;,2,0,0,0,0,1,0,0,1,3,17,4,0.05263,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,77,    },0,0,0,0,1,0,0,0,0,1,1,2,0.05263,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,93,        if (sd <= 0.0) {,1,1,0,1,3,1,0,0,0,5,16,4,0.05263,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,97,        standardDeviation = sd;,2,0,0,0,0,0,0,0,1,2,23,4,0.05263,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,98,    },0,0,0,0,1,0,0,0,0,1,1,2,0.05263,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractContinuousDistribution,103,61,        if (p < 0.0 || p > 1.0) {,2,3,0,1,3,1,0,0,0,5,25,4,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractContinuousDistribution,103,62,"            throw new IllegalArgumentException(""p must be between 0.0 and 1.0, inclusive."");",0,0,0,0,2,2,0,1,2,4,80,6,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractContinuousDistribution,103,67,        UnivariateRealFunction rootFindingFunction =,1,0,0,0,0,0,0,1,0,2,44,4,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractContinuousDistribution,103,80,        double lowerBound = getDomainLowerBound(p);,1,0,0,1,2,1,2,0,1,6,43,5,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractContinuousDistribution,103,81,        double upperBound = getDomainUpperBound(p);,1,0,0,1,2,1,2,0,1,6,43,5,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractContinuousDistribution,103,82,        double[] bracket = null;,1,0,0,0,2,1,0,0,0,3,24,5,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractContinuousDistribution,103,84,            bracket = UnivariateRealSolverUtils.bracket(,1,0,0,0,1,0,2,0,1,4,44,6,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractContinuousDistribution,103,104,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractContinuousDistribution,103,87,        }  catch (ConvergenceException ex) {,1,0,0,1,4,1,0,1,0,5,36,6,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractContinuousDistribution,103,96,            if (Math.abs(rootFindingFunction.value(lowerBound)) < 1E-6) {,0,1,0,3,7,1,5,0,0,5,61,7,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractContinuousDistribution,103,97,                return lowerBound;,1,0,0,0,0,1,0,0,0,2,18,9,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractContinuousDistribution,103,99,            if (Math.abs(rootFindingFunction.value(upperBound)) < 1E-6) {,0,1,0,3,7,1,5,0,0,5,61,7,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractContinuousDistribution,103,100,                return upperBound;,1,0,0,0,0,1,0,0,0,2,18,9,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractContinuousDistribution,103,103,            throw new MathException(ex);,1,0,0,1,2,2,0,1,1,6,28,7,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractContinuousDistribution,103,107,"        double root = UnivariateRealSolverUtils.solve(rootFindingFunction,",1,0,0,0,1,1,3,0,0,4,66,5,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractContinuousDistribution,103,109,        return root;,1,0,0,0,0,1,0,0,0,2,12,4,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractDistribution,103,60,        if (x0 > x1) {,2,1,0,1,3,1,0,0,0,5,14,4,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractDistribution,103,61,            throw new IllegalArgumentException,0,0,0,0,0,2,0,1,1,3,34,6,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractDistribution,103,64,        return cumulativeProbability(x1) - cumulativeProbability(x0);,0,1,0,1,4,1,4,0,2,6,61,4,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractContinuousDistribution,103,68,            new UnivariateRealFunction() {,0,0,0,1,3,1,0,1,1,5,30,5,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractContinuousDistribution,103,72,                    return cumulativeProbability(x) - p;,1,1,0,1,2,1,2,0,1,7,36,12,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractContinuousDistribution,103,73,                } catch (MathException ex) {,1,0,0,1,4,1,0,1,0,5,28,12,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/AbstractContinuousDistribution,103,74,"                    throw new FunctionEvaluationException(x, ex.getPattern(), ex.getArguments(), ex);",2,0,0,1,6,2,4,1,1,7,81,13,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,123,        super();,0,0,0,1,2,1,0,0,1,4,8,3,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,124,        this.pattern   = null;,1,0,0,0,0,1,0,0,1,3,22,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,125,        this.arguments = new Object[0];,1,0,0,0,2,2,0,1,1,5,31,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,126,        this.rootCause = null;,1,0,0,0,0,1,0,0,1,3,22,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,127,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,137,        super(msg);,1,0,0,1,2,1,0,0,1,5,11,3,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,138,        this.pattern   = msg;,2,0,0,0,0,1,0,0,1,3,21,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,139,        this.arguments = new Object[0];,1,0,0,0,2,2,0,1,1,5,31,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,140,        this.rootCause = null;,1,0,0,0,0,1,0,0,1,3,22,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,141,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,151,"      super(buildMessage(pattern, arguments, Locale.US));",2,0,0,0,4,1,3,0,2,5,51,3,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,152,      this.pattern   = pattern;,2,0,0,0,0,1,0,0,1,3,25,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,153,      this.arguments = arguments;,2,0,0,0,0,1,0,0,1,3,27,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,154,      this.rootCause = null;,1,0,0,0,0,1,0,0,1,3,22,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,155,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,165,        super((rootCause == null ? null : rootCause.getMessage()));,1,1,0,3,6,1,2,0,1,7,59,3,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,166,        this.pattern   = getMessage();,1,0,0,1,2,1,1,0,2,6,30,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,167,        this.arguments = new Object[0];,1,0,0,0,2,2,0,1,1,5,31,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,168,        this.rootCause = rootCause;,2,0,0,0,0,1,0,0,1,3,27,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,169,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,181,        super(msg);,1,0,0,1,2,1,0,0,1,5,11,3,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,182,        this.pattern   = msg;,2,0,0,0,0,1,0,0,1,3,21,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,183,        this.arguments = new Object[0];,1,0,0,0,2,2,0,1,1,5,31,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,184,        this.rootCause = rootCause;,2,0,0,0,0,1,0,0,1,3,27,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,185,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,197,"      super(buildMessage(pattern, arguments, Locale.US));",2,0,0,0,4,1,3,0,2,5,51,3,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,198,      this.pattern   = pattern;,2,0,0,0,0,1,0,0,1,3,25,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,199,      this.arguments = arguments;,2,0,0,0,0,1,0,0,1,3,27,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,200,      this.rootCause = rootCause;,2,0,0,0,0,1,0,0,1,3,27,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,201,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,47,        boolean flag = false;,1,0,0,0,0,1,0,0,1,3,21,5,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,49,"            Throwable.class.getDeclaredMethod(""getCause"", new Class[0]);",0,0,0,0,4,2,1,2,1,5,60,7,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,50,            flag = true;,1,0,0,0,0,0,0,0,2,2,12,6,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,53,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,51,        } catch (NoSuchMethodException ex) {,1,0,0,1,4,1,0,1,0,5,36,6,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,52,            flag = false;,1,0,0,0,0,0,0,0,2,2,13,7,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,54,        JDK_SUPPORTS_NESTED = flag;,2,0,0,0,0,0,0,0,1,2,27,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,57,    private static ResourceBundle cachedResources = null;,1,0,0,0,0,2,0,1,2,4,53,2,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,83,            if ((cachedResources == null) || (! cachedResources.getLocale().equals(locale))) {,1,2,0,3,11,1,4,0,1,7,82,6,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,85,                cachedResources =,1,0,0,0,0,0,0,0,1,2,17,8,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,89,            if (cachedResources.getLocale().getLanguage().equals(locale.getLanguage())) {,0,0,0,3,11,1,6,0,0,4,77,7,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,91,                return cachedResources.getString(s);,0,0,0,1,2,1,3,0,0,4,36,9,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,96,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,94,        } catch (MissingResourceException mre) {,1,0,0,1,4,1,0,1,0,5,40,6,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,100,        return s;,1,0,0,0,0,1,0,0,0,2,9,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,113,"        MessageFormat mf = new MessageFormat(translate(pattern, locale));",1,0,0,0,4,1,3,2,2,6,65,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,114,        mf.setLocale(locale);,0,0,0,1,2,0,3,0,0,3,21,5,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,115,        return mf.format(arguments);        ,0,0,0,1,2,1,3,0,0,4,28,5,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,208,        return pattern;,1,0,0,0,0,1,0,0,0,2,15,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,216,        return arguments;,1,0,0,0,0,1,0,0,0,2,17,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,226,"        return (pattern == null) ? null : buildMessage(pattern, arguments, locale);",1,1,0,1,4,1,4,0,1,7,75,5,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,235,        return rootCause;,1,0,0,0,0,1,0,0,0,2,17,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,242,        printStackTrace(System.err);,2,0,0,1,2,0,1,0,1,5,28,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,243,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,251,        synchronized (out) {,1,0,0,1,3,1,0,0,0,4,20,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,252,"            PrintWriter pw = new PrintWriter(out, false);",2,0,0,0,2,1,0,2,2,5,45,6,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,253,            printStackTrace(pw);,0,0,0,1,2,0,2,0,1,4,20,6,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,255,            pw.flush();,0,0,0,1,2,0,2,0,0,3,11,7,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,256,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,257,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,265,        synchronized (out) {,1,0,0,1,3,1,0,0,0,4,20,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,266,            super.printStackTrace(out);,2,0,0,1,2,1,0,0,0,4,27,7,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,267,            if (rootCause != null && JDK_SUPPORTS_NESTED == false) {,2,3,0,1,3,1,0,0,1,6,56,6,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,268,"                out.print(""Caused by: "");",0,0,0,1,2,0,2,0,1,4,25,9,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,269,                rootCause.printStackTrace(out);,0,0,0,1,2,0,3,0,0,3,31,9,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,271,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/MathException,103,272,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,60,"        this(0.0, 1.0);",0,0,0,0,2,1,0,0,0,2,15,2,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,61,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,68,        return mean;,1,0,0,0,0,1,0,0,0,2,12,4,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,84,        return standardDeviation;,1,0,0,0,0,1,0,0,0,2,25,4,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,94,            throw new IllegalArgumentException(,0,0,0,0,1,2,0,1,1,4,35,6,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,129,        if (p == 0) {,1,1,0,1,3,1,0,0,0,5,13,4,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,130,            return Double.NEGATIVE_INFINITY;,2,0,0,0,0,1,0,0,0,2,32,7,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,132,        if (p == 1) {,1,1,0,1,3,1,0,0,0,5,13,4,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,133,            return Double.POSITIVE_INFINITY;,2,0,0,0,0,1,0,0,0,2,32,7,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,135,        return super.inverseCumulativeProbability(p);,2,0,0,1,2,2,0,0,0,4,45,5,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,150,        if (p < .5) {,1,1,0,1,3,1,0,0,0,5,13,4,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,151,            ret = -Double.MAX_VALUE;,3,0,0,0,0,0,0,0,2,2,24,6,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,153,            ret = getMean();,1,0,0,1,2,0,1,0,2,5,16,6,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,156,        return ret;,1,0,0,0,0,1,0,0,0,2,11,4,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,171,        if (p < .5) {,1,1,0,1,3,1,0,0,0,5,13,4,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,172,            ret = getMean();,1,0,0,1,2,0,1,0,2,5,16,6,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,174,            ret = Double.MAX_VALUE;,3,0,0,0,0,0,0,0,1,2,23,6,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,177,        return ret;,1,0,0,0,0,1,0,0,0,2,11,4,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,191,        if (p < .5) {,1,1,0,1,3,1,0,0,0,5,13,4,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,192,            ret = getMean() - getStandardDeviation();,1,1,0,1,4,0,2,0,3,6,41,6,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,193,        } else if (p > .5) {,1,1,0,1,4,2,0,0,0,5,20,5,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,194,            ret = getMean() + getStandardDeviation();,1,1,0,1,4,0,2,0,3,6,41,7,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,196,            ret = getMean();,1,0,0,1,2,0,1,0,2,5,16,7,0.0,0,0
+defect4j,math,org/apache/commons/math/distribution/NormalDistributionImpl,103,199,        return ret;,1,0,0,0,0,1,0,0,0,2,11,4,0.0,0,0
+defect4j,math,org/apache/commons/math/ConvergenceException,103,34,"        super(""Convergence failed"", new Object[0]);",0,0,0,0,4,2,0,1,2,4,43,3,0.0,0,0
+defect4j,math,org/apache/commons/math/ConvergenceException,103,35,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/ConvergenceException,103,44,"        super(pattern, arguments);",2,0,0,0,2,1,0,0,1,4,26,3,0.0,0,0
+defect4j,math,org/apache/commons/math/ConvergenceException,103,45,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/ConvergenceException,103,52,        super(cause);,1,0,0,1,2,1,0,0,1,5,13,3,0.0,0,0
+defect4j,math,org/apache/commons/math/ConvergenceException,103,53,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/ConvergenceException,103,63,"        super(pattern, arguments, cause);",3,0,0,0,2,1,0,0,1,4,33,3,0.0,0,0
+defect4j,math,org/apache/commons/math/ConvergenceException,103,64,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/ConvergenceException,103,77,"        super(msg, rootCause);",2,0,0,0,2,1,0,0,1,4,22,3,0.0,0,0
+defect4j,math,org/apache/commons/math/ConvergenceException,103,78,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/ConvergenceException,103,89,        super(msg);,1,0,0,1,2,1,0,0,1,5,11,3,0.0,0,0
+defect4j,math,org/apache/commons/math/ConvergenceException,103,90,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,51,        super();,0,0,0,1,2,1,0,0,1,4,8,3,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,52,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,79,"        return evaluate(x, DEFAULT_EPSILON, Integer.MAX_VALUE);",2,0,0,0,2,1,3,0,1,5,55,4,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,90,"        return evaluate(x, epsilon, Integer.MAX_VALUE);",2,0,0,0,2,1,3,0,1,5,47,4,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,101,"        return evaluate(x, DEFAULT_EPSILON, maxIterations);",0,0,0,0,2,1,4,0,1,4,51,4,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,133,        double p0 = 1.0;,1,0,0,0,0,1,0,0,0,2,16,5,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,134,"        double p1 = getA(0, x);",1,0,0,0,2,1,2,0,1,5,23,5,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,135,        double q0 = 0.0;,1,0,0,0,0,1,0,0,0,2,16,5,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,136,        double q1 = 1.0;,1,0,0,0,0,1,0,0,0,2,16,5,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,137,        double c = p1 / q1;,3,1,0,0,0,1,0,0,0,3,19,5,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,138,        int n = 0;,1,0,0,0,0,1,0,0,0,2,10,5,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,139,        double relativeError = Double.MAX_VALUE;,3,0,0,0,0,1,0,0,0,2,40,5,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,140,        while (n < maxIterations && relativeError > epsilon) {,4,3,0,1,3,1,0,0,0,5,54,4,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,141,            ++n;,1,0,0,0,0,0,0,0,1,2,4,6,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,142,"            double a = getA(n, x);",1,0,0,0,2,1,3,0,1,5,22,7,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,143,"            double b = getB(n, x);",1,0,0,0,2,1,3,0,1,5,22,7,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,144,            double p2 = a * p1 + b * p0;,5,3,0,0,0,1,0,0,0,3,28,7,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,145,            double q2 = a * q1 + b * q0;,5,3,0,0,0,1,0,0,0,3,28,7,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,146,            if (Double.isInfinite(p2) || Double.isInfinite(q2)) {,0,1,0,2,7,1,6,0,0,5,53,6,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,148,                if (a != 0.0) {,1,1,0,1,3,1,0,0,0,5,15,8,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,149,                    p2 = p1 + (b / a * p0);,5,3,0,1,2,0,0,0,1,5,23,10,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,150,                    q2 = q1 + (b / a * q0);,5,3,0,1,2,0,0,0,1,5,23,10,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,151,                } else if (b != 0) {,1,1,0,1,4,2,0,0,0,5,20,9,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,152,                    p2 = (a / b * p1) + p0;,5,3,0,1,2,0,0,0,1,5,23,11,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,153,                    q2 = (a / b * q1) + q0;,5,3,0,1,2,0,0,0,1,5,23,11,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,156,                    throw new ConvergenceException(,0,0,0,0,1,2,0,1,1,4,31,11,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,161,            double r = p2 / q2;,3,1,0,0,0,1,0,0,0,3,19,7,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,162,            relativeError = Math.abs(r / c - 1.0);,3,2,0,1,2,0,2,0,1,6,38,6,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,165,            c = p2 / q2;,3,1,0,0,0,0,0,0,1,3,12,6,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,166,            p0 = p1;,2,0,0,0,0,0,0,0,1,2,8,6,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,167,            p1 = p2;,2,0,0,0,0,0,0,0,1,2,8,6,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,168,            q0 = q1;,2,0,0,0,0,0,0,0,1,2,8,6,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,169,            q1 = q2;,2,0,0,0,0,0,0,0,1,2,8,6,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,170,        },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,172,        if (n >= maxIterations) {,2,1,0,1,3,1,0,0,0,5,25,4,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,173,"            throw new MaxIterationsExceededException(maxIterations,",1,0,0,0,1,2,0,1,1,5,55,6,0.0,0,0
+defect4j,math,org/apache/commons/math/util/ContinuedFraction,103,178,        return c;,1,0,0,0,0,1,0,0,0,2,9,4,0.0,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,243,            ContinuedFraction cf = new ContinuedFraction() {,1,0,0,1,3,1,0,2,1,6,48,8,0.0,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,248,                    return ((2.0 * n) + 1.0) - a + x;,3,4,0,2,4,1,0,0,0,5,33,14,0.0,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,252,                    return n * (a - n);,3,2,0,1,2,1,0,0,0,5,19,14,0.0,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,67,        super();,0,0,0,1,2,1,0,0,1,4,8,3,0.0,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,68,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,91,            ret = Double.NaN;,3,0,0,0,0,0,0,0,1,2,17,6,0.0,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,120,"        return regularizedGammaP(a, x, DEFAULT_EPSILON, Integer.MAX_VALUE);",2,0,0,0,2,1,4,0,1,5,67,4,0.0,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,159,            ret = Double.NaN;,3,0,0,0,0,0,0,0,1,2,17,6,0.0,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,165,"            ret = 1.0 - regularizedGammaQ(a, x, epsilon, maxIterations);",1,1,0,0,2,0,5,0,2,5,60,8,0.0,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,180,                throw new MaxIterationsExceededException(maxIterations);,1,0,0,1,2,2,0,1,1,6,56,10,0.0,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,200,"        return regularizedGammaQ(a, x, DEFAULT_EPSILON, Integer.MAX_VALUE);",2,0,0,0,2,1,4,0,1,5,67,4,0.0,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,233,        if (Double.isNaN(a) || Double.isNaN(x) || (a <= 0.0) || (x < 0.0)) {,2,3,0,2,11,1,6,0,0,6,68,4,0.0,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,234,            ret = Double.NaN;,3,0,0,0,0,0,0,0,1,2,17,6,0.0,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,235,        } else if (x == 0.0) {,1,1,0,1,4,2,0,0,0,5,22,5,0.0,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,236,            ret = 1.0;,1,0,0,0,0,0,0,0,1,2,10,7,0.0,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,237,        } else if (x < a || a < 1.0) {,3,3,0,1,4,2,0,0,0,5,30,6,0.0,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,240,"            ret = 1.0 - regularizedGammaP(a, x, epsilon, maxIterations);",1,1,0,0,2,0,5,0,2,5,60,8,0.0,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,243,            ContinuedFraction cf = new ContinuedFraction() {,1,0,0,1,3,1,0,2,1,6,48,8,0.0,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,256,"            ret = 1.0 / cf.evaluate(x, epsilon, maxIterations);",1,1,0,0,2,0,5,0,1,5,51,8,0.0,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,257,            ret = Math.exp(-x + (a * Math.log(x)) - logGamma(a)) * ret;,4,4,0,3,8,0,7,0,3,6,59,8,0.0,0,0
+defect4j,math,org/apache/commons/math/special/Gamma,103,260,        return ret;,1,0,0,0,0,1,0,0,0,2,11,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MaxIterationsExceededException,103,36,"        super(""Maximal number of iterations ({0}) exceeded"",",0,0,0,1,5,1,0,0,2,4,52,3,0.0,0,0
+defect4j,math,org/apache/commons/math/MaxIterationsExceededException,103,38,        this.maxIterations = maxIterations;,2,0,0,0,0,1,0,0,1,3,35,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MaxIterationsExceededException,103,39,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/MaxIterationsExceededException,103,50,"        super(pattern, arguments);",2,0,0,0,2,1,0,0,1,4,26,3,0.0,0,0
+defect4j,math,org/apache/commons/math/MaxIterationsExceededException,103,51,        this.maxIterations = maxIterations;,2,0,0,0,0,1,0,0,1,3,35,4,0.0,0,0
+defect4j,math,org/apache/commons/math/MaxIterationsExceededException,103,52,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0
+defect4j,math,org/apache/commons/math/MaxIterationsExceededException,103,58,        return maxIterations;,1,0,0,0,0,1,0,0,0,2,21,4,0.0,0,0
+defect4j,math,org/apache/commons/math/special/Erf,103,38,        super();,0,0,0,1,2,1,0,0,1,4,8,3,0.0,0,0
+defect4j,math,org/apache/commons/math/special/Erf,103,39,    },0,0,0,0,1,0,0,0,0,1,1,2,0.0,0,0

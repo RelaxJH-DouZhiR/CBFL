@@ -1,0 +1,127 @@
+dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,logic,lengthEle,lengthWord,depth,suspicious,accuracy,miss_line,predict
+defect4j,math,org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1387,        double[] tmp1 = new double[getSize()];,2,0,0,3,6,0,2,0,0,4,38,5,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1388,"        multiply(x, xOffset, x, xOffset, tmp1, 0);      // x^2",0,0,0,1,2,0,12,0,0,12,54,5,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1389,        double[] tmp2 = new double[getSize()];,2,0,0,3,6,0,2,0,0,4,38,5,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1390,"        multiply(y, yOffset, y, yOffset, tmp2, 0);      // y^2",0,0,0,1,2,0,0,0,0,3,54,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1391,"        add(tmp1, 0, tmp2, 0, tmp2, 0);                 // x^2 + y^2",4,0,1,1,2,2,8,0,0,20,60,1,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1392,"        rootN(tmp2, 0, 2, tmp1, 0);                     // r = sqrt(x^2 + y^2)",24,0,0,2,4,1,10,2,0,38,70,1,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1394,        if (x[xOffset] >= 0) {,0,1,1,2,5,0,0,0,0,5,22,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/differentiation/DSCompiler,10,1397,"            add(tmp1, 0, x, xOffset, tmp2, 0);          // r + x",0,0,0,1,2,0,10,0,0,10,52,7,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,178,        final int dim = getDimension();,0,0,0,1,2,0,0,0,0,3,31,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,179,        if (vals.length != dim) {,12,2,0,1,3,0,0,0,0,15,25,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,183,"        return FastMath.pow(2 * FastMath.PI, -dim / 2) *",0,0,0,1,2,1,0,0,0,4,48,4,0.5,1,0,-1
+defect4j,math,org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,229,        final double[] centered = new double[values.length];,6,1,0,2,4,0,18,0,0,26,52,3,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,230,        for (int i = 0; i < centered.length; i++) {,12,1,0,1,3,0,0,0,0,14,43,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,231,            centered[i] = values[i] - getMeans()[i];,0,0,0,4,8,0,0,0,0,12,40,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,233,        final double[] preMultiplied = covarianceMatrixInverse.preMultiply(centered);,4,0,0,2,4,2,12,2,0,20,77,3,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,234,        double sum = 0;,0,0,0,0,0,0,0,0,0,0,15,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,235,        for (int i = 0; i < preMultiplied.length; i++) {,10,1,0,1,3,0,0,0,0,12,48,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,236,            sum += preMultiplied[i] * centered[i];,0,0,0,2,4,0,0,0,0,6,38,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/MultivariateNormalDistribution,11,238,        return FastMath.exp(-0.5 * sum);,2,1,0,1,2,1,4,0,0,8,32,5,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,11,831,"        return exp(x, 0.0, null);",10,1,0,1,2,1,0,0,0,12,25,5,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,11,850,        if (x < 0.0) {,2,1,0,1,3,0,0,0,0,3,14,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,11,851,            intVal = (int) -x;,4,0,0,1,2,0,0,0,0,6,18,6,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,11,853,            if (intVal > 746) {,0,0,0,1,3,0,0,0,0,4,19,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,11,861,            if (intVal > 709) {,4,1,0,1,3,0,0,0,0,5,19,3,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,11,871,            if (intVal == 709) {,2,1,0,1,3,0,0,0,0,3,20,6,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,11,881,            intVal++;,0,0,0,0,0,0,0,0,0,0,9,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,11,883,            intPartA = ExpIntTable.EXP_INT_TABLE_A[EXP_INT_TABLE_MAX_INDEX-intVal];,0,0,0,1,2,0,0,0,0,3,71,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,11,884,            intPartB = ExpIntTable.EXP_INT_TABLE_B[EXP_INT_TABLE_MAX_INDEX-intVal];,2,0,0,1,2,0,6,2,0,10,71,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,11,886,            intVal = -intVal;,0,0,0,0,0,0,0,0,0,0,17,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,11,888,            intVal = (int) x;,0,0,0,1,2,0,0,0,0,3,17,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,11,890,            if (intVal > 709) {,0,0,0,1,3,0,0,0,0,4,19,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,11,898,            intPartA = ExpIntTable.EXP_INT_TABLE_A[EXP_INT_TABLE_MAX_INDEX+intVal];,0,0,0,1,2,0,0,0,0,3,71,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,11,899,            intPartB = ExpIntTable.EXP_INT_TABLE_B[EXP_INT_TABLE_MAX_INDEX+intVal];,0,0,0,1,2,0,0,0,0,3,71,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,11,906,        final int intFrac = (int) ((x - intVal) * 1024.0);,0,0,0,3,6,0,0,0,0,9,50,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,11,907,        final double fracPartA = ExpFracTable.EXP_FRAC_TABLE_A[intFrac];,0,0,0,1,2,0,0,0,0,3,64,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,11,908,        final double fracPartB = ExpFracTable.EXP_FRAC_TABLE_B[intFrac];,0,0,0,1,2,0,0,0,0,3,64,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,11,914,        final double epsilon = x - (intVal + intFrac / 1024.0);,0,0,0,1,2,0,0,0,0,3,55,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,11,923,        double z = 0.04168701738764507;,0,0,0,0,0,0,0,0,0,0,31,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,11,924,        z = z * epsilon + 0.1666666505023083;,0,0,0,0,0,0,0,0,0,0,37,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,11,925,        z = z * epsilon + 0.5000000000042687;,0,0,0,0,0,0,0,0,0,0,37,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,11,926,        z = z * epsilon + 1.0;,0,0,0,0,0,0,0,0,0,0,22,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,11,927,        z = z * epsilon + -3.940510424527919E-20;,0,0,0,0,0,0,0,0,0,0,41,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,11,934,        double tempA = intPartA * fracPartA;,0,0,0,0,0,0,0,0,0,0,36,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/util/FastMath,11,935,        double tempB = intPartA * fracPartB + intPartB * fracPartA + intPartB * fracPartB;,0,0,0,0,0,0,0,0,0,0,82,4,0.5,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,12,246,        random.setSeed(seed);,0,0,0,1,2,0,6,0,0,6,21,5,0.42857,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,12,247,        randomData.reSeed(seed);,0,0,0,1,2,0,0,0,0,3,24,4,0.42857,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/AbstractRealDistribution,12,248,    },0,0,0,0,1,0,0,0,0,1,1,4,0.42857,0,0,-1
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,12,461,        delegate.reSeed(seed);,0,0,0,1,2,0,0,0,0,3,22,4,0.33333,0,0,-1
+defect4j,math,org/apache/commons/math3/random/RandomDataImpl,12,462,    },0,0,0,0,1,0,0,0,0,1,1,4,0.33333,0,0,-1
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,12,648,       getRan().setSeed(seed);,0,0,0,2,4,0,6,0,0,6,23,5,0.33333,0,0,-1
+defect4j,math,org/apache/commons/math3/random/RandomDataGenerator,12,649,    },4,0,0,0,1,0,0,0,0,5,1,4,0.33333,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/GammaDistribution,12,374,        if (shape < 1) {,2,0,1,1,3,1,0,0,0,7,16,6,0.33333,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/GammaDistribution,12,413,        final double d = shape - 0.333333333333333333;,0,0,0,0,0,0,0,0,0,0,46,4,0.33333,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/GammaDistribution,12,414,        final double c = 1 / (3 * FastMath.sqrt(d));,2,2,0,2,4,1,6,0,0,11,44,4,0.33333,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/GammaDistribution,12,417,            final double x = random.nextGaussian();,2,0,0,1,2,1,4,0,0,7,39,6,0.33333,0,0,-1
+defect4j,math,org/apache/commons/math3/distribution/GammaDistribution,12,418,            final double v = (1 + c * x) * (1 + c * x) * (1 + c * x);,0,0,0,3,6,0,0,0,0,9,57,4,0.33333,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/fitting/PolynomialFitter,13,63,        super(optimizer);,2,0,0,1,2,0,0,0,0,2,17,4,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/fitting/PolynomialFitter,13,64,        degree = -1; // To avoid compilation error until the instance variable is removed.,2,0,0,0,0,0,0,2,0,4,82,3,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/fitting/PolynomialFitter,13,65,    },0,0,0,0,1,0,0,0,0,1,1,4,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/fitting/PolynomialFitter,13,110,"        return fit(new PolynomialFunction.Parametric(), guess);",0,0,0,2,4,1,0,0,0,7,55,4,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,13,69,        super();,6,2,0,1,2,0,16,0,0,25,8,3,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,13,70,        MathUtils.checkNotNull(c);,0,0,0,1,2,0,0,0,0,3,26,4,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,13,71,        int n = c.length;,10,2,0,0,0,0,12,0,0,24,17,3,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,13,72,        if (n == 0) {,0,0,0,1,3,0,0,0,0,4,13,4,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,13,75,        while ((n > 1) && (c[n - 1] == 0)) {,4,4,1,4,9,0,0,0,0,10,36,4,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,13,78,        this.coefficients = new double[n];,0,0,0,1,2,0,0,0,0,3,34,4,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,13,79,"        System.arraycopy(c, 0, this.coefficients, 0, n);",0,0,0,1,2,0,0,0,0,3,48,4,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,13,80,    },0,0,0,0,1,0,0,0,0,1,1,4,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,13,94,"       return evaluate(coefficients, x);",0,0,0,1,2,1,0,0,0,4,33,4,0.2,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,13,395,    public static class Parametric implements ParametricUnivariateFunction {,6,0,0,0,1,0,0,0,0,7,72,4,0.125,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,13,130,        MathUtils.checkNotNull(coefficients);,8,0,0,1,2,0,6,0,0,15,37,3,0.125,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,13,131,        int n = coefficients.length;,6,0,0,0,0,0,0,0,0,6,28,5,0.125,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,13,132,        if (n == 0) {,0,0,0,1,3,0,0,0,0,4,13,4,0.125,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,13,135,        double result = coefficients[n - 1];,4,1,1,1,2,0,0,0,0,7,36,5,0.125,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,13,136,        for (int j = n - 2; j >= 0; j--) {,0,0,0,1,3,0,0,0,0,4,34,4,0.125,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,13,139,        return result;,2,0,0,0,0,1,0,0,0,2,14,4,0.125,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/fitting/CurveFitter,13,153,"        return fit(Integer.MAX_VALUE, f, initialGuess);",0,0,0,1,2,1,0,0,0,4,47,4,0.05,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/fitting/CurveFitter,13,210,        public OldTheoreticalValuesFunction(final ParametricUnivariateFunction f) {,4,0,0,1,3,2,0,2,0,8,75,3,0.04348,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/fitting/CurveFitter,13,211,            this.f = f;,0,0,0,0,0,0,0,0,0,0,11,4,0.04348,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/fitting/CurveFitter,13,212,        },6,0,1,0,1,0,0,0,0,9,1,6,0.04348,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/fitting/CurveFitter,13,176,        double[] target  = new double[observations.size()];,2,0,0,3,6,0,4,0,0,6,51,5,0.04348,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/fitting/CurveFitter,13,177,        double[] weights = new double[observations.size()];,10,1,1,3,6,1,8,0,0,26,51,3,0.04348,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/fitting/CurveFitter,13,178,        int i = 0;,2,0,0,0,0,0,0,0,0,2,10,5,0.04348,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/fitting/CurveFitter,13,179,        for (WeightedObservedPoint point : observations) {,4,0,0,1,3,0,0,2,0,6,50,4,0.04348,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/fitting/CurveFitter,13,180,            target[i]  = point.getY();,2,0,1,2,4,0,4,0,0,11,26,3,0.04348,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/fitting/CurveFitter,13,181,            weights[i] = point.getWeight();,6,2,1,2,4,1,10,0,0,24,31,3,0.04348,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/fitting/CurveFitter,13,182,            ++i;,0,0,0,0,0,0,0,0,0,0,4,4,0.04348,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/fitting/CurveFitter,13,183,        },8,3,0,0,1,0,0,0,0,11,1,5,0.04348,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/fitting/CurveFitter,13,187,        if (optimizer == null) {,0,0,0,1,3,0,0,0,0,4,24,4,0.04348,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/fitting/CurveFitter,13,189,"            optimum = oldOptimizer.optimize(maxEval, new OldTheoreticalValuesFunction(f),",4,0,0,1,3,0,6,2,0,13,77,6,0.04348,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/fitting/WeightedObservedPoint,13,59,        return weight;,0,0,0,0,0,1,0,0,0,1,14,4,0.04348,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer,13,423,"        return optimizeInternal(maxEval,",0,0,0,0,1,1,0,0,0,2,32,4,0.04348,0,0,-1
+defect4j,math,org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer,13,62,@Deprecated,6,1,0,0,0,1,0,0,0,8,11,4,0.04348,1,1,-1
+defect4j,math,org/apache/commons/math3/optimization/fitting/CurveFitter,13,109,"        observations.add(new WeightedObservedPoint(weight, x, y));",12,1,0,2,4,0,4,2,0,19,58,3,0.04167,0,0,-1
+defect4j,math,org/apache/commons/math3/fitting/PolynomialFitter,14,37,        super(optimizer);,2,0,0,1,2,0,0,0,0,2,17,4,0.125,0,0,-1
+defect4j,math,org/apache/commons/math3/fitting/PolynomialFitter,14,38,    },0,0,0,0,1,0,0,0,0,1,1,4,0.125,0,0,-1
+defect4j,math,org/apache/commons/math3/fitting/PolynomialFitter,14,68,"        return fit(new PolynomialFunction.Parametric(), guess);",10,0,0,2,4,1,4,0,0,14,55,3,0.125,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,14,69,        super();,0,0,0,1,2,0,0,0,0,3,8,4,0.125,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,14,70,        MathUtils.checkNotNull(c);,4,1,0,1,2,0,0,0,0,5,26,3,0.125,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,14,71,        int n = c.length;,0,0,0,0,0,0,4,0,0,4,17,5,0.125,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,14,72,        if (n == 0) {,10,3,0,1,3,0,6,0,0,20,13,3,0.125,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,14,75,        while ((n > 1) && (c[n - 1] == 0)) {,8,4,1,4,9,0,0,0,0,15,36,3,0.125,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,14,78,        this.coefficients = new double[n];,0,0,0,1,2,0,0,0,0,3,34,4,0.125,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,14,79,"        System.arraycopy(c, 0, this.coefficients, 0, n);",6,0,0,1,2,0,8,0,0,15,48,3,0.125,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,14,80,    },2,0,0,0,1,3,0,4,0,9,1,2,0.125,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,14,94,"       return evaluate(coefficients, x);",0,0,0,1,2,1,0,0,0,4,33,4,0.125,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,14,395,    public static class Parametric implements ParametricUnivariateFunction {,0,0,0,0,1,0,0,0,0,1,72,4,0.09091,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,14,130,        MathUtils.checkNotNull(coefficients);,0,0,0,1,2,0,0,0,0,3,37,4,0.09091,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,14,131,        int n = coefficients.length;,0,0,0,0,0,0,0,0,0,0,28,4,0.09091,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,14,132,        if (n == 0) {,2,1,0,1,3,0,0,0,0,3,13,4,0.09091,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,14,135,        double result = coefficients[n - 1];,4,1,1,1,2,0,2,0,0,9,36,3,0.09091,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,14,136,        for (int j = n - 2; j >= 0; j--) {,0,0,0,1,3,0,0,0,0,4,34,4,0.09091,0,0,-1
+defect4j,math,org/apache/commons/math3/analysis/polynomials/PolynomialFunction,14,139,        return result;,0,0,0,0,0,1,0,0,0,1,14,4,0.09091,0,0,-1
+defect4j,math,org/apache/commons/math3/fitting/CurveFitter,14,136,"        return fit(Integer.MAX_VALUE, f, initialGuess);",0,0,0,1,2,1,0,0,0,4,47,4,0.04348,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/BlockRealMatrix,14,98,"        super(rows, columns);",0,0,0,1,2,0,0,0,0,3,21,4,0.04348,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/BlockRealMatrix,14,99,        this.rows = rows;,4,0,0,0,0,0,0,0,0,5,17,4,0.04348,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/BlockRealMatrix,14,100,        this.columns = columns;,4,0,0,0,0,0,0,0,0,5,23,8,0.04348,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/BlockRealMatrix,14,103,        blockRows = (rows + BLOCK_SIZE - 1) / BLOCK_SIZE;,12,4,0,1,2,0,0,0,0,17,49,3,0.04348,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/BlockRealMatrix,14,104,        blockColumns = (columns + BLOCK_SIZE - 1) / BLOCK_SIZE;,0,0,0,1,2,0,0,0,0,3,55,4,0.04348,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/BlockRealMatrix,14,107,"        blocks = createBlocksLayout(rows, columns);",4,0,0,1,2,0,0,0,0,5,43,4,0.04348,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/BlockRealMatrix,14,258,        final int blockRows = (rows    + BLOCK_SIZE - 1) / BLOCK_SIZE;,0,0,0,1,2,0,0,0,0,3,62,4,0.04,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/BlockRealMatrix,14,259,        final int blockColumns = (columns + BLOCK_SIZE - 1) / BLOCK_SIZE;,0,0,0,1,2,0,0,0,0,3,65,4,0.04,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/BlockRealMatrix,14,261,        final double[][] blocks = new double[blockRows * blockColumns][];,6,1,0,4,8,1,0,0,0,8,65,4,0.04,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/BlockRealMatrix,14,262,        int blockIndex = 0;,2,0,0,0,0,0,0,0,0,4,19,8,0.04,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/BlockRealMatrix,14,263,        for (int iBlock = 0; iBlock < blockRows; ++iBlock) {,10,1,0,1,3,0,0,0,0,12,52,3,0.04,0,0,-1
+defect4j,math,org/apache/commons/math3/linear/BlockRealMatrix,14,264,            final int pStart = iBlock * BLOCK_SIZE;,6,1,0,0,0,0,0,0,0,7,39,4,0.04,0,0,-1

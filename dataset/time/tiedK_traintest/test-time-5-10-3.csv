@@ -1,0 +1,113 @@
+dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,logic,lengthEle,lengthWord,depth,suspicious,accuracy,miss_line,predict
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,683,            return next;,2,0,0,0,0,1,0,0,0,2,12,5,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,706,            if (iDayOfMonth >= 0) {,2,1,0,1,3,0,0,0,0,3,23,5,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,709,"                instant = chrono.dayOfMonth().set(instant, 1);",0,0,0,2,4,0,0,0,0,6,46,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,710,"                instant = chrono.monthOfYear().add(instant, 1);",2,0,0,2,4,0,8,0,0,11,47,7,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,711,"                instant = chrono.dayOfMonth().add(instant, iDayOfMonth);",2,0,0,2,4,0,10,0,0,13,56,7,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,713,            return instant;,2,0,0,0,0,1,0,0,0,2,15,5,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,717,            int dayOfWeek = chrono.dayOfWeek().get(instant);,0,0,0,2,4,0,0,0,0,6,48,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,718,            int daysToAdd = iDayOfWeek - dayOfWeek;,6,1,0,0,0,0,0,0,0,7,39,6,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,719,            if (daysToAdd != 0) {,2,1,0,1,3,0,0,0,0,3,21,5,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,720,                if (iAdvance) {,2,0,0,1,3,0,0,0,0,2,15,7,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,725,                    if (daysToAdd > 0) {,2,1,0,1,3,0,0,0,0,3,20,9,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,729,"                instant = chrono.dayOfWeek().add(instant, daysToAdd);",2,0,0,2,4,0,10,0,0,13,53,7,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,731,            return instant;,0,0,0,0,0,1,0,0,0,1,15,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,963,        RuleSet() {,0,0,0,1,3,0,0,0,0,4,11,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,964,            iRules = new ArrayList<Rule>(10);,0,0,0,1,2,0,0,0,0,3,33,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,965,            iUpperYear = Integer.MAX_VALUE;,6,0,0,0,0,0,0,0,0,7,31,5,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,966,        },0,0,0,0,1,0,0,0,0,1,1,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,971,        RuleSet(RuleSet rs) {,0,0,0,1,3,0,0,0,0,4,21,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,972,            iStandardOffset = rs.iStandardOffset;,6,0,0,0,0,0,0,0,0,7,37,5,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,973,            iRules = new ArrayList<Rule>(rs.iRules);,8,1,0,1,2,0,0,4,0,14,40,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,974,            iInitialNameKey = rs.iInitialNameKey;,0,0,0,0,0,0,0,0,0,0,37,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,975,            iInitialSaveMillis = rs.iInitialSaveMillis;,6,0,0,0,0,0,0,0,0,8,43,1,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,976,            iUpperYear = rs.iUpperYear;,0,0,0,0,0,0,0,0,0,0,27,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,977,            iUpperOfYear = rs.iUpperOfYear;,0,0,0,0,0,0,0,0,0,0,31,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,978,        },0,0,0,0,1,0,0,0,0,1,1,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,948,            long now = DateTimeUtils.currentTimeMillis();,2,0,0,1,2,0,4,0,0,6,45,6,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,949,            YEAR_LIMIT = ISOChronology.getInstanceUTC().year().get(now) + 100;,6,1,0,3,6,0,10,0,0,19,66,1,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,950,        },0,0,0,0,1,0,0,0,0,1,1,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,985,            iStandardOffset = standardOffset;,4,0,0,0,0,0,0,0,0,5,33,5,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,986,        },0,0,0,0,1,0,0,0,0,1,1,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,994,            if (!iRules.contains(rule)) {,0,0,0,2,5,0,0,0,0,7,29,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,995,                iRules.add(rule);,0,0,0,1,2,0,6,0,0,6,17,8,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,997,        },0,0,0,0,1,0,0,0,0,1,1,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1011,            if (iInitialNameKey != null) {,12,1,0,1,3,0,0,4,0,17,30,3,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1018,            ArrayList<Rule> copy = new ArrayList<Rule>(iRules);,8,0,0,1,2,1,0,12,0,21,51,1,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1024,            long millis = Long.MIN_VALUE;,0,0,0,0,0,0,0,0,0,0,29,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1025,            int saveMillis = 0;,2,0,0,0,0,0,0,0,0,2,19,6,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1026,            Transition first = null;,2,0,0,0,0,0,0,2,0,4,24,5,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1029,"            while ((next = nextTransition(millis, saveMillis)) != null) {",2,1,0,3,7,0,6,0,0,11,61,5,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1030,                millis = next.getMillis();,4,0,0,1,2,0,4,0,0,9,26,1,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1032,                if (millis == firstMillis) {,4,1,0,1,3,0,0,0,0,5,28,7,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1037,                if (millis > firstMillis) {,0,0,0,1,3,0,0,0,0,4,27,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1038,                    if (first == null) {,2,1,0,1,3,0,0,0,0,3,20,9,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1042,                        for (Rule rule : copy) {,4,0,0,1,3,0,0,2,0,6,24,11,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1043,                            if (rule.getSaveMillis() == 0) {,0,1,0,2,5,0,4,0,0,5,32,13,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1044,"                                first = new Transition(firstMillis, rule, iStandardOffset);",8,0,0,1,2,0,0,2,0,11,59,15,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1045,                                break;,0,0,0,0,0,0,0,0,0,0,6,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1047,                        },0,0,0,0,1,0,0,0,0,1,1,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1049,                    if (first == null) {,0,0,0,1,3,0,0,0,0,4,20,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1066,            iRules = copy;,0,0,0,0,0,0,0,0,0,0,14,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1067,            return first;,0,0,0,0,0,1,0,0,0,1,13,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1082,            Chronology chrono = ISOChronology.getInstanceUTC();,2,0,0,1,2,0,4,2,0,8,51,5,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1085,            Rule nextRule = null;,0,0,0,0,0,0,0,0,0,0,21,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1086,            long nextMillis = Long.MAX_VALUE;,6,0,0,0,0,0,0,0,0,6,33,6,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1088,            Iterator<Rule> it = iRules.iterator();,2,0,0,1,2,0,4,4,0,10,38,5,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1089,            while (it.hasNext()) {,0,0,0,2,5,0,4,0,0,4,22,6,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1090,                Rule rule = it.next();,2,0,0,1,2,0,4,2,0,8,22,7,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1091,"                long next = rule.next(instant, iStandardOffset, saveMillis);",4,1,0,1,2,0,10,0,0,15,60,1,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1092,                if (next <= instant) {,4,1,0,1,3,0,0,0,0,5,22,7,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1098,                if (next <= nextMillis) {,8,1,0,1,3,0,0,0,0,10,25,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1100,                    nextRule = rule;,0,0,0,0,0,0,0,0,0,0,16,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1101,                    nextMillis = next;,4,0,0,0,0,0,0,0,0,5,18,9,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1103,            },0,0,0,0,1,0,0,0,0,1,1,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1105,            if (nextRule == null) {,6,1,0,1,3,0,0,0,0,7,23,1,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1110,            if (chrono.year().get(nextMillis) >= YEAR_LIMIT) {,0,0,0,3,7,0,0,0,0,10,50,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1115,            if (iUpperYear < Integer.MAX_VALUE) {,0,0,0,1,3,0,0,2,0,2,37,6,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1124,"            return new Transition(nextMillis, nextRule, iStandardOffset);",6,0,0,1,2,1,0,2,0,8,61,6,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1131,            if (iUpperYear == Integer.MAX_VALUE) {,6,1,0,1,3,0,0,0,0,7,38,5,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1132,                return Long.MAX_VALUE;,2,1,0,0,0,1,0,0,0,3,22,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1141,            if (iRules.size() == 2) {,0,1,0,2,5,0,4,0,0,5,25,5,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1142,                Rule startRule = iRules.get(0);,2,0,0,1,2,0,4,2,0,8,31,7,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1143,                Rule endRule = iRules.get(1);,2,0,0,1,2,0,4,2,0,8,29,7,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1144,                if (startRule.getToYear() == Integer.MAX_VALUE &&,0,0,0,1,3,0,0,0,0,4,49,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1154,"                    return new DSTZone(id, iStandardOffset,",0,0,0,0,1,1,0,0,0,2,39,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,890,"        Transition(long millis, Rule rule, int standardOffset) {",0,0,0,1,3,0,0,0,0,4,56,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,891,            iMillis = millis;,6,0,1,0,0,0,0,2,0,13,17,1,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,892,            iNameKey = rule.getNameKey();,2,0,0,1,2,0,4,0,0,7,29,5,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,893,            iWallOffset = standardOffset + rule.getSaveMillis();,4,1,0,1,2,0,4,0,0,10,52,5,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,894,            iStandardOffset = standardOffset;,0,0,0,0,0,0,0,0,0,0,33,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,895,        },0,0,0,0,1,0,0,0,0,1,1,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,906,            return iMillis;,0,0,0,0,0,1,0,0,0,1,15,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,910,            return iNameKey;,2,0,0,0,0,1,4,0,0,6,16,5,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,914,            return iWallOffset;,2,0,0,0,0,1,0,0,0,2,19,5,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,918,            return iStandardOffset;,2,0,0,0,0,1,0,0,0,2,23,5,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,922,            return iWallOffset - iStandardOffset;,0,0,0,0,0,1,0,0,0,1,37,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,929,            if (other == null) {,2,1,0,1,3,0,0,0,0,3,20,5,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,930,                return true;,0,0,0,0,0,1,0,0,0,1,12,7,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,932,            return iMillis > other.iMillis &&,6,2,0,0,0,1,0,0,0,8,33,5,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1389,            int size = transitions.size();,2,0,0,1,2,0,4,0,0,6,30,6,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1390,            if (size == 0) {,0,0,0,1,3,0,0,0,0,4,16,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1394,            long[] trans = new long[size];,2,0,1,2,4,0,0,0,0,4,30,6,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1395,            int[] wallOffsets = new int[size];,2,0,1,2,4,0,0,0,0,4,34,6,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1396,            int[] standardOffsets = new int[size];,2,0,1,2,4,0,0,0,0,4,38,6,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1397,            String[] nameKeys = new String[size];,2,0,1,2,4,0,8,4,0,16,37,1,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1399,            Transition last = null;,0,0,0,0,0,0,0,0,0,0,23,4,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1400,            for (int i=0; i<size; i++) {,8,1,0,1,3,0,0,0,0,10,28,5,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1401,                Transition tr = transitions.get(i);,2,0,0,1,2,0,6,2,0,10,35,7,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1403,                if (!tr.isTransitionFrom(last)) {,0,0,0,2,5,0,6,0,0,7,33,7,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1407,                trans[i] = tr.getMillis();,0,0,1,2,4,0,4,0,0,9,26,7,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1408,                wallOffsets[i] = tr.getWallOffset();,0,0,1,2,4,0,4,0,0,9,36,7,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1409,                standardOffsets[i] = tr.getStandardOffset();,2,0,1,2,4,0,4,0,0,16,44,1,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1410,                nameKeys[i] = tr.getNameKey();,0,0,1,2,4,0,4,0,0,9,30,7,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1412,                last = tr;,6,0,0,0,0,0,0,2,0,10,10,1,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1417,            String[] zoneNameData = new String[5];,2,0,0,2,4,0,10,4,0,16,38,1,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1418,            String[][] zoneStrings = new DateFormatSymbols(Locale.ENGLISH).getZoneStrings();,6,0,0,4,8,0,2,4,0,12,80,5,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1419,            for (int j = 0; j < zoneStrings.length; j++) {,10,1,0,1,3,0,0,0,0,12,46,5,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1420,                String[] set = zoneStrings[j];,2,1,0,2,4,0,6,0,0,9,30,5,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1421,                if (set != null && set.length == 5 && id.equals(set[0])) {,8,4,1,3,7,0,10,2,0,27,58,1,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1426,            Chronology chrono = ISOChronology.getInstanceUTC();,2,0,0,1,2,0,4,2,0,8,51,5,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1428,            for (int i = 0; i < nameKeys.length - 1; i++) {,10,2,0,1,3,0,0,0,0,13,47,5,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1429,                String curNameKey = nameKeys[i];,2,0,1,1,2,0,0,2,0,8,32,7,1.0,0,0
+defect4j,time,org/joda/time/tz/DateTimeZoneBuilder,11,1430,                String nextNameKey = nameKeys[i + 1];,0,0,0,1,2,0,0,0,0,3,37,4,1.0,0,0

@@ -1,0 +1,109 @@
+project_path,version,lines,statement,suspicious,faulty,predict,miss_line
+org/apache/commons/math/stat/Frequency,89,110,            addValue((Comparable<?>) v);            ,1.0,1,,1
+org/apache/commons/math/stat/Frequency,89,57,    public Frequency() {,0.16667,1,,1
+org/apache/commons/math/stat/Frequency,89,58,        freqTable = new TreeMap();,0.16667,0,,0
+org/apache/commons/math/stat/Frequency,89,59,    },0.16667,0,,0
+org/apache/commons/math/stat/Frequency,89,468,"    private static class NaturalComparator implements Comparator, Serializable {",0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,487,            return ((Comparable)o1).compareTo(o2);,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,66,    public Frequency(Comparator comparator) {,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,67,        freqTable = new TreeMap(comparator);,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,68,    },0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,78,        NumberFormat nf = NumberFormat.getPercentInstance();,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,79,        StringBuffer outBuffer = new StringBuffer();,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,80,"        outBuffer.append(""Value \t Freq. \t Pct. \t Cum Pct. \n"");",0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,81,        Iterator iter = freqTable.keySet().iterator();,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,82,        while (iter.hasNext()) {,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,83,            Object value = iter.next();,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,84,            outBuffer.append(value);,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,85,            outBuffer.append('\t');,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,86,            outBuffer.append(getCount(value));,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,87,            outBuffer.append('\t');,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,88,            outBuffer.append(nf.format(getPct(value)));,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,89,            outBuffer.append('\t');,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,90,            outBuffer.append(nf.format(getCumPct(value)));,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,91,            outBuffer.append('\n');,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,92,        },0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,93,        return outBuffer.toString();,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,111,    },0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,124,        Object obj = v;,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,125,        if (v instanceof Integer) {,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,126,           obj = Long.valueOf(((Integer) v).longValue());,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,129,            Long count = (Long) freqTable.get(obj);,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,130,            if (count == null) {,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,131,"                freqTable.put(obj, Long.valueOf(1));",0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,133,"                freqTable.put(obj, Long.valueOf(count.longValue() + 1));",0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,138,        },0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,135,        } catch (ClassCastException ex) {   ,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,137,"            throw new IllegalArgumentException(""Value not comparable to existing values."");",0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,139,    },0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,147,        addValue(Long.valueOf(v));,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,148,    },0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,156,        addValue(Long.valueOf(v.longValue()));,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,157,    },0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,165,        addValue(Long.valueOf(v));,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,166,    },0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,174,        addValue(Character.valueOf(v));,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,175,    },0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,179,        freqTable.clear();,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,180,    },0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,192,        return freqTable.keySet().iterator();,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,203,        long result = 0;,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,204,        Iterator iterator = freqTable.values().iterator();,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,205,        while (iterator.hasNext())  {,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,206,            result += ((Long) iterator.next()).longValue();,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,208,        return result;,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,219,        if (v instanceof Integer) {,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,220,            return getCount(((Integer) v).longValue());,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,222,        long result = 0;,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,224,            Long count =  (Long) freqTable.get(v);,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,225,            if (count != null) {,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,226,                result = count.longValue();,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,230,        },0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,228,        } catch (ClassCastException ex) {,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,231,        return result;,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,241,        return getCount(Long.valueOf(v));,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,251,        return getCount(Long.valueOf(v));,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,261,        return getCount(Character.valueOf(v));,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,276,        final long sumFreq = getSumFreq();,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,277,        if (sumFreq == 0) {,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,278,            return Double.NaN;,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,280,        return (double) getCount(v) / (double) sumFreq;        ,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,291,        return getPct(Long.valueOf(v));       ,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,302,        return getPct(Long.valueOf(v));         ,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,313,        return getPct(Character.valueOf(v));         ,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,327,        if (getSumFreq() == 0) {,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,328,            return 0;,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,330,        if (v instanceof Integer) {,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,331,            return getCumFreq(((Integer) v).longValue());,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,333,        Comparator c = freqTable.comparator();,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,334,        if (c == null) {,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,335,            c = new NaturalComparator();,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,337,        long result = 0;,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,340,            Long value = (Long) freqTable.get(v);,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,341,            if (value != null) {,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,342,                result = value.longValue();,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,346,        },0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,344,        } catch (ClassCastException ex) {,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,345,            return result;   // v is not comparable,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,348,"        if (c.compare(v, freqTable.firstKey()) < 0) {",0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,349,"            return 0;  // v is comparable, but less than first value",0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,352,"        if (c.compare(v, freqTable.lastKey()) >= 0) {",0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,353,"            return getSumFreq();    // v is comparable, but greater than the last value",0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,356,        Iterator values = valuesIterator();,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,357,        while (values.hasNext()) {,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,358,            Object nextValue = values.next();,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,359,"            if (c.compare(v, nextValue) > 0) {",0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,360,                result += getCount(nextValue);,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,362,                return result;,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,364,        },0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,365,        return result;,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,377,        return getCumFreq(Long.valueOf(v));       ,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,389,        return getCumFreq(Long.valueOf(v));         ,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,401,        return getCumFreq(Character.valueOf(v));         ,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,418,        final long sumFreq = getSumFreq();,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,419,        if (sumFreq == 0) {,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,420,            return Double.NaN;,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,422,        return (double) getCumFreq(v) / (double) sumFreq;        ,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,435,        return getCumPct(Long.valueOf(v));       ,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,448,        return getCumPct(Long.valueOf(v));         ,0.0,0,,0
+org/apache/commons/math/stat/Frequency,89,461,        return getCumPct(Character.valueOf(v));         ,0.0,0,,0

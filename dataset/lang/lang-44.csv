@@ -1,0 +1,190 @@
+project_path,version,lines,statement,suspicious,faulty,predict,miss_line
+org/apache/commons/lang/NumberUtils,44,139,        if (val == null) {,0.5,0,,0
+org/apache/commons/lang/NumberUtils,44,142,        if (val.length() == 0) {,0.5,0,,0
+org/apache/commons/lang/NumberUtils,44,145,"        if (val.startsWith(""--"")) {",0.5,1,,1
+org/apache/commons/lang/NumberUtils,44,152,"        if (val.startsWith(""0x"") || val.startsWith(""-0x"")) {",0.5,0,,0
+org/apache/commons/lang/NumberUtils,44,155,        char lastChar = val.charAt(val.length() - 1);,0.5,0,,0
+org/apache/commons/lang/NumberUtils,44,159,        int decPos = val.indexOf('.');,0.5,0,,0
+org/apache/commons/lang/NumberUtils,44,160,        int expPos = val.indexOf('e') + val.indexOf('E') + 1;,0.5,0,,0
+org/apache/commons/lang/NumberUtils,44,162,        if (decPos > -1) {,0.5,0,,0
+org/apache/commons/lang/NumberUtils,44,174,            if (expPos > -1) {,0.5,0,,0
+org/apache/commons/lang/NumberUtils,44,177,                mant = val;,0.5,0,,0
+org/apache/commons/lang/NumberUtils,44,179,            dec = null;,0.5,0,,0
+org/apache/commons/lang/NumberUtils,44,181,        if (!Character.isDigit(lastChar)) {,0.5,0,,0
+org/apache/commons/lang/NumberUtils,44,182,            if (expPos > -1 && expPos < val.length() - 1) {,0.5,0,,0
+org/apache/commons/lang/NumberUtils,44,185,                exp = null;,0.5,0,,0
+org/apache/commons/lang/NumberUtils,44,188,"            String numeric = val.substring(0, val.length() - 1);",0.5,0,,0
+org/apache/commons/lang/NumberUtils,44,189,            boolean allZeros = isAllZeros(mant) && isAllZeros(exp);,0.5,0,,0
+org/apache/commons/lang/NumberUtils,44,190,            switch (lastChar) {,0.5,0,,0
+org/apache/commons/lang/NumberUtils,44,193,                    if (dec == null,0.5,0,,0
+org/apache/commons/lang/NumberUtils,44,297,        if (s == null) {,0.5,0,,0
+org/apache/commons/lang/NumberUtils,44,300,        for (int i = s.length() - 1; i >= 0; i--) {,0.5,0,,0
+org/apache/commons/lang/NumberUtils,44,301,            if (s.charAt(i) != '0') {,0.5,0,,0
+org/apache/commons/lang/NumberUtils,44,302,                return false;,0.5,0,,0
+org/apache/commons/lang/NumberUtils,44,47,      super();,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,48,    },0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,61,"        return stringToInt(str, 0);",0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,74,            return Integer.parseInt(str);,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,75,        } catch (NumberFormatException nfe) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,76,            return defaultValue;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,140,            return null;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,143,"            throw new NumberFormatException(""\""\"" is not a valid number."");",0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,150,            return null;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,153,            return createInteger(val);,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,164,            if (expPos > -1) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,165,                if (expPos < decPos) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,166,"                    throw new NumberFormatException(val + "" is not a valid number."");",0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,168,"                dec = val.substring(decPos + 1, expPos);",0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,170,                dec = val.substring(decPos + 1);,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,172,"            mant = val.substring(0, decPos);",0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,175,"                mant = val.substring(0, expPos);",0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,183,"                exp = val.substring(expPos + 1, val.length() - 1);",0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,197,                            return createLong(numeric);,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,198,                        } catch (NumberFormatException nfe) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,201,                        return createBigInteger(numeric);,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,204,"                    throw new NumberFormatException(val + "" is not a valid number."");",0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,208,                        Float f = NumberUtils.createFloat(numeric);,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,209,                        if (!(f.isInfinite() || (f.floatValue() == 0.0F && !allZeros))) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,212,                            return f;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,217,                    },0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,215,                    } catch (NumberFormatException e) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,222,                        Double d = NumberUtils.createDouble(numeric);,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,223,                        if (!(d.isInfinite() || (d.floatValue() == 0.0D && !allZeros))) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,224,                            return d;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,228,                    },0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,226,                    } catch (NumberFormatException nfe) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,230,                        return createBigDecimal(numeric);,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,231,                    } catch (NumberFormatException e) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,236,"                    throw new NumberFormatException(val + "" is not a valid number."");",0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,242,            if (expPos > -1 && expPos < val.length() - 1) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,243,"                exp = val.substring(expPos + 1, val.length());",0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,245,                exp = null;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,247,            if (dec == null && exp == null) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,250,                    return createInteger(val);,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,251,                } catch (NumberFormatException nfe) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,255,                    return createLong(val);,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,256,                } catch (NumberFormatException nfe) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,259,                return createBigInteger(val);,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,263,                boolean allZeros = isAllZeros(mant) && isAllZeros(exp);,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,265,                    Float f = createFloat(val);,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,266,                    if (!(f.isInfinite() || (f.floatValue() == 0.0F && !allZeros))) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,267,                        return f;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,271,                },0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,269,                } catch (NumberFormatException nfe) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,273,                    Double d = createDouble(val);,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,274,                    if (!(d.isInfinite() || (d.doubleValue() == 0.0D && !allZeros))) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,275,                        return d;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,279,                },0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,277,                } catch (NumberFormatException nfe) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,281,                return createBigDecimal(val);,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,298,            return true;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,305,        return s.length() > 0;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,318,        return Float.valueOf(val);,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,329,        return Double.valueOf(val);,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,342,        return Integer.decode(val);,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,353,        return Long.valueOf(val);,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,364,        BigInteger bi = new BigInteger(val);,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,365,        return bi;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,376,        BigDecimal bd = new BigDecimal(val);,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,377,        return bd;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,391,        if (b < a) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,392,            a = b;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,394,        if (c < a) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,395,            a = c;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,397,        return a;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,409,        if (b < a) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,410,            a = b;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,412,        if (c < a) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,413,            a = c;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,415,        return a;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,427,        if (b > a) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,428,            a = b;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,430,        if (c > a) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,431,            a = c;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,433,        return a;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,445,        if (b > a) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,446,            a = b;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,448,        if (c > a) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,449,            a = c;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,451,        return a;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,491,        if (lhs < rhs) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,492,            return -1;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,494,        if (lhs > rhs) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,495,            return +1;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,501,        long lhsBits = Double.doubleToLongBits(lhs);,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,502,        long rhsBits = Double.doubleToLongBits(rhs);,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,503,        if (lhsBits == rhsBits) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,504,            return 0;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,512,        if (lhsBits < rhsBits) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,513,            return -1;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,515,            return +1;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,552,        if (lhs < rhs) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,553,            return -1;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,555,        if (lhs > rhs) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,556,            return +1;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,562,        int lhsBits = Float.floatToIntBits(lhs);,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,563,        int rhsBits = Float.floatToIntBits(rhs);,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,564,        if (lhsBits == rhsBits) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,565,            return 0;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,573,        if (lhsBits < rhsBits) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,574,            return -1;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,576,            return +1;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,593,        if ((str == null) || (str.length() == 0)) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,594,            return false;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,596,        for (int i = 0; i < str.length(); i++) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,597,            if (!Character.isDigit(str.charAt(i))) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,598,                return false;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,601,        return true;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,618,        if (StringUtils.isEmpty(str)) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,619,            return false;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,621,        char[] chars = str.toCharArray();,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,622,        int sz = chars.length;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,623,        boolean hasExp = false;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,624,        boolean hasDecPoint = false;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,625,        boolean allowSigns = false;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,626,        boolean foundDigit = false;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,628,        int start = (chars[0] == '-') ? 1 : 0;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,629,        if (sz > start + 1) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,630,            if (chars[start] == '0' && chars[start + 1] == 'x') {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,631,                int i = start + 2;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,632,                if (i == sz) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,633,"                    return false; // str == ""0x""",0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,636,                for (; i < chars.length; i++) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,637,                    if ((chars[i] < '0' || chars[i] > '9'),0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,640,                        return false;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,643,                return true;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,646,"        sz--; // don't want to loop to the last char, check it afterwords",0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,648,        int i = start;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,651,        while (i < sz || (i < sz + 1 && allowSigns && !foundDigit)) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,652,            if (chars[i] >= '0' && chars[i] <= '9') {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,653,                foundDigit = true;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,654,                allowSigns = false;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,656,            } else if (chars[i] == '.') {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,657,                if (hasDecPoint || hasExp) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,659,                    return false;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,661,                hasDecPoint = true;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,662,            } else if (chars[i] == 'e' || chars[i] == 'E') {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,664,                if (hasExp) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,666,                    return false;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,668,                if (!foundDigit) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,669,                    return false;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,671,                hasExp = true;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,672,                allowSigns = true;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,673,            } else if (chars[i] == '+' || chars[i] == '-') {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,674,                if (!allowSigns) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,675,                    return false;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,677,                allowSigns = false;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,678,                foundDigit = false; // we need a digit after the E,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,680,                return false;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,682,            i++;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,684,        if (i < chars.length) {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,685,            if (chars[i] >= '0' && chars[i] <= '9') {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,687,                return true;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,689,            if (chars[i] == 'e' || chars[i] == 'E') {,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,691,                return false;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,693,            if (!allowSigns,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,698,                return foundDigit;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,700,            if (chars[i] == 'l',0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,703,                return foundDigit && !hasExp;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,706,            return false;,0.0,0,,0
+org/apache/commons/lang/NumberUtils,44,710,        return !allowSigns && foundDigit;,0.0,0,,0

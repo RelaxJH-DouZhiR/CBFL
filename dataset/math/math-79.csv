@@ -1,0 +1,492 @@
+project_path,version,lines,statement,suspicious,faulty,predict,miss_line
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,30,"public class EuclideanIntegerPoint implements Clusterable<EuclideanIntegerPoint>, Serializable {",1.0,0,,0
+org/apache/commons/math/stat/clustering/Cluster,79,45,    public Cluster(final T center) {,1.0,0,,0
+org/apache/commons/math/stat/clustering/Cluster,79,46,        this.center = center;,1.0,0,,0
+org/apache/commons/math/stat/clustering/Cluster,79,47,        points = new ArrayList<T>();,1.0,0,,0
+org/apache/commons/math/stat/clustering/Cluster,79,48,    },1.0,0,,0
+org/apache/commons/math/stat/clustering/Cluster,79,71,        return center;,1.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,40,    public KMeansPlusPlusClusterer(final Random random) {,1.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,41,        this.random = random;,1.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,42,    },1.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,56,"        List<Cluster<T>> clusters = chooseInitialCenters(points, k, random);",1.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,57,"        assignPointsToClusters(clusters, points);",1.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,89,        for (final T p : points) {,1.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,90,"            Cluster<T> cluster = getNearestCluster(clusters, p);",1.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,91,            cluster.addPoint(p);,1.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,107,        final List<T> pointSet = new ArrayList<T>(points);,1.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,108,        final List<Cluster<T>> resultSet = new ArrayList<Cluster<T>>();,1.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,111,        final T firstPoint = pointSet.remove(random.nextInt(pointSet.size()));,1.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,112,        resultSet.add(new Cluster<T>(firstPoint));,1.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,114,        final double[] dx2 = new double[pointSet.size()];,1.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,115,        while (resultSet.size() < k) {,1.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,139,        return resultSet;,1.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,153,        double minDistance = Double.MAX_VALUE;,1.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,154,        Cluster<T> minCluster = null;,1.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,155,        for (final Cluster<T> c : clusters) {,1.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,156,            final double distance = point.distanceFrom(c.getCenter());,1.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,157,            if (distance < minDistance) {,1.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,161,        },1.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,162,        return minCluster;,1.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,57,"        return MathUtils.distance(point, p.getPoint());",0.5,0,,0
+org/apache/commons/math/util/MathUtils,79,1624,      int sum = 0;,0.33333,1,,0
+org/apache/commons/math/util/MathUtils,79,1625,      for (int i = 0; i < p1.length; i++) {,0.33333,0,,0
+org/apache/commons/math/util/MathUtils,79,1626,          final int dp = p1[i] - p2[i];,0.33333,1,,0
+org/apache/commons/math/util/MathUtils,79,1627,          sum += dp * dp;,0.33333,0,,0
+org/apache/commons/math/util/MathUtils,79,1629,      return Math.sqrt(sum);,0.33333,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,43,    public EuclideanIntegerPoint(final int[] point) {,0.2,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,44,        this.point = point;,0.2,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,45,    },0.2,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,52,        return point;,0.2,0,,0
+org/apache/commons/math/util/MathUtils,79,30,public final class MathUtils {,0.00247,0,,0
+org/apache/commons/math/util/MathUtils,79,69,    private static final long[] FACTORIALS = new long[] {,0.00247,0,,0
+org/apache/commons/math/util/MathUtils,79,82,        super();,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,83,    },0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,96,        long s = (long)x + (long)y;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,97,        if (s < Integer.MIN_VALUE || s > Integer.MAX_VALUE) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,98,"            throw new ArithmeticException(""overflow: add"");",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,100,        return (int)s;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,114,"        return addAndCheck(a, b, ""overflow: add"");",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,130,        if (a > b) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,132,"            ret = addAndCheck(b, a, msg);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,136,            if (a < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,137,                if (b < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,139,                    if (Long.MIN_VALUE - b <= a) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,140,                        ret = a + b;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,142,                        throw new ArithmeticException(msg);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,146,                    ret = a + b;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,153,                if (a <= Long.MAX_VALUE - b) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,154,                    ret = a + b;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,156,                    throw new ArithmeticException(msg);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,160,        return ret;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,189,"        checkBinomial(n, k);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,190,        if ((n == k) || (k == 0)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,191,            return 1;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,193,        if ((k == 1) || (k == n - 1)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,194,            return n;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,197,        if (k > n / 2),0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,198,"            return binomialCoefficient(n, n - k);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,205,        long result = 1;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,206,        if (n <= 61) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,208,            int i = n - k + 1;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,209,            for (int j = 1; j <= k; j++) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,210,                result = result * i / j;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,211,                i++;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,213,        } else if (n <= 66) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,216,            int i = n - k + 1;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,217,            for (int j = 1; j <= k; j++) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,224,"                final long d = gcd(i, j);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,225,                result = (result / (j / d)) * (i / d);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,226,                i++;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,228,        } else {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,232,            int i = n - k + 1;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,233,            for (int j = 1; j <= k; j++) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,234,"                final long d = gcd(i, j);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,235,"                result = mulAndCheck(result / (j / d), i / d);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,236,                i++;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,239,        return result;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,265,"        checkBinomial(n, k);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,266,        if ((n == k) || (k == 0)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,267,            return 1d;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,269,        if ((k == 1) || (k == n - 1)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,270,            return n;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,272,        if (k > n/2) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,273,"            return binomialCoefficientDouble(n, n - k);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,275,        if (n < 67) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,276,"            return binomialCoefficient(n,k);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,279,        double result = 1d;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,280,        for (int i = 1; i <= k; i++) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,281,             result *= (double)(n - k + i) / (double)i;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,284,        return Math.floor(result + 0.5);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,306,"        checkBinomial(n, k);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,307,        if ((n == k) || (k == 0)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,308,            return 0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,310,        if ((k == 1) || (k == n - 1)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,311,            return Math.log(n);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,318,        if (n < 67) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,319,"            return Math.log(binomialCoefficient(n,k));",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,326,        if (n < 1030) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,327,"            return Math.log(binomialCoefficientDouble(n, k));",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,330,        if (k > n / 2) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,331,"            return binomialCoefficientLog(n, n - k);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,337,        double logSum = 0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,340,        for (int i = n - k + 1; i <= n; i++) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,341,            logSum += Math.log(i);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,345,        for (int i = 2; i <= k; i++) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,346,            logSum -= Math.log(i);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,349,        return logSum;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,360,        if (n < k) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,361,            throw MathRuntimeException.createIllegalArgumentException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,365,        if (n < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,366,            throw MathRuntimeException.createIllegalArgumentException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,370,    },0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,383,"        if (equals(x, y, eps)) {",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,384,            return 0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,385,        } else if (x < y) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,386,          return -1;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,388,        return 1;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,399,        return (Math.exp(x) + Math.exp(-x)) / 2.0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,411,        return (Double.isNaN(x) && Double.isNaN(y)) || x == y;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,427,"      return equals(x, y) || (Math.abs(y - x) <= eps);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,447,        assert maxUlps > 0 && maxUlps < NAN_GAP;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,449,        long xInt = Double.doubleToLongBits(x);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,450,        long yInt = Double.doubleToLongBits(y);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,453,        if (xInt < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,454,            xInt = SGN_MASK - xInt;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,456,        if (yInt < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,457,            yInt = SGN_MASK - yInt;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,460,        return Math.abs(xInt - yInt) <= maxUlps;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,474,        if ((x == null) || (y == null)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,475,            return !((x == null) ^ (y == null));,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,477,        if (x.length != y.length) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,478,            return false;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,480,        for (int i = 0; i < x.length; ++i) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,481,"            if (!equals(x[i], y[i])) {",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,482,                return false;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,485,        return true;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,511,        if (n < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,512,            throw MathRuntimeException.createIllegalArgumentException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,516,        if (n > 20) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,517,            throw new ArithmeticException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,520,        return FACTORIALS[n];,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,544,        if (n < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,545,            throw MathRuntimeException.createIllegalArgumentException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,549,        if (n < 21) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,550,            return factorial(n);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,552,        return Math.floor(Math.exp(factorialLog(n)) + 0.5);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,569,        if (n < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,570,            throw MathRuntimeException.createIllegalArgumentException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,574,        if (n < 21) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,575,            return Math.log(factorial(n));,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,577,        double logSum = 0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,578,        for (int i = 2; i <= n; i++) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,579,            logSum += Math.log(i);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,581,        return logSum;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,615,        int u = p;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,616,        int v = q;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,617,        if ((u == 0) || (v == 0)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,618,            if ((u == Integer.MIN_VALUE) || (v == Integer.MIN_VALUE)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,619,                throw MathRuntimeException.createArithmeticException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,623,            return Math.abs(u) + Math.abs(v);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,630,        if (u > 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,631,            u = -u;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,633,        if (v > 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,634,            v = -v;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,637,        int k = 0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,638,        while ((u & 1) == 0 && (v & 1) == 0 && k < 31) { // while u and v are,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,640,            u /= 2;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,641,            v /= 2;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,642,            k++; // cast out twos.,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,644,        if (k == 31) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,645,            throw MathRuntimeException.createArithmeticException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,651,        int t = ((u & 1) == 1) ? v : -(u / 2)/* B3 */;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,657,            while ((t & 1) == 0) { // while t is even..,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,658,                t /= 2; // cast out twos,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,661,            if (t > 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,662,                u = -t;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,664,                v = t;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,667,            t = (v - u) / 2;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,670,        } while (t != 0);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,671,        return -u * (1 << k); // gcd is u*2^k,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,681,        return new Double(value).hashCode();,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,692,        return Arrays.hashCode(value);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,703,        return (x >= ZB) ? PB : NB;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,715,        if (Double.isNaN(x)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,716,            return Double.NaN;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,718,        return (x >= 0.0) ? 1.0 : -1.0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,729,        if (Float.isNaN(x)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,730,            return Float.NaN;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,732,        return (x >= 0.0F) ? 1.0F : -1.0F;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,742,        return (x >= 0) ? 1 : -1;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,752,        return (x >= 0L) ? 1L : -1L;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,763,        return (x >= ZS) ? PS : NS;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,790,        if (a==0 || b==0){,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,791,            return 0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,793,"        int lcm = Math.abs(mulAndCheck(a / gcd(a, b), b));",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,794,        if (lcm == Integer.MIN_VALUE){,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,795,"            throw new ArithmeticException(""overflow: lcm is 2^31"");",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,797,        return lcm;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,817,        return Math.log(x)/Math.log(base);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,831,        long m = ((long)x) * ((long)y);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,832,        if (m < Integer.MIN_VALUE || m > Integer.MAX_VALUE) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,833,"            throw new ArithmeticException(""overflow: mul"");",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,835,        return (int)m;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,850,"        String msg = ""overflow: multiply"";",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,851,        if (a > b) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,853,"            ret = mulAndCheck(b, a);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,855,            if (a < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,856,                if (b < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,858,                    if (a >= Long.MAX_VALUE / b) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,859,                        ret = a * b;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,861,                        throw new ArithmeticException(msg);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,863,                } else if (b > 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,865,                    if (Long.MIN_VALUE / b <= a) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,866,                        ret = a * b;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,868,                        throw new ArithmeticException(msg);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,873,                    ret = 0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,875,            } else if (a > 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,880,                if (a <= Long.MAX_VALUE / b) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,881,                    ret = a * b;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,883,                    throw new ArithmeticException(msg);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,887,                ret = 0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,890,        return ret;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,913,        if (Double.isNaN(d) || Double.isInfinite(d)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,914,                return d;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,915,        } else if (d == 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,916,                return (direction < 0) ? -Double.MIN_VALUE : Double.MIN_VALUE;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,922,        long bits     = Double.doubleToLongBits(d);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,923,        long sign     = bits & 0x8000000000000000L;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,924,        long exponent = bits & 0x7ff0000000000000L;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,925,        long mantissa = bits & 0x000fffffffffffffL;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,927,        if (d * (direction - d) >= 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,929,                if (mantissa == 0x000fffffffffffffL) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,930,                        return Double.longBitsToDouble(sign |,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,933,                        return Double.longBitsToDouble(sign |,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,938,                if (mantissa == 0L) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,939,                        return Double.longBitsToDouble(sign |,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,943,                        return Double.longBitsToDouble(sign |,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,962,        if ((d == 0) || Double.isNaN(d) || Double.isInfinite(d)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,963,            return d;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,967,        final long bits     = Double.doubleToLongBits(d);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,968,        final long exponent = bits & 0x7ff0000000000000L;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,969,        final long rest     = bits & 0x800fffffffffffffL;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,972,        final long newBits = rest | (exponent + (((long) scaleFactor) << 52));,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,973,        return Double.longBitsToDouble(newBits);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,997,         return a - TWO_PI * Math.floor((a + Math.PI - center) / TWO_PI);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1022,         if (Double.isInfinite(normalizedSum)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1023,             throw MathRuntimeException.createIllegalArgumentException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1026,         if (Double.isNaN(normalizedSum)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1027,             throw MathRuntimeException.createIllegalArgumentException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1030,         double sum = 0d;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1031,         final int len = values.length;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1032,         double[] out = new double[len];,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1033,         for (int i = 0; i < len; i++) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1034,             if (Double.isInfinite(values[i])) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1035,                 throw MathRuntimeException.createArithmeticException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1038,             if (!Double.isNaN(values[i])) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1039,                 sum += values[i];,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1042,         if (sum == 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1043,             throw MathRuntimeException.createArithmeticException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1046,         for (int i = 0; i < len; i++) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1047,             if (Double.isNaN(values[i])) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1048,                 out[i] = Double.NaN;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1050,                 out[i] = values[i] * normalizedSum / sum;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1053,         return out;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1066,"        return round(x, scale, BigDecimal.ROUND_HALF_UP);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1083,            return (new BigDecimal,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1087,        } catch (NumberFormatException ex) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1088,            if (Double.isInfinite(x)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1089,                return x;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1091,                return Double.NaN;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1106,"        return round(x, scale, BigDecimal.ROUND_HALF_UP);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1122,        float sign = indicator(x);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1123,"        float factor = (float)Math.pow(10.0f, scale) * sign;",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1124,"        return (float)roundUnscaled(x * factor, sign, roundingMethod) / factor;",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1141,        switch (roundingMethod) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1143,            if (sign == -1) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1144,"                unscaled = Math.floor(nextAfter(unscaled, Double.NEGATIVE_INFINITY));",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1146,"                unscaled = Math.ceil(nextAfter(unscaled, Double.POSITIVE_INFINITY));",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1148,            break;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1150,"            unscaled = Math.floor(nextAfter(unscaled, Double.NEGATIVE_INFINITY));",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1151,            break;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1153,            if (sign == -1) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1154,"                unscaled = Math.ceil(nextAfter(unscaled, Double.POSITIVE_INFINITY));",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1156,"                unscaled = Math.floor(nextAfter(unscaled, Double.NEGATIVE_INFINITY));",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1158,            break;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1160,"            unscaled = nextAfter(unscaled, Double.NEGATIVE_INFINITY);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1161,            double fraction = unscaled - Math.floor(unscaled);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1162,            if (fraction > 0.5) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1163,                unscaled = Math.ceil(unscaled);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1165,                unscaled = Math.floor(unscaled);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1167,            break;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1170,            double fraction = unscaled - Math.floor(unscaled);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1171,            if (fraction > 0.5) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1172,                unscaled = Math.ceil(unscaled);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1173,            } else if (fraction < 0.5) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1174,                unscaled = Math.floor(unscaled);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1177,                if (Math.floor(unscaled) / 2.0 == Math.floor(Math,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1179,                    unscaled = Math.floor(unscaled);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1181,                    unscaled = Math.ceil(unscaled);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1184,            break;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1187,"            unscaled = nextAfter(unscaled, Double.POSITIVE_INFINITY);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1188,            double fraction = unscaled - Math.floor(unscaled);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1189,            if (fraction >= 0.5) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1190,                unscaled = Math.ceil(unscaled);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1192,                unscaled = Math.floor(unscaled);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1194,            break;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1197,            if (unscaled != Math.floor(unscaled)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1198,"                throw new ArithmeticException(""Inexact result from rounding"");",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1202,"            unscaled = Math.ceil(nextAfter(unscaled,  Double.POSITIVE_INFINITY));",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1203,            break;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1205,            throw MathRuntimeException.createIllegalArgumentException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1218,        return unscaled;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1232,        return (x == ZB) ? ZB : (x > ZB) ? PB : NB;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1248,        if (Double.isNaN(x)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1249,            return Double.NaN;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1251,        return (x == 0.0) ? 0.0 : (x > 0.0) ? 1.0 : -1.0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1266,        if (Float.isNaN(x)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1267,            return Float.NaN;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1269,        return (x == 0.0F) ? 0.0F : (x > 0.0F) ? 1.0F : -1.0F;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1283,        return (x == 0) ? 0 : (x > 0) ? 1 : -1;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1297,        return (x == 0L) ? 0L : (x > 0L) ? 1L : -1L;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1312,        return (x == ZS) ? ZS : (x > ZS) ? PS : NS;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1323,        return (Math.exp(x) - Math.exp(-x)) / 2.0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1337,        long s = (long)x - (long)y;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1338,        if (s < Integer.MIN_VALUE || s > Integer.MAX_VALUE) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1339,"            throw new ArithmeticException(""overflow: subtract"");",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1341,        return (int)s;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1356,"        String msg = ""overflow: subtract"";",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1357,        if (b == Long.MIN_VALUE) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1358,            if (a < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1359,                ret = a - b;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1361,                throw new ArithmeticException(msg);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1365,"            ret = addAndCheck(a, -b, msg);",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1367,        return ret;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1380,        if (e < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1381,            throw MathRuntimeException.createIllegalArgumentException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1386,        int result = 1;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1387,        int k2p    = k;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1388,        while (e != 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1389,            if ((e & 0x1) != 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1390,                result *= k2p;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1392,            k2p *= k2p;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1393,            e = e >> 1;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1396,        return result;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1410,        if (e < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1411,            throw MathRuntimeException.createIllegalArgumentException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1416,        int result = 1;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1417,        int k2p    = k;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1418,        while (e != 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1419,            if ((e & 0x1) != 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1420,                result *= k2p;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1422,            k2p *= k2p;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1423,            e = e >> 1;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1426,        return result;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1440,        if (e < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1441,            throw MathRuntimeException.createIllegalArgumentException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1446,        long result = 1l;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1447,        long k2p    = k;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1448,        while (e != 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1449,            if ((e & 0x1) != 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1450,                result *= k2p;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1452,            k2p *= k2p;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1453,            e = e >> 1;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1456,        return result;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1470,        if (e < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1471,            throw MathRuntimeException.createIllegalArgumentException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1476,        long result = 1l;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1477,        long k2p    = k;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1478,        while (e != 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1479,            if ((e & 0x1) != 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1480,                result *= k2p;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1482,            k2p *= k2p;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1483,            e = e >> 1;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1486,        return result;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1500,        if (e < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1501,            throw MathRuntimeException.createIllegalArgumentException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1506,        return k.pow(e);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1520,        if (e < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1521,            throw MathRuntimeException.createIllegalArgumentException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1526,        BigInteger result = BigInteger.ONE;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1527,        BigInteger k2p    = k;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1528,        while (e != 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1529,            if ((e & 0x1) != 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1530,                result = result.multiply(k2p);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1532,            k2p = k2p.multiply(k2p);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1533,            e = e >> 1;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1536,        return result;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1550,        if (e.compareTo(BigInteger.ZERO) < 0) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1551,            throw MathRuntimeException.createIllegalArgumentException(,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1556,        BigInteger result = BigInteger.ONE;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1557,        BigInteger k2p    = k;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1558,        while (!BigInteger.ZERO.equals(e)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1559,            if (e.testBit(0)) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1560,                result = result.multiply(k2p);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1562,            k2p = k2p.multiply(k2p);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1563,            e = e.shiftRight(1);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1566,        return result;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1578,        double sum = 0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1579,        for (int i = 0; i < p1.length; i++) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1580,            sum += Math.abs(p1[i] - p2[i]);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1582,        return sum;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1593,      int sum = 0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1594,      for (int i = 0; i < p1.length; i++) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1595,          sum += Math.abs(p1[i] - p2[i]);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1597,      return sum;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1608,        double sum = 0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1609,        for (int i = 0; i < p1.length; i++) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1610,            final double dp = p1[i] - p2[i];,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1611,            sum += dp * dp;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1613,        return Math.sqrt(sum);,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1640,        double max = 0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1641,        for (int i = 0; i < p1.length; i++) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1642,"            max = Math.max(max, Math.abs(p1[i] - p2[i]));",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1644,        return max;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1655,        int max = 0;,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1656,        for (int i = 0; i < p1.length; i++) {,0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1657,"            max = Math.max(max, Math.abs(p1[i] - p2[i]));",0.0,0,,0
+org/apache/commons/math/util/MathUtils,79,1659,        return max;,0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,62,        int[] centroid = new int[getPoint().length];,0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,63,        for (EuclideanIntegerPoint p : points) {,0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,64,            for (int i = 0; i < centroid.length; i++) {,0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,65,                centroid[i] += p.getPoint()[i];,0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,67,        },0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,68,        for (int i = 0; i < centroid.length; i++) {,0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,69,            centroid[i] /= points.size();,0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,71,        return new EuclideanIntegerPoint(centroid);,0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,77,        if (!(other instanceof EuclideanIntegerPoint)) {,0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,78,            return false;,0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,80,        final int[] otherPoint = ((EuclideanIntegerPoint) other).getPoint();,0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,81,        if (point.length != otherPoint.length) {,0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,82,            return false;,0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,84,        for (int i = 0; i < point.length; i++) {,0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,85,            if (point[i] != otherPoint[i]) {,0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,86,                return false;,0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,89,        return true;,0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,95,        int hashCode = 0;,0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,96,        for (Integer i : point) {,0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,97,            hashCode += i.hashCode() * 13 + 7;,0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,99,        return hashCode;,0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,105,"        final StringBuffer buff = new StringBuffer(""("");",0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,106,        final int[] coordinates = getPoint();,0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,107,        for (int i = 0; i < coordinates.length; i++) {,0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,108,            buff.append(coordinates[i]);,0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,109,            if (i < coordinates.length - 1) {,0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,110,"                buff.append("","");",0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,113,"        buff.append("")"");",0.0,0,,0
+org/apache/commons/math/stat/clustering/EuclideanIntegerPoint,79,114,        return buff.toString();,0.0,0,,0
+org/apache/commons/math/stat/clustering/Cluster,79,55,        points.add(point);,0.0,0,,0
+org/apache/commons/math/stat/clustering/Cluster,79,56,    },0.0,0,,0
+org/apache/commons/math/stat/clustering/Cluster,79,63,        return points;,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,60,        final int max = (maxIterations < 0) ? Integer.MAX_VALUE : maxIterations;,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,61,        for (int count = 0; count < max; count++) {,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,62,            boolean clusteringChanged = false;,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,63,            List<Cluster<T>> newClusters = new ArrayList<Cluster<T>>();,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,64,            for (final Cluster<T> cluster : clusters) {,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,65,                final T newCenter = cluster.getCenter().centroidOf(cluster.getPoints());,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,66,                if (!newCenter.equals(cluster.getCenter())) {,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,67,                    clusteringChanged = true;,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,69,                newClusters.add(new Cluster<T>(newCenter));,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,70,            },0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,71,            if (!clusteringChanged) {,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,72,                return clusters;,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,74,"            assignPointsToClusters(newClusters, points);",0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,75,            clusters = newClusters;,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,77,        return clusters;,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,92,        },0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,93,    },0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,118,            int sum = 0;,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,119,            for (int i = 0; i < pointSet.size(); i++) {,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,120,                final T p = pointSet.get(i);,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,121,"                final Cluster<T> nearest = getNearestCluster(resultSet, p);",0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,122,                final double d = p.distanceFrom(nearest.getCenter());,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,123,                sum += d * d;,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,124,                dx2[i] = sum;,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,129,            final double r = random.nextDouble() * sum;,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,130,            for (int i = 0 ; i < dx2.length; i++) {,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,131,                if (dx2[i] >= r) {,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,132,                    final T p = pointSet.remove(i);,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,133,                    resultSet.add(new Cluster<T>(p));,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,134,                    break;,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,137,        },0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,158,                minDistance = distance;,0.0,0,,0
+org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer,79,159,                minCluster = c;,0.0,0,,0

@@ -1,0 +1,691 @@
+dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,logic,lengthEle,lengthWord,depth,suspicious,accuracy,miss_line,predict
+defect4j,chart,org/jfree/data/time/TimePeriodValues,7,376,        add(item);,0,0,0,1,2,0,4,0,0,4,10,5,0.11111,0,0,-1
+defect4j,chart,org/jfree/data/time/TimePeriodValues,7,377,    },0,0,0,0,1,0,0,0,0,1,1,4,0.11111,0,0,-1
+defect4j,chart,org/jfree/data/time/TimePeriodValue,7,88,"        this(period, new Double(value));",4,0,0,2,4,0,0,2,0,6,32,4,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/TimePeriodValue,7,89,    },0,0,0,0,1,0,0,0,0,1,1,4,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,7,70,"public abstract class RegularTimePeriod implements TimePeriod, Comparable,",2,0,0,0,0,2,0,4,0,8,74,1,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,7,161,    public static final TimeZone DEFAULT_TIME_ZONE = TimeZone.getDefault();,2,0,0,1,2,3,4,2,0,11,71,2,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,7,182,        return new Date(getFirstMillisecond());,0,0,0,2,4,1,2,2,0,4,39,5,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/RegularTimePeriod,7,194,        return new Date(getLastMillisecond());,0,0,0,2,4,1,2,2,0,4,38,5,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/Week,8,175,"        this(time, RegularTimePeriod.DEFAULT_TIME_ZONE, Locale.getDefault());",0,0,0,2,4,0,0,0,0,6,69,4,0.5,1,0,-1
+defect4j,chart,org/jfree/data/time/Week,8,176,    },0,0,0,0,1,0,0,0,0,1,1,4,0.5,0,0,-1
+defect4j,chart,org/jfree/data/time/Week,8,188,"    public Week(Date time, TimeZone zone, Locale locale) {",0,0,0,1,3,0,0,0,0,4,54,4,0.5,0,0,-1
+defect4j,chart,org/jfree/data/time/Week,8,189,        if (time == null) {,2,1,0,1,3,0,0,0,0,3,19,4,0.5,0,0,-1
+defect4j,chart,org/jfree/data/time/Week,8,192,        if (zone == null) {,4,1,0,1,3,0,0,0,0,5,19,3,0.5,0,0,-1
+defect4j,chart,org/jfree/data/time/Week,8,195,        if (locale == null) {,2,1,0,1,3,0,0,0,0,3,21,4,0.5,0,0,-1
+defect4j,chart,org/jfree/data/time/Week,8,198,"        Calendar calendar = Calendar.getInstance(zone, locale);",2,0,0,1,2,0,8,2,0,12,55,4,0.5,0,0,-1
+defect4j,chart,org/jfree/data/time/Week,8,199,        calendar.setTime(time);,0,0,0,1,2,0,0,0,0,3,23,4,0.5,0,0,-1
+defect4j,chart,org/jfree/data/time/Week,8,204,        int tempWeek = calendar.get(Calendar.WEEK_OF_YEAR);,6,0,0,1,2,0,4,0,0,10,51,5,0.5,0,0,-1
+defect4j,chart,org/jfree/data/time/Week,8,205,        if (tempWeek == 1,2,1,0,0,1,0,0,0,0,3,17,5,0.5,0,0,-1
+defect4j,chart,org/jfree/data/time/Week,8,211,"            this.week = (byte) Math.min(tempWeek, LAST_WEEK_IN_YEAR);",6,0,0,2,4,1,8,0,0,16,57,2,0.5,0,0,-1
+defect4j,chart,org/jfree/data/time/Week,8,212,            int yyyy = calendar.get(Calendar.YEAR);,6,0,0,1,2,0,8,0,0,14,39,3,0.5,0,0,-1
+defect4j,chart,org/jfree/data/time/Week,8,215,            if (calendar.get(Calendar.MONTH) == Calendar.JANUARY,10,1,0,1,3,0,10,2,0,23,52,5,0.5,0,0,-1
+defect4j,chart,org/jfree/data/time/Week,8,219,            this.year = (short) yyyy;,0,0,0,1,2,0,0,0,0,3,25,4,0.5,0,0,-1
+defect4j,chart,org/jfree/data/time/Week,8,221,        peg(calendar);,0,0,0,1,2,0,4,0,0,4,14,5,0.5,0,0,-1
+defect4j,chart,org/jfree/data/time/Week,8,222,    },6,0,0,0,1,0,0,0,0,7,1,4,0.5,0,0,-1
+defect4j,chart,org/jfree/data/time/TimeSeries,9,883,"            throw new IllegalArgumentException(""Requires start <= end."");",4,0,0,1,2,0,2,6,0,13,61,3,1.0,0,0,-1
+defect4j,chart,org/jfree/data/time/TimeSeries,9,921,        if (start == null) {,0,0,0,1,3,0,0,0,0,4,20,4,1.0,0,0,-1
+defect4j,chart,org/jfree/data/time/TimeSeries,9,924,        if (end == null) {,2,1,0,1,3,0,2,0,0,5,18,4,1.0,0,0,-1
+defect4j,chart,org/jfree/data/time/TimeSeries,9,927,        if (start.compareTo(end) > 0) {,8,1,0,2,5,1,6,6,0,22,31,2,1.0,0,0,-1
+defect4j,chart,org/jfree/data/time/TimeSeries,9,931,        boolean emptyRange = false;,2,0,0,0,0,0,0,0,0,3,27,5,1.0,0,0,-1
+defect4j,chart,org/jfree/data/time/TimeSeries,9,932,        int startIndex = getIndex(start);,4,0,0,1,2,0,4,0,0,9,33,3,1.0,0,0,-1
+defect4j,chart,org/jfree/data/time/TimeSeries,9,933,        if (startIndex < 0) {,4,1,0,1,3,1,0,0,0,6,21,1,1.0,0,0,-1
+defect4j,chart,org/jfree/data/time/TimeSeries,9,934,            startIndex = -(startIndex + 1);,4,1,0,1,2,0,4,0,0,11,31,6,1.0,0,0,-1
+defect4j,chart,org/jfree/data/time/TimeSeries,9,935,            if (startIndex == this.data.size()) {,4,1,0,2,5,0,2,0,0,7,37,6,1.0,0,0,-1
+defect4j,chart,org/jfree/data/time/TimeSeries,9,939,        int endIndex = getIndex(end);,0,0,0,1,2,0,0,0,0,3,29,4,1.0,0,0,-1
+defect4j,chart,org/jfree/data/time/TimeSeries,9,940,        if (endIndex < 0) {             // end period is not in original series,2,1,0,1,3,0,0,0,0,3,71,4,1.0,0,0,-1
+defect4j,chart,org/jfree/data/time/TimeSeries,9,941,            endIndex = -(endIndex + 1); // this is first item AFTER end period,4,1,0,1,2,0,0,0,0,7,66,6,1.0,0,0,-1
+defect4j,chart,org/jfree/data/time/TimeSeries,9,942,            endIndex = endIndex - 1;    // so this is last item BEFORE end,4,1,0,0,0,0,0,0,0,6,62,6,1.0,0,0,-1
+defect4j,chart,org/jfree/data/time/TimeSeries,9,944,        if (endIndex < 0) {,2,1,0,1,3,0,0,0,0,3,19,4,1.0,1,0,-1
+defect4j,chart,org/jfree/data/time/TimeSeries,9,947,        if (emptyRange) {,0,0,0,1,3,0,0,0,0,4,17,4,1.0,0,0,-1
+defect4j,chart,org/jfree/data/time/TimeSeries,9,953,"            return createCopy(startIndex, endIndex);",0,0,0,1,2,1,6,0,0,6,40,7,1.0,0,0,-1
+defect4j,chart,org/jfree/data/time/TimeSeries,9,879,        if (start < 0) {,2,1,0,1,3,0,0,0,0,3,16,4,0.5,0,0,-1
+defect4j,chart,org/jfree/data/time/TimeSeries,9,882,        if (end < start) {,2,1,0,1,3,0,0,0,0,3,18,4,0.5,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,122,"    public Day(int day, int month, int year) {",10,0,0,1,3,1,0,0,0,11,42,2,0.16667,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,123,"        this.serialDate = SerialDate.createInstance(day, month, year);",0,0,0,1,2,0,0,0,0,3,62,4,0.16667,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,124,        peg(Calendar.getInstance());,0,0,0,2,4,0,6,0,0,6,28,5,0.16667,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,125,    },0,0,0,0,1,0,0,0,0,1,1,4,0.16667,0,0,-1
+defect4j,chart,org/jfree/data/time/SerialDate,9,500,            return false;,0,0,0,0,0,1,0,0,0,1,13,4,0.16667,0,0,-1
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,452,            if (SerialDate.isLeapYear(y)) {,4,2,0,2,5,0,4,0,0,10,31,5,0.14286,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,302,        return this.serialDate.toSerial();,2,0,0,1,2,1,2,0,0,4,34,5,0.125,0,0,-1
+defect4j,chart,org/jfree/data/time/TimeSeries,9,430,        if (period == null) {,0,0,0,1,3,0,0,0,0,4,21,4,0.125,0,0,-1
+defect4j,chart,org/jfree/data/time/TimeSeries,9,433,        TimeSeriesDataItem dummy = new TimeSeriesDataItem(,2,0,0,0,1,0,0,4,0,6,50,4,0.125,0,0,-1
+defect4j,chart,org/jfree/data/time/TimeSeries,9,435,"        return Collections.binarySearch(this.data, dummy);",0,0,0,1,2,1,0,0,0,4,50,4,0.125,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,183,        return this.serialDate;,0,0,0,0,0,1,0,0,0,1,23,4,0.11111,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,404,        if (o1 instanceof Day) {,2,0,0,1,3,0,0,2,0,4,24,5,0.11111,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,405,            Day d = (Day) o1;,4,0,0,1,2,0,0,4,0,8,17,6,0.11111,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,406,            result = -d.getSerialDate().compare(this.serialDate);,4,0,0,2,4,0,6,0,0,12,53,6,0.11111,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,407,        },0,0,0,0,1,0,0,0,0,1,1,4,0.11111,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,423,        return result;,2,0,0,0,0,1,0,0,0,2,14,4,0.11111,0,0,-1
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,211,        return this.serial;,4,1,0,0,0,1,0,0,0,5,19,4,0.11111,0,0,-1
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,308,        return this.serial - other.toSerial();,0,0,0,1,2,1,0,0,0,4,38,4,0.11111,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,250,        this.firstMillisecond = getFirstMillisecond(calendar);,2,0,0,1,2,0,4,0,0,7,54,4,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,251,        this.lastMillisecond = getLastMillisecond(calendar);,2,0,0,1,2,0,4,0,0,7,52,4,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,252,    },0,0,0,0,1,0,0,0,0,1,1,4,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,317,        int year = this.serialDate.getYYYY();,4,0,0,1,2,0,8,0,0,12,37,3,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,318,        int month = this.serialDate.getMonth();,4,0,0,1,2,0,2,0,0,6,39,5,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,319,        int day = this.serialDate.getDayOfMonth();,4,0,0,1,2,0,2,0,0,6,42,5,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,320,        calendar.clear();,0,0,0,1,2,0,4,0,0,4,17,5,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,321,"        calendar.set(year, month - 1, day, 0, 0, 0);",2,1,0,1,2,0,8,0,0,11,44,5,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,322,"        calendar.set(Calendar.MILLISECOND, 0);",4,0,0,1,2,0,4,0,0,8,38,5,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,324,        return calendar.getTime().getTime();,0,0,0,2,4,1,6,0,0,6,36,5,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,339,        int year = this.serialDate.getYYYY();,0,0,0,1,2,0,0,0,0,3,37,4,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,340,        int month = this.serialDate.getMonth();,0,0,0,1,2,0,0,0,0,3,39,4,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,341,        int day = this.serialDate.getDayOfMonth();,4,0,0,1,2,0,2,0,0,6,42,5,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,342,        calendar.clear();,0,0,0,1,2,0,4,0,0,4,17,5,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,343,"        calendar.set(year, month - 1, day, 23, 59, 59);",2,1,0,1,2,0,8,0,0,11,47,5,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,344,"        calendar.set(Calendar.MILLISECOND, 999);",4,0,0,1,2,0,4,0,0,8,40,5,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/Day,9,346,        return calendar.getTime().getTime();,0,0,0,2,4,1,6,0,0,6,36,5,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/SerialDate,9,210,    protected SerialDate() {,2,0,0,1,3,1,2,0,0,5,24,2,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/SerialDate,9,211,    },0,0,0,0,1,0,0,0,0,1,1,4,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/SerialDate,9,499,        if ((yyyy % 4) != 0) {,2,2,0,2,5,0,0,0,0,4,22,4,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/SerialDate,9,526,        final int leap4 = (yyyy - 1896) / 4;,10,4,0,1,2,1,0,2,0,17,36,3,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/SerialDate,9,527,        final int leap100 = (yyyy - 1800) / 100;,4,2,0,1,2,1,0,0,0,7,40,4,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/SerialDate,9,528,        final int leap400 = (yyyy - 1600) / 400;,4,2,0,1,2,1,0,0,0,7,40,4,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/SerialDate,9,529,        return leap4 - leap100 + leap400;,14,5,0,0,0,1,0,0,0,19,33,3,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/SerialDate,9,792,"        return new SpreadsheetDate(day, month, yyyy);",6,0,0,1,2,1,0,2,0,8,45,5,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,107,"    public SpreadsheetDate(final int day, final int month, final int year) {",8,0,0,1,3,4,0,0,0,12,72,2,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,109,        if ((year >= 1900) && (year <= 9999)) {,4,3,0,3,7,0,0,0,0,7,39,4,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,110,            this.year = year;,4,0,0,0,0,0,0,0,0,5,17,6,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,118,        if ((month >= MonthConstants.JANUARY),0,0,0,1,3,0,0,0,0,4,37,4,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,120,            this.month = month;,8,1,0,0,0,0,0,0,0,10,19,4,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,128,"        if ((day >= 1) && (day <= SerialDate.lastDayOfMonth(month, year))) {",4,3,0,4,9,0,8,0,0,15,68,4,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,129,            this.day = day;,4,0,0,0,0,0,0,0,0,5,15,6,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,136,"        this.serial = calcSerial(day, month, year);",2,0,0,1,2,0,8,0,0,11,43,4,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,138,    },0,0,0,0,1,0,0,0,0,1,1,4,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,231,        return this.year;,0,0,0,0,0,1,0,0,0,1,17,4,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,240,        return this.month;,2,0,0,0,0,1,0,0,0,2,18,5,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,249,        return this.day;,0,0,0,0,0,1,0,0,0,1,16,4,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,449,        final int yy = ((y - 1900) * 365) + SerialDate.leapYearCount(y - 1);,6,4,0,3,6,1,4,0,0,15,68,4,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,450,        int mm = SerialDate.AGGREGATE_DAYS_TO_END_OF_PRECEDING_MONTH[m];,6,0,1,1,2,0,0,0,0,8,64,5,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,451,        if (m > MonthConstants.FEBRUARY) {,6,1,0,1,3,0,0,0,0,7,34,4,0.1,0,0,-1
+defect4j,chart,org/jfree/data/time/SpreadsheetDate,9,456,        final int dd = d;,4,0,0,0,0,1,0,0,0,5,17,4,0.1,0,0,-1
+defect4j,chart,org/jfree/chart/imagemap/ImageMapUtilities,10,63,public class ImageMapUtilities {,0,0,0,0,1,0,0,0,0,1,32,4,0.0,0,0,-1
+defect4j,chart,org/jfree/chart/imagemap/ImageMapUtilities,10,79,"        ImageMapUtilities.writeImageMap(writer, name, info,",0,0,0,0,1,0,0,0,0,1,51,4,0.0,0,0,-1
+defect4j,chart,org/jfree/chart/imagemap/ImageMapUtilities,10,83,    },0,0,0,0,1,0,0,0,0,1,1,4,0.0,0,0,-1
+defect4j,chart,org/jfree/chart/imagemap/ImageMapUtilities,10,102,        ToolTipTagFragmentGenerator toolTipTagFragmentGenerator = null;,2,0,0,0,0,0,0,2,0,4,63,4,0.0,0,0,-1
+defect4j,chart,org/jfree/chart/imagemap/ImageMapUtilities,10,103,        if (useOverLibForToolTips) {,6,0,0,1,3,0,0,0,0,7,28,4,0.0,0,0,-1
+defect4j,chart,org/jfree/chart/util/ShapeUtilities,11,265,        if (p1 == null) {,2,1,0,1,3,0,0,0,0,3,17,4,0.06667,0,0,-1
+defect4j,chart,org/jfree/chart/util/ShapeUtilities,11,268,        if (p2 == null) {,2,1,0,1,3,0,0,0,0,3,17,4,0.06667,0,0,-1
+defect4j,chart,org/jfree/chart/util/ShapeUtilities,11,271,        if (p1.getWindingRule() != p2.getWindingRule()) {,0,1,0,3,7,0,8,0,0,9,49,4,0.06667,0,0,-1
+defect4j,chart,org/jfree/chart/util/ShapeUtilities,11,274,        PathIterator iterator1 = p1.getPathIterator(null);,2,0,0,1,2,0,4,2,0,8,50,4,0.06667,0,0,-1
+defect4j,chart,org/jfree/chart/util/ShapeUtilities,11,275,        PathIterator iterator2 = p1.getPathIterator(null);,2,0,0,1,2,0,4,2,0,8,50,4,0.06667,1,0,-1
+defect4j,chart,org/jfree/chart/util/ShapeUtilities,11,276,        double[] d1 = new double[6];,2,0,0,2,4,0,0,0,0,2,28,5,0.06667,0,0,-1
+defect4j,chart,org/jfree/chart/util/ShapeUtilities,11,277,        double[] d2 = new double[6];,0,0,0,2,4,0,0,0,0,6,28,4,0.06667,0,0,-1
+defect4j,chart,org/jfree/chart/util/ShapeUtilities,11,278,        boolean done = iterator1.isDone() && iterator2.isDone();,2,1,0,2,4,0,8,0,0,11,56,5,0.06667,0,0,-1
+defect4j,chart,org/jfree/chart/util/ShapeUtilities,11,279,        while (!done) {,2,0,0,1,3,0,0,0,0,3,15,4,0.06667,0,0,-1
+defect4j,chart,org/jfree/chart/util/ShapeUtilities,11,280,            if (iterator1.isDone() != iterator2.isDone()) {,0,1,0,3,7,0,8,0,0,9,47,6,0.06667,0,0,-1
+defect4j,chart,org/jfree/chart/util/ShapeUtilities,11,283,            int seg1 = iterator1.currentSegment(d1);,0,0,0,1,2,0,0,0,0,3,40,4,0.06667,0,0,-1
+defect4j,chart,org/jfree/chart/util/ShapeUtilities,11,284,            int seg2 = iterator2.currentSegment(d2);,0,0,0,1,2,0,0,0,0,3,40,4,0.06667,0,0,-1
+defect4j,chart,org/jfree/chart/util/ShapeUtilities,11,285,            if (seg1 != seg2) {,4,1,0,1,3,0,6,0,0,11,19,3,0.06667,0,0,-1
+defect4j,chart,org/jfree/chart/util/ShapeUtilities,11,288,"            if (!Arrays.equals(d1, d2)) {",0,0,0,2,5,0,8,0,0,9,29,6,0.06667,0,0,-1
+defect4j,chart,org/jfree/chart/util/ShapeUtilities,11,291,            iterator1.next();,0,0,0,1,2,0,0,0,0,3,17,4,0.06667,0,0,-1
+defect4j,chart,org/jfree/chart/util/ShapeUtilities,11,292,            iterator2.next();,0,0,0,1,2,0,4,0,0,4,17,7,0.06667,0,0,-1
+defect4j,chart,org/jfree/chart/plot/MultiplePiePlot,12,135,        this(null);,8,1,0,1,2,0,2,2,0,14,11,9,0.5,0,0,-1
+defect4j,chart,org/jfree/chart/plot/MultiplePiePlot,12,136,    },0,0,0,0,1,0,0,0,0,1,1,4,0.5,0,0,-1
+defect4j,chart,org/jfree/data/general/AbstractDataset,12,160,        List list = Arrays.asList(this.listenerList.getListenerList());,6,1,0,2,4,0,6,2,0,15,63,3,0.5,0,0,-1
+defect4j,chart,org/jfree/data/general/AbstractDataset,12,161,        return list.contains(listener);,0,0,0,1,2,1,6,0,0,6,31,5,0.5,0,0,-1
+defect4j,chart,org/jfree/chart/plot/MultiplePiePlot,12,144,        super();,0,0,0,1,2,0,0,0,0,3,8,4,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/MultiplePiePlot,12,111,    private double limit = 0.0;,0,0,0,0,0,0,0,0,0,0,27,4,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/MultiplePiePlot,12,145,        this.dataset = dataset;,4,0,0,0,0,0,0,0,0,5,23,4,0.33333,1,0,-1
+defect4j,chart,org/jfree/chart/plot/MultiplePiePlot,12,146,        PiePlot piePlot = new PiePlot(null);,4,0,0,1,2,0,0,6,0,11,36,2,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/MultiplePiePlot,12,147,        this.pieChart = new JFreeChart(piePlot);,4,0,0,1,2,0,0,2,0,7,40,4,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/MultiplePiePlot,12,148,        this.pieChart.removeLegend();,2,0,0,1,2,0,2,0,0,4,29,5,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/MultiplePiePlot,12,149,        this.dataExtractOrder = TableOrder.BY_COLUMN;,6,0,0,0,0,0,0,0,0,7,45,4,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/MultiplePiePlot,12,150,        this.pieChart.setBackgroundPaint(null);,0,0,0,1,2,0,0,0,0,3,39,4,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/MultiplePiePlot,12,151,"        TextTitle seriesTitle = new TextTitle(""Series Title"",",4,0,0,0,1,0,0,6,0,11,53,3,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/MultiplePiePlot,12,153,        seriesTitle.setPosition(RectangleEdge.BOTTOM);,4,0,0,1,2,0,4,0,0,8,46,5,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/MultiplePiePlot,12,154,        this.pieChart.setTitle(seriesTitle);,2,0,0,1,2,0,4,0,0,6,36,5,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/MultiplePiePlot,12,155,"        this.aggregatedItemsKey = ""Other"";",2,0,0,0,0,0,0,0,0,4,34,4,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/MultiplePiePlot,12,156,        this.aggregatedItemsPaint = Color.lightGray;,0,0,0,0,0,0,0,0,0,0,44,4,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/MultiplePiePlot,12,157,        this.sectionPaints = new HashMap();,2,0,0,1,2,0,0,2,0,5,35,4,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/MultiplePiePlot,12,158,    },0,0,0,0,1,0,0,0,0,1,1,4,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,664,        removeSubtitle(getLegend());,0,0,0,2,4,0,4,0,0,4,28,5,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,665,    },0,0,0,0,1,0,0,0,0,1,1,4,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,795,        this.subtitles.remove(title);,2,0,0,1,2,0,4,0,0,6,29,5,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,796,        fireChartChanged();,0,0,0,1,2,0,2,0,0,2,19,5,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,797,    },0,0,0,0,1,0,0,0,0,1,1,4,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/util/TableOrder,12,69,    private TableOrder(String name) {,4,0,0,1,3,1,0,2,0,7,33,2,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/util/TableOrder,12,70,        this.name = name;,4,0,0,0,0,0,0,0,0,5,17,4,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/util/TableOrder,12,71,    },0,0,0,0,1,0,0,0,0,1,1,4,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/util/TableOrder,12,55,"    public static final TableOrder BY_ROW = new TableOrder(""TableOrder.BY_ROW"");",2,0,0,1,2,3,0,4,0,10,76,2,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/util/TableOrder,12,58,    public static final TableOrder BY_COLUMN ,2,0,0,0,0,3,0,2,0,7,40,2,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/title/LegendTitle,12,542,            return true;   ,0,0,0,0,0,1,0,0,0,1,12,6,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,571,        if (this.title != null) {,0,0,0,1,3,0,0,0,0,4,25,4,0.25,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,574,        this.title = title;,4,0,0,0,0,0,0,0,0,6,19,3,0.25,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,575,        if (title != null) {,2,1,0,1,3,0,0,0,0,3,20,4,0.25,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,576,            title.addChangeListener(this);,0,0,0,1,2,0,4,0,0,4,30,7,0.25,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,578,        fireChartChanged();,0,0,0,1,2,0,2,0,0,2,19,5,0.25,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,579,    },0,0,0,0,1,0,0,0,0,1,1,4,0.25,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,959,        if (this.backgroundPaint != null) {,6,1,0,1,3,0,4,0,0,11,35,3,0.25,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,960,            if (!this.backgroundPaint.equals(paint)) {,4,0,0,2,5,0,8,0,0,14,42,3,0.25,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,961,                this.backgroundPaint = paint;,0,0,0,0,0,0,0,0,0,0,29,4,0.25,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,962,                fireChartChanged();,0,0,0,1,2,0,2,0,0,2,19,9,0.25,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,972,    },0,0,0,0,1,0,0,0,0,1,1,4,0.25,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,628,        return getLegend(0);,2,0,0,1,2,1,4,0,0,6,20,8,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,641,        int seen = 0;,0,0,0,0,0,0,0,0,0,0,13,4,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,642,        Iterator iterator = this.subtitles.iterator();,0,0,0,1,2,0,0,0,0,3,46,4,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,643,        while (iterator.hasNext()) {,0,0,0,2,5,0,4,0,0,4,28,5,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,644,            Title subtitle = (Title) iterator.next();,0,0,0,2,4,0,0,0,0,6,41,4,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,645,            if (subtitle instanceof LegendTitle) {,2,0,0,1,3,0,0,2,0,4,38,7,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,646,                if (seen == index) {,12,1,0,1,3,0,0,2,0,15,20,3,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,647,                    return (LegendTitle) subtitle;,2,0,0,1,2,1,0,2,0,4,30,11,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,1486,        ChartChangeEvent event = new ChartChangeEvent(this);,2,0,0,1,2,0,0,4,0,6,52,4,0.16667,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,1487,        notifyListeners(event);,0,0,0,1,2,0,0,0,0,3,23,4,0.16667,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,1488,    },2,0,0,0,1,0,0,2,0,5,1,4,0.16667,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,327,"        this(null, null, plot, true);",0,0,0,1,2,0,0,0,0,3,29,4,0.125,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,328,    },0,0,0,0,1,0,0,0,0,1,1,4,0.125,0,0,-1
+defect4j,chart,org/jfree/chart/title/LegendTitle,12,541,        if (obj == this) {,0,0,0,1,3,0,0,0,0,4,18,4,0.09091,0,0,-1
+defect4j,chart,org/jfree/chart/PaintMap,12,77,    public PaintMap() {,0,0,0,1,3,0,0,0,0,4,19,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/PaintMap,12,78,        this.store = new HashMap();    ,0,0,0,1,2,0,0,0,0,3,27,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/PaintMap,12,79,    },0,0,0,0,1,0,0,0,0,1,1,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PieLabelLinkStyle,12,74,    private PieLabelLinkStyle(String name) {,4,0,0,1,3,1,0,2,0,7,40,2,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PieLabelLinkStyle,12,75,        this.name = name;,4,0,0,0,0,0,0,0,0,5,17,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PieLabelLinkStyle,12,76,    },0,0,0,0,1,0,0,0,0,1,1,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PieLabelLinkStyle,12,55,    public static final PieLabelLinkStyle STANDARD,0,0,0,0,0,0,0,0,0,0,46,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PieLabelLinkStyle,12,59,    public static final PieLabelLinkStyle QUAD_CURVE,2,0,0,0,0,3,0,2,0,7,48,2,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PieLabelLinkStyle,12,63,    public static final PieLabelLinkStyle CUBIC_CURVE,2,0,0,0,0,3,0,2,0,7,49,2,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,504,        super();,0,0,0,1,2,0,0,0,0,3,8,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,321,    private transient Paint shadowPaint = Color.gray;,6,0,0,0,0,2,0,2,0,10,49,2,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,324,    private double shadowXOffset = 4.0f;,2,0,0,0,0,1,2,0,0,5,36,1,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,327,    private double shadowYOffset = 4.0f;,0,0,0,0,0,0,0,0,0,0,36,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,370,    private boolean simpleLabels = true;,2,0,0,0,0,1,0,0,0,4,36,2,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,388,    private double maximumLabelWidth = 0.14;,2,0,0,0,0,1,0,0,0,3,40,2,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,394,    private double labelGap = 0.025;,4,1,0,0,0,1,0,0,0,6,32,1,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,404,    private PieLabelLinkStyle labelLinkStyle = PieLabelLinkStyle.STANDARD;,0,0,0,0,0,0,0,0,0,0,70,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,407,    private double labelLinkMargin = 0.025;,2,0,0,0,0,1,0,0,0,3,39,2,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,410,    private transient Paint labelLinkPaint = Color.black;,6,0,0,0,0,2,0,2,0,10,53,2,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,413,    private transient Stroke labelLinkStroke = new BasicStroke(0.5f);,0,0,0,1,2,0,0,0,0,3,65,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,505,        this.dataset = dataset;,0,0,0,0,0,0,0,0,0,0,23,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,506,        if (dataset != null) {,4,1,0,1,3,0,0,0,0,5,22,3,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,509,        this.pieIndex = 0;,2,0,0,0,0,0,0,0,0,3,18,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,511,        this.interiorGap = DEFAULT_INTERIOR_GAP;,2,1,0,0,0,0,0,0,0,3,40,7,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,512,        this.circular = true;,0,0,0,0,0,0,0,0,0,0,21,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,513,        this.startAngle = DEFAULT_START_ANGLE;,12,1,0,0,0,0,0,0,0,15,38,3,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,514,        this.direction = Rotation.CLOCKWISE;,6,0,0,0,0,0,0,0,0,7,36,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,515,        this.minimumArcAngleToDraw = DEFAULT_MINIMUM_ARC_ANGLE_TO_DRAW;,4,0,0,0,0,0,0,0,0,5,63,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,517,        this.sectionPaintMap = new PaintMap();,2,0,0,1,2,0,0,2,0,5,38,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,518,        this.baseSectionPaint = Color.gray;,6,0,0,0,0,0,0,0,0,8,35,3,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,520,        this.sectionOutlinesVisible = true;,2,1,0,0,0,0,0,0,0,3,35,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,521,        this.sectionOutlinePaintMap = new PaintMap();,2,0,0,1,2,0,0,2,0,5,45,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,522,        this.baseSectionOutlinePaint = DEFAULT_OUTLINE_PAINT;,4,0,0,0,0,0,0,0,0,5,53,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,524,        this.sectionOutlineStrokeMap = new StrokeMap();,4,0,0,1,2,0,0,2,0,8,47,3,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,525,        this.baseSectionOutlineStroke = DEFAULT_OUTLINE_STROKE;,4,0,0,0,0,0,0,0,0,5,55,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,527,        this.explodePercentages = new TreeMap();,2,0,0,1,2,0,0,2,0,5,40,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,529,        this.labelGenerator = new StandardPieSectionLabelGenerator();,0,0,0,1,2,0,0,0,0,3,61,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,530,        this.labelFont = DEFAULT_LABEL_FONT;,4,0,0,0,0,0,0,0,0,5,36,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,531,        this.labelPaint = DEFAULT_LABEL_PAINT;,4,0,0,0,0,0,0,0,0,5,38,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,532,        this.labelBackgroundPaint = DEFAULT_LABEL_BACKGROUND_PAINT;,4,0,0,0,0,0,0,0,0,5,59,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,533,        this.labelOutlinePaint = DEFAULT_LABEL_OUTLINE_PAINT;,4,0,0,0,0,0,0,0,0,5,53,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,534,        this.labelOutlineStroke = DEFAULT_LABEL_OUTLINE_STROKE;,0,0,0,0,0,0,0,0,0,0,55,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,535,        this.labelShadowPaint = DEFAULT_LABEL_SHADOW_PAINT;,4,0,0,0,0,0,0,0,0,5,51,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,536,        this.labelLinksVisible = true;,0,0,0,0,0,0,0,0,0,0,30,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,537,        this.labelDistributor = new PieLabelDistributor(0);,2,0,0,1,2,0,0,2,0,5,51,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,539,        this.simpleLabels = false;,2,0,0,0,0,0,0,0,0,4,26,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,540,"        this.simpleLabelOffset = new RectangleInsets(UnitType.RELATIVE, 0.18, ",0,0,0,0,1,0,0,0,0,1,69,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,542,"        this.labelPadding = new RectangleInsets(2, 2, 2, 2);",0,0,0,1,2,0,0,0,0,3,52,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,544,        this.toolTipGenerator = null;,4,0,0,0,0,0,4,2,0,11,29,3,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,545,        this.urlGenerator = null;,6,0,0,0,0,0,0,2,0,9,25,3,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,546,        this.legendLabelGenerator = new StandardPieSectionLabelGenerator();,2,0,0,1,2,0,0,2,0,5,67,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,547,        this.legendLabelToolTipGenerator = null;,0,0,0,0,0,0,0,0,0,0,40,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,548,        this.legendLabelURLGenerator = null;,0,0,0,0,0,0,0,0,0,0,36,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,549,        this.legendItemShape = Plot.DEFAULT_LEGEND_ITEM_CIRCLE;,6,0,0,0,0,0,0,0,0,7,55,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,551,        this.ignoreNullValues = false;,2,0,0,0,0,0,0,0,0,4,30,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,552,        this.ignoreZeroValues = false;,2,0,0,0,0,0,0,0,0,4,30,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,553,    },0,0,0,0,1,0,0,0,0,1,1,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,251,"    public static final Font DEFAULT_LABEL_FONT = new Font(""SansSerif"", ",0,0,0,0,1,0,0,0,0,1,67,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,255,    public static final Paint DEFAULT_LABEL_PAINT = Color.black;,6,0,0,0,0,3,0,2,0,11,60,2,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,258,"    public static final Paint DEFAULT_LABEL_BACKGROUND_PAINT = new Color(255, ",0,0,0,0,1,0,0,0,0,1,73,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,262,    public static final Paint DEFAULT_LABEL_OUTLINE_PAINT = Color.black;,6,0,0,0,0,3,0,2,0,11,68,2,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,265,    public static final Stroke DEFAULT_LABEL_OUTLINE_STROKE = new BasicStroke(,0,0,0,0,1,0,0,0,0,1,74,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,269,"    public static final Paint DEFAULT_LABEL_SHADOW_PAINT = new Color(151, 151, ",2,0,0,0,1,3,0,4,0,10,74,1,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PiePlot,12,468,    protected static ResourceBundle localizationResources =,0,0,0,0,0,0,0,0,0,0,55,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/AbstractPieLabelDistributor,12,60,    public AbstractPieLabelDistributor() {,0,0,0,1,3,0,0,0,0,4,38,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/AbstractPieLabelDistributor,12,61,        this.labels = new java.util.ArrayList();,10,0,0,1,2,0,6,2,0,19,40,3,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/AbstractPieLabelDistributor,12,62,    },0,0,0,0,1,0,0,2,0,2,1,8,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PieLabelDistributor,12,63,        super();,0,0,0,1,2,0,0,0,0,3,8,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PieLabelDistributor,12,55,    private double minGap = 4.0;,2,0,0,0,0,1,0,0,0,3,28,2,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PieLabelDistributor,12,64,    },2,0,0,0,1,1,0,0,0,3,1,1,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/util/Rotation,12,81,"    private Rotation(final String name, final double factor) {",6,0,0,1,3,3,0,2,0,11,58,2,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/util/Rotation,12,82,        this.name = name;,4,0,0,0,0,0,0,0,0,5,17,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/util/Rotation,12,83,        this.factor = factor;,4,0,0,0,0,0,0,0,0,5,21,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/util/Rotation,12,84,    },0,0,0,0,1,0,0,0,0,1,1,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/util/Rotation,12,59,    public static final Rotation CLOCKWISE ,0,0,0,0,0,0,0,0,0,0,38,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/util/Rotation,12,63,    public static final Rotation ANTICLOCKWISE ,2,0,0,0,0,3,0,2,0,7,42,2,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/labels/StandardPieSectionLabelGenerator,12,90,"        this(DEFAULT_SECTION_LABEL_FORMAT, NumberFormat.getNumberInstance(), ",2,0,0,1,3,0,4,0,0,6,68,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/labels/StandardPieSectionLabelGenerator,12,92,    },4,1,0,0,1,0,6,0,0,11,1,5,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/labels/StandardPieSectionLabelGenerator,12,141,"        super(labelFormat, numberFormat, percentFormat);",6,0,0,1,2,0,0,0,0,6,48,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/labels/StandardPieSectionLabelGenerator,12,142,        this.attributedLabels = new ObjectList();,2,0,0,1,2,0,0,2,0,5,41,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/labels/StandardPieSectionLabelGenerator,12,143,    },0,0,0,0,1,0,0,0,0,1,1,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/labels/AbstractPieItemLabelGenerator,12,82,                                            NumberFormat percentFormat) {,0,0,0,0,2,0,0,0,0,2,29,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/labels/AbstractPieItemLabelGenerator,12,84,        if (labelFormat == null) {,2,1,0,1,3,0,0,0,0,3,26,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/labels/AbstractPieItemLabelGenerator,12,87,        if (numberFormat == null) {,2,1,0,1,3,0,0,0,0,3,27,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/labels/AbstractPieItemLabelGenerator,12,90,        if (percentFormat == null) {,2,1,0,1,3,0,0,0,0,3,28,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/labels/AbstractPieItemLabelGenerator,12,95,        this.labelFormat = labelFormat;,0,0,0,0,0,0,0,0,0,0,31,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/labels/AbstractPieItemLabelGenerator,12,96,        this.numberFormat = numberFormat;,4,0,0,0,0,0,0,0,0,5,33,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/labels/AbstractPieItemLabelGenerator,12,97,        this.percentFormat = percentFormat;,4,0,0,0,0,0,0,0,0,5,35,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/labels/AbstractPieItemLabelGenerator,12,99,    },0,0,0,0,1,0,0,0,0,1,1,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/StrokeMap,12,75,    public StrokeMap() {,2,0,0,1,3,1,0,0,0,3,20,2,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/StrokeMap,12,76,        this.store = new TreeMap();    ,6,0,0,1,2,1,0,4,0,12,27,2,0.03125,0,0,-1
+defect4j,chart,org/jfree/chart/StrokeMap,12,77,    },0,0,0,0,1,0,0,0,0,1,1,4,0.03125,0,0,-1
+defect4j,chart,org/jfree/data/DefaultKeyedValues2D,12,95,        this(false);,0,0,0,1,2,0,0,0,0,1,12,4,0.02,0,0,-1
+defect4j,chart,org/jfree/data/DefaultKeyedValues2D,12,96,    },0,0,0,0,1,0,0,0,0,1,1,4,0.02,0,0,-1
+defect4j,chart,org/jfree/data/DefaultKeyedValues2D,12,103,    public DefaultKeyedValues2D(boolean sortRowKeys) {,4,0,0,1,3,1,0,0,0,5,50,2,0.02,0,0,-1
+defect4j,chart,org/jfree/data/DefaultKeyedValues2D,12,104,        this.rowKeys = new java.util.ArrayList();,8,0,0,1,2,0,0,0,0,9,41,4,0.02,0,0,-1
+defect4j,chart,org/jfree/data/DefaultKeyedValues2D,12,105,        this.columnKeys = new java.util.ArrayList();,0,0,0,1,2,0,0,0,0,3,44,4,0.02,0,0,-1
+defect4j,chart,org/jfree/data/DefaultKeyedValues2D,12,106,        this.rows = new java.util.ArrayList();,8,0,0,1,2,0,0,0,0,9,38,4,0.02,0,0,-1
+defect4j,chart,org/jfree/data/DefaultKeyedValues2D,12,107,        this.sortRowKeys = sortRowKeys;,4,0,0,0,0,0,0,0,0,5,31,4,0.02,0,0,-1
+defect4j,chart,org/jfree/data/DefaultKeyedValues2D,12,108,    },0,0,0,0,1,0,0,0,0,1,1,4,0.02,0,0,-1
+defect4j,chart,org/jfree/data/category/DefaultCategoryDataset,12,73,    public DefaultCategoryDataset() {,2,0,0,1,3,1,0,0,0,3,33,2,0.02,0,0,-1
+defect4j,chart,org/jfree/data/category/DefaultCategoryDataset,12,74,        this.data = new DefaultKeyedValues2D();,0,0,0,1,2,0,0,0,0,3,39,4,0.02,0,0,-1
+defect4j,chart,org/jfree/data/category/DefaultCategoryDataset,12,75,    },0,0,0,0,1,0,0,0,0,1,1,4,0.02,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,1497,        if (this.notify) {,0,0,0,1,3,0,0,0,0,4,18,4,0.01299,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,1498,            Object[] listeners = this.changeListeners.getListenerList();,4,0,0,2,4,0,2,2,0,8,60,6,0.01299,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,1499,            for (int i = listeners.length - 2; i >= 0; i -= 2) {,12,2,0,1,3,0,10,0,0,26,52,3,0.01299,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,1506,    },0,0,0,0,1,0,0,0,0,1,1,4,0.01299,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,393,            LegendTitle legend = new LegendTitle(this.plot);,4,0,0,1,2,0,0,4,0,8,48,6,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,394,"            legend.setMargin(new RectangleInsets(1.0, 1.0, 1.0, 1.0));",0,0,0,2,4,0,0,0,0,6,58,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,395,            legend.setFrame(new LineBorder());,0,0,0,2,4,0,4,2,0,6,34,7,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,396,            legend.setBackgroundPaint(Color.white);,6,0,0,1,2,0,4,0,0,10,39,3,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,397,            legend.setPosition(RectangleEdge.BOTTOM);,4,0,0,1,2,0,4,0,0,8,41,7,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,398,            this.subtitles.add(legend);,2,0,0,1,2,0,4,0,0,6,27,7,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,399,            legend.addChangeListener(this);,4,0,0,1,2,0,8,0,0,14,31,3,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,12,209,        if (margin == null) {,2,1,0,1,3,0,0,0,0,3,21,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,12,212,        this.margin = margin;,4,0,0,0,0,0,0,0,0,5,21,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,12,213,    },0,0,0,0,1,0,0,0,0,1,1,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,12,251,        if (frame == null) {,2,1,0,1,3,0,0,0,0,3,20,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,12,254,        this.frame = frame;,4,0,0,0,0,0,0,0,0,5,19,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,12,255,    },0,0,0,0,1,0,0,0,0,1,1,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/ColumnArrangement,12,78,    public ColumnArrangement() {   ,2,0,0,1,3,1,0,0,0,3,28,2,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/ColumnArrangement,12,79,    },2,1,0,0,1,0,0,0,0,3,1,6,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/BlockContainer,12,95,    public BlockContainer(Arrangement arrangement) {,4,0,0,1,3,1,0,2,0,7,48,2,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/BlockContainer,12,96,        if (arrangement == null) {,0,0,0,1,3,0,0,0,0,4,26,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/BlockContainer,12,99,        this.arrangement = arrangement;,4,0,0,0,0,0,0,0,0,5,31,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/BlockContainer,12,100,        this.blocks = new ArrayList();,2,0,0,1,2,0,0,2,0,5,30,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/BlockContainer,12,101,    }    ,4,0,0,0,1,0,0,4,0,8,1,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/LineBorder,12,82,"        this(Color.black, new BasicStroke(1.0f), new RectangleInsets(1.0, 1.0, ",4,0,0,1,4,0,0,4,0,8,70,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/LineBorder,12,84,    },6,1,0,0,1,0,4,0,0,12,1,8,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/LineBorder,12,93,"    public LineBorder(Paint paint, Stroke stroke, RectangleInsets insets) {",8,0,0,1,3,1,0,6,0,15,71,2,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/LineBorder,12,94,        if (paint == null) {,2,1,0,1,3,0,0,0,0,3,20,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/LineBorder,12,97,        if (stroke == null) {,2,1,0,1,3,0,0,0,0,3,21,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/LineBorder,12,100,        if (insets == null) {,6,1,0,1,3,0,4,2,0,13,21,3,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/LineBorder,12,103,        this.paint = paint;,0,0,0,0,0,0,0,0,0,0,19,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/LineBorder,12,104,        this.stroke = stroke;,0,0,0,0,0,0,0,0,0,0,21,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/LineBorder,12,105,        this.insets = insets;,4,0,0,0,0,0,0,0,0,5,21,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/LineBorder,12,106,    }  ,4,1,0,0,1,0,4,0,0,10,1,11,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/FlowArrangement,12,80,"        this(HorizontalAlignment.CENTER, VerticalAlignment.CENTER, 2.0, 2.0);",8,0,0,1,2,0,0,2,0,11,69,3,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/FlowArrangement,12,81,    },0,0,0,0,1,0,0,0,0,1,1,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/FlowArrangement,12,92,"                           double hGap, double vGap) {   ",4,0,0,0,2,0,0,0,0,4,27,3,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/FlowArrangement,12,93,        this.horizontalAlignment = hAlign;,0,0,0,0,0,0,0,0,0,0,34,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/FlowArrangement,12,94,        this.verticalAlignment = vAlign;,4,0,0,0,0,0,0,0,0,5,32,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/FlowArrangement,12,95,        this.horizontalGap = hGap;,4,0,0,0,0,0,0,0,0,5,26,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/FlowArrangement,12,96,        this.verticalGap = vGap;,4,0,0,0,0,0,0,0,0,5,24,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/block/FlowArrangement,12,97,    },0,0,0,0,1,0,0,0,0,1,1,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/Title,12,131,"        this(Title.DEFAULT_POSITION,",4,0,0,0,1,0,0,0,0,4,28,5,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/Title,12,134,    },0,0,0,0,1,0,0,0,0,1,1,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/Title,12,216,        if (position == null) {,2,1,0,1,3,0,0,0,0,3,23,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/Title,12,219,        if (this.position != position) {,4,1,0,1,3,0,0,0,0,5,32,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/Title,12,220,            this.position = position;,4,0,0,0,0,0,0,0,0,5,25,6,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/Title,12,221,            notifyListeners(new TitleChangeEvent(this));,0,0,0,2,4,0,2,2,0,4,44,7,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/Title,12,223,    },0,0,0,0,1,0,0,0,0,1,1,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/Title,12,357,        if (this.notify) {,0,0,0,1,3,0,0,0,0,4,18,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/Title,12,358,            Object[] listeners = this.listenerList.getListenerList();,6,1,0,2,4,0,2,2,0,11,57,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/Title,12,359,            for (int i = listeners.length - 2; i >= 0; i -= 2) {,0,0,0,1,3,0,0,0,0,4,52,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/Title,12,366,    },0,0,0,0,1,0,0,0,0,1,1,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/LegendTitle,12,162,"        this(source, new FlowArrangement(), new ColumnArrangement());",2,0,0,3,6,0,0,4,0,6,61,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/LegendTitle,12,163,    },0,0,0,0,1,0,6,0,0,6,1,7,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/LegendTitle,12,175,"                       Arrangement hLayout, Arrangement vLayout) {",4,0,0,0,2,0,0,4,0,8,43,3,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/LegendTitle,12,176,        this.sources = new LegendItemSource[] {source};,4,0,0,2,4,0,0,2,0,7,47,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/LegendTitle,12,177,        this.items = new BlockContainer(hLayout);,4,0,0,1,2,0,0,2,0,7,41,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/LegendTitle,12,178,        this.hLayout = hLayout;,6,1,0,0,0,0,0,0,0,8,23,3,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/LegendTitle,12,179,        this.vLayout = vLayout;,4,0,0,0,0,0,0,0,0,5,23,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/LegendTitle,12,180,        this.backgroundPaint = null;  ,2,0,0,0,0,0,0,0,0,3,28,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/LegendTitle,12,181,        this.legendItemGraphicEdge = RectangleEdge.LEFT;,0,0,0,0,0,0,0,0,0,0,48,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/LegendTitle,12,182,        this.legendItemGraphicAnchor = RectangleAnchor.CENTER;,6,0,0,0,0,0,0,0,0,7,54,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/LegendTitle,12,183,        this.legendItemGraphicLocation = RectangleAnchor.CENTER;,6,0,0,0,0,0,0,0,0,7,56,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/LegendTitle,12,184,"        this.legendItemGraphicPadding = new RectangleInsets(2.0, 2.0, 2.0, 2.0);",0,0,0,1,2,0,0,0,0,3,72,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/LegendTitle,12,185,        this.itemFont = DEFAULT_ITEM_FONT;,0,0,0,0,0,0,0,0,0,0,34,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/LegendTitle,12,186,        this.itemPaint = DEFAULT_ITEM_PAINT;,6,0,0,0,0,3,0,2,0,12,36,1,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/LegendTitle,12,187,"        this.itemLabelPadding = new RectangleInsets(2.0, 2.0, 2.0, 2.0);",2,0,0,1,2,0,0,2,0,5,64,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/LegendTitle,12,188,    },0,0,0,0,1,0,0,0,0,1,1,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/LegendTitle,12,108,    public static final Font DEFAULT_ITEM_FONT ,2,0,0,0,0,3,0,2,0,7,42,2,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/LegendTitle,12,112,    public static final Paint DEFAULT_ITEM_PAINT = Color.black;,0,0,0,0,0,0,0,2,0,3,59,7,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/LegendTitle,12,229,        this.backgroundPaint = paint;   ,4,0,0,0,0,0,0,0,0,5,29,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/LegendTitle,12,230,        notifyListeners(new TitleChangeEvent(this));,2,0,0,2,4,0,2,2,0,6,44,3,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/LegendTitle,12,231,    },8,3,0,0,1,0,0,0,0,11,1,5,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/event/TitleChangeEvent,12,64,        super(title);,2,0,0,1,2,0,0,0,0,2,13,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/event/TitleChangeEvent,12,65,        this.title = title;,4,0,0,0,0,0,0,0,0,5,19,4,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/event/TitleChangeEvent,12,66,    },4,0,0,0,1,0,0,4,0,8,1,6,0.01053,0,0,-1
+defect4j,chart,org/jfree/chart/title/TextTitle,12,187,"        this(text, font, TextTitle.DEFAULT_TEXT_PAINT, Title.DEFAULT_POSITION,",12,0,0,0,1,0,0,0,0,12,70,4,0.00917,0,0,-1
+defect4j,chart,org/jfree/chart/title/TextTitle,12,190,    },2,0,0,0,1,0,0,0,0,2,1,4,0.00917,0,0,-1
+defect4j,chart,org/jfree/chart/title/TextTitle,12,211,"        super(position, horizontalAlignment, verticalAlignment, padding);",2,1,0,1,2,0,0,0,0,3,65,4,0.00917,0,0,-1
+defect4j,chart,org/jfree/chart/title/TextTitle,12,160,    private boolean expandToFitSpace = false;,2,0,0,0,0,1,0,0,0,4,41,2,0.00917,0,0,-1
+defect4j,chart,org/jfree/chart/title/TextTitle,12,213,        if (text == null) {,2,1,0,1,3,0,0,0,0,3,19,4,0.00917,0,0,-1
+defect4j,chart,org/jfree/chart/title/TextTitle,12,216,        if (font == null) {,10,1,0,1,3,1,0,6,0,18,19,2,0.00917,0,0,-1
+defect4j,chart,org/jfree/chart/title/TextTitle,12,219,        if (paint == null) {,4,1,0,1,3,0,2,2,0,9,20,3,0.00917,0,0,-1
+defect4j,chart,org/jfree/chart/title/TextTitle,12,222,        this.text = text;,0,0,0,0,0,0,0,0,0,0,17,4,0.00917,0,0,-1
+defect4j,chart,org/jfree/chart/title/TextTitle,12,223,        this.font = font;,4,0,0,0,0,0,0,0,0,5,17,4,0.00917,0,0,-1
+defect4j,chart,org/jfree/chart/title/TextTitle,12,224,        this.paint = paint;,6,0,0,0,0,3,0,4,0,14,19,1,0.00917,0,0,-1
+defect4j,chart,org/jfree/chart/title/TextTitle,12,228,        this.textAlignment = horizontalAlignment;,4,0,0,0,0,0,0,0,0,5,41,4,0.00917,0,0,-1
+defect4j,chart,org/jfree/chart/title/TextTitle,12,229,        this.backgroundPaint = null;,2,0,0,0,0,0,0,0,0,3,28,4,0.00917,0,0,-1
+defect4j,chart,org/jfree/chart/title/TextTitle,12,230,        this.content = null;,2,0,0,0,0,0,0,0,0,3,20,4,0.00917,0,0,-1
+defect4j,chart,org/jfree/chart/title/TextTitle,12,231,        this.toolTipText = null;,2,0,0,0,0,0,0,0,0,3,24,4,0.00917,0,0,-1
+defect4j,chart,org/jfree/chart/title/TextTitle,12,232,        this.urlText = null;,8,0,0,0,0,0,0,0,0,10,20,3,0.00917,0,0,-1
+defect4j,chart,org/jfree/chart/title/TextTitle,12,234,    },0,0,0,0,1,0,8,0,0,8,1,13,0.00917,0,0,-1
+defect4j,chart,org/jfree/chart/title/TextTitle,12,126,"    public static final Font DEFAULT_FONT = new Font(""SansSerif"", Font.BOLD, ",6,0,0,0,1,3,0,4,0,14,72,2,0.00917,0,0,-1
+defect4j,chart,org/jfree/chart/title/TextTitle,12,130,    public static final Paint DEFAULT_TEXT_PAINT = Color.black;,0,0,0,0,0,0,0,0,0,0,59,4,0.00917,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,364,                      boolean createLegend) {,2,0,0,0,2,0,0,0,0,2,23,3,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,298,    private int backgroundImageAlignment = Align.FIT;,12,0,0,0,0,1,0,0,0,14,49,1,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,301,    private float backgroundImageAlpha = 0.5f;,0,0,0,0,0,0,0,0,0,0,42,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,366,        if (plot == null) {,0,0,0,1,3,0,0,0,0,4,19,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,371,        this.progressListeners = new EventListenerList();,4,0,0,1,2,0,0,4,0,9,49,3,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,372,        this.changeListeners = new EventListenerList();,2,0,0,1,2,0,0,2,0,5,47,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,373,        this.notify = true;  // default is to notify listeners when the ,2,0,0,0,0,0,0,2,0,6,63,3,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,376,        this.renderingHints = new RenderingHints(,0,0,0,0,1,0,0,0,0,1,41,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,380,        this.borderVisible = false;,2,0,0,0,0,0,0,0,0,4,27,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,381,        this.borderStroke = new BasicStroke(1.0f);,6,0,0,1,2,0,0,0,0,7,42,12,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,382,        this.borderPaint = Color.black;,0,0,0,0,0,0,0,0,0,0,31,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,384,        this.padding = RectangleInsets.ZERO_INSETS;,0,0,0,0,0,0,0,0,0,0,43,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,386,        this.plot = plot;,4,0,0,0,0,0,0,0,0,5,17,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,387,        plot.addChangeListener(this);,0,0,0,1,2,0,4,0,0,4,29,5,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,389,        this.subtitles = new ArrayList();,0,0,0,1,2,0,0,0,0,3,33,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,392,        if (createLegend) {,2,0,0,1,3,0,0,0,0,2,19,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,403,        if (title != null) {,0,0,0,1,3,0,0,0,0,4,20,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,411,        this.backgroundPaint = DEFAULT_BACKGROUND_PAINT;,0,0,0,0,0,0,0,0,0,0,48,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,413,        this.backgroundImage = DEFAULT_BACKGROUND_IMAGE;,6,0,0,0,0,0,0,0,0,7,48,3,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,414,        this.backgroundImageAlignment = DEFAULT_BACKGROUND_IMAGE_ALIGNMENT;,4,0,0,0,0,0,0,0,0,5,67,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,415,        this.backgroundImageAlpha = DEFAULT_BACKGROUND_IMAGE_ALPHA;,8,0,0,0,0,0,0,0,0,10,59,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,417,    },0,0,0,0,1,0,0,0,0,1,1,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,243,    public static final ProjectInfo INFO = new JFreeChartInfo();,0,0,0,1,2,0,0,0,0,3,60,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,246,    public static final Font DEFAULT_TITLE_FONT ,2,0,0,0,0,3,0,2,0,7,43,2,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,250,    public static final Paint DEFAULT_BACKGROUND_PAINT = Color.WHITE;,0,0,0,0,0,0,0,0,0,0,65,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/JFreeChart,12,253,    public static final Image DEFAULT_BACKGROUND_IMAGE = null;,2,0,0,0,0,3,0,2,0,7,58,2,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,12,109,    protected AbstractBlock() {,4,1,0,1,3,1,0,0,0,6,27,2,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,12,110,        this.id = null;,2,0,0,0,0,0,0,0,0,3,15,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,12,111,        this.width = 0.0;,0,0,0,0,0,0,0,0,0,0,17,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,12,112,        this.height = 0.0;,0,0,0,0,0,0,0,0,0,0,18,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,12,113,        this.bounds = new Rectangle2D.Float();,6,0,0,1,2,0,0,0,0,7,38,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,12,114,        this.margin = RectangleInsets.ZERO_INSETS;,6,0,0,0,0,0,0,0,0,7,42,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,12,115,        this.frame = BlockBorder.NONE; ,6,0,0,0,0,0,0,0,0,7,30,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,12,116,        this.padding = RectangleInsets.ZERO_INSETS;,6,0,0,0,0,0,0,0,0,7,43,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,12,117,    },2,0,0,0,1,0,0,2,0,4,1,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,12,277,        if (padding == null) {,0,0,0,1,3,0,0,0,0,4,22,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,12,280,        this.padding = padding;,4,0,0,0,0,0,0,0,0,5,23,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,12,281,    },0,0,0,0,1,0,0,0,0,1,1,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/util/HorizontalAlignment,12,76,    private HorizontalAlignment(String name) {,4,0,0,1,3,1,0,2,0,7,42,2,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/util/HorizontalAlignment,12,77,        this.name = name;,4,0,0,0,0,0,0,0,0,5,17,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/util/HorizontalAlignment,12,78,    },2,0,0,0,1,3,0,4,0,9,1,2,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/util/HorizontalAlignment,12,57,    public static final HorizontalAlignment LEFT ,2,0,0,0,0,3,0,2,0,7,44,2,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/util/HorizontalAlignment,12,61,    public static final HorizontalAlignment RIGHT ,2,0,0,0,0,3,0,2,0,7,45,2,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/util/HorizontalAlignment,12,65,    public static final HorizontalAlignment CENTER ,4,0,0,0,0,3,0,2,0,9,46,1,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/util/VerticalAlignment,12,76,    private VerticalAlignment(String name) {,4,0,0,1,3,1,0,2,0,7,40,2,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/util/VerticalAlignment,12,77,        this.name = name;,4,0,0,0,0,0,0,0,0,5,17,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/util/VerticalAlignment,12,78,    },0,0,0,0,1,0,0,0,0,1,1,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/util/VerticalAlignment,12,57,    public static final VerticalAlignment TOP ,0,0,0,0,0,0,0,0,0,0,41,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/util/VerticalAlignment,12,61,    public static final VerticalAlignment BOTTOM ,8,1,0,0,0,4,0,4,0,17,44,1,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/util/VerticalAlignment,12,65,    public static final VerticalAlignment CENTER ,2,0,0,0,0,3,0,2,0,7,44,2,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/block/BlockBorder,12,128,"    public BlockBorder(RectangleInsets insets, Paint paint) {",0,0,0,1,3,0,0,0,0,4,57,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/block/BlockBorder,12,129,        if (insets == null) {,2,1,0,1,3,0,0,0,0,3,21,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/block/BlockBorder,12,132,        if (paint == null) {,4,1,0,1,3,0,0,4,0,9,20,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/block/BlockBorder,12,135,        this.insets = insets;,4,0,0,0,0,0,0,0,0,5,21,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/block/BlockBorder,12,136,        this.paint = paint;,4,0,0,0,0,0,0,0,0,5,19,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/block/BlockBorder,12,137,    },0,0,0,0,1,0,0,0,0,1,1,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/block/BlockBorder,12,71,    public static final BlockBorder NONE = new BlockBorder(,6,0,0,0,1,3,0,4,0,14,55,1,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/ProjectInfo,12,67,    public ProjectInfo() {,2,0,0,1,3,1,0,0,0,3,22,2,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/ProjectInfo,12,69,    },2,0,0,0,1,0,0,0,0,2,1,5,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/ProjectInfo,12,111,        this.logo = logo;,4,0,0,0,0,0,0,0,0,5,17,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/ProjectInfo,12,112,    },0,0,0,0,1,0,0,0,0,1,1,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/ProjectInfo,12,129,        this.licenceText = licenceText;,4,0,0,0,0,0,0,0,0,5,31,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/ProjectInfo,12,130,    },2,0,0,0,1,3,0,2,0,7,1,2,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/ProjectInfo,12,147,        this.contributors = contributors;,4,0,0,0,0,0,0,0,0,5,33,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/ProjectInfo,12,148,    },0,0,0,0,1,0,0,0,0,1,1,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/BasicProjectInfo,12,145,    public BasicProjectInfo() {,6,0,0,1,3,1,0,2,0,9,27,2,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/BasicProjectInfo,12,146,        this.libraries = new ArrayList();,0,0,0,1,2,0,0,0,0,3,33,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/BasicProjectInfo,12,147,        this.optionalLibraries = new ArrayList();,2,0,0,1,2,0,0,2,0,5,41,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/BasicProjectInfo,12,148,    },0,0,0,0,1,0,0,0,0,1,1,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/BasicProjectInfo,12,198,        this.copyright = copyright;,4,0,0,0,0,0,0,0,0,5,27,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/BasicProjectInfo,12,199,    },0,0,0,0,1,0,0,0,0,1,1,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/BasicProjectInfo,12,207,        super.setInfo(info);,4,0,0,1,2,0,0,0,0,4,20,5,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/BasicProjectInfo,12,208,    },0,0,0,0,1,0,0,0,0,1,1,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/BasicProjectInfo,12,216,        super.setLicenceName(licence);,4,0,0,1,2,0,0,0,0,4,30,5,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/BasicProjectInfo,12,217,    },0,0,0,0,1,0,0,0,0,1,1,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/BasicProjectInfo,12,225,        super.setName(name);,4,0,0,1,2,0,0,0,0,4,20,5,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/BasicProjectInfo,12,226,    },0,0,0,0,1,0,0,0,0,1,1,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/BasicProjectInfo,12,234,        super.setVersion(version);,4,0,0,1,2,0,0,0,0,4,26,5,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/BasicProjectInfo,12,235,    },0,0,0,0,1,0,0,0,0,1,1,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/Library,12,82,    protected Library() {,2,0,0,1,3,1,0,0,0,3,21,2,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/Library,12,84,    },0,0,0,0,1,0,0,0,0,1,1,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/Library,12,128,        this.info = info;,4,0,0,0,0,0,0,0,0,5,17,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/Library,12,129,    },0,0,0,0,1,0,0,0,0,1,1,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/Library,12,137,        this.licenceName = licenceName;,4,0,0,0,0,0,0,0,0,5,31,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/Library,12,138,    },0,0,0,0,1,0,0,0,0,1,1,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/Library,12,146,        this.name = name;,8,0,0,0,0,0,2,4,0,15,17,3,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/Library,12,147,    },0,0,0,0,1,0,0,0,0,1,1,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/Library,12,155,        this.version = version;,4,0,0,0,0,0,0,0,0,5,23,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/ui/Library,12,156,    },0,0,0,0,1,0,0,0,0,1,1,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/title/Title,12,172,                    RectangleInsets padding) {,4,0,0,0,2,0,0,2,0,6,26,2,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/title/Title,12,175,        if (position == null) {,4,2,0,1,3,0,0,0,0,6,23,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/title/Title,12,178,        if (horizontalAlignment == null) {,2,1,0,1,3,0,0,0,0,3,34,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/title/Title,12,183,        if (verticalAlignment == null) {,2,1,0,1,3,0,0,0,0,3,32,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/title/Title,12,187,        if (padding == null) {,2,1,0,1,3,0,0,0,0,3,22,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/title/Title,12,191,        this.position = position;,4,0,0,0,0,0,0,0,0,5,25,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/title/Title,12,192,        this.horizontalAlignment = horizontalAlignment;,4,0,0,0,0,0,0,0,0,5,47,4,0.00877,0,0,-1
+defect4j,chart,org/jfree/chart/block/BorderArrangement,13,495,        this.centerBlock = null;,2,0,0,0,0,0,0,0,0,3,24,4,1.0,0,0,-1
+defect4j,chart,org/jfree/chart/block/BorderArrangement,13,496,        this.topBlock = null;,0,0,0,0,0,0,0,0,0,0,21,4,1.0,0,0,-1
+defect4j,chart,org/jfree/chart/block/BorderArrangement,13,497,        this.bottomBlock = null;,2,0,0,0,0,0,0,0,0,3,24,4,1.0,0,0,-1
+defect4j,chart,org/jfree/chart/block/BorderArrangement,13,498,        this.leftBlock = null;,2,0,0,0,0,0,0,0,0,3,22,4,1.0,0,0,-1
+defect4j,chart,org/jfree/chart/block/BorderArrangement,13,499,        this.rightBlock = null;,2,0,0,0,0,0,0,0,0,3,23,4,1.0,0,0,-1
+defect4j,chart,org/jfree/chart/block/BorderArrangement,13,500,    },0,0,0,0,1,0,0,0,0,1,1,4,1.0,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,151,        return this.width;,2,0,0,0,0,1,0,0,0,2,18,5,1.0,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,175,        return this.height;,0,0,0,0,0,1,0,0,0,1,19,4,1.0,0,0,-1
+defect4j,chart,org/jfree/chart/block/EmptyBlock,13,85,"        return new Size2D(calculateTotalWidth(getWidth()), ",2,0,0,2,5,1,4,6,0,12,50,3,1.0,0,0,-1
+defect4j,chart,org/jfree/chart/block/BorderArrangement,13,112,            else if (edge == RectangleEdge.RIGHT) {,6,1,0,1,3,0,0,0,0,7,39,9,0.5,0,0,-1
+defect4j,chart,org/jfree/chart/block/BorderArrangement,13,113,                this.rightBlock = block;,4,0,0,0,0,0,0,0,0,5,24,11,0.5,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,162,        this.width = width;,4,0,0,0,0,0,0,0,0,5,19,4,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,163,    },0,0,0,0,1,0,0,0,0,1,1,4,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,186,        this.height = height;,4,0,0,0,0,0,0,0,0,5,21,4,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,187,    },0,0,0,0,1,0,0,0,0,1,1,4,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/block/EmptyBlock,13,70,"    public EmptyBlock(double width, double height) {",6,0,0,1,3,1,0,0,0,7,48,2,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/block/EmptyBlock,13,71,        setWidth(width);,0,0,0,1,2,0,4,0,0,4,16,5,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/block/EmptyBlock,13,72,        setHeight(height);,0,0,0,1,2,0,4,0,0,4,18,5,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/block/EmptyBlock,13,73,    },0,0,0,0,1,0,0,0,0,1,1,4,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/block/BorderArrangement,13,131,        RectangleConstraint contentConstraint,4,1,0,0,0,0,4,2,0,12,37,3,0.01923,0,0,-1
+defect4j,chart,org/jfree/chart/block/BorderArrangement,13,133,        Size2D contentSize = null;,2,0,0,0,0,0,0,2,0,4,26,4,0.01923,0,0,-1
+defect4j,chart,org/jfree/chart/block/BorderArrangement,13,134,        LengthConstraintType w = contentConstraint.getWidthConstraintType();,2,0,0,1,2,0,4,2,0,8,68,4,0.01923,0,0,-1
+defect4j,chart,org/jfree/chart/block/BorderArrangement,13,135,        LengthConstraintType h = contentConstraint.getHeightConstraintType();,2,0,0,1,2,0,4,2,0,8,69,4,0.01923,0,0,-1
+defect4j,chart,org/jfree/chart/block/BorderArrangement,13,136,        if (w == LengthConstraintType.NONE) {,6,1,0,1,3,0,0,0,0,7,37,4,0.01923,0,0,-1
+defect4j,chart,org/jfree/chart/block/BorderArrangement,13,170,"        return new Size2D(container.calculateTotalWidth(contentSize.getWidth()),",0,0,0,2,5,1,8,2,0,10,72,5,0.01923,0,0,-1
+defect4j,chart,org/jfree/chart/block/BlockContainer,13,182,"        return this.arrangement.arrange(this, g2, constraint);",2,0,0,1,2,1,6,0,0,8,54,5,0.01923,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,365,        if (bounds == null) {,2,1,0,1,3,0,0,0,0,3,21,4,0.01923,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,368,        this.bounds = bounds;,4,0,0,0,0,0,8,0,0,14,21,3,0.01923,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,369,    },0,0,0,0,1,0,0,0,0,1,1,4,0.01923,0,0,-1
+defect4j,chart,org/jfree/chart/block/BorderArrangement,13,102,            RectangleEdge edge = (RectangleEdge) key;,4,0,0,1,2,0,6,4,0,14,41,3,0.01887,0,0,-1
+defect4j,chart,org/jfree/chart/block/BorderArrangement,13,103,            if (edge == RectangleEdge.TOP) {,6,1,0,1,3,0,0,0,0,7,32,6,0.01887,0,0,-1
+defect4j,chart,org/jfree/chart/block/BorderArrangement,13,106,            else if (edge == RectangleEdge.BOTTOM) {,0,0,0,1,3,0,0,0,0,4,40,4,0.01887,0,0,-1
+defect4j,chart,org/jfree/chart/block/BorderArrangement,13,109,            else if (edge == RectangleEdge.LEFT) {,8,1,0,1,3,0,0,0,0,9,38,3,0.01887,0,0,-1
+defect4j,chart,org/jfree/chart/block/BorderArrangement,13,110,                this.leftBlock = block;,0,0,0,0,0,0,0,0,0,0,23,4,0.01887,0,0,-1
+defect4j,chart,org/jfree/chart/block/RectangleConstraint,13,170,        return this.width;,4,1,0,0,0,1,4,0,0,9,18,4,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/RectangleConstraint,13,179,        return this.widthRange;   ,6,0,0,0,0,1,0,0,0,7,23,3,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/RectangleConstraint,13,197,        return this.height;,2,0,0,0,0,1,0,0,0,2,19,5,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/RectangleConstraint,13,206,        return this.heightRange;   ,2,0,0,0,0,1,0,0,0,2,24,5,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,383,        double result = this.margin.trimWidth(fixedWidth);,4,0,0,1,2,0,4,0,0,8,50,5,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,384,        result = this.frame.getInsets().trimWidth(result);,4,0,0,2,4,0,6,0,0,11,50,4,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,385,        result = this.padding.trimWidth(result);,4,0,0,1,2,0,4,0,0,9,40,4,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,386,"        return Math.max(result, 0.0);",0,0,0,1,2,1,6,0,0,6,29,5,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,401,        double result = this.margin.trimHeight(fixedHeight);,4,0,0,1,2,0,4,0,0,8,52,5,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,402,        result = this.frame.getInsets().trimHeight(result);,4,0,0,2,4,0,6,0,0,11,51,4,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,403,        result = this.padding.trimHeight(result);,4,0,0,1,2,0,4,0,0,9,41,4,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,404,"        return Math.max(result, 0.0);",6,0,0,1,2,1,6,0,0,13,29,3,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,422,        double w = c.getWidth();,6,0,0,1,2,0,4,0,0,11,24,3,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,423,        Range wr = c.getWidthRange();,2,0,0,1,2,0,4,2,0,8,29,4,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,424,        double h = c.getHeight();,2,0,0,1,2,0,4,0,0,6,25,5,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,425,        Range hr = c.getHeightRange();,2,0,0,1,2,0,4,2,0,8,30,4,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,426,        double ww = trimToContentWidth(w);,4,1,0,1,2,0,4,0,0,9,34,3,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,427,        double hh = trimToContentHeight(h);,2,0,0,1,2,0,4,0,0,6,35,5,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,428,        Range wwr = trimToContentWidth(wr);,2,0,0,1,2,0,4,2,0,8,35,4,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,429,        Range hhr = trimToContentHeight(hr);,2,0,0,1,2,0,4,2,0,8,36,4,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,430,        return new RectangleConstraint(,0,0,0,0,1,1,0,2,0,2,31,6,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,437,        if (r == null) {,0,0,0,1,3,0,0,0,0,4,16,4,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,440,        double lowerBound = 0.0;,8,1,0,0,0,0,0,0,0,9,24,3,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,441,        double upperBound = Double.POSITIVE_INFINITY;,8,0,0,0,0,0,0,0,0,8,45,3,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,442,        if (r.getLowerBound() > 0.0) {,0,0,0,2,5,0,0,0,0,7,30,4,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,445,        if (r.getUpperBound() < Double.POSITIVE_INFINITY) {,4,1,0,2,5,0,4,0,0,9,51,4,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,446,            upperBound = trimToContentWidth(r.getUpperBound());,2,0,0,2,4,0,6,0,0,9,51,6,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,448,"        return new Range(lowerBound, upperBound);",6,1,0,1,2,1,0,2,0,9,41,3,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,452,        if (r == null) {,2,1,0,1,3,0,0,0,0,3,16,4,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,455,        double lowerBound = 0.0;,2,0,0,0,0,0,0,0,0,2,24,5,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,456,        double upperBound = Double.POSITIVE_INFINITY;,6,0,0,0,0,0,0,0,0,6,45,5,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,457,        if (r.getLowerBound() > 0.0) {,0,1,0,2,5,0,4,0,0,5,30,4,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,460,        if (r.getUpperBound() < Double.POSITIVE_INFINITY) {,4,1,0,2,5,0,4,0,0,9,51,4,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,461,            upperBound = trimToContentHeight(r.getUpperBound());,0,0,0,2,4,0,0,0,0,6,52,4,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/block/AbstractBlock,13,463,"        return new Range(lowerBound, upperBound);",6,1,0,1,2,1,0,2,0,9,41,3,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/util/RectangleInsets,13,381,        double result = this.top;,0,0,0,0,0,0,0,0,0,0,25,4,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/util/RectangleInsets,13,382,        if (this.unitType == UnitType.RELATIVE) {,6,1,0,1,3,0,0,0,0,7,41,4,0.01786,0,0,-1
+defect4j,chart,org/jfree/chart/plot/CategoryPlot,14,430,"        this(null, null, null, null);",0,0,0,1,2,0,0,0,0,3,29,4,0.36364,1,1,-1
+defect4j,chart,org/jfree/chart/plot/CategoryPlot,14,431,    },0,0,0,0,1,0,0,0,0,1,1,4,0.36364,1,1,-1
+defect4j,chart,org/jfree/chart/plot/Marker,14,144,        this(Color.gray);,4,0,0,1,2,0,0,0,0,4,17,5,0.36,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Marker,14,145,    },6,0,0,0,1,0,0,0,0,7,1,4,0.36,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Marker,14,153,"        this(paint, new BasicStroke(0.5f), Color.gray, new BasicStroke(0.5f), ",0,0,0,2,5,0,0,0,0,7,69,4,0.36,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Marker,14,155,    },0,0,0,0,1,0,0,0,0,1,1,4,0.36,0,0,-1
+defect4j,chart,org/jfree/chart/plot/ValueMarker,14,68,        super();,0,0,0,1,2,0,0,0,0,3,8,4,0.36,0,0,-1
+defect4j,chart,org/jfree/chart/plot/ValueMarker,14,69,        this.value = value;,4,0,0,0,0,0,0,0,0,5,19,4,0.36,0,0,-1
+defect4j,chart,org/jfree/chart/plot/ValueMarker,14,70,    },0,0,0,0,1,0,6,0,0,6,1,7,0.36,0,0,-1
+defect4j,chart,org/jfree/chart/plot/XYPlot,14,2232,"        return removeDomainMarker(marker, Layer.FOREGROUND);",4,0,0,1,2,1,4,0,0,8,52,5,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/XYPlot,14,2248,"        return removeDomainMarker(0, marker, layer);",0,0,0,1,2,1,16,0,0,16,44,3,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/XYPlot,14,2265,"    	return removeDomainMarker(index, marker, layer, true);",6,1,0,1,2,1,8,0,0,16,54,3,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/XYPlot,14,2285,        if (layer == Layer.FOREGROUND) {,0,0,0,1,3,0,0,0,0,4,32,4,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/XYPlot,14,2286,            markers = (ArrayList) this.foregroundDomainMarkers.get(new Integer(,4,0,0,1,4,0,2,4,0,11,67,6,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/XYPlot,14,2293,        boolean removed = markers.remove(marker);,2,0,0,1,2,0,6,0,0,8,41,5,0.33333,1,0,-1
+defect4j,chart,org/jfree/chart/plot/XYPlot,14,2465,"        return removeRangeMarker(marker, Layer.FOREGROUND);",0,0,0,1,2,1,0,0,0,4,51,4,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/XYPlot,14,2481,"        return removeRangeMarker(0, marker, layer);",0,0,0,1,2,1,0,0,0,4,43,4,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/XYPlot,14,2498,"    	return removeRangeMarker(index, marker, layer, true);",0,0,0,1,2,1,0,0,0,4,53,4,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/XYPlot,14,2517,        if (marker == null) {,0,0,0,1,3,0,0,0,0,4,21,4,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/XYPlot,14,2521,        if (layer == Layer.FOREGROUND) {,6,1,0,1,3,0,0,0,0,7,32,4,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/XYPlot,14,2522,            markers = (ArrayList) this.foregroundRangeMarkers.get(new Integer(,4,0,0,1,4,0,2,4,0,11,66,6,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/XYPlot,14,2529,        boolean removed = markers.remove(marker);,2,0,0,1,2,0,6,0,0,8,41,5,0.33333,1,1,-1
+defect4j,chart,org/jfree/chart/plot/CategoryPlot,14,2106,"        return removeDomainMarker(marker, Layer.FOREGROUND);",0,0,0,1,2,1,0,0,0,4,52,4,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/CategoryPlot,14,2122,"        return removeDomainMarker(0, marker, layer);",4,1,0,1,2,1,4,0,0,9,44,6,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/CategoryPlot,14,2139,"    	return removeDomainMarker(index, marker, layer, true);",0,0,0,1,2,1,0,0,0,4,54,4,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/CategoryPlot,14,2158,        if (layer == Layer.FOREGROUND) {,6,1,0,1,3,0,0,0,0,7,32,4,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/CategoryPlot,14,2159,            markers = (ArrayList) this.foregroundDomainMarkers.get(new Integer(,4,0,0,1,4,0,2,4,0,11,67,6,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/CategoryPlot,14,2166,        boolean removed = markers.remove(marker);,0,0,0,1,2,0,0,0,0,3,41,4,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/CategoryPlot,14,2378,"        return removeRangeMarker(marker, Layer.FOREGROUND);",4,0,0,1,2,1,8,0,0,13,51,3,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/CategoryPlot,14,2396,"        return removeRangeMarker(0, marker, layer);",0,0,0,1,2,1,6,0,0,6,43,5,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/CategoryPlot,14,2415,"    	return removeRangeMarker(index, marker, layer, true);",0,0,0,1,2,1,8,0,0,9,53,5,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/CategoryPlot,14,2436,        if (marker == null) {,2,1,0,1,3,0,0,0,0,3,21,4,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/CategoryPlot,14,2440,        if (layer == Layer.FOREGROUND) {,6,1,0,1,3,0,2,2,0,11,32,4,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/CategoryPlot,14,2441,            markers = (ArrayList) this.foregroundRangeMarkers.get(new Integer(,8,0,0,1,4,0,2,4,0,16,66,3,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/CategoryPlot,14,2448,        boolean removed = markers.remove(marker);,2,0,0,1,2,0,6,0,0,8,41,5,0.33333,0,0,-1
+defect4j,chart,org/jfree/chart/plot/CategoryPlot,14,899,            Plot parent = getParent();,0,0,0,1,2,0,0,0,0,3,26,4,0.22222,0,0,-1
+defect4j,chart,org/jfree/chart/plot/CategoryPlot,14,900,            if (parent instanceof CategoryPlot) {,2,0,0,1,3,0,0,2,0,4,37,7,0.22222,0,0,-1
+defect4j,chart,org/jfree/chart/plot/XYPlot,14,501,"        this(null, null, null, null);",4,0,0,1,2,0,0,0,0,5,29,4,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/plot/XYPlot,14,502,    },0,0,0,0,1,0,0,0,0,1,1,4,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/plot/CategoryMarker,14,80,"        this(key, Color.gray, new BasicStroke(1.0f));    ",6,0,0,2,4,0,0,2,0,8,45,4,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/plot/CategoryMarker,14,81,    },2,0,0,0,1,0,0,0,0,2,1,4,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/plot/CategoryMarker,14,91,"        this(key, paint, stroke, paint, stroke, 1.0f);",10,0,0,1,2,0,0,0,0,10,46,4,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/plot/CategoryMarker,14,92,    },0,0,0,0,1,0,4,0,0,4,1,5,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/plot/CategoryMarker,14,107,"        super(paint, stroke, outlinePaint, outlineStroke, alpha);",12,0,0,1,2,0,0,0,0,14,57,3,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/plot/CategoryMarker,14,72,    private boolean drawAsLine = false;,2,0,0,0,0,1,0,0,0,4,35,2,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/plot/CategoryMarker,14,108,        this.key = key;,4,0,0,0,0,0,4,0,0,10,15,3,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/plot/CategoryMarker,14,109,        setLabelOffsetType(LengthAdjustmentType.EXPAND);,4,0,0,1,2,0,2,0,0,6,48,5,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/plot/CategoryMarker,14,110,    },0,0,0,0,1,0,0,0,0,1,1,4,0.2,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Marker,14,173,                     float alpha) {,2,0,0,0,2,0,0,0,0,2,14,3,0.13115,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Marker,14,115,    private String label = null;,2,0,0,0,0,1,0,2,0,5,28,2,0.13115,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Marker,14,175,        if (paint == null) {,0,0,0,1,3,0,0,0,0,4,20,4,0.13115,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Marker,14,178,        if (stroke == null) {,0,0,0,1,3,0,0,0,0,4,21,4,0.13115,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Marker,14,181,        if (alpha < 0.0f || alpha > 1.0f),4,3,0,1,2,0,0,0,0,7,33,4,0.13115,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Marker,14,185,        this.paint = paint;,4,0,0,0,0,0,0,0,0,5,19,4,0.13115,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Marker,14,186,        this.stroke = stroke;,4,0,0,0,0,0,0,0,0,5,21,4,0.13115,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Marker,14,187,        this.outlinePaint = outlinePaint;,0,0,0,0,0,0,0,0,0,0,33,4,0.13115,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Marker,14,188,        this.outlineStroke = outlineStroke;,4,0,0,0,0,0,0,0,0,5,35,4,0.13115,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Marker,14,189,        this.alpha = alpha;,8,0,0,0,0,0,0,0,0,10,19,3,0.13115,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Marker,14,191,"        this.labelFont = new Font(""SansSerif"", Font.PLAIN, 9);",6,0,0,1,2,0,0,2,0,10,54,4,0.13115,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Marker,14,192,        this.labelPaint = Color.black;,6,0,0,0,0,0,0,0,0,7,30,4,0.13115,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Marker,14,193,        this.labelAnchor = RectangleAnchor.TOP_LEFT;,10,0,0,0,0,0,0,0,0,12,44,3,0.13115,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Marker,14,194,"        this.labelOffset = new RectangleInsets(3.0, 3.0, 3.0, 3.0);",0,0,0,1,2,0,0,0,0,3,59,4,0.13115,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Marker,14,195,        this.labelOffsetType = LengthAdjustmentType.CONTRACT;,6,0,0,0,0,0,0,0,0,7,53,4,0.13115,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Marker,14,196,        this.labelTextAnchor = TextAnchor.CENTER;,0,0,0,0,0,0,0,0,0,0,41,4,0.13115,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Marker,14,198,        this.listenerList = new EventListenerList();,2,0,0,1,2,0,0,2,0,5,44,4,0.13115,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Marker,14,199,    },0,0,0,0,1,0,0,0,0,1,1,4,0.13115,0,0,-1
+defect4j,chart,org/jfree/chart/util/LengthAdjustmentType,14,76,    private LengthAdjustmentType(String name) {,4,0,0,1,3,1,6,2,0,14,43,2,0.13115,0,0,-1
+defect4j,chart,org/jfree/chart/util/LengthAdjustmentType,14,77,        this.name = name;,4,0,0,0,0,0,0,0,0,5,17,4,0.13115,0,0,-1
+defect4j,chart,org/jfree/chart/util/LengthAdjustmentType,14,78,    },0,0,0,0,1,0,0,0,0,1,1,4,0.13115,0,0,-1
+defect4j,chart,org/jfree/chart/util/LengthAdjustmentType,14,57,    public static final LengthAdjustmentType NO_CHANGE ,2,0,0,0,0,3,0,2,0,7,50,2,0.13115,0,0,-1
+defect4j,chart,org/jfree/chart/util/LengthAdjustmentType,14,61,    public static final LengthAdjustmentType EXPAND ,2,0,0,0,0,3,0,2,0,7,47,2,0.13115,0,0,-1
+defect4j,chart,org/jfree/chart/util/LengthAdjustmentType,14,65,    public static final LengthAdjustmentType CONTRACT ,2,0,0,0,0,3,0,2,0,7,49,2,0.13115,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Marker,14,490,        if (adj == null) {,2,1,0,1,3,0,0,0,0,3,18,4,0.125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Marker,14,493,        this.labelOffsetType = adj;    ,12,0,0,0,0,0,0,0,0,14,27,4,0.125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Marker,14,494,        notifyListeners(new MarkerChangeEvent(this));,0,0,0,2,4,0,0,0,0,6,45,4,0.125,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Marker,14,495,    },0,0,0,0,1,0,0,0,0,1,1,4,0.125,0,0,-1
+defect4j,chart,org/jfree/chart/util/Layer,14,69,    private Layer(String name) {,6,0,0,1,3,1,0,2,0,11,28,2,0.1194,0,0,-1
+defect4j,chart,org/jfree/chart/util/Layer,14,70,        this.name = name;,8,0,0,0,0,0,0,0,0,10,17,4,0.1194,0,0,-1
+defect4j,chart,org/jfree/chart/util/Layer,14,71,    },0,0,0,0,1,0,0,0,0,1,1,4,0.1194,0,0,-1
+defect4j,chart,org/jfree/chart/util/Layer,14,56,"    public static final Layer FOREGROUND = new Layer(""Layer.FOREGROUND"");",2,0,0,1,2,3,0,4,0,10,69,2,0.1194,0,0,-1
+defect4j,chart,org/jfree/chart/util/Layer,14,59,"    public static final Layer BACKGROUND = new Layer(""Layer.BACKGROUND"");",6,0,0,1,2,3,0,4,0,15,69,1,0.1194,0,0,-1
+defect4j,chart,org/jfree/chart/plot/DatasetRenderingOrder,14,80,    private DatasetRenderingOrder(String name) {,4,0,0,1,3,1,0,2,0,7,44,2,0.08247,0,0,-1
+defect4j,chart,org/jfree/chart/plot/DatasetRenderingOrder,14,81,        this.name = name;,4,0,0,0,0,0,0,0,0,5,17,4,0.08247,0,0,-1
+defect4j,chart,org/jfree/chart/plot/DatasetRenderingOrder,14,82,    },0,0,0,0,1,0,0,0,0,1,1,4,0.08247,0,0,-1
+defect4j,chart,org/jfree/chart/plot/DatasetRenderingOrder,14,62,    public static final DatasetRenderingOrder FORWARD,2,0,0,0,0,3,0,2,0,7,49,2,0.08247,0,0,-1
+defect4j,chart,org/jfree/chart/plot/DatasetRenderingOrder,14,69,    public static final DatasetRenderingOrder REVERSE,2,0,0,0,0,3,0,2,0,7,49,2,0.08247,0,0,-1
+defect4j,chart,org/jfree/chart/axis/AxisLocation,14,84,    private AxisLocation(String name) {,4,0,0,1,3,1,0,2,0,7,35,2,0.08247,0,0,-1
+defect4j,chart,org/jfree/chart/axis/AxisLocation,14,85,        this.name = name;,0,0,0,0,0,0,0,0,0,0,17,4,0.08247,0,0,-1
+defect4j,chart,org/jfree/chart/axis/AxisLocation,14,86,    },0,0,0,0,1,0,0,0,0,1,1,4,0.08247,0,0,-1
+defect4j,chart,org/jfree/chart/axis/AxisLocation,14,61,    public static final AxisLocation TOP_OR_LEFT = new AxisLocation(,2,0,0,0,1,3,0,4,0,9,64,2,0.08247,0,0,-1
+defect4j,chart,org/jfree/chart/axis/AxisLocation,14,65,    public static final AxisLocation TOP_OR_RIGHT = new AxisLocation(,2,0,0,0,1,3,0,4,0,9,65,2,0.08247,0,0,-1
+defect4j,chart,org/jfree/chart/axis/AxisLocation,14,69,    public static final AxisLocation BOTTOM_OR_LEFT = new AxisLocation(,2,0,0,0,1,3,0,4,0,9,67,2,0.08247,0,0,-1
+defect4j,chart,org/jfree/chart/axis/AxisLocation,14,73,    public static final AxisLocation BOTTOM_OR_RIGHT = new AxisLocation(,2,0,0,0,1,3,0,4,0,9,68,2,0.08247,0,0,-1
+defect4j,chart,org/jfree/chart/util/RectangleAnchor,14,106,    private RectangleAnchor(final String name) {,0,0,0,1,3,0,0,0,0,4,44,4,0.08205,0,0,-1
+defect4j,chart,org/jfree/chart/util/RectangleAnchor,14,107,        this.name = name;,4,0,0,0,0,0,0,0,0,5,17,4,0.08205,0,0,-1
+defect4j,chart,org/jfree/chart/util/RectangleAnchor,14,108,    },0,0,0,0,1,0,0,0,0,1,1,4,0.08205,0,0,-1
+defect4j,chart,org/jfree/chart/util/RectangleAnchor,14,63,    public static final RectangleAnchor CENTER ,2,0,0,0,0,3,0,2,0,7,42,2,0.08205,0,0,-1
+defect4j,chart,org/jfree/chart/util/RectangleAnchor,14,67,    public static final RectangleAnchor TOP ,10,0,0,0,0,3,0,4,0,19,39,1,0.08205,0,0,-1
+defect4j,chart,org/jfree/chart/util/RectangleAnchor,14,71,    public static final RectangleAnchor TOP_LEFT ,2,0,0,0,0,3,0,2,0,7,44,2,0.08205,0,0,-1
+defect4j,chart,org/jfree/chart/util/RectangleAnchor,14,75,    public static final RectangleAnchor TOP_RIGHT ,2,0,0,0,0,3,0,2,0,7,45,2,0.08205,0,0,-1
+defect4j,chart,org/jfree/chart/util/RectangleAnchor,14,79,    public static final RectangleAnchor BOTTOM ,2,0,0,0,0,3,0,2,0,7,42,2,0.08205,0,0,-1
+defect4j,chart,org/jfree/chart/util/RectangleAnchor,14,83,    public static final RectangleAnchor BOTTOM_LEFT ,0,0,0,0,0,0,0,0,0,0,47,4,0.08205,0,0,-1
+defect4j,chart,org/jfree/chart/util/RectangleAnchor,14,87,    public static final RectangleAnchor BOTTOM_RIGHT ,2,0,0,0,0,3,0,2,0,7,48,2,0.08205,0,0,-1
+defect4j,chart,org/jfree/chart/util/RectangleAnchor,14,91,    public static final RectangleAnchor LEFT ,2,0,0,0,0,3,0,2,0,7,40,2,0.08205,0,0,-1
+defect4j,chart,org/jfree/chart/util/RectangleAnchor,14,95,    public static final RectangleAnchor RIGHT ,0,0,0,0,0,0,0,0,0,0,41,4,0.08205,0,0,-1
+defect4j,chart,org/jfree/chart/event/ChartChangeEvent,14,131,        this.type = type;,4,0,0,0,0,0,0,0,0,5,17,4,0.08122,0,0,-1
+defect4j,chart,org/jfree/chart/event/ChartChangeEvent,14,132,    },0,0,0,0,1,0,0,0,0,1,1,4,0.08122,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Plot,14,433,        return this.parent;,0,0,0,0,0,1,0,0,0,1,19,4,0.08122,0,0,-1
+defect4j,chart,org/jfree/chart/util/ObjectList,14,85,        return super.get(index);         ,0,0,0,1,2,1,0,0,0,4,24,4,0.08081,0,0,-1
+defect4j,chart,org/jfree/chart/util/ObjectList,14,95,"        super.set(index, object);        ",6,0,0,1,2,0,0,0,0,6,25,5,0.0804,0,0,-1
+defect4j,chart,org/jfree/chart/util/ObjectList,14,96,    }    ,0,0,0,0,1,0,0,0,0,1,1,4,0.0804,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PlotOrientation,14,72,    private PlotOrientation(String name) {,0,0,0,1,3,0,0,0,0,4,38,4,0.0804,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PlotOrientation,14,73,        this.name = name;,4,0,0,0,0,0,0,0,0,5,17,4,0.0804,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PlotOrientation,14,74,    },0,0,0,0,1,0,0,0,0,1,1,4,0.0804,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PlotOrientation,14,57,    public static final PlotOrientation HORIZONTAL,2,0,0,0,0,3,0,2,0,7,46,2,0.0804,0,0,-1
+defect4j,chart,org/jfree/chart/plot/PlotOrientation,14,61,    public static final PlotOrientation VERTICAL,2,0,0,0,0,3,0,2,0,7,44,2,0.0804,0,0,-1
+defect4j,chart,org/jfree/chart/util/AbstractObjectList,14,109,        Object result = null;,2,0,0,0,0,0,0,2,0,4,21,4,0.07656,0,0,-1
+defect4j,chart,org/jfree/chart/util/AbstractObjectList,14,110,        if (index >= 0 && index < this.size) {,6,3,0,1,3,0,0,0,0,9,38,4,0.07656,0,0,-1
+defect4j,chart,org/jfree/chart/util/AbstractObjectList,14,111,            result = this.objects[index];,4,0,1,1,2,0,0,0,0,7,29,6,0.07656,0,0,-1
+defect4j,chart,org/jfree/chart/util/AbstractObjectList,14,113,        return result;,2,0,0,0,0,1,0,0,0,2,14,4,0.07656,0,0,-1
+defect4j,chart,org/jfree/chart/util/AbstractObjectList,14,123,        if (index < 0) {,2,1,0,1,3,0,0,0,0,3,16,4,0.07619,0,0,-1
+defect4j,chart,org/jfree/chart/util/AbstractObjectList,14,126,        if (index >= this.objects.length) {,6,1,0,1,3,0,0,0,0,7,35,4,0.07619,0,0,-1
+defect4j,chart,org/jfree/chart/util/AbstractObjectList,14,131,        this.objects[index] = object;,0,0,0,1,2,0,0,0,0,3,29,4,0.07619,0,0,-1
+defect4j,chart,org/jfree/chart/util/AbstractObjectList,14,132,"        this.size = Math.max(this.size, index + 1);",6,1,0,1,2,0,4,0,0,12,43,4,0.07619,0,0,-1
+defect4j,chart,org/jfree/chart/util/AbstractObjectList,14,133,    },0,0,0,0,1,0,0,0,0,1,1,4,0.07619,0,0,-1
+defect4j,chart,org/jfree/chart/event/PlotChangeEvent,14,64,        super(plot);,0,0,0,1,2,0,0,0,0,3,12,4,0.07306,0,0,-1
+defect4j,chart,org/jfree/chart/event/PlotChangeEvent,14,65,        this.plot = plot;,4,0,0,0,0,0,0,0,0,5,17,4,0.07306,0,0,-1
+defect4j,chart,org/jfree/chart/event/PlotChangeEvent,14,66,    },0,0,0,0,1,0,0,0,0,1,1,4,0.07306,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Plot,14,888,        Object[] listeners = this.listenerList.getListenerList();,4,0,0,2,4,0,2,4,0,11,57,3,0.07306,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Plot,14,889,        for (int i = listeners.length - 2; i >= 0; i -= 2) {,10,2,0,1,3,0,0,0,0,13,52,4,0.07306,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Plot,14,894,    },0,0,0,0,1,0,0,0,0,1,1,4,0.07306,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Plot,14,284,    protected Plot() {,4,0,0,1,3,1,4,0,0,9,18,2,0.07143,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Plot,14,264,    private int backgroundImageAlignment = Align.FIT;,6,0,0,0,0,1,0,0,0,7,49,2,0.07143,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Plot,14,267,    private float backgroundImageAlpha = 0.5f;,0,0,0,0,0,0,0,0,0,0,42,4,0.07143,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Plot,14,286,        this.parent = null;,0,0,0,0,0,0,0,0,0,0,19,4,0.07143,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Plot,14,287,        this.insets = DEFAULT_INSETS;,4,0,0,0,0,0,6,0,0,11,29,4,0.07143,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Plot,14,288,        this.backgroundPaint = DEFAULT_BACKGROUND_PAINT;,4,0,0,0,0,0,0,0,0,5,48,4,0.07143,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Plot,14,289,        this.backgroundAlpha = DEFAULT_BACKGROUND_ALPHA;,4,0,0,0,0,0,0,0,0,5,48,4,0.07143,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Plot,14,290,        this.backgroundImage = null;,0,0,0,0,0,0,0,0,0,0,28,4,0.07143,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Plot,14,291,        this.outlineVisible = true;,2,0,0,0,0,0,0,0,0,4,27,4,0.07143,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Plot,14,292,        this.outlineStroke = DEFAULT_OUTLINE_STROKE;,4,0,0,0,0,0,0,0,0,5,44,4,0.07143,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Plot,14,293,        this.outlinePaint = DEFAULT_OUTLINE_PAINT;,0,0,0,0,0,0,0,0,0,0,42,4,0.07143,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Plot,14,294,        this.foregroundAlpha = DEFAULT_FOREGROUND_ALPHA;,4,0,0,0,0,0,0,0,0,5,48,4,0.07143,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Plot,14,296,        this.noDataMessage = null;,0,0,0,0,0,0,0,0,0,0,26,4,0.07143,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Plot,14,297,"        this.noDataMessageFont = new Font(""SansSerif"", Font.PLAIN, 12);",6,0,0,1,2,0,0,2,0,10,63,4,0.07143,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Plot,14,298,        this.noDataMessagePaint = Color.black;,6,0,0,0,0,0,0,0,0,7,38,4,0.07143,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Plot,14,300,        this.drawingSupplier = new DefaultDrawingSupplier();,0,0,0,1,2,0,0,0,0,3,52,4,0.07143,0,0,-1
+defect4j,chart,org/jfree/chart/plot/Plot,14,302,        this.listenerList = new EventListenerList();,2,0,0,1,2,0,0,2,0,5,44,4,0.07143,0,0,-1

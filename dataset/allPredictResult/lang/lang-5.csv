@@ -1,0 +1,80 @@
+project_path,version,lines,statement,suspicious,faulty,predict,miss_line
+org/apache/commons/lang3/LocaleUtils,5,99,"                throw new IllegalArgumentException(""Invalid locale format: "" + str);",0.5,1,1,1
+org/apache/commons/lang3/LocaleUtils,5,89,        if (str == null) {,0.25,1,-1,1
+org/apache/commons/lang3/LocaleUtils,5,92,        final int len = str.length();,0.25,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,93,        if (len < 2) {,0.25,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,96,        final char ch0 = str.charAt(0);,0.25,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,97,            final char ch1 = str.charAt(1);,0.25,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,98,            if (!Character.isLowerCase(ch0) || !Character.isLowerCase(ch1)) {,0.25,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,288,    static class SyncAvoid {,0.08333,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,295,            List<Locale> list = new ArrayList<Locale>(Arrays.asList(Locale.getAvailableLocales()));  // extra safe,0.08333,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,296,            AVAILABLE_LOCALE_LIST = Collections.unmodifiableList(list);,0.08333,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,297,            AVAILABLE_LOCALE_SET = Collections.unmodifiableSet(new HashSet<Locale>(list));,0.08333,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,298,        },0.08333,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,42,"    private static final ConcurrentMap<String, List<Locale>> cLanguagesByCountry = ",0.08333,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,46,"    private static final ConcurrentMap<String, List<Locale>> cCountriesByLanguage = ",0.08333,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,193,        return SyncAvoid.AVAILABLE_LOCALE_LIST;,0.08333,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,218,        return availableLocaleList().contains(locale);,0.08333,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,57,      super();,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,58,    },0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,90,            return null;,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,94,"            throw new IllegalArgumentException(""Invalid locale format: "" + str);",0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,101,            if (len == 2) {,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,102,                return new Locale(str);,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,104,            if (len < 5) {,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,105,"                throw new IllegalArgumentException(""Invalid locale format: "" + str);",0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,107,            if (str.charAt(2) != '_') {,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,108,"                throw new IllegalArgumentException(""Invalid locale format: "" + str);",0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,110,            final char ch3 = str.charAt(3);,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,111,            if (ch3 == '_') {,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,112,"                return new Locale(str.substring(0, 2), """", str.substring(4));",0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,114,            final char ch4 = str.charAt(4);,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,115,            if (!Character.isUpperCase(ch3) || !Character.isUpperCase(ch4)) {,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,116,"                throw new IllegalArgumentException(""Invalid locale format: "" + str);",0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,118,            if (len == 5) {,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,119,"                return new Locale(str.substring(0, 2), str.substring(3, 5));",0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,121,            if (len < 7) {,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,122,"                throw new IllegalArgumentException(""Invalid locale format: "" + str);",0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,124,            if (str.charAt(5) != '_') {,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,125,"                throw new IllegalArgumentException(""Invalid locale format: "" + str);",0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,127,"            return new Locale(str.substring(0, 2), str.substring(3, 5), str.substring(6));",0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,144,"        return localeLookupList(locale, locale);",0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,166,        List<Locale> list = new ArrayList<Locale>(4);,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,167,        if (locale != null) {,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,168,            list.add(locale);,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,169,            if (locale.getVariant().length() > 0) {,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,170,"                list.add(new Locale(locale.getLanguage(), locale.getCountry()));",0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,172,            if (locale.getCountry().length() > 0) {,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,173,"                list.add(new Locale(locale.getLanguage(), """"));",0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,175,            if (list.contains(defaultLocale) == false) {,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,176,                list.add(defaultLocale);,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,179,        return Collections.unmodifiableList(list);,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,207,        return SyncAvoid.AVAILABLE_LOCALE_SET;,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,232,        if (countryCode == null) {,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,233,            return Collections.emptyList();,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,235,        List<Locale> langs = cLanguagesByCountry.get(countryCode);,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,236,        if (langs == null) {,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,237,            langs = new ArrayList<Locale>();,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,238,            List<Locale> locales = availableLocaleList();,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,239,            for (int i = 0; i < locales.size(); i++) {,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,240,                Locale locale = locales.get(i);,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,241,                if (countryCode.equals(locale.getCountry()) &&,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,243,                    langs.add(locale);,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,246,            langs = Collections.unmodifiableList(langs);,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,247,"            cLanguagesByCountry.putIfAbsent(countryCode, langs);",0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,248,            langs = cLanguagesByCountry.get(countryCode);,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,250,        return langs;,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,264,        if (languageCode == null) {,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,265,            return Collections.emptyList();,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,267,        List<Locale> countries = cCountriesByLanguage.get(languageCode);,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,268,        if (countries == null) {,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,269,            countries = new ArrayList<Locale>();,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,270,            List<Locale> locales = availableLocaleList();,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,271,            for (int i = 0; i < locales.size(); i++) {,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,272,                Locale locale = locales.get(i);,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,273,                if (languageCode.equals(locale.getLanguage()) &&,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,276,                    countries.add(locale);,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,279,            countries = Collections.unmodifiableList(countries);,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,280,"            cCountriesByLanguage.putIfAbsent(languageCode, countries);",0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,281,            countries = cCountriesByLanguage.get(languageCode);,0.0,0,-1,0
+org/apache/commons/lang3/LocaleUtils,5,283,        return countries;,0.0,0,-1,0

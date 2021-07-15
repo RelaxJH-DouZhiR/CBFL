@@ -1,0 +1,52 @@
+dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,logic,lengthEle,lengthWord,depth,suspicious,accuracy,miss_line,predict
+defect4j,mockito,org/mockito/internal/invocation/ArgumentsProcessor,1,26,        final int nonVarArgsCount = args.length - 1;,6,1,0,0,0,1,0,0,0,8,44,4,26.0,0,0,-1
+defect4j,mockito,org/mockito/internal/invocation/ArgumentsProcessor,1,28,        if (args[nonVarArgsCount] == null) {,0,1,1,2,5,0,0,0,0,5,36,4,26.0,0,0,-1
+defect4j,mockito,org/mockito/internal/invocation/ArgumentsProcessor,1,34,        final int varArgsCount = varArgs.length;,6,0,0,0,0,1,0,0,0,7,40,4,26.0,0,0,-1
+defect4j,mockito,org/mockito/internal/invocation/ArgumentsProcessor,1,35,        Object[] newArgs = new Object[nonVarArgsCount + varArgsCount];,0,0,0,2,4,0,0,0,0,6,62,4,26.0,0,0,-1
+defect4j,mockito,org/mockito/internal/invocation/ArgumentsProcessor,1,36,"        System.arraycopy(args, 0, newArgs, 0, nonVarArgsCount);",0,0,0,1,2,0,10,0,0,10,55,5,26.0,0,0,-1
+defect4j,mockito,org/mockito/internal/invocation/ArgumentsProcessor,1,37,"        System.arraycopy(varArgs, 0, newArgs, nonVarArgsCount, varArgsCount);",0,0,0,1,2,0,12,0,0,12,69,5,26.0,0,0,-1
+defect4j,mockito,org/mockito/internal/util/Timer,2,7,    private long startTime = -1;,8,1,0,0,0,1,0,4,0,15,28,1,0.75,1,1,-1
+defect4j,mockito,org/mockito/internal/util/Timer,2,9,    public Timer(long durationMillis) {,4,0,0,1,3,1,0,0,0,5,35,2,0.75,1,1,-1
+defect4j,mockito,org/mockito/internal/util/Timer,2,10,        this.durationMillis = durationMillis;,4,0,0,0,0,0,0,0,0,5,37,4,0.75,0,0,-1
+defect4j,mockito,org/mockito/internal/invocation/InvocationMatcher,3,130,                    ((CapturesArguments) m).captureFrom(invocation.getRawArguments()[position - indexOfVararg]);,6,1,0,5,10,0,6,2,0,15,92,11,4.76471,1,0,-1
+defect4j,mockito,org/mockito/internal/invocation/InvocationMatcher,3,128,                Matcher m = matchers.get(position);,2,0,0,1,2,0,0,2,0,4,35,5,3.24,1,0,-1
+defect4j,mockito,org/mockito/internal/invocation/InvocationMatcher,3,129,                if (m instanceof CapturesArguments) {,2,0,0,1,3,0,0,0,0,2,37,7,3.24,0,0,-1
+defect4j,mockito,org/mockito/internal/invocation/InvocationMatcher,3,120,            int indexOfVararg = invocation.getRawArguments().length - 1;,0,0,0,1,2,0,0,0,0,3,60,4,3.11538,0,0,-1
+defect4j,mockito,org/mockito/internal/invocation/InvocationMatcher,3,121,            for (int position = 0; position < indexOfVararg; position++) {,0,0,0,1,3,0,0,0,0,4,62,4,3.11538,0,0,-1
+defect4j,mockito,org/mockito/internal/invocation/InvocationMatcher,3,127,            for (int position = indexOfVararg; position < matchers.size(); position++) {,0,0,0,2,5,0,0,0,0,7,76,4,3.11538,1,0,-1
+defect4j,mockito,org/mockito/internal/invocation/InvocationMatcher,3,124,"                    ((CapturesArguments) m).captureFrom(invocation.getArgumentAt(position, Object.class));",2,0,0,4,8,0,6,2,0,10,86,10,1.77778,0,0,-1
+defect4j,mockito,org/mockito/Mockito,4,1257,"        return mock(classToMock, withSettings().defaultAnswer(defaultAnswer));",0,0,0,3,6,1,10,0,0,10,70,5,0.25806,0,0,-1
+defect4j,mockito,org/mockito/exceptions/Reporter,4,418,        ScenarioPrinter scenarioPrinter = new ScenarioPrinter();,2,0,0,1,2,0,0,4,0,6,56,4,0.14286,0,0,-1
+defect4j,mockito,org/mockito/exceptions/Reporter,4,419,        String scenario = scenarioPrinter.print(invocations);,0,0,0,1,2,0,0,0,0,3,53,4,0.14286,0,0,-1
+defect4j,mockito,org/mockito/internal/exceptions/util/ScenarioPrinter,4,11,public class ScenarioPrinter {,2,0,0,0,1,1,0,0,0,3,30,1,0.13333,0,0,-1
+defect4j,mockito,org/mockito/internal/exceptions/util/ScenarioPrinter,4,14,        if (invocations.size() == 1) {,4,0,0,2,5,0,0,2,0,6,30,4,0.13333,0,0,-1
+defect4j,mockito,org/mockito/ArgumentMatcher,5,60,public abstract class ArgumentMatcher<T> extends BaseMatcher<T> {,4,0,0,0,1,2,0,4,0,10,65,1,0.16667,0,0,-1
+defect4j,mockito,org/mockito/internal/util/Primitives,5,13,"    private static final Map<Class<?>, Class<?>> PRIMITIVE_TYPES = new HashMap<Class<?>, Class<?>>();",2,0,0,1,2,3,0,12,0,17,97,2,0.14286,0,0,-1
+defect4j,mockito,org/mockito/internal/util/Primitives,5,14,"    private static final Map<Class<?>, Object> PRIMITIVE_OR_WRAPPER_DEFAULT_VALUES = new HashMap<Class<?>, Object>();",0,0,0,1,2,0,0,0,0,3,113,4,0.14286,0,0,-1
+defect4j,mockito,org/mockito/internal/util/Primitives,5,58,"        PRIMITIVE_TYPES.put(Boolean.class, Boolean.TYPE);",4,0,0,1,2,2,28,8,0,44,49,1,0.14286,0,0,-1
+defect4j,mockito,org/mockito/internal/util/Primitives,5,59,"        PRIMITIVE_TYPES.put(Character.class, Character.TYPE);",0,0,0,1,2,0,0,0,0,3,53,4,0.14286,0,0,-1
+defect4j,mockito,org/mockito/internal/util/Primitives,5,60,"        PRIMITIVE_TYPES.put(Byte.class, Byte.TYPE);",2,1,0,1,2,0,0,0,0,3,43,4,0.14286,0,0,-1
+defect4j,mockito,org/mockito/internal/util/Primitives,5,61,"        PRIMITIVE_TYPES.put(Short.class, Short.TYPE);",2,0,0,1,2,3,0,4,0,9,45,2,0.14286,0,0,-1
+defect4j,mockito,org/mockito/internal/util/Primitives,5,62,"        PRIMITIVE_TYPES.put(Integer.class, Integer.TYPE);",0,0,0,1,2,0,0,0,0,3,49,4,0.14286,0,0,-1
+defect4j,mockito,org/mockito/internal/util/Primitives,5,63,"        PRIMITIVE_TYPES.put(Long.class, Long.TYPE);",6,0,0,1,2,0,12,6,0,25,43,1,0.14286,0,0,-1
+defect4j,mockito,org/mockito/internal/progress/HandyReturnValues,6,48,        return new LinkedList();,0,0,0,1,2,1,0,2,0,2,24,6,1.0,0,0,-1
+defect4j,mockito,org/mockito/Matchers,6,373,        return reportMatcher(Any.ANY).returnSet();,4,0,0,2,4,1,4,0,0,8,42,5,0.66667,1,0,-1
+defect4j,mockito,org/mockito/Matchers,6,407,        return reportMatcher(Any.ANY).returnMap();,0,0,0,2,4,1,0,0,0,7,42,4,0.66667,1,0,-1
+defect4j,mockito,org/mockito/Matchers,6,442,        return reportMatcher(Any.ANY).returnList();,0,0,0,2,4,1,0,0,0,7,43,4,0.66667,1,0,-1
+defect4j,mockito,org/mockito/internal/progress/HandyReturnValues,6,44,        return new HashMap();,0,0,0,1,2,1,0,0,0,4,21,4,0.57143,0,0,-1
+defect4j,mockito,org/mockito/internal/handler/InvocationNotifierHandler,7,41,        } catch (Throwable t){,2,0,0,1,4,0,0,2,0,4,22,6,1.0,0,0,-1
+defect4j,mockito,org/mockito/internal/handler/InvocationNotifierHandler,7,42,"            notifyMethodCallException(invocation, t);",0,0,0,1,2,0,0,0,0,3,41,4,1.0,0,0,-1
+defect4j,mockito,org/mockito/internal/handler/InvocationNotifierHandler,7,43,            throw t;,6,1,0,0,0,0,6,0,0,14,8,4,1.0,0,0,-1
+defect4j,mockito,org/mockito/internal/configuration/GlobalConfiguration,7,59,        return GLOBAL_CONFIGURATION.get().cleansStackTrace();,0,0,0,2,4,1,8,0,0,8,53,9,1.0,0,0,-1
+defect4j,mockito,org/mockito/internal/util/reflection/GenericMetadataSupport,8,184,            TypeVariable typeVariable = (TypeVariable) type;,4,0,0,1,2,0,0,4,0,8,48,6,0.125,0,0,-1
+defect4j,mockito,org/mockito/exceptions/Reporter,9,583,        throw new MockitoException(join(,0,0,0,0,2,0,2,2,0,4,32,5,2.25,0,0,-1
+defect4j,mockito,org/mockito/Mockito,9,1405,"        return MOCKITO_CORE.mock(classToSpy, withSettings()",0,0,0,1,3,1,8,0,0,8,51,5,1.33333,0,0,-1
+defect4j,mockito,org/mockito/internal/creation/instance/ConstructorInstantiator,9,15,            return noArgConstructor(cls);,0,0,0,1,2,1,4,0,0,4,29,7,0.8,0,0,-1
+defect4j,mockito,org/mockito/internal/creation/instance/ConstructorInstantiator,9,55,            return cls.newInstance();,0,0,0,1,2,1,0,0,0,4,25,4,0.8,0,0,-1
+defect4j,mockito,org/mockito/internal/creation/instance/ConstructorInstantiator,9,14,        if (outerClassInstance == null) {,6,1,0,1,3,0,4,2,0,15,33,1,0.57143,0,0,-1
+defect4j,mockito,org/mockito/exceptions/Reporter,10,760,        throw new MockitoException(join(,0,0,0,0,2,0,2,2,0,4,32,5,0.5,0,0,-1
+defect4j,mockito,org/mockito/internal/util/reflection/GenericMetadataSupport,10,215,            return new NotGenericReturnTypeSupport(genericReturnType);,2,0,0,1,2,1,0,2,0,4,58,7,0.04762,0,0,-1
+defect4j,mockito,org/mockito/internal/util/reflection/GenericMetadataSupport,10,480,        public NotGenericReturnTypeSupport(Type genericReturnType) {,0,0,0,1,3,0,0,0,0,4,60,4,0.04762,0,0,-1
+defect4j,mockito,org/mockito/internal/util/reflection/GenericMetadataSupport,10,481,            returnType = (Class<?>) genericReturnType;,6,0,0,1,2,0,8,4,0,19,42,1,0.04762,0,0,-1
+defect4j,mockito,org/mockito/internal/creation/DelegatingMethod,11,55,            return method.equals(o);,0,0,0,1,2,1,6,0,0,6,24,5,1.33333,1,0,-1
+defect4j,mockito,org/mockito/internal/util/MockUtil,11,69,        return isMockitoMock(mock) && getMockSettings(mock).getSpiedInstance() != null;,0,2,0,3,6,1,10,0,0,14,79,4,0.00816,0,0,-1

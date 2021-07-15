@@ -1,0 +1,262 @@
+dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,other,lengthEle,lengthWord,depth,suspicious,accuracy,miss_line
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,216,"            throw new ArithmeticException(""The denominator must not be zero"");",0,0,0,1,2,2,0,1,2,5,66,6,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,223,            numerator/=2; denominator/=2;,2,0,0,0,0,0,0,0,2,2,29,6,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,226,            if (numerator==Integer.MIN_VALUE ||,3,2,0,0,1,1,0,0,0,4,35,6,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,228,"                throw new ArithmeticException(""overflow: can't negate"");",0,0,0,1,2,2,0,1,2,5,56,8,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,230,            numerator = -numerator;,2,0,0,0,0,0,0,0,2,2,23,6,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,231,            denominator = -denominator;,2,0,0,0,0,0,0,0,2,2,27,6,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,475,        if (numerator == 0) {,1,1,0,1,3,1,0,0,0,5,21,4,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,476,            return equals(ZERO) ? this : ZERO;,1,0,0,1,2,2,2,0,1,6,34,7,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,478,"        int gcd = greatestCommonDivisor(Math.abs(numerator), denominator);",1,0,0,1,4,1,5,0,1,6,66,5,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,479,        if (gcd == 1) {,1,1,0,1,3,1,0,0,0,5,15,4,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,480,            return this;,0,0,0,0,0,2,0,0,0,1,12,2,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,482,"        return Fraction.getFraction(numerator / gcd, denominator / gcd);",4,2,0,0,2,1,2,0,0,5,64,5,1.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,591,        if (u>0) { u=-u; } // make u negative,3,1,0,1,4,1,0,0,2,6,37,4,0.57143,1,1
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,592,        if (v>0) { v=-v; } // make v negative,3,1,0,1,4,1,0,0,2,6,37,4,0.57143,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,594,        int k=0;,1,0,0,0,0,1,0,0,0,2,8,5,0.57143,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,595,        while ((u&1)==0 && (v&1)==0 && k<31) { // while u and v are both even...,3,7,0,2,7,2,0,0,0,5,72,4,0.57143,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,598,        if (k==31) {,1,1,0,1,3,1,0,0,0,5,12,4,0.57143,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,603,        int t = ((u&1)==1) ? v : -(u/2)/*B3*/;,4,3,0,2,6,1,0,0,1,6,38,5,0.57143,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,609,            while ((t&1)==0) { // while t is even..,1,2,0,2,5,2,0,0,0,5,39,6,0.57143,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,613,            if (t>0) {,1,1,0,1,3,1,0,0,0,5,10,6,0.57143,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,614,                u = -t;,2,0,0,0,0,0,0,0,2,2,7,8,0.57143,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,616,                v = t;,2,0,0,0,0,0,0,0,1,2,6,8,0.57143,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,619,            t = (v - u)/2;,3,2,0,1,2,0,0,0,1,5,14,6,0.57143,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,622,        } while (t!=0);,1,1,0,1,3,1,0,0,0,5,15,4,0.57143,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,623,        return -u*(1<<k); // gcd is u*2^k,2,2,0,1,2,1,0,0,1,6,33,4,0.57143,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,584,        if (Math.abs(u) <= 1 || Math.abs(v) <= 1) {,0,3,0,2,7,1,6,0,0,5,43,4,0.5,1,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,585,            return 1;,0,0,0,0,0,1,0,0,0,1,9,2,0.5,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,219,            return ZERO; // normalize zero.,1,0,0,0,0,1,0,0,0,2,31,6,0.33333,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,844,        if (obj == this) {,1,1,0,1,3,2,0,0,0,5,18,4,0.33333,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,847,        if (obj instanceof Fraction == false) {,1,1,0,1,3,2,0,1,1,7,39,4,0.33333,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,850,        Fraction other = (Fraction) obj;,2,0,0,1,2,0,0,2,0,4,32,4,0.33333,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,851,        return (getNumerator() == other.getNumerator() &&,0,2,0,1,5,1,3,0,1,6,49,5,0.33333,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,151,            if (numerator==Integer.MIN_VALUE ||,3,2,0,0,1,1,0,0,0,4,35,6,0.2,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,155,            numerator = -numerator;,2,0,0,0,0,0,0,0,2,2,23,6,0.2,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,156,            denominator = -denominator;,2,0,0,0,0,0,0,0,2,2,27,6,0.2,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,373,        return numerator;,1,0,0,0,0,1,0,0,0,2,17,4,0.2,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,382,        return denominator;,1,0,0,0,0,1,0,0,0,2,19,4,0.2,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,596,            u/=2; v/=2; k++; // cast out twos.,3,0,0,0,0,0,0,0,3,2,34,6,0.2,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,129,        super();,0,0,0,1,2,1,0,0,1,4,8,3,0.17391,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,111,    private transient int hashCode = 0;,1,0,0,0,0,3,0,0,2,3,35,2,0.17391,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,115,    private transient String toString = null;,1,0,0,0,0,2,0,1,2,4,41,2,0.17391,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,119,    private transient String toProperString = null;,1,0,0,0,0,2,0,1,2,4,47,2,0.17391,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,130,        this.numerator = numerator;,2,0,0,0,0,1,0,0,1,3,27,4,0.17391,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,131,        this.denominator = denominator;,2,0,0,0,0,1,0,0,1,3,31,4,0.17391,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,132,    },0,0,0,0,1,0,0,0,0,1,1,2,0.17391,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,52,"    public static final Fraction ZERO = new Fraction(0, 1);",1,0,0,0,2,4,0,2,4,5,55,2,0.17391,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,56,"    public static final Fraction ONE = new Fraction(1, 1);",1,0,0,0,2,4,0,2,4,5,54,2,0.17391,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,60,"    public static final Fraction ONE_HALF = new Fraction(1, 2);",1,0,0,0,2,4,0,2,4,5,59,2,0.17391,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,64,"    public static final Fraction ONE_THIRD = new Fraction(1, 3);",1,0,0,0,2,4,0,2,4,5,60,2,0.17391,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,68,"    public static final Fraction TWO_THIRDS = new Fraction(2, 3);",1,0,0,0,2,4,0,2,4,5,61,2,0.17391,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,72,"    public static final Fraction ONE_QUARTER = new Fraction(1, 4);",1,0,0,0,2,4,0,2,4,5,62,2,0.17391,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,76,"    public static final Fraction TWO_QUARTERS = new Fraction(2, 4);",1,0,0,0,2,4,0,2,4,5,63,2,0.17391,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,80,"    public static final Fraction THREE_QUARTERS = new Fraction(3, 4);",1,0,0,0,2,4,0,2,4,5,65,2,0.17391,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,84,"    public static final Fraction ONE_FIFTH = new Fraction(1, 5);",1,0,0,0,2,4,0,2,4,5,60,2,0.17391,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,88,"    public static final Fraction TWO_FIFTHS = new Fraction(2, 5);",1,0,0,0,2,4,0,2,4,5,61,2,0.17391,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,92,"    public static final Fraction THREE_FIFTHS = new Fraction(3, 5);",1,0,0,0,2,4,0,2,4,5,63,2,0.17391,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,96,"    public static final Fraction FOUR_FIFTHS = new Fraction(4, 5);",1,0,0,0,2,4,0,2,4,5,62,2,0.17391,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,215,        if (denominator == 0) {,1,1,0,1,3,1,0,0,0,5,23,4,0.14286,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,218,        if (numerator==0) {,1,1,0,1,3,1,0,0,0,5,19,4,0.14286,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,222,        if (denominator==Integer.MIN_VALUE && (numerator&1)==0) {,4,4,0,2,5,1,0,0,0,5,57,4,0.14286,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,225,        if (denominator < 0) {,1,1,0,1,3,1,0,0,0,5,22,4,0.14286,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,234,"        int gcd = greatestCommonDivisor(numerator, denominator);",1,0,0,0,2,1,3,0,1,5,56,5,0.14286,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,235,        numerator /= gcd;,2,0,0,0,0,0,0,0,1,2,17,4,0.14286,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,236,        denominator /= gcd;,2,0,0,0,0,0,0,0,1,2,19,4,0.14286,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,237,"        return new Fraction(numerator, denominator);",2,0,0,0,2,2,0,1,1,5,44,4,0.14286,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,610,                t/=2; // cast out twos,1,0,0,0,0,0,0,0,1,2,22,8,0.14286,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,147,        if (denominator == 0) {,1,1,0,1,3,1,0,0,0,5,23,4,0.0625,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,150,        if (denominator < 0) {,1,1,0,1,3,1,0,0,0,5,22,4,0.0625,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,158,"        return new Fraction(numerator, denominator);",2,0,0,0,2,2,0,1,1,5,44,4,0.0625,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,148,"            throw new ArithmeticException(""The denominator must not be zero"");",0,0,0,1,2,2,0,1,2,5,66,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,153,"                throw new ArithmeticException(""overflow: can't negate"");",0,0,0,1,2,2,0,1,2,5,56,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,178,        if (denominator == 0) {,1,1,0,1,3,1,0,0,0,5,23,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,179,"            throw new ArithmeticException(""The denominator must not be zero"");",0,0,0,1,2,2,0,1,2,5,66,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,181,        if (denominator < 0) {,1,1,0,1,3,1,0,0,0,5,22,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,182,"            throw new ArithmeticException(""The denominator must not be negative"");",0,0,0,1,2,2,0,1,2,5,70,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,184,        if (numerator < 0) {,1,1,0,1,3,1,0,0,0,5,20,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,185,"            throw new ArithmeticException(""The numerator must not be negative"");",0,0,0,1,2,2,0,1,2,5,68,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,188,        if (whole < 0) {,1,1,0,1,3,1,0,0,0,5,16,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,189,            numeratorValue = whole * (long)denominator - numerator;,4,2,0,1,2,1,0,0,1,6,55,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,191,            numeratorValue = whole * (long)denominator + numerator;,4,2,0,1,2,1,0,0,1,6,55,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,193,        if (numeratorValue < Integer.MIN_VALUE ||,3,2,0,0,1,1,0,0,0,4,41,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,195,"            throw new ArithmeticException(""Numerator too large to represent as an Integer."");",0,0,0,1,2,2,0,1,2,5,81,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,197,"        return new Fraction((int) numeratorValue, denominator);",2,0,0,1,4,3,0,1,1,6,55,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,255,        int sign = (value < 0 ? -1 : 1);,2,1,0,1,2,1,0,0,1,6,32,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,256,        value = Math.abs(value);,1,0,0,1,2,0,3,0,1,5,24,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,257,        if (value  > Integer.MAX_VALUE || Double.isNaN(value)) {,3,2,0,2,5,1,3,0,0,6,56,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,258,            throw new ArithmeticException,0,0,0,0,0,2,0,1,1,3,29,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,261,        int wholeNumber = (int) value;,2,0,0,1,2,2,0,0,0,4,30,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,262,        value -= wholeNumber;,2,0,0,0,0,0,0,0,1,2,21,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,264,        int numer0 = 0;  // the pre-previous,1,0,0,0,0,1,0,0,0,2,36,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,265,        int denom0 = 1;  // the pre-previous,1,0,0,0,0,1,0,0,0,2,36,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,266,        int numer1 = 1;  // the previous,1,0,0,0,0,1,0,0,0,2,32,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,267,        int denom1 = 0;  // the previous,1,0,0,0,0,1,0,0,0,2,32,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,268,"        int numer2 = 0;  // the current, setup in calculation",1,0,0,0,0,1,0,0,0,2,53,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,269,"        int denom2 = 0;  // the current, setup in calculation",1,0,0,0,0,1,0,0,0,2,53,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,270,        int a1 = (int) value;,2,0,0,1,2,2,0,0,0,4,21,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,271,        int a2 = 0;,1,0,0,0,0,1,0,0,0,2,11,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,272,        double x1 = 1;,1,0,0,0,0,1,0,0,0,2,14,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,273,        double x2 = 0;,1,0,0,0,0,1,0,0,0,2,14,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,274,        double y1 = value - a1;,3,1,0,0,0,1,0,0,0,3,23,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,275,        double y2 = 0;,1,0,0,0,0,1,0,0,0,2,14,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,276,"        double delta1, delta2 = Double.MAX_VALUE;",4,0,0,0,0,1,0,0,0,2,41,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,278,        int i = 1;,1,0,0,0,0,1,0,0,0,2,10,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,281,            delta1 = delta2;,2,0,0,0,0,0,0,0,1,2,16,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,282,            a2 = (int) (x1 / y1);,3,1,0,1,4,1,0,0,1,6,21,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,283,            x2 = y1;,2,0,0,0,0,0,0,0,1,2,8,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,284,            y2 = x1 - a2 * y1;,4,2,0,0,0,0,0,0,1,3,18,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,285,            numer2 = a1 * numer1 + numer0;,4,2,0,0,0,0,0,0,1,3,30,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,286,            denom2 = a1 * denom1 + denom0;,4,2,0,0,0,0,0,0,1,3,30,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,287,            fraction = (double) numer2 / (double) denom2;,3,1,0,1,4,2,0,0,1,6,45,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,288,            delta2 = Math.abs(value - fraction);,3,1,0,1,2,0,2,0,1,6,36,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,290,            a1 = a2;,2,0,0,0,0,0,0,0,1,2,8,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,291,            x1 = x2;,2,0,0,0,0,0,0,0,1,2,8,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,292,            y1 = y2;,2,0,0,0,0,0,0,0,1,2,8,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,293,            numer0 = numer1;,2,0,0,0,0,0,0,0,1,2,16,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,294,            denom0 = denom1;,2,0,0,0,0,0,0,0,1,2,16,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,295,            numer1 = numer2;,2,0,0,0,0,0,0,0,1,2,16,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,296,            denom1 = denom2;,2,0,0,0,0,0,0,0,1,2,16,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,297,            i++;,1,0,0,0,0,0,0,0,1,2,4,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,299,        } while ((delta1 > delta2) && (denom2 <= 10000) && (denom2 > 0) && (i < 25));,5,5,0,2,11,1,0,0,0,5,77,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,300,        if (i == 25) {,1,1,0,1,3,1,0,0,0,5,14,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,301,"            throw new ArithmeticException(""Unable to convert double to fraction"");",0,0,0,1,2,3,0,1,2,5,70,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,303,"        return getReducedFraction((numer0 + wholeNumber * denom0) * sign, denom0);",4,3,0,1,4,1,2,0,1,7,74,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,325,        if (str == null) {,1,1,0,1,3,1,0,0,0,5,18,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,326,"            throw new IllegalArgumentException(""The string must not be null"");",0,0,0,1,2,2,0,1,2,5,66,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,329,        int pos = str.indexOf('.');,1,0,0,1,2,1,2,0,1,6,27,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,330,        if (pos >= 0) {,1,1,0,1,3,1,0,0,0,5,15,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,331,            return getFraction(Double.parseDouble(str));,0,0,0,2,4,1,4,0,1,5,44,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,335,        pos = str.indexOf(' ');,1,0,0,1,2,0,2,0,2,5,23,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,336,        if (pos > 0) {,1,1,0,1,3,1,0,0,0,5,14,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,337,"            int whole = Integer.parseInt(str.substring(0, pos));",1,0,0,0,4,1,5,0,0,4,52,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,338,            str = str.substring(pos + 1);,2,1,0,1,2,0,2,0,1,6,29,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,339,            pos = str.indexOf('/');,1,0,0,1,2,0,2,0,2,5,23,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,340,            if (pos < 0) {,1,1,0,1,3,1,0,0,0,5,14,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,341,"                throw new NumberFormatException(""The fraction could not be parsed as the format X Y/Z"");",0,0,0,1,2,2,0,1,2,5,88,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,343,"                int numer = Integer.parseInt(str.substring(0, pos));",1,0,0,0,4,1,5,0,0,4,52,9,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,344,                int denom = Integer.parseInt(str.substring(pos + 1));,2,1,0,2,4,1,4,0,0,6,53,9,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,345,"                return getFraction(whole, numer, denom);",0,0,0,0,2,1,4,0,1,4,40,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,350,        pos = str.indexOf('/');,1,0,0,1,2,0,2,0,2,5,23,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,351,        if (pos < 0) {,1,1,0,1,3,1,0,0,0,5,14,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,353,"            return getFraction(Integer.parseInt(str), 1);",0,0,0,1,4,1,4,0,1,5,45,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,355,"            int numer = Integer.parseInt(str.substring(0, pos));",1,0,0,0,4,1,5,0,0,4,52,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,356,            int denom = Integer.parseInt(str.substring(pos + 1));,2,1,0,2,4,1,4,0,0,6,53,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,357,"            return getFraction(numer, denom);",0,0,0,0,2,1,3,0,1,4,33,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,397,        return Math.abs(numerator % denominator);,2,1,0,1,2,1,2,0,0,6,41,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,412,        return numerator / denominator;,2,1,0,0,0,1,0,0,0,3,31,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,426,        return numerator / denominator;,2,1,0,0,0,1,0,0,0,3,31,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,437,        return (long) numerator / denominator;,2,1,0,1,2,2,0,0,0,5,38,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,448,        return ((float) numerator) / ((float) denominator);,2,1,0,2,8,3,0,0,0,5,51,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,459,        return ((double) numerator) / ((double) denominator);,2,1,0,2,8,3,0,0,0,5,53,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,495,        if (numerator == 0) {,1,1,0,1,3,1,0,0,0,5,21,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,496,"            throw new ArithmeticException(""Unable to invert zero."");",0,0,0,1,2,2,0,1,2,5,56,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,498,        if (numerator==Integer.MIN_VALUE) {,3,1,0,1,3,1,0,0,0,5,35,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,499,"            throw new ArithmeticException(""overflow: can't negate numerator"");",0,0,0,1,2,2,0,1,2,5,66,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,501,        if (numerator<0) {,1,1,0,1,3,1,0,0,0,5,18,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,502,"            return new Fraction(-denominator, -numerator);",2,0,0,0,2,2,0,1,3,5,46,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,504,"            return new Fraction(denominator, numerator);",2,0,0,0,2,2,0,1,1,5,44,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,517,        if (numerator==Integer.MIN_VALUE) {,3,1,0,1,3,1,0,0,0,5,35,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,518,"            throw new ArithmeticException(""overflow: too large to negate"");",0,0,0,1,2,2,0,1,2,5,63,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,520,"        return new Fraction(-numerator, denominator);",2,0,0,0,2,2,0,1,2,5,45,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,533,        if (numerator >= 0) {,1,1,0,1,3,1,0,0,0,5,21,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,534,            return this;,0,0,0,0,0,2,0,0,0,1,12,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,536,        return negate();,0,0,0,1,2,1,1,0,1,5,16,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,552,        if (power == 1) {,1,1,0,1,3,1,0,0,0,5,17,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,553,            return this;,0,0,0,0,0,2,0,0,0,1,12,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,554,        } else if (power == 0) {,1,1,0,1,4,2,0,0,0,5,24,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,555,            return ONE;,1,0,0,0,0,1,0,0,0,2,11,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,556,        } else if (power < 0) {,1,1,0,1,4,2,0,0,0,5,23,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,557,            if (power==Integer.MIN_VALUE) { // MIN_VALUE can't be negated.,3,1,0,1,3,1,0,0,0,5,62,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,558,                return this.invert().pow(2).pow(-(power/2));,1,1,0,2,8,2,3,0,1,7,44,11,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,560,            return this.invert().pow(-power);,1,0,0,1,4,2,2,0,1,6,33,9,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,562,            Fraction f = this.multiplyBy(this);,1,0,0,1,2,2,1,1,0,6,35,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,563,            if ((power % 2) == 0) { // if even...,1,2,0,2,5,2,0,0,0,5,37,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,564,                return f.pow(power/2);,1,1,0,1,2,1,2,0,0,6,22,11,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,566,                return f.pow(power/2).multiplyBy(this);,1,1,0,1,4,2,3,0,0,6,39,11,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,599,"            throw new ArithmeticException(""overflow: gcd is 2^31"");",0,0,0,1,2,2,0,1,2,5,55,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,639,        long m = ((long)x)*((long)y);,3,1,0,2,8,3,0,0,0,5,29,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,640,        if (m < Integer.MIN_VALUE ||,3,2,0,0,1,1,0,0,0,4,28,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,642,"            throw new ArithmeticException(""overflow: mul"");",0,0,0,1,2,2,0,1,2,5,47,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,644,        return (int)m;,1,0,0,1,2,2,0,0,0,4,14,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,658,        long m = ((long)x)*((long)y);,3,1,0,2,8,3,0,0,0,5,29,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,659,        if (m > Integer.MAX_VALUE) {,3,1,0,1,3,1,0,0,0,5,28,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,660,"            throw new ArithmeticException(""overflow: mulPos"");",0,0,0,1,2,2,0,1,2,5,50,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,662,        return (int)m;,1,0,0,1,2,2,0,0,0,4,14,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,675,        long s = (long)x+(long)y;,3,1,0,1,4,3,0,0,0,5,25,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,676,        if (s < Integer.MIN_VALUE ||,3,2,0,0,1,1,0,0,0,4,28,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,678,"            throw new ArithmeticException(""overflow: add"");",0,0,0,1,2,2,0,1,2,5,47,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,680,        return (int)s;,1,0,0,1,2,2,0,0,0,4,14,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,693,        long s = (long)x-(long)y;,3,1,0,1,4,3,0,0,0,5,25,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,694,        if (s < Integer.MIN_VALUE ||,3,2,0,0,1,1,0,0,0,4,28,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,696,"            throw new ArithmeticException(""overflow: add"");",0,0,0,1,2,2,0,1,2,5,47,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,698,        return (int)s;,1,0,0,1,2,2,0,0,0,4,14,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,712,"        return addSub(fraction, true /* add */);",0,0,0,0,2,1,2,0,2,4,40,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,726,"        return addSub(fraction, false /* subtract */);",0,0,0,0,2,1,2,0,2,4,46,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,740,        if (fraction == null) {,1,1,0,1,3,1,0,0,0,5,23,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,741,"            throw new IllegalArgumentException(""The fraction must not be null"");",0,0,0,1,2,2,0,1,2,5,68,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,744,        if (numerator == 0) {,1,1,0,1,3,1,0,0,0,5,21,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,745,            return isAdd ? fraction : fraction.negate();,2,0,0,1,2,1,2,0,0,5,44,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,747,        if (fraction.numerator == 0) {,2,1,0,1,3,1,0,0,0,5,30,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,748,            return this;,0,0,0,0,0,2,0,0,0,1,12,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,752,"        int d1 = greatestCommonDivisor(denominator, fraction.denominator);",3,0,0,0,2,1,2,0,1,5,66,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,753,        if (d1==1) {,1,1,0,1,3,1,0,0,0,5,12,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,755,"            int uvp = mulAndCheck(numerator, fraction.denominator);",3,0,0,0,2,1,2,0,1,5,55,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,756,"            int upv = mulAndCheck(fraction.numerator, denominator);",3,0,0,0,2,1,2,0,1,5,55,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,757,            return new Fraction,0,0,0,0,0,2,0,1,1,3,19,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,764,        BigInteger uvp = BigInteger.valueOf(numerator),1,0,0,1,2,0,3,1,0,5,46,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,766,        BigInteger upv = BigInteger.valueOf(fraction.numerator),3,0,0,1,2,0,2,1,0,5,55,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,768,        BigInteger t = isAdd ? uvp.add(upv) : uvp.subtract(upv);,2,0,0,1,4,0,6,1,0,5,56,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,771,        int tmodd1 = t.mod(BigInteger.valueOf(d1)).intValue();,1,0,0,2,6,1,6,0,0,5,54,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,772,"        int d2 = (tmodd1==0)?d1:greatestCommonDivisor(tmodd1, d1);",3,1,0,1,4,1,3,0,1,7,58,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,775,        BigInteger w = t.divide(BigInteger.valueOf(d2));,1,0,0,2,4,0,5,1,0,5,48,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,776,        if (w.bitLength() > 31) {,0,1,0,2,5,1,2,0,0,5,25,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,777,            throw new ArithmeticException,0,0,0,0,0,2,0,1,1,3,29,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,780,        return new Fraction,0,0,0,0,0,2,0,1,1,3,19,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,796,        if (fraction == null) {,1,1,0,1,3,1,0,0,0,5,23,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,797,"            throw new IllegalArgumentException(""The fraction must not be null"");",0,0,0,1,2,2,0,1,2,5,68,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,799,        if (numerator == 0 || fraction.numerator == 0) {,3,3,0,1,3,1,0,0,0,5,48,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,800,            return ZERO;,1,0,0,0,0,1,0,0,0,2,12,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,804,"        int d1 = greatestCommonDivisor(numerator, fraction.denominator);",3,0,0,0,2,1,2,0,1,5,64,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,805,"        int d2 = greatestCommonDivisor(fraction.numerator, denominator);",3,0,0,0,2,1,2,0,1,5,64,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,806,        return getReducedFraction,0,0,0,0,0,1,1,0,1,3,25,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,822,        if (fraction == null) {,1,1,0,1,3,1,0,0,0,5,23,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,823,"            throw new IllegalArgumentException(""The fraction must not be null"");",0,0,0,1,2,2,0,1,2,5,68,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,825,        if (fraction.numerator == 0) {,2,1,0,1,3,1,0,0,0,5,30,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,826,"            throw new ArithmeticException(""The fraction to divide by must not be zero"");",0,0,0,1,2,2,0,1,2,5,76,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,828,        return multiplyBy(fraction.invert());,0,0,0,2,4,1,3,0,1,5,37,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,845,            return true;,0,0,0,0,0,1,0,0,1,2,12,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,848,            return false;,0,0,0,0,0,1,0,0,1,2,13,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,862,        if (hashCode == 0) {,1,1,0,1,3,1,0,0,0,5,20,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,864,            hashCode = 37 * (37 * 17 + getNumerator()) + getDenominator();,1,4,0,2,6,0,2,0,3,6,62,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,866,        return hashCode;,1,0,0,0,0,1,0,0,0,2,16,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,882,        if (this==other) {,1,1,0,1,3,2,0,0,0,5,18,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,883,            return 0;,0,0,0,0,0,1,0,0,0,1,9,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,885,        if (numerator == other.numerator && denominator == other.denominator) {,6,3,0,1,3,1,0,0,0,5,71,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,886,            return 0;,0,0,0,0,0,1,0,0,0,1,9,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,890,        long first = (long) numerator * (long) other.denominator;,4,1,0,1,4,3,0,0,0,5,57,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,891,        long second = (long) other.numerator * (long) denominator;,4,1,0,1,4,3,0,0,0,5,58,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,892,        if (first == second) {,2,1,0,1,3,1,0,0,0,5,22,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,893,            return 0;,0,0,0,0,0,1,0,0,0,1,9,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,894,        } else if (first < second) {,2,1,0,1,4,2,0,0,0,5,28,5,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,895,            return -1;,0,0,0,0,0,1,0,0,1,2,10,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,897,            return 1;,0,0,0,0,0,1,0,0,0,1,9,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,910,        if (toString == null) {,1,1,0,1,3,1,0,0,0,5,23,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,911,            toString = new StringBuilder(32),1,0,0,1,2,1,0,1,2,6,32,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,916,        return toString;,1,0,0,0,0,1,0,0,0,2,16,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,929,        if (toProperString == null) {,1,1,0,1,3,1,0,0,0,5,29,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,930,            if (numerator == 0) {,1,1,0,1,3,1,0,0,0,5,21,6,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,931,"                toProperString = ""0"";",1,0,0,0,0,0,0,0,2,2,21,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,932,            } else if (numerator == denominator) {,2,1,0,1,4,2,0,0,0,5,38,7,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,933,"                toProperString = ""1"";",1,0,0,0,0,0,0,0,2,2,21,9,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,934,            } else if (numerator == -1 * denominator) {,2,2,0,1,4,2,0,0,1,6,43,8,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,935,"                toProperString = ""-1"";",1,0,0,0,0,0,0,0,2,2,22,10,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,936,            } else if ((numerator>0?-numerator:numerator) < -denominator) {,4,2,0,2,6,2,0,0,2,6,63,9,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,941,                int properNumerator = getProperNumerator();,1,0,0,1,2,1,1,0,1,6,43,12,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,942,                if (properNumerator == 0) {,1,1,0,1,3,1,0,0,0,5,27,11,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,943,                    toProperString = Integer.toString(getProperWhole());,1,0,0,2,4,0,3,0,2,5,52,13,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,945,                    toProperString = new StringBuilder(32),1,0,0,1,2,1,0,1,2,6,38,13,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,950,            } else {,0,0,0,0,2,1,0,0,0,2,8,2,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,951,                toProperString = new StringBuilder(32),1,0,0,1,2,1,0,1,2,6,38,11,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,956,        return toProperString;,1,0,0,0,0,1,0,0,0,2,22,4,0.0,0,0
+defect4j,lang,org/apache/commons/lang3/math/Fraction,22,40,public final class Fraction extends Number implements Comparable<Fraction> {,1,0,0,0,1,5,0,3,2,5,76,1,0.0,0,0

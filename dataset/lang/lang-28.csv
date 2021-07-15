@@ -1,0 +1,57 @@
+project_path,version,lines,statement,suspicious,faulty,predict,miss_line
+org/apache/commons/lang3/text/translate/NumericEntityUnescaper,28,57,"                    entityValue = Integer.parseInt(input.subSequence(start, end).toString(), 10);",0.5,0,,0
+org/apache/commons/lang3/text/translate/NumericEntityUnescaper,28,61,            },0.5,0,,0
+org/apache/commons/lang3/text/translate/NumericEntityUnescaper,28,63,                out.write(entityValue);,0.5,1,,1
+org/apache/commons/lang3/text/translate/NumericEntityUnescaper,28,64,            return 2 + (end - start) + (isHex ? 1 : 0) + 1;,0.5,1,,1
+org/apache/commons/lang3/text/translate/NumericEntityUnescaper,28,38,            int start = index + 2;,0.33333,0,,0
+org/apache/commons/lang3/text/translate/NumericEntityUnescaper,28,39,            boolean isHex = false;,0.33333,0,,0
+org/apache/commons/lang3/text/translate/NumericEntityUnescaper,28,41,            char firstChar = input.charAt(start);,0.33333,0,,0
+org/apache/commons/lang3/text/translate/NumericEntityUnescaper,28,42,            if(firstChar == 'x' || firstChar == 'X') {,0.33333,0,,0
+org/apache/commons/lang3/text/translate/NumericEntityUnescaper,28,47,            int end = start;,0.33333,0,,0
+org/apache/commons/lang3/text/translate/NumericEntityUnescaper,28,48,            while(input.charAt(end) != ';') {,0.33333,0,,0
+org/apache/commons/lang3/text/translate/NumericEntityUnescaper,28,49,                end++;,0.33333,0,,0
+org/apache/commons/lang3/text/translate/NumericEntityUnescaper,28,54,                if(isHex) {,0.33333,0,,0
+org/apache/commons/lang3/text/translate/NumericEntityUnescaper,28,37,        if(input.charAt(index) == '&' && input.charAt(index + 1) == '#') {,0.125,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,93,                for(int j=0; j<consumed; j++) {,0.07143,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,94,                    if(i < sz - 2) {,0.07143,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,95,"                        i += Character.charCount( Character.codePointAt(input, i) );",0.07143,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,98,                        i++;,0.07143,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,102,                i--;,0.07143,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,54,        if (input == null) {,0.0625,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,58,            StringWriter writer = new StringWriter(input.length() * 2);  // TODO: Make the 2 part of the API???,0.0625,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,59,"            translate(input, writer);",0.0625,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,60,            return writer.toString();,0.0625,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,77,        if (out == null) {,0.05556,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,80,        if (input == null) {,0.05556,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,83,"        int sz = Character.codePointCount(input, 0, input.length());",0.05556,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,84,        for (int i = 0; i < sz; i++) {,0.05556,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,87,"            int consumed = translate(input, i, out);",0.05556,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,89,            if(consumed == 0) { ,0.05556,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,105,    },0.05556,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,32,public abstract class CharSequenceTranslator {,0.05263,0,,0
+org/apache/commons/lang3/text/translate/NumericEntityUnescaper,28,29,public class NumericEntityUnescaper extends CharSequenceTranslator {,0.05263,0,,0
+org/apache/commons/lang3/text/translate/AggregateTranslator,28,40,    public AggregateTranslator(CharSequenceTranslator... translators) {,0.0,0,,0
+org/apache/commons/lang3/text/translate/AggregateTranslator,28,41,        this.translators = ArrayUtils.clone(translators);,0.0,0,,0
+org/apache/commons/lang3/text/translate/AggregateTranslator,28,42,    },0.0,0,,0
+org/apache/commons/lang3/text/translate/AggregateTranslator,28,51,        for (CharSequenceTranslator translator : translators) {,0.0,0,,0
+org/apache/commons/lang3/text/translate/AggregateTranslator,28,52,"            int consumed = translator.translate(input, index, out);",0.0,0,,0
+org/apache/commons/lang3/text/translate/AggregateTranslator,28,53,            if(consumed != 0) {,0.0,0,,0
+org/apache/commons/lang3/text/translate/AggregateTranslator,28,54,                return consumed;,0.0,0,,0
+org/apache/commons/lang3/text/translate/AggregateTranslator,28,57,        return 0;,0.0,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,55,            return null;,0.0,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,61,        } catch (IOException ioe) {,0.0,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,63,            throw new RuntimeException(ioe);,0.0,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,78,"            throw new IllegalArgumentException(""The Writer must not be null"");",0.0,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,81,            return;,0.0,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,90,"                out.write( Character.toChars( Character.codePointAt(input, i) ) );",0.0,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,115,        CharSequenceTranslator[] newArray = new CharSequenceTranslator[translators.length + 1];,0.0,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,116,        newArray[0] = this;,0.0,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,117,"        System.arraycopy(translators, 0, newArray, 1, translators.length);",0.0,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,118,        return new AggregateTranslator(newArray);,0.0,0,,0
+org/apache/commons/lang3/text/translate/CharSequenceTranslator,28,129,        return Integer.toHexString(codepoint).toUpperCase(Locale.ENGLISH);,0.0,0,,0
+org/apache/commons/lang3/text/translate/NumericEntityUnescaper,28,43,                start++;,0.0,0,,0
+org/apache/commons/lang3/text/translate/NumericEntityUnescaper,28,44,                isHex = true;,0.0,0,,0
+org/apache/commons/lang3/text/translate/NumericEntityUnescaper,28,55,"                    entityValue = Integer.parseInt(input.subSequence(start, end).toString(), 16);",0.0,0,,0
+org/apache/commons/lang3/text/translate/NumericEntityUnescaper,28,59,            } catch(NumberFormatException nfe) {,0.0,0,,0
+org/apache/commons/lang3/text/translate/NumericEntityUnescaper,28,60,                return 0;,0.0,0,,0
+org/apache/commons/lang3/text/translate/NumericEntityUnescaper,28,66,        return 0;,0.0,0,,0

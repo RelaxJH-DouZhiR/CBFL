@@ -1,0 +1,58 @@
+dataset,project,path,version,codeLine,statement,varTotal,optTotal,array,bracketDepth,bracketTotal,keywordTotal,methodTotal,typeTotal,logic,lengthEle,lengthWord,depth,suspicious,accuracy,miss_line,predict
+defect4j,mockito,org/mockito/internal/invocation/ArgumentsProcessor,1,26,        final int nonVarArgsCount = args.length - 1;,6,1,0,0,0,1,0,0,0,8,44,4,26.0,0,0
+defect4j,mockito,org/mockito/internal/invocation/ArgumentsProcessor,1,28,        if (args[nonVarArgsCount] == null) {,0,1,1,2,5,0,0,0,0,5,36,4,26.0,0,0
+defect4j,mockito,org/mockito/internal/invocation/ArgumentsProcessor,1,34,        final int varArgsCount = varArgs.length;,6,0,0,0,0,1,0,0,0,7,40,4,26.0,0,0
+defect4j,mockito,org/mockito/internal/invocation/ArgumentsProcessor,1,35,        Object[] newArgs = new Object[nonVarArgsCount + varArgsCount];,6,1,0,2,4,0,0,4,0,11,62,4,26.0,0,0
+defect4j,mockito,org/mockito/internal/invocation/ArgumentsProcessor,1,36,"        System.arraycopy(args, 0, newArgs, 0, nonVarArgsCount);",0,0,0,1,2,0,10,0,0,10,55,5,26.0,0,0
+defect4j,mockito,org/mockito/internal/invocation/ArgumentsProcessor,1,37,"        System.arraycopy(varArgs, 0, newArgs, nonVarArgsCount, varArgsCount);",0,0,0,1,2,0,12,0,0,12,69,5,26.0,0,0
+defect4j,mockito,org/mockito/internal/invocation/ArgumentsProcessor,1,38,        return newArgs;,2,0,0,0,0,1,0,0,0,2,15,4,26.0,0,0
+defect4j,mockito,org/mockito/internal/util/collections/ArrayUtils,1,8,public class ArrayUtils {,4,0,0,0,1,1,0,2,0,7,25,2,24.14286,0,0
+defect4j,mockito,org/mockito/internal/util/collections/ArrayUtils,1,11,        return array == null || array.length == 0;,16,4,0,0,0,1,0,0,0,21,42,3,24.14286,0,0
+defect4j,mockito,org/mockito/internal/invocation/ArgumentsProcessor,1,32,            varArgs = ArrayEquals.createObjectArray(args[nonVarArgsCount]);,2,0,1,2,4,0,4,0,0,11,63,6,18.89286,0,0
+defect4j,mockito,org/mockito/internal/util/Timer,2,7,    private long startTime = -1;,2,0,0,0,0,1,0,0,0,4,28,2,0.75,1,1
+defect4j,mockito,org/mockito/internal/util/Timer,2,9,    public Timer(long durationMillis) {,4,0,0,1,3,1,0,0,0,5,35,2,0.75,1,1
+defect4j,mockito,org/mockito/internal/util/Timer,2,10,        this.durationMillis = durationMillis;,4,0,0,0,0,0,0,0,0,5,37,4,0.75,0,0
+defect4j,mockito,org/mockito/internal/util/Timer,2,11,    },0,0,0,0,1,0,0,0,0,1,1,4,0.75,0,0
+defect4j,mockito,org/mockito/internal/util/Timer,2,4,public class Timer {,2,0,0,0,1,1,0,0,0,3,20,1,0.52941,1,1
+defect4j,mockito,org/mockito/verification/VerificationWrapper,2,10,    public VerificationWrapper(WrapperType wrappedVerification) {,0,0,0,1,3,0,0,0,0,4,61,4,0.44444,0,0
+defect4j,mockito,org/mockito/verification/VerificationWrapper,2,11,        this.wrappedVerification = wrappedVerification;,6,0,0,0,0,0,4,2,0,13,47,3,0.44444,0,0
+defect4j,mockito,org/mockito/verification/VerificationWrapper,2,12,    },0,0,0,0,1,0,0,0,0,1,1,4,0.44444,0,0
+defect4j,mockito,org/mockito/internal/invocation/InvocationMatcher,3,130,                    ((CapturesArguments) m).captureFrom(invocation.getRawArguments()[position - indexOfVararg]);,6,1,0,5,10,0,6,2,0,15,92,11,4.76471,1,0
+defect4j,mockito,org/mockito/internal/invocation/InvocationMatcher,3,128,                Matcher m = matchers.get(position);,2,0,0,1,2,0,6,2,0,10,35,8,3.24,1,0
+defect4j,mockito,org/mockito/internal/invocation/InvocationMatcher,3,129,                if (m instanceof CapturesArguments) {,2,0,0,1,3,0,0,2,0,4,37,9,3.24,0,0
+defect4j,mockito,org/mockito/internal/invocation/InvocationMatcher,3,120,            int indexOfVararg = invocation.getRawArguments().length - 1;,4,1,0,1,2,0,4,0,0,9,60,7,3.11538,0,0
+defect4j,mockito,org/mockito/internal/invocation/InvocationMatcher,3,121,            for (int position = 0; position < indexOfVararg; position++) {,8,1,0,1,3,0,0,0,0,10,62,6,3.11538,0,0
+defect4j,mockito,org/mockito/internal/invocation/InvocationMatcher,3,127,            for (int position = indexOfVararg; position < matchers.size(); position++) {,8,1,0,2,5,0,4,0,0,14,76,6,3.11538,1,0
+defect4j,mockito,org/mockito/Mockito,4,1257,"        return mock(classToMock, withSettings().defaultAnswer(defaultAnswer));",0,0,0,3,6,1,10,0,0,10,70,5,0.25806,0,0
+defect4j,mockito,org/mockito/exceptions/Reporter,4,418,        ScenarioPrinter scenarioPrinter = new ScenarioPrinter();,2,0,0,1,2,0,0,4,0,6,56,4,0.14286,0,0
+defect4j,mockito,org/mockito/exceptions/Reporter,4,419,        String scenario = scenarioPrinter.print(invocations);,2,0,0,1,2,0,6,2,0,10,53,4,0.14286,0,0
+defect4j,mockito,org/mockito/internal/exceptions/util/ScenarioPrinter,4,11,public class ScenarioPrinter {,2,0,0,0,1,1,0,0,0,3,30,1,0.13333,0,0
+defect4j,mockito,org/mockito/internal/exceptions/util/ScenarioPrinter,4,14,        if (invocations.size() == 1) {,2,1,0,2,5,0,8,2,0,13,30,1,0.13333,0,0
+defect4j,mockito,org/mockito/ArgumentMatcher,5,60,public abstract class ArgumentMatcher<T> extends BaseMatcher<T> {,4,0,0,0,1,2,0,4,0,10,65,1,0.16667,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,13,"    private static final Map<Class<?>, Class<?>> PRIMITIVE_TYPES = new HashMap<Class<?>, Class<?>>();",2,0,0,1,2,3,6,12,0,23,97,1,0.14286,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,14,"    private static final Map<Class<?>, Object> PRIMITIVE_OR_WRAPPER_DEFAULT_VALUES = new HashMap<Class<?>, Object>();",0,0,0,1,2,0,0,0,0,3,113,4,0.14286,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,58,"        PRIMITIVE_TYPES.put(Boolean.class, Boolean.TYPE);",6,1,0,1,2,0,4,2,0,13,49,1,0.14286,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,59,"        PRIMITIVE_TYPES.put(Character.class, Character.TYPE);",4,0,0,1,2,0,4,2,0,10,53,5,0.14286,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,60,"        PRIMITIVE_TYPES.put(Byte.class, Byte.TYPE);",4,0,0,1,2,0,4,2,0,10,43,5,0.14286,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,61,"        PRIMITIVE_TYPES.put(Short.class, Short.TYPE);",4,0,0,1,2,0,10,2,0,16,45,1,0.14286,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,62,"        PRIMITIVE_TYPES.put(Integer.class, Integer.TYPE);",0,0,0,1,2,0,0,0,0,3,49,4,0.14286,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,63,"        PRIMITIVE_TYPES.put(Long.class, Long.TYPE);",4,0,0,1,2,0,4,2,0,10,43,5,0.14286,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,64,"        PRIMITIVE_TYPES.put(Float.class, Float.TYPE);",4,0,0,1,2,0,4,2,0,10,45,5,0.14286,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,65,"        PRIMITIVE_TYPES.put(Double.class, Double.TYPE);",4,0,0,1,2,0,4,2,0,10,47,5,0.14286,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,69,"        PRIMITIVE_OR_WRAPPER_DEFAULT_VALUES.put(Boolean.class, false);",0,0,0,1,2,0,4,2,0,7,62,5,0.14286,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,70,"        PRIMITIVE_OR_WRAPPER_DEFAULT_VALUES.put(Character.class, '\u0000');",0,0,0,1,2,0,4,2,0,7,67,5,0.14286,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,71,"        PRIMITIVE_OR_WRAPPER_DEFAULT_VALUES.put(Byte.class, (byte) 0);",0,0,0,2,4,0,4,4,0,8,62,1,0.14286,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,72,"        PRIMITIVE_OR_WRAPPER_DEFAULT_VALUES.put(Short.class, (short) 0);",0,0,0,2,4,0,8,2,0,10,64,1,0.14286,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,73,"        PRIMITIVE_OR_WRAPPER_DEFAULT_VALUES.put(Integer.class, 0);",0,0,0,1,2,0,4,2,0,6,58,5,0.14286,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,74,"        PRIMITIVE_OR_WRAPPER_DEFAULT_VALUES.put(Long.class, 0L);",0,0,0,1,2,0,4,2,0,6,56,5,0.14286,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,75,"        PRIMITIVE_OR_WRAPPER_DEFAULT_VALUES.put(Float.class, 0F);",0,0,0,1,2,0,4,2,0,6,57,5,0.14286,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,76,"        PRIMITIVE_OR_WRAPPER_DEFAULT_VALUES.put(Double.class, 0D);",2,0,0,1,2,0,4,4,0,10,58,1,0.14286,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,78,"        PRIMITIVE_OR_WRAPPER_DEFAULT_VALUES.put(boolean.class, false);",0,0,0,1,2,0,4,0,0,5,62,5,0.14286,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,79,"        PRIMITIVE_OR_WRAPPER_DEFAULT_VALUES.put(char.class, '\u0000');",0,0,0,1,2,0,10,0,0,11,62,1,0.14286,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,80,"        PRIMITIVE_OR_WRAPPER_DEFAULT_VALUES.put(byte.class, (byte) 0);",0,0,0,2,4,0,4,0,0,4,62,5,0.14286,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,81,"        PRIMITIVE_OR_WRAPPER_DEFAULT_VALUES.put(short.class, (short) 0);",0,0,0,2,4,0,4,0,0,4,64,5,0.14286,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,82,"        PRIMITIVE_OR_WRAPPER_DEFAULT_VALUES.put(int.class, 0);",0,0,0,1,2,0,4,0,0,4,54,5,0.14286,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,83,"        PRIMITIVE_OR_WRAPPER_DEFAULT_VALUES.put(long.class, 0L);",0,0,0,1,2,0,4,0,0,4,56,5,0.14286,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,84,"        PRIMITIVE_OR_WRAPPER_DEFAULT_VALUES.put(float.class, 0F);",0,0,0,1,2,0,4,0,0,4,57,5,0.14286,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,85,"        PRIMITIVE_OR_WRAPPER_DEFAULT_VALUES.put(double.class, 0D);",2,0,1,1,2,0,10,2,0,16,58,1,0.14286,0,0
+defect4j,mockito,org/mockito/internal/util/Primitives,5,86,    },0,0,0,0,1,0,0,0,0,1,1,4,0.14286,0,0

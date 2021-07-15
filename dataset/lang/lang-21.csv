@@ -1,0 +1,311 @@
+project_path,version,lines,statement,suspicious,faulty,predict,miss_line
+org/apache/commons/lang3/time/DateUtils,21,60,"    public static final TimeZone UTC_TIME_ZONE = TimeZone.getTimeZone(""GMT"");",0.00926,0,,0
+org/apache/commons/lang3/time/DateUtils,21,88,    private static final int[][] fields = {,0.00926,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1832,            super();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1833,            this.endFinal = endFinal;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1834,            spot = startFinal;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1835,"            spot.add(Calendar.DATE, -1);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1836,        },0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1844,            return spot.before(endFinal);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1853,            if (spot.equals(endFinal)) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1854,                throw new NoSuchElementException();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1856,"            spot.add(Calendar.DATE, 1);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1857,            return (Calendar) spot.clone();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1867,            throw new UnsupportedOperationException();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1821,    static class DateIterator implements Iterator<Calendar> {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,158,        super();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,159,    },0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,176,        if (date1 == null || date2 == null) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,177,"            throw new IllegalArgumentException(""The date must not be null"");",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,179,        Calendar cal1 = Calendar.getInstance();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,180,        cal1.setTime(date1);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,181,        Calendar cal2 = Calendar.getInstance();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,182,        cal2.setTime(date2);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,183,"        return isSameDay(cal1, cal2);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,200,        if (cal1 == null || cal2 == null) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,201,"            throw new IllegalArgumentException(""The date must not be null"");",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,203,        return (cal1.get(Calendar.ERA) == cal2.get(Calendar.ERA) &&,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,221,        if (date1 == null || date2 == null) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,222,"            throw new IllegalArgumentException(""The date must not be null"");",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,224,        return date1.getTime() == date2.getTime();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,239,        if (cal1 == null || cal2 == null) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,240,"            throw new IllegalArgumentException(""The date must not be null"");",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,242,        return cal1.getTime().getTime() == cal2.getTime().getTime();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,259,        if (cal1 == null || cal2 == null) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,260,"            throw new IllegalArgumentException(""The date must not be null"");",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,262,        return (cal1.get(Calendar.MILLISECOND) == cal2.get(Calendar.MILLISECOND) &&,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,288,"        return parseDateWithLeniency(str, parsePatterns, true);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,308,"        return parseDateWithLeniency(str, parsePatterns, false);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,328,        if (str == null || parsePatterns == null) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,329,"            throw new IllegalArgumentException(""Date and Patterns must not be null"");",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,332,        SimpleDateFormat parser = new SimpleDateFormat();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,333,        parser.setLenient(lenient);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,334,        ParsePosition pos = new ParsePosition(0);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,335,        for (int i = 0; i < parsePatterns.length; i++) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,337,            String pattern = parsePatterns[i];,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,340,"            if (parsePatterns[i].endsWith(""ZZ"")) {",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,341,"                pattern = pattern.substring(0, pattern.length() - 1);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,344,            parser.applyPattern(pattern);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,345,            pos.setIndex(0);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,347,            String str2 = str;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,349,"            if (parsePatterns[i].endsWith(""ZZ"")) {",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,350,"                str2 = str.replaceAll(""([-+][0-9][0-9]):([0-9][0-9])$"", ""$1$2""); ",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,353,"            Date date = parser.parse(str2, pos);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,354,            if (date != null && pos.getIndex() == str2.length()) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,355,                return date;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,358,"        throw new ParseException(""Unable to parse the date: "" + str, -1);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,372,"        return add(date, Calendar.YEAR, amount);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,386,"        return add(date, Calendar.MONTH, amount);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,400,"        return add(date, Calendar.WEEK_OF_YEAR, amount);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,414,"        return add(date, Calendar.DAY_OF_MONTH, amount);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,428,"        return add(date, Calendar.HOUR_OF_DAY, amount);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,442,"        return add(date, Calendar.MINUTE, amount);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,456,"        return add(date, Calendar.SECOND, amount);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,470,"        return add(date, Calendar.MILLISECOND, amount);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,485,        if (date == null) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,486,"            throw new IllegalArgumentException(""The date must not be null"");",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,488,        Calendar c = Calendar.getInstance();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,489,        c.setTime(date);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,490,"        c.add(calendarField, amount);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,491,        return c.getTime();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,506,"        return set(date, Calendar.YEAR, amount);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,521,"        return set(date, Calendar.MONTH, amount);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,536,"        return set(date, Calendar.DAY_OF_MONTH, amount);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,552,"        return set(date, Calendar.HOUR_OF_DAY, amount);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,567,"        return set(date, Calendar.MINUTE, amount);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,582,"        return set(date, Calendar.SECOND, amount);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,597,"        return set(date, Calendar.MILLISECOND, amount);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,614,        if (date == null) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,615,"            throw new IllegalArgumentException(""The date must not be null"");",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,618,        Calendar c = Calendar.getInstance();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,619,        c.setLenient(false);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,620,        c.setTime(date);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,621,"        c.set(calendarField, amount);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,622,        return c.getTime();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,635,        Calendar c = Calendar.getInstance();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,636,        c.setTime(date);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,637,        return c;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,670,        if (date == null) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,671,"            throw new IllegalArgumentException(""The date must not be null"");",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,673,        Calendar gval = Calendar.getInstance();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,674,        gval.setTime(date);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,675,"        modify(gval, field, MODIFY_ROUND);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,676,        return gval.getTime();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,708,        if (date == null) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,709,"            throw new IllegalArgumentException(""The date must not be null"");",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,711,        Calendar rounded = (Calendar) date.clone();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,712,"        modify(rounded, field, MODIFY_ROUND);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,713,        return rounded;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,747,        if (date == null) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,748,"            throw new IllegalArgumentException(""The date must not be null"");",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,750,        if (date instanceof Date) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,751,"            return round((Date) date, field);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,752,        } else if (date instanceof Calendar) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,753,"            return round((Calendar) date, field).getTime();",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,755,"            throw new ClassCastException(""Could not round "" + date);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,777,        if (date == null) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,778,"            throw new IllegalArgumentException(""The date must not be null"");",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,780,        Calendar gval = Calendar.getInstance();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,781,        gval.setTime(date);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,782,"        modify(gval, field, MODIFY_TRUNCATE);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,783,        return gval.getTime();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,803,        if (date == null) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,804,"            throw new IllegalArgumentException(""The date must not be null"");",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,806,        Calendar truncated = (Calendar) date.clone();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,807,"        modify(truncated, field, MODIFY_TRUNCATE);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,808,        return truncated;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,832,        if (date == null) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,833,"            throw new IllegalArgumentException(""The date must not be null"");",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,835,        if (date instanceof Date) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,836,"            return truncate((Date) date, field);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,837,        } else if (date instanceof Calendar) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,838,"            return truncate((Calendar) date, field).getTime();",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,840,"            throw new ClassCastException(""Could not truncate "" + date);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,863,        if (date == null) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,864,"            throw new IllegalArgumentException(""The date must not be null"");",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,866,        Calendar gval = Calendar.getInstance();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,867,        gval.setTime(date);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,868,"        modify(gval, field, MODIFY_CEILING);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,869,        return gval.getTime();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,890,        if (date == null) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,891,"            throw new IllegalArgumentException(""The date must not be null"");",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,893,        Calendar ceiled = (Calendar) date.clone();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,894,"        modify(ceiled, field, MODIFY_CEILING);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,895,        return ceiled;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,920,        if (date == null) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,921,"            throw new IllegalArgumentException(""The date must not be null"");",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,923,        if (date instanceof Date) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,924,"            return ceiling((Date) date, field);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,925,        } else if (date instanceof Calendar) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,926,"            return ceiling((Calendar) date, field).getTime();",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,928,"            throw new ClassCastException(""Could not find ceiling of for type: "" + date.getClass());",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,942,        if (val.get(Calendar.YEAR) > 280000000) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,943,"            throw new ArithmeticException(""Calendar value too large for accurate calculations"");",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,946,        if (field == Calendar.MILLISECOND) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,947,            return;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,956,        Date date = val.getTime();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,957,        long time = date.getTime();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,958,        boolean done = false;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,961,        int millisecs = val.get(Calendar.MILLISECOND);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,962,        if (MODIFY_TRUNCATE == modType || millisecs < 500) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,963,            time = time - millisecs;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,965,        if (field == Calendar.SECOND) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,966,            done = true;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,970,        int seconds = val.get(Calendar.SECOND);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,971,        if (!done && (MODIFY_TRUNCATE == modType || seconds < 30)) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,972,            time = time - (seconds * 1000L);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,974,        if (field == Calendar.MINUTE) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,975,            done = true;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,979,        int minutes = val.get(Calendar.MINUTE);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,980,        if (!done && (MODIFY_TRUNCATE == modType || minutes < 30)) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,981,            time = time - (minutes * 60000L);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,985,        if (date.getTime() != time) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,986,            date.setTime(time);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,987,            val.setTime(date);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,991,        boolean roundUp = false;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,992,        for (int i = 0; i < fields.length; i++) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,993,            for (int j = 0; j < fields[i].length; j++) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,994,                if (fields[i][j] == field) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,996,                    if (modType == MODIFY_CEILING || (modType == MODIFY_ROUND && roundUp)) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,997,                        if (field == DateUtils.SEMI_MONTH) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1001,                            if (val.get(Calendar.DATE) == 1) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1002,"                                val.add(Calendar.DATE, 15);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1004,"                                val.add(Calendar.DATE, -15);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1005,"                                val.add(Calendar.MONTH, 1);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1008,                        } else if (field == Calendar.AM_PM) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1012,                            if (val.get(Calendar.HOUR_OF_DAY) == 0) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1013,"                                val.add(Calendar.HOUR_OF_DAY, 12);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1015,"                                val.add(Calendar.HOUR_OF_DAY, -12);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1016,"                                val.add(Calendar.DATE, 1);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1022,"                            val.add(fields[i][0], 1);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1025,                    return;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1029,            int offset = 0;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1030,            boolean offsetSet = false;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1032,            switch (field) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1034,                    if (fields[i][0] == Calendar.DATE) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1038,                        offset = val.get(Calendar.DATE) - 1;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1041,                        if (offset >= 15) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1042,                            offset -= 15;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1045,                        roundUp = offset > 7;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1046,                        offsetSet = true;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1050,                    if (fields[i][0] == Calendar.HOUR_OF_DAY) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1053,                        offset = val.get(Calendar.HOUR_OF_DAY);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1054,                        if (offset >= 12) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1055,                            offset -= 12;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1057,                        roundUp = offset >= 6;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1058,                        offsetSet = true;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1062,            if (!offsetSet) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1063,                int min = val.getActualMinimum(fields[i][0]);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1064,                int max = val.getActualMaximum(fields[i][0]);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1066,                offset = val.get(fields[i][0]) - min;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1068,                roundUp = offset > ((max - min) / 2);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1071,            if (offset != 0) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1072,"                val.set(fields[i][0], val.get(fields[i][0]) - offset);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1075,"        throw new IllegalArgumentException(""The field "" + field + "" is not supported"");",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1105,        if (focus == null) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1106,"            throw new IllegalArgumentException(""The date must not be null"");",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1108,        Calendar gval = Calendar.getInstance();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1109,        gval.setTime(focus);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1110,"        return iterator(gval, rangeStyle);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1138,        if (focus == null) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1139,"            throw new IllegalArgumentException(""The date must not be null"");",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1141,        Calendar start = null;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1142,        Calendar end = null;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1143,        int startCutoff = Calendar.SUNDAY;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1144,        int endCutoff = Calendar.SATURDAY;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1145,        switch (rangeStyle) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1149,"                start = truncate(focus, Calendar.MONTH);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1151,                end = (Calendar) start.clone();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1152,"                end.add(Calendar.MONTH, 1);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1153,"                end.add(Calendar.DATE, -1);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1155,                if (rangeStyle == RANGE_MONTH_MONDAY) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1156,                    startCutoff = Calendar.MONDAY;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1157,                    endCutoff = Calendar.SUNDAY;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1165,"                start = truncate(focus, Calendar.DATE);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1166,"                end = truncate(focus, Calendar.DATE);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1167,                switch (rangeStyle) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1170,                        break;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1172,                        startCutoff = Calendar.MONDAY;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1173,                        endCutoff = Calendar.SUNDAY;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1174,                        break;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1176,                        startCutoff = focus.get(Calendar.DAY_OF_WEEK);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1177,                        endCutoff = startCutoff - 1;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1178,                        break;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1180,                        startCutoff = focus.get(Calendar.DAY_OF_WEEK) - 3;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1181,                        endCutoff = focus.get(Calendar.DAY_OF_WEEK) + 3;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1184,                break;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1186,"                throw new IllegalArgumentException(""The range style "" + rangeStyle + "" is not valid."");",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1188,        if (startCutoff < Calendar.SUNDAY) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1189,            startCutoff += 7;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1191,        if (startCutoff > Calendar.SATURDAY) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1192,            startCutoff -= 7;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1194,        if (endCutoff < Calendar.SUNDAY) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1195,            endCutoff += 7;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1197,        if (endCutoff > Calendar.SATURDAY) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1198,            endCutoff -= 7;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1200,        while (start.get(Calendar.DAY_OF_WEEK) != startCutoff) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1201,"            start.add(Calendar.DATE, -1);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1203,        while (end.get(Calendar.DAY_OF_WEEK) != endCutoff) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1204,"            end.add(Calendar.DATE, 1);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1206,"        return new DateIterator(start, end);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1229,        if (focus == null) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1230,"            throw new IllegalArgumentException(""The date must not be null"");",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1232,        if (focus instanceof Date) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1233,"            return iterator((Date) focus, rangeStyle);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1234,        } else if (focus instanceof Calendar) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1235,"            return iterator((Calendar) focus, rangeStyle);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1237,"            throw new ClassCastException(""Could not iterate based on "" + focus);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1275,"        return getFragment(date, fragment, Calendar.MILLISECOND);    ",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1315,"        return getFragment(date, fragment, Calendar.SECOND);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1355,"        return getFragment(date, fragment, Calendar.MINUTE);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1395,"        return getFragment(date, fragment, Calendar.HOUR_OF_DAY);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1435,"        return getFragment(date, fragment, Calendar.DAY_OF_YEAR);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1475,"    return getFragment(calendar, fragment, Calendar.MILLISECOND);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1514,"        return getFragment(calendar, fragment, Calendar.SECOND);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1554,"        return getFragment(calendar, fragment, Calendar.MINUTE);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1594,"        return getFragment(calendar, fragment, Calendar.HOUR_OF_DAY);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1636,"        return getFragment(calendar, fragment, Calendar.DAY_OF_YEAR);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1651,        if(date == null) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1652,"            throw  new IllegalArgumentException(""The date must not be null"");",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1654,        Calendar calendar = Calendar.getInstance();,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1655,        calendar.setTime(date);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1656,"        return getFragment(calendar, fragment, unit);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1671,        if(calendar == null) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1672,"            throw  new IllegalArgumentException(""The date must not be null""); ",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1674,        long millisPerUnit = getMillisPerUnit(unit);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1675,        long result = 0;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1678,        switch (fragment) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1680,                result += (calendar.get(Calendar.DAY_OF_YEAR) * MILLIS_PER_DAY) / millisPerUnit;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1681,                break;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1683,                result += (calendar.get(Calendar.DAY_OF_MONTH) * MILLIS_PER_DAY) / millisPerUnit;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1687,        switch (fragment) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1695,                result += (calendar.get(Calendar.HOUR_OF_DAY) * MILLIS_PER_HOUR) / millisPerUnit;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1698,                result += (calendar.get(Calendar.MINUTE) * MILLIS_PER_MINUTE) / millisPerUnit;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1701,                result += (calendar.get(Calendar.SECOND) * MILLIS_PER_SECOND) / millisPerUnit;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1704,                result += (calendar.get(Calendar.MILLISECOND) * 1) / millisPerUnit;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1705,                break;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1706,            case Calendar.MILLISECOND: break;//never useful,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1707,"                default: throw new IllegalArgumentException(""The fragment "" + fragment + "" is not supported"");",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1709,        return result;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1726,"        return truncatedCompareTo(cal1, cal2, field) == 0;",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1743,"        return truncatedCompareTo(date1, date2, field) == 0;",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1761,"        Calendar truncatedCal1 = truncate(cal1, field);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1762,"        Calendar truncatedCal2 = truncate(cal2, field);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1763,        return truncatedCal1.compareTo(truncatedCal2);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1781,"        Date truncatedDate1 = truncate(date1, field);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1782,"        Date truncatedDate2 = truncate(date2, field);",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1783,        return truncatedDate1.compareTo(truncatedDate2);,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1795,        long result = Long.MAX_VALUE;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1796,        switch (unit) {,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1799,                result = MILLIS_PER_DAY;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1800,                break;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1802,                result = MILLIS_PER_HOUR;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1803,                break;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1805,                result = MILLIS_PER_MINUTE;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1806,                break;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1808,                result = MILLIS_PER_SECOND;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1809,                break;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1811,                result = 1;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1812,                break;,0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1813,"            default: throw new IllegalArgumentException(""The unit "" + unit + "" cannot be represented is milleseconds"");",0.0,0,,0
+org/apache/commons/lang3/time/DateUtils,21,1815,        return result;,0.0,0,,0
